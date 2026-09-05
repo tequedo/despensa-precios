@@ -1,0 +1,8 @@
+{
+  "name": "despensa-precios",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node update-san-juan.mjs", "check": "node --check update-san-juan.mjs" }
+}
