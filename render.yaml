@@ -1,0 +1,18 @@
+services:
+  - type: cron
+    name: despensa-precios-diarios
+    runtime: node
+    region: ohio
+    plan: starter
+    schedule: "30 13 * * *"
+    buildCommand: "true"
+    startCommand: "node update-san-juan.mjs"
+    envVars:
+      - key: DESPENSA_INGEST_URL
+        value: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/prices/ingest
+      - key: PRICE_INGEST_TOKEN
+        sync: false
+      - key: PROVINCE_CODES
+        value: AR-J
+      - key: BATCH_SIZE
+        value: "75"
