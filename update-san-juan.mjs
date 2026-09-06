@@ -1,5 +1,5 @@
 import { createReadStream } from "node:fs";
-import { appendFile, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { appendFile, mkdtemp, mkdir, open, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, dirname, join } from "node:path";
 import { execFile } from "node:child_process";
@@ -209,6 +209,13 @@ try {
   await processFolder(outerDir, { url: mirrorUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
+  if (nested[0]) {
+    const handle = await open(nested[0], "r");
+    const header = Buffer.alloc(32);
+    await handle.read(header, 0, header.length, 0);
+    await handle.close();
+    console.log(JSON.stringify({ nestedFile: basename(nested[0]), nestedSize: (await stat(nested[0])).size, nestedHeaderHex: header.toString("hex") }));
+  }
   let index = 0;
   for (const zip of nested) {
     const folder = join(workDir, `retailer-${index++}`);
