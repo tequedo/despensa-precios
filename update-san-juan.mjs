@@ -1,118 +1,223 @@
+import { createReadStream } from "node:fs";
+import { appendFile, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { basename, dirname, join } from "node:path";
 import { execFile } from "node:child_process";
-import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
+import { createInterface } from "node:readline";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
-const API = "https://d3e6htiiul5ek9.cloudfront.net/prod";
+const CKAN = "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios";
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
-const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8"));
-const headers = {
-  accept: "application/json",
-  origin: "https://www.preciosclaros.gob.ar",
-  referer: "https://www.preciosclaros.gob.ar/",
-  "user-agent": "Mozilla/5.0 Chrome/131 Safari/537.36"
-};
+const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
+const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
+const workDir = await mkdtemp(join(tmpdir(), "sepa-san-juan-"));
 
-async function get(path, params) {
-  const url = new URL(API + path);
-  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, String(value));
-  const response = await fetch(url, { headers });
-  if (response.status === 403) {
-    const args = ["--fail", "--silent", "--show-error", "--location"];
-    for (const [key, value] of Object.entries(headers)) args.push("--header", `${key}: ${value}`);
-    args.push(url.toString());
-    const { stdout } = await execFileAsync("curl", args, { maxBuffer: 20 * 1024 * 1024 });
-    return JSON.parse(stdout);
-  }
-  if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
-  return response.json();
+function normalize(value) {
+  return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
 }
 
-function list(value, names) {
-  for (const name of names) if (Array.isArray(value?.[name])) return value[name];
-  return Array.isArray(value) ? value : [];
-}
-
-function pick(value, names, fallback = "") {
-  for (const name of names) if (value?.[name] !== undefined && value[name] !== null) return value[name];
-  return fallback;
-}
-
-function positiveNumber(value) {
+function number(value) {
   const parsed = Number(String(value ?? "").replace(",", "."));
   return Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
 }
 
-await mkdir(dirname(outputFile), { recursive: true });
-await writeFile(outputFile, "");
+function parsePipe(line) {
+  const values = [];
+  let value = "";
+  let quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (char === '"') {
+      if (quoted && line[i + 1] === '"') {
+        value += '"';
+        i++;
+      } else quoted = !quoted;
+    } else if (char === "|" && !quoted) {
+      values.push(value);
+      value = "";
+    } else value += char;
+  }
+  values.push(value);
+  return values;
+}
 
-const branchPayload = await get("/sucursales", { lat: -31.5375, lng: -68.5364, limit: 100 });
-const branches = list(branchPayload, ["sucursales", "results", "items"]);
-if (!branches.length) throw new Error("Precios Claros no devolvió sucursales cercanas a San Juan");
-
-const branchIds = branches
-  .map(branch => pick(branch, ["id", "idSucursal", "id_sucursal"]))
-  .filter(Boolean)
-  .join(",");
-
-const products = new Map();
-for (const keyword of keywords) {
-  const payload = await get("/productos", {
-    string: keyword,
-    array_sucursales: branchIds,
-    offset: 0,
-    limit: 50,
-    sort: "-cant_sucursales_disponible"
-  });
-  for (const product of list(payload, ["productos", "results", "items"])) {
-    const id = pick(product, ["id", "idProducto", "id_producto"]);
-    if (id) products.set(String(id), product);
+async function rows(file, handler) {
+  const input = createInterface({ input: createReadStream(file), crlfDelay: Infinity });
+  let headers;
+  for await (const raw of input) {
+    const line = raw.replace(/^\uFEFF/, "");
+    if (!line || line.startsWith("Última actualización:")) continue;
+    const values = parsePipe(line);
+    if (!headers) {
+      headers = values.map(value => normalize(value).replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""));
+      continue;
+    }
+    const row = {};
+    headers.forEach((header, index) => { row[header] = values[index] ?? ""; });
+    await handler(row);
   }
 }
 
-let accepted = 0;
-for (const [id, summary] of products) {
-  const payload = await get("/producto", { id_producto: id, array_sucursales: branchIds, limit: 100 });
-  const product = payload.producto ?? payload.product ?? summary;
-  const records = [];
-  for (const store of list(payload, ["sucursales", "comercios", "results", "items"])) {
-    const priceData = store.preciosProducto ?? store.precios_producto ?? store.precio ?? store;
-    const listPrice = positiveNumber(pick(priceData, ["precioLista", "precio_lista", "precio", "price"]));
-    if (!listPrice) continue;
-    records.push({
-      source: { name: "SEPA - Precios Claros", kind: "official_api", official: true, verificationUrl: "https://www.preciosclaros.gob.ar/" },
-      product: {
-        ean: id,
-        name: pick(product, ["nombre", "name", "descripcion"], id),
-        brand: pick(product, ["marca", "brand"]),
-        presentation: pick(product, ["presentacion", "presentation"]),
-        referenceUnit: "unidad"
-      },
-      store: {
-        externalId: pick(store, ["id", "idSucursal", "id_sucursal"]),
-        chain: pick(store, ["banderaDescripcion", "bandera_descripcion", "razonSocial"]),
-        branch: pick(store, ["sucursalNombre", "nombre"]),
-        address: pick(store, ["direccion", "address"]),
-        locality: pick(store, ["localidad"], "San Juan"),
-        province: "San Juan",
-        latitude: positiveNumber(pick(store, ["lat", "latitud"])),
-        longitude: positiveNumber(pick(store, ["lng", "longitud"]))
-      },
-      price: {
-        listPrice,
-        promoPrice: positiveNumber(pick(priceData, ["precioPromo1", "precio_promocional"])),
-        promoConditions: pick(priceData, ["promo1Descripcion", "leyendaPromocion", "promoConditions"]),
-        promoKind: "none",
-        channel: "sucursal",
-        validDate: new Date().toISOString().slice(0, 10),
-        observedAt: new Date().toISOString()
-      }
+function pick(row, names, fallback = "") {
+  for (const name of names) if (row[name] !== undefined && row[name] !== "") return row[name];
+  return fallback;
+}
+
+function branchKey(row) {
+  return [
+    pick(row, ["comercio_cuit", "productos_comercio_cuit", "id_comercio"]),
+    pick(row, ["bandera_id", "productos_bandera_id", "id_bandera"]),
+    pick(row, ["sucursal_id", "productos_sucursal_id", "id_sucursal"])
+  ].map(String).join("|");
+}
+
+function isSanJuan(row) {
+  const province = normalize(pick(row, ["sucursal_provincia", "provincia", "provincia_id"]));
+  return provinceCodes.has(province) || province === "san juan" || province === "j";
+}
+
+async function filesBelow(root) {
+  const found = [];
+  for (const entry of await readdir(root, { withFileTypes: true })) {
+    const path = join(root, entry.name);
+    if (entry.isDirectory()) found.push(...await filesBelow(path));
+    else found.push(path);
+  }
+  return found;
+}
+
+async function extract(zip, target) {
+  await mkdir(target, { recursive: true });
+  await execFileAsync("unzip", ["-oq", zip, "-d", target], { maxBuffer: 10 * 1024 * 1024 });
+}
+
+async function processFolder(folder, sourceInfo, counters) {
+  const files = await filesBelow(folder);
+  const branchFiles = files.filter(file => /sucursales\.csv$/i.test(file));
+  const productFiles = files.filter(file => /productos\.csv$/i.test(file));
+  if (!branchFiles.length || !productFiles.length) return;
+
+  const branches = new Map();
+  for (const file of branchFiles) {
+    await rows(file, row => {
+      if (isSanJuan(row)) branches.set(branchKey(row), row);
     });
   }
-  if (records.length) await appendFile(outputFile, records.map(JSON.stringify).join("\n") + "\n");
-  accepted += records.length;
+  if (!branches.size) return;
+
+  for (const file of productFiles) {
+    await rows(file, async row => {
+      counters.read++;
+      const branch = branches.get(branchKey(row));
+      if (!branch) return;
+      const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
+      const normalizedDescription = normalize(description);
+      if (!keywords.some(keyword => normalizedDescription.includes(keyword))) return;
+      const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
+      if (!listPrice) {
+        counters.rejected++;
+        return;
+      }
+      const promoPrice = number(pick(row, [
+        "productos_precio_promocional",
+        "productos_precio_promocional_1",
+        "productos_precio_promocional1",
+        "precio_promocional"
+      ]));
+      const promoConditions = pick(row, [
+        "productos_leyenda_promocion",
+        "productos_leyenda_promocion_1",
+        "productos_leyenda_promocion1",
+        "leyenda_promocion"
+      ]);
+      const ean = pick(row, ["productos_ean", "producto_ean", "id_producto"]);
+      const record = {
+        source: {
+          name: "SEPA - Precios Claros",
+          kind: "official_dataset",
+          official: true,
+          verificationUrl: "https://datos.produccion.gob.ar/dataset/sepa-precios",
+          resource: sourceInfo.url,
+          modified: sourceInfo.modified
+        },
+        product: {
+          ean,
+          name: description || ean,
+          brand: pick(row, ["productos_marca", "producto_marca", "marca"]),
+          presentation: [
+            pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]),
+            pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"])
+          ].filter(Boolean).join(" "),
+          referenceUnit: pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"], "unidad")
+        },
+        store: {
+          externalId: pick(branch, ["sucursal_id", "id_sucursal"]),
+          chain: pick(branch, ["bandera_descripcion", "comercio_razon_social", "cadena"]),
+          branch: pick(branch, ["sucursal_nombre", "nombre"]),
+          address: pick(branch, ["sucursal_direccion", "direccion"]),
+          locality: pick(branch, ["sucursal_localidad", "localidad"], "San Juan"),
+          province: "San Juan",
+          latitude: number(pick(branch, ["sucursal_latitud", "latitud"])),
+          longitude: number(pick(branch, ["sucursal_longitud", "longitud"]))
+        },
+        price: {
+          listPrice,
+          promoPrice,
+          promoConditions,
+          promoKind: promoPrice ? "promotion" : "none",
+          channel: "sucursal",
+          validDate: pick(row, ["productos_fecha_actualizacion", "fecha_actualizacion"], new Date().toISOString().slice(0, 10)).slice(0, 10),
+          observedAt: new Date().toISOString()
+        }
+      };
+      await appendFile(outputFile, JSON.stringify(record) + "\n");
+      counters.accepted++;
+    });
+  }
 }
 
-if (!accepted) throw new Error("La API oficial respondió, pero no produjo precios válidos");
-console.log(JSON.stringify({ source: "Precios Claros API", branches: branches.length, products: products.size, accepted }));
+try {
+  await mkdir(dirname(outputFile), { recursive: true });
+  await writeFile(outputFile, "");
+
+  const metadataResponse = await fetch(CKAN, { headers: { accept: "application/json", "user-agent": "Mozilla/5.0" } });
+  if (!metadataResponse.ok) throw new Error(`SEPA CKAN: HTTP ${metadataResponse.status}`);
+  const metadata = await metadataResponse.json();
+  if (!metadata.success) throw new Error("SEPA CKAN no devolvió metadatos válidos");
+
+  const resources = (metadata.result.resources ?? [])
+    .filter(resource => /\.zip(?:$|\?)/i.test(resource.url ?? "") && /sepa|lunes|martes|miercoles|miércoles|jueves|viernes|sabado|sábado|domingo/i.test(`${resource.name ?? ""} ${resource.url ?? ""}`))
+    .sort((a, b) => String(b.last_modified ?? b.metadata_modified ?? "").localeCompare(String(a.last_modified ?? a.metadata_modified ?? "")));
+  const resource = resources[0];
+  if (!resource?.url) throw new Error("No se encontró el ZIP diario de SEPA");
+
+  const outerZip = join(workDir, "sepa.zip");
+  await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", outerZip, resource.url], { maxBuffer: 10 * 1024 * 1024 });
+  const outerDir = join(workDir, "outer");
+  await extract(outerZip, outerDir);
+
+  const counters = { read: 0, accepted: 0, rejected: 0 };
+  await processFolder(outerDir, { url: resource.url, modified: resource.last_modified ?? resource.metadata_modified }, counters);
+
+  const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
+  let index = 0;
+  for (const zip of nested) {
+    const folder = join(workDir, `retailer-${index++}`);
+    await extract(zip, folder);
+    await processFolder(folder, { url: resource.url, modified: resource.last_modified ?? resource.metadata_modified }, counters);
+    await rm(folder, { recursive: true, force: true });
+  }
+
+  if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
+  console.log(JSON.stringify({
+    source: "SEPA - Precios Claros",
+    resource: resource.name,
+    modified: resource.last_modified ?? resource.metadata_modified,
+    scope: "San Juan",
+    ...counters,
+    outputFile
+  }));
+} finally {
+  await rm(workDir, { recursive: true, force: true });
+}
