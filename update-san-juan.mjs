@@ -8,6 +8,7 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
+const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
@@ -73,7 +74,7 @@ function branchKey(row) {
 }
 
 function isSanJuan(row) {
-  const province = normalize(pick(row, ["sucursal_provincia", "provincia", "provincia_id"]));
+  const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
   return provinceCodes.has(province) || province === "san juan" || province === "j";
 }
 
@@ -100,12 +101,25 @@ async function processFolder(folder, sourceInfo, counters) {
   const files = await filesBelow(folder);
   const branchFiles = files.filter(file => /sucursales\.csv$/i.test(file));
   const productFiles = files.filter(file => /productos\.csv$/i.test(file));
+  const commerceFiles = files.filter(file => /comercio\.csv$/i.test(file));
   if (!branchFiles.length || !productFiles.length) return;
+
+  const chains = new Map();
+  for (const file of commerceFiles) {
+    await rows(file, row => {
+      const key = [pick(row, ["id_comercio"]), pick(row, ["id_bandera"])].join("|");
+      chains.set(key, pick(row, ["comercio_bandera_nombre", "comercio_razon_social"], "Comercio"));
+    });
+  }
 
   const branches = new Map();
   for (const file of branchFiles) {
     await rows(file, row => {
-      if (isSanJuan(row)) branches.set(branchKey(row), row);
+      if (isSanJuan(row)) {
+        const key = [pick(row, ["id_comercio"]), pick(row, ["id_bandera"])].join("|");
+        row._chain = chains.get(key) ?? "Comercio";
+        branches.set(branchKey(row), row);
+      }
     });
   }
   if (!branches.size) return;
@@ -119,7 +133,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const normalizedDescription = normalize(description);
       if (!keywords.some(keyword => normalizedDescription.includes(keyword))) return;
       const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
-      if (!listPrice) {
+      if (!listPrice || listPrice < 100) {
         counters.rejected++;
         return;
       }
@@ -127,12 +141,14 @@ async function processFolder(folder, sourceInfo, counters) {
         "productos_precio_promocional",
         "productos_precio_promocional_1",
         "productos_precio_promocional1",
+        "productos_precio_unitario_promo1",
         "precio_promocional"
       ]));
       const promoConditions = pick(row, [
         "productos_leyenda_promocion",
         "productos_leyenda_promocion_1",
         "productos_leyenda_promocion1",
+        "productos_leyenda_promo1",
         "leyenda_promocion"
       ]);
       const ean = pick(row, ["productos_ean", "producto_ean", "id_producto"]);
@@ -157,13 +173,13 @@ async function processFolder(folder, sourceInfo, counters) {
         },
         store: {
           externalId: pick(branch, ["sucursal_id", "id_sucursal"]),
-          chain: pick(branch, ["bandera_descripcion", "comercio_razon_social", "cadena"]),
-          branch: pick(branch, ["sucursal_nombre", "nombre"]),
-          address: pick(branch, ["sucursal_direccion", "direccion"]),
-          locality: pick(branch, ["sucursal_localidad", "localidad"], "San Juan"),
+          chain: pick(branch, ["_chain", "bandera_descripcion", "comercio_razon_social", "cadena"]),
+          branch: pick(branch, ["sucursales_nombre", "sucursal_nombre", "nombre"]),
+          address: [pick(branch, ["sucursales_calle", "sucursal_direccion", "direccion"]), pick(branch, ["sucursales_numero"])].filter(Boolean).join(" "),
+          locality: pick(branch, ["sucursales_localidad", "sucursal_localidad", "localidad"], "San Juan"),
           province: "San Juan",
-          latitude: number(pick(branch, ["sucursal_latitud", "latitud"])),
-          longitude: number(pick(branch, ["sucursal_longitud", "longitud"]))
+          latitude: Number(pick(branch, ["sucursales_latitud", "sucursal_latitud", "latitud"])) || undefined,
+          longitude: Number(pick(branch, ["sucursales_longitud", "sucursal_longitud", "longitud"])) || undefined
         },
         price: {
           listPrice,
@@ -185,28 +201,37 @@ try {
   await mkdir(dirname(outputFile), { recursive: true });
   await writeFile(outputFile, "");
 
-  const metadataResponse = await fetch(METADATA, { headers: { accept: "application/json" } });
-  if (!metadataResponse.ok) throw new Error(`Espejo de metadatos SEPA: HTTP ${metadataResponse.status}`);
-  const metadata = await metadataResponse.json();
-  if (!metadata.success) throw new Error("El espejo no devolvió metadatos SEPA válidos");
-
-  const resources = (metadata.result.resources ?? [])
-    .filter(resource => /\.zip(?:$|\?)/i.test(resource.url ?? "") && resource.revision_id && resource.id)
-    .sort((a, b) => String(b.last_modified ?? "").localeCompare(String(a.last_modified ?? "")));
-  const today = new Date().toISOString().slice(0, 10);
-  const resource = resources.find(candidate => String(candidate.last_modified ?? "").slice(0, 10) < today) ?? resources[0];
-  if (!resource?.url) throw new Error("No se encontró el archivo diario de SEPA");
-
-  const filename = basename(new URL(resource.url).pathname);
-  const mirrorUrl = `https://f004.backblazeb2.com/file/precios-justos-datasets/${resource.id}-revID-${resource.revision_id}-${filename}-repackaged.tar.zst`;
-  const archive = join(workDir, "sepa.tar.zst");
-  await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, mirrorUrl], { maxBuffer: 10 * 1024 * 1024 });
+  let resource;
+  let sourceUrl;
   const outerDir = join(workDir, "outer");
   await mkdir(outerDir, { recursive: true });
-  await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
+
+  if (manualZipUrl) {
+    resource = { name: "SEPA diario aportado manualmente", url: manualZipUrl, last_modified: new Date().toISOString() };
+    sourceUrl = manualZipUrl;
+    const archive = join(workDir, "sepa-manual.zip");
+    await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, manualZipUrl], { maxBuffer: 10 * 1024 * 1024 });
+    await extract(archive, outerDir);
+  } else {
+    const metadataResponse = await fetch(METADATA, { headers: { accept: "application/json" } });
+    if (!metadataResponse.ok) throw new Error(`Espejo de metadatos SEPA: HTTP ${metadataResponse.status}`);
+    const metadata = await metadataResponse.json();
+    if (!metadata.success) throw new Error("El espejo no devolvió metadatos SEPA válidos");
+    const resources = (metadata.result.resources ?? [])
+      .filter(candidate => /\.zip(?:$|\?)/i.test(candidate.url ?? "") && candidate.revision_id && candidate.id)
+      .sort((a, b) => String(b.last_modified ?? "").localeCompare(String(a.last_modified ?? "")));
+    const today = new Date().toISOString().slice(0, 10);
+    resource = resources.find(candidate => String(candidate.last_modified ?? "").slice(0, 10) < today) ?? resources[0];
+    if (!resource?.url) throw new Error("No se encontró el archivo diario de SEPA");
+    const filename = basename(new URL(resource.url).pathname);
+    sourceUrl = `https://f004.backblazeb2.com/file/precios-justos-datasets/${resource.id}-revID-${resource.revision_id}-${filename}-repackaged.tar.zst`;
+    const archive = join(workDir, "sepa.tar.zst");
+    await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, sourceUrl], { maxBuffer: 10 * 1024 * 1024 });
+    await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
+  }
 
   const counters = { read: 0, accepted: 0, rejected: 0, damagedArchives: 0 };
-  await processFolder(outerDir, { url: mirrorUrl, modified: resource.last_modified }, counters);
+  await processFolder(outerDir, { url: sourceUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
   if (nested[0]) {
@@ -221,7 +246,7 @@ try {
     const folder = join(workDir, `retailer-${index++}`);
     try {
       await extract(zip, folder);
-      await processFolder(folder, { url: mirrorUrl, modified: resource.last_modified }, counters);
+      await processFolder(folder, { url: sourceUrl, modified: resource.last_modified }, counters);
     } catch (error) {
       counters.damagedArchives++;
       console.warn(`SEPA omitió archivo dañado: ${basename(zip)} (${error.message})`);
