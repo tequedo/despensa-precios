@@ -9,6 +9,20 @@ import { promisify } from "node:util";
 const execFileAsync = promisify(execFile);
 const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
+const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
+const ingestToken = process.env.PRICE_INGEST_TOKEN;
+const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
+if (ingestEndpoint && !ingestToken) throw new Error("Falta PRICE_INGEST_TOKEN para cargar los precios en la aplicación");
+
+async function send(records) {
+  if (!ingestEndpoint || !records.length) return;
+  const response = await fetch(ingestEndpoint, {
+    method: "POST",
+    headers: { authorization: `Bearer ${ingestToken}`, "content-type": "application/json" },
+    body: JSON.stringify({ records })
+  });
+  if (!response.ok) throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);
+}
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
@@ -126,6 +140,7 @@ async function processFolder(folder, sourceInfo, counters) {
   if (!branches.size) return;
 
   for (const file of productFiles) {
+    let batch = [];
     await rows(file, async row => {
       counters.read++;
       const branch = branches.get(branchKey(row));
@@ -195,6 +210,8 @@ async function processFolder(folder, sourceInfo, counters) {
       await appendFile(outputFile, JSON.stringify(record) + "\n");
       counters.accepted++;
     });
+    await send(batch);
+    counters.ingested += batch.length;
   }
 }
 
@@ -231,7 +248,7 @@ try {
     await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
   }
 
-  const counters = { read: 0, accepted: 0, rejected: 0, damagedArchives: 0 };
+  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, damagedArchives: 0 };
   await processFolder(outerDir, { url: sourceUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
