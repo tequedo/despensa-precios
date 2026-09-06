@@ -189,7 +189,8 @@ try {
   const resources = (metadata.result.resources ?? [])
     .filter(resource => /\.zip(?:$|\?)/i.test(resource.url ?? "") && resource.revision_id && resource.id)
     .sort((a, b) => String(b.last_modified ?? "").localeCompare(String(a.last_modified ?? "")));
-  const resource = resources[0];
+  const today = new Date().toISOString().slice(0, 10);
+  const resource = resources.find(candidate => String(candidate.last_modified ?? "").slice(0, 10) < today) ?? resources[0];
   if (!resource?.url) throw new Error("No se encontró el archivo diario de SEPA");
 
   const filename = basename(new URL(resource.url).pathname);
