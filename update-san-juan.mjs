@@ -89,7 +89,11 @@ async function filesBelow(root) {
 
 async function extract(zip, target) {
   await mkdir(target, { recursive: true });
-  await execFileAsync("unzip", ["-oq", zip, "-d", target], { maxBuffer: 10 * 1024 * 1024 });
+  try {
+    await execFileAsync("unzip", ["-oq", zip, "-d", target], { maxBuffer: 10 * 1024 * 1024 });
+  } catch {
+    await execFileAsync("7z", ["x", "-y", `-o${target}`, zip], { maxBuffer: 20 * 1024 * 1024 });
+  }
 }
 
 async function processFolder(folder, sourceInfo, counters) {
