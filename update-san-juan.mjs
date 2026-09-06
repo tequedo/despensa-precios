@@ -200,16 +200,22 @@ try {
   await mkdir(outerDir, { recursive: true });
   await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
 
-  const counters = { read: 0, accepted: 0, rejected: 0 };
+  const counters = { read: 0, accepted: 0, rejected: 0, damagedArchives: 0 };
   await processFolder(outerDir, { url: mirrorUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
   let index = 0;
   for (const zip of nested) {
     const folder = join(workDir, `retailer-${index++}`);
-    await extract(zip, folder);
-    await processFolder(folder, { url: mirrorUrl, modified: resource.last_modified }, counters);
-    await rm(folder, { recursive: true, force: true });
+    try {
+      await extract(zip, folder);
+      await processFolder(folder, { url: mirrorUrl, modified: resource.last_modified }, counters);
+    } catch (error) {
+      counters.damagedArchives++;
+      console.warn(`SEPA omitió archivo dañado: ${basename(zip)} (${error.message})`);
+    } finally {
+      await rm(folder, { recursive: true, force: true });
+    }
   }
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
