@@ -37,9 +37,6 @@ jobs:
         env:
           PROVINCE_CODES: AR-J
           OUTPUT_FILE: data/san-juan.ndjson
-          DESPENSA_INGEST_URL: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/prices/ingest
-          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
-          BATCH_SIZE: "75"
           MANUAL_ZIP_URL: https://drive.usercontent.google.com/download?id=1ZRp9IH9rf-gePjXzGNefDPKYilsgUf0C&export=download&confirm=t
         run: node update-san-juan.mjs
 
