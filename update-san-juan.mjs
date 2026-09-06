@@ -90,7 +90,14 @@ function branchKey(row) {
 
 function isSanJuan(row) {
   const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
-  return provinceCodes.has(province) || province === "san juan" || province === "j";
+  if (!(provinceCodes.has(province) || province === "san juan" || province === "j")) return false;
+  const latitude = Number(pick(row, ["sucursales_latitud", "sucursal_latitud", "latitud"]));
+  const longitude = Number(pick(row, ["sucursales_longitud", "sucursal_longitud", "longitud"]));
+  if (Number.isFinite(latitude) && Number.isFinite(longitude)) {
+    return latitude >= -33.5 && latitude <= -28 && longitude >= -71 && longitude <= -66;
+  }
+  const locality = normalize(pick(row, ["sucursales_localidad", "sucursal_localidad", "localidad"]));
+  return !locality.includes("jujuy") && !locality.includes("palpala") && !locality.includes("perico");
 }
 
 async function filesBelow(root) {
