@@ -31,7 +31,7 @@ jobs:
           node-version: "22"
 
       - name: Instalar herramientas de compresión
-        run: sudo apt-get update && sudo apt-get install -y unzip zstd
+        run: sudo apt-get update && sudo apt-get install -y unzip zstd p7zip-full
 
       - name: Recolectar precios oficiales
         env:
