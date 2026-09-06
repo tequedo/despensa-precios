@@ -1,6 +1,9 @@
+import { execFile } from "node:child_process";
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { promisify } from "node:util";
 
+const execFileAsync = promisify(execFile);
 const API = "https://d3e6htiiul5ek9.cloudfront.net/prod";
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8"));
@@ -15,6 +18,13 @@ async function get(path, params) {
   const url = new URL(API + path);
   for (const [key, value] of Object.entries(params)) url.searchParams.set(key, String(value));
   const response = await fetch(url, { headers });
+  if (response.status === 403) {
+    const args = ["--fail", "--silent", "--show-error", "--location"];
+    for (const [key, value] of Object.entries(headers)) args.push("--header", `${key}: ${value}`);
+    args.push(url.toString());
+    const { stdout } = await execFileAsync("curl", args, { maxBuffer: 20 * 1024 * 1024 });
+    return JSON.parse(stdout);
+  }
   if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
   return response.json();
 }
