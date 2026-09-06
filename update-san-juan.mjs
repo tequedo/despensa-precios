@@ -88,6 +88,18 @@ function branchKey(row) {
   ].map(String).join("|");
 }
 
+function productKey(row) {
+  const supplied = pick(row, ["productos_ean", "producto_ean"]);
+  const digits = String(supplied).replace(/\D/g, "");
+  if (digits.length >= 8 && !/^0+$/.test(digits)) return supplied;
+  return [
+    "sepa",
+    pick(row, ["id_comercio", "productos_comercio_cuit"]),
+    pick(row, ["id_bandera", "productos_bandera_id"]),
+    pick(row, ["id_producto", "productos_id"])
+  ].map(String).join(":");
+}
+
 function isSanJuan(row) {
   const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
   if (!(provinceCodes.has(province) || province === "san juan" || province === "j")) return false;
@@ -174,7 +186,7 @@ async function processFolder(folder, sourceInfo, counters) {
         "productos_leyenda_promo1",
         "leyenda_promocion"
       ]);
-      const ean = pick(row, ["productos_ean", "producto_ean", "id_producto"]);
+      const ean = productKey(row);
       const record = {
         source: {
           name: "SEPA - Precios Claros",
@@ -195,7 +207,7 @@ async function processFolder(folder, sourceInfo, counters) {
           referenceUnit: pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"], "unidad")
         },
         store: {
-          externalId: pick(branch, ["sucursal_id", "id_sucursal"]),
+          externalId: branchKey(branch),
           chain: pick(branch, ["_chain", "bandera_descripcion", "comercio_razon_social", "cadena"]),
           branch: pick(branch, ["sucursales_nombre", "sucursal_nombre", "nombre"]),
           address: [pick(branch, ["sucursales_calle", "sucursal_direccion", "direccion"]), pick(branch, ["sucursales_numero"])].filter(Boolean).join(" "),
