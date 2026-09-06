@@ -2,6 +2,11 @@ name: Actualizar precios de San Juan
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "update-san-juan.mjs"
+      - "san-juan-products.json"
+      - ".github/workflows/update-prices.yml"
   schedule:
     - cron: "30 13 * * *"
 
