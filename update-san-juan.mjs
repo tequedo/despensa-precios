@@ -1,5 +1,5 @@
 import { createWriteStream, createReadStream } from "node:fs";
-import { mkdtemp, readdir, readFile, rm } from "node:fs/promises";
+import { appendFile, mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, basename } from "node:path";
 import { pipeline } from "node:stream/promises";
@@ -10,10 +10,12 @@ import { spawnSync } from "node:child_process";
 const CKAN = "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios";
 const endpoint = process.env.DESPENSA_INGEST_URL;
 const token = process.env.PRICE_INGEST_TOKEN;
+const outputFile = process.env.OUTPUT_FILE;
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "").split(",").map(v => v.trim()).filter(Boolean));
 const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8"));
-if (!endpoint || !token) throw new Error("Faltan DESPENSA_INGEST_URL o PRICE_INGEST_TOKEN");
+if ((!endpoint || !token) && !outputFile) throw new Error("Configurá el destino HTTP o OUTPUT_FILE");
+if (outputFile) { await mkdir(join(outputFile, ".."), { recursive: true }); await writeFile(outputFile, ""); }
 
 const provinceNames = {"AR-A":"Salta","AR-B":"Buenos Aires","AR-C":"Ciudad Autónoma de Buenos Aires","AR-D":"San Luis","AR-E":"Entre Ríos","AR-F":"La Rioja","AR-G":"Santiago del Estero","AR-H":"Chaco","AR-J":"San Juan","AR-K":"Catamarca","AR-L":"La Pampa","AR-M":"Mendoza","AR-N":"Misiones","AR-P":"Formosa","AR-Q":"Neuquén","AR-R":"Río Negro","AR-S":"Santa Fe","AR-T":"Tucumán","AR-U":"Chubut","AR-V":"Tierra del Fuego","AR-W":"Corrientes","AR-X":"Córdoba","AR-Y":"Jujuy","AR-Z":"Santa Cruz"};
 const norm = value => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
@@ -22,7 +24,11 @@ async function* rows(file) { const rl=createInterface({input:createReadStream(fi
 async function files(root){const found=[];for(const entry of await readdir(root,{withFileTypes:true})){const path=join(root,entry.name);if(entry.isDirectory())found.push(...await files(path));else found.push(path);}return found;}
 function field(row,...names){for(const name of names)if(row[name]!==undefined)return row[name];return "";}
 function promotion(text){const value=norm(text);let match=value.match(/(\d+)\s*x\s*(\d+)/);if(match)return{promoKind:"nxm",buyQuantity:Number(match[1]),payQuantity:Number(match[2])};match=value.match(/(\d+(?:[.,]\d+)?)\s*%/);if(match)return{promoKind:"percent",discountPercent:Number(match[1].replace(",","."))};return{promoKind:"none"};}
-async function send(records){if(!records.length)return;const response=await fetch(endpoint,{method:"POST",headers:{authorization:`Bearer ${token}`,"content-type":"application/json"},body:JSON.stringify({records})});if(!response.ok)throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);}
+async function send(records){
+  if(!records.length)return;
+  if(outputFile)await appendFile(outputFile,records.map(record=>JSON.stringify(record)).join("\n")+"\n");
+  if(endpoint&&token){const response=await fetch(endpoint,{method:"POST",headers:{authorization:`Bearer ${token}`,"content-type":"application/json"},body:JSON.stringify({records})});if(!response.ok)throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);}
+}
 
 const work=await mkdtemp(join(tmpdir(),"despensa-sepa-"));let read=0,accepted=0,rejected=0;
 try{
@@ -49,5 +55,5 @@ try{
     await send(batch);accepted+=batch.length;
   }
   if(!accepted)throw new Error("El archivo oficial no produjo precios válidos para la canasta configurada");
-  console.log(JSON.stringify({resource:resource.name,modified:resource.last_modified,scope:provinceCodes.size?[...provinceCodes]:"Argentina",read,accepted,rejected}));
+  console.log(JSON.stringify({resource:resource.name,modified:resource.last_modified,scope:provinceCodes.size?[...provinceCodes]:"Argentina",read,accepted,rejected,outputFile:outputFile??null}));
 }finally{await rm(work,{recursive:true,force:true});}
