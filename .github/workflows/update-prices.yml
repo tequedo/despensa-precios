@@ -37,6 +37,7 @@ jobs:
         env:
           PROVINCE_CODES: AR-J
           OUTPUT_FILE: data/san-juan.ndjson
+          MANUAL_ZIP_URL: https://drive.usercontent.google.com/download?id=1ZRp9IH9rf-gePjXzGNefDPKYilsgUf0C&export=download&confirm=t
         run: node update-san-juan.mjs
 
       - name: Guardar precios actualizados
