@@ -11,7 +11,7 @@ const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-meta
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
-const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
+const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);\nconst keywordPatterns = keywords.map(keyword => new RegExp(`(?:^|\\\\b)${keyword.replace(/[.*+?^${}()|[\\\\]\\\\]/g, "\\\\const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);")}(?:\\\\b|$)`));
 const workDir = await mkdtemp(join(tmpdir(), "sepa-san-juan-"));
 
 function normalize(value) {
@@ -131,7 +131,7 @@ async function processFolder(folder, sourceInfo, counters) {
       if (!branch) return;
       const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
       const normalizedDescription = normalize(description);
-      if (!keywords.some(keyword => normalizedDescription.includes(keyword))) return;
+      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription))) return;
       const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
       if (!listPrice || listPrice < 100) {
         counters.rejected++;
