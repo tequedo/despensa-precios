@@ -8,6 +8,12 @@ import { createInterface } from "node:readline";
 import { spawnSync } from "node:child_process";
 
 const CKAN = "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios";
+const requestHeaders = {
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
+  accept: "application/json,text/plain,*/*",
+  "accept-language": "es-AR,es;q=0.9,en;q=0.8",
+  referer: "https://datos.produccion.gob.ar/dataset/sepa-precios"
+};
 const endpoint = process.env.DESPENSA_INGEST_URL;
 const token = process.env.PRICE_INGEST_TOKEN;
 const outputFile = process.env.OUTPUT_FILE;
@@ -32,10 +38,10 @@ async function send(records){
 
 const work=await mkdtemp(join(tmpdir(),"despensa-sepa-"));let read=0,accepted=0,rejected=0;
 try{
-  const metadataResponse=await fetch(CKAN);if(!metadataResponse.ok)throw new Error(`CKAN respondió ${metadataResponse.status}`);const metadata=await metadataResponse.json();
+  const metadataResponse=await fetch(CKAN,{headers:requestHeaders});if(!metadataResponse.ok)throw new Error(`CKAN respondió ${metadataResponse.status}`);const metadata=await metadataResponse.json();
   const resource=metadata.result.resources.filter(item=>/sepa_(lunes|martes|miercoles|jueves|viernes|sabado|domingo)\.zip/i.test(item.name??item.url)).sort((a,b)=>new Date(b.last_modified??0)-new Date(a.last_modified??0))[0];
   if(!resource?.url)throw new Error("No se encontró el archivo diario de SEPA");
-  const archive=join(work,"sepa.zip"),response=await fetch(resource.url);if(!response.ok)throw new Error(`Descarga SEPA respondió ${response.status}`);await pipeline(Readable.fromWeb(response.body),createWriteStream(archive));
+  const archive=join(work,"sepa.zip"),response=await fetch(resource.url,{headers:{...requestHeaders,accept:"application/zip,application/octet-stream,*/*"}});if(!response.ok)throw new Error(`Descarga SEPA respondió ${response.status}`);await pipeline(Readable.fromWeb(response.body),createWriteStream(archive));
   const outer=join(work,"outer");let run=spawnSync("unzip",["-q",archive,"-d",outer]);if(run.status!==0)throw new Error("No se pudo abrir el ZIP oficial");
   const nested=(await files(outer)).filter(file=>file.toLowerCase().endsWith(".zip"));
   for(const zip of nested){
