@@ -14,6 +14,16 @@ const requestHeaders = {
   "accept-language": "es-AR,es;q=0.9,en;q=0.8",
   referer: "https://datos.produccion.gob.ar/dataset/sepa-precios"
 };
+const datasetId = "6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5";
+const dailyResources = {
+  Sun: ["f8e75128-515a-436e-bf8d-5c63a62f2005", "sepa_domingo.zip"],
+  Mon: ["0a9069a9-06e8-4f98-874d-da5578693290", "sepa_lunes.zip"],
+  Tue: ["9dc06241-cc83-44f4-8e25-c9b1636b8bc8", "sepa_martes.zip"],
+  Wed: ["1e92cd42-4f94-4071-a165-62c4cb2ce23c", "sepa_miercoles.zip"],
+  Thu: ["d076720f-a7f0-4af8-b1d6-1b99d5a90c14", "sepa_jueves.zip"],
+  Fri: ["91bc072a-4726-44a1-85ec-4a8467aad27e", "sepa_viernes.zip"],
+  Sat: ["b3c3da5d-213d-41e7-8d74-f23fda0a3c30", "sepa_sabado.zip"]
+};
 const endpoint = process.env.DESPENSA_INGEST_URL;
 const token = process.env.PRICE_INGEST_TOKEN;
 const outputFile = process.env.OUTPUT_FILE;
@@ -38,8 +48,17 @@ async function send(records){
 
 const work=await mkdtemp(join(tmpdir(),"despensa-sepa-"));let read=0,accepted=0,rejected=0;
 try{
-  const metadataResponse=await fetch(CKAN,{headers:requestHeaders});if(!metadataResponse.ok)throw new Error(`CKAN respondió ${metadataResponse.status}`);const metadata=await metadataResponse.json();
-  const resource=metadata.result.resources.filter(item=>/sepa_(lunes|martes|miercoles|jueves|viernes|sabado|domingo)\.zip/i.test(item.name??item.url)).sort((a,b)=>new Date(b.last_modified??0)-new Date(a.last_modified??0))[0];
+  const metadataResponse=await fetch(CKAN,{headers:requestHeaders});
+  let resource;
+  if(metadataResponse.ok){
+    const metadata=await metadataResponse.json();
+    resource=metadata.result.resources.filter(item=>/sepa_(lunes|martes|miercoles|jueves|viernes|sabado|domingo)\.zip/i.test(item.name??item.url)).sort((a,b)=>new Date(b.last_modified??0)-new Date(a.last_modified??0))[0];
+  }else{
+    const weekday=new Intl.DateTimeFormat("en-US",{timeZone:"America/Argentina/Buenos_Aires",weekday:"short"}).format(new Date());
+    const [id,name]=dailyResources[weekday];
+    resource={name,last_modified:new Date().toISOString(),url:`https://datos.produccion.gob.ar/dataset/${datasetId}/resource/${id}/download/${name}`};
+    console.warn(`CKAN respondió ${metadataResponse.status}; se usará la descarga oficial directa ${name}`);
+  }
   if(!resource?.url)throw new Error("No se encontró el archivo diario de SEPA");
   const archive=join(work,"sepa.zip"),response=await fetch(resource.url,{headers:{...requestHeaders,accept:"application/zip,application/octet-stream,*/*"}});if(!response.ok)throw new Error(`Descarga SEPA respondió ${response.status}`);await pipeline(Readable.fromWeb(response.body),createWriteStream(archive));
   const outer=join(work,"outer");let run=spawnSync("unzip",["-q",archive,"-d",outer]);if(run.status!==0)throw new Error("No se pudo abrir el ZIP oficial");
