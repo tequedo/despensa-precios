@@ -7,7 +7,7 @@ import { createInterface } from "node:readline";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
-const CKAN = "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios";
+const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
@@ -181,31 +181,34 @@ try {
   await mkdir(dirname(outputFile), { recursive: true });
   await writeFile(outputFile, "");
 
-  const metadataResponse = await fetch(CKAN, { headers: { accept: "application/json", "user-agent": "Mozilla/5.0" } });
-  if (!metadataResponse.ok) throw new Error(`SEPA CKAN: HTTP ${metadataResponse.status}`);
+  const metadataResponse = await fetch(METADATA, { headers: { accept: "application/json" } });
+  if (!metadataResponse.ok) throw new Error(`Espejo de metadatos SEPA: HTTP ${metadataResponse.status}`);
   const metadata = await metadataResponse.json();
-  if (!metadata.success) throw new Error("SEPA CKAN no devolvió metadatos válidos");
+  if (!metadata.success) throw new Error("El espejo no devolvió metadatos SEPA válidos");
 
   const resources = (metadata.result.resources ?? [])
-    .filter(resource => /\.zip(?:$|\?)/i.test(resource.url ?? "") && /sepa|lunes|martes|miercoles|miércoles|jueves|viernes|sabado|sábado|domingo/i.test(`${resource.name ?? ""} ${resource.url ?? ""}`))
-    .sort((a, b) => String(b.last_modified ?? b.metadata_modified ?? "").localeCompare(String(a.last_modified ?? a.metadata_modified ?? "")));
+    .filter(resource => /\.zip(?:$|\?)/i.test(resource.url ?? "") && resource.revision_id && resource.id)
+    .sort((a, b) => String(b.last_modified ?? "").localeCompare(String(a.last_modified ?? "")));
   const resource = resources[0];
-  if (!resource?.url) throw new Error("No se encontró el ZIP diario de SEPA");
+  if (!resource?.url) throw new Error("No se encontró el archivo diario de SEPA");
 
-  const outerZip = join(workDir, "sepa.zip");
-  await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", outerZip, resource.url], { maxBuffer: 10 * 1024 * 1024 });
+  const filename = basename(new URL(resource.url).pathname);
+  const mirrorUrl = `https://f004.backblazeb2.com/file/precios-justos-datasets/${resource.id}-revID-${resource.revision_id}-${filename}-repackaged.tar.zst`;
+  const archive = join(workDir, "sepa.tar.zst");
+  await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, mirrorUrl], { maxBuffer: 10 * 1024 * 1024 });
   const outerDir = join(workDir, "outer");
-  await extract(outerZip, outerDir);
+  await mkdir(outerDir, { recursive: true });
+  await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
 
   const counters = { read: 0, accepted: 0, rejected: 0 };
-  await processFolder(outerDir, { url: resource.url, modified: resource.last_modified ?? resource.metadata_modified }, counters);
+  await processFolder(outerDir, { url: mirrorUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
   let index = 0;
   for (const zip of nested) {
     const folder = join(workDir, `retailer-${index++}`);
     await extract(zip, folder);
-    await processFolder(folder, { url: resource.url, modified: resource.last_modified ?? resource.metadata_modified }, counters);
+    await processFolder(folder, { url: mirrorUrl, modified: resource.last_modified }, counters);
     await rm(folder, { recursive: true, force: true });
   }
 
