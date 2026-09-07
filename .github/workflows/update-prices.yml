@@ -7,6 +7,7 @@ on:
       - "update-san-juan.mjs"
       - "san-juan-products.json"
       - "verify-retailer-promotions.mjs"
+      - "notify-completed.mjs"
       - ".github/workflows/update-prices.yml"
   schedule:
     - cron: "30 13 * * *"
@@ -42,9 +43,6 @@ jobs:
           QUARANTINE_FILE: data/san-juan-quarantine.ndjson
           DESPENSA_INGEST_URL: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/prices/ingest
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_EMAIL: anibalpringles@hotmail.com
-          NOTIFY_FROM: ${{ vars.NOTIFY_FROM }}
           BATCH_SIZE: "75"
         run: node update-san-juan.mjs
 
@@ -55,6 +53,15 @@ jobs:
           RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
           PROMOTION_MAX_AGE_HOURS: "72"
         run: node verify-retailer-promotions.mjs
+
+      - name: Detectar cambios en promociones verificadas
+        id: changes
+        run: |
+          if git diff --quiet -- data/retailer-promotions-verified.json; then
+            echo "promotions_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "promotions_changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Guardar precios actualizados
         run: |
@@ -67,3 +74,13 @@ jobs:
             git commit -m "Actualizar precios de San Juan"
             git push
           fi
+
+      - name: Notificar cuando todo quedó cargado
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: anibalpringles@hotmail.com
+          NOTIFY_FROM: ${{ vars.NOTIFY_FROM }}
+          PROMOTIONS_CHANGED: ${{ steps.changes.outputs.promotions_changed }}
+          OUTPUT_FILE: data/san-juan.ndjson
+          RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
+        run: node notify-completed.mjs
