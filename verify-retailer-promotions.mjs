@@ -10,12 +10,19 @@ const maxAgeHours = Number(process.env.PROMOTION_MAX_AGE_HOURS ?? 72);
 const sources = [
   { id: "vea", chain: /vea/i, name: "Vea", url: "https://www.vea.com.ar/ofertas-y-catalogo" },
   { id: "changomas", chain: /chango|walmart|mas online/i, name: "ChangoMás", url: "https://www.masonline.com.ar/3195?map=productClusterIds" },
-  { id: "libertad", chain: /libertad/i, name: "Libertad", url: "https://www.hiperlibertad.com.ar/" },
+  { id: "libertad", chain: /libertad|la anonima/i, name: "Libertad / La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos" },
   { id: "carrefour", chain: /carrefour/i, name: "Carrefour", url: "https://www.carrefour.com.ar/promociones" }
 ];
 
 const normalize = value => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const htmlText = html => normalize(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " "));
+const dateWindows = text => {
+  const found = [...text.matchAll(/(?:del|desde el)\s+(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(?:al|hasta el)\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/gi)];
+  return found.map(match => ({
+    from: `${match[3]}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`,
+    to: `${match[6]}-${match[5].padStart(2, "0")}-${match[4].padStart(2, "0")}`
+  }));
+};
 const signature = item => normalize(`${item.product} ${item.brand ?? ""}`).split(" ").filter(word => word.length >= 4 && !["para","con","del","los","las","producto","unidad"].includes(word)).slice(0, 4);
 const recent = observedAt => Number.isFinite(new Date(observedAt).getTime()) && Date.now() - new Date(observedAt).getTime() <= maxAgeHours * 3600000;
 
@@ -33,6 +40,11 @@ for (const source of sources) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const body = await response.text();
     const text = htmlText(body);
+    const windows = dateWindows(body);
+    const today = new Date().toISOString().slice(0, 10);
+    const activeWindows = windows.filter(window => window.from <= today && window.to >= today);
+    const mentionsSanJuan = /san\s+juan/i.test(body);
+    const nationwide = /todo\s+el\s+pa[ií]s|todo\s+el\s+territorio/i.test(body);
     const matched = candidates.filter(item => {
       const ean = String(item.ean ?? "").replace(/\D/g, "");
       if (ean.length >= 8 && body.includes(ean)) return true;
@@ -47,6 +59,9 @@ for (const source of sources) {
       reachable: true,
       sepaPromotions: candidates.length,
       corroboratedPromotions: matched.length,
+      activeWindows,
+      mentionsSanJuan,
+      nationwide,
       status: matched.length ? "corroborated" : "reachable_without_product_match"
     });
   } catch (error) {
