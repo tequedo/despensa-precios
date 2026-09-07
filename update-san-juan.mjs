@@ -15,13 +15,14 @@ const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
 if (ingestEndpoint && !ingestToken) throw new Error("Falta PRICE_INGEST_TOKEN para cargar los precios en la aplicación");
 
 async function send(records) {
-  if (!ingestEndpoint || !records.length) return;
+  if (!ingestEndpoint || !records.length) return 0;
   const response = await fetch(ingestEndpoint, {
     method: "POST",
     headers: { authorization: `Bearer ${ingestToken}`, "content-type": "application/json" },
     body: JSON.stringify({ records })
   });
   if (!response.ok) throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);
+  return records.length;
 }
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
@@ -228,9 +229,13 @@ async function processFolder(folder, sourceInfo, counters) {
       };
       await appendFile(outputFile, JSON.stringify(record) + "\n");
       counters.accepted++;
+      batch.push(record);
+      if (batch.length >= batchSize) {
+        counters.ingested += await send(batch);
+        batch = [];
+      }
     });
-    await send(batch);
-    counters.ingested += batch.length;
+    counters.ingested += await send(batch);
   }
 }
 
@@ -264,7 +269,7 @@ try {
     sourceUrl = `https://f004.backblazeb2.com/file/precios-justos-datasets/${resource.id}-revID-${resource.revision_id}-${filename}-repackaged.tar.zst`;
     const archive = join(workDir, "sepa.tar.zst");
     await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, sourceUrl], { maxBuffer: 10 * 1024 * 1024 });
-    await execFileAsync("tar", ["--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
+    await execFileAsync("tar", ["--no-same-owner", "--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
   }
 
   const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, damagedArchives: 0 };
