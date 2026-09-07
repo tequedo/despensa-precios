@@ -37,6 +37,7 @@ jobs:
         env:
           PROVINCE_CODES: AR-J
           OUTPUT_FILE: data/san-juan.ndjson
+          PROMOTIONS_FILE: data/san-juan-promotions.json
           QUARANTINE_FILE: data/san-juan-quarantine.ndjson
           DESPENSA_INGEST_URL: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/prices/ingest
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
@@ -50,7 +51,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/san-juan.ndjson data/san-juan-quarantine.ndjson
+          git add data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
