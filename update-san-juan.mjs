@@ -11,6 +11,9 @@ const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-meta
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
+const resendApiKey = process.env.RESEND_API_KEY;
+const notifyEmail = process.env.NOTIFY_EMAIL;
+const notifyFrom = process.env.NOTIFY_FROM ?? "Despensa Inteligente <onboarding@resend.dev>";
 const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
 if (ingestEndpoint && !ingestToken) throw new Error("Falta PRICE_INGEST_TOKEN para cargar los precios en la aplicación");
 
@@ -23,6 +26,34 @@ async function send(records) {
   });
   if (!response.ok) throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);
   return records.length;
+}
+
+async function notifyArchive({ filename, status, accepted = 0, ingested = 0, detail = "" }) {
+  if (!resendApiKey || !notifyEmail) return false;
+  const ok = status === "processed";
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${resendApiKey}`,
+      "content-type": "application/json",
+      "idempotency-key": `sepa-${new Date().toISOString().slice(0, 10)}-${filename}-${status}`.replace(/[^a-zA-Z0-9_-]/g, "-").slice(0, 200)
+    },
+    body: JSON.stringify({
+      from: notifyFrom,
+      to: [notifyEmail],
+      subject: `${ok ? "SEPA cargado" : "SEPA con error"}: ${filename}`,
+      text: [
+        `Archivo: ${filename}`,
+        `Estado: ${ok ? "procesado y cargado" : "no pudo procesarse"}`,
+        `Registros de San Juan aceptados: ${accepted}`,
+        `Registros cargados en la app: ${ingested}`,
+        `Fecha y hora: ${new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/San_Juan" })}`,
+        detail ? `Detalle: ${detail}` : ""
+      ].filter(Boolean).join("\n")
+    })
+  });
+  if (!response.ok) throw new Error(`Resend ${response.status}: ${(await response.text()).slice(0, 300)}`);
+  return true;
 }
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
@@ -346,7 +377,7 @@ try {
     await execFileAsync("tar", ["--no-same-owner", "--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
   }
 
-  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0 };
+  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, notificationErrors: 0 };
   await processFolder(outerDir, { url: sourceUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
@@ -360,15 +391,34 @@ try {
   let index = 0;
   for (const zip of nested) {
     const folder = join(workDir, `retailer-${index++}`);
+    const beforeAccepted = counters.accepted;
+    const beforeIngested = counters.ingested;
     try {
       await extract(zip, folder);
       await processFolder(folder, { url: sourceUrl, modified: resource.last_modified }, counters);
+      await notifyArchive({
+        filename: basename(zip),
+        status: "processed",
+        accepted: counters.accepted - beforeAccepted,
+        ingested: counters.ingested - beforeIngested
+      }).catch(error => { counters.notificationErrors++; console.warn(`No se notificó ${basename(zip)}: ${error.message}`); });
     } catch (error) {
       counters.damagedArchives++;
       console.warn(`SEPA omitió archivo dañado: ${basename(zip)} (${error.message})`);
+      await notifyArchive({ filename: basename(zip), status: "failed", detail: error.message })
+        .catch(mailError => { counters.notificationErrors++; console.warn(`No se notificó el error de ${basename(zip)}: ${mailError.message}`); });
     } finally {
       await rm(folder, { recursive: true, force: true });
     }
+  }
+
+  if (!nested.length) {
+    await notifyArchive({
+      filename: manualZipUrl ? "sepa-manual.zip" : basename(new URL(resource.url).pathname),
+      status: "processed",
+      accepted: counters.accepted,
+      ingested: counters.ingested
+    }).catch(error => { counters.notificationErrors++; console.warn(`No se notificó el archivo SEPA: ${error.message}`); });
   }
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
