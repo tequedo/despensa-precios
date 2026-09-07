@@ -1,5 +1,5 @@
 import { createReadStream } from "node:fs";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { createInterface } from "node:readline";
 
 const resendApiKey = process.env.RESEND_API_KEY;
@@ -38,7 +38,8 @@ const priceCount = await countLines(pricesFile);
 const verified = JSON.parse(await readFile(promotionsFile, "utf8"));
 const promotionCount = verified.promotions?.length ?? 0;
 
-await send({
+try {
+  await send({
   subject: "SEPA cargado completamente en Despensa Inteligente",
   key: `sepa-final-${runDate}`,
   text: [
@@ -64,4 +65,11 @@ if (promotionsChanged) {
   });
 }
 
-console.log(JSON.stringify({ notified: true, priceCount, promotionCount, promotionsChanged }));
+  await writeFile("data/notification-status.json", JSON.stringify({ checkedAt: new Date().toISOString(), success: true, priceCount, promotionCount, promotionsChanged }, null, 2) + "\n");
+  console.log(JSON.stringify({ notified: true, priceCount, promotionCount, promotionsChanged }));
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  await writeFile("data/notification-status.json", JSON.stringify({ checkedAt: new Date().toISOString(), success: false, error: message }, null, 2) + "\n");
+  console.error(message);
+  process.exitCode = 1;
+}
