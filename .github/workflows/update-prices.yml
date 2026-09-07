@@ -6,6 +6,7 @@ on:
     paths:
       - "update-san-juan.mjs"
       - "san-juan-products.json"
+      - "verify-retailer-promotions.mjs"
       - ".github/workflows/update-prices.yml"
   schedule:
     - cron: "30 13 * * *"
@@ -46,6 +47,14 @@ jobs:
           NOTIFY_FROM: ${{ vars.NOTIFY_FROM }}
           BATCH_SIZE: "75"
         run: node update-san-juan.mjs
+
+      - name: Verificar promociones en páginas oficiales
+        env:
+          PROMOTIONS_FILE: data/san-juan-promotions.json
+          RETAILER_REPORT_FILE: data/retailer-promotion-sources.json
+          RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
+          PROMOTION_MAX_AGE_HOURS: "72"
+        run: node verify-retailer-promotions.mjs
 
       - name: Guardar precios actualizados
         run: |
