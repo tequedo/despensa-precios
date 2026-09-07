@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-09-07T14:58:16.942Z",
+  "generatedAt": "2026-09-07T15:06:20.824Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-09-07T14:58:16.139Z",
+      "checkedAt": "2026-09-07T15:04:17.715Z",
       "reachable": true,
+      "rendered": false,
       "sepaPromotions": 0,
       "corroboratedPromotions": 0,
       "activeWindows": [],
@@ -17,8 +18,9 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-09-07T14:58:16.423Z",
+      "checkedAt": "2026-09-07T15:04:18.371Z",
       "reachable": true,
+      "rendered": false,
       "sepaPromotions": 0,
       "corroboratedPromotions": 0,
       "activeWindows": [],
@@ -29,24 +31,217 @@
     {
       "retailer": "Libertad / La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-09-07T14:58:16.699Z",
-      "reachable": false,
-      "sepaPromotions": 0,
-      "corroboratedPromotions": 0,
-      "status": "unavailable",
-      "error": "HTTP 403"
-    },
-    {
-      "retailer": "Carrefour",
-      "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-09-07T14:58:16.941Z",
+      "checkedAt": "2026-09-07T15:04:27.762Z",
       "reachable": true,
-      "sepaPromotions": 91,
+      "rendered": true,
+      "sepaPromotions": 0,
       "corroboratedPromotions": 0,
       "activeWindows": [],
       "mentionsSanJuan": false,
       "nationwide": false,
       "status": "reachable_without_product_match"
+    },
+    {
+      "retailer": "Carrefour",
+      "url": "https://www.carrefour.com.ar/promociones",
+      "checkedAt": "2026-09-07T15:06:20.823Z",
+      "reachable": true,
+      "rendered": true,
+      "sepaPromotions": 91,
+      "corroboratedPromotions": 1,
+      "activeWindows": [
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        },
+        {
+          "from": "2026-09-01",
+          "to": "2026-09-08"
+        }
+      ],
+      "mentionsSanJuan": false,
+      "nationwide": true,
+      "status": "corroborated"
     }
   ]
 }
