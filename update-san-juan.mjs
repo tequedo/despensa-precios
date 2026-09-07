@@ -11,6 +11,9 @@ const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-meta
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
+const resendApiKey = process.env.RESEND_API_KEY;
+const notifyEmail = process.env.NOTIFY_EMAIL;
+const notifyFrom = process.env.NOTIFY_FROM ?? "Despensa Inteligente <onboarding@resend.dev>";
 const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
 if (ingestEndpoint && !ingestToken) throw new Error("Falta PRICE_INGEST_TOKEN para cargar los precios en la aplicación");
 
@@ -24,7 +27,35 @@ async function send(records) {
   if (!response.ok) throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);
   return records.length;
 }
+
+async function notifyCompleted({ resourceName, accepted = 0, ingested = 0, quarantined = 0 }) {
+  if (!resendApiKey || !notifyEmail) return false;
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${resendApiKey}`,
+      "content-type": "application/json",
+      "idempotency-key": `sepa-completo-${new Date().toISOString().slice(0, 10)}`
+    },
+    body: JSON.stringify({
+      from: notifyFrom,
+      to: [notifyEmail],
+      subject: "SEPA cargado completamente en Despensa Inteligente",
+      text: [
+        "La actualización completa de SEPA finalizó correctamente.",
+        `Recurso: ${resourceName}`,
+        `Registros de San Juan aceptados: ${accepted}`,
+        `Registros cargados en la app: ${ingested}`,
+        `Registros separados para revisión: ${quarantined}`,
+        `Fecha y hora: ${new Date().toLocaleString("es-AR", { timeZone: "America/Argentina/San_Juan" })}`
+      ].filter(Boolean).join("\n")
+    })
+  });
+  if (!response.ok) throw new Error(`Resend ${response.status}: ${(await response.text()).slice(0, 300)}`);
+  return true;
+}
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
+const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
 const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword + "(?:\\b|$)"));
@@ -37,6 +68,62 @@ function normalize(value) {
 function number(value) {
   const parsed = Number(String(value ?? "").replace(",", "."));
   return Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
+}
+
+const sanJuanLocalities = [
+  "san juan", "ciudad de san juan", "rawson", "rivadavia", "chimbas",
+  "santa lucia", "pocito", "caucete", "albardon", "angaco", "nueve de julio",
+  "9 de julio", "ullum", "zonda", "sarmiento", "jachal", "iglesia",
+  "calingasta", "valle fertil", "veinticinco de mayo", "25 de mayo",
+  "san martin"
+];
+const foreignLocalities = [
+  "jujuy", "palpala", "perico", "mendoza", "la rioja", "cordoba",
+  "san luis", "salta", "catamarca"
+];
+
+function geographicValidation(row) {
+  const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
+  if (!(provinceCodes.has(province) || province === "san juan" || province === "j")) {
+    return { accepted: false, reason: "province_not_san_juan" };
+  }
+  const locality = normalize(pick(row, ["sucursales_localidad", "sucursal_localidad", "localidad"]));
+  if (foreignLocalities.some(name => locality.includes(name))) {
+    return { accepted: false, reason: "foreign_locality" };
+  }
+  const latitudeText = pick(row, ["sucursales_latitud", "sucursal_latitud", "latitud"]);
+  const longitudeText = pick(row, ["sucursales_longitud", "sucursal_longitud", "longitud"]);
+  const latitude = Number(latitudeText);
+  const longitude = Number(longitudeText);
+  const hasLatitude = latitudeText !== "" && Number.isFinite(latitude);
+  const hasLongitude = longitudeText !== "" && Number.isFinite(longitude);
+  if (hasLatitude !== hasLongitude) return { accepted: false, reason: "incomplete_coordinates" };
+  if (hasLatitude && (latitude < -32.85 || latitude > -28.2 || longitude < -70.75 || longitude > -66.65)) {
+    return { accepted: false, reason: "coordinates_outside_san_juan" };
+  }
+  if (!hasLatitude && !sanJuanLocalities.some(name => locality.includes(name))) {
+    return { accepted: false, reason: "unverified_locality_without_coordinates" };
+  }
+  return { accepted: true };
+}
+
+function validDateOrToday(value) {
+  const candidate = String(value ?? "").slice(0, 10);
+  return /^\d{4}-\d{2}-\d{2}$/.test(candidate) && !Number.isNaN(new Date(`${candidate}T00:00:00Z`).getTime())
+    ? candidate
+    : new Date().toISOString().slice(0, 10);
+}
+
+function promotionExpired(conditions, validDate) {
+  const match = normalize(conditions).match(/hasta(?:\s+el)?\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (!match) return false;
+  const end = `${match[3]}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`;
+  return end < validDate;
+}
+
+async function quarantine(kind, reason, details, counters) {
+  counters.quarantined++;
+  await appendFile(quarantineFile, JSON.stringify({ kind, reason, details, detectedAt: new Date().toISOString() }) + "\n");
 }
 
 function parsePipe(line) {
@@ -101,18 +188,6 @@ function productKey(row) {
   ].map(String).join(":");
 }
 
-function isSanJuan(row) {
-  const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
-  if (!(provinceCodes.has(province) || province === "san juan" || province === "j")) return false;
-  const latitude = Number(pick(row, ["sucursales_latitud", "sucursal_latitud", "latitud"]));
-  const longitude = Number(pick(row, ["sucursales_longitud", "sucursal_longitud", "longitud"]));
-  if (Number.isFinite(latitude) && Number.isFinite(longitude)) {
-    return latitude >= -33.5 && latitude <= -28 && longitude >= -71 && longitude <= -66;
-  }
-  const locality = normalize(pick(row, ["sucursales_localidad", "sucursal_localidad", "localidad"]));
-  return !locality.includes("jujuy") && !locality.includes("palpala") && !locality.includes("perico");
-}
-
 async function filesBelow(root) {
   const found = [];
   for (const entry of await readdir(root, { withFileTypes: true })) {
@@ -149,11 +224,19 @@ async function processFolder(folder, sourceInfo, counters) {
 
   const branches = new Map();
   for (const file of branchFiles) {
-    await rows(file, row => {
-      if (isSanJuan(row)) {
+    await rows(file, async row => {
+      const validation = geographicValidation(row);
+      if (validation.accepted) {
         const key = [pick(row, ["id_comercio"]), pick(row, ["id_bandera"])].join("|");
         row._chain = chains.get(key) ?? "Comercio";
         branches.set(branchKey(row), row);
+      } else if (normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"])).includes("san juan")) {
+        await quarantine("store", validation.reason, {
+          externalId: branchKey(row),
+          locality: pick(row, ["sucursales_localidad", "sucursal_localidad", "localidad"]),
+          latitude: pick(row, ["sucursales_latitud", "sucursal_latitud", "latitud"]),
+          longitude: pick(row, ["sucursales_longitud", "sucursal_longitud", "longitud"])
+        }, counters);
       }
     });
   }
@@ -169,24 +252,43 @@ async function processFolder(folder, sourceInfo, counters) {
       const normalizedDescription = normalize(description);
       if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription))) return;
       const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
-      if (!listPrice || listPrice < 100) {
+      if (!listPrice || listPrice < 100 || listPrice > 10000000) {
         counters.rejected++;
+        await quarantine("price", "list_price_out_of_range", {
+          product: description,
+          store: branchKey(branch),
+          value: pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"])
+        }, counters);
         return;
       }
-      const promoPrice = number(pick(row, [
+      let promoPrice = number(pick(row, [
         "productos_precio_promocional",
         "productos_precio_promocional_1",
         "productos_precio_promocional1",
         "productos_precio_unitario_promo1",
         "precio_promocional"
       ]));
-      const promoConditions = pick(row, [
+      let promoConditions = pick(row, [
         "productos_leyenda_promocion",
         "productos_leyenda_promocion_1",
         "productos_leyenda_promocion1",
         "productos_leyenda_promo1",
         "leyenda_promocion"
       ]);
+      const validDate = validDateOrToday(pick(row, ["productos_fecha_actualizacion", "fecha_actualizacion"]));
+      if (promoPrice && (promoPrice < 100 || promoPrice > listPrice || promotionExpired(promoConditions, validDate))) {
+        counters.promotionsDiscarded++;
+        await quarantine("promotion", promotionExpired(promoConditions, validDate) ? "expired_promotion" : "invalid_promotion_price", {
+          product: description,
+          store: branchKey(branch),
+          listPrice,
+          promoPrice,
+          promoConditions,
+          validDate
+        }, counters);
+        promoPrice = undefined;
+        promoConditions = "";
+      }
       const ean = productKey(row);
       const record = {
         source: {
@@ -223,7 +325,7 @@ async function processFolder(folder, sourceInfo, counters) {
           promoConditions,
           promoKind: promoPrice ? "promotion" : "none",
           channel: "sucursal",
-          validDate: pick(row, ["productos_fecha_actualizacion", "fecha_actualizacion"], new Date().toISOString().slice(0, 10)).slice(0, 10),
+          validDate,
           observedAt: new Date().toISOString()
         }
       };
@@ -242,6 +344,8 @@ async function processFolder(folder, sourceInfo, counters) {
 try {
   await mkdir(dirname(outputFile), { recursive: true });
   await writeFile(outputFile, "");
+  await mkdir(dirname(quarantineFile), { recursive: true });
+  await writeFile(quarantineFile, "");
 
   let resource;
   let sourceUrl;
@@ -272,7 +376,7 @@ try {
     await execFileAsync("tar", ["--no-same-owner", "--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
   }
 
-  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, damagedArchives: 0 };
+  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, notificationErrors: 0 };
   await processFolder(outerDir, { url: sourceUrl, modified: resource.last_modified }, counters);
 
   const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
@@ -285,6 +389,10 @@ try {
   }
   let index = 0;
   for (const zip of nested) {
+    if ((await stat(zip)).size === 0) {
+      console.warn(`SEPA omitió marcador ZIP vacío: ${basename(zip)}`);
+      continue;
+    }
     const folder = join(workDir, `retailer-${index++}`);
     try {
       await extract(zip, folder);
@@ -298,6 +406,13 @@ try {
   }
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
+  if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
+  await notifyCompleted({
+    resourceName: resource.name ?? basename(new URL(resource.url).pathname),
+    accepted: counters.accepted,
+    ingested: counters.ingested,
+    quarantined: counters.quarantined
+  }).catch(error => { counters.notificationErrors++; console.warn(`No se notificó la actualización completa: ${error.message}`); });
   console.log(JSON.stringify({
     source: "SEPA - Precios Claros",
     resource: resource.name,
