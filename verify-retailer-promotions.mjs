@@ -1,6 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { mkdir } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+
+const execFileAsync = promisify(execFile);
 
 const inputFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.json";
 const reportFile = process.env.RETAILER_REPORT_FILE ?? "data/retailer-promotion-sources.json";
@@ -10,8 +14,8 @@ const maxAgeHours = Number(process.env.PROMOTION_MAX_AGE_HOURS ?? 72);
 const sources = [
   { id: "vea", chain: /vea/i, name: "Vea", url: "https://www.vea.com.ar/ofertas-y-catalogo" },
   { id: "changomas", chain: /chango|walmart|mas online/i, name: "ChangoMás", url: "https://www.masonline.com.ar/3195?map=productClusterIds" },
-  { id: "libertad", chain: /libertad|la anonima/i, name: "Libertad / La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos" },
-  { id: "carrefour", chain: /carrefour/i, name: "Carrefour", url: "https://www.carrefour.com.ar/promociones" }
+  { id: "libertad", chain: /libertad|la anonima/i, name: "Libertad / La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos", render: true },
+  { id: "carrefour", chain: /carrefour/i, name: "Carrefour", url: "https://www.carrefour.com.ar/promociones", render: true }
 ];
 
 const normalize = value => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -26,6 +30,39 @@ const dateWindows = text => {
 const signature = item => normalize(`${item.product} ${item.brand ?? ""}`).split(" ").filter(word => word.length >= 4 && !["para","con","del","los","las","producto","unidad"].includes(word)).slice(0, 4);
 const recent = observedAt => Number.isFinite(new Date(observedAt).getTime()) && Date.now() - new Date(observedAt).getTime() <= maxAgeHours * 3600000;
 
+async function renderedHtml(url) {
+  const browsers = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"];
+  let lastError;
+  for (const browser of browsers) {
+    try {
+      const { stdout } = await execFileAsync(browser, [
+        "--headless=new",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--virtual-time-budget=18000",
+        "--dump-dom",
+        url
+      ], { timeout: 45000, maxBuffer: 30 * 1024 * 1024 });
+      if (stdout?.trim()) return stdout;
+    } catch (error) {
+      lastError = error;
+      if (error?.code !== "ENOENT") break;
+    }
+  }
+  throw lastError ?? new Error("No hay un navegador Chromium disponible");
+}
+
+async function sourceHtml(source) {
+  if (source.render) return { body: await renderedHtml(source.url), rendered: true };
+  const response = await fetch(source.url, {
+    headers: { accept: "text/html,application/xhtml+xml", "user-agent": "Despensa-Inteligente-Promotion-Verifier/1.0" },
+    signal: AbortSignal.timeout(25000)
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return { body: await response.text(), rendered: false };
+}
+
 const input = JSON.parse(await readFile(inputFile, "utf8"));
 const accepted = [];
 const report = [];
@@ -33,12 +70,7 @@ const report = [];
 for (const source of sources) {
   const candidates = (input.promotions ?? []).filter(item => source.chain.test(item.chain ?? "") && recent(item.observedAt));
   try {
-    const response = await fetch(source.url, {
-      headers: { accept: "text/html,application/xhtml+xml", "user-agent": "Despensa-Inteligente-Promotion-Verifier/1.0" },
-      signal: AbortSignal.timeout(25000)
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const body = await response.text();
+    const { body, rendered } = await sourceHtml(source);
     const text = htmlText(body);
     const windows = dateWindows(body);
     const today = new Date().toISOString().slice(0, 10);
@@ -57,6 +89,7 @@ for (const source of sources) {
       url: source.url,
       checkedAt: new Date().toISOString(),
       reachable: true,
+      rendered,
       sepaPromotions: candidates.length,
       corroboratedPromotions: matched.length,
       activeWindows,
