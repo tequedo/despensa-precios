@@ -389,6 +389,10 @@ try {
   }
   let index = 0;
   for (const zip of nested) {
+    if ((await stat(zip)).size === 0) {
+      console.warn(`SEPA omitió marcador ZIP vacío: ${basename(zip)}`);
+      continue;
+    }
     const folder = join(workDir, `retailer-${index++}`);
     try {
       await extract(zip, folder);
@@ -402,7 +406,7 @@ try {
   }
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
-  if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP no pudieron procesarse`);
+  if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
   await notifyCompleted({
     resourceName: resource.name ?? basename(new URL(resource.url).pathname),
     accepted: counters.accepted,
