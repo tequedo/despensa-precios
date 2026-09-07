@@ -56,6 +56,8 @@ async function notifyCompleted({ resourceName, accepted = 0, ingested = 0, quara
 }
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
+const promotionsFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.json";
+const promotionChains = ["vea", "chango mas", "changomas", "libertad", "carrefour"];
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
 const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword + "(?:\\b|$)"));
@@ -126,6 +128,21 @@ async function quarantine(kind, reason, details, counters) {
   await appendFile(quarantineFile, JSON.stringify({ kind, reason, details, detectedAt: new Date().toISOString() }) + "\n");
 }
 
+function promotionDetails(promoPrice, conditions) {
+  const text = String(conditions ?? "").trim();
+  const normalized = normalize(text);
+  const nxm = normalized.match(/(?:^|\\b)(\\d+)\\s*(?:x|por)\\s*(\\d+)(?:\\b|$)/);
+  const percent = normalized.match(/(\\d+(?:[.,]\\d+)?)\\s*%/);
+  const secondUnit = normalized.match(/(\\d+(?:[.,]\\d+)?)\\s*%.*(?:segunda|2da|2\\.?a)\\s+unidad/);
+  const cap = normalized.match(/tope(?:\\s+de)?\\s*\\$?\\s*([\\d.]+(?:,\\d+)?)/);
+  const requiredBenefit = /(tarjeta|banco|billetera|mercado pago|modo|cuenta dni|jubilad|anses)/.test(normalized) ? text : "";
+  const common = { requiredBenefit, benefitLabel: requiredBenefit, discountCap: cap ? number(cap[1].replace(/\\./g, "")) : undefined };
+  if (nxm && Number(nxm[1]) > Number(nxm[2])) return { promoKind: "nxm", buyQuantity: Number(nxm[1]), payQuantity: Number(nxm[2]), ...common };
+  if (secondUnit) return { promoKind: "second_unit", discountPercent: number(secondUnit[1]) ?? 0, ...common };
+  if (percent) return { promoKind: "percent", discountPercent: number(percent[1]) ?? 0, ...common };
+  return { promoKind: promoPrice ? "promotion" : "none", ...common };
+}
+
 function parsePipe(line) {
   const values = [];
   let value = "";
@@ -161,6 +178,11 @@ async function rows(file, handler) {
     headers.forEach((header, index) => { row[header] = values[index] ?? ""; });
     await handler(row);
   }
+}
+
+async function rowsFromNdjson(file, handler) {
+  const input = createInterface({ input: createReadStream(file), crlfDelay: Infinity });
+  for await (const line of input) if (line.trim()) await handler(JSON.parse(line));
 }
 
 function pick(row, names, fallback = "") {
@@ -289,6 +311,7 @@ async function processFolder(folder, sourceInfo, counters) {
         promoPrice = undefined;
         promoConditions = "";
       }
+      const promotion = promotionDetails(promoPrice, promoConditions);
       const ean = productKey(row);
       const record = {
         source: {
@@ -323,7 +346,7 @@ async function processFolder(folder, sourceInfo, counters) {
           listPrice,
           promoPrice,
           promoConditions,
-          promoKind: promoPrice ? "promotion" : "none",
+          ...promotion,
           channel: "sucursal",
           validDate,
           observedAt: new Date().toISOString()
@@ -407,6 +430,33 @@ try {
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
+  const promotionRows = [];
+  await rowsFromNdjson(outputFile, record => {
+    const chain = normalize(record.store?.chain);
+    if (promotionChains.some(name => chain.includes(name)) && (record.price?.promoPrice || record.price?.promoConditions)) promotionRows.push(record);
+  });
+  const uniquePromotions = new Map();
+  for (const record of promotionRows) {
+    const key = [record.store.externalId, record.product.ean, record.price.promoPrice ?? "", normalize(record.price.promoConditions)].join("|");
+    uniquePromotions.set(key, record);
+  }
+  const promotions = [...uniquePromotions.values()].map(record => ({
+    chain: record.store.chain, branch: record.store.branch, locality: record.store.locality,
+    ean: record.product.ean, product: record.product.name, brand: record.product.brand,
+    listPrice: record.price.listPrice, promoPrice: record.price.promoPrice,
+    conditions: record.price.promoConditions, promoKind: record.price.promoKind,
+    buyQuantity: record.price.buyQuantity, payQuantity: record.price.payQuantity,
+    discountPercent: record.price.discountPercent, requiredBenefit: record.price.requiredBenefit,
+    discountCap: record.price.discountCap, validDate: record.price.validDate,
+    observedAt: record.price.observedAt, source: record.source.verificationUrl
+  }));
+  await mkdir(dirname(promotionsFile), { recursive: true });
+  await writeFile(promotionsFile, JSON.stringify({
+    generatedAt: new Date().toISOString(), scope: "San Juan",
+    source: "SEPA - Precios Claros",
+    verificationUrl: "https://datos.produccion.gob.ar/dataset/sepa-precios",
+    chains: [...new Set(promotions.map(item => item.chain))].sort(), promotions
+  }, null, 2) + "\n");
   await notifyCompleted({
     resourceName: resource.name ?? basename(new URL(resource.url).pathname),
     accepted: counters.accepted,
@@ -419,7 +469,9 @@ try {
     modified: resource.last_modified ?? resource.metadata_modified,
     scope: "San Juan",
     ...counters,
-    outputFile
+    outputFile,
+    promotionsFile,
+    verifiedPromotions: promotions.length
   }));
 } finally {
   await rm(workDir, { recursive: true, force: true });
