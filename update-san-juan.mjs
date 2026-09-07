@@ -131,12 +131,12 @@ async function quarantine(kind, reason, details, counters) {
 function promotionDetails(promoPrice, conditions) {
   const text = String(conditions ?? "").trim();
   const normalized = normalize(text);
-  const nxm = normalized.match(/(?:^|\\b)(\\d+)\\s*(?:x|por)\\s*(\\d+)(?:\\b|$)/);
-  const percent = normalized.match(/(\\d+(?:[.,]\\d+)?)\\s*%/);
-  const secondUnit = normalized.match(/(\\d+(?:[.,]\\d+)?)\\s*%.*(?:segunda|2da|2\\.?a)\\s+unidad/);
-  const cap = normalized.match(/tope(?:\\s+de)?\\s*\\$?\\s*([\\d.]+(?:,\\d+)?)/);
+  const nxm = normalized.match(/(?:^|\b)(\d+)\s*(?:x|por)\s*(\d+)(?:\b|$)/);
+  const percent = normalized.match(/(\d+(?:[.,]\d+)?)\s*%/);
+  const secondUnit = normalized.match(/(\d+(?:[.,]\d+)?)\s*%.*(?:segunda|2da|2\.?a)\s+unidad/);
+  const cap = normalized.match(/tope(?:\s+de)?\s*\$?\s*([\d.]+(?:,\d+)?)/);
   const requiredBenefit = /(tarjeta|banco|billetera|mercado pago|modo|cuenta dni|jubilad|anses)/.test(normalized) ? text : "";
-  const common = { requiredBenefit, benefitLabel: requiredBenefit, discountCap: cap ? number(cap[1].replace(/\\./g, "")) : undefined };
+  const common = { requiredBenefit, benefitLabel: requiredBenefit, discountCap: cap ? number(cap[1].replace(/\./g, "")) : undefined };
   if (nxm && Number(nxm[1]) > Number(nxm[2])) return { promoKind: "nxm", buyQuantity: Number(nxm[1]), payQuantity: Number(nxm[2]), ...common };
   if (secondUnit) return { promoKind: "second_unit", discountPercent: number(secondUnit[1]) ?? 0, ...common };
   if (percent) return { promoKind: "percent", discountPercent: number(percent[1]) ?? 0, ...common };
