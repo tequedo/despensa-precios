@@ -76,6 +76,7 @@ jobs:
           fi
 
       - name: Notificar cuando todo quedó cargado
+        continue-on-error: true
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_EMAIL: anibalpringles@hotmail.com
@@ -84,3 +85,14 @@ jobs:
           OUTPUT_FILE: data/san-juan.ndjson
           RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
         run: node notify-completed.mjs
+
+      - name: Guardar diagnóstico de notificación
+        if: always()
+        run: |
+          if [ -f data/notification-status.json ]; then
+            git add data/notification-status.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Actualizar estado de notificación"
+              git push
+            fi
+          fi
