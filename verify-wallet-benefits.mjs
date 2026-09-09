@@ -228,7 +228,9 @@ function numericDate(value) {
 }
 
 const moneyValue = (value) => {
-  const normalized = String(value ?? "").replace(/\./g, "").replace(",", ".");
+  const raw = String(value ?? "").trim();
+  if (!raw) return null;
+  const normalized = raw.replace(/\./g, "").replace(",", ".");
   const parsed = Number(normalized);
   return Number.isFinite(parsed) ? parsed : null;
 };
@@ -375,8 +377,13 @@ export function parseChangoBenefits(
 }
 
 function carrefourDays(text) {
-  if (/TODOS LOS DIAS/.test(text)) return [0, 1, 2, 3, 4, 5, 6];
-  return DAY_NAMES.filter(([name]) => new RegExp(`\\b${name}S?\\b`).test(text)).map(([, day]) => day);
+  const headerEnd = text.indexOf("COMPRANDO EN");
+  const header = headerEnd >= 0 ? text.slice(0, headerEnd) : text.slice(0, 300);
+  if (/TODOS LOS DIAS/.test(header)) return [0, 1, 2, 3, 4, 5, 6];
+  const headerDays = DAY_NAMES.filter(([name]) => new RegExp(`\\b${name}S?\\b`).test(header)).map(([, day]) => day);
+  if (headerDays.length) return headerDays;
+  const legalDays = text.match(/(?:LOS DIAS|VALIDO TODOS LOS)\s+([^.]*)\s+(?:HASTA|DE)\b/)?.[1] ?? "";
+  return DAY_NAMES.filter(([name]) => new RegExp(`\\b${name}S?\\b`).test(legalDays)).map(([, day]) => day);
 }
 
 function carrefourValidity(text) {
@@ -760,7 +767,7 @@ async function run() {
               : "public_page"),
         sourceRecords: structured?.sourceRecords ?? structured?.promotions.length ?? null,
         failedSourceRecords: structured?.failedRecords ?? 0,
-        officialEntityId: structured?.mercadoPago.id ?? null,
+        officialEntityId: structured?.mercadoPago?.id ?? null,
         mercadoPagoMentions: mentions,
         contentHash: hash(compact(text)),
         extractedCandidates: found.length,

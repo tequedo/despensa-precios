@@ -90,7 +90,8 @@ test("bloquea el descuento de Carrefour si sus términos contradicen el uso de l
       Beneficio válido los días viernes hasta el 30/09/2026 mediante el escaneo del código QR
       con la app de Mercado Pago. Medio de pago dinero en cuenta. El beneficio consiste en un
       10% de descuento sin tope. Todas las sucursales de Carrefour Maxi. No válido para
-      www.carrefour.com.ar. No incluye carnicería, frutas y verduras, aceites comestibles.
+      www.carrefour.com.ar. No incluye carnicería, frutas y verduras, aceites comestibles
+      ni productos de precio súper bajo todos los días.
       Promoción no válida para compras en cuotas, tarjetas emitidas fuera de Argentina,
       operaciones en moneda extranjera ni compras abonadas con la aplicación de Mercado Pago.
     `,
@@ -98,6 +99,9 @@ test("bloquea el descuento de Carrefour si sus términos contradicen el uso de l
   );
   assert.equal(candidates[0].status, "conflict");
   assert.equal(candidates[0].calculationEligible, false);
+  assert.deepEqual(candidates[0].daysOfWeek, [5]);
+  assert.equal(candidates[0].minimumPurchase, null);
+  assert.equal(candidates[0].capAmount, null);
   assert.match(candidates[0].reasons.join(" "), /exige la app/i);
 });
 
