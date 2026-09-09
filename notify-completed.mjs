@@ -65,7 +65,6 @@ try {
     "Los archivos se descargaron, descomprimieron, analizaron y depuraron.",
     "Los precios de San Juan ya quedaron cargados en la aplicación.",
     `Registros cargados: ${priceCount}`,
-    `Promociones verificadas vigentes: ${promotionCount}`,
   ]);
 
   await writeFile(
