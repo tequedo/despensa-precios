@@ -1,0 +1,69 @@
+name: Verificar beneficios de billeteras
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "verify-wallet-benefits.mjs"
+      - "tests/wallet-benefits.test.mjs"
+      - "package.json"
+      - ".github/workflows/update-wallet-benefits.yml"
+  schedule:
+    # 09:15 de Argentina (UTC-3).
+    - cron: "15 12 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: beneficios-billeteras
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar navegador para páginas dinámicas
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+          install-dependencies: true
+
+      - name: Verificar código y reglas estrictas
+        run: npm run check
+
+      - name: Revisar Mercado Pago y páginas oficiales
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          WALLET_SOURCE_REPORT_FILE: data/wallet-benefit-sources.json
+          WALLET_CANDIDATES_FILE: data/wallet-benefit-candidates.json
+          WALLET_VERIFIED_FILE: data/wallet-benefits-verified.json
+        run: node verify-wallet-benefits.mjs
+
+      - name: Guardar resultados auditables
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/wallet-benefit-sources.json \
+            data/wallet-benefit-candidates.json \
+            data/wallet-benefits-verified.json
+          if git diff --cached --quiet; then
+            echo "No hubo cambios en los beneficios."
+            exit 0
+          fi
+          git commit -m "Actualizar beneficios de billeteras"
+          git pull --rebase origin main
+          git push
