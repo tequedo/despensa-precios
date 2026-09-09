@@ -626,30 +626,40 @@ function carrefourRecordIds(html) {
   ];
 }
 
-function stringLeaves(value, output = []) {
-  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
-    output.push(String(value));
-  } else if (Array.isArray(value)) {
-    for (const item of value) stringLeaves(item, output);
-  } else if (value && typeof value === "object") {
-    for (const item of Object.values(value)) stringLeaves(item, output);
+export function extractCarrefourPromotionCards(html) {
+  const source = String(html ?? "");
+  const startPattern = /<div\b[^>]*class=(?:"[^"]*-cardBox(?:\s[^"]*)?"|'[^']*-cardBox(?:\s[^']*)?')[^>]*>/gi;
+  const cards = [];
+  let startMatch;
+  while ((startMatch = startPattern.exec(source))) {
+    const tagPattern = /<div\b[^>]*>|<\/div\s*>/gi;
+    tagPattern.lastIndex = startPattern.lastIndex;
+    let depth = 1;
+    let end = source.length;
+    let tagMatch;
+    while ((tagMatch = tagPattern.exec(source))) {
+      if (/^<\/div/i.test(tagMatch[0])) depth -= 1;
+      else depth += 1;
+      if (depth === 0) {
+        end = tagPattern.lastIndex;
+        break;
+      }
+    }
+    if (depth !== 0) break;
+    const cardHtml = source.slice(startMatch.index, end);
+    const text = htmlToText(cardHtml);
+    const summary = text.split(/VER LEGAL/i, 1)[0];
+    const normalizedText = parsingText(text);
+    const positiveLegal = /(?:PAGOS REALIZADOS|PAGANDO) A TRAVES DEL SERVICIO DE PROCESAMIENTO DE PAGOS DE MERCADO PAGO/.test(normalizedText);
+    const ids = carrefourRecordIds(cardHtml);
+    cards.push({
+      id: ids[0] ?? null,
+      text,
+      isMercadoPago: /MERCADO\s*PAGO/i.test(summary) || positiveLegal,
+    });
+    startPattern.lastIndex = end;
   }
-  return output;
-}
-
-async function carrefourDocument(origin, id) {
-  const response = await fetch(
-    `${origin}/api/dataentities/BP/documents/${id}?_fields=_all`,
-    {
-      headers: {
-        accept: "application/json",
-        "user-agent": "Despensa-Inteligente-Benefits-Verifier/1.0",
-      },
-      signal: AbortSignal.timeout(30000),
-    },
-  );
-  if (!response.ok) throw new Error(`Carrefour Master Data respondió HTTP ${response.status}`);
-  return response.json();
+  return cards;
 }
 
 async function carrefourStructuredData(source, checkedAt) {
@@ -668,34 +678,22 @@ async function carrefourStructuredData(source, checkedAt) {
     // La carga renderizada de abajo es la segunda vía oficial.
   }
 
-  let ids = carrefourRecordIds(pageHtml);
-  if (!ids.length) {
+  let cards = extractCarrefourPromotionCards(pageHtml);
+  if (!cards.length) {
     pageHtml = await renderedHtml(source.url);
     rendered = true;
-    ids = carrefourRecordIds(pageHtml);
+    cards = extractCarrefourPromotionCards(pageHtml);
   }
-  if (!ids.length) {
-    throw new Error("Carrefour cargó la página, pero no expuso registros públicos de promociones BP.");
-  }
-
-  const origin = new URL(source.url).origin;
-  const settled = await Promise.allSettled(ids.map((id) => carrefourDocument(origin, id)));
-  const records = settled
-    .filter((result) => result.status === "fulfilled")
-    .map((result) => result.value);
-  if (!records.length) {
-    const firstError = settled.find((result) => result.status === "rejected");
-    throw firstError?.reason ?? new Error("No se pudieron recuperar los registros públicos de Carrefour.");
+  if (!cards.length) {
+    throw new Error("Carrefour cargó la página, pero no expuso tarjetas de promociones verificables.");
   }
 
-  const mercadoPagoRecords = records.filter((record) =>
-    /MERCADO ?PAGO/.test(parsingText(stringLeaves(record).join(" "))),
-  );
+  const mercadoPagoRecords = cards.filter((card) => card.isMercadoPago);
   const parsed = mercadoPagoRecords.flatMap((record) =>
-    parseCarrefourBenefits(stringLeaves(record).join(" "), {
+    parseCarrefourBenefits(record.text, {
       sourceUrl: source.url,
       checkedAt,
-      recordId: record.id ?? null,
+      recordId: record.id,
     }),
   );
   const unique = [
@@ -705,8 +703,9 @@ async function carrefourStructuredData(source, checkedAt) {
     promotions: mercadoPagoRecords,
     candidates: unique,
     rendered,
-    sourceRecords: ids.length,
-    failedRecords: settled.filter((result) => result.status === "rejected").length,
+    sourceRecords: cards.length,
+    failedRecords: 0,
+    accessMethod: rendered ? "rendered_official_promotion_cards" : "official_promotion_cards",
   };
 }
 
@@ -754,13 +753,11 @@ async function run() {
         checkedAt,
         reachable: true,
         rendered,
-        accessMethod: source.structured === "carrefour_vtex"
-          ? "public_page_and_structured_records"
-          : structured
+        accessMethod: structured?.accessMethod ?? (structured
             ? "public_structured_data"
             : rendered
               ? "rendered_public_page"
-              : "public_page",
+              : "public_page"),
         sourceRecords: structured?.sourceRecords ?? structured?.promotions.length ?? null,
         failedSourceRecords: structured?.failedRecords ?? 0,
         officialEntityId: structured?.mercadoPago.id ?? null,

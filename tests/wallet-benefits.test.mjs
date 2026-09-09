@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   htmlToText,
+  extractCarrefourPromotionCards,
   parseCarrefourBenefits,
   parseChangoBenefits,
 } from "../verify-wallet-benefits.mjs";
@@ -113,4 +114,27 @@ test("bloquea las cuotas de Carrefour si el encabezado y el legal mencionan mese
   assert.equal(candidates[0].status, "conflict");
   assert.equal(candidates[0].calculationEligible, false);
   assert.match(candidates[0].reasons.join(" "), /meses distintos/i);
+});
+
+test("separa las tarjetas oficiales de Carrefour y evita falsos positivos en los legales", () => {
+  const cards = extractCarrefourPromotionCards(`
+    <div class="valtech-carrefourar-bank-promotions-0-x-cardBox">
+      <div><img src="/api/dataentities/BP/documents/b5821964-430c-44e9-90d2-17fee264f019/img_card/attachments/mercadopago.png"></div>
+      <div>15% con Mercado Pago</div><div>Ver legal</div><div>No válido con otra billetera.</div>
+    </div>
+    <div class="valtech-carrefourar-bank-promotions-0-x-cardBox">
+      <div><img src="/api/dataentities/BP/documents/110bec67-2e8a-4e40-84ca-3302e0e42ff8/img_card/attachments/banco.png"></div>
+      <div>20% con Carrefour Banco</div><div>Ver legal</div><div>No aplica mediante Mercado Pago.</div>
+    </div>
+    <div class="valtech-carrefourar-bank-promotions-0-x-cardBox">
+      <div><img src="/api/dataentities/BP/documents/0c9b6cc3-9b6f-11ef-b37f-9e3aeda600bd/img_card/attachments/mercado-pago.webp"></div>
+      <div>15% con dinero en cuenta</div><div>Ver legal</div>
+      <div>Para pagos realizados a través del servicio de procesamiento de pagos de Mercado Pago.</div>
+    </div>
+  `);
+  assert.equal(cards.length, 3);
+  assert.equal(cards[0].id, "b5821964-430c-44e9-90d2-17fee264f019");
+  assert.equal(cards[0].isMercadoPago, true);
+  assert.equal(cards[1].isMercadoPago, false);
+  assert.equal(cards[2].isMercadoPago, true);
 });
