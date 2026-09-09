@@ -1,25 +1,6 @@
 {
-  "generatedAt": "2026-09-08T13:41:19.056Z",
+  "generatedAt": "2026-09-09T09:33:48.579Z",
   "scope": "San Juan",
   "rule": "Coincidencia entre SEPA reciente y página oficial de la cadena",
-  "promotions": [
-    {
-      "chain": "Hipermercado Carrefour",
-      "branch": "San Juan",
-      "locality": "San Juan",
-      "ean": "sepa:10:1:7790387013627",
-      "product": "YERBA MATE C PALO ORIG CONTROL TARAGUI X 500 G",
-      "brand": "TARAGUI",
-      "listPrice": 2459,
-      "promoPrice": 2190,
-      "conditions": "Promo A valida desde el 01/09/2026 hasta 08/09/2026",
-      "promoKind": "promotion",
-      "requiredBenefit": "",
-      "validDate": "2026-09-08",
-      "observedAt": "2026-09-08T13:37:47.472Z",
-      "source": "https://datos.produccion.gob.ar/dataset/sepa-precios",
-      "retailerSource": "https://www.carrefour.com.ar/promociones",
-      "corroboratedAt": "2026-09-08T13:41:19.055Z"
-    }
-  ]
+  "promotions": []
 }
