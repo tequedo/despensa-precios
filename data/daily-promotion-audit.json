@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-09T18:51:26.836Z",
+  "localDate": "2026-09-09",
+  "timezone": "America/Argentina/San_Juan",
+  "status": "completed_with_warnings",
+  "summary": {
+    "officialSourcesChecked": 11,
+    "officialSourcesReachable": 11,
+    "sourcesWithLimitations": 4,
+    "sepaProductPromotionCandidates": 160,
+    "exactProductPromotionsCorroborated": 0,
+    "generalBenefitsPublishedInOfficialSources": 6,
+    "fullySpecifiedGeneralBenefits": 1,
+    "calculationEligibleBenefits": 0,
+    "changedSincePrevious": true,
+    "comparisonBasis": "Primera auditoría integral; se establece la línea de base."
+  },
+  "sepa": {
+    "source": "SEPA - Precios Claros",
+    "sourceUrl": "https://datos.produccion.gob.ar/dataset/sepa-precios",
+    "workflowCompleted": true,
+    "workflowEvidence": "data/notification-status.json",
+    "workflowCheckedAt": "2026-09-09T13:40:35.377Z",
+    "recordsLoaded": 22643,
+    "dataCommittedAt": "2026-09-09T13:40:29Z",
+    "promotionsGeneratedAt": "2026-09-09T13:39:24.057Z",
+    "promotionCandidateChains": [
+      "Hipermercado Carrefour",
+      "La Anonima"
+    ],
+    "promotionCandidatesByChain": {
+      "Hipermercado Carrefour": 41,
+      "La Anonima": 119
+    }
+  },
+  "sources": [
+    {
+      "id": "sepa",
+      "name": "SEPA - Precios Claros",
+      "category": "government_data",
+      "url": "https://datos.produccion.gob.ar/dataset/sepa-precios",
+      "checkedAt": "2026-09-09T13:40:35.377Z",
+      "reachable": true,
+      "status": "completed",
+      "note": "Datos de San Juan cargados y depurados."
+    },
+    {
+      "id": "vea_official",
+      "name": "Vea — ofertas y descuentos",
+      "category": "retailer",
+      "url": "https://www.vea.com.ar/ofertas-y-catalogo",
+      "checkedAt": "2026-09-09T13:39:24.768Z",
+      "reachable": true,
+      "status": "reachable_without_exact_product_match",
+      "note": "El verificador diario accedió; una segunda lectura pública agotó el tiempo de espera."
+    },
+    {
+      "id": "changomas_official",
+      "name": "ChangoMás — ofertas",
+      "category": "retailer",
+      "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
+      "checkedAt": "2026-09-09T13:39:26.012Z",
+      "reachable": true,
+      "status": "reachable_without_exact_product_match"
+    },
+    {
+      "id": "la_anonima_official",
+      "name": "La Anónima — catálogos",
+      "category": "retailer",
+      "url": "https://www.laanonima.com.ar/empresa/catalogos",
+      "checkedAt": "2026-09-09T13:39:38.024Z",
+      "reachable": true,
+      "status": "reachable_without_exact_product_match",
+      "note": "El verificador con navegador accedió; la lectura pública secundaria respondió 403."
+    },
+    {
+      "id": "carrefour_official",
+      "name": "Carrefour — promociones",
+      "category": "retailer",
+      "url": "https://www.carrefour.com.ar/promociones",
+      "checkedAt": "2026-09-09T13:40:29.225Z",
+      "reachable": true,
+      "status": "reachable_without_exact_product_match",
+      "note": "Detectó vigencias 09/09/2026–15/09/2026, sin coincidencias exactas por EAN."
+    },
+    {
+      "id": "banco_san_juan_supermercados",
+      "name": "Banco San Juan — supermercados",
+      "category": "bank",
+      "url": "https://www.bancosanjuan.com/beneficios-supermercados",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "reachable": true,
+      "status": "reachable_with_relevant_benefits"
+    },
+    {
+      "id": "modo_vea",
+      "name": "MODO — Vea",
+      "category": "wallet",
+      "url": "https://www.modo.com.ar/promos/vea-septiembre26",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "reachable": true,
+      "status": "reachable_with_relevant_benefit",
+      "note": "La ficha pública confirma 20% y tope de $25.000 por banco por mes; el resto de los legales no quedó completamente expuesto."
+    },
+    {
+      "id": "mercado_pago_supermercados",
+      "name": "Mercado Pago — supermercados",
+      "category": "wallet",
+      "url": "https://promociones.mercadopago.com.ar/tipocat/supermercado/",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "reachable": true,
+      "status": "reachable_with_public_catalog_limitations",
+      "note": "No se consultaron promociones personalizadas ni se eludió inicio de sesión."
+    },
+    {
+      "id": "changomas_payment_terms",
+      "name": "ChangoMás — promociones bancarias",
+      "category": "retailer_terms",
+      "url": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "reachable": true,
+      "status": "reachable_with_verified_benefit",
+      "note": "Términos recuperados desde datos públicos estructurados del comercio."
+    },
+    {
+      "id": "visa_promotions",
+      "name": "Visa Argentina — promociones",
+      "category": "card_network",
+      "url": "https://www.visa.com.ar/es_ar/promociones/",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "reachable": true,
+      "status": "no_qualifying_supermarket_offer_with_complete_public_terms"
+    },
+    {
+      "id": "mastercard_benefits",
+      "name": "Mastercard Argentina — beneficios",
+      "category": "card_network",
+      "url": "https://www.mastercard.com.ar/",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "reachable": true,
+      "status": "no_qualifying_supermarket_offer_with_complete_public_terms"
+    }
+  ],
+  "productPromotions": {
+    "rule": "Solo se corrobora una promoción si coinciden cadena, sucursal, EAN y condiciones entre SEPA y la fuente oficial de la cadena.",
+    "candidates": 160,
+    "corroborated": []
+  },
+  "generalBenefits": [
+    {
+      "id": "mercado-pago-changomas-2026-09",
+      "provider": "Mercado Pago",
+      "chain": "ChangoMás",
+      "title": "15% con Mercado Pago los martes",
+      "discountPercent": 15,
+      "days": [
+        "martes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "paymentMethod": "QR desde la app de Mercado Pago",
+      "cap": "Sin tope",
+      "minimumPurchase": null,
+      "channels": [
+        "sucursales",
+        "Más Online con pago online"
+      ],
+      "geographicScope": "Todas las sucursales de HiperChangoMás, ChangoMás y MasGo",
+      "exclusionsVerified": true,
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "verificationStatus": "verified",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los términos contienen exclusiones extensas por categorías y marcas que todavía no se pueden validar renglón por renglón."
+    },
+    {
+      "id": "banco-san-juan-modo-changomas-2026-09",
+      "provider": "Banco San Juan + MODO",
+      "chain": "ChangoMás",
+      "title": "20% de descuento en ChangoMás",
+      "discountPercent": 20,
+      "days": [
+        "lunes"
+      ],
+      "validFrom": "2026-06-01",
+      "validTo": "2026-09-29",
+      "paymentMethod": "MODO con Tarjeta de Crédito Banco San Juan",
+      "cap": null,
+      "minimumPurchase": null,
+      "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "verificationStatus": "officially_published_informational",
+      "calculationEligible": false,
+      "calculationBlockedReason": "La ficha general no expone tope, compra mínima, alcance de sucursales ni exclusiones completas."
+    },
+    {
+      "id": "banco-san-juan-modo-vea-2026-09",
+      "provider": "Banco San Juan + MODO",
+      "chain": "Vea",
+      "title": "20% de descuento en Vea",
+      "discountPercent": 20,
+      "days": [
+        "viernes"
+      ],
+      "validFrom": "2026-08-01",
+      "validTo": "2026-09-30",
+      "paymentMethod": "MODO con Tarjeta de Crédito Banco San Juan",
+      "cap": "$25.000 por banco por mes según la ficha pública de MODO",
+      "minimumPurchase": null,
+      "sourceUrls": [
+        "https://www.bancosanjuan.com/beneficios-supermercados",
+        "https://www.modo.com.ar/promos/vea-septiembre26"
+      ],
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "verificationStatus": "officially_published_informational",
+      "calculationEligible": false,
+      "calculationBlockedReason": "No se recuperaron en forma completa compra mínima, exclusiones y locales adheridos."
+    },
+    {
+      "id": "banco-san-juan-modo-la-anonima-2026-10",
+      "provider": "Banco San Juan + MODO",
+      "chain": "La Anónima",
+      "title": "20% de descuento en La Anónima",
+      "discountPercent": 20,
+      "additionalClientDiscount": "La página anuncia 10% adicional para clientes, sin detalle suficiente para calcularlo.",
+      "days": [
+        "viernes",
+        "sábado"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-10-31",
+      "paymentMethod": "MODO con Tarjeta de Crédito Banco San Juan",
+      "cap": null,
+      "minimumPurchase": null,
+      "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "verificationStatus": "officially_published_informational",
+      "calculationEligible": false,
+      "calculationBlockedReason": "No se recuperaron tope, compra mínima, sucursales adheridas, exclusiones ni mecánica del 10% adicional."
+    },
+    {
+      "id": "banco-san-juan-modo-avicola-myriam-2026-10",
+      "provider": "Banco San Juan + MODO",
+      "chain": "Avícola Myriam",
+      "title": "30% de descuento en Avícola Myriam",
+      "discountPercent": 30,
+      "days": [
+        "viernes"
+      ],
+      "validFrom": "2026-08-01",
+      "validTo": "2026-10-31",
+      "paymentMethod": "MODO con Tarjeta de Crédito Banco San Juan",
+      "cap": null,
+      "minimumPurchase": null,
+      "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "verificationStatus": "officially_published_informational",
+      "calculationEligible": false,
+      "calculationBlockedReason": "La página general no expone todas las condiciones."
+    },
+    {
+      "id": "banco-san-juan-modo-la-cumbre-sanjuanina-2026-10",
+      "provider": "Banco San Juan + MODO",
+      "chain": "La Cumbre Sanjuanina",
+      "title": "20% de descuento en La Cumbre Sanjuanina",
+      "discountPercent": 20,
+      "days": [
+        "viernes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-10-31",
+      "paymentMethod": "MODO con Tarjeta de Crédito Banco San Juan",
+      "cap": null,
+      "minimumPurchase": null,
+      "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
+      "checkedAt": "2026-09-09T18:51:26.836Z",
+      "verificationStatus": "officially_published_informational",
+      "calculationEligible": false,
+      "calculationBlockedReason": "La página general no expone todas las condiciones."
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "title": "Cuotas con QR de Mercado Pago en ChangoMás",
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "reason": "Los legales públicos indican una fecha final anterior a la inicial; no se utiliza hasta que la cadena corrija la contradicción."
+    }
+  ],
+  "warnings": [
+    "Ninguna de las 160 promociones de producto de SEPA pudo corroborarse hoy mediante coincidencia exacta de cadena, sucursal, EAN y condiciones en las páginas oficiales.",
+    "Vea agotó el tiempo de espera y La Anónima respondió 403 en la segunda lectura; ambas habían sido accesibles para el verificador automatizado de la mañana.",
+    "El portal público de Mercado Pago no muestra beneficios personalizados sin sesión; esos beneficios no se consultaron ni se trataron como generales.",
+    "Visa y Mastercard no expusieron una oferta de supermercado aplicable a San Juan con comercio, vigencia y condiciones completas en sus páginas públicas revisadas.",
+    "Los seis beneficios generales se muestran solo como información: ninguno está habilitado para modificar el total de la compra sin supuestos."
+  ]
+}
