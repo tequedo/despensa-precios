@@ -68,25 +68,6 @@ try {
     `Promociones verificadas vigentes: ${promotionCount}`,
   ]);
 
-  await notify("promotions", [
-    "Las promociones de las páginas oficiales fueron verificadas correctamente.",
-    `Páginas oficiales revisadas: ${checkedSources}`,
-    `Páginas accesibles: ${reachableSources}`,
-    `Promociones corroboradas y vigentes: ${promotionCount}`,
-    `Hubo cambios respecto de la revisión anterior: ${promotionsChanged ? "sí" : "no"}`,
-    "Solo se incluyeron coincidencias entre SEPA y las páginas oficiales de las cadenas.",
-  ]);
-
-  await notify("benefits", [
-    "Los beneficios de billeteras fueron revisados en fuentes públicas y páginas oficiales de las cadenas.",
-    `Fuentes revisadas: ${checkedWalletSources}`,
-    `Fuentes accesibles: ${reachableWalletSources}`,
-    `Beneficios vigentes verificados: ${walletBenefitCount}`,
-    `Beneficios habilitados para modificar el total: ${calculableWalletBenefitCount}`,
-    `Hubo cambios respecto de la revisión anterior: ${walletBenefitsChanged ? "sí" : "no"}`,
-    "Una condición incompleta, contradictoria o con exclusiones no resueltas nunca modifica el precio.",
-  ]);
-
   await writeFile(
     "data/notification-status.json",
     `${JSON.stringify({ checkedAt: new Date().toISOString(), success: true, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }, null, 2)}\n`,
