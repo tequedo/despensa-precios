@@ -5,6 +5,7 @@ import { basename, dirname, join } from "node:path";
 import { execFile } from "node:child_process";
 import { createInterface } from "node:readline";
 import { promisify } from "node:util";
+import { createMeatMatcher } from "./meat-matcher.mjs";
 
 const execFileAsync = promisify(execFile);
 const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
@@ -59,6 +60,8 @@ const promotionChains = ["vea", "chango mas", "changomas", "la anonima", "carref
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
 const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword + "(?:\\b|$)"));
+const meatCatalog = JSON.parse(await readFile(new URL("./data/meat-catalog.json", import.meta.url), "utf8"));
+const isMeatProduct = createMeatMatcher(meatCatalog);
 const workDir = await mkdtemp(join(tmpdir(), "sepa-san-juan-"));
 
 function normalize(value) {
@@ -270,7 +273,7 @@ async function processFolder(folder, sourceInfo, counters) {
       if (!branch) return;
       const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
       const normalizedDescription = normalize(description);
-      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription))) return;
+      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription)) && !isMeatProduct(description)) return;
       const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
       if (!listPrice || listPrice < 100 || listPrice > 10000000) {
         counters.rejected++;

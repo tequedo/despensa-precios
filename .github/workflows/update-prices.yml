@@ -6,6 +6,9 @@ on:
     paths:
       - "update-san-juan.mjs"
       - "san-juan-products.json"
+      - "meat-matcher.mjs"
+      - "data/meat-catalog.json"
+      - "tests/meat-matcher.test.mjs"
       - "verify-retailer-promotions.mjs"
       - "verify-wallet-benefits.mjs"
       - "tests/wallet-benefits.test.mjs"
