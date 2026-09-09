@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T19:09:50.405Z",
+  "generatedAt": "2026-09-09T20:58:06.676Z",
   "scope": "San Juan",
   "source": "SEPA - Precios Claros",
   "verificationUrl": "https://datos.produccion.gob.ar/dataset/sepa-precios",
@@ -21,7 +21,23 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:28.924Z",
+      "observedAt": "2026-09-09T20:55:47.033Z",
+      "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
+    },
+    {
+      "chain": "Hipermercado Carrefour",
+      "branch": "San Juan",
+      "locality": "San Juan",
+      "ean": "sepa:10:1:2511010000006",
+      "product": "ROAST BEEF PUL X KG",
+      "brand": "PUL",
+      "listPrice": 15900,
+      "promoPrice": 12590,
+      "conditions": "Promo A valida desde el 02/09/2026 hasta 10/09/2026",
+      "promoKind": "promotion",
+      "requiredBenefit": "",
+      "validDate": "2026-09-09",
+      "observedAt": "2026-09-09T20:55:48.303Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -37,7 +53,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:30.336Z",
+      "observedAt": "2026-09-09T20:55:48.346Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -53,7 +69,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:33.471Z",
+      "observedAt": "2026-09-09T20:55:51.088Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -69,7 +85,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:33.531Z",
+      "observedAt": "2026-09-09T20:55:51.140Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -85,7 +101,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:34.841Z",
+      "observedAt": "2026-09-09T20:55:52.298Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -101,7 +117,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:34.891Z",
+      "observedAt": "2026-09-09T20:55:52.338Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -117,7 +133,23 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:35.058Z",
+      "observedAt": "2026-09-09T20:55:52.474Z",
+      "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
+    },
+    {
+      "chain": "Hipermercado Carrefour",
+      "branch": "San Juan",
+      "locality": "San Juan",
+      "ean": "sepa:10:1:2511007000002",
+      "product": "PALETA PUL X KG",
+      "brand": "PUL",
+      "listPrice": 16900,
+      "promoPrice": 12990,
+      "conditions": "Promo A valida desde el 02/09/2026 hasta 10/09/2026",
+      "promoKind": "promotion",
+      "requiredBenefit": "",
+      "validDate": "2026-09-09",
+      "observedAt": "2026-09-09T20:55:55.195Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -133,7 +165,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:39.138Z",
+      "observedAt": "2026-09-09T20:55:56.370Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -149,7 +181,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:39.198Z",
+      "observedAt": "2026-09-09T20:55:56.421Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -165,7 +197,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:42.339Z",
+      "observedAt": "2026-09-09T20:55:59.174Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -181,7 +213,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:42.444Z",
+      "observedAt": "2026-09-09T20:55:59.267Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -197,7 +229,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:43.972Z",
+      "observedAt": "2026-09-09T20:56:00.700Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -213,7 +245,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:45.472Z",
+      "observedAt": "2026-09-09T20:56:01.989Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -229,7 +261,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:46.900Z",
+      "observedAt": "2026-09-09T20:56:03.398Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -245,7 +277,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:46.952Z",
+      "observedAt": "2026-09-09T20:56:03.441Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -261,7 +293,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:47.073Z",
+      "observedAt": "2026-09-09T20:56:03.537Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -277,7 +309,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:47.153Z",
+      "observedAt": "2026-09-09T20:56:03.601Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -293,7 +325,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:48.441Z",
+      "observedAt": "2026-09-09T20:56:05.473Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -309,7 +341,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:48.515Z",
+      "observedAt": "2026-09-09T20:56:05.534Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -325,7 +357,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:49.788Z",
+      "observedAt": "2026-09-09T20:56:06.703Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -341,7 +373,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:49.994Z",
+      "observedAt": "2026-09-09T20:56:06.869Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -357,7 +389,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:50.072Z",
+      "observedAt": "2026-09-09T20:56:06.933Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -373,7 +405,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:51.274Z",
+      "observedAt": "2026-09-09T20:56:08.166Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -389,7 +421,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:51.283Z",
+      "observedAt": "2026-09-09T20:56:08.173Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -405,7 +437,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:51.436Z",
+      "observedAt": "2026-09-09T20:56:08.300Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -421,7 +453,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:51.472Z",
+      "observedAt": "2026-09-09T20:56:08.330Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -437,7 +469,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:54.353Z",
+      "observedAt": "2026-09-09T20:56:10.778Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -453,7 +485,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:55.892Z",
+      "observedAt": "2026-09-09T20:56:12.211Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -469,7 +501,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:55.932Z",
+      "observedAt": "2026-09-09T20:56:12.244Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -485,7 +517,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:57.153Z",
+      "observedAt": "2026-09-09T20:56:13.602Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -501,7 +533,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:58.755Z",
+      "observedAt": "2026-09-09T20:56:15.004Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -517,7 +549,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:07:58.769Z",
+      "observedAt": "2026-09-09T20:56:15.015Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -533,7 +565,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:00.331Z",
+      "observedAt": "2026-09-09T20:56:16.475Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -549,7 +581,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:00.382Z",
+      "observedAt": "2026-09-09T20:56:16.516Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -565,7 +597,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:03.104Z",
+      "observedAt": "2026-09-09T20:56:19.082Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -581,7 +613,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:03.239Z",
+      "observedAt": "2026-09-09T20:56:19.188Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -597,7 +629,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:03.354Z",
+      "observedAt": "2026-09-09T20:56:20.352Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -613,7 +645,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:06.969Z",
+      "observedAt": "2026-09-09T20:56:23.117Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -629,7 +661,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:08.317Z",
+      "observedAt": "2026-09-09T20:56:23.240Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -645,7 +677,23 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:08.340Z",
+      "observedAt": "2026-09-09T20:56:23.257Z",
+      "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
+    },
+    {
+      "chain": "Hipermercado Carrefour",
+      "branch": "San Juan",
+      "locality": "San Juan",
+      "ean": "sepa:10:1:2510999000007",
+      "product": "COLITA DE CUADRIL PUL X KG",
+      "brand": "PUL",
+      "listPrice": 26500,
+      "promoPrice": 19890,
+      "conditions": "Promo A valida desde el 02/09/2026 hasta 10/09/2026",
+      "promoKind": "promotion",
+      "requiredBenefit": "",
+      "validDate": "2026-09-09",
+      "observedAt": "2026-09-09T20:56:24.596Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -661,7 +709,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:08:11.230Z",
+      "observedAt": "2026-09-09T20:56:26.049Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -678,7 +726,7 @@
       "discountPercent": 50,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:24.863Z",
+      "observedAt": "2026-09-09T20:57:39.472Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -695,7 +743,7 @@
       "discountPercent": 50,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:24.864Z",
+      "observedAt": "2026-09-09T20:57:39.473Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -712,7 +760,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:29.170Z",
+      "observedAt": "2026-09-09T20:57:43.599Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -729,7 +777,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:29.170Z",
+      "observedAt": "2026-09-09T20:57:43.599Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -746,7 +794,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:29.171Z",
+      "observedAt": "2026-09-09T20:57:43.599Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -763,7 +811,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:29.171Z",
+      "observedAt": "2026-09-09T20:57:43.599Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -780,7 +828,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:29.174Z",
+      "observedAt": "2026-09-09T20:57:43.602Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -797,7 +845,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.689Z",
+      "observedAt": "2026-09-09T20:57:44.971Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -814,7 +862,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.690Z",
+      "observedAt": "2026-09-09T20:57:44.971Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -831,7 +879,7 @@
       "discountPercent": 50,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.694Z",
+      "observedAt": "2026-09-09T20:57:44.973Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -848,7 +896,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.701Z",
+      "observedAt": "2026-09-09T20:57:44.978Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -864,7 +912,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.702Z",
+      "observedAt": "2026-09-09T20:57:44.979Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -881,7 +929,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.703Z",
+      "observedAt": "2026-09-09T20:57:44.979Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -897,7 +945,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.703Z",
+      "observedAt": "2026-09-09T20:57:44.979Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -913,7 +961,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.704Z",
+      "observedAt": "2026-09-09T20:57:44.980Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -929,7 +977,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.704Z",
+      "observedAt": "2026-09-09T20:57:44.980Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -945,7 +993,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.704Z",
+      "observedAt": "2026-09-09T20:57:44.980Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -961,7 +1009,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.704Z",
+      "observedAt": "2026-09-09T20:57:44.980Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -977,7 +1025,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.705Z",
+      "observedAt": "2026-09-09T20:57:44.980Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -994,7 +1042,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.706Z",
+      "observedAt": "2026-09-09T20:57:44.981Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1011,7 +1059,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.706Z",
+      "observedAt": "2026-09-09T20:57:46.275Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1028,7 +1076,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.706Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1045,7 +1093,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.706Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1062,7 +1110,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.706Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1078,7 +1126,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.708Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1094,7 +1142,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.708Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1110,7 +1158,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.708Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1126,7 +1174,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.708Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1143,7 +1191,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:30.709Z",
+      "observedAt": "2026-09-09T20:57:46.276Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1159,7 +1207,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.158Z",
+      "observedAt": "2026-09-09T20:57:46.277Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1175,7 +1223,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.158Z",
+      "observedAt": "2026-09-09T20:57:46.277Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1191,7 +1239,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.162Z",
+      "observedAt": "2026-09-09T20:57:46.278Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1207,7 +1255,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.163Z",
+      "observedAt": "2026-09-09T20:57:46.279Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1223,7 +1271,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.163Z",
+      "observedAt": "2026-09-09T20:57:46.279Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1239,7 +1287,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.163Z",
+      "observedAt": "2026-09-09T20:57:46.279Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1255,7 +1303,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.164Z",
+      "observedAt": "2026-09-09T20:57:46.280Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1271,7 +1319,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.164Z",
+      "observedAt": "2026-09-09T20:57:46.280Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1288,7 +1336,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.164Z",
+      "observedAt": "2026-09-09T20:57:46.280Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1304,7 +1352,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.164Z",
+      "observedAt": "2026-09-09T20:57:46.280Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1321,7 +1369,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.166Z",
+      "observedAt": "2026-09-09T20:57:46.282Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1338,7 +1386,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.167Z",
+      "observedAt": "2026-09-09T20:57:46.282Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1355,7 +1403,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.171Z",
+      "observedAt": "2026-09-09T20:57:46.285Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1372,7 +1420,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.171Z",
+      "observedAt": "2026-09-09T20:57:46.285Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1389,7 +1437,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.172Z",
+      "observedAt": "2026-09-09T20:57:46.285Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1406,7 +1454,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.172Z",
+      "observedAt": "2026-09-09T20:57:46.285Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1423,7 +1471,7 @@
       "discountPercent": 40,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:32.172Z",
+      "observedAt": "2026-09-09T20:57:46.285Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1440,7 +1488,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:34.949Z",
+      "observedAt": "2026-09-09T20:57:49.087Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1457,7 +1505,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:41.781Z",
+      "observedAt": "2026-09-09T20:57:55.875Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1474,7 +1522,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:41.781Z",
+      "observedAt": "2026-09-09T20:57:55.875Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1491,7 +1539,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:41.781Z",
+      "observedAt": "2026-09-09T20:57:55.876Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1508,7 +1556,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:41.782Z",
+      "observedAt": "2026-09-09T20:57:55.876Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1525,7 +1573,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:41.782Z",
+      "observedAt": "2026-09-09T20:57:55.877Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1542,7 +1590,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.819Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1559,7 +1607,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.819Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1576,7 +1624,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.819Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1593,7 +1641,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.820Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1610,7 +1658,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.820Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1627,7 +1675,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.820Z",
+      "observedAt": "2026-09-09T20:57:58.519Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1644,7 +1692,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.820Z",
+      "observedAt": "2026-09-09T20:57:58.520Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1660,7 +1708,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.825Z",
+      "observedAt": "2026-09-09T20:57:59.805Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1676,7 +1724,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.826Z",
+      "observedAt": "2026-09-09T20:57:59.805Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1692,7 +1740,7 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.826Z",
+      "observedAt": "2026-09-09T20:57:59.805Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1709,7 +1757,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:44.826Z",
+      "observedAt": "2026-09-09T20:57:59.806Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1726,7 +1774,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.176Z",
+      "observedAt": "2026-09-09T20:57:59.813Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1743,7 +1791,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.176Z",
+      "observedAt": "2026-09-09T20:57:59.813Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1760,7 +1808,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.176Z",
+      "observedAt": "2026-09-09T20:57:59.813Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1777,7 +1825,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.177Z",
+      "observedAt": "2026-09-09T20:57:59.814Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1794,7 +1842,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.177Z",
+      "observedAt": "2026-09-09T20:57:59.815Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1811,7 +1859,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.177Z",
+      "observedAt": "2026-09-09T20:57:59.815Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1828,7 +1876,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.177Z",
+      "observedAt": "2026-09-09T20:57:59.815Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1845,7 +1893,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.178Z",
+      "observedAt": "2026-09-09T20:57:59.816Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1862,7 +1910,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.178Z",
+      "observedAt": "2026-09-09T20:57:59.816Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1879,7 +1927,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.178Z",
+      "observedAt": "2026-09-09T20:57:59.816Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1896,7 +1944,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.178Z",
+      "observedAt": "2026-09-09T20:57:59.816Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1913,7 +1961,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.178Z",
+      "observedAt": "2026-09-09T20:57:59.816Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1930,7 +1978,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.179Z",
+      "observedAt": "2026-09-09T20:57:59.817Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1947,7 +1995,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.179Z",
+      "observedAt": "2026-09-09T20:57:59.817Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1964,7 +2012,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.179Z",
+      "observedAt": "2026-09-09T20:57:59.817Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1981,7 +2029,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.179Z",
+      "observedAt": "2026-09-09T20:57:59.817Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -1998,7 +2046,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.179Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2015,7 +2063,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.180Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2032,7 +2080,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.180Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2049,7 +2097,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.180Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2066,7 +2114,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.181Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2083,7 +2131,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.181Z",
+      "observedAt": "2026-09-09T20:57:59.818Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2100,7 +2148,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.181Z",
+      "observedAt": "2026-09-09T20:57:59.819Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2117,7 +2165,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.181Z",
+      "observedAt": "2026-09-09T20:57:59.819Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2134,7 +2182,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.181Z",
+      "observedAt": "2026-09-09T20:57:59.819Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2151,7 +2199,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2168,7 +2216,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2185,7 +2233,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2202,7 +2250,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2219,7 +2267,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2236,7 +2284,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.182Z",
+      "observedAt": "2026-09-09T20:57:59.820Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2253,7 +2301,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.183Z",
+      "observedAt": "2026-09-09T20:57:59.821Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2270,7 +2318,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.183Z",
+      "observedAt": "2026-09-09T20:57:59.821Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2287,7 +2335,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.183Z",
+      "observedAt": "2026-09-09T20:57:59.821Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2304,7 +2352,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.184Z",
+      "observedAt": "2026-09-09T20:57:59.822Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2321,7 +2369,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.184Z",
+      "observedAt": "2026-09-09T20:57:59.822Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2338,7 +2386,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.184Z",
+      "observedAt": "2026-09-09T20:57:59.822Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2355,7 +2403,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.184Z",
+      "observedAt": "2026-09-09T20:57:59.823Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2372,7 +2420,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.185Z",
+      "observedAt": "2026-09-09T20:57:59.823Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2389,7 +2437,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.185Z",
+      "observedAt": "2026-09-09T20:57:59.823Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2406,7 +2454,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.185Z",
+      "observedAt": "2026-09-09T20:57:59.823Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2423,7 +2471,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.185Z",
+      "observedAt": "2026-09-09T20:58:01.146Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2440,7 +2488,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.186Z",
+      "observedAt": "2026-09-09T20:58:01.146Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2457,7 +2505,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.186Z",
+      "observedAt": "2026-09-09T20:58:01.146Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2474,7 +2522,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.186Z",
+      "observedAt": "2026-09-09T20:58:01.146Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2491,7 +2539,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.186Z",
+      "observedAt": "2026-09-09T20:58:01.146Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2508,7 +2556,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.187Z",
+      "observedAt": "2026-09-09T20:58:01.147Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2525,7 +2573,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.187Z",
+      "observedAt": "2026-09-09T20:58:01.147Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2542,7 +2590,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.187Z",
+      "observedAt": "2026-09-09T20:58:01.147Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2559,7 +2607,7 @@
       "discountPercent": 20,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.187Z",
+      "observedAt": "2026-09-09T20:58:01.147Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2576,7 +2624,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:46.188Z",
+      "observedAt": "2026-09-09T20:58:01.147Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2593,7 +2641,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:47.497Z",
+      "observedAt": "2026-09-09T20:58:01.148Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2610,7 +2658,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:47.498Z",
+      "observedAt": "2026-09-09T20:58:01.148Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2627,7 +2675,7 @@
       "discountPercent": 25,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:47.498Z",
+      "observedAt": "2026-09-09T20:58:01.148Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2644,7 +2692,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:47.499Z",
+      "observedAt": "2026-09-09T20:58:01.148Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     },
     {
@@ -2661,7 +2709,7 @@
       "discountPercent": 30,
       "requiredBenefit": "",
       "validDate": "2026-09-09",
-      "observedAt": "2026-09-09T19:09:47.499Z",
+      "observedAt": "2026-09-09T20:58:01.148Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios"
     }
   ]
