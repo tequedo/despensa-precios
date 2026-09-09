@@ -78,14 +78,14 @@ jobs:
 
       - name: Notificar actualización y promociones
         env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_EMAIL: anibalpringles@hotmail.com
-          NOTIFY_FROM: ${{ vars.NOTIFY_FROM }}
+          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
           PROMOTIONS_CHANGED: ${{ steps.changes.outputs.promotions_changed }}
           OUTPUT_FILE: data/san-juan.ndjson
           RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
           RETAILER_REPORT_FILE: data/retailer-promotion-sources.json
           NOTIFICATION_RUN_ID: ${{ github.run_id }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-completed.mjs
 
       - name: Guardar diagnóstico de notificación
