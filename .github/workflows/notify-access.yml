@@ -1,0 +1,39 @@
+name: Notificar ingresos a Despensa Inteligente
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "notify-access.mjs"
+      - ".github/workflows/notify-access.yml"
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notificaciones-ingresos
+  cancel-in-progress: false
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Enviar avisos pendientes
+        env:
+          ACCESS_EVENTS_URL: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/access
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: anibalpringles@hotmail.com
+          NOTIFY_FROM: ${{ vars.NOTIFY_FROM }}
+        run: node notify-access.mjs
