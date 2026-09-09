@@ -11,18 +11,45 @@ const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-meta
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
-const batchSize = Math.min(Number(process.env.BATCH_SIZE ?? 75), 100);
+const batchSize = Math.min(Math.max(Number(process.env.BATCH_SIZE ?? 75), 1), 100);
+const batchDelayMs = Math.max(Number(process.env.BATCH_DELAY_MS ?? 900), 0);
+const maxIngestRetries = Math.min(Math.max(Number(process.env.INGEST_RETRIES ?? 5), 0), 6);
+let nextIngestAt = 0;
+const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 if (ingestEndpoint && !ingestToken) throw new Error("Falta PRICE_INGEST_TOKEN para cargar los precios en la aplicación");
 
 async function send(records) {
   if (!ingestEndpoint || !records.length) return 0;
-  const response = await fetch(ingestEndpoint, {
-    method: "POST",
-    headers: { authorization: `Bearer ${ingestToken}`, "content-type": "application/json" },
-    body: JSON.stringify({ records })
-  });
-  if (!response.ok) throw new Error(`La aplicación rechazó el lote: ${response.status} ${await response.text()}`);
-  return records.length;
+
+  const pause = nextIngestAt - Date.now();
+  if (pause > 0) await wait(pause);
+
+  for (let attempt = 0; attempt <= maxIngestRetries; attempt++) {
+    const response = await fetch(ingestEndpoint, {
+      method: "POST",
+      headers: { authorization: `Bearer ${ingestToken}`, "content-type": "application/json" },
+      body: JSON.stringify({ records })
+    });
+    if (response.ok) {
+      nextIngestAt = Date.now() + batchDelayMs;
+      return records.length;
+    }
+
+    const responseBody = await response.text();
+    const retryable = response.status === 429 || response.status >= 500;
+    if (!retryable || attempt === maxIngestRetries) {
+      throw new Error(`La aplicación rechazó el lote: ${response.status} ${responseBody}`);
+    }
+
+    const retryAfter = Number(response.headers.get("retry-after"));
+    const backoff = Number.isFinite(retryAfter) && retryAfter > 0
+      ? retryAfter * 1000
+      : Math.min(30_000, 1_000 * 2 ** attempt);
+    console.warn(`Carga temporalmente limitada (HTTP ${response.status}); reintento ${attempt + 1} en ${backoff} ms`);
+    await wait(backoff);
+  }
+
+  return 0;
 }
 
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
