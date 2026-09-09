@@ -26,6 +26,13 @@ jobs:
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sincronizar con la rama principal
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
