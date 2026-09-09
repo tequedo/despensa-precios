@@ -61,8 +61,8 @@ const sources = [
     id: "carrefour",
     name: "Carrefour",
     chain: "Carrefour",
-    url: "https://www.carrefour.com.ar/promociones",
-    render: true,
+    url: "https://www.carrefour.com.ar/descuentos-bancarios",
+    structured: "carrefour_vtex",
     role: "retailer_terms",
   },
 ];
@@ -121,6 +121,19 @@ const EXCLUSION_LABELS = [
   ["BATERIAS", "Baterías"],
   ["NEUMATICOS", "Neumáticos"],
   ["PRODUCTOS EN LIQUIDACION", "Productos en liquidación"],
+  ["ELECTROS", "Electrodomésticos y electrónicos"],
+  ["BAZAR", "Bazar"],
+  ["FERRETERIA", "Ferretería"],
+  ["AUTOMOTOR", "Automotor"],
+  ["JUGUETERIA", "Juguetería y librería"],
+  ["COCINA", "Cocina"],
+  ["JARDINERIA", "Jardinería"],
+  ["TEXTIL", "Textil"],
+  ["OFERTON POR BULTO", "Ofertón por bulto"],
+  ["PACK FAMILIAR", "Pack familiar"],
+  ["PRECIO SUPER BAJO", "Precio Súper Bajo"],
+  ["BAJAMOS LOS PRECIOS", "Campaña Bajamos los Precios"],
+  ["LECHES INFANTILES", "Leches infantiles y maternizadas"],
 ];
 
 const CHANGOMAS_PROMOTION_FIELDS = [
@@ -208,10 +221,17 @@ function monthWindow(text) {
 }
 
 function numericDate(value) {
-  const match = String(value ?? "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  const match = String(value ?? "").match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);
   if (!match) return null;
-  return `${match[3]}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`;
+  const year = match[3].length === 2 ? `20${match[3]}` : match[3];
+  return `${year}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`;
 }
+
+const moneyValue = (value) => {
+  const normalized = String(value ?? "").replace(/\./g, "").replace(",", ".");
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed : null;
+};
 
 function textSection(text, startPattern, endPatterns, maxLength = 16000) {
   const start = text.search(startPattern);
@@ -354,6 +374,155 @@ export function parseChangoBenefits(
   return candidates;
 }
 
+function carrefourDays(text) {
+  if (/TODOS LOS DIAS/.test(text)) return [0, 1, 2, 3, 4, 5, 6];
+  return DAY_NAMES.filter(([name]) => new RegExp(`\\b${name}S?\\b`).test(text)).map(([, day]) => day);
+}
+
+function carrefourValidity(text) {
+  const rangeMatch = text.match(
+    /VALID[OA](?:\s+DESDE)?(?:\s+EL)?\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+(?:AL|HASTA(?:\s+EL)?)\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/,
+  );
+  if (rangeMatch) {
+    return { from: numericDate(rangeMatch[1]), to: numericDate(rangeMatch[2]) };
+  }
+  const toMatch = text.match(/HASTA (?:EL )?(\d{1,2}\/\d{1,2}\/\d{2,4})/);
+  const to = numericDate(toMatch?.[1]);
+  if (!to) return { from: null, to: null };
+  return { from: `${to.slice(0, 7)}-01`, to };
+}
+
+function carrefourExclusions(text) {
+  const complete = /NO INCLUYE|QUEDAN EXCLUIDOS|LA PROMOCION NO INCLUYE/.test(text);
+  const labels = [...new Set(EXCLUSION_LABELS.filter(([needle]) => text.includes(needle)).map(([, label]) => label))];
+  return { complete, labels };
+}
+
+export function parseCarrefourBenefits(
+  visibleText,
+  {
+    sourceUrl = "https://www.carrefour.com.ar/descuentos-bancarios",
+    checkedAt = new Date().toISOString(),
+    asOf = checkedAt,
+    recordId = null,
+  } = {},
+) {
+  const text = parsingText(visibleText);
+  if (!/MERCADO ?PAGO/.test(text)) return [];
+
+  const installments = /CUOTAS? SIN INTERES/.test(text) && !/% (?:DE )?(?:DESCUENTO|AHORRO)/.test(text);
+  const percentMatch = text.match(/(?:CONSISTE EN\s*UN\s*|\b)(\d{1,2}(?:[.,]\d+)?)%\s+(?:DE\s+)?(?:DESCUENTO|AHORRO)/);
+  const percent = percentMatch ? Number(percentMatch[1].replace(",", ".")) : null;
+  const validity = carrefourValidity(text);
+  const daysOfWeek = carrefourDays(text);
+  const dayLabels = DAY_NAMES.filter(([, day]) => daysOfWeek.includes(day)).map(([name]) => name.toLowerCase());
+  const noCap = /SIN TOPE(?: DE REINTEGRO)?/.test(text);
+  const capMatch = text.match(/TOPE(?: MENSUAL)?(?: POR CLIENTE)?(?: DE)?\s*\$\s*([\d.]+(?:,\d+)?)/);
+  const capAmount = noCap ? null : moneyValue(capMatch?.[1]);
+  const minimumMatch = text.match(/(?:MINIMO DE COMPRA|COMPRAS A PARTIR DE(?: LOS)?)\s*\$\s*([\d.]+(?:,\d+)?)/);
+  const minimumPurchase = moneyValue(minimumMatch?.[1]);
+  const moneyInAccount = /MEDIO DE PAGO DINERO EN CUENTA|EXCLUSIVO CON DINERO EN CUENTA/.test(text);
+  const creditCard = /TARJETA DE CREDITO \(FISICA Y QR\)|TARJETA DE CREDITO DE MERCADO PAGO/.test(text);
+  const installmentCredit = /CUOTAS SIN TARJETA/.test(text);
+  const paymentRequirement = moneyInAccount
+    ? "Dinero en cuenta, pagando con QR desde la app de Mercado Pago"
+    : creditCard
+      ? "Tarjeta de crédito de Mercado Pago, física o mediante QR"
+      : installmentCredit
+        ? "Cuotas sin tarjeta de Mercado Pago, pagando con QR"
+        : null;
+  const maxiOnly = /TODAS LAS SUCURSALES DE CARREFOUR ?MAXI/.test(text);
+  const allFormats = /HIPERMERCADOS CARREFOUR,? CARREFOUR MARKET,? CARREFOUR EXPRESS Y CARREFOUR MAXI/.test(text);
+  const standardFormats = /HIPERMERCADOS CARREFOUR,?\s*CARREFOUR MARKET Y CARREFOUR EXPRESS/.test(text);
+  const scopeVerified = maxiOnly || allFormats || standardFormats;
+  const geographicScope = maxiOnly
+    ? "Todas las sucursales físicas de Carrefour Maxi del país"
+    : allFormats
+      ? "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país"
+      : standardFormats
+        ? "Sucursales físicas de Hipermercados Carrefour, Market y Express del país"
+        : null;
+  const channels = /NO VALIDO PARA (?:WWW\.)?CARREFOUR\.COM\.AR/.test(text)
+    ? ["Sucursales físicas"]
+    : /CARREFOUR\.COM\.AR/.test(text)
+      ? ["Sucursales físicas", "Carrefour online"]
+      : [];
+  const exclusions = carrefourExclusions(text);
+  const appRequired = /ESCANEO DEL CODIGO QR CON LA APP DE MERCADO PAGO/.test(text);
+  const appForbidden = /NO VALIDA?[\s\S]{0,1000}CON LA APLICACION DE MERCADO PAGO/.test(text);
+  const presentMonthNumbers = [...MONTHS.entries()]
+    .filter(([month]) => text.includes(month))
+    .map(([, monthNumber]) => monthNumber);
+  for (const date of [validity.from, validity.to]) {
+    if (date) presentMonthNumbers.push(Number(date.slice(5, 7)) - 1);
+  }
+  const monthConflict = new Set(presentMonthNumbers).size > 1;
+  const paymentConflict = appRequired && appForbidden;
+  const reasons = [];
+  if (!validity.from || !validity.to) reasons.push("No se pudo verificar la vigencia completa.");
+  if (!daysOfWeek.length) reasons.push("No se pudieron verificar los días del beneficio.");
+  if (!installments && !percent) reasons.push("No se pudo verificar el porcentaje.");
+  if (!installments && !noCap && !capAmount) reasons.push("No se pudo verificar el tope.");
+  if (!paymentRequirement) reasons.push("No se pudo verificar el medio de pago exacto.");
+  if (!scopeVerified) reasons.push("No se pudo verificar el formato de sucursal alcanzado.");
+  if (!installments && !exclusions.complete) reasons.push("No se pudo verificar la existencia de exclusiones.");
+  if (monthConflict) reasons.push("La publicación menciona meses distintos dentro del mismo beneficio.");
+  if (paymentConflict) reasons.push("El legal exige la app de Mercado Pago y luego indica que no es válida.");
+
+  const conflict = monthConflict || paymentConflict;
+  const complete = Boolean(
+    validity.from &&
+      validity.to &&
+      daysOfWeek.length &&
+      paymentRequirement &&
+      scopeVerified &&
+      (installments || (percent && (noCap || capAmount) && exclusions.complete)),
+  );
+  const active = complete ? activeOn(asOf, validity.from, validity.to) : false;
+  const kind = installments ? "installments" : "discount";
+  const status = conflict ? "conflict" : complete && active && !installments ? "verified" : complete && !active ? "expired" : "incomplete";
+
+  return [{
+    id: `mercado-pago-carrefour-${recordId ?? validity.from ?? "sin-vigencia"}`,
+    provider: "Mercado Pago",
+    chain: "Carrefour",
+    kind,
+    title: installments
+      ? "Cuotas sin interés con Mercado Pago"
+      : percent && dayLabels.length
+        ? `${percent}% con Mercado Pago los ${dayLabels.join(" y ")}`
+        : "Beneficio Mercado Pago en Carrefour",
+    discountPercent: percent,
+    daysOfWeek,
+    dayLabels,
+    validFrom: validity.from,
+    validTo: validity.to,
+    minimumPurchase,
+    capAmount,
+    capRule: noCap ? "Sin tope" : capAmount ? `Tope $${capAmount.toLocaleString("es-AR")}` : "No verificado",
+    paymentRequirement,
+    channels,
+    geographicScope,
+    exclusions: exclusions.labels,
+    exclusionsVerified: exclusions.complete,
+    accumulable: /ACUMULABLE CON TODAS/.test(text) && !/NO ACUMULABLE/.test(text),
+    sourceUrl,
+    checkedAt,
+    termsHash: hash(text),
+    status,
+    calculationEligible: false,
+    calculationBlockedReason: conflict
+      ? "Los términos oficiales contienen una contradicción y no se puede calcular el beneficio."
+      : installments
+        ? "Las cuotas no modifican el precio de contado."
+        : exclusions.labels.length
+          ? "Tiene exclusiones por categoría; falta validar cada producto de la canasta."
+          : "El beneficio no reúne todas las condiciones necesarias para modificar el total.",
+    reasons,
+    sourceRecordId: recordId,
+  }];
+}
+
 async function renderedHtml(url) {
   const browsers = [
     process.env.CHROME_PATH,
@@ -362,7 +531,8 @@ async function renderedHtml(url) {
     "chromium",
     "chromium-browser",
   ].filter(Boolean);
-  let lastError;
+  let foundBrowser = false;
+  let emptyDocument = false;
   for (const browser of browsers) {
     try {
       const { stdout } = await execFileAsync(
@@ -378,13 +548,20 @@ async function renderedHtml(url) {
         ],
         { timeout: 50000, maxBuffer: 35 * 1024 * 1024 },
       );
+      foundBrowser = true;
       if (stdout?.trim()) return stdout;
+      emptyDocument = true;
     } catch (error) {
-      lastError = error;
-      if (error?.code !== "ENOENT") break;
+      if (error?.code === "ENOENT") continue;
+      throw new Error(`No se pudo renderizar la página pública: ${error.message}`, {
+        cause: error,
+      });
     }
   }
-  throw lastError ?? new Error("No hay un navegador Chromium disponible");
+  if (foundBrowser && emptyDocument) {
+    throw new Error("La página pública se abrió, pero no devolvió contenido utilizable.");
+  }
+  throw new Error("No hay un navegador Chromium disponible");
 }
 
 async function vtexMasterDataSearch(acronym, fields, where = "") {
@@ -440,6 +617,99 @@ async function changoStructuredData(source, checkedAt) {
   return { banks, promotions: matching, candidates: unique, mercadoPago };
 }
 
+function carrefourRecordIds(html) {
+  return [
+    ...new Set(
+      [...String(html ?? "").matchAll(/\/api\/dataentities\/BP\/documents\/([0-9a-f-]{36})\/img_card/gi)]
+        .map((match) => match[1]),
+    ),
+  ];
+}
+
+function stringLeaves(value, output = []) {
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    output.push(String(value));
+  } else if (Array.isArray(value)) {
+    for (const item of value) stringLeaves(item, output);
+  } else if (value && typeof value === "object") {
+    for (const item of Object.values(value)) stringLeaves(item, output);
+  }
+  return output;
+}
+
+async function carrefourDocument(origin, id) {
+  const response = await fetch(
+    `${origin}/api/dataentities/BP/documents/${id}?_fields=_all`,
+    {
+      headers: {
+        accept: "application/json",
+        "user-agent": "Despensa-Inteligente-Benefits-Verifier/1.0",
+      },
+      signal: AbortSignal.timeout(30000),
+    },
+  );
+  if (!response.ok) throw new Error(`Carrefour Master Data respondió HTTP ${response.status}`);
+  return response.json();
+}
+
+async function carrefourStructuredData(source, checkedAt) {
+  let pageHtml = "";
+  let rendered = false;
+  try {
+    const response = await fetch(source.url, {
+      headers: {
+        accept: "text/html,application/xhtml+xml",
+        "user-agent": "Despensa-Inteligente-Benefits-Verifier/1.0",
+      },
+      signal: AbortSignal.timeout(30000),
+    });
+    if (response.ok) pageHtml = await response.text();
+  } catch {
+    // La carga renderizada de abajo es la segunda vía oficial.
+  }
+
+  let ids = carrefourRecordIds(pageHtml);
+  if (!ids.length) {
+    pageHtml = await renderedHtml(source.url);
+    rendered = true;
+    ids = carrefourRecordIds(pageHtml);
+  }
+  if (!ids.length) {
+    throw new Error("Carrefour cargó la página, pero no expuso registros públicos de promociones BP.");
+  }
+
+  const origin = new URL(source.url).origin;
+  const settled = await Promise.allSettled(ids.map((id) => carrefourDocument(origin, id)));
+  const records = settled
+    .filter((result) => result.status === "fulfilled")
+    .map((result) => result.value);
+  if (!records.length) {
+    const firstError = settled.find((result) => result.status === "rejected");
+    throw firstError?.reason ?? new Error("No se pudieron recuperar los registros públicos de Carrefour.");
+  }
+
+  const mercadoPagoRecords = records.filter((record) =>
+    /MERCADO ?PAGO/.test(parsingText(stringLeaves(record).join(" "))),
+  );
+  const parsed = mercadoPagoRecords.flatMap((record) =>
+    parseCarrefourBenefits(stringLeaves(record).join(" "), {
+      sourceUrl: source.url,
+      checkedAt,
+      recordId: record.id ?? null,
+    }),
+  );
+  const unique = [
+    ...new Map(parsed.map((candidate) => [`${candidate.id}|${candidate.termsHash}`, candidate])).values(),
+  ];
+  return {
+    promotions: mercadoPagoRecords,
+    candidates: unique,
+    rendered,
+    sourceRecords: ids.length,
+    failedRecords: settled.filter((result) => result.status === "rejected").length,
+  };
+}
+
 async function sourceHtml(source) {
   if (source.render) return { body: await renderedHtml(source.url), rendered: true };
   const response = await fetch(source.url, {
@@ -465,9 +735,11 @@ async function run() {
     try {
       const structured = source.structured === "vtex_master_data"
         ? await changoStructuredData(source, checkedAt)
-        : null;
+        : source.structured === "carrefour_vtex"
+          ? await carrefourStructuredData(source, checkedAt)
+          : null;
       const { body, rendered } = structured
-        ? { body: JSON.stringify(structured.promotions), rendered: false }
+        ? { body: JSON.stringify(structured.promotions), rendered: structured.rendered ?? false }
         : await sourceHtml(source);
       const text = structured ? body : htmlToText(body);
       const mentions = text.match(/mercado\s+pago/gi)?.length ?? 0;
@@ -482,8 +754,15 @@ async function run() {
         checkedAt,
         reachable: true,
         rendered,
-        accessMethod: structured ? "public_structured_data" : rendered ? "rendered_public_page" : "public_page",
-        sourceRecords: structured?.promotions.length ?? null,
+        accessMethod: source.structured === "carrefour_vtex"
+          ? "public_page_and_structured_records"
+          : structured
+            ? "public_structured_data"
+            : rendered
+              ? "rendered_public_page"
+              : "public_page",
+        sourceRecords: structured?.sourceRecords ?? structured?.promotions.length ?? null,
+        failedSourceRecords: structured?.failedRecords ?? 0,
         officialEntityId: structured?.mercadoPago.id ?? null,
         mercadoPagoMentions: mentions,
         contentHash: hash(compact(text)),
