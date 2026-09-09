@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T19:37:58.660Z",
+  "generatedAt": "2026-09-09T19:47:26.991Z",
   "scope": "San Juan",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -58,7 +58,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-09T19:37:58.660Z",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
       "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
       "status": "verified",
       "calculationEligible": false,
@@ -67,6 +67,55 @@
       "sourceRecordId": "f5296ce0-dffe-11ef-b37f-87fa2b74005f",
       "sourceActiveFrom": "2025-12-02T00:00:00+00:00",
       "sourceActiveTo": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "id": "mercado-pago-carrefour-b5821964-430c-44e9-90d2-17fee264f019",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los lunes",
+      "discountPercent": 15,
+      "daysOfWeek": [
+        1
+      ],
+      "dayLabels": [
+        "lunes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 0,
+      "capAmount": 15000,
+      "capRule": "Tope $15.000",
+      "paymentRequirement": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
+      "channels": [
+        "Sucursales físicas"
+      ],
+      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país",
+      "exclusions": [
+        "Carnicería",
+        "Huevos",
+        "Electrodomésticos y electrónicos",
+        "Bazar",
+        "Ferretería",
+        "Automotor",
+        "Juguetería y librería",
+        "Cocina",
+        "Jardinería",
+        "Textil",
+        "Ofertón por bulto",
+        "Pack familiar",
+        "Precio Súper Bajo"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": true,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "c76ccc677cf018ad425ec97cefe2e33bc70951564175addb3c532e6078c27e38",
+      "status": "verified",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta.",
+      "reasons": [],
+      "sourceRecordId": "b5821964-430c-44e9-90d2-17fee264f019"
     }
   ]
 }

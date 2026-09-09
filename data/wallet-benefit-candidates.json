@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T19:37:58.660Z",
+  "generatedAt": "2026-09-09T19:47:26.991Z",
   "scope": "San Juan",
   "rule": "Toda condición incompleta o contradictoria se informa pero no se calcula",
   "candidates": [
@@ -12,7 +12,7 @@
       "validFrom": "2026-09-01",
       "validTo": "2025-09-30",
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-09T19:37:58.660Z",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
       "termsHash": "46a08fb4d5092a1379419bf1cb7142bde345efdd6f6e9fdaba5bd961296d9e2c",
       "status": "conflict",
       "calculationEligible": false,
@@ -79,7 +79,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-09T19:37:58.660Z",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
       "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
       "status": "verified",
       "calculationEligible": false,
@@ -98,7 +98,7 @@
       "validFrom": "2026-08-01",
       "validTo": "2025-08-31",
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-09T19:37:58.660Z",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
       "termsHash": "e21e61f8890dbc927383ca2f7a8a5633ea014cce1b8398ca19793566f676a2bc",
       "status": "conflict",
       "calculationEligible": false,
@@ -109,6 +109,257 @@
       "sourceRecordId": "fcea3433-0b5f-4589-9949-36fedd67e164",
       "sourceActiveFrom": "2026-04-01T00:00:00+00:00",
       "sourceActiveTo": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "id": "mercado-pago-carrefour-fff9ddf9-6182-11f0-b37f-a06270dbd415",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "installments",
+      "title": "Cuotas sin interés con Mercado Pago",
+      "discountPercent": null,
+      "daysOfWeek": [
+        1,
+        3
+      ],
+      "dayLabels": [
+        "lunes",
+        "miercoles"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 0,
+      "capAmount": 0,
+      "capRule": "No verificado",
+      "paymentRequirement": "Cuotas sin tarjeta de Mercado Pago, pagando con QR",
+      "channels": [
+        "Sucursales físicas",
+        "Carrefour online"
+      ],
+      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país",
+      "exclusions": [],
+      "exclusionsVerified": false,
+      "accumulable": false,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "5db0ad0eca7efc28e7c7b88cce3f6f211aefea0c7ddafd5f2809882f3ca194fe",
+      "status": "conflict",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los términos oficiales contienen una contradicción y no se puede calcular el beneficio.",
+      "reasons": [
+        "La publicación menciona meses distintos dentro del mismo beneficio."
+      ],
+      "sourceRecordId": "fff9ddf9-6182-11f0-b37f-a06270dbd415"
+    },
+    {
+      "id": "mercado-pago-carrefour-23af46b4-aad8-4ab6-9716-29bda4307a1b",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "discount",
+      "title": "10% con Mercado Pago los lunes y martes y miercoles y jueves y viernes y sabado y domingo",
+      "discountPercent": 10,
+      "daysOfWeek": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "dayLabels": [
+        "lunes",
+        "martes",
+        "miercoles",
+        "jueves",
+        "viernes",
+        "sabado",
+        "domingo"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 0,
+      "capAmount": null,
+      "capRule": "Sin tope",
+      "paymentRequirement": "Dinero en cuenta, pagando con QR desde la app de Mercado Pago",
+      "channels": [
+        "Sucursales físicas"
+      ],
+      "geographicScope": "Todas las sucursales físicas de Carrefour Maxi del país",
+      "exclusions": [
+        "Carnicería",
+        "Huevos",
+        "Electrodomésticos y electrónicos",
+        "Bazar",
+        "Ferretería",
+        "Automotor",
+        "Juguetería y librería",
+        "Cocina",
+        "Jardinería",
+        "Textil",
+        "Ofertón por bulto",
+        "Pack familiar",
+        "Precio Súper Bajo"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": false,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "d88fbeba51e8da0e792aa05692214b13c8ac63703f367dc359e5e6e5665f8be7",
+      "status": "conflict",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los términos oficiales contienen una contradicción y no se puede calcular el beneficio.",
+      "reasons": [
+        "El legal exige la app de Mercado Pago y luego indica que no es válida."
+      ],
+      "sourceRecordId": "23af46b4-aad8-4ab6-9716-29bda4307a1b"
+    },
+    {
+      "id": "mercado-pago-carrefour-b5821964-430c-44e9-90d2-17fee264f019",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los lunes",
+      "discountPercent": 15,
+      "daysOfWeek": [
+        1
+      ],
+      "dayLabels": [
+        "lunes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 0,
+      "capAmount": 15000,
+      "capRule": "Tope $15.000",
+      "paymentRequirement": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
+      "channels": [
+        "Sucursales físicas"
+      ],
+      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país",
+      "exclusions": [
+        "Carnicería",
+        "Huevos",
+        "Electrodomésticos y electrónicos",
+        "Bazar",
+        "Ferretería",
+        "Automotor",
+        "Juguetería y librería",
+        "Cocina",
+        "Jardinería",
+        "Textil",
+        "Ofertón por bulto",
+        "Pack familiar",
+        "Precio Súper Bajo"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": true,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "c76ccc677cf018ad425ec97cefe2e33bc70951564175addb3c532e6078c27e38",
+      "status": "verified",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta.",
+      "reasons": [],
+      "sourceRecordId": "b5821964-430c-44e9-90d2-17fee264f019"
+    },
+    {
+      "id": "mercado-pago-carrefour-03141397-1da7-4b15-9365-699cced2e41f",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "installments",
+      "title": "Cuotas sin interés con Mercado Pago",
+      "discountPercent": null,
+      "daysOfWeek": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "dayLabels": [
+        "lunes",
+        "martes",
+        "miercoles",
+        "jueves",
+        "viernes",
+        "sabado",
+        "domingo"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 150000,
+      "capAmount": 0,
+      "capRule": "No verificado",
+      "paymentRequirement": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
+      "channels": [],
+      "geographicScope": null,
+      "exclusions": [],
+      "exclusionsVerified": false,
+      "accumulable": false,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "bfbc680e6ffdcabfe67efb2bb3f87ffee40ceccf0763c9b096be866590cf9e03",
+      "status": "incomplete",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Las cuotas no modifican el precio de contado.",
+      "reasons": [
+        "No se pudo verificar el formato de sucursal alcanzado."
+      ],
+      "sourceRecordId": "03141397-1da7-4b15-9365-699cced2e41f"
+    },
+    {
+      "id": "mercado-pago-carrefour-0c9b6cc3-9b6f-11ef-b37f-9e3aeda600bd",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los jueves",
+      "discountPercent": 15,
+      "daysOfWeek": [
+        4
+      ],
+      "dayLabels": [
+        "jueves"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": 15000,
+      "capAmount": null,
+      "capRule": "Sin tope",
+      "paymentRequirement": "Dinero en cuenta, pagando con QR desde la app de Mercado Pago",
+      "channels": [
+        "Sucursales físicas"
+      ],
+      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market y Express del país",
+      "exclusions": [
+        "Carnicería",
+        "Huevos",
+        "Electrodomésticos y electrónicos",
+        "Bazar",
+        "Ferretería",
+        "Automotor",
+        "Juguetería y librería",
+        "Cocina",
+        "Jardinería",
+        "Textil",
+        "Ofertón por bulto",
+        "Pack familiar",
+        "Precio Súper Bajo",
+        "Campaña Bajamos los Precios"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": true,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-09T19:47:26.991Z",
+      "termsHash": "34328f8511bcb30bad1bbc87794c7dfd5ab6f4f371f37288f51c5db454db5241",
+      "status": "conflict",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los términos oficiales contienen una contradicción y no se puede calcular el beneficio.",
+      "reasons": [
+        "El legal exige la app de Mercado Pago y luego indica que no es válida."
+      ],
+      "sourceRecordId": "0c9b6cc3-9b6f-11ef-b37f-9e3aeda600bd"
     }
   ]
 }
