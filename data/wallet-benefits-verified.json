@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T18:41:24.815Z",
+  "generatedAt": "2026-09-09T19:10:52.430Z",
   "scope": "San Juan",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -58,7 +58,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-09T18:41:24.815Z",
+      "checkedAt": "2026-09-09T19:10:52.430Z",
       "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
       "status": "verified",
       "calculationEligible": false,
