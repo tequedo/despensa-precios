@@ -8,6 +8,9 @@ const pricesFile = process.env.OUTPUT_FILE || "data/san-juan.ndjson";
 const promotionsFile = process.env.RETAILER_VERIFIED_FILE || "data/retailer-promotions-verified.json";
 const promotionsChanged = process.env.PROMOTIONS_CHANGED === "true";
 const reportFile = process.env.RETAILER_REPORT_FILE || "data/retailer-promotion-sources.json";
+const walletFile = process.env.WALLET_VERIFIED_FILE || "data/wallet-benefits-verified.json";
+const walletReportFile = process.env.WALLET_REPORT_FILE || "data/wallet-benefit-sources.json";
+const walletBenefitsChanged = process.env.WALLET_BENEFITS_CHANGED === "true";
 const notificationRunId = process.env.NOTIFICATION_RUN_ID || new Date().toISOString();
 const notificationRunUrl = process.env.NOTIFICATION_RUN_URL;
 
@@ -49,6 +52,12 @@ const promotionCount = verified.promotions?.length ?? 0;
 const report = JSON.parse(await readFile(reportFile, "utf8"));
 const checkedSources = report.sources?.length ?? 0;
 const reachableSources = report.sources?.filter((source) => source.reachable).length ?? 0;
+const walletPayload = JSON.parse(await readFile(walletFile, "utf8"));
+const walletBenefitCount = walletPayload.benefits?.length ?? 0;
+const calculableWalletBenefitCount = walletPayload.benefits?.filter((benefit) => benefit.calculationEligible).length ?? 0;
+const walletReport = JSON.parse(await readFile(walletReportFile, "utf8"));
+const checkedWalletSources = walletReport.sources?.length ?? 0;
+const reachableWalletSources = walletReport.sources?.filter((source) => source.reachable).length ?? 0;
 
 try {
   await notify("sepa", [
@@ -68,11 +77,21 @@ try {
     "Solo se incluyeron coincidencias entre SEPA y las páginas oficiales de las cadenas.",
   ]);
 
+  await notify("benefits", [
+    "Los beneficios de billeteras fueron revisados en fuentes públicas y páginas oficiales de las cadenas.",
+    `Fuentes revisadas: ${checkedWalletSources}`,
+    `Fuentes accesibles: ${reachableWalletSources}`,
+    `Beneficios vigentes verificados: ${walletBenefitCount}`,
+    `Beneficios habilitados para modificar el total: ${calculableWalletBenefitCount}`,
+    `Hubo cambios respecto de la revisión anterior: ${walletBenefitsChanged ? "sí" : "no"}`,
+    "Una condición incompleta, contradictoria o con exclusiones no resueltas nunca modifica el precio.",
+  ]);
+
   await writeFile(
     "data/notification-status.json",
-    `${JSON.stringify({ checkedAt: new Date().toISOString(), success: true, priceCount, promotionCount, promotionsChanged }, null, 2)}\n`,
+    `${JSON.stringify({ checkedAt: new Date().toISOString(), success: true, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }, null, 2)}\n`,
   );
-  console.log(JSON.stringify({ notified: true, priceCount, promotionCount, promotionsChanged }));
+  console.log(JSON.stringify({ notified: true, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }));
 } catch (error) {
   const message = error instanceof Error ? error.message : String(error);
   await writeFile(

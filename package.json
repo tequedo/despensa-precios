@@ -4,5 +4,8 @@
   "private": true,
   "type": "module",
   "engines": { "node": ">=22" },
-  "scripts": { "start": "node update-san-juan.mjs", "check": "node --check update-san-juan.mjs" }
+  "scripts": {
+    "start": "node update-san-juan.mjs",
+    "check": "node --check update-san-juan.mjs && node --check verify-retailer-promotions.mjs && node --check verify-wallet-benefits.mjs && node --test tests/*.test.mjs"
+  }
 }

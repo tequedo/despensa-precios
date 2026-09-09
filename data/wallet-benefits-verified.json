@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-09-09T18:19:55.257Z",
+  "scope": "San Juan",
+  "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
+  "benefits": [
+    {
+      "id": "mercado-pago-changomas-2026-09-01",
+      "provider": "Mercado Pago",
+      "chain": "ChangoMás",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los martes",
+      "discountPercent": 15,
+      "daysOfWeek": [
+        2
+      ],
+      "dayLabels": [
+        "martes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": null,
+      "capAmount": null,
+      "capRule": "Sin tope",
+      "paymentRequirement": "Pago con QR desde la app de Mercado Pago",
+      "channels": [
+        "Sucursales",
+        "Más Online con pago online"
+      ],
+      "geographicScope": "Todas las sucursales de HiperChangoMás, ChangoMás y MasGo",
+      "exclusions": [
+        "Carnicería",
+        "Granja",
+        "Elaborados",
+        "Embutidos",
+        "Quesos",
+        "Frutas y verduras",
+        "Huevos",
+        "Aceites comestibles",
+        "Harinas",
+        "Leches fluidas",
+        "Azúcares",
+        "Bebidas blancas",
+        "Vinos",
+        "Fernet",
+        "Cervezas y marcas detalladas en los legales",
+        "Gaseosas y marcas detalladas en los legales",
+        "Electrodomésticos y electrónicos",
+        "Rodados",
+        "Informática",
+        "Celulares",
+        "Climatización",
+        "Línea blanca",
+        "Medicamentos de farmacia",
+        "Servicios de Autocenter",
+        "Baterías",
+        "Neumáticos"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": false,
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
+      "status": "verified",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Tiene exclusiones por categoría y marca; todavía no se puede validar cada renglón de la canasta de forma exacta.",
+      "reasons": [],
+      "sourceRecordId": "f5296ce0-dffe-11ef-b37f-87fa2b74005f",
+      "sourceActiveFrom": "2025-12-02T00:00:00+00:00",
+      "sourceActiveTo": "2026-10-01T00:00:00+00:00"
+    }
+  ]
+}

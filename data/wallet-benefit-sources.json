@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-09-09T18:19:55.257Z",
+  "scope": "San Juan",
+  "sources": [
+    {
+      "sourceId": "changomas",
+      "source": "ChangoMás / Más Online",
+      "chain": "ChangoMás",
+      "role": "retailer_terms",
+      "url": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "reachable": true,
+      "rendered": false,
+      "accessMethod": "public_structured_data",
+      "sourceRecords": 5,
+      "officialEntityId": "8ccbdf0d-905d-11ee-8452-0eb8fa5466a5",
+      "mercadoPagoMentions": 33,
+      "contentHash": "f8a528e23ec928ca39b12995bae8055b16ff26fc76f8233ae01b5c5fb81a30a2",
+      "extractedCandidates": 3,
+      "verifiedBenefits": 1,
+      "status": "reachable_with_mercado_pago_mentions"
+    }
+  ]
+}

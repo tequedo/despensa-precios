@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-09-09T18:19:55.257Z",
+  "scope": "San Juan",
+  "rule": "Toda condición incompleta o contradictoria se informa pero no se calcula",
+  "candidates": [
+    {
+      "id": "mercado-pago-changomas-cuotas-2026-09-01",
+      "provider": "Mercado Pago",
+      "chain": "ChangoMás",
+      "kind": "installments",
+      "title": "Cuotas con QR de Mercado Pago",
+      "validFrom": "2026-09-01",
+      "validTo": "2025-09-30",
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "termsHash": "46a08fb4d5092a1379419bf1cb7142bde345efdd6f6e9fdaba5bd961296d9e2c",
+      "status": "conflict",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los legales indican inicio 2026-09-01 y fin 2025-09-30; la fecha final es anterior a la inicial.",
+      "reasons": [
+        "La fecha de fin publicada es anterior a la fecha de inicio."
+      ],
+      "sourceRecordId": "d44efac1-f04a-4ef0-8353-b338e576e38f",
+      "sourceActiveFrom": "2026-06-01T00:00:00+00:00",
+      "sourceActiveTo": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "id": "mercado-pago-changomas-2026-09-01",
+      "provider": "Mercado Pago",
+      "chain": "ChangoMás",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los martes",
+      "discountPercent": 15,
+      "daysOfWeek": [
+        2
+      ],
+      "dayLabels": [
+        "martes"
+      ],
+      "validFrom": "2026-09-01",
+      "validTo": "2026-09-30",
+      "minimumPurchase": null,
+      "capAmount": null,
+      "capRule": "Sin tope",
+      "paymentRequirement": "Pago con QR desde la app de Mercado Pago",
+      "channels": [
+        "Sucursales",
+        "Más Online con pago online"
+      ],
+      "geographicScope": "Todas las sucursales de HiperChangoMás, ChangoMás y MasGo",
+      "exclusions": [
+        "Carnicería",
+        "Granja",
+        "Elaborados",
+        "Embutidos",
+        "Quesos",
+        "Frutas y verduras",
+        "Huevos",
+        "Aceites comestibles",
+        "Harinas",
+        "Leches fluidas",
+        "Azúcares",
+        "Bebidas blancas",
+        "Vinos",
+        "Fernet",
+        "Cervezas y marcas detalladas en los legales",
+        "Gaseosas y marcas detalladas en los legales",
+        "Electrodomésticos y electrónicos",
+        "Rodados",
+        "Informática",
+        "Celulares",
+        "Climatización",
+        "Línea blanca",
+        "Medicamentos de farmacia",
+        "Servicios de Autocenter",
+        "Baterías",
+        "Neumáticos"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": false,
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
+      "status": "verified",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Tiene exclusiones por categoría y marca; todavía no se puede validar cada renglón de la canasta de forma exacta.",
+      "reasons": [],
+      "sourceRecordId": "f5296ce0-dffe-11ef-b37f-87fa2b74005f",
+      "sourceActiveFrom": "2025-12-02T00:00:00+00:00",
+      "sourceActiveTo": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "id": "mercado-pago-changomas-cuotas-2026-08-01",
+      "provider": "Mercado Pago",
+      "chain": "ChangoMás",
+      "kind": "installments",
+      "title": "Cuotas con QR de Mercado Pago",
+      "validFrom": "2026-08-01",
+      "validTo": "2025-08-31",
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "checkedAt": "2026-09-09T18:19:55.257Z",
+      "termsHash": "e21e61f8890dbc927383ca2f7a8a5633ea014cce1b8398ca19793566f676a2bc",
+      "status": "conflict",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Los legales indican inicio 2026-08-01 y fin 2025-08-31; la fecha final es anterior a la inicial.",
+      "reasons": [
+        "La fecha de fin publicada es anterior a la fecha de inicio."
+      ],
+      "sourceRecordId": "fcea3433-0b5f-4589-9949-36fedd67e164",
+      "sourceActiveFrom": "2026-04-01T00:00:00+00:00",
+      "sourceActiveTo": "2026-09-01T00:00:00+00:00"
+    }
+  ]
+}

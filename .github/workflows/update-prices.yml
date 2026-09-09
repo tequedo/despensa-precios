@@ -7,6 +7,8 @@ on:
       - "update-san-juan.mjs"
       - "san-juan-products.json"
       - "verify-retailer-promotions.mjs"
+      - "verify-wallet-benefits.mjs"
+      - "tests/wallet-benefits.test.mjs"
       - "notify-completed.mjs"
       - ".github/workflows/update-prices.yml"
   schedule:
@@ -42,6 +44,13 @@ jobs:
       - name: Instalar herramientas de compresión
         run: sudo apt-get update && sudo apt-get install -y unzip zstd p7zip-full
 
+      - name: Instalar navegador para páginas dinámicas
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+          install-dependencies: true
+
       - name: Recolectar precios oficiales
         env:
           PROVINCE_CODES: AR-J
@@ -61,6 +70,14 @@ jobs:
           PROMOTION_MAX_AGE_HOURS: "72"
         run: node verify-retailer-promotions.mjs
 
+      - name: Verificar beneficios de Mercado Pago y otras billeteras
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          WALLET_REPORT_FILE: data/wallet-benefit-sources.json
+          WALLET_CANDIDATES_FILE: data/wallet-benefit-candidates.json
+          WALLET_VERIFIED_FILE: data/wallet-benefits-verified.json
+        run: node verify-wallet-benefits.mjs
+
       - name: Detectar cambios en promociones verificadas
         id: changes
         run: |
@@ -70,11 +87,20 @@ jobs:
             echo "promotions_changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Detectar cambios en beneficios verificados
+        id: wallet_changes
+        run: |
+          if git diff --quiet -- data/wallet-benefits-verified.json; then
+            echo "wallet_benefits_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "wallet_benefits_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Guardar precios actualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json
+          git add data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
@@ -91,6 +117,9 @@ jobs:
           OUTPUT_FILE: data/san-juan.ndjson
           RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
           RETAILER_REPORT_FILE: data/retailer-promotion-sources.json
+          WALLET_REPORT_FILE: data/wallet-benefit-sources.json
+          WALLET_VERIFIED_FILE: data/wallet-benefits-verified.json
+          WALLET_BENEFITS_CHANGED: ${{ steps.wallet_changes.outputs.wallet_benefits_changed }}
           NOTIFICATION_RUN_ID: ${{ github.run_id }}
           NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-completed.mjs
