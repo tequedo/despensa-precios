@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T13:21:14.295Z",
+  "generatedAt": "2026-09-10T13:41:07.899Z",
   "scope": "San Juan",
   "rule": "Coincidencia entre SEPA reciente y página oficial de la cadena",
   "promotions": [
@@ -16,10 +16,10 @@
       "promoKind": "promotion",
       "requiredBenefit": "",
       "validDate": "2026-09-10",
-      "observedAt": "2026-09-10T13:18:30.924Z",
+      "observedAt": "2026-09-10T13:38:21.083Z",
       "source": "https://datos.produccion.gob.ar/dataset/sepa-precios",
       "retailerSource": "https://www.carrefour.com.ar/promociones",
-      "corroboratedAt": "2026-09-10T13:21:14.294Z"
+      "corroboratedAt": "2026-09-10T13:41:07.897Z"
     }
   ]
 }
