@@ -1,6 +1,25 @@
 {
-  "generatedAt": "2026-09-09T21:01:20.739Z",
+  "generatedAt": "2026-09-10T13:21:14.295Z",
   "scope": "San Juan",
   "rule": "Coincidencia entre SEPA reciente y página oficial de la cadena",
-  "promotions": []
+  "promotions": [
+    {
+      "chain": "Hipermercado Carrefour",
+      "branch": "San Juan",
+      "locality": "San Juan",
+      "ean": "sepa:10:1:7791720029411",
+      "product": "LECHE UAT PARC DESC CARREFOUR CLASSIC BRIK X 1 LT",
+      "brand": "CARREFOUR CLASSIC",
+      "listPrice": 2290,
+      "promoPrice": 1790,
+      "conditions": "Promo A valida desde el 09/09/2026 hasta 15/09/2026",
+      "promoKind": "promotion",
+      "requiredBenefit": "",
+      "validDate": "2026-09-10",
+      "observedAt": "2026-09-10T13:18:30.924Z",
+      "source": "https://datos.produccion.gob.ar/dataset/sepa-precios",
+      "retailerSource": "https://www.carrefour.com.ar/promociones",
+      "corroboratedAt": "2026-09-10T13:21:14.294Z"
+    }
+  ]
 }
