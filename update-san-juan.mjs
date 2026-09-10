@@ -5,7 +5,7 @@ import { basename, dirname, join } from "node:path";
 import { execFile } from "node:child_process";
 import { createInterface } from "node:readline";
 import { promisify } from "node:util";
-import { createMeatMatcher } from "./meat-matcher.mjs";
+import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "./meat-matcher.mjs";
 
 const execFileAsync = promisify(execFile);
 const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
@@ -272,8 +272,19 @@ async function processFolder(folder, sourceInfo, counters) {
       const branch = branches.get(branchKey(row));
       if (!branch) return;
       const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
+      const brand = pick(row, ["productos_marca", "producto_marca", "marca"]);
       const normalizedDescription = normalize(description);
-      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription)) && !isMeatProduct(description)) return;
+      const meatProduct = isMeatProduct(description, brand);
+      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription)) && !meatProduct) return;
+      const presentationQuantity = pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]);
+      const presentationUnit = pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"]);
+      const referenceUnit = pick(row, ["productos_unidad_medida_referencia", "producto_unidad_medida_referencia", "unidad_medida_referencia"]);
+      const presentation = [presentationQuantity, presentationUnit].filter(Boolean).join(" ");
+      if (meatProduct && !hasExactKilogramBasis(presentation, referenceUnit)) {
+        counters.rejected++;
+        await quarantine("meat", "meat_unit_not_exact_1kg", { product: description, brand, presentation, referenceUnit, store: branchKey(branch) }, counters);
+        return;
+      }
       const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
       if (!listPrice || listPrice < 100 || listPrice > 10000000) {
         counters.rejected++;
@@ -282,6 +293,11 @@ async function processFolder(folder, sourceInfo, counters) {
           store: branchKey(branch),
           value: pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"])
         }, counters);
+        return;
+      }
+      if (meatProduct && !isPlausibleMeatPrice(listPrice)) {
+        counters.rejected++;
+        await quarantine("meat", "meat_price_out_of_range", { product: description, brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
         return;
       }
       let promoPrice = number(pick(row, [
@@ -326,12 +342,9 @@ async function processFolder(folder, sourceInfo, counters) {
         product: {
           ean,
           name: description || ean,
-          brand: pick(row, ["productos_marca", "producto_marca", "marca"]),
-          presentation: [
-            pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]),
-            pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"])
-          ].filter(Boolean).join(" "),
-          referenceUnit: pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"], "unidad")
+          brand,
+          presentation,
+          referenceUnit: referenceUnit || presentationUnit || "unidad"
         },
         store: {
           externalId: branchKey(branch),
