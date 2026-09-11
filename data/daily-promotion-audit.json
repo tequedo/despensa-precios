@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10T14:15:11.425Z",
-  "localDate": "2026-09-10",
+  "generatedAt": "2026-09-11T13:45:55.000Z",
+  "localDate": "2026-09-11",
   "timezone": "America/Argentina/San_Juan",
   "status": "completed_with_warnings",
   "summary": {
     "officialSourcesChecked": 12,
     "officialSourcesReachable": 12,
-    "sourcesWithLimitations": 5,
-    "sepaProductPromotionCandidates": 730,
+    "sourcesWithLimitations": 6,
+    "sepaProductPromotionCandidates": 770,
     "exactProductPromotionsCorroborated": 1,
     "generalBenefitsPublishedInOfficialSources": 7,
     "fullySpecifiedGeneralBenefits": 2,
     "calculationEligibleBenefits": 0,
     "changedSincePrevious": true,
-    "comparisonBasis": "Respecto de 2026-09-09: +166 precios SEPA (22.643→22.809), +570 promociones candidatas (160→730), una promoción exacta nueva y un beneficio público nuevo de Mercado Pago en Carrefour (6→7 beneficios)."
+    "comparisonBasis": "Respecto de 2026-09-10: -65 precios SEPA (22.809→22.744), +40 promociones candidatas (730→770), todas de La Anónima; se mantienen una promoción exacta y siete beneficios públicos. No hubo cambios sustanciales en las reglas de los beneficios."
   },
   "sepa": {
     "source": "SEPA - Precios Claros",
@@ -22,18 +22,20 @@
     "workflow": "update-prices.yml",
     "workflowCompleted": true,
     "workflowEvidence": "data/notification-status.json",
-    "workflowCheckedAt": "2026-09-10T13:41:41.473Z",
-    "recordsLoaded": 22809,
-    "dataCommittedAt": "2026-09-10T13:41:35Z",
-    "dataCommit": "321469f15bdbac6daedf3fc3390432d64f218abf",
-    "promotionsGeneratedAt": "2026-09-10T13:40:05.180Z",
+    "workflowCheckedAt": "2026-09-11T13:43:10.650Z",
+    "recordsLoaded": 22744,
+    "dataCommittedAt": "2026-09-11T13:43:04Z",
+    "dataCommit": "c2127a68a59df4541d2bb89cec97ff740b07955e",
+    "ndjsonBlobSha": "0f319a2c56d789a8943cc63c57094be4638d0d49",
+    "promotionsGeneratedAt": "2026-09-11T13:41:41.288Z",
+    "promotionsBlobSha": "ae2b53bbfb4f1a1af3df18d17e6bfdf86de384fe",
     "promotionCandidateChains": [
       "Hipermercado Carrefour",
       "La Anonima"
     ],
     "promotionCandidatesByChain": {
       "Hipermercado Carrefour": 81,
-      "La Anonima": 649
+      "La Anonima": 689
     }
   },
   "sources": [
@@ -42,47 +44,47 @@
       "name": "SEPA - Precios Claros",
       "category": "government_data",
       "url": "https://datos.produccion.gob.ar/dataset/sepa-precios",
-      "checkedAt": "2026-09-10T13:41:41.473Z",
+      "checkedAt": "2026-09-11T13:43:10.650Z",
       "reachable": true,
       "status": "completed",
-      "note": "22.809 registros de San Juan cargados y depurados."
+      "note": "22.744 registros de San Juan cargados y depurados; workflow finalizado correctamente."
     },
     {
       "id": "vea_official",
       "name": "Vea — ofertas y catálogo",
       "category": "retailer",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-09-10T13:40:07.023Z",
+      "checkedAt": "2026-09-11T13:41:41.881Z",
       "reachable": true,
       "status": "reachable_without_product_match",
-      "note": "Sin promociones SEPA candidatas de Vea en los datos de hoy; la página respondió pero no se renderizó por completo."
+      "note": "Sin promociones SEPA candidatas de Vea; la página oficial respondió, con renderizado incompleto en la comprobación automática."
     },
     {
       "id": "changomas_official",
       "name": "ChangoMás — ofertas",
       "category": "retailer",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-09-10T13:40:07.680Z",
+      "checkedAt": "2026-09-11T13:41:43.408Z",
       "reachable": true,
       "status": "reachable_without_product_match",
-      "note": "Sin promociones SEPA candidatas de ChangoMás; alcance nacional detectado, sin renderizado completo."
+      "note": "Sin promociones SEPA candidatas de ChangoMás; alcance nacional detectado, con renderizado parcial."
     },
     {
       "id": "la_anonima_official",
       "name": "La Anónima / Libertad — catálogos",
       "category": "retailer",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-09-10T13:40:15.374Z",
+      "checkedAt": "2026-09-11T13:41:53.510Z",
       "reachable": true,
       "status": "reachable_without_exact_product_match",
-      "note": "649 candidatas SEPA; ninguna coincidencia exacta de cadena, sucursal, EAN y condiciones."
+      "note": "689 candidatas SEPA; ninguna coincidencia exacta de cadena, sucursal, EAN y condiciones. La verificación del workflow accedió al catálogo, aunque la segunda lectura directa falló."
     },
     {
       "id": "carrefour_official",
       "name": "Carrefour — promociones",
       "category": "retailer",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-09-10T13:41:07.897Z",
+      "checkedAt": "2026-09-11T13:42:43.553Z",
       "reachable": true,
       "status": "corroborated",
       "note": "81 candidatas SEPA; una coincidencia exacta corroborada, vigente del 09/09/2026 al 15/09/2026."
@@ -92,75 +94,75 @@
       "name": "Banco San Juan — supermercados",
       "category": "bank",
       "url": "https://www.bancosanjuan.com/beneficios-supermercados",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "reachable": true,
       "status": "reachable_with_relevant_benefits",
-      "note": "Publica porcentaje, días y vigencia; las fichas generales no exponen todos los topes, mínimos, sucursales ni exclusiones."
+      "note": "La página oficial confirma porcentajes, días y vigencias para ChangoMás, Vea, La Anónima y comercios locales; no publica en la vista general todos los topes, mínimos, sucursales ni exclusiones."
     },
     {
       "id": "modo_vea",
       "name": "MODO — Vea",
       "category": "wallet",
       "url": "https://www.modo.com.ar/promos/vea-septiembre26",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "reachable": true,
-      "status": "reachable_with_relevant_benefit",
-      "note": "La ficha pública identifica 20% en Vea, pero no quedaron expuestas todas las condiciones necesarias para calcularlo."
+      "status": "reachable_with_relevant_benefit_but_terms_not_extracted",
+      "note": "La URL oficial pública de MODO respondió, pero hoy no expuso el texto completo de condiciones; el beneficio queda informativo."
     },
     {
       "id": "mercado_pago_supermercados",
       "name": "Mercado Pago — supermercados",
       "category": "wallet",
       "url": "https://promociones.mercadopago.com.ar/tipocat/supermercado/",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:42:43.612Z",
       "reachable": true,
       "status": "reachable_with_public_catalog_limitations",
-      "note": "No se accedió a promociones personalizadas ni se las trató como beneficios generales."
+      "note": "Portal público revisado; no se accedió a promociones personalizadas ni se las trató como beneficios generales."
     },
     {
       "id": "changomas_payment_terms",
       "name": "ChangoMás — promociones con Mercado Pago",
       "category": "retailer_terms",
       "url": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-10T13:41:07.956Z",
+      "checkedAt": "2026-09-11T13:42:43.612Z",
       "reachable": true,
       "status": "reachable_with_verified_benefit",
-      "note": "Beneficio verificado desde términos públicos estructurados de la cadena."
+      "note": "Términos oficiales estructurados: un beneficio verificado y dos candidatos excluidos por fechas contradictorias."
     },
     {
       "id": "carrefour_payment_terms",
       "name": "Carrefour — descuentos bancarios",
       "category": "retailer_terms",
       "url": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-10T13:41:07.956Z",
+      "checkedAt": "2026-09-11T13:42:43.612Z",
       "reachable": true,
       "status": "reachable_with_verified_benefit",
-      "note": "Beneficio de Mercado Pago verificado desde datos públicos oficiales; la lectura HTML secundaria no expuso contenido."
+      "note": "Datos públicos oficiales: un beneficio verificado; otros cuatro candidatos tienen contradicciones o condiciones incompletas."
     },
     {
       "id": "visa_promotions",
       "name": "Visa Argentina — promociones",
       "category": "card_network",
       "url": "https://www.visa.com.ar/es_ar/promociones/",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "reachable": true,
       "status": "no_qualifying_supermarket_offer_with_complete_public_terms",
-      "note": "No se encontró una oferta pública aplicable a supermercados de San Juan con comercio, vigencia y condiciones completas."
+      "note": "No se encontró una oferta pública aplicable a supermercados de San Juan que identifique comercio, vigencia y condiciones completas."
     },
     {
       "id": "mastercard_benefits",
       "name": "Mastercard Argentina — beneficios",
       "category": "card_network",
       "url": "https://www.mastercard.com/ar/es.html",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "reachable": true,
       "status": "no_qualifying_supermarket_offer_with_complete_public_terms",
-      "note": "La portada pública no identificó una oferta pertinente con cadena, vigencia y condiciones completas."
+      "note": "La página oficial no identificó una oferta pertinente con cadena, vigencia y condiciones completas."
     }
   ],
   "productPromotions": {
     "rule": "Solo se corrobora una promoción si coinciden cadena, sucursal, EAN y condiciones entre SEPA y la fuente oficial de la cadena.",
-    "candidates": 730,
+    "candidates": 770,
     "corroborated": [
       {
         "chain": "Hipermercado Carrefour",
@@ -171,12 +173,12 @@
         "brand": "CARREFOUR CLASSIC",
         "listPrice": 2290,
         "promoPrice": 1790,
-        "conditions": "Promo A válida desde el 09/09/2026 hasta el 15/09/2026",
-        "validDate": "2026-09-10",
-        "observedAt": "2026-09-10T13:38:21.083Z",
+        "conditions": "Promo A valida desde el 09/09/2026 hasta 15/09/2026",
+        "validDate": "2026-09-11",
+        "observedAt": "2026-09-11T13:39:39.692Z",
         "sepaSource": "https://datos.produccion.gob.ar/dataset/sepa-precios",
         "retailerSource": "https://www.carrefour.com.ar/promociones",
-        "corroboratedAt": "2026-09-10T13:41:07.897Z"
+        "corroboratedAt": "2026-09-11T13:42:43.553Z"
       }
     ]
   },
@@ -196,7 +198,7 @@
       "cap": "Sin tope",
       "paymentMethod": "Pago con QR desde la app de Mercado Pago",
       "channels": [
-        "sucursales",
+        "Sucursales",
         "Más Online con pago online"
       ],
       "geographicScope": "Todas las sucursales de HiperChangoMás, ChangoMás y MasGo",
@@ -230,13 +232,13 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-10T13:41:07.956Z",
+      "checkedAt": "2026-09-11T13:42:43.612Z",
       "verificationStatus": "verified",
       "calculationEligible": false,
-      "calculationBlockedReason": "Las exclusiones por categoría y marca aún no pueden validarse renglón por renglón en cada canasta."
+      "calculationBlockedReason": "Tiene exclusiones por categoría y marca; todavía no se puede validar cada renglón de la canasta de forma exacta."
     },
     {
-      "id": "mercado-pago-carrefour-2026-09",
+      "id": "mercado-pago-carrefour-b5821964-430c-44e9-90d2-17fee264f019",
       "provider": "Mercado Pago",
       "chain": "Carrefour",
       "title": "15% con Mercado Pago los lunes",
@@ -247,12 +249,12 @@
       "validFrom": "2026-09-01",
       "validTo": "2026-09-30",
       "minimumPurchase": null,
-      "cap": "$15.000",
+      "cap": "Tope $15.000",
       "paymentMethod": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
       "channels": [
-        "sucursales físicas"
+        "Sucursales físicas"
       ],
-      "geographicScope": "Hipermercados Carrefour, Market, Express y Maxi del país",
+      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país",
       "exclusions": [
         "Carnicería",
         "Huevos",
@@ -270,10 +272,10 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-10T13:41:07.956Z",
+      "checkedAt": "2026-09-11T13:42:43.612Z",
       "verificationStatus": "verified",
       "calculationEligible": false,
-      "calculationBlockedReason": "Las exclusiones por categoría aún no pueden validarse producto por producto en cada canasta."
+      "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta."
     },
     {
       "id": "banco-san-juan-modo-changomas-2026-09",
@@ -292,7 +294,7 @@
       "geographicScope": null,
       "exclusions": null,
       "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "verificationStatus": "officially_published_informational",
       "calculationEligible": false,
       "calculationBlockedReason": "La página general no expone tope, compra mínima, sucursales adheridas ni exclusiones completas."
@@ -317,7 +319,7 @@
         "https://www.bancosanjuan.com/beneficios-supermercados",
         "https://www.modo.com.ar/promos/vea-septiembre26"
       ],
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "verificationStatus": "officially_published_informational",
       "calculationEligible": false,
       "calculationBlockedReason": "No quedaron expuestas todas las exclusiones, compra mínima y sucursales adheridas."
@@ -341,7 +343,7 @@
       "geographicScope": null,
       "exclusions": null,
       "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "verificationStatus": "officially_published_informational",
       "calculationEligible": false,
       "calculationBlockedReason": "No quedaron expuestos tope, mínimo, sucursales, exclusiones ni la mecánica completa del 10% adicional."
@@ -363,7 +365,7 @@
       "geographicScope": null,
       "exclusions": null,
       "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "verificationStatus": "officially_published_informational",
       "calculationEligible": false,
       "calculationBlockedReason": "La página general no expone todas las condiciones."
@@ -385,7 +387,7 @@
       "geographicScope": "San Juan por identificación del comercio",
       "exclusions": null,
       "sourceUrl": "https://www.bancosanjuan.com/beneficios-supermercados",
-      "checkedAt": "2026-09-10T14:15:11.425Z",
+      "checkedAt": "2026-09-11T13:45:55.000Z",
       "verificationStatus": "officially_published_informational",
       "calculationEligible": false,
       "calculationBlockedReason": "La página general no expone todas las condiciones."
@@ -393,17 +395,55 @@
   ],
   "excludedCandidates": [
     {
-      "title": "Cuotas con QR de Mercado Pago en ChangoMás",
+      "title": "ChangoMás: Cuotas con QR de Mercado Pago",
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "reason": "Los términos públicos muestran fechas contradictorias; se excluye hasta que la cadena los corrija."
+      "reason": "La fecha de fin publicada es anterior a la fecha de inicio.",
+      "status": "conflict",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
+    },
+    {
+      "title": "ChangoMás: Cuotas con QR de Mercado Pago",
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+      "reason": "La fecha de fin publicada es anterior a la fecha de inicio.",
+      "status": "conflict",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
+    },
+    {
+      "title": "Carrefour: Cuotas sin interés con Mercado Pago",
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "reason": "La publicación menciona meses distintos dentro del mismo beneficio.",
+      "status": "conflict",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
+    },
+    {
+      "title": "Carrefour: 10% con Mercado Pago los viernes",
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "reason": "El legal exige la app de Mercado Pago y luego indica que no es válida.",
+      "status": "conflict",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
+    },
+    {
+      "title": "Carrefour: Cuotas sin interés con Mercado Pago",
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "reason": "No se pudo verificar el formato de sucursal alcanzado.",
+      "status": "incomplete",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
+    },
+    {
+      "title": "Carrefour: 15% con Mercado Pago los jueves",
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "reason": "El legal exige la app de Mercado Pago y luego indica que no es válida.",
+      "status": "conflict",
+      "checkedAt": "2026-09-11T13:42:43.612Z"
     }
   ],
   "warnings": [
-    "De las 730 promociones de producto de SEPA, solo una pudo corroborarse mediante coincidencia exacta de cadena, sucursal, EAN y condiciones.",
-    "Las 649 candidatas de La Anónima no pudieron enlazarse de manera exacta con el catálogo público por EAN y sucursal.",
-    "Vea y ChangoMás respondieron, pero sus páginas de ofertas no se renderizaron por completo en la verificación automática.",
+    "De las 770 promociones de producto de SEPA, solo una pudo corroborarse mediante coincidencia exacta de cadena, sucursal, EAN y condiciones.",
+    "Las 689 candidatas de La Anónima no pudieron enlazarse de manera exacta con el catálogo público por EAN y sucursal; una segunda lectura directa del catálogo falló después de que el workflow lo hubiera renderizado.",
+    "Vea y ChangoMás respondieron, pero sus páginas de ofertas tuvieron renderizado incompleto en la verificación automática.",
     "El portal público de Mercado Pago no expone promociones personalizadas sin sesión; no se accedió a ellas ni se trataron como generales.",
+    "La ficha pública de MODO para Vea no expuso hoy todos sus términos en la lectura automática.",
     "Visa y Mastercard no publicaron una oferta de supermercado aplicable a San Juan con comercio, vigencia y condiciones completas en las páginas revisadas.",
-    "Los siete beneficios de pago se presentan solo como información: ninguno modifica automáticamente el total porque todavía requiere validar exclusiones producto por producto o faltan condiciones públicas completas."
+    "Los siete beneficios de pago se presentan solo como información: ninguno modifica automáticamente el total porque requiere validar exclusiones producto por producto o faltan condiciones públicas completas."
   ]
 }
