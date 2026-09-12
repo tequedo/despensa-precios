@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T13:42:43.612Z",
+  "generatedAt": "2026-09-12T12:32:16.897Z",
   "scope": "San Juan",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -58,7 +58,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-11T13:42:43.612Z",
+      "checkedAt": "2026-09-12T12:32:16.897Z",
       "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
       "status": "verified",
       "calculationEligible": false,
@@ -109,7 +109,7 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-11T13:42:43.612Z",
+      "checkedAt": "2026-09-12T12:32:16.897Z",
       "termsHash": "c76ccc677cf018ad425ec97cefe2e33bc70951564175addb3c532e6078c27e38",
       "status": "verified",
       "calculationEligible": false,
