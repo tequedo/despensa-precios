@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile} from 'node:fs/promises';
+import {normalize} from '../price-safety.mjs';
 const origin=process.env.SITE_ORIGIN,token=process.env.PRICE_INGEST_TOKEN;
 if(!origin||!token)throw new Error('Falta configuración para la prueba');
 async function profile(label){
@@ -17,11 +18,20 @@ const coverage=JSON.parse(await readFile('data/national/coverage.json','utf8'));
 const checks=[];
 for(const p of coverage.provinces){
  const started=Date.now(),c=await request('/api/prices/coverage?province='+p.code);assert.equal(c.status,200,p.name+': cobertura');assert.ok(c.body.localities.length,p.name+': sin localidades');
- const scope=new URLSearchParams({province:p.code,locality:c.body.localities[0]});
- const q=await request('/api/prices?'+scope+'&q=leche');assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.length,p.name+': sin leche');
- const product=q.body.data.productos[0];const prices=await request('/api/prices?'+scope+'&ean='+encodeURIComponent(product.id));assert.equal(prices.status,200,p.name+': precio');assert.ok(prices.body.data.sucursales.length,p.name+': sin sucursales');
- for(const s of prices.body.data.sucursales){assert.equal(s.provincia,p.name);assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.validDate,p.sourceDate);}
- checks.push({province:p.name,locality:c.body.localities[0],stores:prices.body.data.sucursales.length,durationMs:Date.now()-started});
+ const index=JSON.parse(await readFile('data/national/'+p.code+'/index.json','utf8'));
+ const totals=new Map();for(const s of index.stores)totals.set(normalize(s.locality),(totals.get(normalize(s.locality))??0)+s.records);
+ const locality=[...c.body.localities].sort((a,b)=>(totals.get(normalize(b))??0)-(totals.get(normalize(a))??0))[0];
+ const branch=index.stores.filter(s=>normalize(s.locality)===normalize(locality)).sort((a,b)=>a.chain.localeCompare(b.chain)||a.externalId.localeCompare(b.externalId))[0];
+ const sample=JSON.parse(await readFile('data/national/'+p.code+'/'+branch.file,'utf8')).prices.find(row=>normalize(row[1]).length>=2);assert.ok(sample,p.name+': sin producto de muestra');
+ const scope=new URLSearchParams({province:p.code,locality});
+ const q=await request('/api/prices?'+scope+'&q='+encodeURIComponent(sample[1]));assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.some(item=>item.id===String(sample[0])),p.name+': falta producto que existe en la fuente');
+ const product=q.body.data.productos.find(item=>item.id===String(sample[0]));const prices=await request('/api/prices?'+scope+'&ean='+encodeURIComponent(product.id));assert.equal(prices.status,200,p.name+': precio');assert.ok(prices.body.data.sucursales.length,p.name+': sin sucursales');
+ for(const s of prices.body.data.sucursales){
+  assert.equal(s.provincia,p.name);assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.validDate,p.sourceDate);
+  const sourceBranch=index.stores.find(store=>store.externalId===s.id);assert.ok(sourceBranch,p.name+': sucursal ajena al índice');
+  const source=JSON.parse(await readFile('data/national/'+p.code+'/'+sourceBranch.file,'utf8')).prices.find(row=>String(row[0])===product.id);assert.ok(source,p.name+': producto ajeno a la fuente');assert.equal(s.preciosProducto.precioLista,source[5],p.name+': precio distinto al informado');
+ }
+ checks.push({province:p.name,locality,ean:product.id,stores:prices.body.data.sucursales.length,pricesMatchSource:true,durationMs:Date.now()-started});console.log(p.name+': búsqueda, sucursal y precio comprobados');
  if(p.code==='AR-J'){
   const basket=await request('/api/prices/basket',{scope:Object.fromEntries(scope),items:[{id:1,ean:product.id,name:product.name,brand:product.brand,presentation:product.presentation,quantity:3,unit:'unidad'}]});assert.equal(basket.status,200,'Comparación de lista');assert.ok(basket.body.data.stores.length);assert.ok(basket.body.data.stores.every(s=>s.known===1&&s.knownTotal>0));
  }
