@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13T23:25:51.590Z",
+  "checkedAt": "2026-09-13T23:27:25.360Z",
   "success": true,
   "provinces": 24,
   "checks": [
@@ -9,7 +9,7 @@
       "ean": "sepa:12:1:7790742437303",
       "stores": 5,
       "pricesMatchSource": true,
-      "durationMs": 1926
+      "durationMs": 2054
     },
     {
       "province": "Buenos Aires",
@@ -17,7 +17,7 @@
       "ean": "sepa:15:1:0000077922120",
       "stores": 12,
       "pricesMatchSource": true,
-      "durationMs": 1210
+      "durationMs": 1089
     },
     {
       "province": "Catamarca",
@@ -25,7 +25,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 838
+      "durationMs": 1000
     },
     {
       "province": "Chaco",
@@ -33,7 +33,7 @@
       "ean": "sepa:11:5:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1011
+      "durationMs": 674
     },
     {
       "province": "Chubut",
@@ -41,7 +41,7 @@
       "ean": "sepa:13:1:7792180001641",
       "stores": 7,
       "pricesMatchSource": true,
-      "durationMs": 2638
+      "durationMs": 715
     },
     {
       "province": "Córdoba",
@@ -49,7 +49,7 @@
       "ean": "sepa:23:1:7791813434368",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1201
+      "durationMs": 1004
     },
     {
       "province": "Corrientes",
@@ -57,7 +57,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1136
+      "durationMs": 978
     },
     {
       "province": "Entre Ríos",
@@ -65,7 +65,7 @@
       "ean": "sepa:15:1:0000077922120",
       "stores": 12,
       "pricesMatchSource": true,
-      "durationMs": 1307
+      "durationMs": 1368
     },
     {
       "province": "Formosa",
@@ -73,7 +73,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 937
+      "durationMs": 1151
     },
     {
       "province": "Jujuy",
@@ -81,7 +81,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 818
+      "durationMs": 668
     },
     {
       "province": "La Pampa",
@@ -89,7 +89,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1312
+      "durationMs": 1441
     },
     {
       "province": "La Rioja",
@@ -97,7 +97,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 842
+      "durationMs": 1426
     },
     {
       "province": "Mendoza",
@@ -105,7 +105,7 @@
       "ean": "sepa:12:1:7798339251561",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 2193
+      "durationMs": 1874
     },
     {
       "province": "Misiones",
@@ -113,7 +113,7 @@
       "ean": "sepa:5:1:7794870000040",
       "stores": 7,
       "pricesMatchSource": true,
-      "durationMs": 1044
+      "durationMs": 1773
     },
     {
       "province": "Neuquén",
@@ -121,7 +121,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1489
+      "durationMs": 3952
     },
     {
       "province": "Río Negro",
@@ -129,7 +129,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1904
+      "durationMs": 1320
     },
     {
       "province": "Salta",
@@ -137,7 +137,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1283
+      "durationMs": 1453
     },
     {
       "province": "San Juan",
@@ -145,7 +145,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1426
+      "durationMs": 999
     },
     {
       "province": "San Luis",
@@ -153,7 +153,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 947
+      "durationMs": 867
     },
     {
       "province": "Santa Cruz",
@@ -161,7 +161,7 @@
       "ean": "sepa:10:1:7792590001491",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1453
+      "durationMs": 1269
     },
     {
       "province": "Santa Fe",
@@ -169,7 +169,7 @@
       "ean": "sepa:23:1:7791813434368",
       "stores": 4,
       "pricesMatchSource": true,
-      "durationMs": 1567
+      "durationMs": 1276
     },
     {
       "province": "Santiago del Estero",
@@ -177,7 +177,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 894
+      "durationMs": 752
     },
     {
       "province": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
@@ -185,7 +185,7 @@
       "ean": "sepa:10:1:7792180145437",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1482
+      "durationMs": 1022
     },
     {
       "province": "Tucumán",
@@ -193,7 +193,7 @@
       "ean": "sepa:11:2:0000001111118",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1600
+      "durationMs": 1079
     }
   ],
   "pantry": true,
