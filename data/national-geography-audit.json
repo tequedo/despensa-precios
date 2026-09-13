@@ -1,0 +1,431 @@
+{
+  "checkedAt": "2026-09-13T23:00:00.167Z",
+  "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
+  "rejectedCount": 53,
+  "rejected": [
+    {
+      "externalId": "10|4|504",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Cacheuta",
+      "latitude": -31.460585,
+      "longitude": -64.215363,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|71",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Cañuelas",
+      "latitude": -35.03737,
+      "longitude": -58.75824,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|776",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "CAPITAL FEDERAL",
+      "latitude": -34.07254,
+      "longitude": -58.478249,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|72",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Chivilcoy",
+      "latitude": -34.919834,
+      "longitude": -59.98827,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6219",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Ciudad Autonoma de Buenos Aires (901)",
+      "latitude": -34.6459,
+      "longitude": -58.5309,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6276",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Ciudad Autonoma de Buenos Aires (901)",
+      "latitude": -34.6448,
+      "longitude": -58.532,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|702",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Claypole",
+      "latitude": -34.822169,
+      "longitude": -58.366915,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|873",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.425366,
+      "longitude": -64.187647,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|194",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.389307,
+      "longitude": -64.134309,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|280",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.377589,
+      "longitude": -64.277557,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|860",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -30.982034,
+      "longitude": -64.491897,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|871",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -30.980625,
+      "longitude": -64.098345,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|224",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.431692,
+      "longitude": -64.191582,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|6001",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.406959,
+      "longitude": -64.22427,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|872",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.167561,
+      "longitude": -64.31945,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|222",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.423396,
+      "longitude": -64.179534,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|172",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -32.890284,
+      "longitude": -68.837131,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|861",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.656728,
+      "longitude": -64.428594,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|869",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.657556,
+      "longitude": -64.432327,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|270",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.422513,
+      "longitude": -64.496978,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|173",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.417325,
+      "longitude": -64.188484,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|225",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.3801,
+      "longitude": -64.245395,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|163",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.418749,
+      "longitude": -64.178711,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|865",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.239049,
+      "longitude": -64.464619,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|874",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.387152,
+      "longitude": -64.21515,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|876",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.426419,
+      "longitude": -64.215643,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|867",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.090725,
+      "longitude": -64.48531,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|281",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.386371,
+      "longitude": -64.227571,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|223",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.389247,
+      "longitude": -64.215564,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|707",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.367973,
+      "longitude": -64.177617,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|701",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Laferrere",
+      "latitude": -34.754617,
+      "longitude": -58.61294,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|70",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "San Luis",
+      "latitude": -33.319163,
+      "longitude": -66.326925,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|503",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "San Vicente",
+      "latitude": -34.999979,
+      "longitude": -58.397284,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|40",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Temperley",
+      "latitude": -34.763279,
+      "longitude": -58.364638,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|45",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Trelew",
+      "latitude": -43.258515,
+      "longitude": -65.329191,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6296",
+      "declaredProvince": "Buenos Aires",
+      "locality": "Berazategui",
+      "latitude": -34.5811,
+      "longitude": -58.4288,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|5418",
+      "declaredProvince": "Buenos Aires",
+      "locality": "BUENOS AIRES",
+      "latitude": -36.356692,
+      "longitude": -56.721224,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|5485",
+      "declaredProvince": "Buenos Aires",
+      "locality": "BUENOS AIRES",
+      "latitude": -34.6097868,
+      "longitude": -58.3828226,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|5487",
+      "declaredProvince": "Buenos Aires",
+      "locality": "BUENOS AIRES",
+      "latitude": -34.6130285,
+      "longitude": -58.4169895,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|5489",
+      "declaredProvince": "Buenos Aires",
+      "locality": "BUENOS AIRES",
+      "latitude": -34.5662875,
+      "longitude": -58.4651215,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "15|1|90000",
+      "declaredProvince": "Buenos Aires",
+      "locality": "CABA",
+      "latitude": -34.5736049,
+      "longitude": -58.4232349,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "13|1|153",
+      "declaredProvince": "Buenos Aires",
+      "locality": "Caballito",
+      "latitude": -34.62125803467796,
+      "longitude": -58.42812344948098,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|67",
+      "declaredProvince": "Buenos Aires",
+      "locality": "La Pampa",
+      "latitude": -36.610397,
+      "longitude": -64.281612,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "12|1|49",
+      "declaredProvince": "Buenos Aires",
+      "locality": "Mar De Ajo",
+      "latitude": -36.7214462,
+      "longitude": -56.6768593,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|68",
+      "declaredProvince": "Buenos Aires",
+      "locality": "NEUQUEN",
+      "latitude": -38.929334,
+      "longitude": -69.207412,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "9|1|52",
+      "declaredProvince": "Buenos Aires",
+      "locality": "SAN CLEMENTE DEL TUYU",
+      "latitude": -36.3588,
+      "longitude": -56.7186,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "13|1|150",
+      "declaredProvince": "Buenos Aires",
+      "locality": "San Telmo",
+      "latitude": -34.61728228903599,
+      "longitude": -58.37245775640857,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|1|2",
+      "declaredProvince": "Buenos Aires",
+      "locality": "Vicente López",
+      "latitude": -34.532302,
+      "longitude": -58.468176,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "9|3|5277",
+      "declaredProvince": "Chubut",
+      "locality": "COMODORO RIVADAVIA",
+      "latitude": -45.8733,
+      "longitude": -67.4935,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|187",
+      "declaredProvince": "Salta",
+      "locality": "Escobar",
+      "latitude": -34.34391,
+      "longitude": -58.78979,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|502",
+      "declaredProvince": "Salta",
+      "locality": "Jujuy",
+      "latitude": -24.18719,
+      "longitude": -65.303709,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|4|73",
+      "declaredProvince": "Salta",
+      "locality": "Pinamar",
+      "latitude": -37.109037,
+      "longitude": -56.893103,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6294",
+      "declaredProvince": "Santa Fe",
+      "locality": "ARROYO SECO",
+      "latitude": -33.0802,
+      "longitude": -60.3419,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    }
+  ]
+}
