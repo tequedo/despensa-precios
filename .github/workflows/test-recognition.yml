@@ -21,7 +21,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq espeak-ng
-          espeak-ng -v es -s 140 -w voice-qa.wav 'Agregá dos paquetes de arroz Gallo de un kilo.'
+          espeak-ng -v es -s 140 -w voice-qa.wav 'Necesito comprar. Dos paquetes de arroz Gallo de un kilo.'
       - name: Comprobar servicios con muestras sintéticas
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
