@@ -43,7 +43,9 @@ export function sizes(value) {
  return {amount:Number(m[1])*(large?1000:1),dimension:volume?"volume":"mass"};
  });
 }
+const packCount=value=>{const text=normalize(value);const m=text.match(/(?:pack|paquete)\s*(?:de|x)?\s*(\d+)|\b(\d+)\s*x\s*\d+\s*(?:l|lt|ml|g|gr|kg)\b/);return m?Number(m[1]??m[2]):1;};
 export function sameSize(requested,...actual) {
+ const expectedPack=packCount(requested);if(actual.some(a=>packCount(a)>1&&packCount(a)!==expectedPack))return false;
  const expected=sizes(requested)[0];
  if(!expected)return !requested||actual.some(a=>normalize(a)===normalize(requested));
  return actual.flatMap(sizes).some(s=>s.dimension===expected.dimension&&Math.abs(s.amount-expected.amount)<0.001);

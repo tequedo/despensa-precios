@@ -32,3 +32,5 @@ test('tarjetas, topes y mínimos no cambian el ranking sin elegibilidad',()=>{
  }
 });
 
+
+test('no confunde una unidad con un pack de varias unidades',()=>{assert.equal(sameSize('1 L','1 L','Leche pack x 6'),false);assert.equal(sameSize('1 L','6 x 1 L'),false);});

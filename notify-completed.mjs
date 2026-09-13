@@ -47,6 +47,8 @@ async function notify(kind, details) {
 }
 
 const priceCount = await countLines(pricesFile);
+const nationalCoverage=JSON.parse(await readFile("data/national/coverage.json","utf8"));
+if(!nationalCoverage.geographyVerified)throw new Error("La cobertura nacional no tiene geografía validada");
 const verified = JSON.parse(await readFile(promotionsFile, "utf8"));
 const promotionCount = verified.promotions?.length ?? 0;
 const report = JSON.parse(await readFile(reportFile, "utf8"));
@@ -63,8 +65,9 @@ try {
   await notify("sepa", [
     "La actualización completa terminó correctamente.",
     "Los archivos se descargaron, descomprimieron, analizaron y depuraron.",
-    "Los precios de San Juan ya quedaron cargados en la aplicación.",
-    `Registros cargados: ${priceCount}`,
+    `Jurisdicciones con datos: ${nationalCoverage.provinces.filter(p=>p.stores>0).length}`,
+    `Sucursales con provincia validada: ${nationalCoverage.provinces.reduce((n,p)=>n+p.stores,0)}`,
+    `Registros de precios: ${nationalCoverage.provinces.reduce((n,p)=>n+p.records,0)}`,
   ]);
 
   await writeFile(
@@ -81,3 +84,4 @@ try {
   console.error(message);
   process.exitCode = 1;
 }
+
