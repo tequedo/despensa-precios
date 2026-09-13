@@ -7,8 +7,11 @@ import { createInterface } from "node:readline";
 import { promisify } from "node:util";
 import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "./meat-matcher.mjs";
 
+import { nationalExporter } from "./national-export.mjs";
+import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
+
 const execFileAsync = promisify(execFile);
-const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/master/dataset-info.json";
+const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/dataset-info.json";
 const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -56,13 +59,14 @@ async function send(records) {
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
 const promotionsFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.json";
-const promotionChains = ["vea", "chango mas", "changomas", "la anonima", "carrefour"];
+const national = process.env.NATIONAL_EXPORT === "1";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
 const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword + "(?:\\b|$)"));
 const meatCatalog = JSON.parse(await readFile(new URL("./data/meat-catalog.json", import.meta.url), "utf8"));
 const isMeatProduct = createMeatMatcher(meatCatalog);
-const workDir = await mkdtemp(join(tmpdir(), "sepa-san-juan-"));
+const workDir = await mkdtemp(join(tmpdir(), "sepa-precios-"));
+const exporter = national ? await nationalExporter("data/national",join(workDir,"branches")) : null;
 
 function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
@@ -87,6 +91,15 @@ const foreignLocalities = [
 
 function geographicValidation(row) {
   const province = normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"]));
+  const jurisdiction=provinceFor(province);
+  if(national && jurisdiction && jurisdiction.code!=="AR-J") {
+    const locality=pick(row,["sucursales_localidad","sucursal_localidad","localidad"]);
+    const lat=pick(row,["sucursales_latitud","sucursal_latitud","latitud"]), lon=pick(row,["sucursales_longitud","sucursal_longitud","longitud"]);
+    if(!locality) return {accepted:false,reason:"missing_locality"};
+    if(Boolean(lat)!==Boolean(lon))return {accepted:false,reason:"incomplete_coordinates"};
+    if(lat&&(!Number.isFinite(Number(lat))||!Number.isFinite(Number(lon))||Number(lat)<-56||Number(lat)>-21||Number(lon)<-74||Number(lon)>-53))return {accepted:false,reason:"coordinates_outside_argentina"};
+    return {accepted:true};
+  }
   if (!(provinceCodes.has(province) || province === "san juan" || province === "j")) {
     return { accepted: false, reason: "province_not_san_juan" };
   }
@@ -110,12 +123,6 @@ function geographicValidation(row) {
   return { accepted: true };
 }
 
-function validDateOrToday(value) {
-  const candidate = String(value ?? "").slice(0, 10);
-  return /^\d{4}-\d{2}-\d{2}$/.test(candidate) && !Number.isNaN(new Date(`${candidate}T00:00:00Z`).getTime())
-    ? candidate
-    : new Date().toISOString().slice(0, 10);
-}
 
 function promotionExpired(conditions, validDate) {
   const match = normalize(conditions).match(/hasta(?:\s+el)?\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/);
@@ -141,7 +148,7 @@ function promotionDetails(promoPrice, conditions) {
   if (nxm && Number(nxm[1]) > Number(nxm[2])) return { promoKind: "nxm", buyQuantity: Number(nxm[1]), payQuantity: Number(nxm[2]), ...common };
   if (secondUnit) return { promoKind: "second_unit", discountPercent: number(secondUnit[1]) ?? 0, ...common };
   if (percent) return { promoKind: "percent", discountPercent: number(percent[1]) ?? 0, ...common };
-  return { promoKind: promoPrice ? "promotion" : "none", ...common };
+  return { promoKind: promoPrice ? "special_price" : "none", ...common };
 }
 
 function parsePipe(line) {
@@ -314,7 +321,11 @@ async function processFolder(folder, sourceInfo, counters) {
         "productos_leyenda_promo1",
         "leyenda_promocion"
       ]);
-      const validDate = validDateOrToday(pick(row, ["productos_fecha_actualizacion", "fecha_actualizacion"]));
+      const validDate=isoDate(sourceInfo.modified);
+      const productUpdatedAt=isoDate(pick(row,["productos_fecha_actualizacion","fecha_actualizacion"]));
+      if(!validDate||!freshDate(validDate)|| (productUpdatedAt && productUpdatedAt>validDate)){
+        counters.rejected++;return;
+      }
       if (promoPrice && (promoPrice < 100 || promoPrice > listPrice || promotionExpired(promoConditions, validDate))) {
         counters.promotionsDiscarded++;
         await quarantine("promotion", promotionExpired(promoConditions, validDate) ? "expired_promotion" : "invalid_promotion_price", {
@@ -351,8 +362,8 @@ async function processFolder(folder, sourceInfo, counters) {
           chain: pick(branch, ["_chain", "bandera_descripcion", "comercio_razon_social", "cadena"]),
           branch: pick(branch, ["sucursales_nombre", "sucursal_nombre", "nombre"]),
           address: [pick(branch, ["sucursales_calle", "sucursal_direccion", "direccion"]), pick(branch, ["sucursales_numero"])].filter(Boolean).join(" "),
-          locality: pick(branch, ["sucursales_localidad", "sucursal_localidad", "localidad"], "San Juan"),
-          province: "San Juan",
+          locality: pick(branch, ["sucursales_localidad", "sucursal_localidad", "localidad"]),
+          province: provinceFor(pick(branch,["sucursales_provincia","sucursal_provincia","provincia","provincia_id"]))?.name ?? "San Juan",
           latitude: Number(pick(branch, ["sucursales_latitud", "sucursal_latitud", "latitud"])) || undefined,
           longitude: Number(pick(branch, ["sucursales_longitud", "sucursal_longitud", "longitud"])) || undefined
         },
@@ -363,11 +374,14 @@ async function processFolder(folder, sourceInfo, counters) {
           ...promotion,
           channel: "sucursal",
           validDate,
-          observedAt: new Date().toISOString()
+          productUpdatedAt,
+          observedAt: new Date(sourceInfo.modified).toISOString()
         }
       };
-      await appendFile(outputFile, JSON.stringify(record) + "\n");
+      if(exporter)await exporter.add(record);
       counters.accepted++;
+      if(record.store.province !== "San Juan")return;
+      await appendFile(outputFile, JSON.stringify(record) + "\n");
       batch.push(record);
       if (batch.length >= batchSize) {
         counters.ingested += await send(batch);
@@ -444,10 +458,11 @@ try {
 
   if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
+  if(exporter)await exporter.finish();
   const promotionRows = [];
   await rowsFromNdjson(outputFile, record => {
     const chain = normalize(record.store?.chain);
-    if (promotionChains.some(name => chain.includes(name)) && (record.price?.promoPrice || record.price?.promoConditions)) promotionRows.push(record);
+    if (record.price?.promoPrice || record.price?.promoConditions) promotionRows.push(record);
   });
   const uniquePromotions = new Map();
   for (const record of promotionRows) {
@@ -455,7 +470,7 @@ try {
     uniquePromotions.set(key, record);
   }
   const promotions = [...uniquePromotions.values()].map(record => ({
-    chain: record.store.chain, branch: record.store.branch, locality: record.store.locality,
+    chain: record.store.chain, branch: record.store.branch, locality: record.store.locality, province:record.store.province,storeId:record.store.externalId,
     ean: record.product.ean, product: record.product.name, brand: record.product.brand,
     listPrice: record.price.listPrice, promoPrice: record.price.promoPrice,
     conditions: record.price.promoConditions, promoKind: record.price.promoKind,
@@ -484,3 +499,4 @@ try {
 } finally {
   await rm(workDir, { recursive: true, force: true });
 }
+

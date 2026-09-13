@@ -1,10 +1,15 @@
-name: Actualizar precios de San Juan
+name: Actualizar precios de Argentina
 
 on:
   workflow_dispatch:
   push:
     paths:
       - "update-san-juan.mjs"
+      - "national-export.mjs"
+      - "price-safety.mjs"
+      - "promotion-evidence.mjs"
+      - "notify-failed.mjs"
+      - "tests/price-safety.test.mjs"
       - "san-juan-products.json"
       - "meat-matcher.mjs"
       - "data/meat-catalog.json"
@@ -27,7 +32,7 @@ concurrency:
 jobs:
   actualizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -54,8 +59,12 @@ jobs:
           chrome-version: stable
           install-dependencies: true
 
+      - name: Probar reglas de precios y geografía
+        run: node --test tests/meat-matcher.test.mjs tests/price-safety.test.mjs tests/national-export.test.mjs
+
       - name: Recolectar precios oficiales
         env:
+          NATIONAL_EXPORT: "1"
           PROVINCE_CODES: AR-J
           OUTPUT_FILE: data/san-juan.ndjson
           PROMOTIONS_FILE: data/san-juan-promotions.json
@@ -105,11 +114,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
+          git add data/national data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
-            git commit -m "Actualizar precios de San Juan"
+            git commit -m "Actualizar precios por sucursal y provincia"
             git pull --rebase origin main
             git push
           fi
@@ -129,6 +138,15 @@ jobs:
           NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-completed.mjs
 
+      - name: Avisar un fallo de actualización
+        if: failure()
+        env:
+          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          NOTIFICATION_RUN_ID: ${{ github.run_id }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node notify-failed.mjs
+
       - name: Guardar diagnóstico de notificación
         if: always()
         run: |
@@ -140,3 +158,4 @@ jobs:
               git push
             fi
           fi
+

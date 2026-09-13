@@ -1,3 +1,4 @@
+import { scopedPromotionEvidence } from "./promotion-evidence.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { mkdir } from "node:fs/promises";
@@ -14,7 +15,7 @@ const maxAgeHours = Number(process.env.PROMOTION_MAX_AGE_HOURS ?? 72);
 const sources = [
   { id: "vea", chain: /vea/i, name: "Vea", url: "https://www.vea.com.ar/ofertas-y-catalogo" },
   { id: "changomas", chain: /chango|walmart|mas online/i, name: "ChangoMás", url: "https://www.masonline.com.ar/3195?map=productClusterIds" },
-  { id: "libertad", chain: /libertad|la anonima/i, name: "Libertad / La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos", render: true },
+  { id: "libertad", chain: /la anonima/i, name: "La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos", render: true },
   { id: "carrefour", chain: /carrefour/i, name: "Carrefour", url: "https://www.carrefour.com.ar/promociones", render: true }
 ];
 
@@ -77,13 +78,11 @@ for (const source of sources) {
     const activeWindows = windows.filter(window => window.from <= today && window.to >= today);
     const mentionsSanJuan = /san\s+juan/i.test(body);
     const nationwide = /todo\s+el\s+pa[ií]s|todo\s+el\s+territorio/i.test(body);
-    const matched = candidates.filter(item => {
-      const ean = String(item.ean ?? "").replace(/\D/g, "");
-      if (ean.length >= 8 && body.includes(ean)) return true;
-      const words = signature(item);
-      return words.length >= 2 && words.filter(word => text.includes(word)).length >= Math.min(3, words.length);
+    const matched=candidates.flatMap(item=>{
+      const evidence=scopedPromotionEvidence(item,body);
+      return evidence?[{...item,...evidence,retailerSource:source.url,corroboratedAt:new Date().toISOString()}]:[];
     });
-    for (const item of matched) accepted.push({ ...item, retailerSource: source.url, corroboratedAt: new Date().toISOString() });
+    accepted.push(...matched);
     report.push({
       retailer: source.name,
       url: source.url,
@@ -95,7 +94,7 @@ for (const source of sources) {
       activeWindows,
       mentionsSanJuan,
       nationwide,
-      status: matched.length ? "corroborated" : "reachable_without_product_match"
+      status: matched.length ? "corroborated" : "reachable_without_complete_scoped_evidence"
     });
   } catch (error) {
     report.push({
@@ -116,7 +115,8 @@ await writeFile(reportFile, JSON.stringify({ generatedAt: new Date().toISOString
 await writeFile(verifiedFile, JSON.stringify({
   generatedAt: new Date().toISOString(),
   scope: "San Juan",
-  rule: "Coincidencia entre SEPA reciente y página oficial de la cadena",
+  rule: "EAN, precio, condición, vigencia, provincia, sucursal y canal físico coincidentes en evidencia oficial estructurada",
   promotions: accepted
 }, null, 2) + "\n");
 console.log(JSON.stringify({ checkedSources: report.length, reachableSources: report.filter(item => item.reachable).length, verifiedPromotions: accepted.length, reportFile, verifiedFile }));
+
