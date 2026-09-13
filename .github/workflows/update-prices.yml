@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "update-san-juan.mjs"
+      - "scripts/push-generated-data.sh"
       - "national-export.mjs"
       - "price-safety.mjs"
       - "promotion-evidence.mjs"
@@ -122,8 +123,7 @@ jobs:
             echo "No hubo cambios en los precios."
           else
             git commit -m "Actualizar precios por sucursal y provincia"
-            git pull --rebase origin main
-            git push
+            bash scripts/push-generated-data.sh
           fi
 
       - name: Notificar actualización y promociones
@@ -157,8 +157,7 @@ jobs:
             git add data/notification-status.json
             if ! git diff --cached --quiet; then
               git commit -m "Actualizar estado de notificación"
-              git pull --rebase origin main
-              git push
+              bash scripts/push-generated-data.sh
             fi
           fi
 
