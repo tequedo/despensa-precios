@@ -1,0 +1,31 @@
+name: Comprobar app publicada
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "tests/site-smoke.mjs"
+      - ".github/workflows/test-site.yml"
+permissions:
+  contents: write
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verificar cobertura y datos aislados
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+        run: node tests/site-smoke.mjs
+      - name: Guardar comprobación
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/site-smoke-report.json
+          git commit -m "Registrar comprobación de app publicada"
+          git pull --rebase origin main
+          git push
