@@ -1,199 +1,247 @@
 {
-  "checkedAt": "2026-09-13T23:27:25.360Z",
+  "checkedAt": "2026-09-13T23:36:40.021Z",
   "success": true,
   "provinces": 24,
   "checks": [
     {
       "province": "Ciudad Autónoma de Buenos Aires",
-      "locality": "CAPITAL FEDERAL",
-      "ean": "sepa:12:1:7790742437303",
-      "stores": 5,
+      "locality": "Recoleta",
+      "ean": "sepa:10:3:7790742335807",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 2054
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 2393
     },
     {
       "province": "Buenos Aires",
-      "locality": "BUENOS AIRES",
-      "ean": "sepa:15:1:0000077922120",
-      "stores": 12,
+      "locality": "Camet",
+      "ean": "sepa:13:1:7792180001641",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1089
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1918
     },
     {
       "province": "Catamarca",
-      "locality": "SAN FERNANDO DEL VALLE DE CATAMARCA",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 1,
+      "locality": "San Fernando del Valle de Catamarca",
+      "ean": "sepa:9:1:0000000725002",
+      "stores": 3,
       "pricesMatchSource": true,
-      "durationMs": 1000
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1204
     },
     {
       "province": "Chaco",
-      "locality": "RESISTENCIA",
-      "ean": "sepa:11:5:0000001111118",
+      "locality": "Resistencia",
+      "ean": "sepa:9:1:0000000508117",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 674
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1170
     },
     {
       "province": "Chubut",
-      "locality": "COMODORO RIVADAVIA",
-      "ean": "sepa:13:1:7792180001641",
-      "stores": 7,
+      "locality": "Trelew",
+      "ean": "sepa:10:2:7790895003950",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 715
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1320
     },
     {
       "province": "Córdoba",
       "locality": "Córdoba",
-      "ean": "sepa:23:1:7791813434368",
-      "stores": 2,
+      "ean": "sepa:10:3:7798159715311",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1004
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 2234
     },
     {
       "province": "Corrientes",
-      "locality": "CORRIENTES",
-      "ean": "sepa:11:2:0000001111118",
+      "locality": "Corrientes",
+      "ean": "sepa:10:2:7798308250069",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 978
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 973
     },
     {
       "province": "Entre Ríos",
-      "locality": "ENTRE RIOS",
+      "locality": "Concordia",
       "ean": "sepa:15:1:0000077922120",
-      "stores": 12,
+      "stores": 5,
       "pricesMatchSource": true,
-      "durationMs": 1368
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1077
     },
     {
       "province": "Formosa",
-      "locality": "FORMOSA",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 2,
+      "locality": "Formosa",
+      "ean": "sepa:10:2:7790199604273",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1151
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 927
     },
     {
       "province": "Jujuy",
-      "locality": "SAN SALVADOR DE JUJUY",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 1,
+      "locality": "San Salvador de Jujuy",
+      "ean": "sepa:9:1:0000000725002",
+      "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 668
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 876
     },
     {
       "province": "La Pampa",
-      "locality": "SANTA ROSA",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 2,
+      "locality": "Santa Rosa",
+      "ean": "sepa:10:1:7791905023210",
+      "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1441
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1356
     },
     {
       "province": "La Rioja",
-      "locality": "LA RIOJA",
-      "ean": "sepa:11:2:0000001111118",
+      "locality": "La Rioja",
+      "ean": "sepa:10:2:7790040152014",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1426
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 905
     },
     {
       "province": "Mendoza",
-      "locality": "MENDOZA",
-      "ean": "sepa:12:1:7798339251561",
-      "stores": 1,
+      "locality": "Guaymallén",
+      "ean": "sepa:9:1:0000000725002",
+      "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1874
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1467
     },
     {
       "province": "Misiones",
-      "locality": "POSADAS",
+      "locality": "Posadas",
       "ean": "sepa:5:1:7794870000040",
       "stores": 7,
       "pricesMatchSource": true,
-      "durationMs": 1773
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1152
     },
     {
       "province": "Neuquén",
       "locality": "Neuquén",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 1,
+      "ean": "sepa:2:1:0000077900661",
+      "stores": 4,
       "pricesMatchSource": true,
-      "durationMs": 3952
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1237
     },
     {
       "province": "Río Negro",
-      "locality": "GENERAL ROCA",
-      "ean": "sepa:11:2:0000001111118",
+      "locality": "General Roca",
+      "ean": "sepa:10:1:7790070225023",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 1320
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1071
     },
     {
       "province": "Salta",
-      "locality": "SALTA",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 1,
+      "locality": "Salta",
+      "ean": "sepa:9:1:0000075032715",
+      "stores": 3,
       "pricesMatchSource": true,
-      "durationMs": 1453
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1344
     },
     {
       "province": "San Juan",
-      "locality": "SAN JUAN",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 1,
+      "locality": "San Juan",
+      "ean": "sepa:9:1:0000075032715",
+      "stores": 8,
       "pricesMatchSource": true,
-      "durationMs": 999
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1235
     },
     {
       "province": "San Luis",
-      "locality": "VILLA MERCEDES",
-      "ean": "sepa:11:2:0000001111118",
+      "locality": "Villa Mercedes",
+      "ean": "sepa:10:1:7793147570606",
       "stores": 1,
       "pricesMatchSource": true,
-      "durationMs": 867
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1014
     },
     {
       "province": "Santa Cruz",
       "locality": "Río Gallegos",
-      "ean": "sepa:10:1:7792590001491",
-      "stores": 1,
+      "ean": "sepa:2:1:0000077900661",
+      "stores": 10,
       "pricesMatchSource": true,
-      "durationMs": 1269
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1060
     },
     {
       "province": "Santa Fe",
-      "locality": "ROSARIO",
-      "ean": "sepa:23:1:7791813434368",
-      "stores": 4,
+      "locality": "Granadero Baigorria",
+      "ean": "sepa:10:1:7793147573195",
+      "stores": 3,
       "pricesMatchSource": true,
-      "durationMs": 1276
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1417
     },
     {
       "province": "Santiago del Estero",
-      "locality": "SANTIAGO DEL ESTERO",
-      "ean": "sepa:11:2:0000001111118",
-      "stores": 2,
+      "locality": "Santiago del Estero",
+      "ean": "sepa:9:1:0000000508117",
+      "stores": 3,
       "pricesMatchSource": true,
-      "durationMs": 752
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 995
     },
     {
       "province": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
       "locality": "Río Grande",
-      "ean": "sepa:10:1:7792180145437",
-      "stores": 2,
+      "ean": "sepa:2:1:0000077900661",
+      "stores": 5,
       "pricesMatchSource": true,
-      "durationMs": 1022
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 1023
     },
     {
       "province": "Tucumán",
       "locality": "San Miguel de Tucumán",
-      "ean": "sepa:11:2:0000001111118",
+      "ean": "sepa:10:2:7790040136069",
       "stores": 2,
       "pricesMatchSource": true,
-      "durationMs": 1079
+      "officialLocality": true,
+      "within50Km": true,
+      "durationMs": 2134
     }
   ],
   "pantry": true,
