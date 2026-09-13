@@ -16,6 +16,6 @@ const photo=await check('/api/assistant-list',{imageData:'data:image/png;base64,
 assert.ok(photo.items.some(i=>i.name.toLowerCase().includes('leche')&&i.quantity===2),'Recuento de envases de prueba');
 const form=new FormData();form.set('audio',new Blob([await readFile('voice-qa.wav')],{type:'audio/wav'}),'lista.wav');
 const voice=await check('/api/assistant-list/transcribe',form);
-assert.ok(voice.text?.trim(),'Transcripción vacía');assert.ok(voice.items.some(i=>i.name==='Arroz'&&i.quantity===2),'Cantidad dictada');assert.notEqual(voice.degraded,true);
+console.log('Resultado de audio sintético:',JSON.stringify({text:voice.text,items:voice.items,degraded:voice.degraded}));assert.ok(voice.text?.trim(),'Transcripción vacía');assert.ok(voice.items.some(i=>i.name==='Arroz'&&i.quantity===2),'Cantidad dictada');assert.notEqual(voice.degraded,true);
 const report={checkedAt:new Date().toISOString(),success:true,text:true,photo:true,voice:true,syntheticFixtures:true,testProfileExcluded:true};
 await writeFile('data/recognition-smoke-report.json',JSON.stringify(report,null,2)+'\n');console.log(report);
