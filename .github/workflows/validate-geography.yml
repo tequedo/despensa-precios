@@ -1,0 +1,32 @@
+name: Auditar geografía del catálogo nacional
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "validate-national-geography.mjs"
+      - ".github/workflows/validate-geography.yml"
+permissions:
+  contents: write
+concurrency:
+  group: geografia-nacional
+  cancel-in-progress: false
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node validate-national-geography.mjs
+      - name: Conservar catálogo auditado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/national data/national-geography-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Excluir sucursales con provincia y coordenadas incompatibles"
+            git pull --rebase origin main
+            git push
+          fi
