@@ -10,6 +10,7 @@ import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
 import { prepareReplica } from "./sepa-provenance.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
 import { sepaAmount, emptySepaLine } from "./sepa-values.mjs";
+import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -65,6 +66,7 @@ const meatCatalog = JSON.parse(await readFile(new URL("./data/meat-catalog.json"
 const isMeatProduct = createMeatMatcher(meatCatalog);
 const workDir = await mkdtemp(join(tmpdir(), "sepa-precios-"));
 const exporter = national ? await nationalExporter(process.env.NATIONAL_OUTPUT_DIR ?? "data/national",join(workDir,"branches")) : null;
+const sanJuanRecords = [];
 
 function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
@@ -250,7 +252,6 @@ async function processFolder(folder, sourceInfo, counters) {
   if (!branches.size) return;
 
   for (const file of productFiles) {
-    let batch = [];
     await rows(file, async row => {
       counters.read++;
       const branch = branches.get(branchKey(row));
@@ -363,14 +364,8 @@ async function processFolder(folder, sourceInfo, counters) {
       if(exporter)await exporter.add(record);
       counters.accepted++;
       if(record.store.province !== "San Juan")return;
-      await appendFile(outputFile, JSON.stringify(record) + "\n");
-      batch.push(record);
-      if (batch.length >= batchSize) {
-        counters.ingested += await send(batch);
-        batch = [];
-      }
+      sanJuanRecords.push(record);
     });
-    counters.ingested += await send(batch);
   }
 }
 
@@ -379,7 +374,6 @@ try {
   const prepared = await prepareReplica(workDir);
   const { resource } = prepared;
   await mkdir(dirname(outputFile), { recursive: true });
-  await writeFile(outputFile, "");
   await mkdir(dirname(quarantineFile), { recursive: true });
   await writeFile(quarantineFile, "");
 
@@ -388,7 +382,11 @@ try {
 
   if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
-  if(exporter)await exporter.finish();
+  const coverage = exporter ? await exporter.finish() : null;
+  const snapshot = await writeSanJuanSnapshot(outputFile,sanJuanRecords,coverage?.find(p=>p.code==='AR-J')?.records);
+  counters.sanJuanRecords = snapshot.rows.length;
+  counters.sanJuanSha256 = snapshot.sha256;
+  for(let start=0;start<snapshot.rows.length;start+=batchSize)counters.ingested += await send(snapshot.rows.slice(start,start+batchSize));
   const promotionRows = [];
   await rowsFromNdjson(outputFile, record => {
     const chain = normalize(record.store?.chain);
