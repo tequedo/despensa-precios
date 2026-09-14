@@ -1,6 +1,12 @@
 name: Descargar original SEPA y auditar sin publicar precios
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/audit-official-sepa.yml"
+      - "scripts/download-official-sepa.mjs"
+      - "sepa-official.mjs"
   workflow_dispatch:
     inputs:
       resource_id:
@@ -38,7 +44,7 @@ jobs:
       - name: Descargar por el canal oficial y comprobar
         env:
           RESOURCE_ID: ${{ inputs.resource_id }}
-          COMPARE_REPLICA: ${{ inputs.compare_replica }}
+          COMPARE_REPLICA: ${{ github.event_name == 'push' || inputs.compare_replica }}
         run: |
           args=(--original-dir "$RUNNER_TEMP/sepa-originals" --output "$RUNNER_TEMP/sepa-official-audit.json")
           if [ -n "$RESOURCE_ID" ]; then args+=(--resource-id "$RESOURCE_ID"); fi
