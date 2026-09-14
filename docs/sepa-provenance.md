@@ -1,6 +1,6 @@
 # Procedencia de archivos SEPA — punto 4.2
 
-La fuente inmediata de esta aplicación es la réplica `catdevnull/preciazo`,
+La fuente inmediata configurada de esta aplicación es la réplica `catdevnull/preciazo`,
 con metadatos en `catdevnull/sepa-precios-metadata` y archivos en Backblaze B2.
 El conjunto declarado de origen es SEPA, del portal datos.produccion.gob.ar.
 La copia y sus metadatos proceden del mismo intermediario: su concordancia
@@ -10,6 +10,78 @@ El 14/09/2026 el catálogo, su API y el ZIP oficial devolvieron HTTP 403.
 La consulta normal en navegador confirmó un bloqueo de BunkerWeb. No se
 eludió ese control. Los metadatos copiados no contienen un hash oficial.
 El cotejo independiente del original sigue bloqueado.
+
+## Descargador propio del original
+
+`sepa-official.mjs` incorpora una adquisición directa desde el catálogo HTTPS
+oficial. No usa los metadatos de Preciazo para decidir qué original descargar.
+Conserva los bytes del ZIP, el catálogo anterior y posterior a la descarga,
+fechas de adquisición, tamaño, SHA-256, manifiesto completo y resultado.
+Rechaza una revisión que cambió durante la descarga, redirecciones, contenido
+truncado, ZIP dañado y tamaños distintos de los declarados. Un error no activa
+automáticamente otra fuente ni borra los precios anteriores.
+
+La etiqueta `official_https_download` sólo se obtiene al completar esa
+adquisición directa y la validación; nunca al proporcionar un ZIP local.
+Confirma el canal HTTPS de adquisición, no una firma digital de SEPA ni la
+coincidencia con cada caja del supermercado. La comparación con la réplica
+tiene un estado independiente y sólo dice `matched` tras cotejar todos los
+archivos internos de la misma revisión.
+
+```bash
+node scripts/download-official-sepa.mjs --compare-replica --original-dir /ruta/originales --output /ruta/informe.json
+```
+
+El comando y el workflow **Descargar original SEPA y auditar sin publicar
+precios** sólo descargan y auditan. El workflow es manual, sin acceso al token
+de ingestión y sin notificaciones. Se prepara para utilizar el canal oficial
+cuando el acceso esté resuelto; no se ha ejecutado contra SEPA para eludir el
+403 previamente observado. Las pruebas automatizadas usan respuestas locales
+simuladas y archivos pequeños identificados como pruebas.
+
+La actualización diaria existente acepta la variable de repositorio
+`SEPA_SOURCE=official`; sin ella conserva el modo explícito `replica`.
+La activación debe seguir a una auditoría real satisfactoria del acceso y del
+original. `REQUIRE_ORIGINAL_AUTHENTICITY=1` sigue bloqueando la ruta de réplica;
+la ruta oficial verifica su adquisición directamente. No se incorporan
+contraseñas personales de SEPA ni configuraciones para sortear el bloqueo.
+
+En GitHub Actions los paquetes de originales se guardan como artefactos por
+**3 días**, y el informe de auditoría por **90 días**. No son un archivo
+histórico permanente: deben descargarse antes del vencimiento si se necesita
+conservarlos más tiempo. El ZIP permanece intacto dentro del artefacto. En
+ejecución local se conserva en `artifacts/sepa-originals` o en la carpeta
+indicada. Los ZIP grandes no se agregan al historial Git.
+
+## Por qué se utilizó Preciazo y qué muestra su código
+
+- Nuestro intento directo del 06/09/2026 falló en el catálogo, antes de
+  descargar el ZIP: [ejecución con HTTP 403](https://github.com/tequedo/despensa-precios/actions/runs/34059224553).
+  Después se incorporó la [ruta de réplica](https://github.com/tequedo/despensa-precios/commit/f5ca3ce02732011489b350a24d72303702c9f7a8).
+  También hubo una ruta de ZIP aportado manualmente; no se atribuye origen
+  independiente a ese archivo sólo por el título del cambio.
+- Preciazo usa Bun/TypeScript y `curl` contra el mismo catálogo oficial.
+  No hay un inicio de sesión SEPA en el código examinado. Descarga, extrae,
+  elimina el ZIP externo y recomprime el contenido para Backblaze B2.
+- Su [cambio del 17/09/2024](https://github.com/catdevnull/preciazo/commit/9fced663ffbb2b3a5da4ba01f44a68630fc0aaa4)
+  incorporó un proxy. Un comentario anterior de su autor mencionaba posibles
+  bloqueos a conexiones desde fuera del país: es una observación del autor,
+  no una confirmación de la regla que nos afecta.
+- El [08/03/2026](https://github.com/catdevnull/preciazo/commit/7d43851d399fbd77af2c439c87cac9667d46e624)
+  cambió de `ubuntu-latest` a un ejecutor propio. Minutos después
+  [quitó el proxy del workflow](https://github.com/catdevnull/preciazo/commit/03124d852fe39f6d60259885574b6e06fd7a7905).
+- El 24/08/2026 añadió IPv4 y límites de tiempo a la consulta de metadatos.
+  El [31/08/2026 hay una descarga exitosa](https://github.com/catdevnull/preciazo/actions/runs/33434878472)
+  en su ejecutor propio; no autentica por sí misma nuestras copias de septiembre.
+- Desde el [cambio del 01/09/2026](https://github.com/catdevnull/preciazo/commit/2642ece2a284417b267e1e9d74ea59c55d89c1a3)
+  documenta Docker/Uncloud. La configuración pública permite un proxy opcional,
+  vacío por defecto. Sus valores privados actuales no se conocen.
+
+Tener el código en GitHub no implica descargar desde una máquina de GitHub.
+La conexión y las características de la petición son diferencias comprobables;
+la causa exacta de nuestro 403, el país/IP actual del servidor de Preciazo y
+cualquier habilitación particular siguen sin confirmarse. Copiar su programa
+no garantiza que SEPA acepte una conexión diferente.
 
 ## Controles implementados
 

@@ -7,12 +7,15 @@ on:
     paths:
       - "update-san-juan.mjs"
       - "sepa-provenance.mjs"
+      - "sepa-official.mjs"
+      - "sepa-source.mjs"
       - "product-identity.mjs"
       - "sepa-values.mjs"
       - "san-juan-snapshot.mjs"
       - "validate-national-geography.mjs"
       - "scripts/sepa_archive.py"
       - "tests/sepa-provenance.test.mjs"
+      - "tests/sepa-official.test.mjs"
       - "tests/test_sepa_archive.py"
       - "scripts/push-generated-data.sh"
       - "national-export.mjs"
@@ -44,6 +47,9 @@ jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      # Keep the explicit replica until official access is resolved and audited.
+      SEPA_SOURCE: ${{ vars.SEPA_SOURCE || 'replica' }}
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -75,8 +81,9 @@ jobs:
           npm run check
           python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
 
-      - name: Recolectar precios SEPA y comprobar la copia intermediaria
+      - name: Recolectar precios SEPA y comprobar la fuente seleccionada
         env:
+          SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-originals
           NATIONAL_EXPORT: "1"
           PROVINCE_CODES: AR-J
           OUTPUT_FILE: data/san-juan.ndjson
@@ -97,6 +104,16 @@ jobs:
           path: data/sepa-provenance.json
           if-no-files-found: ignore
           retention-days: 90
+
+      - name: Conservar ZIP original y evidencia de adquisición
+        if: always() && env.SEPA_SOURCE == 'official'
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-sepa-${{ github.run_id }}
+          path: ${{ runner.temp }}/sepa-originals/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 3
 
       - name: Validar provincias y coordenadas con Georef
         run: node validate-national-geography.mjs

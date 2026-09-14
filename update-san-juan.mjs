@@ -7,7 +7,7 @@ import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "
 
 import { nationalExporter } from "./national-export.mjs";
 import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
-import { prepareReplica } from "./sepa-provenance.mjs";
+import { prepareSource } from "./sepa-source.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
 import { sepaAmount, emptySepaLine } from "./sepa-values.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
@@ -371,7 +371,7 @@ async function processFolder(folder, sourceInfo, counters) {
 
 try {
   // Complete archive validation before touching outputs or sending any prices.
-  const prepared = await prepareReplica(workDir);
+  const prepared = await prepareSource(workDir);
   const { resource } = prepared;
   await mkdir(dirname(outputFile), { recursive: true });
   await mkdir(dirname(quarantineFile), { recursive: true });

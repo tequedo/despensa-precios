@@ -1,0 +1,63 @@
+name: Descargar original SEPA y auditar sin publicar precios
+
+on:
+  workflow_dispatch:
+    inputs:
+      resource_id:
+        description: ID de recurso oficial; vacío selecciona la publicación diaria
+        type: string
+        required: false
+      compare_replica:
+        description: Comparar todos los archivos internos con la réplica de la misma revisión
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auditar-original-sepa
+  cancel-in-progress: false
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/meat-catalog.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq zstd
+      - name: Descargar por el canal oficial y comprobar
+        env:
+          RESOURCE_ID: ${{ inputs.resource_id }}
+          COMPARE_REPLICA: ${{ inputs.compare_replica }}
+        run: |
+          args=(--original-dir "$RUNNER_TEMP/sepa-originals" --output "$RUNNER_TEMP/sepa-official-audit.json")
+          if [ -n "$RESOURCE_ID" ]; then args+=(--resource-id "$RESOURCE_ID"); fi
+          if [ "$COMPARE_REPLICA" = "true" ]; then args+=(--compare-replica); fi
+          node scripts/download-official-sepa.mjs "${args[@]}"
+      - name: Conservar informe, incluso si SEPA rechaza la descarga
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-original-sepa-${{ github.run_id }}
+          path: ${{ runner.temp }}/sepa-official-audit.json
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Conservar original y metadatos sin recomprimir el ZIP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-sepa-${{ github.run_id }}
+          path: ${{ runner.temp }}/sepa-originals/
+          retention-days: 3
+          compression-level: 0
+          if-no-files-found: warn
