@@ -1,15 +1,10 @@
 name: Auditar geografía del catálogo nacional
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "validate-national-geography.mjs"
-      - ".github/workflows/validate-geography.yml"
 permissions:
   contents: write
 concurrency:
-  group: geografia-nacional
+  group: precios-san-juan
   cancel-in-progress: false
 jobs:
   auditar:
@@ -18,6 +13,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -29,6 +26,5 @@ jobs:
           git add data/national data/national-geography-audit.json
           if ! git diff --cached --quiet; then
             git commit -m "Excluir sucursales con provincia y coordenadas incompatibles"
-            git pull --rebase origin main
-            git push
+            bash scripts/push-generated-data.sh
           fi
