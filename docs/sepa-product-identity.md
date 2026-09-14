@@ -39,6 +39,11 @@ menores que 100 y mayores que 10.000.000: un valor positivo fuera del umbral no 
 declara necesariamente incorrecto; queda excluido hasta revisión. Los precios de
 carne mantienen la exigencia de base exacta de un kilo y sus controles de rango.
 
+La salida de San Juan se reúne antes de la ingesta, rechaza precios contradictorios
+para la misma referencia y exige coincidir con el recuento del catálogo nacional.
+Se escribe un archivo temporal completo, se comprueba su hash y sólo entonces se
+reemplaza la versión anterior. Los lotes se envían después de esta comprobación.
+
 ## Fuentes y alcance
 
 - [Esquema del intermediario examinado](https://github.com/catdevnull/preciazo/blob/2642ece2a284417b267e1e9d74ea59c55d89c1a3/sepa/dataset-validator/schemas.ts).
