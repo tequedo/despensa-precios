@@ -1,0 +1,26 @@
+name: Probar procedencia SEPA sin publicar datos
+on:
+  push:
+    branches: ['fix/sepa-procedencia-4-2']
+  pull_request:
+    paths: ['sepa-provenance.mjs', 'scripts/sepa_archive.py', 'tests/sepa-provenance.test.mjs', 'tests/test_sepa_archive.py', 'update-san-juan.mjs']
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/meat-catalog.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq zstd
+      - run: npm run check
+      - run: python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
