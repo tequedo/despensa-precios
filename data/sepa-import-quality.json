@@ -1,0 +1,614 @@
+{
+  "checkedAt": "2026-09-14T16:56:45.927Z",
+  "sourceModified": "2026-09-13T16:19:03.291Z",
+  "sourceType": "replica",
+  "excludedStores": [
+    {
+      "externalId": "2|1|8015",
+      "type": "Web",
+      "channel": "online",
+      "reason": "online_delivery_scope_unverified"
+    },
+    {
+      "externalId": "2|1|9021",
+      "type": "Web",
+      "channel": "online",
+      "reason": "online_delivery_scope_unverified"
+    },
+    {
+      "externalId": "|-65.304235|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.309434|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.319964|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Ciudad de Nieva",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-64.866660|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Pedro de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|09:00 a 14:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.289007|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Coronel Arias",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-64.787303|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Libertador Gral. San Martin",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|09:00 a 14:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.263490|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Alto Comedero",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.120764|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Perico",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|09:00 a 14:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.416186|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Salta",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.116091|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Perico",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|09:00 a 14:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.311738|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Los Perales",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-64.867798|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Pedro de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|09:00 a 14:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.272455|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Almirante Brown",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.279915|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Bajo La Viña",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.414204|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Salta",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.276178|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |San Pedrito",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.297513|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Chijra",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.301073|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Gorriti",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.408656|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "Salta",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|08:00 a 20:00|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.193457|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Miguel de Tucumán",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.247965|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Ciudadela",
+      "type": "San Miguel de Tucumán",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.224345|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |11 de Marzo",
+      "type": "San Miguel de Tucumán",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.235856|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |",
+      "type": "Palpala",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-65.277658|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Almirante Brown",
+      "type": "San Salvador de Jujuy",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "|-64.328187|",
+      "type": "",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    },
+    {
+      "externalId": "| |Centro",
+      "type": "San Ramon de la Nueva Oran",
+      "channel": "unknown",
+      "reason": "unknown_store_type"
+    }
+  ],
+  "productFiles": [
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-12_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-13T03:09:02-03:00",
+      "updatedAt": "2026-09-13T06:09:02.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-13_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-13T04:00:07-03:00",
+      "updatedAt": "2026-09-13T07:00:07.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-15_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-13T04:05:38-03:00",
+      "updatedAt": "2026-09-13T07:05:38.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-21_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-12T02:02:54-03:00",
+      "updatedAt": "2026-09-12T05:02:54.000Z",
+      "date": "2026-09-12",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-23_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-13T04:00:00-0300",
+      "updatedAt": "2026-09-13T07:00:00.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-3_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-12T16:00:01-03:00",
+      "updatedAt": "2026-09-12T19:00:01.000Z",
+      "date": "2026-09-12",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-47_2026-09-13_09-05-11/productos.csv",
+      "raw": "2025-06-11T21:00:01-03:00",
+      "updatedAt": "2025-06-12T00:00:01.000Z",
+      "date": "2025-06-11",
+      "dateBasis": "product_file_footer",
+      "accepted": false,
+      "reason": "stale_product_file_date"
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-4_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-12T16:00:01-03:00",
+      "updatedAt": "2026-09-12T19:00:01.000Z",
+      "date": "2026-09-12",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_1_comercio-sepa-9_2026-09-13_09-05-11/productos.csv",
+      "raw": "2026-09-13T05:02:19-03:00",
+      "updatedAt": "2026-09-13T08:02:19.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_2_comercio-sepa-10_2026-09-13_01-05-08/productos.csv",
+      "raw": "2026-09-13T09:10:56-03:00",
+      "updatedAt": "2026-09-13T12:10:56.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_2_comercio-sepa-11_2026-09-13_01-05-08/productos.csv",
+      "raw": "2026-09-13T05:20:23-03:00",
+      "updatedAt": "2026-09-13T08:20:23.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_2_comercio-sepa-2_2026-09-13_01-05-08/productos.csv",
+      "raw": "2026-09-13T04:01:03-03:00",
+      "updatedAt": "2026-09-13T07:01:03.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_2_comercio-sepa-5_2026-09-13_01-05-08/productos.csv",
+      "raw": "2026-09-13T09:00:02-03:00",
+      "updatedAt": "2026-09-13T12:00:02.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-13/sepa_2_comercio-sepa-6_2026-09-13_01-05-08/productos.csv",
+      "raw": "2026-09-13T09:30:00-03:00",
+      "updatedAt": "2026-09-13T12:30:00.000Z",
+      "date": "2026-09-13",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    }
+  ]
+}
