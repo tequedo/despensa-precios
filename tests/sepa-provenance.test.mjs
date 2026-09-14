@@ -19,6 +19,10 @@ test('identifies exact official resource, revision and replica; normalizes sourc
   assert.equal(selected.last_modified, '2026-09-12T16:19:10.177Z');
   assert.equal(replicaEntry({ day: [entry] }, selected).link, entry.link);
 });
+test('selects the newest available resource even when it was published today', () => {
+  const recent = { ...resource, last_modified: '2026-09-14T10:00:00Z' };
+  assert.equal(selectResource({ ...metadata, result: { ...metadata.result, resources: [resource, recent] } }, new Date('2026-09-14T15:00:00Z')).last_modified, recent.last_modified.replace('Z', '.000Z'));
+});
 test('rejects different datasets, disguised domains, missing resource identity and invalid dates', () => {
   assert.throws(() => selectResource({ ...metadata, result: { ...metadata.result, id: 'other' } }, now));
   for (const changes of [{ revision_id: null }, { size: 0 }, { url: resource.url.replace('gob.ar', 'gob.ar.attacker.test') }, { last_modified: '2026-02-30T16:00:00Z' }, { last_modified: '2026-09-15T00:00:00Z' }, { last_modified: '2026-09-01T00:00:00Z' }]) assert.throws(() => validateResource({ ...resource, ...changes }, now));

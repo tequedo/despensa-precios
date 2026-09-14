@@ -1,7 +1,7 @@
 import { createReadStream } from "node:fs";
 import { appendFile, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
+import { dirname, join, relative } from "node:path";
 import { createInterface } from "node:readline";
 import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "./meat-matcher.mjs";
 
@@ -11,6 +11,7 @@ import { prepareSource } from "./sepa-source.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
 import { sepaAmount, emptySepaLine } from "./sepa-values.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
+import { branchChannel, isUpdateFooter, productFileEvidence } from "./sepa-catalog-controls.mjs";
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -58,6 +59,7 @@ async function send(records) {
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
 const promotionsFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.json";
+const qualityFile = process.env.QUALITY_FILE ?? "data/sepa-import-quality.json";
 const national = process.env.NATIONAL_EXPORT === "1";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
 const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
@@ -176,7 +178,7 @@ async function rows(file, handler) {
   let headers;
   for await (const raw of input) {
     const line = raw.replace(/^\uFEFF/, "");
-    if (emptySepaLine(line) || line.startsWith("Última actualización:")) continue;
+    if (emptySepaLine(line) || isUpdateFooter(line)) continue;
     const values = parsePipe(line);
     if (!headers) {
       headers = values.map(value => normalize(value).replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""));
@@ -234,6 +236,14 @@ async function processFolder(folder, sourceInfo, counters) {
   const branches = new Map();
   for (const file of branchFiles) {
     await rows(file, async row => {
+      const type = pick(row, ["sucursales_tipo", "sucursal_tipo"]);
+      const channel = branchChannel(type);
+      if (channel !== 'sucursal') {
+        counters.excludedStores.push({ externalId: branchKey(row), type, channel, reason: channel === 'online' ? 'online_delivery_scope_unverified' : 'unknown_store_type' });
+        await quarantine("store_channel", counters.excludedStores.at(-1).reason, counters.excludedStores.at(-1), counters);
+        return;
+      }
+      row._channel = channel;
       const validation = geographicValidation(row);
       if (validation.accepted) {
         const key = [pick(row, ["id_comercio"]), pick(row, ["id_bandera"])].join("|");
@@ -252,6 +262,14 @@ async function processFolder(folder, sourceInfo, counters) {
   if (!branches.size) return;
 
   for (const file of productFiles) {
+    const evidence = await productFileEvidence(file, sourceInfo.modified);
+    const productFile = relative(folder, file).replaceAll('\\', '/');
+    counters.productFiles.push({ file: productFile, ...evidence });
+    if (!evidence.accepted) {
+      await quarantine("file_date", evidence.reason, { file: productFile, ...evidence }, counters);
+      continue;
+    }
+    const datedSource = { ...sourceInfo, productFile, fileUpdatedAt: evidence.updatedAt, priceDate: evidence.date, dateBasis: evidence.dateBasis };
     await rows(file, async row => {
       counters.read++;
       const branch = branches.get(branchKey(row));
@@ -299,9 +317,9 @@ async function processFolder(folder, sourceInfo, counters) {
         "productos_leyenda_promo1",
         "leyenda_promocion"
       ]);
-      const validDate=isoDate(sourceInfo.modified);
+      const validDate=evidence.date;
       const productUpdatedAt=isoDate(pick(row,["productos_fecha_actualizacion","fecha_actualizacion"]));
-      if(!validDate||!freshDate(validDate)|| (productUpdatedAt && productUpdatedAt>validDate)){
+      if(!validDate||!freshDate(validDate)|| (productUpdatedAt && (productUpdatedAt>validDate || !freshDate(productUpdatedAt)))){
         counters.rejected++;return;
       }
       if (promoPrice && (promoPrice < 100 || promoPrice > listPrice || promotionExpired(promoConditions, validDate))) {
@@ -332,7 +350,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const { accepted, ...productIdentity } = identity;
       const ean = identity.ean;
       const record = {
-        source: sourceInfo,
+        source: datedSource,
         product: {
           ...productIdentity,
           name: description || ean,
@@ -342,6 +360,8 @@ async function processFolder(folder, sourceInfo, counters) {
         },
         store: {
           externalId: branchKey(branch),
+          type: pick(branch, ["sucursales_tipo", "sucursal_tipo"]),
+          channel: branch._channel,
           chain: pick(branch, ["_chain", "bandera_descripcion", "comercio_razon_social", "cadena"]),
           branch: pick(branch, ["sucursales_nombre", "sucursal_nombre", "nombre"]),
           address: [pick(branch, ["sucursales_calle", "sucursal_direccion", "direccion"]), pick(branch, ["sucursales_numero"])].filter(Boolean).join(" "),
@@ -355,10 +375,10 @@ async function processFolder(folder, sourceInfo, counters) {
           promoPrice,
           promoConditions,
           ...promotion,
-          channel: "sucursal",
+          channel: branch._channel,
           validDate,
           productUpdatedAt,
-          observedAt: new Date(sourceInfo.modified).toISOString()
+          observedAt: evidence.updatedAt
         }
       };
       if(exporter)await exporter.add(record);
@@ -377,8 +397,10 @@ try {
   await mkdir(dirname(quarantineFile), { recursive: true });
   await writeFile(quarantineFile, "");
 
-  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0 };
+  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [] };
   await processFolder(prepared.folder, prepared.source, counters);
+  await mkdir(dirname(qualityFile), { recursive: true });
+  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles }, null, 2) + '\n');
 
   if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);

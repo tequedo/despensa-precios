@@ -11,6 +11,7 @@ on:
       - "sepa-source.mjs"
       - "product-identity.mjs"
       - "sepa-values.mjs"
+      - "sepa-catalog-controls.mjs"
       - "san-juan-snapshot.mjs"
       - "validate-national-geography.mjs"
       - "scripts/sepa_archive.py"
@@ -105,6 +106,15 @@ jobs:
           if-no-files-found: ignore
           retention-days: 90
 
+      - name: Conservar controles de canal y fechas internas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calidad-sepa-${{ github.run_id }}
+          path: data/sepa-import-quality.json
+          if-no-files-found: ignore
+          retention-days: 90
+
       - name: Conservar ZIP original y evidencia de adquisición
         if: always() && env.SEPA_SOURCE == 'official'
         uses: actions/upload-artifact@v4
@@ -156,7 +166,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sepa-provenance.json data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
+          git add data/sepa-provenance.json data/sepa-import-quality.json data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
