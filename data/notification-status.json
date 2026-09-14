@@ -1,6 +1,11 @@
 {
-  "checkedAt": "2026-09-14T01:36:21.398Z",
+  "checkedAt": "2026-09-14T02:08:58.281Z",
   "success": true,
+  "accepted": true,
+  "recorded": true,
+  "notified": false,
+  "notificationStatus": "recorded_for_daily_summary",
+  "deliveryConfirmed": false,
   "priceCount": 22838,
   "promotionCount": 0,
   "promotionsChanged": true,
