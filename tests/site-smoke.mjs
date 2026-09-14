@@ -20,6 +20,7 @@ const checks=[];let savedReference;let quoteChecks=0;let crossChainIdentityQuote
 for(const p of coverage.provinces){
  const started=Date.now(),c=await request('/api/prices/coverage?province='+p.code);assert.equal(c.status,200,p.name+': cobertura');assert.ok(c.body.localities.length,p.name+': sin localidades');
  const index=JSON.parse(await readFile('data/national/'+p.code+'/index.json','utf8'));
+ assert.ok(index.stores.every(s=>s.channel==='sucursal'&&normalize(s.type)!=='web'),p.name+': canal presencial sin comprobar');
  assert.ok(c.body.locations?.length,p.name+': sin localidades oficiales');
  const anchor=[...index.stores].sort((a,b)=>b.records-a.records)[0];
  const city=[...c.body.locations].sort((a,b)=>distanceKm(a.lat,a.lon,anchor.latitude,anchor.longitude)-distanceKm(b.lat,b.lon,anchor.latitude,anchor.longitude))[0];
@@ -31,13 +32,13 @@ for(const p of coverage.provinces){
  const q=await request('/api/prices?'+scope+'&q='+encodeURIComponent(sample[1]));assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.some(item=>item.id===String(sample[0])),p.name+': falta producto que existe en la fuente');
  const product=q.body.data.productos.find(item=>item.id===String(sample[0]));assert.equal(product.barcode,sample[9].barcode,p.name+': código distinto al publicado');assert.equal(product.barcodeStatus,'valid_format_and_checksum');savedReference=product.id;const prices=await request('/api/prices?'+scope+'&ean='+encodeURIComponent(product.id));assert.equal(prices.status,200,p.name+': precio');assert.ok(prices.body.data.sucursales.length,p.name+': sin sucursales');
  for(const s of prices.body.data.sucursales){
-  assert.equal(s.provincia,p.name);assert.ok(s.distancia!==null&&s.distancia<=50,p.name+': sucursal lejana');assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.validDate,p.sourceDate);
+  assert.equal(s.provincia,p.name);assert.ok(s.distancia!==null&&s.distancia<=50,p.name+': sucursal lejana');assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.channel,'sucursal');
   const sourceBranch=index.stores.find(store=>store.externalId===s.id);assert.ok(sourceBranch,p.name+': sucursal ajena al índice');
   const sourceRows=JSON.parse(await readFile('data/national/'+p.code+'/'+sourceBranch.file,'utf8')).prices;
-  const source=sourceRows.find(row=>String(row[0])===product.id)??sourceRows.find(row=>row[9]?.barcodeStatus==='valid_format_and_checksum'&&barcodeIdentity(row[9].barcode).gtin===barcodeIdentity(product.barcode).gtin);assert.ok(source,p.name+': producto ajeno a la fuente');assert.equal(s.preciosProducto.precioLista,source[5],p.name+': precio distinto al informado');
+  const source=sourceRows.find(row=>String(row[0])===product.id)??sourceRows.find(row=>row[9]?.barcodeStatus==='valid_format_and_checksum'&&barcodeIdentity(row[9].barcode).gtin===barcodeIdentity(product.barcode).gtin);assert.ok(source,p.name+': producto ajeno a la fuente');assert.equal(s.preciosProducto.precioLista,source[5],p.name+': precio distinto al informado');assert.equal(s.validDate,source[6],p.name+': fecha distinta al CSV');assert.equal(sourceBranch.sourceDate,source[6],p.name+': índice con fecha distinta');assert.equal(s.observedAt,s.provenance.fileUpdatedAt,p.name+': fecha visible distinta al archivo');assert.equal(s.provenance.dateBasis,'product_file_footer',p.name+': falta base de la fecha');
   assert.equal(s.official,false,p.name+': réplica presentada como original');assert.equal(s.provenance.sourceType,'replica');quoteChecks++;if(String(source[0])!==product.id)crossChainIdentityQuotes++;
  }
- checks.push({province:p.name,locality,ean:product.id,barcode:product.barcode,barcodeMatchesSource:true,stores:prices.body.data.sucursales.length,pricesMatchSource:true,officialLocality:true,within50Km:true,durationMs:Date.now()-started});console.log(p.name+': búsqueda, sucursal y precio comprobados');
+ checks.push({province:p.name,locality,ean:product.id,barcode:product.barcode,barcodeMatchesSource:true,stores:prices.body.data.sucursales.length,pricesMatchSource:true,datesMatchCsv:true,physicalChannel:true,officialLocality:true,within50Km:true,durationMs:Date.now()-started});console.log(p.name+': búsqueda, sucursal y precio comprobados');
  if(p.code==='AR-J'){
   const basket=await request('/api/prices/basket',{scope:Object.fromEntries(scope),items:[{id:1,ean:product.id,name:product.name,brand:product.brand,presentation:product.presentation,quantity:3,unit:'unidad'}]});assert.equal(basket.status,200,'Comparación de lista');assert.ok(basket.body.data.stores.length);assert.ok(basket.body.data.stores.every(s=>s.known===1&&s.knownTotal>0));
  }
