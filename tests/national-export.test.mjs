@@ -29,3 +29,17 @@ test('exige evidencia de la misma oferta, vigencia, provincia y sucursal',()=>{
  assert.equal(scopedPromotionEvidence(item,html(offer),now).evidenceVersion,2);
  for(const change of [{price:700},{priceValidUntil:'2026-09-10'},{availability:'https://schema.org/InStock'},{availableAtOrFrom:{branchCode:'17-1-5',address:{addressRegion:'San Juan'}}}])assert.equal(scopedPromotionEvidence(item,html({...offer,...change}),now),null);
 });
+test('la identidad agregada no cambia IDs ni desplaza promociones de los lectores anteriores',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'identity-export-'));
+ try{
+  const exporter=await nationalExporter(join(dir,'data'),join(dir,'tmp'));
+  for(const promotional of [false,true])await exporter.add({source:{modified:'2026-09-13T12:00:00Z'},store:{externalId:'test',province:'San Juan',locality:'San Juan',chain:'Cadena'},product:{ean:'sepa:10:1:'+promotional,name:'Leche',brand:'Marca',presentation:'1 L',referenceUnit:'L',barcode:'7790895000997',barcodeStatus:'valid_format_and_checksum'},price:{listPrice:1800,validDate:'2026-09-13',...(promotional?{promoPrice:1700,promoConditions:'Oferta'}:{})}});
+  await exporter.finish();
+  const index=JSON.parse(await readFile(join(dir,'data/AR-J/index.json'),'utf8'));
+  const shard=JSON.parse(await readFile(join(dir,'data/AR-J',index.stores[0].file),'utf8'));
+  assert.equal(shard.version,1);
+  assert.equal(shard.prices[0][0],'sepa:10:1:false');assert.equal(shard.prices[0][8],null);
+  assert.equal(shard.prices[1][8].promoPrice,1700);
+  for(const row of shard.prices)assert.equal(row[9].barcode,'7790895000997');
+ }finally{await rm(dir,{recursive:true,force:true});}
+});

@@ -1,0 +1,22 @@
+{
+  "scope": "All commerce and branch CSVs from safely extracted 2026-09-12 replica",
+  "counts": {
+    "commerce_rows": 27,
+    "branch_rows": 2681,
+    "unique_chains": 27,
+    "unique_branches": 2681,
+    "missing_ids": 0,
+    "unknown_chain": 0,
+    "contradictory_chain_names": 0,
+    "contradictory_branch": 0,
+    "identical_duplicate_branch": 0
+  },
+  "examples": {},
+  "checkedAt": "2026-09-14T01:34:28.140940+00:00",
+  "sourceManifest": "2026-09-14-sepa-provenance.json",
+  "sourceArchiveSha256": "df25fe7c4d7e8e922bd281dbdb0eefbb3582f2345916cfca809104a052861e2c",
+  "limitations": [
+    "Identidad declarada en los CSV; no confirma existencia física ni exhaustividad de la cadena.",
+    "La correspondencia geográfica se valida por separado con Georef."
+  ]
+}
