@@ -2,6 +2,7 @@ name: Auditar geografía del catálogo nacional
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "validate-national-geography.mjs"
       - ".github/workflows/validate-geography.yml"
@@ -12,6 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   auditar:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
