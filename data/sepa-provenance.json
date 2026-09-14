@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-09-14T01:54:45.996Z",
+  "checkedAt": "2026-09-14T05:41:28.704Z",
   "status": "replica_integrity_checked",
   "sourceType": "replica",
   "originalComparison": {
@@ -39,16 +39,16 @@
   "metadata": {
     "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/dataset-info.json",
     "sha256": "56ed4d05f07ab33bdca577509dd5287acb47d05827ac4e80a83b23abe542a5f3",
-    "fetchedAt": "2026-09-14T01:54:46.134Z",
+    "fetchedAt": "2026-09-14T05:41:28.865Z",
     "etag": "W/\"ad853aa65ea91fbe839d7760aecc779dd39dc0b48f679e1a445f01b132bebc6f\""
   },
   "index": {
     "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/index.json",
     "sha256": "9bf5404fddf7669798255d730076714f170e16600a02e8651b05ec3144278ea0",
-    "fetchedAt": "2026-09-14T01:54:46.275Z",
+    "fetchedAt": "2026-09-14T05:41:28.971Z",
     "etag": "W/\"d6b1b1d6a09d4009b700185ab1d15268c1ef10f30545eab37193ff2d07c1815b\""
   },
-  "downloadedAt": "2026-09-14T01:54:52.077Z",
+  "downloadedAt": "2026-09-14T05:41:34.083Z",
   "archive": {
     "bytes": 67062670,
     "sha256": "3ac0f64220227171468ca162fbc7823072a647fcfdc05c789513866450d7194c",
