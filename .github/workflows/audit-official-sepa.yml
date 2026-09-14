@@ -1,12 +1,7 @@
 name: Descargar original SEPA y auditar sin publicar precios
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/audit-official-sepa.yml"
-      - "scripts/download-official-sepa.mjs"
-      - "sepa-official.mjs"
+  # Manual mientras el portal rechace el acceso del descargador con HTTP 403.
   workflow_dispatch:
     inputs:
       resource_id:
@@ -44,7 +39,7 @@ jobs:
       - name: Descargar por el canal oficial y comprobar
         env:
           RESOURCE_ID: ${{ inputs.resource_id }}
-          COMPARE_REPLICA: ${{ github.event_name == 'push' || inputs.compare_replica }}
+          COMPARE_REPLICA: ${{ inputs.compare_replica }}
         run: |
           args=(--original-dir "$RUNNER_TEMP/sepa-originals" --output "$RUNNER_TEMP/sepa-official-audit.json")
           if [ -n "$RESOURCE_ID" ]; then args+=(--resource-id "$RESOURCE_ID"); fi
@@ -58,7 +53,15 @@ jobs:
           path: ${{ runner.temp }}/sepa-official-audit.json
           retention-days: 90
           if-no-files-found: warn
-      - name: Conservar original y metadatos sin recomprimir el ZIP
+      - name: Conservar evidencia de adquisición, incluso si no hubo ZIP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencia-adquisicion-sepa-${{ github.run_id }}
+          path: ${{ runner.temp }}/sepa-originals/**/*.json
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Conservar únicamente el ZIP original descargado
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -66,4 +69,4 @@ jobs:
           path: ${{ runner.temp }}/sepa-originals/
           retention-days: 3
           compression-level: 0
-          if-no-files-found: warn
+          if-no-files-found: ignore
