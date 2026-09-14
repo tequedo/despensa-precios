@@ -6,7 +6,7 @@
   "status": "completed_with_warnings",
   "summary": {
     "officialSourcesChecked": 12,
-    "officialSourcesReachable": 11,
+    "officialSourcesReachable": 10,
     "sourcesWithLimitations": 11,
     "sepaProductPromotionCandidates": 753,
     "exactProductPromotionsCorroborated": 0,
@@ -39,7 +39,19 @@
     },
     "promotionEntriesValidDate": "2026-09-13",
     "promotionEntriesObservedAtDate": "2026-09-13",
-    "promotionFreshForLocalDate": false
+    "promotionFreshForLocalDate": false,
+    "sourceType": "replica",
+    "official": false,
+    "downloadUrl": "https://f004.backblazeb2.com/file/precios-justos-datasets/f8e75128-515a-436e-bf8d-5c63a62f2005-revID-72adcce2-b0ff-4af7-9594-adf43f1b259b-sepa_domingo.zip-repackaged.tar.zst",
+    "sourceDate": "2026-09-13",
+    "downloadedAt": "2026-09-14T05:41:34.083Z",
+    "archiveFormat": "tar.zst",
+    "archiveBytes": 67062670,
+    "archiveSha256": "3ac0f64220227171468ca162fbc7823072a647fcfdc05c789513866450d7194c",
+    "integrityStatus": "replica_integrity_checked",
+    "authenticity": "not_independently_verified",
+    "originalComparison": "not_performed",
+    "provenanceEvidence": "https://github.com/tequedo/despensa-precios/blob/a8112d01e1b801da77ea4666d0ba0c4107e871cb/data/sepa-provenance.json"
   },
   "sources": [
     {
@@ -48,9 +60,10 @@
       "category": "government_data",
       "url": "https://datos.produccion.gob.ar/dataset/sepa-precios",
       "checkedAt": "2026-09-14T06:57:34.307Z",
-      "reachable": true,
-      "status": "completed_with_promotion_freshness_warning",
-      "note": "El workflow finalizó correctamente y cargó 22.838 precios, pero las 753 promociones regeneradas hoy conservan observaciones del 13/09. La portada pública de SEPA devolvió 403 en la comprobación directa."
+      "reachable": false,
+      "status": "official_access_unavailable_replica_import_completed",
+      "note": "El workflow cargó 22.838 precios usando la réplica de Preciazo/Backblaze, descargada el 14/09/2026 a las 02:41:34 de San Juan, correspondiente a la publicación del 13/09. La portada oficial devolvió 403 en la comprobación de esta auditoría; el éxito de la importación no acredita acceso directo al original. Las 753 promociones conservan observaciones del 13/09.",
+      "replicaReachable": true
     },
     {
       "id": "vea_official",
@@ -348,7 +361,16 @@
     "Las páginas de promociones y descuentos bancarios de Carrefour respondieron sin contenido extraíble suficiente.",
     "Vea y ChangoMás no expusieron en la lectura automática el detalle completo de EAN, sucursal y condiciones requerido para corroboración exacta.",
     "MODO y Mercado Pago no expusieron términos públicos completos suficientes para recalcular beneficios sin supuestos.",
-    "La portada pública de SEPA devolvió 403, aunque el workflow de ingestión oficial finalizó correctamente y actualizó los archivos de precios.",
+    "La portada oficial de SEPA devolvió 403. La actualización finalizó utilizando una réplica de Preciazo/Backblaze; no hubo una adquisición oficial directa verificada.",
     "Los cinco beneficios verificados son informativos; ninguno es elegible para modificar precios automáticamente."
-  ]
+  ],
+  "provenanceCorrection": {
+    "correctedAt": "2026-09-14T12:23:24.007Z",
+    "reason": "Se corrigió la atribución de ingestión oficial: la ejecución 34810510281 usó SEPA_SOURCE=replica. Se separan procedencia, integridad, fecha de publicación y fecha de descarga.",
+    "previousOfficialSourcesReachable": 11,
+    "correctedOfficialSourcesReachable": 10,
+    "evidenceCommit": "a8112d01e1b801da77ea4666d0ba0c4107e871cb",
+    "provenanceBlobSha": "23f5b294ac6cda6c8c6039d76246b55738f53bc6",
+    "workflow": "https://github.com/tequedo/despensa-precios/actions/runs/34810510281"
+  }
 }
