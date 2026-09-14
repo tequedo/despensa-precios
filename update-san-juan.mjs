@@ -8,6 +8,8 @@ import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "
 import { nationalExporter } from "./national-export.mjs";
 import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
 import { prepareReplica } from "./sepa-provenance.mjs";
+import { sepaProductIdentity } from "./product-identity.mjs";
+import { sepaAmount, emptySepaLine } from "./sepa-values.mjs";
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -62,7 +64,7 @@ const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword
 const meatCatalog = JSON.parse(await readFile(new URL("./data/meat-catalog.json", import.meta.url), "utf8"));
 const isMeatProduct = createMeatMatcher(meatCatalog);
 const workDir = await mkdtemp(join(tmpdir(), "sepa-precios-"));
-const exporter = national ? await nationalExporter("data/national",join(workDir,"branches")) : null;
+const exporter = national ? await nationalExporter(process.env.NATIONAL_OUTPUT_DIR ?? "data/national",join(workDir,"branches")) : null;
 
 function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
@@ -172,7 +174,7 @@ async function rows(file, handler) {
   let headers;
   for await (const raw of input) {
     const line = raw.replace(/^\uFEFF/, "");
-    if (!line || line.startsWith("Última actualización:")) continue;
+    if (emptySepaLine(line) || line.startsWith("Última actualización:")) continue;
     const values = parsePipe(line);
     if (!headers) {
       headers = values.map(value => normalize(value).replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""));
@@ -200,18 +202,6 @@ function branchKey(row) {
     pick(row, ["bandera_id", "productos_bandera_id", "id_bandera"]),
     pick(row, ["sucursal_id", "productos_sucursal_id", "id_sucursal"])
   ].map(String).join("|");
-}
-
-function productKey(row) {
-  const supplied = pick(row, ["productos_ean", "producto_ean"]);
-  const digits = String(supplied).replace(/\D/g, "");
-  if (digits.length >= 8 && !/^0+$/.test(digits)) return supplied;
-  return [
-    "sepa",
-    pick(row, ["id_comercio", "productos_comercio_cuit"]),
-    pick(row, ["id_bandera", "productos_bandera_id"]),
-    pick(row, ["id_producto", "productos_id"])
-  ].map(String).join(":");
 }
 
 async function filesBelow(root) {
@@ -279,7 +269,7 @@ async function processFolder(folder, sourceInfo, counters) {
         await quarantine("meat", "meat_unit_not_exact_1kg", { product: description, brand, presentation, referenceUnit, store: branchKey(branch) }, counters);
         return;
       }
-      const listPrice = number(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
+      const listPrice = sepaAmount(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
       if (!listPrice || listPrice < 100 || listPrice > 10000000) {
         counters.rejected++;
         await quarantine("price", "list_price_out_of_range", {
@@ -294,7 +284,7 @@ async function processFolder(folder, sourceInfo, counters) {
         await quarantine("meat", "meat_price_out_of_range", { product: description, brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
         return;
       }
-      let promoPrice = number(pick(row, [
+      let promoPrice = sepaAmount(pick(row, [
         "productos_precio_promocional",
         "productos_precio_promocional_1",
         "productos_precio_promocional1",
@@ -327,11 +317,23 @@ async function processFolder(folder, sourceInfo, counters) {
         promoConditions = "";
       }
       const promotion = promotionDetails(promoPrice, promoConditions);
-      const ean = productKey(row);
+      const identity = sepaProductIdentity(row);
+      if (!identity.accepted) {
+        counters.rejected++;
+        await quarantine("product", identity.reason, { product: description, store: branchKey(branch) }, counters);
+        return;
+      }
+      if (identity.barcodeStatus === 'invalid') {
+        await quarantine("product_identity", "invalid_declared_gtin_kept_as_scoped_id", { product: description, sourceProductId: identity.sourceProductId, store: branchKey(branch) }, counters);
+      }
+      counters.productIdentity ??= { valid_format_and_checksum: 0, restricted: 0, internal: 0, invalid: 0 };
+      counters.productIdentity[identity.barcodeStatus]++;
+      const { accepted, ...productIdentity } = identity;
+      const ean = identity.ean;
       const record = {
         source: sourceInfo,
         product: {
-          ean,
+          ...productIdentity,
           name: description || ean,
           brand,
           presentation,

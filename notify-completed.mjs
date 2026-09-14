@@ -1,6 +1,7 @@
 import { createReadStream } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { createInterface } from "node:readline";
+import { notificationReceipt } from "./notification-receipt.mjs";
 
 const endpoint = process.env.NOTIFICATION_ENDPOINT;
 const token = process.env.PRICE_INGEST_TOKEN;
@@ -44,6 +45,7 @@ async function notify(kind, details) {
       `La aplicación rechazó el aviso ${kind}: ${response.status} ${(await response.text()).slice(0, 300)}`,
     );
   }
+  return notificationReceipt(response,kind,"success");
 }
 
 const priceCount = await countLines(pricesFile);
@@ -62,7 +64,7 @@ const checkedWalletSources = walletReport.sources?.length ?? 0;
 const reachableWalletSources = walletReport.sources?.filter((source) => source.reachable).length ?? 0;
 
 try {
-  await notify("sepa", [
+  const receipt = await notify("sepa", [
     "La actualización completa terminó correctamente.",
     "Los archivos se descargaron, descomprimieron, analizaron y depuraron.",
     `Jurisdicciones con datos: ${nationalCoverage.provinces.filter(p=>p.stores>0).length}`,
@@ -72,9 +74,9 @@ try {
 
   await writeFile(
     "data/notification-status.json",
-    `${JSON.stringify({ checkedAt: new Date().toISOString(), success: true, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }, null, 2)}\n`,
+    `${JSON.stringify({ checkedAt: new Date().toISOString(), success: true, ...receipt, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }, null, 2)}\n`,
   );
-  console.log(JSON.stringify({ notified: true, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }));
+  console.log(JSON.stringify({ ...receipt, priceCount, promotionCount, promotionsChanged, walletBenefitCount, calculableWalletBenefitCount, walletBenefitsChanged }));
 } catch (error) {
   const message = error instanceof Error ? error.message : String(error);
   await writeFile(
@@ -84,4 +86,3 @@ try {
   console.error(message);
   process.exitCode = 1;
 }
-

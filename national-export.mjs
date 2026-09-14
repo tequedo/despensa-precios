@@ -21,6 +21,8 @@ export async function nationalExporter(root, temporary) {
       const tuple=[p.ean,p.name,p.brand??'',p.presentation??'',p.referenceUnit??'',v.listPrice,v.validDate,v.productUpdatedAt??null];
       // Promotional text remains a candidate until independent, scoped evidence exists.
       if(v.promoPrice||v.promoConditions)tuple.push({promoPrice:v.promoPrice,promoConditions:v.promoConditions,promoKind:v.promoKind,buyQuantity:v.buyQuantity,payQuantity:v.payQuantity,discountPercent:v.discountPercent,requiredBenefit:v.requiredBenefit,discountCap:v.discountCap});
+      // Slot 8 remains promotions. Slot 9 adds identity without changing stable IDs or v1 readers.
+      if(p.barcodeStatus){if(tuple.length===8)tuple.push(null);tuple.push({barcode:p.barcode??null,barcodeStatus:p.barcodeStatus});}
       const lines=buffers.get(id)??[];lines.push(JSON.stringify(tuple));buffers.set(id,lines);
       if(++buffered>=2000)await flush();
     },

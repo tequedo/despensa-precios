@@ -1,9 +1,9 @@
 name: Probar procedencia SEPA sin publicar datos
 on:
   push:
-    branches: ['fix/sepa-procedencia-4-2']
+    branches: ['fix/sepa-procedencia-4-2', 'fix/sepa-identificacion-4-3']
   pull_request:
-    paths: ['sepa-provenance.mjs', 'scripts/sepa_archive.py', 'tests/sepa-provenance.test.mjs', 'tests/test_sepa_archive.py', 'update-san-juan.mjs']
+    paths: ['sepa-provenance.mjs', 'product-identity.mjs', 'sepa-values.mjs', 'national-export.mjs', 'scripts/sepa_archive.py', 'tests/**', 'update-san-juan.mjs', '.github/workflows/test-provenance.yml']
 permissions:
   contents: read
 jobs:
