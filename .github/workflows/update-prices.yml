@@ -9,6 +9,8 @@ on:
       - "sepa-provenance.mjs"
       - "product-identity.mjs"
       - "sepa-values.mjs"
+      - "san-juan-snapshot.mjs"
+      - "validate-national-geography.mjs"
       - "scripts/sepa_archive.py"
       - "tests/sepa-provenance.test.mjs"
       - "tests/test_sepa_archive.py"
