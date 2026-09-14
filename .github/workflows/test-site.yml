@@ -2,6 +2,7 @@ name: Comprobar app publicada
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "tests/site-smoke.mjs"
       - ".github/workflows/test-site.yml"
@@ -9,10 +10,13 @@ permissions:
   contents: write
 jobs:
   probar:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
