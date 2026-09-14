@@ -3,8 +3,13 @@ name: Actualizar precios de Argentina
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "update-san-juan.mjs"
+      - "sepa-provenance.mjs"
+      - "scripts/sepa_archive.py"
+      - "tests/sepa-provenance.test.mjs"
+      - "tests/test_sepa_archive.py"
       - "scripts/push-generated-data.sh"
       - "national-export.mjs"
       - "price-safety.mjs"
@@ -60,8 +65,10 @@ jobs:
           chrome-version: stable
           install-dependencies: true
 
-      - name: Probar reglas de precios y geografía
-        run: node --test tests/meat-matcher.test.mjs tests/price-safety.test.mjs tests/national-export.test.mjs
+      - name: Probar procedencia, integridad, precios y geografía
+        run: |
+          node --test tests/meat-matcher.test.mjs tests/price-safety.test.mjs tests/national-export.test.mjs tests/sepa-provenance.test.mjs
+          python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
 
       - name: Recolectar precios oficiales
         env:
@@ -76,6 +83,15 @@ jobs:
           BATCH_DELAY_MS: "1000"
           INGEST_RETRIES: "5"
         run: node update-san-juan.mjs
+
+      - name: Conservar evidencia de procedencia aunque falle la carga
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: procedencia-sepa-${{ github.run_id }}
+          path: data/sepa-provenance.json
+          if-no-files-found: ignore
+          retention-days: 90
 
       - name: Validar provincias y coordenadas con Georef
         run: node validate-national-geography.mjs
@@ -118,7 +134,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
+          git add data/sepa-provenance.json data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
@@ -160,4 +176,3 @@ jobs:
               bash scripts/push-generated-data.sh
             fi
           fi
-

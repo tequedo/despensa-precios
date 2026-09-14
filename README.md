@@ -7,3 +7,9 @@ Requiere Node.js 22, `unzip`, espacio temporal suficiente y las variables `DESPE
 El Blueprint de Render lo programa todos los días a las 13:30 UTC (10:30 de Argentina). El despliegue inicial conserva `AR-J` para validar estabilidad y costos; quitar ese filtro habilita todo el país sin cambiar el código.
 
 La salida informa recurso, fecha oficial y cantidad aceptada. Un valor cero se considera fallo de cobertura y no una actualización válida.
+
+La descarga actual usa una réplica de terceros de SEPA. Su integridad, recurso,
+revisión y fechas se comprueban antes de la carga, y su procedencia se conserva
+en `data/sepa-provenance.json`. El cotejo independiente con el ZIP gubernamental
+continúa pendiente mientras el portal oficial rechace el acceso. Requiere
+también Python 3 y `zstd`. Ver [alcance, controles y comparación](docs/sepa-provenance.md).

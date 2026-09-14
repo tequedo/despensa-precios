@@ -1,18 +1,14 @@
 import { createReadStream } from "node:fs";
-import { appendFile, mkdtemp, mkdir, open, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
+import { appendFile, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, dirname, join } from "node:path";
-import { execFile } from "node:child_process";
+import { dirname, join } from "node:path";
 import { createInterface } from "node:readline";
-import { promisify } from "node:util";
 import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "./meat-matcher.mjs";
 
 import { nationalExporter } from "./national-export.mjs";
 import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
+import { prepareReplica } from "./sepa-provenance.mjs";
 
-const execFileAsync = promisify(execFile);
-const METADATA = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/dataset-info.json";
-const manualZipUrl = process.env.MANUAL_ZIP_URL;
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
 const batchSize = Math.min(Math.max(Number(process.env.BATCH_SIZE ?? 75), 1), 100);
@@ -228,15 +224,6 @@ async function filesBelow(root) {
   return found;
 }
 
-async function extract(zip, target) {
-  await mkdir(target, { recursive: true });
-  try {
-    await execFileAsync("unzip", ["-oq", zip, "-d", target], { maxBuffer: 10 * 1024 * 1024 });
-  } catch {
-    await execFileAsync("7z", ["x", "-y", `-o${target}`, zip], { maxBuffer: 20 * 1024 * 1024 });
-  }
-}
-
 async function processFolder(folder, sourceInfo, counters) {
   const files = await filesBelow(folder);
   const branchFiles = files.filter(file => /sucursales\.csv$/i.test(file));
@@ -342,14 +329,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const promotion = promotionDetails(promoPrice, promoConditions);
       const ean = productKey(row);
       const record = {
-        source: {
-          name: "SEPA - Precios Claros",
-          kind: "official_dataset",
-          official: true,
-          verificationUrl: "https://datos.produccion.gob.ar/dataset/sepa-precios",
-          resource: sourceInfo.url,
-          modified: sourceInfo.modified
-        },
+        source: sourceInfo,
         product: {
           ean,
           name: description || ean,
@@ -393,70 +373,18 @@ async function processFolder(folder, sourceInfo, counters) {
 }
 
 try {
+  // Complete archive validation before touching outputs or sending any prices.
+  const prepared = await prepareReplica(workDir);
+  const { resource } = prepared;
   await mkdir(dirname(outputFile), { recursive: true });
   await writeFile(outputFile, "");
   await mkdir(dirname(quarantineFile), { recursive: true });
   await writeFile(quarantineFile, "");
 
-  let resource;
-  let sourceUrl;
-  const outerDir = join(workDir, "outer");
-  await mkdir(outerDir, { recursive: true });
-
-  if (manualZipUrl) {
-    resource = { name: "SEPA diario aportado manualmente", url: manualZipUrl, last_modified: new Date().toISOString() };
-    sourceUrl = manualZipUrl;
-    const archive = join(workDir, "sepa-manual.zip");
-    await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, manualZipUrl], { maxBuffer: 10 * 1024 * 1024 });
-    await extract(archive, outerDir);
-  } else {
-    const metadataResponse = await fetch(METADATA, { headers: { accept: "application/json" } });
-    if (!metadataResponse.ok) throw new Error(`Espejo de metadatos SEPA: HTTP ${metadataResponse.status}`);
-    const metadata = await metadataResponse.json();
-    if (!metadata.success) throw new Error("El espejo no devolvió metadatos SEPA válidos");
-    const resources = (metadata.result.resources ?? [])
-      .filter(candidate => /\.zip(?:$|\?)/i.test(candidate.url ?? "") && candidate.revision_id && candidate.id)
-      .sort((a, b) => String(b.last_modified ?? "").localeCompare(String(a.last_modified ?? "")));
-    const today = new Date().toISOString().slice(0, 10);
-    resource = resources.find(candidate => String(candidate.last_modified ?? "").slice(0, 10) < today) ?? resources[0];
-    if (!resource?.url) throw new Error("No se encontró el archivo diario de SEPA");
-    const filename = basename(new URL(resource.url).pathname);
-    sourceUrl = `https://f004.backblazeb2.com/file/precios-justos-datasets/${resource.id}-revID-${resource.revision_id}-${filename}-repackaged.tar.zst`;
-    const archive = join(workDir, "sepa.tar.zst");
-    await execFileAsync("curl", ["--fail", "--location", "--retry", "3", "--output", archive, sourceUrl], { maxBuffer: 10 * 1024 * 1024 });
-    await execFileAsync("tar", ["--no-same-owner", "--use-compress-program=unzstd", "-xf", archive, "-C", outerDir], { maxBuffer: 10 * 1024 * 1024 });
-  }
-
   const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0 };
-  await processFolder(outerDir, { url: sourceUrl, modified: resource.last_modified }, counters);
+  await processFolder(prepared.folder, prepared.source, counters);
 
-  const nested = (await filesBelow(outerDir)).filter(file => /\.zip$/i.test(file));
-  if (nested[0]) {
-    const handle = await open(nested[0], "r");
-    const header = Buffer.alloc(32);
-    await handle.read(header, 0, header.length, 0);
-    await handle.close();
-    console.log(JSON.stringify({ nestedFile: basename(nested[0]), nestedSize: (await stat(nested[0])).size, nestedHeaderHex: header.toString("hex") }));
-  }
-  let index = 0;
-  for (const zip of nested) {
-    if ((await stat(zip)).size === 0) {
-      console.warn(`SEPA omitió marcador ZIP vacío: ${basename(zip)}`);
-      continue;
-    }
-    const folder = join(workDir, `retailer-${index++}`);
-    try {
-      await extract(zip, folder);
-      await processFolder(folder, { url: sourceUrl, modified: resource.last_modified }, counters);
-    } catch (error) {
-      counters.damagedArchives++;
-      console.warn(`SEPA omitió archivo dañado: ${basename(zip)} (${error.message})`);
-    } finally {
-      await rm(folder, { recursive: true, force: true });
-    }
-  }
-
-  if (!counters.accepted) throw new Error("El archivo oficial SEPA no produjo precios válidos para San Juan");
+  if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
   if(exporter)await exporter.finish();
   const promotionRows = [];
@@ -483,6 +411,8 @@ try {
   await writeFile(promotionsFile, JSON.stringify({
     generatedAt: new Date().toISOString(), scope: "San Juan",
     source: "SEPA - Precios Claros",
+    sourceType: prepared.report.sourceType,
+    originalComparison: prepared.report.originalComparison.status,
     verificationUrl: "https://datos.produccion.gob.ar/dataset/sepa-precios",
     chains: [...new Set(promotions.map(item => item.chain))].sort(), promotions
   }, null, 2) + "\n");
@@ -494,9 +424,8 @@ try {
     ...counters,
     outputFile,
     promotionsFile,
-    verifiedPromotions: promotions.length
+    promotionCandidates: promotions.length
   }));
 } finally {
   await rm(workDir, { recursive: true, force: true });
 }
-

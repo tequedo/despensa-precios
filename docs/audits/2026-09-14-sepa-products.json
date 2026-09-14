@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-14T01:06:10.752496+00:00",
+  "scope": "Todos los productos.csv de la réplica del 12/09/2026; registros por sucursal, sin filtro de canasta ni geográfico.",
+  "points": [
+    "4.3",
+    "4.5"
+  ],
+  "uniqueScopedIdentifiers": 252758,
+  "counters": {
+    "rows": 14542725,
+    "ean_flag_1": 14369559,
+    "valid_declared_gtin_rows": 14335738,
+    "gtin_currently_replaced_with_internal_key": 14335738,
+    "ean_flag_0": 173166,
+    "missing_brand": 232437,
+    "positive_prices_below_current_import_threshold": 28582,
+    "metadata_footer_rows_excluded": 15,
+    "invalid_declared_gtin": 33821,
+    "non_positive_price": 56,
+    "blank_or_nul_rows_excluded": 3
+  },
+  "files": [
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-12_2026-09-12_09-05-10/productos.csv",
+      "rows": 1052189
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-13_2026-09-12_09-05-10/productos.csv",
+      "rows": 710656
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-15_2026-09-12_09-05-10/productos.csv",
+      "rows": 4155329
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-20_2026-09-12_09-05-10/productos.csv",
+      "rows": 7553
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-21_2026-09-12_09-05-10/productos.csv",
+      "rows": 73344
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-23_2026-09-12_09-05-10/productos.csv",
+      "rows": 6276
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-3_2026-09-12_09-05-10/productos.csv",
+      "rows": 9055
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-47_2026-09-12_09-05-10/productos.csv",
+      "rows": 19272
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-4_2026-09-12_09-05-10/productos.csv",
+      "rows": 259
+    },
+    {
+      "file": "2026-09-12/sepa_1_comercio-sepa-9_2026-09-12_09-05-10/productos.csv",
+      "rows": 1291963
+    },
+    {
+      "file": "2026-09-12/sepa_2_comercio-sepa-10_2026-09-12_01-05-08/productos.csv",
+      "rows": 3571546
+    },
+    {
+      "file": "2026-09-12/sepa_2_comercio-sepa-11_2026-09-12_01-05-08/productos.csv",
+      "rows": 2605563
+    },
+    {
+      "file": "2026-09-12/sepa_2_comercio-sepa-2_2026-09-12_01-05-08/productos.csv",
+      "rows": 1002003
+    },
+    {
+      "file": "2026-09-12/sepa_2_comercio-sepa-5_2026-09-12_01-05-08/productos.csv",
+      "rows": 19075
+    },
+    {
+      "file": "2026-09-12/sepa_2_comercio-sepa-6_2026-09-12_01-05-08/productos.csv",
+      "rows": 18642
+    }
+  ],
+  "examples": {
+    "missing_brand": [
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-12_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "12",
+        "id_sucursal": "69",
+        "id_producto": "2003609900007",
+        "productos_ean": "0",
+        "productos_descripcion": "JAMON D/CERDO S/ H P/IND.-   XKG   ",
+        "productos_marca": " ",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "kgm",
+        "productos_precio_lista": "11000"
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-12_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "12",
+        "id_sucursal": "67",
+        "id_producto": "2024066000000",
+        "productos_ean": "0",
+        "productos_descripcion": "JAMON D/CERDO S/HUESO-S/CUERO   XKG   ",
+        "productos_marca": " ",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "kgm",
+        "productos_precio_lista": "11000"
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-12_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "12",
+        "id_sucursal": "70",
+        "id_producto": "2017696000007",
+        "productos_ean": "0",
+        "productos_descripcion": "PALETA D/CERDO C/HUESO-C/CUERO   XKG   ",
+        "productos_marca": " ",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "kgm",
+        "productos_precio_lista": "4300"
+      }
+    ],
+    "invalid_declared_gtin": [
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-15_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "15",
+        "id_sucursal": "1",
+        "id_producto": "2490039000000",
+        "productos_ean": "1",
+        "productos_descripcion": "MANZANA ROJA ELEGIDA",
+        "productos_marca": "",
+        "productos_cantidad_presentacion": "1.00",
+        "productos_unidad_medida_presentacion": "KG",
+        "productos_precio_lista": "5590.00"
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-15_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "15",
+        "id_sucursal": "1",
+        "id_producto": "2490061000000",
+        "productos_ean": "1",
+        "productos_descripcion": "PAPA ELEGIDA",
+        "productos_marca": "",
+        "productos_cantidad_presentacion": "1.00",
+        "productos_unidad_medida_presentacion": "KG",
+        "productos_precio_lista": "3590.00"
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-15_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "15",
+        "id_sucursal": "1",
+        "id_producto": "2490062000000",
+        "productos_ean": "1",
+        "productos_descripcion": "BATATA GRANEL",
+        "productos_marca": "",
+        "productos_cantidad_presentacion": "1.00",
+        "productos_unidad_medida_presentacion": "KG",
+        "productos_precio_lista": "2990.00"
+      }
+    ],
+    "non_positive_price": [
+      {
+        "file": "2026-09-12/sepa_2_comercio-sepa-5_2026-09-12_01-05-08/productos.csv",
+        "id_comercio": "5",
+        "id_sucursal": "1",
+        "id_producto": "0204082700000",
+        "productos_ean": "0",
+        "productos_descripcion": "JAMON COCIDO FOX C/CUERO kg.",
+        "productos_marca": "DISCONTINUO",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "unidad",
+        "productos_precio_lista": ".00"
+      },
+      {
+        "file": "2026-09-12/sepa_2_comercio-sepa-5_2026-09-12_01-05-08/productos.csv",
+        "id_comercio": "5",
+        "id_sucursal": "2",
+        "id_producto": "0204082700000",
+        "productos_ean": "0",
+        "productos_descripcion": "JAMON COCIDO FOX C/CUERO kg.",
+        "productos_marca": "DISCONTINUO",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "unidad",
+        "productos_precio_lista": ".00"
+      },
+      {
+        "file": "2026-09-12/sepa_2_comercio-sepa-5_2026-09-12_01-05-08/productos.csv",
+        "id_comercio": "5",
+        "id_sucursal": "3",
+        "id_producto": "0204082700000",
+        "productos_ean": "0",
+        "productos_descripcion": "JAMON COCIDO FOX C/CUERO kg.",
+        "productos_marca": "DISCONTINUO",
+        "productos_cantidad_presentacion": "1",
+        "productos_unidad_medida_presentacion": "unidad",
+        "productos_precio_lista": ".00"
+      }
+    ]
+  },
+  "limitations": [
+    "La validez matemática de un GTIN no demuestra correspondencia física con el envase.",
+    "La comparación contra el original gubernamental permanece pendiente.",
+    "Identidades diferentes requieren revisión; variación textual no prueba que sean productos distintos.",
+    "No se modificaron precios, productos ni existencias con esta auditoría."
+  ],
+  "postAuditReview": {
+    "method": "Rescan of all rows in the three affected CSV files; excludes 3 blank/NUL rows, which carried no product data. Full audit already excluded 15 date footers. Counts reconciled to the complete original scan.",
+    "files": [
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-3_2026-09-12_09-05-10/productos.csv",
+        "rows": 9055
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-47_2026-09-12_09-05-10/productos.csv",
+        "rows": 19272
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-4_2026-09-12_09-05-10/productos.csv",
+        "rows": 259
+      }
+    ],
+    "excludedExamples": [
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-3_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": " ",
+        "id_sucursal": null,
+        "id_producto": null,
+        "productos_ean": null,
+        "productos_descripcion": null,
+        "productos_marca": null,
+        "productos_cantidad_presentacion": null,
+        "productos_unidad_medida_presentacion": null,
+        "productos_precio_lista": null
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-47_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": "\u0000",
+        "id_sucursal": null,
+        "id_producto": null,
+        "productos_ean": null,
+        "productos_descripcion": null,
+        "productos_marca": null,
+        "productos_cantidad_presentacion": null,
+        "productos_unidad_medida_presentacion": null,
+        "productos_precio_lista": null
+      },
+      {
+        "file": "2026-09-12/sepa_1_comercio-sepa-4_2026-09-12_09-05-10/productos.csv",
+        "id_comercio": " ",
+        "id_sucursal": null,
+        "id_producto": null,
+        "productos_ean": null,
+        "productos_descripcion": null,
+        "productos_marca": null,
+        "productos_cantidad_presentacion": null,
+        "productos_unidad_medida_presentacion": null,
+        "productos_precio_lista": null
+      }
+    ]
+  }
+}
