@@ -33,8 +33,7 @@ export function validateResource(resource, now = new Date()) {
 export function selectResource(metadata, now = new Date(), resourceId) {
   if (!metadata?.success || metadata.result?.id !== OFFICIAL_DATASET_ID) throw new Error('Metadatos de otro conjunto de datos');
   const resources = (metadata.result.resources ?? []).filter(r => /\.zip$/.test(r.url ?? '')).sort((a, b) => String(b.last_modified).localeCompare(String(a.last_modified)));
-  const today = now.toISOString().slice(0, 10);
-  const resource = resourceId ? resources.find(r => r.id === resourceId) : resources.find(r => String(r.last_modified).slice(0, 10) < today) ?? resources[0];
+  const resource = resourceId ? resources.find(r => r.id === resourceId) : resources[0];
   return validateResource(resource, now);
 }
 
