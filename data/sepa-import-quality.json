@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-15T13:43:19.170Z",
-  "sourceModified": "2026-09-14T16:20:07.305Z",
+  "checkedAt": "2026-09-15T19:53:51.613Z",
+  "sourceModified": "2026-09-15T16:19:55.650Z",
   "sourceType": "replica",
   "excludedStores": [
     {
@@ -14,539 +14,75 @@
       "type": "Web",
       "channel": "online",
       "reason": "online_delivery_scope_unverified"
-    },
-    {
-      "externalId": "|-65.304235|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.309434|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.319964|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Ciudad de Nieva",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-64.866660|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Pedro de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|09:00 a 14:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.289007|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Coronel Arias",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-64.787303|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Libertador Gral. San Martin",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|09:00 a 14:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.263490|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Alto Comedero",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.120764|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Perico",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|09:00 a 14:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.416186|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Salta",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.116091|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Perico",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|09:00 a 14:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.311738|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Los Perales",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-64.867798|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Pedro de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|09:00 a 14:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.272455|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Almirante Brown",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.279915|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Bajo La Viña",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.414204|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Salta",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.276178|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |San Pedrito",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.297513|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Chijra",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.301073|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Gorriti",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.408656|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "Salta",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|cerrado|08:00 a 13:00 - 17:00 a 22:00",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 13:00 - 17:00 a 22:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|08:00 a 20:00|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.193457|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Miguel de Tucumán",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.247965|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Ciudadela",
-      "type": "San Miguel de Tucumán",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.224345|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |11 de Marzo",
-      "type": "San Miguel de Tucumán",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.235856|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |",
-      "type": "Palpala",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-65.277658|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Almirante Brown",
-      "type": "San Salvador de Jujuy",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "|-64.328187|",
-      "type": "",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
-    },
-    {
-      "externalId": "| |Centro",
-      "type": "San Ramon de la Nueva Oran",
-      "channel": "unknown",
-      "reason": "unknown_store_type"
     }
   ],
   "productFiles": [
     {
-      "file": "2026-09-14/sepa_1_comercio-sepa-12_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T02:09:39-03:00",
-      "updatedAt": "2026-09-14T05:09:39.000Z",
+      "file": "2026-09-15/sepa_1_comercio-sepa-12_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T02:09:54-03:00",
+      "updatedAt": "2026-09-15T05:09:54.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-13_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T04:00:07-03:00",
+      "updatedAt": "2026-09-15T07:00:07.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-15_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T04:05:37-03:00",
+      "updatedAt": "2026-09-15T07:05:37.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-20_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-14T18:52:44-03:00",
+      "updatedAt": "2026-09-14T21:52:44.000Z",
       "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_1_comercio-sepa-13_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T04:00:07-03:00",
-      "updatedAt": "2026-09-14T07:00:07.000Z",
+      "file": "2026-09-15/sepa_1_comercio-sepa-21_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T02:01:17-03:00",
+      "updatedAt": "2026-09-15T05:01:17.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-23_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T04:00:00-0300",
+      "updatedAt": "2026-09-15T07:00:00.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-24_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T02:11:32-03:00",
+      "updatedAt": "2026-09-15T05:11:32.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_1_comercio-sepa-3_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-14T16:00:00-03:00",
+      "updatedAt": "2026-09-14T19:00:00.000Z",
       "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_1_comercio-sepa-15_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T04:05:37-03:00",
-      "updatedAt": "2026-09-14T07:05:37.000Z",
-      "date": "2026-09-14",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-14/sepa_1_comercio-sepa-21_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T02:01:08-03:00",
-      "updatedAt": "2026-09-14T05:01:08.000Z",
-      "date": "2026-09-14",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-14/sepa_1_comercio-sepa-23_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T04:00:00-0300",
-      "updatedAt": "2026-09-14T07:00:00.000Z",
-      "date": "2026-09-14",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-14/sepa_1_comercio-sepa-3_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-13T16:00:01-03:00",
-      "updatedAt": "2026-09-13T19:00:01.000Z",
-      "date": "2026-09-13",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-14/sepa_1_comercio-sepa-47_2026-09-14_09-05-11/productos.csv",
+      "file": "2026-09-15/sepa_1_comercio-sepa-47_2026-09-15_09-05-10/productos.csv",
       "raw": "2025-06-11T21:00:01-03:00",
       "updatedAt": "2025-06-12T00:00:01.000Z",
       "date": "2025-06-11",
@@ -555,60 +91,237 @@
       "reason": "stale_product_file_date"
     },
     {
-      "file": "2026-09-14/sepa_1_comercio-sepa-4_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-13T16:00:01-03:00",
-      "updatedAt": "2026-09-13T19:00:01.000Z",
-      "date": "2026-09-13",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-14/sepa_1_comercio-sepa-9_2026-09-14_09-05-11/productos.csv",
-      "raw": "2026-09-14T05:02:19-03:00",
-      "updatedAt": "2026-09-14T08:02:19.000Z",
+      "file": "2026-09-15/sepa_1_comercio-sepa-4_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-14T16:00:00-03:00",
+      "updatedAt": "2026-09-14T19:00:00.000Z",
       "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_2_comercio-sepa-10_2026-09-14_01-05-07/productos.csv",
-      "raw": "2026-09-14T09:23:49-03:00",
-      "updatedAt": "2026-09-14T12:23:49.000Z",
-      "date": "2026-09-14",
+      "file": "2026-09-15/sepa_1_comercio-sepa-9_2026-09-15_09-05-10/productos.csv",
+      "raw": "2026-09-15T05:04:12-03:00",
+      "updatedAt": "2026-09-15T08:04:12.000Z",
+      "date": "2026-09-15",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_2_comercio-sepa-11_2026-09-14_01-05-07/productos.csv",
-      "raw": "2026-09-14T05:20:23-03:00",
-      "updatedAt": "2026-09-14T08:20:23.000Z",
-      "date": "2026-09-14",
+      "file": "2026-09-15/sepa_2_comercio-sepa-10_2026-09-15_01-05-08/productos.csv",
+      "raw": "2026-09-15T09:23:17-03:00",
+      "updatedAt": "2026-09-15T12:23:17.000Z",
+      "date": "2026-09-15",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_2_comercio-sepa-2_2026-09-14_01-05-07/productos.csv",
-      "raw": "2026-09-14T04:00:51-03:00",
-      "updatedAt": "2026-09-14T07:00:51.000Z",
-      "date": "2026-09-14",
+      "file": "2026-09-15/sepa_2_comercio-sepa-11_2026-09-15_01-05-08/productos.csv",
+      "raw": "2026-09-15T05:20:23-03:00",
+      "updatedAt": "2026-09-15T08:20:23.000Z",
+      "date": "2026-09-15",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_2_comercio-sepa-5_2026-09-14_01-05-07/productos.csv",
-      "raw": "2026-09-14T09:00:02-03:00",
-      "updatedAt": "2026-09-14T12:00:02.000Z",
-      "date": "2026-09-14",
+      "file": "2026-09-15/sepa_2_comercio-sepa-2_2026-09-15_01-05-08/productos.csv",
+      "raw": "2026-09-15T04:00:53-03:00",
+      "updatedAt": "2026-09-15T07:00:53.000Z",
+      "date": "2026-09-15",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-14/sepa_2_comercio-sepa-6_2026-09-14_01-05-07/productos.csv",
-      "raw": "2026-09-14T09:30:00-03:00",
-      "updatedAt": "2026-09-14T12:30:00.000Z",
-      "date": "2026-09-14",
+      "file": "2026-09-15/sepa_2_comercio-sepa-5_2026-09-15_01-05-08/productos.csv",
+      "raw": "2026-09-15T09:00:02-03:00",
+      "updatedAt": "2026-09-15T12:00:02.000Z",
+      "date": "2026-09-15",
       "dateBasis": "product_file_footer",
       "accepted": true
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/productos.csv",
+      "raw": "2026-09-15T09:30:00-03:00",
+      "updatedAt": "2026-09-15T12:30:00.000Z",
+      "date": "2026-09-15",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    }
+  ],
+  "csvRepairs": [
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 2,
+      "endLine": 4,
+      "externalId": "6|1|1"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 5,
+      "endLine": 7,
+      "externalId": "6|1|2"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 8,
+      "endLine": 10,
+      "externalId": "6|1|3"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 11,
+      "endLine": 18,
+      "externalId": "6|1|4"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 19,
+      "endLine": 21,
+      "externalId": "6|1|5"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 22,
+      "endLine": 29,
+      "externalId": "6|1|6"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 30,
+      "endLine": 32,
+      "externalId": "6|1|7"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 33,
+      "endLine": 40,
+      "externalId": "6|1|8"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 41,
+      "endLine": 43,
+      "externalId": "6|1|9"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 44,
+      "endLine": 51,
+      "externalId": "6|1|10"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 52,
+      "endLine": 54,
+      "externalId": "6|1|11"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 55,
+      "endLine": 62,
+      "externalId": "6|1|12"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 63,
+      "endLine": 65,
+      "externalId": "6|1|14"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 66,
+      "endLine": 68,
+      "externalId": "6|1|16"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 70,
+      "endLine": 72,
+      "externalId": "6|1|18"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 73,
+      "endLine": 75,
+      "externalId": "6|1|19"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 76,
+      "endLine": 78,
+      "externalId": "6|1|20"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 79,
+      "endLine": 81,
+      "externalId": "6|1|22"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 82,
+      "endLine": 89,
+      "externalId": "6|1|23"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 90,
+      "endLine": 92,
+      "externalId": "6|1|24"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 93,
+      "endLine": 95,
+      "externalId": "6|1|25"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 96,
+      "endLine": 98,
+      "externalId": "6|1|26"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 99,
+      "endLine": 101,
+      "externalId": "6|2|1"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 102,
+      "endLine": 104,
+      "externalId": "6|2|2"
+    },
+    {
+      "file": "2026-09-15/sepa_2_comercio-sepa-6_2026-09-15_01-05-08/sucursales.csv",
+      "reason": "unquoted_branch_continuation",
+      "startLine": 105,
+      "endLine": 107,
+      "externalId": "6|2|21"
     }
   ]
 }
