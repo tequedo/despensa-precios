@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-14T16:56:45.927Z",
-  "sourceModified": "2026-09-13T16:19:03.291Z",
+  "checkedAt": "2026-09-15T13:43:19.170Z",
+  "sourceModified": "2026-09-14T16:20:07.305Z",
   "sourceType": "replica",
   "excludedStores": [
     {
@@ -498,55 +498,55 @@
   ],
   "productFiles": [
     {
-      "file": "2026-09-13/sepa_1_comercio-sepa-12_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-13T03:09:02-03:00",
-      "updatedAt": "2026-09-13T06:09:02.000Z",
+      "file": "2026-09-14/sepa_1_comercio-sepa-12_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T02:09:39-03:00",
+      "updatedAt": "2026-09-14T05:09:39.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_1_comercio-sepa-13_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T04:00:07-03:00",
+      "updatedAt": "2026-09-14T07:00:07.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_1_comercio-sepa-15_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T04:05:37-03:00",
+      "updatedAt": "2026-09-14T07:05:37.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_1_comercio-sepa-21_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T02:01:08-03:00",
+      "updatedAt": "2026-09-14T05:01:08.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_1_comercio-sepa-23_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T04:00:00-0300",
+      "updatedAt": "2026-09-14T07:00:00.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_1_comercio-sepa-3_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-13T16:00:01-03:00",
+      "updatedAt": "2026-09-13T19:00:01.000Z",
       "date": "2026-09-13",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_1_comercio-sepa-13_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-13T04:00:07-03:00",
-      "updatedAt": "2026-09-13T07:00:07.000Z",
-      "date": "2026-09-13",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-15_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-13T04:05:38-03:00",
-      "updatedAt": "2026-09-13T07:05:38.000Z",
-      "date": "2026-09-13",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-21_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-12T02:02:54-03:00",
-      "updatedAt": "2026-09-12T05:02:54.000Z",
-      "date": "2026-09-12",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-23_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-13T04:00:00-0300",
-      "updatedAt": "2026-09-13T07:00:00.000Z",
-      "date": "2026-09-13",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-3_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-12T16:00:01-03:00",
-      "updatedAt": "2026-09-12T19:00:01.000Z",
-      "date": "2026-09-12",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-47_2026-09-13_09-05-11/productos.csv",
+      "file": "2026-09-14/sepa_1_comercio-sepa-47_2026-09-14_09-05-11/productos.csv",
       "raw": "2025-06-11T21:00:01-03:00",
       "updatedAt": "2025-06-12T00:00:01.000Z",
       "date": "2025-06-11",
@@ -555,58 +555,58 @@
       "reason": "stale_product_file_date"
     },
     {
-      "file": "2026-09-13/sepa_1_comercio-sepa-4_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-12T16:00:01-03:00",
-      "updatedAt": "2026-09-12T19:00:01.000Z",
-      "date": "2026-09-12",
-      "dateBasis": "product_file_footer",
-      "accepted": true
-    },
-    {
-      "file": "2026-09-13/sepa_1_comercio-sepa-9_2026-09-13_09-05-11/productos.csv",
-      "raw": "2026-09-13T05:02:19-03:00",
-      "updatedAt": "2026-09-13T08:02:19.000Z",
+      "file": "2026-09-14/sepa_1_comercio-sepa-4_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-13T16:00:01-03:00",
+      "updatedAt": "2026-09-13T19:00:01.000Z",
       "date": "2026-09-13",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_2_comercio-sepa-10_2026-09-13_01-05-08/productos.csv",
-      "raw": "2026-09-13T09:10:56-03:00",
-      "updatedAt": "2026-09-13T12:10:56.000Z",
-      "date": "2026-09-13",
+      "file": "2026-09-14/sepa_1_comercio-sepa-9_2026-09-14_09-05-11/productos.csv",
+      "raw": "2026-09-14T05:02:19-03:00",
+      "updatedAt": "2026-09-14T08:02:19.000Z",
+      "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_2_comercio-sepa-11_2026-09-13_01-05-08/productos.csv",
-      "raw": "2026-09-13T05:20:23-03:00",
-      "updatedAt": "2026-09-13T08:20:23.000Z",
-      "date": "2026-09-13",
+      "file": "2026-09-14/sepa_2_comercio-sepa-10_2026-09-14_01-05-07/productos.csv",
+      "raw": "2026-09-14T09:23:49-03:00",
+      "updatedAt": "2026-09-14T12:23:49.000Z",
+      "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_2_comercio-sepa-2_2026-09-13_01-05-08/productos.csv",
-      "raw": "2026-09-13T04:01:03-03:00",
-      "updatedAt": "2026-09-13T07:01:03.000Z",
-      "date": "2026-09-13",
+      "file": "2026-09-14/sepa_2_comercio-sepa-11_2026-09-14_01-05-07/productos.csv",
+      "raw": "2026-09-14T05:20:23-03:00",
+      "updatedAt": "2026-09-14T08:20:23.000Z",
+      "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_2_comercio-sepa-5_2026-09-13_01-05-08/productos.csv",
-      "raw": "2026-09-13T09:00:02-03:00",
-      "updatedAt": "2026-09-13T12:00:02.000Z",
-      "date": "2026-09-13",
+      "file": "2026-09-14/sepa_2_comercio-sepa-2_2026-09-14_01-05-07/productos.csv",
+      "raw": "2026-09-14T04:00:51-03:00",
+      "updatedAt": "2026-09-14T07:00:51.000Z",
+      "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     },
     {
-      "file": "2026-09-13/sepa_2_comercio-sepa-6_2026-09-13_01-05-08/productos.csv",
-      "raw": "2026-09-13T09:30:00-03:00",
-      "updatedAt": "2026-09-13T12:30:00.000Z",
-      "date": "2026-09-13",
+      "file": "2026-09-14/sepa_2_comercio-sepa-5_2026-09-14_01-05-07/productos.csv",
+      "raw": "2026-09-14T09:00:02-03:00",
+      "updatedAt": "2026-09-14T12:00:02.000Z",
+      "date": "2026-09-14",
+      "dateBasis": "product_file_footer",
+      "accepted": true
+    },
+    {
+      "file": "2026-09-14/sepa_2_comercio-sepa-6_2026-09-14_01-05-07/productos.csv",
+      "raw": "2026-09-14T09:30:00-03:00",
+      "updatedAt": "2026-09-14T12:30:00.000Z",
+      "date": "2026-09-14",
       "dateBasis": "product_file_footer",
       "accepted": true
     }

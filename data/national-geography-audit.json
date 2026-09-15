@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T17:02:15.572Z",
+  "checkedAt": "2026-09-15T13:48:43.718Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
   "rejectedCount": 53,
   "rejected": [
@@ -180,14 +180,6 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|163",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.418749,
-      "longitude": -64.178711,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
       "externalId": "10|3|865",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
@@ -217,6 +209,14 @@
       "locality": "Córdoba",
       "latitude": -31.090725,
       "longitude": -64.48531,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|163",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.418749,
+      "longitude": -64.178711,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
