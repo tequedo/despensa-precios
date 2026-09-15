@@ -13,7 +13,7 @@ test('the real importer excludes Web and stale files and publishes the inner pri
     for (const [id, date] of [['2', '2026-09-13'], ['47', '2025-06-11']]) {
       const folder = join(payload, id); await mkdir(folder, { recursive: true });
       await writeFile(join(folder, 'comercio.csv'), `id_comercio|id_bandera|comercio_bandera_nombre\n${id}|1|Cadena ${id}\n`);
-      await writeFile(join(folder, 'sucursales.csv'), `id_comercio|id_bandera|id_sucursal|sucursales_nombre|sucursales_tipo|sucursales_provincia|sucursales_localidad|sucursales_latitud|sucursales_longitud\n${id}|1|15|Centro|Supermercado|AR-J|San Juan|-31.536|-68.527\n${id}|1|8015|ONLINE|Web|AR-J|San Juan|-31.536|-68.527\n`);
+      await writeFile(join(folder, 'sucursales.csv'), `id_comercio|id_bandera|id_sucursal|sucursales_nombre|sucursales_tipo|sucursales_provincia|sucursales_localidad|sucursales_latitud|sucursales_longitud\n${id}|1|15|"Centro\nSucursal"|Supermercado|AR-J|San Juan|-31.536\n|-68.527\n${id}|1|8015|ONLINE|Web|AR-J|San Juan|-31.536|-68.527\n`);
       await writeFile(join(folder, 'productos.csv'), header + `${id}|1|15|7790895000997|1|Leche entera|Marca|1|L|L|1800\n${id}|1|8015|7790895000997|1|Leche entera|Marca|1|L|L|900\n\nUltima actualizacion: ${date}T12:00:00-03:00\n`);
     }
     const source = { modified: '2026-09-14T13:00:00Z', kind: 'dataset_replica', official: false };
@@ -30,8 +30,10 @@ test('the real importer excludes Web and stale files and publishes the inner pri
     assert.equal(rows[0].price.listPrice, 1800); assert.equal(rows[0].price.validDate, '2026-09-13');
     assert.equal(rows[0].price.observedAt, '2026-09-13T15:00:00.000Z');
     assert.equal(rows[0].source.modified, source.modified); assert.equal(rows[0].store.channel, 'sucursal');
+    assert.equal(rows[0].store.branch, 'Centro\nSucursal'); assert.equal(rows[0].store.longitude, -68.527);
     const audit = JSON.parse(await readFile(quality, 'utf8'));
     assert.equal(audit.excludedStores.length, 2); assert.equal(audit.productFiles.filter(f => !f.accepted).length, 1);
+    assert.equal(audit.csvRepairs.length, 2); assert.equal(audit.csvRepairs[0].externalId, '2|1|15');
     const index = JSON.parse(await readFile(join(national, 'AR-J/index.json'), 'utf8'));
     assert.equal(index.stores.length, 1); assert.equal(index.stores[0].sourceDate, rows[0].price.validDate);
   } finally { await rm(dir, { recursive: true, force: true }); }

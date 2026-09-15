@@ -11,6 +11,7 @@ on:
       - "sepa-source.mjs"
       - "product-identity.mjs"
       - "sepa-values.mjs"
+      - "sepa-csv.mjs"
       - "sepa-catalog-controls.mjs"
       - "san-juan-snapshot.mjs"
       - "validate-national-geography.mjs"

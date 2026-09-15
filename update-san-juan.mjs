@@ -9,9 +9,10 @@ import { nationalExporter } from "./national-export.mjs";
 import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
 import { prepareSource } from "./sepa-source.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
-import { sepaAmount, emptySepaLine } from "./sepa-values.mjs";
+import { sepaAmount } from "./sepa-values.mjs";
+import { readSepaRows as rows } from "./sepa-csv.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
-import { branchChannel, isUpdateFooter, productFileEvidence } from "./sepa-catalog-controls.mjs";
+import { branchChannel, productFileEvidence } from "./sepa-catalog-controls.mjs";
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -153,43 +154,6 @@ function promotionDetails(promoPrice, conditions) {
   return { promoKind: promoPrice ? "special_price" : "none", ...common };
 }
 
-function parsePipe(line) {
-  const values = [];
-  let value = "";
-  let quoted = false;
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    if (char === '"') {
-      if (quoted && line[i + 1] === '"') {
-        value += '"';
-        i++;
-      } else quoted = !quoted;
-    } else if (char === "|" && !quoted) {
-      values.push(value);
-      value = "";
-    } else value += char;
-  }
-  values.push(value);
-  return values;
-}
-
-async function rows(file, handler) {
-  const input = createInterface({ input: createReadStream(file), crlfDelay: Infinity });
-  let headers;
-  for await (const raw of input) {
-    const line = raw.replace(/^\uFEFF/, "");
-    if (emptySepaLine(line) || isUpdateFooter(line)) continue;
-    const values = parsePipe(line);
-    if (!headers) {
-      headers = values.map(value => normalize(value).replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""));
-      continue;
-    }
-    const row = {};
-    headers.forEach((header, index) => { row[header] = values[index] ?? ""; });
-    await handler(row);
-  }
-}
-
 async function rowsFromNdjson(file, handler) {
   const input = createInterface({ input: createReadStream(file), crlfDelay: Infinity });
   for await (const line of input) if (line.trim()) await handler(JSON.parse(line));
@@ -257,7 +221,9 @@ async function processFolder(folder, sourceInfo, counters) {
           longitude: pick(row, ["sucursales_longitud", "sucursal_longitud", "longitud"])
         }, counters);
       }
-    });
+    }, { allowBranchContinuations: true, onRepair: repair => {
+      counters.csvRepairs.push({ file: relative(folder, file).replaceAll('\\', '/'), ...repair });
+    } });
   }
   if (!branches.size) return;
 
@@ -397,10 +363,10 @@ try {
   await mkdir(dirname(quarantineFile), { recursive: true });
   await writeFile(quarantineFile, "");
 
-  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [] };
+  const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [], csvRepairs: [] };
   await processFolder(prepared.folder, prepared.source, counters);
   await mkdir(dirname(qualityFile), { recursive: true });
-  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles }, null, 2) + '\n');
+  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs }, null, 2) + '\n');
 
   if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
