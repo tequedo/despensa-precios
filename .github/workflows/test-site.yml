@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "tests/site-smoke.mjs"
+      - "tests/price-refresh-smoke.mjs"
       - ".github/workflows/test-site.yml"
 permissions:
   contents: write
@@ -24,11 +25,13 @@ jobs:
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
-        run: node tests/site-smoke.mjs
+        run: |
+          node tests/site-smoke.mjs
+          node tests/price-refresh-smoke.mjs
       - name: Guardar comprobación
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/site-smoke-report.json
+          git add data/site-smoke-report.json data/price-refresh-smoke-report.json
           git commit -m "Registrar comprobación de app publicada"
           bash scripts/push-generated-data.sh
