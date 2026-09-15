@@ -21,6 +21,7 @@ on:
       - "tests/sepa-official.test.mjs"
       - "tests/test_sepa_archive.py"
       - "scripts/push-generated-data.sh"
+      - "scripts/push-update-diagnostics.sh"
       - "national-export.mjs"
       - "price-safety.mjs"
       - "promotion-evidence.mjs"
@@ -215,13 +216,6 @@ jobs:
           NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-failed.mjs
 
-      - name: Guardar diagnóstico de notificación
+      - name: Guardar diagnóstico de notificación y lectura de precios
         if: always()
-        run: |
-          if [ -f data/notification-status.json ]; then
-            git add data/notification-status.json
-            if ! git diff --cached --quiet; then
-              git commit -m "Actualizar estado de notificación"
-              bash scripts/push-generated-data.sh
-            fi
-          fi
+        run: bash scripts/push-update-diagnostics.sh
