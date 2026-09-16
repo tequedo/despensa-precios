@@ -1,6 +1,7 @@
 {
-  "checkedAt": "2026-09-15T20:23:57.160Z",
+  "checkedAt": "2026-09-16T13:53:32.026Z",
   "success": true,
+  "kind": "sepa",
   "accepted": true,
   "recorded": true,
   "notified": false,
@@ -11,5 +12,32 @@
   "promotionsChanged": true,
   "walletBenefitCount": 2,
   "calculableWalletBenefitCount": 0,
-  "walletBenefitsChanged": true
+  "walletBenefitsChanged": true,
+  "processes": [
+    {
+      "kind": "sepa",
+      "accepted": true,
+      "recorded": true,
+      "notified": false,
+      "notificationStatus": "recorded_for_daily_summary",
+      "deliveryConfirmed": false
+    },
+    {
+      "kind": "promotions",
+      "accepted": true,
+      "recorded": true,
+      "notified": false,
+      "notificationStatus": "recorded_for_daily_summary",
+      "deliveryConfirmed": false
+    },
+    {
+      "kind": "benefits",
+      "accepted": true,
+      "recorded": true,
+      "notified": false,
+      "notificationStatus": "recorded_for_daily_summary",
+      "deliveryConfirmed": false
+    }
+  ],
+  "errors": []
 }
