@@ -1,4 +1,4 @@
-name: Notificar ingresos a Despensa Inteligente
+name: Procesar alertas y resumen diario
 
 on:
   workflow_dispatch:
@@ -29,8 +29,9 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Enviar avisos pendientes
+      - name: Enviar alertas pendientes y revisar resúmenes
         env:
           ACCESS_EVENTS_URL: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/access
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
         run: node notify-access.mjs
+
