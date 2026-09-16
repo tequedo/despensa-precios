@@ -23,10 +23,12 @@ export async function nationalExporter(root, temporary) {
       stores.set(id,{...record.store,province:province.name,provinceCode:province.code,source:record.source});
       const p=record.product,v=record.price;
       const tuple=[p.ean,p.name,p.brand??'',p.presentation??'',p.referenceUnit??'',v.listPrice,v.validDate,v.productUpdatedAt??null];
-      // Promotional text remains a candidate until independent, scoped evidence exists.
-      if(v.promoPrice||v.promoConditions)tuple.push({promoPrice:v.promoPrice,promoConditions:v.promoConditions,promoKind:v.promoKind,buyQuantity:v.buyQuantity,payQuantity:v.payQuantity,discountPercent:v.discountPercent,requiredBenefit:v.requiredBenefit,discountCap:v.discountCap});
-      // Slot 8 remains promotions. Slot 9 adds identity without changing stable IDs or v1 readers.
-      if(p.barcodeStatus){if(tuple.length===8)tuple.push(null);tuple.push({barcode:p.barcode??null,barcodeStatus:p.barcodeStatus});}
+      // Keep legacy promo1 at slot 8; the complete array preserves promo2 without stacking offers.
+      const offers = v.promotions ?? [];
+      if(v.promoPrice || v.promoConditions || offers.length) tuple[8] = {promoPrice:v.promoPrice,promoConditions:v.promoConditions,promoKind:v.promoKind,buyQuantity:v.buyQuantity,payQuantity:v.payQuantity,discountPercent:v.discountPercent,requiredBenefit:v.requiredBenefit,discountCap:v.discountCap,...(offers.length ? {promotions:offers} : {})};
+      // Stable product IDs and existing reader positions remain unchanged.
+      if(p.barcodeStatus) tuple[9] = {barcode:p.barcode??null,barcodeStatus:p.barcodeStatus};
+      if(v.referencePrice) tuple[10] = {referencePrice:v.referencePrice};
       const lines=buffers.get(id)??[];lines.push(JSON.stringify(tuple));buffers.set(id,lines);
       if(++buffered>=2000)await flush();
     },

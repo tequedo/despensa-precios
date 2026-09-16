@@ -3,7 +3,7 @@ on:
   push:
     branches: ['fix/sepa-procedencia-4-2', 'fix/sepa-identificacion-4-3']
   pull_request:
-    paths: ['sepa-provenance.mjs', 'sepa-official.mjs', 'sepa-source.mjs', 'product-identity.mjs', 'sepa-values.mjs', 'sepa-csv.mjs', 'sepa-catalog-controls.mjs', 'national-export.mjs', 'scripts/**', 'tests/**', 'update-san-juan.mjs', '.github/workflows/test-provenance.yml', '.github/workflows/audit-official-sepa.yml', '.github/workflows/update-prices.yml']
+    paths: ['sepa-provenance.mjs', 'sepa-official.mjs', 'sepa-source.mjs', 'product-identity.mjs', 'sepa-values.mjs', 'sepa-pricing.mjs', 'sepa-csv.mjs', 'sepa-catalog-controls.mjs', 'national-export.mjs', 'scripts/**', 'tests/**', 'update-san-juan.mjs', '.github/workflows/test-provenance.yml', '.github/workflows/audit-official-sepa.yml', '.github/workflows/update-prices.yml']
 permissions:
   contents: read
 jobs:
