@@ -29,9 +29,13 @@ jobs:
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
-        run: |
-          node tests/site-smoke.mjs
-          node tests/price-refresh-smoke.mjs
+        run: node tests/site-smoke.mjs
+      - name: Comprobar lectura de precios por código y generación
+        if: ${{ !cancelled() }}
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+        run: node tests/price-refresh-smoke.mjs
       - name: Guardar comprobación
         run: |
           git config user.name "github-actions[bot]"

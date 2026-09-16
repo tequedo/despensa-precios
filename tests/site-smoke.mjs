@@ -40,7 +40,10 @@ for(const p of coverage.provinces){
  }
  checks.push({province:p.name,locality,ean:product.id,barcode:product.barcode,barcodeMatchesSource:true,stores:prices.body.data.sucursales.length,pricesMatchSource:true,datesMatchCsv:true,physicalChannel:true,officialLocality:true,within50Km:true,durationMs:Date.now()-started});console.log(p.name+': búsqueda, sucursal y precio comprobados');
  if(p.code==='AR-J'){
-  const basket=await request('/api/prices/basket',{scope:Object.fromEntries(scope),items:[{id:1,ean:product.id,name:product.name,brand:product.brand,presentation:product.presentation,quantity:3,unit:'unidad'}]});assert.equal(basket.status,200,'Comparación de lista');assert.ok(basket.body.data.stores.length);assert.ok(basket.body.data.stores.every(s=>s.known===1&&s.knownTotal>0));
+  // A checksum alone does not prove package consistency. The arbitrary search
+  // sample can be an invalid retailer row (e.g. 100 g / 90 g / .09 gr).
+  // Exercise a basket with the explicitly identified 1.5 L Natura bottle.
+  const basket=await request('/api/prices/basket',{scope:Object.fromEntries(scope),items:[{id:1,ean:'7790272001029',name:'Aceite de girasol',brand:'Natura',presentation:'1.5 L',quantity:3,unit:'unidad'}]});assert.equal(basket.status,200,'Comparación de lista');assert.ok(basket.body.data.stores.length);assert.ok(basket.body.data.stores.every(s=>s.known===1&&s.knownTotal>0));
  }
 }
 const added=await request('/api/pantry',{action:'add-product',ean:savedReference,name:'Producto de prueba técnica',brand:'QA',presentation:'1 unidad',unit:'unidad',stock:0,minimumStock:0,shoppingQuantity:2});assert.equal(added.status,201);const id=added.body.item.id;
