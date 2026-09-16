@@ -3,6 +3,7 @@ name: Procesar alertas y resumen diario
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "notify-access.mjs"
       - ".github/workflows/notify-access.yml"

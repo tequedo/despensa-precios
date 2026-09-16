@@ -3,6 +3,7 @@ name: Verificar beneficios de billeteras
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "verify-wallet-benefits.mjs"
       - "tests/wallet-benefits.test.mjs"
