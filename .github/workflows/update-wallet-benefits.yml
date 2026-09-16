@@ -3,6 +3,7 @@ name: Verificar beneficios de billeteras
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - "verify-wallet-benefits.mjs"
       - "tests/wallet-benefits.test.mjs"
@@ -17,7 +18,7 @@ permissions:
 
 concurrency:
   group: beneficios-billeteras
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   verificar:
@@ -67,3 +68,35 @@ jobs:
           git commit -m "Actualizar beneficios de billeteras"
           git pull --rebase origin main
           git push
+
+
+      - name: Registrar beneficios para el resumen diario
+        env:
+          NOTIFICATION_KINDS: benefits
+          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          NOTIFICATION_RUN_ID: ${{ github.run_id }}:${{ github.run_attempt }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          NOTIFICATION_REPORT_FILE: data/benefit-notification-status.json
+        run: node notify-completed.mjs
+
+  avisar-fallo:
+    needs: verificar
+    if: ${{ always() && (needs.verificar.result == 'failure' || needs.verificar.result == 'cancelled') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Avisar el resultado final fallido
+        env:
+          NOTIFICATION_KIND: benefits
+          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          NOTIFICATION_RUN_ID: ${{ github.run_id }}:${{ github.run_attempt }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node notify-failed.mjs

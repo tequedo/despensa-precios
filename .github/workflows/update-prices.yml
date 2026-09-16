@@ -45,7 +45,7 @@ permissions:
 
 concurrency:
   group: precios-san-juan
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   actualizar:
@@ -203,19 +203,32 @@ jobs:
           WALLET_REPORT_FILE: data/wallet-benefit-sources.json
           WALLET_VERIFIED_FILE: data/wallet-benefits-verified.json
           WALLET_BENEFITS_CHANGED: ${{ steps.wallet_changes.outputs.wallet_benefits_changed }}
-          NOTIFICATION_RUN_ID: ${{ github.run_id }}
+          NOTIFICATION_RUN_ID: ${{ github.run_id }}:${{ github.run_attempt }}
           NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-completed.mjs
-
-      - name: Avisar un fallo de actualización
-        if: failure()
-        env:
-          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
-          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
-          NOTIFICATION_RUN_ID: ${{ github.run_id }}
-          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: node notify-failed.mjs
 
       - name: Guardar diagnóstico de notificación y lectura de precios
         if: always()
         run: bash scripts/push-update-diagnostics.sh
+
+
+  avisar-fallo:
+    needs: actualizar
+    if: ${{ always() && (needs.actualizar.result == 'failure' || needs.actualizar.result == 'cancelled') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Avisar el resultado final fallido
+        env:
+          NOTIFICATION_KIND: sepa
+          NOTIFICATION_ENDPOINT: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/api/notifications/process
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          NOTIFICATION_RUN_ID: ${{ github.run_id }}:${{ github.run_attempt }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node notify-failed.mjs
