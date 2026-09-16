@@ -10,6 +10,7 @@ import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
 import { prepareSource } from "./sepa-source.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
 import { sepaAmount } from "./sepa-values.mjs";
+import { readSepaPricing } from "./sepa-pricing.mjs";
 import { readSepaRows as rows } from "./sepa-csv.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
 import { branchChannel, productFileEvidence } from "./sepa-catalog-controls.mjs";
@@ -75,11 +76,6 @@ function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
 }
 
-function number(value) {
-  const parsed = Number(String(value ?? "").replace(",", "."));
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
-}
-
 const sanJuanLocalities = [
   "san juan", "ciudad de san juan", "rawson", "rivadavia", "chimbas",
   "santa lucia", "pocito", "caucete", "albardon", "angaco", "nueve de julio",
@@ -127,31 +123,9 @@ function geographicValidation(row) {
 }
 
 
-function promotionExpired(conditions, validDate) {
-  const match = normalize(conditions).match(/hasta(?:\s+el)?\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-  if (!match) return false;
-  const end = `${match[3]}-${match[2].padStart(2, "0")}-${match[1].padStart(2, "0")}`;
-  return end < validDate;
-}
-
 async function quarantine(kind, reason, details, counters) {
   counters.quarantined++;
   await appendFile(quarantineFile, JSON.stringify({ kind, reason, details, detectedAt: new Date().toISOString() }) + "\n");
-}
-
-function promotionDetails(promoPrice, conditions) {
-  const text = String(conditions ?? "").trim();
-  const normalized = normalize(text);
-  const nxm = normalized.match(/(?:^|\b)(\d+)\s*(?:x|por)\s*(\d+)(?:\b|$)/);
-  const percent = normalized.match(/(\d+(?:[.,]\d+)?)\s*%/);
-  const secondUnit = normalized.match(/(\d+(?:[.,]\d+)?)\s*%.*(?:segunda|2da|2\.?a)\s+unidad/);
-  const cap = normalized.match(/tope(?:\s+de)?\s*\$?\s*([\d.]+(?:,\d+)?)/);
-  const requiredBenefit = /(tarjeta|banco|billetera|mercado pago|modo|cuenta dni|jubilad|anses)/.test(normalized) ? text : "";
-  const common = { requiredBenefit, benefitLabel: requiredBenefit, discountCap: cap ? number(cap[1].replace(/\./g, "")) : undefined };
-  if (nxm && Number(nxm[1]) > Number(nxm[2])) return { promoKind: "nxm", buyQuantity: Number(nxm[1]), payQuantity: Number(nxm[2]), ...common };
-  if (secondUnit) return { promoKind: "second_unit", discountPercent: number(secondUnit[1]) ?? 0, ...common };
-  if (percent) return { promoKind: "percent", discountPercent: number(percent[1]) ?? 0, ...common };
-  return { promoKind: promoPrice ? "special_price" : "none", ...common };
 }
 
 async function rowsFromNdjson(file, handler) {
@@ -269,39 +243,18 @@ async function processFolder(folder, sourceInfo, counters) {
         await quarantine("meat", "meat_price_out_of_range", { product: description, brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
         return;
       }
-      let promoPrice = sepaAmount(pick(row, [
-        "productos_precio_promocional",
-        "productos_precio_promocional_1",
-        "productos_precio_promocional1",
-        "productos_precio_unitario_promo1",
-        "precio_promocional"
-      ]));
-      let promoConditions = pick(row, [
-        "productos_leyenda_promocion",
-        "productos_leyenda_promocion_1",
-        "productos_leyenda_promocion1",
-        "productos_leyenda_promo1",
-        "leyenda_promocion"
-      ]);
       const validDate=evidence.date;
       const productUpdatedAt=isoDate(pick(row,["productos_fecha_actualizacion","fecha_actualizacion"]));
       if(!validDate||!freshDate(validDate)|| (productUpdatedAt && (productUpdatedAt>validDate || !freshDate(productUpdatedAt)))){
         counters.rejected++;return;
       }
-      if (promoPrice && (promoPrice < 100 || promoPrice > listPrice || promotionExpired(promoConditions, validDate))) {
-        counters.promotionsDiscarded++;
-        await quarantine("promotion", promotionExpired(promoConditions, validDate) ? "expired_promotion" : "invalid_promotion_price", {
-          product: description,
-          store: branchKey(branch),
-          listPrice,
-          promoPrice,
-          promoConditions,
-          validDate
-        }, counters);
-        promoPrice = undefined;
-        promoConditions = "";
+      const pricing = readSepaPricing(row, listPrice, validDate);
+      for (const issue of pricing.issues) {
+        if (issue.kind === 'promotion') counters.promotionsDiscarded++;
+        await quarantine(issue.kind, issue.reason, { ...issue, product:description, store:branchKey(branch), listPrice, validDate }, counters);
       }
-      const promotion = promotionDetails(promoPrice, promoConditions);
+      const primaryPromotion = pricing.promotions.find(offer => offer.slot === 'promo1');
+      const { slot: primarySlot, ...legacyPromotion } = primaryPromotion ?? {};
       const identity = sepaProductIdentity(row);
       if (!identity.accepted) {
         counters.rejected++;
@@ -338,9 +291,9 @@ async function processFolder(folder, sourceInfo, counters) {
         },
         price: {
           listPrice,
-          promoPrice,
-          promoConditions,
-          ...promotion,
+          ...legacyPromotion,
+          promotions: pricing.promotions,
+          referencePrice: pricing.referencePrice,
           channel: branch._channel,
           validDate,
           productUpdatedAt,
@@ -378,18 +331,20 @@ try {
   const promotionRows = [];
   await rowsFromNdjson(outputFile, record => {
     const chain = normalize(record.store?.chain);
-    if (record.price?.promoPrice || record.price?.promoConditions) promotionRows.push(record);
+    for (const promotion of record.price?.promotions ?? []) {
+      promotionRows.push({...record, price:{...record.price, ...promotion}});
+    }
   });
   const uniquePromotions = new Map();
   for (const record of promotionRows) {
-    const key = [record.store.externalId, record.product.ean, record.price.promoPrice ?? "", normalize(record.price.promoConditions)].join("|");
+    const key = [record.store.externalId, record.product.ean, record.price.slot, record.price.promoPrice ?? "", normalize(record.price.promoConditions)].join("|");
     uniquePromotions.set(key, record);
   }
   const promotions = [...uniquePromotions.values()].map(record => ({
     chain: record.store.chain, branch: record.store.branch, locality: record.store.locality, province:record.store.province,storeId:record.store.externalId,
     ean: record.product.ean, product: record.product.name, brand: record.product.brand,
     listPrice: record.price.listPrice, promoPrice: record.price.promoPrice,
-    conditions: record.price.promoConditions, promoKind: record.price.promoKind,
+    conditions: record.price.promoConditions, promotionSlot: record.price.slot, promoKind: record.price.promoKind,
     buyQuantity: record.price.buyQuantity, payQuantity: record.price.payQuantity,
     discountPercent: record.price.discountPercent, requiredBenefit: record.price.requiredBenefit,
     discountCap: record.price.discountCap, validDate: record.price.validDate,
