@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-16T13:50:03.254Z",
+  "checkedAt": "2026-09-17T13:47:29.641Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
   "rejectedCount": 54,
   "rejected": [
@@ -108,6 +108,14 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
+      "externalId": "10|3|281",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.386371,
+      "longitude": -64.227571,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
       "externalId": "10|3|860",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
@@ -164,14 +172,6 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|225",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.3801,
-      "longitude": -64.245395,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
       "externalId": "10|3|869",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
@@ -180,11 +180,27 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
+      "externalId": "10|3|225",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.3801,
+      "longitude": -64.245395,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
       "externalId": "10|3|173",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
       "latitude": -31.417325,
       "longitude": -64.188484,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|163",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.418749,
+      "longitude": -64.178711,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -217,22 +233,6 @@
       "locality": "Córdoba",
       "latitude": -31.090725,
       "longitude": -64.48531,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "10|3|163",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.418749,
-      "longitude": -64.178711,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "10|3|281",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.386371,
-      "longitude": -64.227571,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
