@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-09-18T13:43:52.170Z",
+  "checkedAt": "2026-09-19T13:47:10.635Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
-  "rejectedCount": 53,
+  "rejectedCount": 54,
   "rejected": [
     {
       "externalId": "10|4|504",
@@ -17,6 +17,14 @@
       "locality": "Cañuelas",
       "latitude": -35.03737,
       "longitude": -58.75824,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "24|2|33",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Capital Federal",
+      "latitude": -34.556553,
+      "longitude": -58.413303,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
