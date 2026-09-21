@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T13:47:56.884Z",
+  "generatedAt": "2026-09-21T12:33:12.739Z",
   "scope": "San Juan",
   "rule": "Toda condición incompleta o contradictoria se informa pero no se calcula",
   "candidates": [
@@ -12,7 +12,7 @@
       "validFrom": "2026-09-01",
       "validTo": "2025-09-30",
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "46a08fb4d5092a1379419bf1cb7142bde345efdd6f6e9fdaba5bd961296d9e2c",
       "status": "conflict",
       "calculationEligible": false,
@@ -79,7 +79,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "1b863882e71d19e426f128b9b94347f76d250c68f39d7434aa75ba8e6614607b",
       "status": "verified",
       "calculationEligible": false,
@@ -98,7 +98,7 @@
       "validFrom": "2026-08-01",
       "validTo": "2025-08-31",
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "e21e61f8890dbc927383ca2f7a8a5633ea014cce1b8398ca19793566f676a2bc",
       "status": "conflict",
       "calculationEligible": false,
@@ -140,7 +140,7 @@
       "exclusionsVerified": false,
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "5db0ad0eca7efc28e7c7b88cce3f6f211aefea0c7ddafd5f2809882f3ca194fe",
       "status": "conflict",
       "calculationEligible": false,
@@ -149,6 +149,56 @@
         "La publicación menciona meses distintos dentro del mismo beneficio."
       ],
       "sourceRecordId": "fff9ddf9-6182-11f0-b37f-a06270dbd415"
+    },
+    {
+      "id": "mercado-pago-carrefour-45c751f6-2191-433a-a5e0-9a67d40a2c84",
+      "provider": "Mercado Pago",
+      "chain": "Carrefour",
+      "kind": "discount",
+      "title": "20% con Mercado Pago los lunes",
+      "discountPercent": 20,
+      "daysOfWeek": [
+        1
+      ],
+      "dayLabels": [
+        "lunes"
+      ],
+      "validFrom": null,
+      "validTo": null,
+      "minimumPurchase": null,
+      "capAmount": null,
+      "capRule": "No verificado",
+      "paymentRequirement": null,
+      "channels": [
+        "Sucursales físicas",
+        "Carrefour online"
+      ],
+      "geographicScope": null,
+      "exclusions": [
+        "Carnicería",
+        "Embutidos",
+        "Frutas y verduras",
+        "Electrodomésticos y electrónicos",
+        "Bazar",
+        "Textil",
+        "Pack familiar",
+        "Precio Súper Bajo"
+      ],
+      "exclusionsVerified": true,
+      "accumulable": true,
+      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
+      "termsHash": "327003f3105110ee04a48e41ceb305d0933f975e9a1ec878d8c02ebff679d7a0",
+      "status": "incomplete",
+      "calculationEligible": false,
+      "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta.",
+      "reasons": [
+        "No se pudo verificar la vigencia completa.",
+        "No se pudo verificar el tope.",
+        "No se pudo verificar el medio de pago exacto.",
+        "No se pudo verificar el formato de sucursal alcanzado."
+      ],
+      "sourceRecordId": "45c751f6-2191-433a-a5e0-9a67d40a2c84"
     },
     {
       "id": "mercado-pago-carrefour-23af46b4-aad8-4ab6-9716-29bda4307a1b",
@@ -191,7 +241,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "d88fbeba51e8da0e792aa05692214b13c8ac63703f367dc359e5e6e5665f8be7",
       "status": "conflict",
       "calculationEligible": false,
@@ -242,7 +292,7 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "c76ccc677cf018ad425ec97cefe2e33bc70951564175addb3c532e6078c27e38",
       "status": "verified",
       "calculationEligible": false,
@@ -287,7 +337,7 @@
       "exclusionsVerified": false,
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "bfbc680e6ffdcabfe67efb2bb3f87ffee40ceccf0763c9b096be866590cf9e03",
       "status": "incomplete",
       "calculationEligible": false,
@@ -339,7 +389,7 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-20T13:47:56.884Z",
+      "checkedAt": "2026-09-21T12:33:12.739Z",
       "termsHash": "34328f8511bcb30bad1bbc87794c7dfd5ab6f4f371f37288f51c5db454db5241",
       "status": "conflict",
       "calculationEligible": false,
