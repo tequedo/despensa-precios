@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-24T13:53:55.742Z",
-  "success": true,
+  "checkedAt": "2026-09-25T13:51:19.994Z",
+  "success": false,
   "checks": [
     {
       "label": "EAN Natura 1.5 L",
-      "generation": "2026-09-24T13:38:03.223Z",
+      "generation": "2026-09-25T13:36:48.448Z",
       "quotes": 12,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
@@ -15,15 +15,10 @@
     },
     {
       "label": "Código interno de La Anónima",
-      "generation": "2026-09-24T13:38:03.223Z",
-      "quotes": 1,
-      "pricesDatesCodesAndPhysicalBranchesMatch": true
-    },
-    {
-      "label": "Fecha interna de Deheza",
-      "generation": "2026-09-24T13:38:03.223Z",
+      "generation": "2026-09-25T13:36:48.448Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     }
-  ]
+  ],
+  "error": "Fecha interna de Deheza: no devolvió precios"
 }
