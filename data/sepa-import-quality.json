@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24T13:45:53.611Z",
+  "checkedAt": "2026-09-25T13:42:13.487Z",
   "sourceModified": "2026-09-22T16:20:02.663Z",
   "sourceType": "replica",
   "excludedStores": [
@@ -47,7 +47,8 @@
       "updatedAt": "2026-09-21T21:53:07.000Z",
       "date": "2026-09-21",
       "dateBasis": "product_file_footer",
-      "accepted": true
+      "accepted": false,
+      "reason": "stale_product_file_date"
     },
     {
       "file": "2026-09-22/sepa_1_comercio-sepa-21_2026-09-22_09-05-11/productos.csv",
@@ -79,7 +80,8 @@
       "updatedAt": "2026-09-21T19:00:01.000Z",
       "date": "2026-09-21",
       "dateBasis": "product_file_footer",
-      "accepted": true
+      "accepted": false,
+      "reason": "stale_product_file_date"
     },
     {
       "file": "2026-09-22/sepa_1_comercio-sepa-47_2026-09-22_09-05-11/productos.csv",
@@ -96,7 +98,8 @@
       "updatedAt": "2026-09-21T19:00:01.000Z",
       "date": "2026-09-21",
       "dateBasis": "product_file_footer",
-      "accepted": true
+      "accepted": false,
+      "reason": "stale_product_file_date"
     },
     {
       "file": "2026-09-22/sepa_1_comercio-sepa-8_2026-09-22_09-05-11/productos.csv",
@@ -104,7 +107,8 @@
       "updatedAt": "2026-09-21T19:28:26.000Z",
       "date": "2026-09-21",
       "dateBasis": "product_file_footer",
-      "accepted": true
+      "accepted": false,
+      "reason": "stale_product_file_date"
     },
     {
       "file": "2026-09-22/sepa_1_comercio-sepa-9_2026-09-22_09-05-11/productos.csv",
