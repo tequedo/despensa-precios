@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
+import { dehezaExpectation, verifyStaleDeheza } from './price-refresh-expectations.mjs';
 
 const origin = process.env.SITE_ORIGIN, token = process.env.PRICE_INGEST_TOKEN;
 if (!origin || !token) throw new Error('Falta configuración para verificar la lectura de precios');
@@ -59,6 +60,16 @@ try {
   const scope = {province:'AR-J',locality:'San Juan',lat:'-31.534016',lon:'-68.524744'};
   const natura = await query(scope, {ean:'7790272001029'}, sj.index.generatedAt);
   verifyQuotes(natura, sj, 'EAN Natura 1.5 L');
+  const changomas = sj.index.stores.filter(store => /^11\|[25]\|/.test(store.externalId));
+  assert.ok(changomas.length, 'San Juan: faltan sucursales de ChangoMás');
+  for (const store of changomas) {
+    const row = sj.shards.get(store.externalId).prices.find(row => row[9]?.barcode === '7790272001029');
+    assert.ok(row, 'ChangoMás: falta el producto de control en '+store.externalId);
+    const scoped = await query(scope, {ean:row[0],storeIds:store.externalId}, sj.index.generatedAt);
+    verifyQuotes(scoped, sj, 'ChangoMás · '+store.branch);
+    assert.equal(scoped.data.options.length,1);
+    assert.equal(scoped.data.options[0].storeId,store.externalId);
+  }
   const carrefour = sj.shards.get('10|1|123')?.prices.find(row => row[9]?.barcode === '7790272001029');
   if (carrefour) assert.ok(natura.data.options.some(q => q.storeId === '10|1|123' && q.price === carrefour[5]), 'No se reconoció el contenido explícito de Carrefour');
   const milk = await query(scope, {ean:'7790742357502'}, sj.index.generatedAt);
@@ -70,8 +81,17 @@ try {
   verifyQuotes(internal, sj, 'Código interno de La Anónima');
   assert.ok(internal.data.options.every(q => q.ean === 'sepa:2:1:2060111000007' && !q.barcode));
   const caba = await province('AR-C');
+  // Keep a positive CABA check even when Deheza is correctly excluded.
+  const controlBranch = [...caba.shards.values()].find(shard => /^10\|1\|/.test(shard.store.externalId) && shard.prices.some(row => row[9]?.barcode === '7790272001029'));
+  assert.ok(controlBranch, 'CABA: falta la sucursal del control positivo');
+  const controlProduct = controlBranch.prices.find(row => row[9]?.barcode === '7790272001029');
+  const cabaScope = {province:'AR-C',locality:controlBranch.store.locality,lat:String(controlBranch.store.latitude),lon:String(controlBranch.store.longitude)};
+  const cabaNatura = await query(cabaScope, {ean:controlProduct[0],storeIds:controlBranch.store.externalId}, caba.index.generatedAt);
+  verifyQuotes(cabaNatura, caba, 'CABA: lectura de precios vigentes');
+  const expected = dehezaExpectation(caba.index, await json('data/sepa-import-quality.json'));
   const chocolate = await query({province:'AR-C',locality:'Buenos Aires',lat:'-34.546397',lon:'-58.451884'}, {ean:'sepa:3:1:7790580607210'}, caba.index.generatedAt);
-  verifyQuotes(chocolate, caba, 'Fecha interna de Deheza');
+  if (expected.status === 'quote_required') verifyQuotes(chocolate, caba, 'Fecha interna de Deheza');
+  else report.checks.push(verifyStaleDeheza(chocolate, expected));
   report.success = true;
 } catch (error) { report.error = error.message; throw error; }
 finally {
