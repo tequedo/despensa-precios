@@ -1,3 +1,4 @@
+import {discoverBankPromotion} from './bank-promotion-discovery.mjs';
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
@@ -29,7 +30,7 @@ const sources = [
     id: "changomas",
     name: "ChangoMás / Más Online",
     chain: "ChangoMás",
-    url: "https://www.masonline.com.ar/promociones-bancarias?banco=Mercado%20Pago",
+    url: "https://www.masonline.com.ar/promociones-bancarias",
     structured: "vtex_master_data",
     role: "retailer_terms",
   },
@@ -621,7 +622,8 @@ async function changoStructuredData(source, checkedAt) {
   const unique = [
     ...new Map(parsed.map((candidate) => [`${candidate.id}|${candidate.termsHash}`, candidate])).values(),
   ];
-  return { banks, promotions: matching, candidates: unique, mercadoPago };
+  const otherCandidates=promotions.filter(p=>p.idBank!==mercadoPago.id&&p.idCard!==mercadoPago.id).map(p=>discoverBankPromotion({id:p.id,title:[p.title,p.sub_title,p.validText].filter(Boolean).join(' · '),terms:[p.legal,p.valid,p.discount_text_info].filter(Boolean).join(' '),provider:banks.find(b=>b.id===p.idBank)?.name,chain:'ChangoMás',sourceUrl:source.url,checkedAt})).filter(Boolean);
+  return { banks, promotions, candidates: [...unique,...otherCandidates], mercadoPago };
 }
 
 function carrefourRecordIds(html) {
@@ -707,8 +709,8 @@ async function carrefourStructuredData(source, checkedAt) {
     ...new Map(parsed.map((candidate) => [`${candidate.id}|${candidate.termsHash}`, candidate])).values(),
   ];
   return {
-    promotions: mercadoPagoRecords,
-    candidates: unique,
+    promotions: cards,
+    candidates: [...unique,...cards.filter(card=>!card.isMercadoPago).map(card=>discoverBankPromotion({id:card.id,title:card.text.split(/VER LEGAL/i)[0],terms:card.text,chain:'Carrefour',sourceUrl:source.url,checkedAt})).filter(Boolean)],
     rendered,
     sourceRecords: cards.length,
     failedRecords: 0,
@@ -801,13 +803,13 @@ async function run() {
   );
   await writeFile(
     reportFile,
-    `${JSON.stringify({ generatedAt: checkedAt, scope: "San Juan", sources: report }, null, 2)}\n`,
+    `${JSON.stringify({ generatedAt: checkedAt, scope: "Argentina; alcance sujeto a cada promoción", sources: report }, null, 2)}\n`,
   );
   await writeFile(
     candidatesFile,
     `${JSON.stringify({
       generatedAt: checkedAt,
-      scope: "San Juan",
+      scope: "Argentina; alcance sujeto a cada promoción",
       rule: "Toda condición incompleta o contradictoria se informa pero no se calcula",
       candidates,
     }, null, 2)}\n`,
@@ -816,7 +818,7 @@ async function run() {
     verifiedFile,
     `${JSON.stringify({
       generatedAt: checkedAt,
-      scope: "San Juan",
+      scope: "Argentina; alcance sujeto a cada promoción",
       rule: "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
       benefits: verified,
     }, null, 2)}\n`,
@@ -837,3 +839,4 @@ async function run() {
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) await run();
+

@@ -1,4 +1,4 @@
-name: Verificar beneficios de billeteras
+name: Verificar promociones bancarias y billeteras
 
 on:
   workflow_dispatch:
@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "verify-wallet-benefits.mjs"
+      - "bank-promotion-discovery.mjs"
+      - "tests/bank-promotion-discovery.test.mjs"
       - "tests/wallet-benefits.test.mjs"
       - "package.json"
       - ".github/workflows/update-wallet-benefits.yml"
@@ -45,10 +47,10 @@ jobs:
       - name: Verificar código y reglas estrictas
         run: npm run check
 
-      - name: Revisar Mercado Pago y páginas oficiales
+      - name: Revisar bancos, tarjetas, beneficios personales y billeteras
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
-          WALLET_SOURCE_REPORT_FILE: data/wallet-benefit-sources.json
+          WALLET_REPORT_FILE: data/wallet-benefit-sources.json
           WALLET_CANDIDATES_FILE: data/wallet-benefit-candidates.json
           WALLET_VERIFIED_FILE: data/wallet-benefits-verified.json
         run: node verify-wallet-benefits.mjs
@@ -100,3 +102,4 @@ jobs:
           NOTIFICATION_RUN_ID: ${{ github.run_id }}:${{ github.run_attempt }}
           NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node notify-failed.mjs
+
