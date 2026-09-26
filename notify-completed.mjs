@@ -2,6 +2,7 @@ import { createReadStream } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { createInterface } from "node:readline";
 import { requestProcessNotification } from "./notify-process-request.mjs";
+import { priceUpdateDetails } from "./price-update-message.mjs";
 
 const endpoint = process.env.NOTIFICATION_ENDPOINT;
 const token = process.env.PRICE_INGEST_TOKEN;
@@ -21,11 +22,7 @@ for (const kind of kinds) {
     if (kind === "sepa") {
       counts.priceCount = await countLines(process.env.OUTPUT_FILE || "data/san-juan.ndjson");
       const coverage = await readJson("data/national/coverage.json");
-      if (!coverage.geographyVerified) throw new Error("La cobertura nacional no tiene geografía validada");
-      details = ["La actualización de precios y su comprobación en la app terminaron correctamente.",
-        `Jurisdicciones con datos: ${coverage.provinces.filter(p => p.stores > 0).length}`,
-        `Sucursales con provincia validada: ${coverage.provinces.reduce((n,p) => n + p.stores, 0)}`,
-        `Registros de precios: ${coverage.provinces.reduce((n,p) => n + p.records, 0)}`];
+      details = priceUpdateDetails(coverage, await readJson("data/sepa-provenance.json"));
     } else if (kind === "promotions") {
       const verified = await readJson(process.env.RETAILER_VERIFIED_FILE || "data/retailer-promotions-verified.json");
       const report = await readJson(process.env.RETAILER_REPORT_FILE || "data/retailer-promotion-sources.json");
