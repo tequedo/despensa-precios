@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { chmod, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { prepareOfficial, OFFICIAL_METADATA_URL } from '../sepa-official.mjs';
+import { prepareOfficial, OFFICIAL_METADATA_URL, connectionFailure } from '../sepa-official.mjs';
 import { OFFICIAL_DATASET_ID, METADATA_URL, INDEX_URL } from '../sepa-provenance.mjs';
 
 const reply = (url, bytes, options = {}) => {
@@ -13,6 +13,13 @@ const reply = (url, bytes, options = {}) => {
   Object.defineProperty(response, 'url', { value: url });
   return response;
 };
+
+test('IPv4 retry is limited to connection failures, never HTTP rejections or TLS validation errors', () => {
+  assert.equal(connectionFailure(new TypeError('fetch failed', { cause:{code:'UND_ERR_CONNECT_TIMEOUT'} })), true);
+  assert.equal(connectionFailure(new Error('HTTP 403')), false);
+  assert.equal(connectionFailure(new TypeError('fetch failed', { cause:{code:'CERT_HAS_EXPIRED'} })), false);
+  assert.equal(connectionFailure(new DOMException('Timeout', 'TimeoutError')), false);
+});
 
 async function fixture(t, change = {}) {
   const root = await mkdtemp(join(tmpdir(), 'official-sepa-test-'));
@@ -57,6 +64,7 @@ subprocess.run(['zstd','-q',str(root/'replica.tar')],check=True)
     assert.equal(options.headers['accept-encoding'], 'identity');
     if (url === OFFICIAL_METADATA_URL) {
       metadataCalls++;
+      if (change.connection && metadataCalls === 1) throw new TypeError('fetch failed', { cause: { code: 'UND_ERR_CONNECT_TIMEOUT' } });
       if (change.denied) return reply(url, 'Forbidden', { status: 403 });
       if (change.timeout) throw new DOMException('Timed out', 'TimeoutError');
       const copy = structuredClone(metadata);
@@ -83,6 +91,31 @@ subprocess.run(['zstd','-q',str(root/'replica.tar')],check=True)
   const options = { originalDir: join(root, 'retained'), auditFile: join(root, 'audit.json') };
   return { root, zip, resource, requests, work, options };
 }
+
+test('connection fallback validates IPv4 bytes and continues the same official acquisition', async t => {
+  const f = await fixture(t, { connection: true });
+  const bin = join(f.root, 'bin'); await mkdir(bin);
+  const program = join(bin, 'curl');
+  await writeFile(program, `#!/usr/bin/env python3
+import sys
+from pathlib import Path
+args=sys.argv[1:]
+assert '--ipv4' in args and '--location' not in args and '--insecure' not in args
+root=Path(__file__).resolve().parent.parent
+body=(root/'metadata.json').read_bytes()
+Path(args[args.index('--output')+1]).write_bytes(body)
+Path(args[args.index('--dump-header')+1]).write_text('HTTP/1.1 200 OK\\r\\nContent-Length: '+str(len(body))+'\\r\\n\\r\\n')
+print('200\\n'+args[-1])
+`);
+  await chmod(program, 0o755);
+  const oldPath = process.env.PATH; process.env.PATH = `${bin}:${oldPath}`;
+  t.after(() => { process.env.PATH = oldPath; });
+  const result = await prepareOfficial(f.work, f.options);
+  assert.equal(result.report.metadata.transport, 'curl_ipv4');
+  assert.equal(result.report.metadata.previousConnectionError, 'UND_ERR_CONNECT_TIMEOUT');
+  assert.equal(result.source.official, true);
+  assert.deepEqual(await readFile(join(result.bundle, 'original.zip')), f.zip);
+});
 
 test('direct acquisition retains exact ZIP and both catalogs, validates payload and identifies source', async t => {
   const f = await fixture(t);

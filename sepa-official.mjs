@@ -1,5 +1,8 @@
 import { createHash } from 'node:crypto';
-import { mkdir, mkdtemp, open, rename, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, open, readFile, rename, rm } from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { join, resolve } from 'node:path';
 import {
   OFFICIAL_CATALOG, METADATA_URL, INDEX_URL, selectResource,
@@ -8,18 +11,65 @@ import {
 
 export const OFFICIAL_METADATA_URL = 'https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios';
 const MAX_ARCHIVE_BYTES = 4 * 1024 ** 3;
+const exec = promisify(execFile);
+
+export function connectionFailure(error) {
+  return ['UND_ERR_CONNECT_TIMEOUT', 'ENETUNREACH', 'EHOSTUNREACH', 'ECONNRESET', 'ECONNREFUSED', 'EAI_AGAIN'].includes(error?.cause?.code);
+}
+
+async function receiveIPv4(url, path, { maximum, expected, timeout }, previousError) {
+  const temporary = `${path}.partial`, headerFile = `${path}.headers`;
+  const startedAt = new Date().toISOString();
+  try {
+    // Same public HTTPS endpoint and certificate checks; no redirects, alternate
+    // host or proxy override. Only a transport connection failure reaches here.
+    const { stdout } = await exec('curl', ['--ipv4', '--fail', '--silent', '--show-error',
+      '--proto', '=https', '--connect-timeout', '20', '--max-time', String(Math.ceil(timeout / 1000)),
+      '--max-filesize', String(maximum), '--header', 'Accept-Encoding: identity',
+      '--output', temporary, '--dump-header', headerFile,
+      '--write-out', '%{http_code}\n%{url_effective}\n', url], { timeout: timeout + 5000, maxBuffer: 16_384 });
+    const [status, effectiveUrl] = stdout.trim().split('\n');
+    if (status !== '200' || effectiveUrl !== url) throw new Error(`Descarga IPv4 SEPA: HTTP ${status} o URL distinta`);
+    const rawHeaders = await readFile(headerFile, 'utf8');
+    const header = name => [...rawHeaders.matchAll(new RegExp(`^${name}:\\s*(.+)`, 'gim'))].at(-1)?.[1]?.trim() ?? null;
+    const encoding = header('content-encoding'), length = header('content-length');
+    if (encoding && encoding !== 'identity') throw new Error('Se rechazó una transformación HTTP del archivo IPv4');
+    if (length !== null && (!/^\d+$/.test(length) || Number(length) > maximum || (expected !== undefined && Number(length) !== expected))) throw new Error('Tamaño HTTP IPv4 distinto del esperado');
+    const hash = createHash('sha256'), chunks = path.endsWith('.json') ? [] : null;
+    let bytes = 0;
+    for await (const chunk of createReadStream(temporary)) {
+      bytes += chunk.length;
+      if (bytes > maximum || (expected !== undefined && bytes > expected)) throw new Error('La descarga IPv4 supera el tamaño permitido');
+      hash.update(chunk); if (chunks) chunks.push(chunk);
+    }
+    if (!bytes || (expected !== undefined && bytes !== expected) || (length !== null && bytes !== Number(length))) throw new Error('Descarga IPv4 vacía, truncada o de tamaño diferente');
+    const value = chunks ? JSON.parse(Buffer.concat(chunks).toString('utf8')) : undefined;
+    await rename(temporary, path);
+    return { value, evidence: { url, startedAt, fetchedAt: new Date().toISOString(), bytes,
+      sha256: hash.digest('hex'), status: 200, etag: header('etag'), lastModified: header('last-modified'),
+      transport: 'curl_ipv4', previousConnectionError: previousError.cause.code } };
+  } catch (error) {
+    throw new Error(`SEPA por IPv4: ${error.message}; conexión inicial: ${previousError.cause.code}`);
+  } finally {
+    await rm(temporary, { force: true }); await rm(headerFile, { force: true });
+  }
+}
 
 // Only callers with a fixed catalog URL or a validated resource/index can reach
 // this function. Never follow redirects, accept a proxy override or disable TLS.
 async function receive(url, path, { maximum, expected, timeout }) {
   const startedAt = new Date().toISOString();
-  const response = await fetch(url, {
+  let response;
+  try { response = await fetch(url, {
     redirect: 'error', signal: AbortSignal.timeout(timeout),
     headers: {
       accept: path.endsWith('.json') ? 'application/json' : 'application/zip, application/octet-stream',
       'accept-encoding': 'identity',
     },
-  });
+  }); } catch (error) {
+    if (connectionFailure(error)) return receiveIPv4(url, path, { maximum, expected, timeout }, error);
+    throw new Error(`Descarga SEPA: ${error.message}${error.cause?.code ? ` (${error.cause.code})` : ''}`);
+  }
   let file;
   const temporary = `${path}.partial`;
   try {
