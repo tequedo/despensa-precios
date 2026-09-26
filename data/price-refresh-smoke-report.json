@@ -1,11 +1,29 @@
 {
-  "checkedAt": "2026-09-25T13:51:19.994Z",
-  "success": false,
+  "checkedAt": "2026-09-26T00:06:45.905Z",
+  "success": true,
   "checks": [
     {
       "label": "EAN Natura 1.5 L",
       "generation": "2026-09-25T13:36:48.448Z",
       "quotes": 12,
+      "pricesDatesCodesAndPhysicalBranchesMatch": true
+    },
+    {
+      "label": "ChangoMás · Rawson San Juan",
+      "generation": "2026-09-25T13:36:48.448Z",
+      "quotes": 1,
+      "pricesDatesCodesAndPhysicalBranchesMatch": true
+    },
+    {
+      "label": "ChangoMás · San Juan",
+      "generation": "2026-09-25T13:36:48.448Z",
+      "quotes": 1,
+      "pricesDatesCodesAndPhysicalBranchesMatch": true
+    },
+    {
+      "label": "ChangoMás · San Juan Norte",
+      "generation": "2026-09-25T13:36:48.448Z",
+      "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
     {
@@ -18,7 +36,21 @@
       "generation": "2026-09-25T13:36:48.448Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
+    },
+    {
+      "label": "CABA: lectura de precios vigentes",
+      "generation": "2026-09-25T13:36:48.448Z",
+      "quotes": 1,
+      "pricesDatesCodesAndPhysicalBranchesMatch": true
+    },
+    {
+      "label": "Fecha interna de Deheza",
+      "generation": "2026-09-25T13:36:48.448Z",
+      "status": "stale_source_excluded",
+      "sourceDates": [
+        "2026-09-21"
+      ],
+      "excludedAsExpected": true
     }
-  ],
-  "error": "Fecha interna de Deheza: no devolvió precios"
+  ]
 }

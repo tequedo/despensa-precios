@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-09-16T07:10:24.437Z",
+  "checkedAt": "2026-09-26T00:06:45.844Z",
   "success": true,
   "provinces": 24,
-  "quoteChecks": 92,
-  "crossChainIdentityQuotes": 17,
+  "quoteChecks": 103,
+  "crossChainIdentityQuotes": 30,
   "checks": [
     {
       "province": "Ciudad Autónoma de Buenos Aires",
@@ -17,7 +17,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3464
+      "durationMs": 7352
     },
     {
       "province": "Buenos Aires",
@@ -31,7 +31,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3119
+      "durationMs": 6296
     },
     {
       "province": "Catamarca",
@@ -45,7 +45,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2284
+      "durationMs": 4512
     },
     {
       "province": "Chaco",
@@ -59,7 +59,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 1959
+      "durationMs": 4252
     },
     {
       "province": "Chubut",
@@ -67,13 +67,13 @@
       "ean": "sepa:10:2:7790895003950",
       "barcode": "7790895003950",
       "barcodeMatchesSource": true,
-      "stores": 9,
+      "stores": 8,
       "pricesMatchSource": true,
       "datesMatchCsv": true,
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3070
+      "durationMs": 6702
     },
     {
       "province": "Córdoba",
@@ -81,13 +81,13 @@
       "ean": "sepa:10:3:7798159715311",
       "barcode": "7798159715311",
       "barcodeMatchesSource": true,
-      "stores": 2,
+      "stores": 3,
       "pricesMatchSource": true,
       "datesMatchCsv": true,
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2878
+      "durationMs": 5981
     },
     {
       "province": "Corrientes",
@@ -101,7 +101,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2117
+      "durationMs": 3580
     },
     {
       "province": "Entre Ríos",
@@ -115,7 +115,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3970
+      "durationMs": 3775
     },
     {
       "province": "Formosa",
@@ -129,7 +129,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 1457
+      "durationMs": 3722
     },
     {
       "province": "Jujuy",
@@ -143,7 +143,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 1407
+      "durationMs": 2100
     },
     {
       "province": "La Pampa",
@@ -157,7 +157,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2693
+      "durationMs": 4989
     },
     {
       "province": "La Rioja",
@@ -171,7 +171,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 1765
+      "durationMs": 2762
     },
     {
       "province": "Mendoza",
@@ -185,7 +185,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3333
+      "durationMs": 8575
     },
     {
       "province": "Misiones",
@@ -199,13 +199,13 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2042
+      "durationMs": 2988
     },
     {
       "province": "Neuquén",
       "locality": "Neuquén",
-      "ean": "sepa:2:1:0040232846373",
-      "barcode": "0040232846373",
+      "ean": "sepa:2:1:0040232846359",
+      "barcode": "0040232846359",
       "barcodeMatchesSource": true,
       "stores": 5,
       "pricesMatchSource": true,
@@ -213,7 +213,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3690
+      "durationMs": 9633
     },
     {
       "province": "Río Negro",
@@ -227,7 +227,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3381
+      "durationMs": 7663
     },
     {
       "province": "Salta",
@@ -241,7 +241,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2413
+      "durationMs": 3938
     },
     {
       "province": "San Juan",
@@ -255,13 +255,13 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 3147
+      "durationMs": 8468
     },
     {
       "province": "San Luis",
       "locality": "Villa Mercedes",
-      "ean": "sepa:10:1:7793147570606",
-      "barcode": "7793147570606",
+      "ean": "sepa:10:1:7798152223424",
+      "barcode": "7798152223424",
       "barcodeMatchesSource": true,
       "stores": 1,
       "pricesMatchSource": true,
@@ -269,7 +269,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 1604
+      "durationMs": 2715
     },
     {
       "province": "Santa Cruz",
@@ -283,7 +283,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 5074
+      "durationMs": 10710
     },
     {
       "province": "Santa Fe",
@@ -291,13 +291,13 @@
       "ean": "sepa:10:1:7793147573195",
       "barcode": "7793147573195",
       "barcodeMatchesSource": true,
-      "stores": 2,
+      "stores": 5,
       "pricesMatchSource": true,
       "datesMatchCsv": true,
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 4414
+      "durationMs": 10754
     },
     {
       "province": "Santiago del Estero",
@@ -305,13 +305,13 @@
       "ean": "sepa:24:2:7500435247368",
       "barcode": "7500435247368",
       "barcodeMatchesSource": true,
-      "stores": 5,
+      "stores": 4,
       "pricesMatchSource": true,
       "datesMatchCsv": true,
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2211
+      "durationMs": 3898
     },
     {
       "province": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
@@ -325,7 +325,7 @@
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 2818
+      "durationMs": 5511
     },
     {
       "province": "Tucumán",
@@ -333,13 +333,13 @@
       "ean": "sepa:10:2:7790040136069",
       "barcode": "7790040136069",
       "barcodeMatchesSource": true,
-      "stores": 2,
+      "stores": 11,
       "pricesMatchSource": true,
       "datesMatchCsv": true,
       "physicalChannel": true,
       "officialLocality": true,
       "within50Km": true,
-      "durationMs": 4296
+      "durationMs": 11041
     }
   ],
   "pantry": true,
