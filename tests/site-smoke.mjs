@@ -57,5 +57,27 @@ try{
  assert.equal((await request('/api/pantry',undefined,b)).body.items.length,0);
  assert.equal((await request('/api/activity',{code:'report_other'})).status,200);
 }finally{await request('/api/pantry',{action:'delete-product',productId:id});}
-const report={checkedAt:new Date().toISOString(),success:true,provinces:checks.length,quoteChecks,crossChainIdentityQuotes,checks,pantry:true,storedReferencePreserved:true,invalidQuantitiesRejected:true,userIsolation:true,feedback:true,testProfilesExcluded:true};
+
+const testProduct={name:'Aceite Natura',brand:'Natura',presentation:'1.5 L',ean:'7790272001029',unit:'unidad'};
+assert.equal((await request('/api/shopping-tools',{action:'preferences',banks:['Banco de prueba QA'],brands:['Natura'],retired:'yes',shoppingDays:[1,5]})).status,200);
+assert.equal((await request('/api/shopping-tools',{action:'preferences',payment:['Mercado Pago']})).status,200);
+assert.equal((await request('/api/shopping-tools',{action:'search',query:'Aceite',brand:'Natura',size:'1.5 L'})).status,200);
+assert.equal((await request('/api/shopping-tools',{action:'favorite',product:testProduct})).status,200);
+let memory=(await request('/api/shopping-tools')).body;
+assert.deepEqual(memory.preferences.banks,['Banco de prueba QA']);
+assert.deepEqual(memory.preferences.brands,['Natura']);
+assert.equal(memory.preferences.retired,'yes');
+assert.ok(memory.favorites.some(f=>f.kind==='search'&&f.product.query==='Aceite'&&f.product.size==='1.5 L'));
+assert.deepEqual((await request('/api/shopping-tools',undefined,b)).body.preferences,{});
+assert.equal((await request('/api/shopping-tools',undefined,b)).body.favorites.length,0);
+await request('/api/shopping-tools',{action:'preferences',rememberSearches:false});
+assert.equal((await request('/api/shopping-tools',{action:'search',query:'Arroz'})).body.reason,'memory_disabled');
+assert.equal((await request('/api/shopping-tools',{action:'recent',product:testProduct})).body.reason,'memory_disabled');
+await request('/api/shopping-tools',{action:'clear-recents'});
+memory=(await request('/api/shopping-tools')).body;
+assert.equal(memory.favorites.length,1);assert.equal(memory.favorites[0].kind,'favorite');
+await request('/api/shopping-tools',{action:'delete-favorite',id:memory.favorites[0].id});
+console.log('Memoria y preferencias: persistencia, aislamiento, borrado y desactivación comprobados');
+
+const report={preferencesPersisted:true,searchMemoryIsolated:true,searchOptOut:true,searchHistoryCleared:true,favoritesPreserved:true,checkedAt:new Date().toISOString(),success:true,provinces:checks.length,quoteChecks,crossChainIdentityQuotes,checks,pantry:true,storedReferencePreserved:true,invalidQuantitiesRejected:true,userIsolation:true,feedback:true,testProfilesExcluded:true};
 await writeFile('data/site-smoke-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
