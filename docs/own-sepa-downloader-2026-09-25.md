@@ -46,6 +46,23 @@ Eso no acredita una descarga real de hoy. La recuperación se acredita solo con
 una ejecución que conserve un archivo reciente, importe precios con su vigencia
 interna y complete la comprobación de lectura desde la aplicación.
 
+## Resultado de la ejecución real
+
+El 25/09/2026 a las 22:23 ART, la ejecución 36208130185 aprobó las 92 pruebas
+JavaScript y llegó a la adquisición. El primer transporte falló con
+UND_ERR_CONNECT_TIMEOUT. El reintento al mismo servidor HTTPS con curl por IPv4
+agotó 20 segundos sin conectar a datos.produccion.gob.ar:443 (curl 28).
+La réplica se rechazó por superar 72 horas; su índice seguía en el 22/09.
+No se obtuvo un catálogo oficial ni un ZIP reciente. Por tanto, la recuperación
+diaria no está acreditada. No se relajaron controles ni se sustituyeron precios.
+
+La alternativa IPv4 se utiliza solo ante errores de conexión, nunca para eludir
+un rechazo HTTP o una validación TLS. Preserva las comprobaciones de URL,
+tamaño, contenido y revisión del recurso. Los errores y originales disponibles
+se conservan como artefactos de la ejecución.
+
+Evidencia: https://github.com/tequedo/despensa-precios/actions/runs/36208130185
+
 Referencias de código público:
 - https://github.com/catdevnull/preciazo/blob/master/sepa/archiver.ts
 - https://github.com/catdevnull/preciazo/blob/master/sepa/archiver-runner.sh
