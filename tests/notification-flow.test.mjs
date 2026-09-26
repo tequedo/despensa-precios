@@ -13,6 +13,8 @@ async function scriptFixture(t) {
   const json = (path, value) => writeFile(join(cwd, path), JSON.stringify(value));
   await writeFile(join(cwd, 'data/san-juan.ndjson'), '{}\n{}\n');
   await json('data/national/coverage.json', { geographyVerified: true, provinces: [{ stores: 1, records: 2 }] });
+  await json('data/sepa-provenance.json', { status:'replica_integrity_checked', sourceType:'replica',
+    officialResource:{last_modified:new Date(Date.now()-48*3600_000).toISOString()} });
   await json('data/retailer-promotions-verified.json', { promotions: [{}] });
   await json('data/retailer-promotion-sources.json', { sources: [{ reachable: true }] });
   await json('data/wallet-benefits-verified.json', { benefits: [{ calculationEligible: true }] });
@@ -39,6 +41,9 @@ test('completed workflow records all three categories for the daily digest', asy
   const f = await scriptFixture(t), result = f.run('notify-completed.mjs');
   assert.equal(result.status, 0, result.stderr);
   assert.deepEqual((await f.requests()).map(r => [r.kind,r.status]), [['sepa','success'],['promotions','success'],['benefits','success']]);
+  const priceNotice = (await f.requests()).find(r => r.kind === 'sepa').details.join('\n');
+  assert.match(priceNotice, /réplica de terceros/);
+  assert.match(priceNotice, /no acredita precios nuevos del día/);
   const report = JSON.parse(await readFile(join(f.cwd,'data/notification-status.json')));
   assert.equal(report.priceCount, 2); assert.equal(report.notificationStatus,'recorded_for_daily_summary');
   assert.equal(report.processes.length, 3); assert.equal(report.notified, false);

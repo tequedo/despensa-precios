@@ -55,9 +55,6 @@ jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    env:
-      # Own acquisition first; a fallback retains its explicit replica identity.
-      SEPA_SOURCE: auto
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
@@ -77,13 +74,6 @@ jobs:
       - name: Instalar herramientas de compresión
         run: sudo apt-get update && sudo apt-get install -y unzip zstd p7zip-full
 
-      - name: Instalar navegador para páginas dinámicas
-        id: chrome
-        uses: browser-actions/setup-chrome@v2
-        with:
-          chrome-version: stable
-          install-dependencies: true
-
       - name: Probar procedencia, integridad, precios y geografía
         run: |
           npm run check
@@ -91,6 +81,8 @@ jobs:
 
       - name: Recolectar precios SEPA y comprobar la fuente seleccionada
         env:
+          # Own acquisition first; fallback retains its explicit replica identity.
+          SEPA_SOURCE: auto
           SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-originals
           NATIONAL_EXPORT: "1"
           PROVINCE_CODES: AR-J
@@ -136,6 +128,13 @@ jobs:
 
       - name: Validar provincias y coordenadas con Georef
         run: node validate-national-geography.mjs
+
+      - name: Instalar navegador para páginas dinámicas
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: stable
+          install-dependencies: true
 
       - name: Verificar promociones en páginas oficiales
         env:
