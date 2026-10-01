@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T12:44:34.353Z",
+  "generatedAt": "2026-10-01T12:42:00.081Z",
   "scope": "Argentina; alcance sujeto a cada promoción",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -16,8 +16,8 @@
       "dayLabels": [
         "lunes"
       ],
-      "validFrom": "2026-09-01",
-      "validTo": "2026-09-30",
+      "validFrom": "2026-10-01",
+      "validTo": "2026-10-31",
       "minimumPurchase": null,
       "capAmount": 15000,
       "capRule": "Tope $15.000",
@@ -44,8 +44,8 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-09-30T12:44:34.353Z",
-      "termsHash": "c76ccc677cf018ad425ec97cefe2e33bc70951564175addb3c532e6078c27e38",
+      "checkedAt": "2026-10-01T12:42:00.081Z",
+      "termsHash": "68be94e522abb4b4f2a01540cabc8f24ce5d610c530d342fabfc45544b1adc66",
       "status": "verified",
       "calculationEligible": false,
       "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta.",
