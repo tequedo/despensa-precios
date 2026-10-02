@@ -1,0 +1,53 @@
+name: RINDECASA Android review build
+on:
+  pull_request:
+    paths:
+      - 'mobile/android/**'
+      - '.github/workflows/android-build.yml'
+  push:
+    branches:
+      - 'codex/rindecasa-android-pilot-2026-10-02'
+    paths:
+      - 'mobile/android/**'
+      - '.github/workflows/android-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  review-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: mobile/android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+      - name: Install Android 36 build dependencies
+        run: |
+          test -n "$ANDROID_SDK_ROOT"
+          "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-36' 'build-tools;36.0.0'
+      - name: Check and compile the Android pilot
+        run: gradle --no-daemon --stacktrace :app:lint :app:assembleDebug :app:bundleRelease
+      - name: Retain review packages and lint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: rindecasa-android-review-${{ github.sha }}
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            mobile/android/app/build/outputs/apk/debug/app-debug.apk
+            mobile/android/app/build/outputs/bundle/release/app-release.aab
+            mobile/android/app/build/reports/lint-results-*.html

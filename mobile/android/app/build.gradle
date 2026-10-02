@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace 'ar.rindecasa.app'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'ar.rindecasa.app'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Upload signing and Play App Signing are configured before any Play submission.
+            // Never use the debug key for a production release.
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.7.4'
+    implementation 'androidx.browser:browser:1.10.0'
+}
