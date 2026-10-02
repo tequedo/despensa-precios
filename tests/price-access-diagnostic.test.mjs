@@ -32,6 +32,15 @@ test('distinguishes a missing chain in unfiltered results from expiry and reject
   assert.equal(classifyChango(store, shard('2026-09-22'), expired, expired, now).reason, 'unexpected_expired_quote');
 });
 
+test('a generic selected-branch 503 requires independent stale-date evidence, rather than being assumed an expiry', () => {
+  const general = result([]), filtered = { status: 503, body: { error: 'Los precios no están disponibles. Probá más tarde.' } };
+  assert.equal(classifyChango(store, shard('2026-09-22'), general, filtered, now).reason, 'pending_verification');
+  general.body.coverage = { sourceStatus: 'stale', lastPriceDate: '2026-09-22', availableStores: 0 };
+  assert.equal(classifyChango(store, shard('2026-09-22'), general, filtered, now).reason, 'expired_source_excluded');
+  general.body.coverage.lastPriceDate = '2026-09-21';
+  assert.equal(classifyChango(store, shard('2026-09-22'), general, filtered, now).reason, 'pending_verification');
+});
+
 test('a complete national diagnosis of stale sources is never reported as restored prices', async () => {
   const calls = [];
   const readJson = async path => path.endsWith('/index.json')

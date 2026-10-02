@@ -26,6 +26,7 @@ test('publishing diagnostics commits the app-read report and rebases concurrent 
     await writeFile(join(working,'data/price-access-report.json'), '{"completed":true,"priceRefreshRestored":false}\n');
     await writeFile(join(working,'data/price-refresh-history.json'), '{"step1Complete":false}\n');
     await writeFile(join(working,'data/sepa-update-attempt.json'), '{"outcome":"failure"}\n');
+    git(working,'config','--unset','user.name'); git(working,'config','--unset','user.email');
     const script = new URL('../scripts/push-update-diagnostics.sh', import.meta.url).pathname;
     execFileSync('bash',[script],{cwd:working,encoding:'utf8',stdio:['ignore','pipe','pipe']});
     assert.equal(git(working,'status','--porcelain'),'M data/sepa-provenance.json');

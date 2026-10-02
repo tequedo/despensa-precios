@@ -12,10 +12,15 @@ export function classifyChango(store, shard, general, filtered, now = Date.now()
     && q.validDate === row[6] && q.validDate === shard.sourceDate && q.channel === 'sucursal') : [];
   const fresh = freshDate(shard.sourceDate, now);
   const staleMessage = filtered.status === 503 && /ya no tiene precios recientes/.test(filtered.body?.error ?? '');
+  // The production route may mask the selected-branch error with its generic
+  // 503. Attribute expiry only when the successful, unfiltered API response
+  // independently confirms the same stale date and zero available stores.
+  const staleCoverage = general.status === 200 && general.body?.coverage?.sourceStatus === 'stale'
+    && general.body.coverage.lastPriceDate === shard.sourceDate && general.body.coverage.availableStores === 0;
   let reason = 'pending_verification';
   if (!row) reason = 'control_product_missing_from_source';
   else if (!fresh && (quotes.length || filtered.status === 200 && options(filtered).length)) reason = 'unexpected_expired_quote';
-  else if (!fresh && (staleMessage || filtered.status === 200)) reason = 'expired_source_excluded';
+  else if (!fresh && (staleMessage || filtered.status === 200 || filtered.status === 503 && staleCoverage)) reason = 'expired_source_excluded';
   else if (fresh && quotes.length && exact.length !== quotes.length) reason = 'quote_differs_from_source';
   else if (exact.length) reason = options(general).some(q => isChango(q.storeId)) ? 'visible' : 'missing_from_unfiltered_results';
   else if (filtered.status === 200) reason = 'missing_matching_quote';
@@ -71,6 +76,7 @@ export async function diagnosePriceAccess({ token, readJson, fetchImpl = fetch, 
     const general = await query({ ean: CONTROL_BARCODE });
     report.unfiltered = { httpStatus: general.status, quotes: options(general).length,
       sourceStatus: general.body.coverage?.sourceStatus ?? null, lastPriceDate: general.body.coverage?.lastPriceDate ?? null,
+      availableStores: general.body.coverage?.availableStores ?? null,
       generation: general.body.coverage?.generatedAt ?? null };
     for (const store of index.stores.filter(s => isChango(s.externalId))) {
       const shard = await readJson(`data/national/AR-J/${store.file}`);
