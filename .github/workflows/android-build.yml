@@ -4,12 +4,6 @@ on:
     paths:
       - 'mobile/android/**'
       - '.github/workflows/android-build.yml'
-  push:
-    branches:
-      - 'codex/rindecasa-android-pilot-2026-10-02'
-    paths:
-      - 'mobile/android/**'
-      - '.github/workflows/android-build.yml'
   workflow_dispatch:
 
 permissions:
@@ -28,6 +22,10 @@ jobs:
         working-directory: mobile/android
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            mobile/android
+            .github/workflows
       - uses: actions/setup-java@v4
         with:
           distribution: temurin

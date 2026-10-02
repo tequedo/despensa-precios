@@ -4,7 +4,7 @@ Preparación del 2 de octubre de 2026. Este proyecto abre la app existente media
 
 ## Compilación de revisión
 
-Herramientas fijadas: Java 17, Gradle 9.3.1, Android Gradle Plugin 9.1.1, compile/target SDK 36, mínimo Android 7.0/API 24, android-browser-helper 2.7.4 y AndroidX Browser 1.10.0. Con Android SDK instalado:
+Herramientas fijadas: Java 17, Gradle 9.3.1, Android Gradle Plugin 9.1.1, compile/target SDK 36, mínimo Android 7.0/API 24, android-browser-helper 2.7.3 y AndroidX Browser 1.10.0. Se fija la versión publicada en Google Maven; el tag 2.7.4 anunciado en GitHub aún no estaba disponible allí al comprobar la primera compilación. Con Android SDK instalado:
 
 ```bash
 cd mobile/android
