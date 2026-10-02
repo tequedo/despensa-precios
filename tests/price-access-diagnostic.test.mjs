@@ -102,6 +102,18 @@ test('two runs on one day do not count as two daily updates; consecutive dates d
   assert.equal(history.twoConsecutiveDaysConfirmed, true);
   assert.equal(history.step1Complete, true);
 });
+test('a direct daily archive requires an official origin and actual internal day before confirming recovery', () => {
+  const attempt = confirmedAttempt(now);
+  attempt.acquisition = { ...attempt.acquisition, status: 'official_archive_content_checked',
+    sourceType: 'official_daily_archive', priceDate: '2026-10-02',
+    dateBasis: 'product_file_footer', authenticity: 'official_https_download',
+    officialResource: { last_modified: null, revision_id: null } };
+  assert.equal(recordDailyRefresh(null, attempt).latestAttempt.confirmed, true);
+  attempt.acquisition.priceDate = '2026-10-01';
+  assert.equal(recordDailyRefresh(null, attempt).latestAttempt.confirmed, false);
+  attempt.acquisition.priceDate = '2026-10-02'; attempt.acquisition.authenticity = 'not_verified';
+  assert.equal(recordDailyRefresh(null, attempt).latestAttempt.confirmed, false);
+});
 
 test('stale data, skipped smoke, cache mismatch and failed later retries never masquerade as a successful daily refresh', () => {
   for (const modify of [
