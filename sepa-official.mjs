@@ -5,13 +5,40 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { join, resolve } from 'node:path';
 import {
-  OFFICIAL_CATALOG, METADATA_URL, INDEX_URL, selectResource,
+  OFFICIAL_CATALOG, OFFICIAL_DATASET_ID, METADATA_URL, INDEX_URL, selectResource,
   replicaEntry, validateEmbedded, inspectArchive, compareManifests, saveAudit,
 } from './sepa-provenance.mjs';
 
 export const OFFICIAL_METADATA_URL = 'https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios';
 const MAX_ARCHIVE_BYTES = 4 * 1024 ** 3;
 const exec = promisify(execFile);
+
+async function rejection(response, url) {
+  // Keep only an operator's request identifier, never the HTML, IP address,
+  // cookies or arbitrary response headers in the public acquisition report.
+  let body = '';
+  if (response.body) {
+    const reader = response.body.getReader(), chunks = [];
+    let bytes = 0;
+    try {
+      while (bytes < 65536) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = value.subarray(0, 65536 - bytes);
+        chunks.push(chunk); bytes += chunk.length;
+      }
+      body = Buffer.concat(chunks).toString('utf8');
+    } finally { await reader.cancel(); }
+  }
+  const headerId = response.headers.get('x-request-id');
+  const htmlId = body.match(/Request ID:\s*(?:<[^>]+>\s*)*([a-f0-9]{32})\b/i)?.[1];
+  const requestId = headerId && /^[a-z0-9_.:-]{1,128}$/i.test(headerId) ? headerId : htmlId ?? null;
+  const error = new Error(`Descarga SEPA: HTTP ${response.status} (${new URL(url).hostname})`);
+  error.http = { status: response.status, host: new URL(url).hostname, requestId,
+    protection: /BunkerWeb/i.test(body) ? 'BunkerWeb' : null,
+    accessDenied: response.status === 401 || response.status === 403 };
+  return error;
+}
 
 export function connectionFailure(error) {
   return ['UND_ERR_CONNECT_TIMEOUT', 'ENETUNREACH', 'EHOSTUNREACH', 'ECONNRESET', 'ECONNREFUSED', 'EAI_AGAIN'].includes(error?.cause?.code);
@@ -73,7 +100,7 @@ async function receive(url, path, { maximum, expected, timeout }) {
   let file;
   const temporary = `${path}.partial`;
   try {
-    if (!response.ok) throw new Error(`Descarga SEPA: HTTP ${response.status} (${new URL(url).hostname})`);
+    if (!response.ok) throw await rejection(response, url);
     if (response.url !== url) throw new Error('La respuesta no proviene de la URL solicitada');
     const encoding = response.headers.get('content-encoding');
     if (encoding && encoding !== 'identity') throw new Error('Se rechazó una transformación HTTP del archivo');
@@ -114,6 +141,18 @@ async function receive(url, path, { maximum, expected, timeout }) {
 }
 
 const json = (url, path) => receive(url, path, { maximum: 10_000_000, timeout: 30_000 });
+
+export async function downloadOfficialArchive(resource, path) {
+  const id = resource?.id;
+  if (!/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/.test(id ?? '')) throw new Error('Identidad del ZIP oficial inválida');
+  const url = new URL(resource.url);
+  const prefix = `/dataset/${OFFICIAL_DATASET_ID}/resource/${id}/download/`;
+  if (url.origin !== 'https://datos.produccion.gob.ar' || url.username || url.password || url.search || url.hash
+    || !url.pathname.startsWith(prefix) || !/^sepa_[a-z]+\.zip$/.test(url.pathname.slice(prefix.length))) {
+    throw new Error('URL de ZIP oficial no reconocida');
+  }
+  return receive(resource.url, path, { maximum: MAX_ARCHIVE_BYTES, timeout: 20 * 60_000 });
+}
 
 export function assertSameResource(before, after) {
   for (const key of ['id', 'revision_id', 'url', 'size', 'last_modified', 'hash']) {
@@ -191,6 +230,7 @@ export async function prepareOfficial(workDir, options = {}) {
   } catch (error) {
     report.status = 'failed';
     report.error = error.message;
+    if (error.http) report.http = error.http;
     if (bundle) await saveAudit(join(bundle, 'provenance.json'), report);
     await saveAudit(auditFile, report);
     throw error;

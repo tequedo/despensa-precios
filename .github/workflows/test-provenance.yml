@@ -3,7 +3,7 @@ on:
   push:
     branches: ['fix/sepa-procedencia-4-2', 'fix/sepa-identificacion-4-3']
   pull_request:
-    paths: ['sepa-provenance.mjs', 'sepa-official.mjs', 'sepa-source.mjs', 'product-identity.mjs', 'sepa-values.mjs', 'sepa-pricing.mjs', 'sepa-csv.mjs', 'sepa-catalog-controls.mjs', 'national-export.mjs', 'scripts/**', 'tests/**', 'update-san-juan.mjs', '.github/workflows/test-provenance.yml', '.github/workflows/audit-official-sepa.yml', '.github/workflows/update-prices.yml']
+    paths: ['sepa-provenance.mjs', 'sepa-official.mjs', 'sepa-daily-archive.mjs', 'sepa-source.mjs', 'product-identity.mjs', 'sepa-values.mjs', 'sepa-pricing.mjs', 'sepa-csv.mjs', 'sepa-catalog-controls.mjs', 'national-export.mjs', 'scripts/**', 'tests/**', 'update-san-juan.mjs', '.github/workflows/test-provenance.yml', '.github/workflows/audit-official-sepa.yml', '.github/workflows/update-prices.yml']
 permissions:
   contents: read
 jobs:
@@ -24,3 +24,29 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq zstd
       - run: npm run check
       - run: python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
+      - name: Comprobar descarga real sin actualizar precios ni avisar a usuarios
+        id: real_source
+        continue-on-error: true
+        env:
+          SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-source-probe
+        run: node scripts/probe-sepa-sources.mjs
+      - name: Conservar resultado real de acceso a SEPA
+        if: ${{ always() && steps.real_source.outcome != 'skipped' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: prueba-descarga-sepa-${{ github.run_id }}
+          path: |
+            data/sepa-source-probe.json
+            data/sepa-attempt-*.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Mostrar si la descarga real sigue bloqueada
+        if: ${{ always() && steps.real_source.outcome != 'skipped' }}
+        env:
+          ACCESS_OUTCOME: ${{ steps.real_source.outcome }}
+        run: |
+          if [ "$ACCESS_OUTCOME" = success ]; then
+            echo "SEPA: adquisición aceptada. Esta prueba no importa precios ni acredita lectura en la app." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "SEPA: descarga real BLOQUEADA. Las pruebas de código no significan que la actualización diaria funcione. Ver el artefacto de acceso." >> "$GITHUB_STEP_SUMMARY"
+          fi

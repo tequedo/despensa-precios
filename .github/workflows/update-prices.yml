@@ -8,6 +8,7 @@ on:
       - "update-san-juan.mjs"
       - "sepa-provenance.mjs"
       - "sepa-official.mjs"
+      - "sepa-daily-archive.mjs"
       - "sepa-source.mjs"
       - "price-update-message.mjs"
       - "price-access-diagnostic.mjs"
@@ -25,6 +26,7 @@ on:
       - "scripts/sepa_archive.py"
       - "tests/sepa-provenance.test.mjs"
       - "tests/sepa-official.test.mjs"
+      - "tests/sepa-daily-archive.test.mjs"
       - "tests/test_sepa_archive.py"
       - "scripts/push-generated-data.sh"
       - "scripts/push-update-diagnostics.sh"
@@ -85,7 +87,7 @@ jobs:
       - name: Recolectar precios SEPA y comprobar la fuente seleccionada
         id: acquisition
         env:
-          # Own acquisition first; fallback retains its explicit replica identity.
+          # Official catalog, published daily ZIP, then a disclosed validated replica.
           SEPA_SOURCE: auto
           SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-originals
           NATIONAL_EXPORT: "1"

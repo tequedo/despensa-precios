@@ -98,11 +98,15 @@ export async function diagnosePriceAccess({ token, readJson, fetchImpl = fetch, 
 
 export function recordDailyRefresh(history, { diagnostic, acquisition, smoke, acquisitionOutcome, smokeOutcome, now = Date.now(), runUrl }) {
   const day = argentinaDate(now);
-  const sourceDate = isoDate(acquisition?.officialResource?.last_modified);
+  const directDaily = acquisition?.sourceType === 'official_daily_archive';
+  const sourceDate = directDaily ? isoDate(acquisition?.priceDate) : isoDate(acquisition?.officialResource?.last_modified);
+  const validAcquisition = ['official_original_integrity_checked', 'replica_integrity_checked'].includes(acquisition?.status)
+    || acquisition?.status === 'official_archive_content_checked' && directDaily
+      && acquisition.dateBasis === 'product_file_footer' && acquisition.authenticity === 'official_https_download';
   const recent = value => Number.isFinite(Date.parse(value)) && now - Date.parse(value) >= 0 && now - Date.parse(value) <= 90 * 60_000;
   const positiveChecks = smoke?.checks?.filter(c => c.pricesDatesCodesAndPhysicalBranchesMatch) ?? [];
   const confirmed = acquisitionOutcome === 'success' && smokeOutcome === 'success'
-    && ['official_original_integrity_checked', 'replica_integrity_checked'].includes(acquisition?.status)
+    && validAcquisition
     && sourceDate === day && recent(acquisition.checkedAt) && recent(smoke?.checkedAt) && smoke?.success === true
     && diagnostic?.priceRefreshRestored === true && recent(diagnostic.checkedAt)
     && positiveChecks.length > 0 && positiveChecks.every(c => c.generation === diagnostic.unfiltered?.generation);

@@ -10,7 +10,8 @@ const acquisition = ['success', 'failure'].includes(process.env.ACQUISITION_OUTC
   ? await optionalJson('data/sepa-provenance.json') : null;
 const attempt = { checkedAt: new Date().toISOString(), outcome: process.env.ACQUISITION_OUTCOME ?? 'not_run',
   status: acquisition?.status ?? 'not_run', sourceType: acquisition?.sourceType ?? null,
-  sourceModified: acquisition?.officialResource?.last_modified ?? null,
+  sourceModified: acquisition?.priceUpdatedAt ?? acquisition?.officialResource?.last_modified ?? null,
+  priceDate: acquisition?.priceDate ?? null, dateBasis: acquisition?.dateBasis ?? null,
   selection: acquisition?.selection ?? null, error: acquisition?.error ?? null };
 await writeFile('data/sepa-update-attempt.json', JSON.stringify(attempt, null, 2) + '\n');
 const history = recordDailyRefresh(await optionalJson('data/price-refresh-history.json'), {
