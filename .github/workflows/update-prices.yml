@@ -10,6 +10,9 @@ on:
       - "sepa-official.mjs"
       - "sepa-source.mjs"
       - "price-update-message.mjs"
+      - "price-access-diagnostic.mjs"
+      - "scripts/diagnose-price-access.mjs"
+      - "tests/price-access-diagnostic.test.mjs"
       - "tests/sepa-source.test.mjs"
       - "tests/price-update-message.test.mjs"
       - "product-identity.mjs"
@@ -80,6 +83,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
 
       - name: Recolectar precios SEPA y comprobar la fuente seleccionada
+        id: acquisition
         env:
           # Own acquisition first; fallback retains its explicit replica identity.
           SEPA_SOURCE: auto
@@ -183,10 +187,32 @@ jobs:
           fi
 
       - name: Comprobar que la app lee la actualización publicada
+        id: app_smoke
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
         run: node tests/price-refresh-smoke.mjs
+
+      - name: Diagnosticar acceso, ChangoMás y cobertura aunque falle SEPA
+        if: ${{ always() && !cancelled() }}
+        env:
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          ACQUISITION_OUTCOME: ${{ steps.acquisition.outcome }}
+          SMOKE_OUTCOME: ${{ steps.app_smoke.outcome }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/diagnose-price-access.mjs
+
+      - name: Conservar diagnóstico y continuidad diaria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acceso-precios-${{ github.run_id }}
+          path: |
+            data/price-access-report.json
+            data/price-refresh-history.json
+            data/sepa-update-attempt.json
+          if-no-files-found: warn
+          retention-days: 90
 
       - name: Conservar comprobación de lectura en la app
         if: always()

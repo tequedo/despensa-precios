@@ -2,7 +2,9 @@
 set -euo pipefail
 # Preserve concurrent commits. Rebase failures stop for review; never force push.
 for attempt in 1 2 3; do
-  git pull --rebase origin main
+  # Failed acquisition can leave a local provenance report modified. Preserve it
+  # while rebasing; only the files explicitly committed by the caller are pushed.
+  git -c rebase.autoStash=true pull --rebase origin main
   if git push origin HEAD:main; then
     exit 0
   fi
