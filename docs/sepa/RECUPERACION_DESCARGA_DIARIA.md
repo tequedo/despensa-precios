@@ -69,36 +69,38 @@ archivos por sucursal, verifica la lectura en la app y registra continuidad.
 Para cerrar la incidencia deben quedar acreditados **dos días consecutivos**,
 con fecha interna actual, importación correcta y lectura de la nueva generación.
 
-## Solicitud técnica preparada para el operador oficial
+## Solicitud técnica enviada al operador oficial
 
-Canales publicados: enlace `contacto` de https://www.preciosclaros.gob.ar/ y
-https://www.argentina.gob.ar/datos-abiertos/contacto (soporte/incidencias del
-portal nacional; solicitar derivación al responsable del conjunto SEPA).
-El mensaje está preparado; no fue enviado.
+**Enviada el 2 de octubre de 2026 a las 21:03 de Argentina**
+(3 de octubre a las 00:03 UTC) a `soportesepa@produccion.gob.ar`.
+El destinatario se verificó en la ficha oficial del trámite
+[Sistema Electrónico de Precios Argentino (SEPA)](https://tramitesadistancia.gob.ar/tramitesadistancia/detalle-tipo?id=5388).
+El titular autorizó el envío y se confirmó la copia en su correo.
+
+**Pendiente de respuesta y acceso efectivo.** El envío no restablece la descarga
+ni acredita precios nuevos. Los formularios de contacto de Precios Claros y del
+portal nacional quedan como canales publicados alternativos; no se enviaron
+solicitudes duplicadas.
 
 **Asunto:** Acceso automatizado autorizado al conjunto público Precios Claros - Base SEPA
 
-Estamos desarrollando una aplicación de comparación de precios por sucursal
-que consume el conjunto minorista público SEPA, identificador
-`6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5`. Necesitamos una descarga diaria completa
-para conservar producto, sucursal, provincia, promociones informadas y fecha
-de actualización interna de los archivos.
+Estamos desarrollando una aplicación de comparación de precios por sucursal que consume el conjunto minorista público SEPA, identificador 6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5. Necesitamos una descarga diaria completa para conservar producto, sucursal, provincia, promociones informadas y fecha de actualización interna de los archivos.
 
-Desde GitHub Actions y nuestro entorno de trabajo, tanto la API CKAN
-`https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios`
-como los enlaces diarios publicados devuelven HTTP 403. La página de error
-identifica BunkerWeb. Un rechazo de ejemplo se registró el 02/10/2026 a las
-23:31:36 UTC, identificador `20d365a94abf8b53623186a794d37a63`.
+Desde GitHub Actions y nuestro entorno de trabajo, tanto la API CKAN https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios como los enlaces diarios publicados devuelven HTTP 403. La página de error identifica BunkerWeb.
 
-¿Pueden indicar el canal autorizado vigente para descargar estos datos,
-requisitos de identificación o credenciales, cuotas y horario de publicación?
-Si corresponde, podemos configurar un descargador con IP de salida fija para
-que ustedes autoricen ese acceso. También agradeceríamos una URL alternativa
-oficial del archivo completo o su manifiesto diario.
+En la última ejecución de nuestra automatización, el 02/10/2026 entre las 23:45:31 y 23:45:33 UTC (20:45, hora argentina), se registraron estos identificadores de rechazo:
+- Catálogo oficial: 6f18aef26f61f2c28166737bfeb9ede8
+- Archivo ZIP diario oficial: 4e3dbd4aca7854dd1acbd93799a8ca3e
 
-Conservaremos atribución a SEPA, fecha real por archivo y trazabilidad del ZIP.
-No queremos usar precios atrasados como actuales. Podemos aportar los códigos
-de rechazo adicionales generados por nuestra automatización.
+La ejecución y su diagnóstico pueden consultarse en:
+https://github.com/tequedo/despensa-precios/actions/runs/37078936348
+
+¿Pueden indicar el canal autorizado vigente para descargar estos datos, requisitos de identificación o credenciales, cuotas y horario de publicación? Si corresponde, podemos configurar un descargador con IP de salida fija para que ustedes autoricen ese acceso. También agradeceríamos una URL alternativa oficial del archivo completo o su manifiesto diario.
+
+Conservaremos atribución a SEPA, fecha real por archivo y trazabilidad del ZIP. No queremos usar precios atrasados como actuales. Podemos aportar los códigos de rechazo adicionales generados por nuestra automatización.
+
+Agradeceré su ayuda o la derivación al responsable técnico del conjunto de datos para restablecer la actualización diaria.
+
 
 ## Fuentes consultadas
 
