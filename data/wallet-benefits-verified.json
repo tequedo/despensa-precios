@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T12:40:19.626Z",
+  "generatedAt": "2026-10-03T15:41:27.753Z",
   "scope": "Argentina; alcance sujeto a cada promoción",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -44,7 +44,7 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-02T12:40:19.626Z",
+      "checkedAt": "2026-10-03T15:41:27.753Z",
       "termsHash": "68be94e522abb4b4f2a01540cabc8f24ce5d610c530d342fabfc45544b1adc66",
       "status": "verified",
       "calculationEligible": false,
