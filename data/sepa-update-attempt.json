@@ -1,32 +1,32 @@
 {
-  "checkedAt": "2026-10-07T22:08:41.993Z",
-  "outcome": "failure",
-  "status": "failed",
-  "sourceType": "none_accepted",
-  "sourceModified": null,
+  "checkedAt": "2026-10-08T22:35:54.923Z",
+  "outcome": "success",
+  "status": "replica_integrity_checked",
+  "sourceType": "replica",
+  "sourceModified": "2026-10-08T16:19:18.978Z",
   "priceDate": null,
   "dateBasis": null,
   "selection": {
     "mode": "auto",
-    "selected": null,
+    "selected": "replica",
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-10-07T22:08:27.783Z",
+        "startedAt": "2026-10-08T22:16:25.717Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_metadata_before",
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "ed32dba90c2f791ba50f559670b3103c",
+          "requestId": "1a012e98408bba670da6f066719310e2",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "official-daily",
-        "startedAt": "2026-10-07T22:08:28.993Z",
+        "startedAt": "2026-10-08T22:16:27.249Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_daily_archive",
@@ -34,19 +34,18 @@
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "c26df082f73a5120bfb4ad484a00a28f",
+          "requestId": "6bc5863da1b775cf8ea682b206986652",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "replica",
-        "startedAt": "2026-10-07T22:08:29.335Z",
-        "status": "failed",
-        "error": "Recurso SEPA futuro o con más de 72 horas",
-        "http": null
+        "startedAt": "2026-10-08T22:16:27.621Z",
+        "status": "replica_integrity_checked",
+        "sourceModified": "2026-10-08T16:19:18.978Z"
       }
     ]
   },
-  "error": "No se obtuvo un archivo SEPA válido. official: Descarga SEPA: HTTP 403 (datos.produccion.gob.ar); official-daily: Descarga SEPA: HTTP 403 (datos.produccion.gob.ar); replica: Recurso SEPA futuro o con más de 72 horas"
+  "error": null
 }
