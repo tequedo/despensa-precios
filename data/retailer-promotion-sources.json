@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-25T13:50:10.413Z",
+  "generatedAt": "2026-10-08T22:33:07.319Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-09-25T13:47:35.928Z",
+      "checkedAt": "2026-10-08T22:29:26.136Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -18,7 +18,7 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-09-25T13:47:38.096Z",
+      "checkedAt": "2026-10-08T22:29:26.808Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -31,253 +31,22 @@
     {
       "retailer": "La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-09-25T13:47:48.018Z",
-      "reachable": true,
-      "rendered": true,
-      "sepaPromotions": 0,
+      "checkedAt": "2026-10-08T22:30:07.095Z",
+      "reachable": false,
+      "sepaPromotions": 754,
       "corroboratedPromotions": 0,
-      "activeWindows": [],
-      "mentionsSanJuan": false,
-      "nationwide": false,
-      "status": "reachable_without_complete_scoped_evidence"
+      "status": "unavailable",
+      "error": "No hay un navegador Chromium disponible"
     },
     {
       "retailer": "Carrefour",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-09-25T13:50:10.408Z",
-      "reachable": true,
-      "rendered": true,
-      "sepaPromotions": 0,
+      "checkedAt": "2026-10-08T22:33:07.308Z",
+      "reachable": false,
+      "sepaPromotions": 103,
       "corroboratedPromotions": 0,
-      "activeWindows": [
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        },
-        {
-          "from": "2026-09-23",
-          "to": "2026-10-01"
-        }
-      ],
-      "mentionsSanJuan": false,
-      "nationwide": true,
-      "status": "reachable_without_complete_scoped_evidence"
+      "status": "unavailable",
+      "error": "No hay un navegador Chromium disponible"
     }
   ]
 }
