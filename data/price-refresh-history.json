@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-08T22:35:54.924Z",
+  "checkedAt": "2026-10-09T22:04:53.607Z",
   "latestAttempt": {
-    "day": "2026-10-08",
-    "checkedAt": "2026-10-08T22:35:54.924Z",
+    "day": "2026-10-09",
+    "checkedAt": "2026-10-09T22:04:53.607Z",
     "confirmed": true,
-    "sourceDate": "2026-10-08",
+    "sourceDate": "2026-10-09",
     "sourceType": "replica",
-    "revisionId": "5d2a8857-ba39-4aef-940b-1d881919a899",
-    "appGeneration": "2026-10-08T22:16:25.716Z",
-    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/37852200065"
+    "revisionId": "d049fcdb-8fcc-492a-a88b-b8c592ab6cae",
+    "appGeneration": "2026-10-09T21:48:30.399Z",
+    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/37995569731"
   },
-  "twoConsecutiveDaysConfirmed": false,
-  "step1Complete": false,
+  "twoConsecutiveDaysConfirmed": true,
+  "step1Complete": true,
   "days": [
     {
       "day": "2026-10-02",
@@ -83,6 +83,16 @@
       "revisionId": "5d2a8857-ba39-4aef-940b-1d881919a899",
       "appGeneration": "2026-10-08T22:16:25.716Z",
       "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/37852200065"
+    },
+    {
+      "day": "2026-10-09",
+      "checkedAt": "2026-10-09T22:04:53.607Z",
+      "confirmed": true,
+      "sourceDate": "2026-10-09",
+      "sourceType": "replica",
+      "revisionId": "d049fcdb-8fcc-492a-a88b-b8c592ab6cae",
+      "appGeneration": "2026-10-09T21:48:30.399Z",
+      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/37995569731"
     }
   ]
 }
