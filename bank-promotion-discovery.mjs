@@ -25,8 +25,9 @@ function validity(text) {
 }
 
 const dayValues = text => /TODOS LOS DIAS/.test(text) ? [0, 1, 2, 3, 4, 5, 6]
-  : DAYS.filter(([name]) => new RegExp('\\b' + name + '\\b').test(text)).map(([,n]) => n);
+  : DAYS.filter(([name]) => new RegExp('\\b' + name + 'S?\\b').test(text)).map(([,n]) => n);
 const money = value => Number(value.replace(/\./g, '').replace(',', '.'));
+const capValues = text => [...text.matchAll(/(?:TOPE(?:\s+(?:DE|MAXIMO|MENSUAL|SEMANAL|DIARIO|POR CLIENTE)){0,3}|HASTA)\s*:?\s*(?:DE\s*)?\$\s*([\d.]+(?:,\d{1,2})?)/g)].map(m => money(m[1]));
 
 // Discovery preserves a promotion's own legal, never another card's terms.
 // Richly parsed candidates remain non-calculable until branch, product and
@@ -39,8 +40,8 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
   const today = new Date(stamp - 3 * 3600000).toISOString().slice(0, 10);
   const range = validity(text);
   const reasons = [], conflicts = [];
-  const legalPercents = [...text.matchAll(/(\d{1,2}(?:[.,]\d+)?)\s*%\s*(?:DE\s*)?(?:REINTEGRO|DESCUENTO|AHORRO|BONIFICACION)/g)].map(m => Number(m[1].replace(',', '.')));
-  const headerPercent = header.match(/(\d{1,2}(?:[.,]\d+)?)\s*%/);
+  const legalPercents = [...text.matchAll(/\b(\d{1,3}(?:[.,]\d+)?)\s*%\s*(?:DE\s*)?(?:REINTEGRO|DESCUENTO|AHORRO|BONIFICACION)/g)].map(m => Number(m[1].replace(',', '.')));
+  const headerPercent = header.match(/\b(\d{1,3}(?:[.,]\d+)?)\s*%/);
   const headerValue = headerPercent ? Number(headerPercent[1].replace(',', '.')) : null;
   const percentages = [...new Set(legalPercents)];
   if (percentages.length > 1 || headerValue != null && percentages.length && !percentages.includes(headerValue)) conflicts.push('Porcentajes contradictorios entre encabezado y condiciones.');
@@ -52,8 +53,8 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
   const issuer = plain(provider) || (/MODO/.test(header) ? 'MODO' : retiredOnly ? 'Jubilados y pensionados' : 'Banco o tarjeta: ver condiciones');
   const installments = text.match(/(\d{1,2})\s*CUOTAS?\s*SIN\s*INTERES/);
   const kind = installments && !discountPercent ? 'installments' : /REINTEGRO/.test(text) ? 'reimbursement' : 'discount';
-  const capMatches = [...text.matchAll(/(?:TOPE(?:\s+(?:DE|MAXIMO|MENSUAL|SEMANAL|DIARIO|POR CLIENTE)){0,3}|HASTA)\s*(?:DE\s*)?\$\s*([\d.]+(?:,\d{1,2})?)/g)].map(m => money(m[1]));
-  const noCap = /SIN TOPE|SIN LIMITE DE (?:REINTEGRO|DESCUENTO)/.test(text);
+  const capMatches = [...capValues(text), ...capValues(header)];
+  const noCap = /SIN TOPE|SIN LIMITE DE (?:REINTEGRO|DESCUENTO)/.test(text + ' ' + header);
   const caps = [...new Set(capMatches.filter(n => n > 0))];
   if (noCap && caps.length || caps.length > 1) conflicts.push('Topes ambiguos o contradictorios.');
   const capAmount = caps.length === 1 ? caps[0] : null;
@@ -90,7 +91,7 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
     title: summary || issuer, kind, discountPercent, installments: installments ? Number(installments[1]) : null,
     daysOfWeek, dayLabels: DAYS.filter(([,n]) => daysOfWeek.includes(n)).map(([name]) => name.toLowerCase()),
     ...range, retiredOnly, paymentRequirement, minimumPurchase: minimum ? money(minimum[1]) : null,
-    capAmount, capPeriod, capOwner, capRule: noCap ? 'Sin tope' : capAmount != null ? 'Tope $' + capAmount.toLocaleString('es-AR') + '; período ' + (capPeriod ?? 'no comprobado') + '; por ' + (capOwner ?? 'titular no comprobado') : 'Tope no comprobado',
+    capAmount, capPeriod, capOwner, capRule: noCap ? 'Sin tope' : capAmount != null ? 'Tope $' + capAmount.toLocaleString('es-AR') + '; período ' + ({month:'mensual',week:'semanal',day:'diario',purchase:'por compra'}[capPeriod] ?? 'no comprobado') + '; por ' + ({person:'persona',account:'cuenta',card:'tarjeta'}[capOwner] ?? 'titular no comprobado') : 'Tope no comprobado',
     geographicScope: nationwide ? (restrictedBranches ? 'Argentina; solo sucursales adheridas, pendientes de validar' : 'Argentina; verificar sucursales y formatos') : null,
     branchEligibilityVerified: false, channels, exclusions, exclusionsVerified: false,
     accumulable, sourceUrl, checkedAt, sourceRecordId: id ?? null,

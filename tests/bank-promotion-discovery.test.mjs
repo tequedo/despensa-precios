@@ -31,3 +31,13 @@ test('does not infer dates, payment or cap periods from absent/invalid terms',()
   assert.equal(b.accumulable,null); assert.equal(b.calculationEligible,false);
   assert.throws(()=>discoverBankPromotion({...input,checkedAt:'wrong'}),/inválida/);
 });
+test('conflicting caps in the actual card header and its legal remain blocked',()=>{
+  const b=discoverBankPromotion({...input,title:'En tu primera compra · Tope: $6.000 · Todos los días',terms:'Válido del 01/09/2026 al 30/09/2026. 20% de reintegro pagando con crédito. Tope: $8.000 por cliente por mes.'});
+  assert.equal(b.status,'conflict');assert.equal(b.capAmount,null);assert.equal(b.calculationEligible,false);
+  assert.match(b.calculationBlockedReason,/Topes/);
+});
+test('plural day labels and colon-delimited caps are extracted, not made calculable',()=>{
+  const b=discoverBankPromotion({...input,title:'Todos los domingos',terms:'Válido del 01/09/2026 al 30/09/2026. Todos los domingos 20% de descuento pagando con Visa. Tope mensual: $20.000 por cliente. No acumulable.'});
+  assert.deepEqual(b.daysOfWeek,[0]);assert.equal(b.capAmount,20000);assert.equal(b.capPeriod,'month');assert.equal(b.capOwner,'person');
+  assert.match(b.capRule,/mensual.*persona/);assert.equal(b.calculationEligible,false);
+});
