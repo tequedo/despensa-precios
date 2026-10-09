@@ -7,6 +7,8 @@ on:
     paths:
       - "verify-wallet-benefits.mjs"
       - "bank-promotion-discovery.mjs"
+      - "promotion-coverage.mjs"
+      - "tests/promotion-coverage.test.mjs"
       - "tests/bank-promotion-discovery.test.mjs"
       - "tests/wallet-benefits.test.mjs"
       - "package.json"
@@ -62,7 +64,8 @@ jobs:
           git add \
             data/wallet-benefit-sources.json \
             data/wallet-benefit-candidates.json \
-            data/wallet-benefits-verified.json
+            data/wallet-benefits-verified.json \
+            data/promotion-matrix.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los beneficios."
             exit 0

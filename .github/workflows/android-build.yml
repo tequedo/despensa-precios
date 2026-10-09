@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'mobile/android/**'
+      - 'tests/android-release-preflight.test.mjs'
+      - 'docs/play/**'
       - '.github/workflows/android-build.yml'
   workflow_dispatch:
 
@@ -26,6 +28,12 @@ jobs:
           sparse-checkout: |
             mobile/android
             .github/workflows
+            tests
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check release safety gates
+        run: node --test ../../tests/android-release-preflight.test.mjs
       - uses: actions/setup-java@v4
         with:
           distribution: temurin

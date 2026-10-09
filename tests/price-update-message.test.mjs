@@ -21,3 +21,13 @@ test('failed acquisitions or missing dates cannot be announced as success', () =
   assert.throws(() => priceUpdateDetails(coverage, { ...provenance, status: 'failed' }), /sin adquisición validada/);
   assert.throws(() => priceUpdateDetails(coverage, { ...provenance, officialResource: {} }), /Fecha real/);
 });
+test('daily ZIP notice uses the inner date and discloses that a catalog revision was not observed', () => {
+  const acquisition = { status: 'official_archive_content_checked', sourceType: 'official_daily_archive',
+    authenticity: 'official_https_download', dateBasis: 'product_file_footer',
+    priceUpdatedAt: '2026-10-02T15:00:00Z', officialResource: { last_modified: null } };
+  const message = priceUpdateDetails(coverage, acquisition, new Date('2026-10-02T23:00:00Z')).join('\n');
+  assert.match(message, /Última fecha interna comprobada: 2\/10\/26/);
+  assert.match(message, /revisión del catálogo no observada/);
+  assert.doesNotMatch(message, /Archivo de origen publicado/);
+  assert.throws(() => priceUpdateDetails(coverage, { ...acquisition, dateBasis: 'download_time' }), /no acredita/);
+});

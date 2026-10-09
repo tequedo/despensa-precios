@@ -1,6 +1,26 @@
 plugins {
     id 'com.android.application'
 }
+
+// Review bundles remain unsigned. A signed build is a separate, explicit
+// operation with an owner-controlled upload key; never reuse the debug key.
+def signedRelease = providers.gradleProperty('rindecasaSignedRelease').orNull == 'true'
+def releaseInputs = [:]
+if (signedRelease) {
+    ['RINDECASA_UPLOAD_KEYSTORE', 'RINDECASA_UPLOAD_STORE_PASSWORD',
+     'RINDECASA_UPLOAD_KEY_ALIAS', 'RINDECASA_UPLOAD_KEY_PASSWORD'].each { name ->
+        def value = System.getenv(name)
+        if (!value) throw new GradleException("Missing release input: ${name}")
+        releaseInputs[name] = value
+    }
+    if (System.getenv('RINDECASA_APPLICATION_ID_CONFIRMED') != 'ar.rindecasa.app')
+        throw new GradleException('Confirm the final application ID before signing')
+    if (releaseInputs.RINDECASA_UPLOAD_KEY_ALIAS.equalsIgnoreCase('androiddebugkey'))
+        throw new GradleException('The Android debug key is not a release key')
+    if (!file(releaseInputs.RINDECASA_UPLOAD_KEYSTORE).isFile())
+        throw new GradleException('The owner-controlled upload keystore is unavailable')
+}
+
 android {
     namespace 'ar.rindecasa.app'
     compileSdk 36
@@ -13,11 +33,20 @@ android {
         versionName '0.1.0'
     }
 
+    signingConfigs {
+        if (signedRelease) {
+            upload {
+                storeFile file(releaseInputs.RINDECASA_UPLOAD_KEYSTORE)
+                storePassword releaseInputs.RINDECASA_UPLOAD_STORE_PASSWORD
+                keyAlias releaseInputs.RINDECASA_UPLOAD_KEY_ALIAS
+                keyPassword releaseInputs.RINDECASA_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
-            // Upload signing and Play App Signing are configured before any Play submission.
-            // Never use the debug key for a production release.
+            if (signedRelease) signingConfig signingConfigs.upload
         }
     }
     compileOptions {

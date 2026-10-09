@@ -8,8 +8,12 @@ on:
       - "update-san-juan.mjs"
       - "sepa-provenance.mjs"
       - "sepa-official.mjs"
+      - "sepa-daily-archive.mjs"
       - "sepa-source.mjs"
       - "price-update-message.mjs"
+      - "price-access-diagnostic.mjs"
+      - "scripts/diagnose-price-access.mjs"
+      - "tests/price-access-diagnostic.test.mjs"
       - "tests/sepa-source.test.mjs"
       - "tests/price-update-message.test.mjs"
       - "product-identity.mjs"
@@ -22,6 +26,7 @@ on:
       - "scripts/sepa_archive.py"
       - "tests/sepa-provenance.test.mjs"
       - "tests/sepa-official.test.mjs"
+      - "tests/sepa-daily-archive.test.mjs"
       - "tests/test_sepa_archive.py"
       - "scripts/push-generated-data.sh"
       - "scripts/push-update-diagnostics.sh"
@@ -36,6 +41,10 @@ on:
       - "tests/meat-matcher.test.mjs"
       - "verify-retailer-promotions.mjs"
       - "verify-wallet-benefits.mjs"
+      - "bank-promotion-discovery.mjs"
+      - "promotion-coverage.mjs"
+      - "tests/bank-promotion-discovery.test.mjs"
+      - "tests/promotion-coverage.test.mjs"
       - "tests/wallet-benefits.test.mjs"
       - "notify-completed.mjs"
       - "notification-receipt.mjs"
@@ -80,8 +89,9 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
 
       - name: Recolectar precios SEPA y comprobar la fuente seleccionada
+        id: acquisition
         env:
-          # Own acquisition first; fallback retains its explicit replica identity.
+          # Official catalog, published daily ZIP, then a disclosed validated replica.
           SEPA_SOURCE: auto
           SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-originals
           NATIONAL_EXPORT: "1"
@@ -138,6 +148,7 @@ jobs:
 
       - name: Verificar promociones en páginas oficiales
         env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
           PROMOTIONS_FILE: data/san-juan-promotions.json
           RETAILER_REPORT_FILE: data/retailer-promotion-sources.json
           RETAILER_VERIFIED_FILE: data/retailer-promotions-verified.json
@@ -174,7 +185,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/sepa-provenance.json data/sepa-import-quality.json data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json
+          git add data/sepa-provenance.json data/sepa-import-quality.json data/national data/national-geography-audit.json data/san-juan.ndjson data/san-juan-quarantine.ndjson data/san-juan-promotions.json data/retailer-promotion-sources.json data/retailer-promotions-verified.json data/wallet-benefit-sources.json data/wallet-benefit-candidates.json data/wallet-benefits-verified.json data/promotion-matrix.json
           if git diff --cached --quiet; then
             echo "No hubo cambios en los precios."
           else
@@ -183,10 +194,32 @@ jobs:
           fi
 
       - name: Comprobar que la app lee la actualización publicada
+        id: app_smoke
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
         run: node tests/price-refresh-smoke.mjs
+
+      - name: Diagnosticar acceso, ChangoMás y cobertura aunque falle SEPA
+        if: ${{ always() && !cancelled() }}
+        env:
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+          ACQUISITION_OUTCOME: ${{ steps.acquisition.outcome }}
+          SMOKE_OUTCOME: ${{ steps.app_smoke.outcome }}
+          NOTIFICATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/diagnose-price-access.mjs
+
+      - name: Conservar diagnóstico y continuidad diaria
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acceso-precios-${{ github.run_id }}
+          path: |
+            data/price-access-report.json
+            data/price-refresh-history.json
+            data/sepa-update-attempt.json
+          if-no-files-found: warn
+          retention-days: 90
 
       - name: Conservar comprobación de lectura en la app
         if: always()

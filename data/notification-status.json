@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24T13:54:16.930Z",
+  "checkedAt": "2026-10-09T22:04:56.072Z",
   "success": true,
   "kind": "sepa",
   "accepted": true,
@@ -7,10 +7,10 @@
   "notified": false,
   "notificationStatus": "recorded_for_daily_summary",
   "deliveryConfirmed": false,
-  "priceCount": 22505,
+  "priceCount": 21876,
   "promotionCount": 0,
   "promotionsChanged": true,
-  "walletBenefitCount": 2,
+  "walletBenefitCount": 1,
   "calculableWalletBenefitCount": 0,
   "walletBenefitsChanged": true,
   "processes": [

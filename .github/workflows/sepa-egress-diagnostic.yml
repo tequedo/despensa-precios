@@ -1,0 +1,81 @@
+name: Diagnosticar IP pública y acceso SEPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/sepa-egress-diagnostic.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sepa-egress-diagnostic
+  cancel-in-progress: false
+
+jobs:
+  diagnosticar:
+    # Un runner propio con salida fija puede seleccionarse sin cambiar el diagnóstico.
+    runs-on: ${{ vars.SEPA_RUNNER || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    steps:
+      - name: Medir salida pública y consultar SEPA desde el mismo proceso automático
+        env:
+          SELECTED_RUNNER: ${{ vars.SEPA_RUNNER || 'ubuntu-latest' }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import datetime, ipaddress, json, os, subprocess, pathlib
+
+          def request(url, timeout=25):
+              result = subprocess.run(
+                  ["curl", "--ipv4", "--noproxy", "*", "--proto", "=https",
+                   "--silent", "--show-error", "--connect-timeout", "10",
+                   "--max-time", str(timeout), "--write-out", "\n%{http_code}", url],
+                  capture_output=True, text=True, timeout=timeout + 5)
+              if result.returncode:
+                  return {"ok": False, "error": result.stderr.strip()[:500]}
+              body, status = result.stdout.rsplit("\n", 1)
+              return {"ok": True, "status": int(status), "body": body}
+
+          report = {
+              "checkedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "repository": os.environ["GITHUB_REPOSITORY"],
+              "runId": os.environ["GITHUB_RUN_ID"],
+              "runUrl": "https://github.com/" + os.environ["GITHUB_REPOSITORY"] + "/actions/runs/" + os.environ["GITHUB_RUN_ID"],
+              "runnerSelection": os.environ["SELECTED_RUNNER"],
+              "publicIpv4": None,
+              "ipMeasurementFailures": [],
+              "fixedIpVerified": False,
+              "note": "IP medida en esta ejecución. La medición por sí sola no garantiza una IP fija ni autorización de SEPA."
+          }
+          for endpoint in ("https://api.ipify.org", "https://checkip.amazonaws.com"):
+              response = request(endpoint)
+              try:
+                  candidate = response.get("body", "").strip()
+                  address = ipaddress.ip_address(candidate)
+                  if not response.get("ok") or response.get("status") != 200 or address.version != 4 or not address.is_global:
+                      raise ValueError("No se obtuvo una IPv4 pública válida")
+                  report["publicIpv4"] = str(address)
+                  report["ipMeasurementEndpoint"] = endpoint
+                  break
+              except ValueError as error:
+                  report["ipMeasurementFailures"].append({"endpoint": endpoint, "error": response.get("error", str(error))})
+          endpoint = "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios"
+          response = request(endpoint)
+          report["officialMetadata"] = {"url": endpoint, "status": response.get("status"), "transportError": response.get("error")}
+          output = pathlib.Path(os.environ["RUNNER_TEMP"]) / "sepa-egress-diagnostic.json"
+          output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("SEPA_EGRESS_EVIDENCE=" + json.dumps(report, ensure_ascii=False, separators=(",", ":")))
+          if report["publicIpv4"] is None:
+              raise SystemExit("No se midió una IPv4 pública; no comunicar una dirección no verificada.")
+          PY
+
+      - name: Conservar evidencia de la IP y de la consulta oficial
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sepa-egress-diagnostic-${{ github.run_id }}
+          path: ${{ runner.temp }}/sepa-egress-diagnostic.json
+          retention-days: 90
+          if-no-files-found: warn

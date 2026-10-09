@@ -1,7 +1,8 @@
 import {discoverBankPromotion} from './bank-promotion-discovery.mjs';
+import { buildPromotionMatrix } from './promotion-coverage.mjs';
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { pathToFileURL } from "node:url";
 import { promisify } from "node:util";
@@ -11,6 +12,7 @@ const execFileAsync = promisify(execFile);
 const reportFile = process.env.WALLET_REPORT_FILE ?? "data/wallet-benefit-sources.json";
 const candidatesFile = process.env.WALLET_CANDIDATES_FILE ?? "data/wallet-benefit-candidates.json";
 const verifiedFile = process.env.WALLET_VERIFIED_FILE ?? "data/wallet-benefits-verified.json";
+const matrixFile = process.env.PROMOTION_MATRIX_FILE ?? "data/promotion-matrix.json";
 const selectedSourceIds = new Set(
   String(process.env.WALLET_SOURCE_IDS ?? "")
     .split(",")
@@ -798,9 +800,19 @@ async function run() {
   }
 
   const verified = candidates.filter((item) => item.status === "verified");
+  const optionalReport = async path => {
+    try { return JSON.parse(await readFile(path, 'utf8')); }
+    catch (error) { if (error.code === 'ENOENT') return null; throw error; }
+  };
+  const [retailerReport, retailerVerified] = await Promise.all([
+    optionalReport(process.env.RETAILER_REPORT_FILE ?? 'data/retailer-promotion-sources.json'),
+    optionalReport(process.env.RETAILER_VERIFIED_FILE ?? 'data/retailer-promotions-verified.json'),
+  ]);
+  const matrix = buildPromotionMatrix({ generatedAt: checkedAt, sources: report, candidates, retailerReport, retailerVerified });
   await Promise.all(
-    [reportFile, candidatesFile, verifiedFile].map((path) => mkdir(dirname(path), { recursive: true })),
+    [reportFile, candidatesFile, verifiedFile, matrixFile].map((path) => mkdir(dirname(path), { recursive: true })),
   );
+  await writeFile(matrixFile, `${JSON.stringify(matrix, null, 2)}\n`);
   await writeFile(
     reportFile,
     `${JSON.stringify({ generatedAt: checkedAt, scope: "Argentina; alcance sujeto a cada promoción", sources: report }, null, 2)}\n`,
@@ -833,6 +845,8 @@ async function run() {
       reportFile,
       candidatesFile,
       verifiedFile,
+      matrixFile,
+      auditableForCalculation: matrix.summary.auditableForCalculation,
     }),
   );
 }
