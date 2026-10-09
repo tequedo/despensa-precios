@@ -102,6 +102,36 @@ test('two runs on one day do not count as two daily updates; consecutive dates d
   assert.equal(history.twoConsecutiveDaysConfirmed, true);
   assert.equal(history.step1Complete, true);
 });
+
+test('seven-day stabilization is separate from initial recovery and never counts retries or gaps', () => {
+  let history = null;
+  for (let i = 0; i < 7; i++) {
+    const attempt = confirmedAttempt(now + i * 86400_000);
+    attempt.acquisition.sourceType = 'replica';
+    attempt.acquisition.status = 'replica_integrity_checked';
+    history = recordDailyRefresh(history, attempt);
+    history = recordDailyRefresh(history, { ...attempt, now: attempt.now + 60_000 });
+    assert.equal(history.consecutiveDaysConfirmed, i + 1);
+    assert.equal(history.stabilizationComplete, i === 6);
+    assert.equal(history.officialChannelRestored, false);
+  }
+  assert.equal(history.days.length, 7);
+  const failed = confirmedAttempt(now + 6 * 86400_000 + 120_000);
+  failed.acquisitionOutcome = 'failure';
+  history = recordDailyRefresh(history, failed);
+  assert.equal(history.sevenConsecutiveDaysConfirmed, true);
+  assert.equal(history.stabilizationComplete, false);
+  history = recordDailyRefresh(history, confirmedAttempt(now + 8 * 86400_000));
+  assert.equal(history.consecutiveDaysConfirmed, 1);
+  assert.equal(history.stabilizationComplete, false);
+});
+test('a supplied ZIP match is not an independently authenticated official comparison', () => {
+  const attempt = confirmedAttempt(now);
+  attempt.acquisition.originalComparison = { status: 'matched', originalOrigin: 'provided_file_not_independently_authenticated' };
+  assert.equal(recordDailyRefresh(null, attempt).latestAttempt.independentlyComparedWithOfficial, false);
+  attempt.acquisition.originalComparison.originalOrigin = 'official_https_download';
+  assert.equal(recordDailyRefresh(null, attempt).latestAttempt.independentlyComparedWithOfficial, true);
+});
 test('a direct daily archive requires an official origin and actual internal day before confirming recovery', () => {
   const attempt = confirmedAttempt(now);
   attempt.acquisition = { ...attempt.acquisition, status: 'official_archive_content_checked',

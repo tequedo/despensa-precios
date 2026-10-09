@@ -112,13 +112,31 @@ export function recordDailyRefresh(history, { diagnostic, acquisition, smoke, ac
     && positiveChecks.length > 0 && positiveChecks.every(c => c.generation === diagnostic.unfiltered?.generation);
   const current = { day, checkedAt: new Date(now).toISOString(), confirmed, sourceDate,
     sourceType: acquisition?.sourceType ?? null, revisionId: acquisition?.officialResource?.revision_id ?? null,
-    appGeneration: diagnostic?.unfiltered?.generation ?? null, runUrl };
+    appGeneration: diagnostic?.unfiltered?.generation ?? null, runUrl,
+    jurisdictionsWithCurrentPrices: diagnostic?.provinces?.filter(p => p.appSourceStatus === 'current' && p.appStores > 0).length ?? null,
+    physicalStores: diagnostic?.provinces?.reduce((sum, p) => sum + (p.appStores ?? 0), 0) ?? null,
+    changomasBranchesConfirmed: diagnostic?.changomas?.filter(s => s.reason === 'visible' && s.currentDayQuoteConfirmed).length ?? null,
+    independentlyComparedWithOfficial: acquisition?.originalComparison?.status === 'matched'
+      && acquisition.originalComparison.originalOrigin === 'official_https_download' };
   const days = (history?.days ?? []).filter(d => d.day !== day || !confirmed && d.confirmed);
   // A later failed retry must remain visible without erasing a successful daily observation.
   if (confirmed || !days.some(d => d.day === day)) days.push(current);
   days.sort((a, b) => a.day.localeCompare(b.day));
   const previous = new Date(Date.parse(day + 'T00:00:00Z') - 86400_000).toISOString().slice(0, 10);
   const twoConsecutiveDaysConfirmed = days.some(d => d.day === previous && d.confirmed) && days.some(d => d.day === day && d.confirmed);
+  // Count calendar days, never executions. A gap or a future date cannot
+  // turn an intermittent feed into a proven daily service.
+  let consecutiveDaysConfirmed = 0;
+  for (let offset = 0; offset < 14; offset++) {
+    const date = new Date(Date.parse(day + 'T00:00:00Z') - offset * 86400_000).toISOString().slice(0, 10);
+    if (!days.some(d => d.day === date && d.confirmed)) break;
+    consecutiveDaysConfirmed++;
+  }
   return { schemaVersion: 1, checkedAt: current.checkedAt, latestAttempt: current,
-    twoConsecutiveDaysConfirmed, step1Complete: confirmed && twoConsecutiveDaysConfirmed, days: days.slice(-14) };
+    twoConsecutiveDaysConfirmed, step1Complete: confirmed && twoConsecutiveDaysConfirmed,
+    stabilizationGoalDays: 7, consecutiveDaysConfirmed,
+    sevenConsecutiveDaysConfirmed: consecutiveDaysConfirmed >= 7,
+    stabilizationComplete: confirmed && consecutiveDaysConfirmed >= 7,
+    officialChannelRestored: confirmed && ['official_original', 'official_daily_archive'].includes(current.sourceType),
+    days: days.slice(-14) };
 }

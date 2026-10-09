@@ -22,5 +22,7 @@ const history = recordDailyRefresh(await optionalJson('data/price-refresh-histor
 await writeFile('data/price-refresh-history.json', JSON.stringify(history, null, 2) + '\n');
 console.log(JSON.stringify({ diagnosticCompleted: diagnostic.completed, freshTestProfile: diagnostic.freshTestProfile,
   priceRefreshRestored: diagnostic.priceRefreshRestored, twoConsecutiveDaysConfirmed: history.twoConsecutiveDaysConfirmed,
-  step1Complete: history.step1Complete, changomas: diagnostic.changomas }));
+  step1Complete: history.step1Complete, consecutiveDaysConfirmed: history.consecutiveDaysConfirmed,
+  stabilizationGoalDays: history.stabilizationGoalDays, stabilizationComplete: history.stabilizationComplete,
+  officialChannelRestored: history.officialChannelRestored, changomas: diagnostic.changomas }));
 if (!diagnostic.completed) process.exitCode = 1;

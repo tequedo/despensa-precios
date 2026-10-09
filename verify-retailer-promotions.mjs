@@ -32,7 +32,7 @@ const signature = item => normalize(`${item.product} ${item.brand ?? ""}`).split
 const recent = observedAt => Number.isFinite(new Date(observedAt).getTime()) && Date.now() - new Date(observedAt).getTime() <= maxAgeHours * 3600000;
 
 async function renderedHtml(url) {
-  const browsers = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"];
+  const browsers = [process.env.CHROME_PATH, "google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].filter(Boolean);
   let lastError;
   for (const browser of browsers) {
     try {
