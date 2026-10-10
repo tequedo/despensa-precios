@@ -49,6 +49,14 @@ Revisión incorporada el 10 de octubre de 2026: [acciones y criterios de cierre]
 
 La preparación sigue pendiente de revisión jurídica y pruebas documentadas. No se presentan registros ni se publican textos legales definitivos por este cambio.
 
+## 7. Controles legales preparados y web publicada el 10/10
+
+La web 137 (commit `a943af13f6b5f0cc6591b65797c88ca667e5704c`) incorpora páginas públicas de privacidad, licencias, información del servicio y solicitudes, enlace de eliminación desde Mi cuenta, recibo privado y panel del titular. La compilación y 166 pruebas pasaron. No hubo prueba física Android ni recepción real nueva comprobada en producción.
+
+El expediente técnico, borradores de términos/privacidad/acuerdo publicitario y procedimiento están en [el dossier](../legal/ESTADO_LEGAL.md). Se conservaron avisos de terceros; las 89 fotos externas sin permiso documentado quedan ocultas. Los anuncios requieren además referencia de acuerdo y autorización de materiales, sin alterar el ranking ni verificar automáticamente un pago.
+
+**Eliminación integral y textos definitivos siguen pendientes.** Registrar una solicitud no elimina datos ni copias de proveedores; el panel impide simular un cierre de borrado. No declarar este requisito de Play cumplido sólo porque existe una URL. INPI/DNDA continúan sin presentación nueva acreditada. No se firman, pagan ni presentan por este cambio.
+
 ## Cierre por evidencia
 
 | Frente | Evidencia de cierre | Pendiente |

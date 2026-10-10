@@ -1,25 +1,27 @@
-# Inventario previo a Seguridad de los datos
+# RINDECASA — inventario previo a Seguridad de los datos
 
-Revisión de código de la app web, 2 de octubre de 2026. Es un documento de trabajo, no una política pública ni una declaración enviada a Google. Debe completarse con proveedores contratados, conservación efectiva y pruebas de eliminación.
+Revisión ampliada de fuente web al 10/10/2026, web 137, commit `a943af13f6b5f0cc6591b65797c88ca667e5704c`. Documento de trabajo; no es política definitiva ni declaración enviada a Google. [Mapa detallado](../legal/PRIVACIDAD_DATOS_BORRADOR.md).
 
-| Datos observados | Uso y recorrido observados | Verificación antes de declarar |
+| Datos observados | Uso/control | Pendiente antes de declarar |
 |---|---|---|
-| Nombre de perfil, identificador de perfil y, al vincular, ID/correo/nombre autenticados | Perfil invitado con cookie opaca; vinculación opcional a la identidad autenticada; base de datos del producto | Identificar responsable, base legal, duración de cookies y separación entre borrar datos de esta app y borrar una cuenta de ChatGPT |
-| Inventario, compras, cantidades, consumos e imágenes elegidas para productos | Datos por perfil guardados en la base; algunas imágenes se guardan como datos del producto | Incluir contenido del usuario y compras según las categorías de Play; fijar retención y eliminar relaciones asociadas |
-| Provincia, localidad, latitud y longitud | Selección guardada en el navegador; coordenadas enviadas al backend para ubicación/comparación | Auditar servicio de geocodificación, registros de servidor y qué ubicación es precisa o aproximada; ofrecer selección manual |
-| Fotos y texto para reconocer productos | La ruta del asistente envía imágenes/texto a OpenAI; `store:false` en Responses no demuestra por sí solo ausencia de retención del proveedor | Declarar procesamiento remoto; confirmar contratos, retención real y comportamiento cuando se deniega permiso |
-| Audio grabado o elegido | La ruta de transcripción envía el archivo a OpenAI | Informar proveedor y finalidad antes del uso; confirmar plazos, permisos y que cancelar detenga la captura |
-| Actividad de acceso y uso | El código de notificaciones registra identificador de dispositivo, país, agente del navegador, nombre/identificadores, funciones usadas, resultado y códigos técnicos | Revisar necesidad de cada campo, proveedor de correo/infraestructura, destinatario de avisos y conservación |
-| Reclamos y respuestas | Descripción, categoría, producto/sucursal opcionales, correo opcional, localidad/provincia, pantalla, fecha y respuesta; aislamiento por perfil y panel del titular | Informar finalidad y conservación; incorporar también a la eliminación de datos del perfil |
+| Cuenta, ID, nombre y correo disponibles; perfil invitado | Vinculación en account_profiles; cookie opaca, separación por cuenta | Responsable/contacto, retención; suprimir vínculo y evitar acceso con cookie antigua sin borrar ChatGPT |
+| Inventario, fotos guardadas, compras, cantidades, consumo y listas | Base por perfil | Borrado completo de relaciones, fotografías y copias locales |
+| Memoria de productos/marcas, preferencias y favoritos | Persistencia por perfil y controles de borrado/desactivación | El opt-out y borrado de memoria no equivalen a eliminación total |
+| Provincia, localidad, coordenadas | Selección manual o GPS; copia del navegador; consulta Georef | Proveedores, logs y precisión/retención; no presumir procesamiento sólo en Argentina |
+| Foto/texto/audio para reconocimiento | OpenAI o servicio de voz del navegador según método; aviso antes de captura y alternativa manual | Contratos, transferencias y plazos; store:false no prueba retención cero |
+| Accesos, dispositivo, país, agente, actividad y errores | Diagnóstico, avisos y resúmenes operativos | Necesidad, destinatarios, proveedor de correo y copias externas ya entregadas |
+| Feedback y solicitudes de derechos/usuarios/anunciantes | market_reports; referencias privadas de perfil/cuenta en JSON; hash del recibo, respuesta y evidencia | Atención real, plazos legales, conservación, recuperación de recibos y supresión vinculada por JSON |
+| Consulta comercial: comercio/contacto/localidad/nota | Permiso específico de contacto; retiro mediante secreto separado | Retención efectiva; no usar para marketing general |
+| Campañas y referencias de acuerdo/materiales | Sólo panel del titular conserva referencias; pieza pública limitada | Documentos privados y aceptación; no publicar contratos ni identificación personal |
+| Métricas publicitarias | Deduplicación sesión/evento/día; payload campaña/día/evento, hash en ID | No son ventas/personas únicas ni certificado antifraude; fijar retención |
+| Lista offline/localidad/sesión en navegador | Copias locales con finalidad concreta | Explicar y probar borrado en cada dispositivo; solicitud al servidor no elimina copias exportadas |
 
-El permiso concedido al navegador no sustituye la información de privacidad ni la declaración de Google Play. Tampoco se debe marcar “no recopilamos datos” solo porque Android funciona mediante una TWA.
+## Solicitud implementada, eliminación pendiente
 
-## Diseño pendiente de eliminación
+[URL pública](https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/legal/eliminar-cuenta) y enlace desde Mi cuenta publicados en web 137. Canal probado localmente para registrar y seguir pedidos. El correo escrito no demuestra control de perfil. Una recepción no se presenta como borrado: no hay ejecución integral auditada y el panel bloquea resolver artificialmente el pedido.
 
-1. Ofrecer la solicitud dentro de Mi cuenta y desde una página web pública accesible desde la ficha de Play.
-2. Verificar identidad/control del perfil sin aceptar el nombre escrito como autenticación.
-3. Mostrar qué se elimina; pedir una confirmación específica al usuario antes de una operación irreversible.
-4. Cubrir vínculos de cuenta, inventario, compras, consumos, listas, imágenes, actividad y reclamos. Identificar previamente cualquier conservación legal y explicarla.
-5. Probar que un perfil no puede borrar a otro; que la eliminación no expone datos mediante cookies antiguas; y documentar tratamiento de respaldos y solicitudes.
+Falta proteger contra escrituras en vuelo/recreación, cubrir todas las tablas y referencias JSON, separar retención legal justificada, verificar respaldos, correos/proveedores y copias locales. No ejecutar borrados de usuarios reales como prueba. No declarar a Play que el requisito está cumplido por la mera URL.
 
-Fuente de requisitos: [eliminación de cuentas de Google Play](https://support.google.com/googleplay/android-developer/answer/13327111). No hay en esta preparación un flujo completo implementado ni una política definitiva publicada.
+Completar responsable/domicilio/contacto, entidades proveedoras, retención y transferencias; política definitiva y formulario de Play deben corresponder al funcionamiento real. La TWA y el permiso de cámara no permiten afirmar que no se recopilan datos.
+
+Fuentes: [Google Play, eliminación](https://support.google.com/googleplay/android-developer/answer/13327111) y [AAIP, derechos](https://www.argentina.gob.ar/aaip/datospersonales/derechos), consultadas el 10/10/2026.
