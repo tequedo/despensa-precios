@@ -10,7 +10,9 @@ Fecha: 10/10/2026. Estado: preparación técnica; sin presentación, pago ni dec
 
 **Calificación a confirmar:** software de aplicación; implementación web y contenedor Android en desarrollo. No declarar que Android está publicado.
 
-**Versión técnica disponible como punto de partida:** web 136, commit `678d1a704941fe24c48608784ebdae3487e06fe3`. El manifiesto `software-v136-provenance.json` contiene 296 archivos y hashes SHA-256; excluye secretos, configuraciones privadas y grandes datos externos. La versión siguiente debe conservar su propio commit y su copia íntegra. El manifiesto no reemplaza una copia completa para el depósito.
+**Versión histórica de referencia:** web 136, commit `678d1a704941fe24c48608784ebdae3487e06fe3`. El manifiesto `software-v136-provenance.json` contiene 296 archivos y hashes SHA-256 y no es una copia completa para depósito.
+
+**Copia completa preparada en esta revisión:** `scripts/prepare-software-deposit.py` genera un ZIP de todos los archivos fuente seguidos por Git en el commit elegido, un manifiesto de hashes por archivo y un resumen con hash del ZIP. Exige fuente confirmada y limpia, comprueba cada archivo del ZIP contra el manifiesto y bloquea nombres de posibles credenciales y claves privadas. El resumen externo identifica el commit efectivo; no adelantarlo en este documento. No incluye bases de usuarios, dependencias instaladas ni secretos. Conserva lockfile, instrucciones y avisos. Los datos externos que formen parte del árbol quedan identificados como terceros, sin reivindicación de exclusividad. Android está en otro repositorio y no forma parte de esta copia web. Confirmar con la DNDA el formato y alcance de depósito exigidos; copiar no presenta ni registra.
 
 **Titular del proyecto indicado actualmente:** Aníbal Pringles. Deben confirmarse el titular jurídico del derecho, aportes originales, proporciones y documentos. Este rótulo no basta para acreditarlos.
 
@@ -37,4 +39,8 @@ La DNDA exige copia completa e identificación de obra, autor/coordinador y titu
 
 ## Registro de decisión pendiente
 
-No constan declaración validada de autoría, cadena de cesiones, porcentajes ni datos completos del presentante. No se acredita expediente DNDA. El nombre RINDECASA se tramita separadamente ante INPI: búsquedas fonéticas y borradores de marca no equivalen a presentación ni concesión.
+No constan declaración validada de autoría, cadena de cesiones ni porcentajes de aportes humanos. Los datos del titular propuesto y los borradores marcarios fueron recuperados por un canal privado; no deben copiarse al repositorio público. No se acredita expediente DNDA. El nombre RINDECASA se tramita separadamente ante INPI: búsquedas fonéticas e informes de antecedentes fechados el 15/09/2026 no equivalen a presentación ni concesión. Deben revisarse los antecedentes y el estado registral actual antes de presentar.
+
+La Ley 11.723 comprende código fuente y objeto y protege la expresión, no la idea o el método en sí (art. 1). La inscripción de obra publicada requiere atención a los arts. 57 a 63; no describirla como opcional o una garantía de no infracción. Fuente: [texto actualizado oficial](https://www.argentina.gob.ar/normativa/nacional/norma-42755/actualizacion), consulta 10/10/2026.
+
+Los [términos actuales de OpenAI para usuarios individuales](https://openai.com/policies/row-terms-of-use/), vigentes desde 01/01/2026, asignan los derechos que OpenAI pueda tener en Output entre las partes y dentro de la ley aplicable; advierten que los resultados pueden no ser únicos y separan material de terceros. Esa regla no identifica por sí sola al autor humano ni certifica exclusividad, originalidad o derechos sobre bibliotecas. Corroborar qué contrato y versión regían cada aporte, incluyendo servicios empresariales o API cuando correspondan.

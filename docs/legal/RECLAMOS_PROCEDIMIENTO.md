@@ -25,7 +25,7 @@ La AAIP informa 10 días corridos para contestar acceso y 5 días hábiles para 
 
 Para eliminar: verificar perfil y cuenta, detener nuevas escrituras vinculadas, inventariar dependencias, suprimir datos propios y comprobar que no se recrean por solicitudes en vuelo o cookies antiguas. Incluir inventario, compras/consumo, listas, favoritos, preferencias, memoria, fotos, accesos, actividad, avisos y reclamos vinculados por referencia. Revisar copias locales de cada dispositivo, respaldos y correos ya entregados. Gestionar proveedores y documentar sólo la conservación limitada que tenga motivo y plazo válidos. No eliminar la cuenta de ChatGPT.
 
-Este flujo integral aún está pendiente. No ejecutar borrados parciales sobre usuarios reales como prueba, ni informar a Play que está terminado. El registro de reclamos usa `market_reports` y puede referenciar el perfil dentro del JSON; un borrado por `owner_id` solo no lo cubriría.
+El flujo integral de copias externas aún está pendiente. La web 138 publicó un borrado atómico de la base activa que incluye referencias JSON de reclamos y revocación del perfil; las pruebas automatizadas cubren aislamiento, reversión ante fallos y solicitudes antiguas. No ejecutar borrados sobre usuarios reales como prueba ni informar a Play que la revisión de todas las copias externas está terminada. El registro de reclamos usa `market_reports` y puede referenciar el perfil dentro del JSON; un borrado por `owner_id` solo no lo cubriría.
 
 ## Denunciante, usuario y anunciante
 

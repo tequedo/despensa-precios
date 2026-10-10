@@ -16,12 +16,14 @@ Revisión ampliada de fuente web al 10/10/2026, web 137, commit `a943af13f6b5f0c
 | Métricas publicitarias | Deduplicación sesión/evento/día; payload campaña/día/evento, hash en ID | No son ventas/personas únicas ni certificado antifraude; fijar retención |
 | Lista offline/localidad/sesión en navegador | Copias locales con finalidad concreta | Explicar y probar borrado en cada dispositivo; solicitud al servidor no elimina copias exportadas |
 
-## Solicitud implementada, eliminación pendiente
+## Eliminación activa publicada y copias externas pendientes
 
-[URL pública](https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/legal/eliminar-cuenta) y enlace desde Mi cuenta publicados en web 137. Canal probado localmente para registrar y seguir pedidos. El correo escrito no demuestra control de perfil. Una recepción no se presenta como borrado: no hay ejecución integral auditada y el panel bloquea resolver artificialmente el pedido.
+La web 138 publicó la preparación del borrado, confirmación específica y eliminación atómica de la base activa por perfil controlado. Incluye relaciones de inventario, compras, consumo, listas, memoria, preferencias, dispositivos, actividad y referencias JSON de reclamos. Revoca el perfil e impide escrituras antiguas; ante fallo revierte toda la operación. Se limpian las copias locales conocidas del navegador que confirma, si su almacenamiento lo permite.
 
-Falta proteger contra escrituras en vuelo/recreación, cubrir todas las tablas y referencias JSON, separar retención legal justificada, verificar respaldos, correos/proveedores y copias locales. No ejecutar borrados de usuarios reales como prueba. No declarar a Play que el requisito está cumplido por la mera URL.
+La web 139 sigue mostrando y probando ese alcance: 175 pruebas locales aprobadas. No se borró una cuenta real como prueba. El recibo separa base activa eliminada de supresión integral y conserva seguimiento privado. La solicitud asistida no ejecuta el borrado por sí sola. No se elimina ChatGPT ni las copias de otro teléfono desde este navegador.
 
-Completar responsable/domicilio/contacto, entidades proveedoras, retención y transferencias; política definitiva y formulario de Play deben corresponder al funcionamiento real. La TWA y el permiso de cámara no permiten afirmar que no se recopilan datos.
+Falta confirmar retención del recibo/guardia de revocación y completar respaldos, correos, proveedores, otros dispositivos y excepciones legales específicas. No declarar a Play eliminación integral ni cumplimiento global por la URL o las pruebas parciales.
+
+Completar responsable/domicilio/contacto, proveedores, retención y transferencias; política definitiva y formulario de Play deben corresponder al tratamiento real. Los datos privados recuperados del titular no se publican en este repositorio. La TWA y el permiso de cámara no permiten afirmar que no se recopilan datos.
 
 Fuentes: [Google Play, eliminación](https://support.google.com/googleplay/android-developer/answer/13327111) y [AAIP, derechos](https://www.argentina.gob.ar/aaip/datospersonales/derechos), consultadas el 10/10/2026.

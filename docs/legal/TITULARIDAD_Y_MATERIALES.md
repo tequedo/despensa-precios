@@ -7,7 +7,7 @@ Fecha: 10/10/2026. Inventario verificable; no es un certificado de no infracció
 `scripts/audit-legal-materials.mjs` lee el lockfile, metadatos y textos instalados, sin declarar permisos que no encontró. Produce `DEPENDENCIAS.json`, `IMAGENES_Y_FUENTES.json`, `public/legal/license-summary.json` y `public/legal/THIRD_PARTY_NOTICES.txt`.
 
 - 878 entradas en el lockfile; 677 instaladas en el entorno de compilación.
-- 630 entradas instaladas con aviso encontrado y conservado; 276 textos distintos después de deduplicar por hash.
+- 630 entradas instaladas con aviso propio encontrado y conservado. La revisión ampliada conserva además 143 avisos de componentes incluidos dentro de otros paquetes; 341 textos distintos después de deduplicar por hash.
 - 47 entradas instaladas sin aviso propio localizado: comprobar aviso del paquete, licencia del repositorio, versión y posibles atribuciones antes de certificar distribución.
 - 201 entradas del lockfile no instaladas, incluidas variantes opcionales: examinar si otra plataforma las incorpora.
 
@@ -19,7 +19,9 @@ Se conservaron los avisos existentes de la tipografía Outfit y de componentes s
 
 Se encontraron 89 fotos externas del catálogo con enlaces y correspondencia de producto. No hay permisos de reproducción comprobados para ellas. El registro vacío `data/image-rights.mjs` impide exhibirlas hasta agregar una referencia auténtica del permiso, titular, uso comercial y vigencia. La autorización debe cubrir la foto exacta y su uso; identificar el SKU no es autorización. No se borraron datos de usuarios ni se afirmó que el material sea ilícito.
 
-Las fotos propias que suba un usuario siguen disponibles para el uso solicitado por ese usuario. Debe evitarse su reutilización en anuncios, catálogos o marketing sin autorización separada. Si contienen terceros identificables, se requiere revisar su tratamiento. Los archivos de iconos y marca gráfica requieren documentar origen y permisos; no hay evidencia suficiente para certificar su titularidad.
+Las fotos propias que suba un usuario siguen disponibles para el uso solicitado por ese usuario. Debe evitarse su reutilización en anuncios, catálogos o marketing sin autorización separada. Si contienen terceros identificables, se requiere revisar su tratamiento.
+
+Los antiguos icono y wordmark raster se retiran del directorio público por falta de documentación de origen. No se declara que sean ilícitos. La identidad visual actual usa recetas conservadas en `scripts/build-brand-icon.py` y `scripts/build-brand-wordmark.py`, sin imagen externa de entrada, y Outfit Bold con el TTF y SIL OFL retenidos. El inventario registra esos archivos y licencias. La trazabilidad no certifica autoría humana, exclusividad sobre formas genéricas ni registro de marca. La titularidad del signo denominativo y, en su caso, de una marca mixta se revisan por separado.
 
 ## Fuentes de datos y marcas referenciales
 

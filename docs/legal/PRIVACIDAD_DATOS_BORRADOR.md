@@ -35,7 +35,7 @@ Definir por categoría plazo, disparador, responsable, ejecución, respaldos y e
 
 ## 5. Acceso, corrección y eliminación
 
-Ruta pública y desde Mi cuenta: `/legal/eliminar-cuenta`. Se admite pedido sin reinstalar Android. La asociación a un perfil controlado ayuda a verificar; nombre/correo o recibo no acreditan control completo. Registro y seguimiento están implementados para probar; la ejecución integral de supresión aún está pendiente.
+Ruta pública y desde Mi cuenta: `/legal/eliminar-cuenta`. Se admite pedido sin reinstalar Android. La asociación a un perfil controlado ayuda a verificar; nombre/correo o recibo no acreditan control completo. La versión web 138 publicó la preparación y confirmación del borrado atómico de la base activa con revocación de perfil, recibo y limpieza de las copias locales conocidas del navegador que confirma. La solicitud asistida no ejecuta el borrado por sí sola. La ejecución integral, incluidos proveedores, respaldos y correos ya entregados, continúa pendiente. No se borró una cuenta real como prueba de esta revisión.
 
 El mapa debe incluir relaciones directas y referencias JSON, datos fuera de la base, respaldos, proveedores y correos. Añadir protección contra escrituras en vuelo, cookies antiguas y recuperación de datos borrados. Conservar sólo aquello con base válida y plazo informado. La eliminación RINDECASA no elimina la cuenta de ChatGPT ni archivos exportados o copias de otros teléfonos.
 

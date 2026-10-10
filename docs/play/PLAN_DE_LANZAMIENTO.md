@@ -57,6 +57,12 @@ El expediente técnico, borradores de términos/privacidad/acuerdo publicitario 
 
 **Eliminación integral y textos definitivos siguen pendientes.** Registrar una solicitud no elimina datos ni copias de proveedores; el panel impide simular un cierre de borrado. No declarar este requisito de Play cumplido sólo porque existe una URL. INPI/DNDA continúan sin presentación nueva acreditada. No se firman, pagan ni presentan por este cambio.
 
+## 8. Protección legal publicada en web 139
+
+La web 139, commit `3c11f4a07c71fb408d35b9ff808c2c5e33b386f6`, publicó identidad visual con origen documentado y avisos ampliados de licencias. Compilación y 175 pruebas aprobadas. Se preparó una copia íntegra de 347 archivos por commit para revisión del depósito DNDA. Su preparación no acredita registro ni autoría.
+
+La web 138 ya había publicado eliminación atómica de la base activa y revocación del perfil; su revisión externa y la política definitiva siguen pendientes. Las secciones sobre web 137 son antecedentes históricos. Consultar [protección legal actual](PROTECCION_LEGAL.md) e [inventario de datos actualizado](INVENTARIO_DE_DATOS.md) para los límites actuales. Los formularios privados no se incluyen en este repositorio. No hubo firma, pago, registro ni presentación en Play.
+
 ## Cierre por evidencia
 
 | Frente | Evidencia de cierre | Pendiente |
