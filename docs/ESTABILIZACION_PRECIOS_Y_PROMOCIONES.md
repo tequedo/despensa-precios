@@ -24,6 +24,16 @@ El verificador de ofertas por producto usa ahora la ruta de Chromium instalada p
 
 La actualización bancaria no renueva la fecha de un informe anterior de ofertas por producto. Si falta ese informe, la matriz lo declara. La cobertura nacional completa permanece `false` incluso si se revisan todas las fuentes seleccionadas.
 
+## Publicación de resultados sin interferencia
+
+El intento [38003105793](https://github.com/tequedo/despensa-precios/actions/runs/38003105793), del 9/10 a las 20:31 de Argentina, falló al sincronizar cuatro archivos generados de beneficios y la matriz: precios y beneficios se ejecutaban con grupos de concurrencia distintos. Ese fallo de publicación es distinto del bloqueo del canal oficial de SEPA. El intento [38003555658](https://github.com/tequedo/despensa-precios/actions/runs/38003555658) terminó correctamente a las 20:50 de ese día.
+
+La corrección preparada el 10/10 usa un grupo compartido para precios, beneficios y geografía, sin cancelar la ejecución activa y con `queue: max` para conservar hasta cien ejecuciones pendientes. Cada proceso comienza leyendo `main` después de esperar, evitando regenerar la matriz a partir de un catálogo previo. La actualización de beneficios utiliza el mismo publicador con reintentos de precios.
+
+Si un cambio ajeno al grupo compartido provoca un conflicto, el publicador falla y aborta la sincronización incompleta: conserva los cambios locales y los remotos y nunca fuerza la rama ni elige automáticamente un archivo de promociones. La evidencia de diagnóstico se conserva mediante los artefactos del workflow; no se promete que un commit local conflictivo pueda publicarse sin revisión.
+
+Una prueba con dos copias y un repositorio remoto local reproduce el conflicto y comprueba que ambas versiones y el informe local se conservan. La configuración de cola está documentada por [GitHub](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency). La prueba local y la configuración nueva no sustituyen las siete fechas de actualización efectiva.
+
 ## Criterios de cierre
 
 1. Estabilidad: siete fechas consecutivas confirmadas y último intento exitoso, conservando procedencia real y detalle de ChangoMás/cobertura. El acceso oficial se informa por separado.

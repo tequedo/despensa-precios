@@ -57,7 +57,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: precios-san-juan
+  # Prices, benefits and geography publish overlapping generated files.
+  group: rindecasa-datos-main
+  queue: max
   cancel-in-progress: false
 
 jobs:
