@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T17:24:21.848Z",
+  "generatedAt": "2026-10-10T20:54:47.423Z",
   "timezone": "America/Argentina/Buenos_Aires",
   "rule": "Una revisión diaria no garantiza cobertura completa; condiciones incompletas, contradictorias o vencidas nunca se aplican.",
   "completeCoverage": false,
@@ -24,7 +24,7 @@
       "source": "Mercado Pago — promociones públicas",
       "chain": null,
       "url": "https://promociones.mercadopago.com.ar/tipocat/supermercado/",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": true,
       "extractedCandidates": 0,
@@ -38,7 +38,7 @@
       "source": "ChangoMás / Más Online",
       "chain": "ChangoMás",
       "url": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": true,
       "extractedCandidates": 39,
@@ -52,7 +52,7 @@
       "source": "La Anónima",
       "chain": "La Anónima",
       "url": "https://www.laanonima.com.ar/",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": false,
       "extractedCandidates": 0,
@@ -66,7 +66,7 @@
       "source": "Vea",
       "chain": "Vea",
       "url": "https://www.vea.com.ar/descuentos-del-dia?type=por-banco",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": true,
       "extractedCandidates": 0,
@@ -80,7 +80,7 @@
       "source": "DIA",
       "chain": "DIA",
       "url": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": true,
       "extractedCandidates": 0,
@@ -94,7 +94,7 @@
       "source": "Carrefour",
       "chain": "Carrefour",
       "url": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "checkedToday": true,
       "reachable": true,
       "extractedCandidates": 33,
@@ -126,7 +126,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "87f88de0c26cef250fda3501e8157b2f13bba67bf1f3bef8f401b84e602b0704",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -165,7 +165,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "c5d6f7b15ddf5bb64d84277e5fbfa6a22fd13751f06256cfc3c93ce72d6210f1",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -214,7 +214,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "32861a0c4a8b72e93d556c78a45960883f37d0f94bdc260b46cffef44adb3c19",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -262,7 +262,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "deddc646b5d454f31127672481eb4af8c0316bddd53e8240bf40d225b1470e67",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -306,7 +306,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "bbaf14986a8afc3159021ec447b9f8f2f8fa1165948d6892ca97f0e35d20e2f6",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -348,7 +348,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "f8a558138aacab93f4f3c6049d2d25fd0b125ca72c6c0504a7c40f4f30cd5068",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -394,7 +394,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "f303991655ced3853ef174f0a2e9e39eba766ac622bb404b786bf5099e86d5b2",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -437,7 +437,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "5dd4646a9349bbeb22118dfc34c51e5b6515f55ce05699c457d9ebb703555e50",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -479,7 +479,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "32b6c0c1a2fd71a9b01052dcf3c68df967c15ad1181b22de46e3c7d02a711e88",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -520,7 +520,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "b42b213a30bbf874d9fe9a520bd8380954502fef25cf637c461252048d9ca20f",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -564,7 +564,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "0d167a04f4f1017380760cb2f3e703903ec4d6ada0edd8ab8b775d3372c30f4f",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -609,7 +609,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "32b6c0c1a2fd71a9b01052dcf3c68df967c15ad1181b22de46e3c7d02a711e88",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -658,7 +658,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "235cb58fb53e2c46c9c6922922b5518f25a954a4d8cbca57ea77cfa667dd8732",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -703,7 +703,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "9cdfe644aeebf4364737bae6d591d59b003b89e9f0a0a53b57c5f91a23420d7c",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -750,7 +750,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "fc6084634c56656352b23653dc944e361de3df74208561794b4f16d45339b1b6",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -793,7 +793,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "2cba95b03f9a3fc0c526c8903bc71542e7cc24da9336fbf94c4c8c0cedb38ccb",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -839,7 +839,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "35a0316137016bdbd3c0701333d15abb1c29a8abe717d7d1392b8e87cce547d8",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -884,7 +884,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "4456940e733f1de3e5ba49766f4f2fc2a2d125b83a295eb8c35e182df47ea760",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -931,7 +931,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "6844e9baa89df4fdd65b7e5b156a4d8ec6ae20b5b80018f2af69fdc72b9e71c1",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -978,7 +978,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "d1394d96ac099655ff8f6116899df04577d3c8b2ecbc3cbdcec7a1a05c7ca468",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1022,7 +1022,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "57b763c1b26d6bfff3e90cb9df47510cd71569a5b9c1d70e8d82429f776b39d9",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1066,7 +1066,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "ba1face9d44a65eb5120257501e28c8bf57e4ae82ac6fa7abca8c1cc00e66b07",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1108,7 +1108,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "461789fa0cd2e552285623a107692bd25cb6dfab2613365ad1311b4bb361dfbc",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1158,7 +1158,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "b40fa1b838fd9113c500ca02cea2e10c67ae41b3e0056733c453ee1202867259",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1202,7 +1202,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "ca20eb31808ae3bb4369bb26d6cf484214522e7d058e93724536f7c87f5fa61f",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1245,7 +1245,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "35a0316137016bdbd3c0701333d15abb1c29a8abe717d7d1392b8e87cce547d8",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1287,7 +1287,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "7c508d7b2d7a0d6808ec0ac54bb1c9a570ed64a8739b527b9034c566612d5f34",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1334,7 +1334,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "498e3ca8482ea0b05beeb8d38a32e3e57ea007c2149ae44e374d6a826367002e",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1379,7 +1379,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "32221175ebbbe8efe9f4314ac33f808a9ba5ee24a47844b6aa2a5b22a6bd8086",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1422,7 +1422,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "33ab68e95ac7a6baa6291524da072426d6faa1c04d993e2f599cbc787d29ac43",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1468,7 +1468,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "5d866e067acf6724493d7dcb5d6b55c6d10cd2a1599d01ef3505c0d28dbef6dc",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1508,7 +1508,7 @@
       "channels": [],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "461789fa0cd2e552285623a107692bd25cb6dfab2613365ad1311b4bb361dfbc",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1561,7 +1561,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "4ef87067512f215e2fef958d21b9ebd118f7922aa8eb52b11b8ccbe4fea63b79",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1607,7 +1607,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "a566ca9eea604370e55f215681f2d567fb59ef7970b2f842d74fecbc96cd9a9b",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1657,7 +1657,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "dfb5782cd82870453dd4d7ae62073e5bcde857915808f49ee84f3f13eb1b554b",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1701,7 +1701,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "32b6c0c1a2fd71a9b01052dcf3c68df967c15ad1181b22de46e3c7d02a711e88",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1750,7 +1750,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "9f7d965cd34526424c70780dd5398a398aedd4bb69bfb21e18a50f6673a97255",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1797,7 +1797,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "cff287ed7221f0f5450a1fea70ea0ed72011a31079b48a2f2cdff3b9c3791934",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -1841,7 +1841,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "7bb431161e3ff9e9b25d7ec43bc383ab7706d7a34c0ce38050da1b7372263de9",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1888,7 +1888,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "430cdb68d87734ab146bef235bade69231a61c92f81184d6ddcc54bd92c35351",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1928,7 +1928,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "d24e071ce04da941e8f5c5eb4f3aec3f9b73e9d3494a7d47479946a21e661a61",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -1965,7 +1965,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "68be94e522abb4b4f2a01540cabc8f24ce5d610c530d342fabfc45544b1adc66",
       "sourceStatus": "verified",
       "checkedToday": true,
@@ -2006,7 +2006,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "d164b6f57634ce174452cd3942743ccdc0756ca34ad9c4f3dff92ca6b0af50d4",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2046,7 +2046,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "efa31fb10d618288959b67a4700dd634f8ba1f8a589f5a379c1e8d1470f27d69",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2090,7 +2090,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "0ad9c91383fc5b962a5286a3b02b2c9da64d497ab24073d741f185d26544f36a",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2133,7 +2133,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "4e3fb31df8f7b3555f14bada5673c00dcb082878e7650c1781098d3055b0c889",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2175,7 +2175,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "585080e19006e2521945539457eae1ada3f1b054cabc85d155377152d8534586",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2217,7 +2217,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "772b2e0576b5ad31c4a5d7dc9c1c8896550d49e3cc7011df1ebb3c0afc1f4654",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2263,7 +2263,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "3c179aeb7cb63ec43b5e30499ae6c9921edf54d57cb2f35c02557c11162a2a86",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2306,7 +2306,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "26198942245ea6308d98abd6d7517b984339dacb4d735770d9027a6a0a7704ab",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2348,7 +2348,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "dbf1c7dc5a2a9c3b429f815edbef6a35248c023c12d61ccf4648955cdc6bb2a8",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2387,7 +2387,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "29e2acfc7ea92da37f9b6a0ef0577df2eb17dc4fb55f7905da92d63d5adda0e4",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2433,7 +2433,7 @@
       "channels": [],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "16ecaf98b0329c44d47ff2adcf05dfc05f620e258a03b3a3e9ad9d0ad92a85d0",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2478,7 +2478,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "ec246f75e2c3664359a116383facfd6e2349a3a93af004e9a23e4ac90495733d",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2517,7 +2517,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "4dc889ca268660e6063fcf75e24bc4d6402da7b3027054e9ff0f5f41fef3cfbd",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2562,7 +2562,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "044bb5a04c130f359dff03f3baa23caebda30142b117299ce5cc72c22557f332",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2605,7 +2605,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "7879132d5e039bd96048de6e544e7bc7969c8c7ee5de085f083911c5068bdb36",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2653,7 +2653,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "7d1e40ad827ce8d596eac391f01f20e39415a6bb2481652c80b8546a73cf81a4",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2701,7 +2701,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "f5185680ee1a848f99c15b38f8a5163541d4cb237be22573d1b34f985f792e76",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2752,7 +2752,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "372ae4df1c6fd081822449b869bbb7f3f06f91ba82788676b2c13b2b7d9e3f73",
       "sourceStatus": "conflict",
       "checkedToday": true,
@@ -2793,7 +2793,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "67303a6931a07a6456192bdb422d11ce3767ad74ace50c99e8017f5e3ed8ccbd",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2836,7 +2836,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "d3669c588fa879ec0f142d6ede61ab759ff3d7edc8f95e72bad3bb175401b3df",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2886,7 +2886,7 @@
       ],
       "accumulable": null,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "2b5f41a4e49e368f3cfd6903d554f80c926d11fb5d416a2ccd4e0455df47f2b1",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2933,7 +2933,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "860fe2c2b6bbd0bef68e031c2908b5f822486b83ae1a6dfed6eff8f93bc5eea9",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -2972,7 +2972,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "7ca5e52e4cb5c0e594d0d65733741f8442ff016b1b133cf49d40578acef9ea08",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3021,7 +3021,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "a1cefb9fc33e2a0c7f15c21d15c522e3a0e3b8f6a361bd18d5e852f2b92cf4fb",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3060,7 +3060,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "16058155ab793f268f67596cc8af791a775c9f1fa3f9d979f439b95ffcbb7ad9",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3102,7 +3102,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "332036199338798b6db1a064f652851432a418934d2fbe163cd0d0894a476db6",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3144,7 +3144,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "498d985f70a6e05c8c555ed4d44ed442cfec3f2d4baf0889ef37b06809631dc1",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3186,7 +3186,7 @@
       "channels": [],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "9b72a1b321910ceec5cd8c0fc3f353bfd4798df75fcd749d63ba7280e8bdb762",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3232,7 +3232,7 @@
       ],
       "accumulable": false,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "bf923cf91acfe2cc96683047141d30e80d27f890f6356ad4ae0419dca9600575",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3276,7 +3276,7 @@
       ],
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-10T17:24:21.848Z",
+      "checkedAt": "2026-10-10T20:54:47.423Z",
       "termsHash": "5ddac40c84f023ce4898a9e0844398b5d2ebac51986d15f8421759580aa94d0a",
       "sourceStatus": "incomplete",
       "checkedToday": true,
@@ -3296,7 +3296,7 @@
   ],
   "productOffers": {
     "scope": "San Juan",
-    "checkedAt": "2026-10-10T06:53:02.733Z",
+    "checkedAt": "2026-10-10T20:54:47.358Z",
     "reportAvailable": true,
     "reportCheckedToday": true,
     "completeCoverage": false,
@@ -3304,7 +3304,7 @@
       {
         "retailer": "Vea",
         "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-        "checkedAt": "2026-10-10T06:51:42.277Z",
+        "checkedAt": "2026-10-10T20:50:17.370Z",
         "reachable": true,
         "rendered": false,
         "sepaPromotions": 0,
@@ -3319,7 +3319,7 @@
       {
         "retailer": "ChangoMás",
         "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-        "checkedAt": "2026-10-10T06:51:42.640Z",
+        "checkedAt": "2026-10-10T20:50:18.891Z",
         "reachable": true,
         "rendered": false,
         "sepaPromotions": 0,
@@ -3334,7 +3334,7 @@
       {
         "retailer": "La Anónima",
         "url": "https://www.laanonima.com.ar/empresa/catalogos",
-        "checkedAt": "2026-10-10T06:52:10.873Z",
+        "checkedAt": "2026-10-10T20:51:01.947Z",
         "reachable": false,
         "sepaPromotions": 766,
         "corroboratedPromotions": 0,
@@ -3346,248 +3346,12 @@
       {
         "retailer": "Carrefour",
         "url": "https://www.carrefour.com.ar/promociones",
-        "checkedAt": "2026-10-10T06:53:02.733Z",
-        "reachable": true,
-        "rendered": true,
+        "checkedAt": "2026-10-10T20:54:47.355Z",
+        "reachable": false,
         "sepaPromotions": 94,
         "corroboratedPromotions": 0,
-        "activeWindows": [
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          },
-          {
-            "from": "2026-10-09",
-            "to": "2026-10-15"
-          }
-        ],
-        "mentionsSanJuan": false,
-        "nationwide": true,
-        "status": "reachable_without_complete_scoped_evidence",
+        "status": "unavailable",
+        "error": "No hay un navegador Chromium disponible",
         "checkedToday": true,
         "completeCoverage": false
       }
