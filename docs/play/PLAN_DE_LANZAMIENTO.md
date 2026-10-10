@@ -37,6 +37,18 @@ Pendientes: paquete definitivo, clave de carga y custodia, Play App Signing, hue
 - Abrir prueba interna solo con paquete firmado y autorización. Para cuentas personales nuevas sujetas al requisito, verificar en Play Console los 12 testers durante 14 días y la posterior solicitud de acceso a producción. No prometer aprobación automática al día 15.
 - Revisar licencias/derechos de iconos, código, fotos y datos: la marca no sustituye esos derechos. No insinuar patrocinio de cadenas.
 
+## 6. Protección legal y derechos
+
+Revisión incorporada el 10 de octubre de 2026: [acciones y criterios de cierre](PROTECCION_LEGAL.md). Este frente debe avanzar junto con Android.
+
+- Cotejar RINDECASA y formalizar titularidad/presentación cuando esté autorizada; las búsquedas fonéticas no acreditan registro.
+- Acreditar autoría y derechos sobre los aportes originales; preparar registro DNDA como protección documental, separado de la marca.
+- Auditar licencias de código, fuentes, imágenes y contenido distribuido, así como condiciones de reutilización de SEPA, su réplica y promociones.
+- Actualizar privacidad/eliminación con memoria y circuito comercial; revisar términos, contrato de anuncios y canal de reclamos.
+- Revisar la ficha de Play y conservar permisos. Un aviso de copyright o una exención general no garantizan inmunidad frente a reclamos.
+
+La preparación sigue pendiente de revisión jurídica y pruebas documentadas. No se presentan registros ni se publican textos legales definitivos por este cambio.
+
 ## Cierre por evidencia
 
 | Frente | Evidencia de cierre | Pendiente |
@@ -45,5 +57,6 @@ Pendientes: paquete definitivo, clave de carga y custodia, Play App Signing, hue
 | Promociones | Matriz y casos positivos/negativos corroborados | Extracción y cobertura de ofertas por producto |
 | Marca | Revisión y constancias oficiales según hito exigido | Estado civil, antecedentes y gestión autorizada |
 | Android | AAB firmado, asociación y pruebas físicas | Clave/custodia, privacidad/eliminación y teléfonos |
+| Protección legal | Titularidad, usos de terceros y textos respaldados; registros según hito decidido | Antecedentes, licencias/datos, inventario actualizado y revisión jurídica |
 
 Fuentes oficiales: [firma Android](https://developer.android.com/studio/publish/app-signing), [TWA](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start), [API exigida](https://support.google.com/googleplay/android-developer/answer/11926878), [eliminación](https://support.google.com/googleplay/android-developer/answer/13327111), [pruebas de cuentas nuevas](https://support.google.com/googleplay/android-developer/answer/14151465), [registro INPI](https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca).
