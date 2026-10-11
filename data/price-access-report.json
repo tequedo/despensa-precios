@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-11T00:36:18.146Z",
-  "completed": true,
+  "checkedAt": "2026-10-11T21:22:17.712Z",
+  "completed": false,
   "freshTestProfile": true,
   "priceRefreshRestored": false,
   "provinces": [
@@ -15,13 +15,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 926,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 926,
-      "appCoveredLocalities": 49,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-B",
@@ -33,13 +33,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 885,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 885,
-      "appCoveredLocalities": 861,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-K",
@@ -50,13 +50,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 8,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 8,
-      "appCoveredLocalities": 64,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-H",
@@ -67,13 +67,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 5,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 5,
-      "appCoveredLocalities": 16,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-U",
@@ -84,13 +84,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 44,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 44,
-      "appCoveredLocalities": 51,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-X",
@@ -102,13 +102,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 126,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 126,
-      "appCoveredLocalities": 347,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-W",
@@ -119,13 +119,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 24,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 24,
-      "appCoveredLocalities": 51,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-E",
@@ -137,13 +137,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 88,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 88,
-      "appCoveredLocalities": 176,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-P",
@@ -154,13 +154,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 5,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 5,
-      "appCoveredLocalities": 12,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Y",
@@ -171,13 +171,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 24,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 24,
-      "appCoveredLocalities": 77,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-L",
@@ -188,13 +188,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 21,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 21,
-      "appCoveredLocalities": 49,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-F",
@@ -205,13 +205,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 4,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 4,
-      "appCoveredLocalities": 2,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-M",
@@ -222,13 +222,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 67,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 67,
-      "appCoveredLocalities": 195,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-N",
@@ -239,13 +239,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 10,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 10,
-      "appCoveredLocalities": 20,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Q",
@@ -256,13 +256,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 60,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 60,
-      "appCoveredLocalities": 44,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-R",
@@ -273,13 +273,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 65,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 65,
-      "appCoveredLocalities": 106,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-A",
@@ -290,13 +290,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 46,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 46,
-      "appCoveredLocalities": 67,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-J",
@@ -307,13 +307,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 14,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 14,
-      "appCoveredLocalities": 59,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-D",
@@ -324,13 +324,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 7,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 7,
-      "appCoveredLocalities": 33,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Z",
@@ -341,13 +341,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 29,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 29,
-      "appCoveredLocalities": 19,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-S",
@@ -358,13 +358,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 45,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 45,
-      "appCoveredLocalities": 276,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-G",
@@ -375,13 +375,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 6,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 6,
-      "appCoveredLocalities": 45,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-V",
@@ -392,13 +392,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 14,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 14,
-      "appCoveredLocalities": 3,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-T",
@@ -409,13 +409,13 @@
         "2026-10-09"
       ],
       "catalogueWithinAgeLimit": 26,
-      "httpStatus": 200,
-      "appSourceStatus": "delayed",
-      "appLastPriceDate": "2026-10-09",
-      "appStores": 26,
-      "appCoveredLocalities": 101,
-      "appGeneration": "2026-10-11T00:18:07.374Z",
-      "matchesCatalogueGeneration": true
+      "httpStatus": 401,
+      "appSourceStatus": null,
+      "appLastPriceDate": null,
+      "appStores": null,
+      "appCoveredLocalities": null,
+      "appGeneration": null,
+      "matchesCatalogueGeneration": false
     }
   ],
   "changomas": [
@@ -427,11 +427,11 @@
       "sourceRows": 1344,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
-      "unfilteredHttpStatus": 200,
-      "filteredHttpStatus": 200,
-      "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
+      "unfilteredHttpStatus": 401,
+      "filteredHttpStatus": 401,
+      "filteredQuotes": 0,
+      "exactSourceMatches": 0,
+      "reason": "pending_verification",
       "currentDayQuoteConfirmed": false
     },
     {
@@ -442,11 +442,11 @@
       "sourceRows": 1343,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
-      "unfilteredHttpStatus": 200,
-      "filteredHttpStatus": 200,
-      "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
+      "unfilteredHttpStatus": 401,
+      "filteredHttpStatus": 401,
+      "filteredQuotes": 0,
+      "exactSourceMatches": 0,
+      "reason": "pending_verification",
       "currentDayQuoteConfirmed": false
     },
     {
@@ -457,20 +457,20 @@
       "sourceRows": 1344,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
-      "unfilteredHttpStatus": 200,
-      "filteredHttpStatus": 200,
-      "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
+      "unfilteredHttpStatus": 401,
+      "filteredHttpStatus": 401,
+      "filteredQuotes": 0,
+      "exactSourceMatches": 0,
+      "reason": "pending_verification",
       "currentDayQuoteConfirmed": false
     }
   ],
   "unfiltered": {
-    "httpStatus": 200,
-    "quotes": 11,
-    "sourceStatus": "delayed",
-    "lastPriceDate": "2026-10-09",
-    "availableStores": 14,
-    "generation": "2026-10-11T00:18:07.374Z"
+    "httpStatus": 401,
+    "quotes": 0,
+    "sourceStatus": null,
+    "lastPriceDate": null,
+    "availableStores": null,
+    "generation": null
   }
 }
