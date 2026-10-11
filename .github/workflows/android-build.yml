@@ -1,4 +1,4 @@
-name: RINDECASA Android review build
+name: Donde Rinde Android review build
 on:
   pull_request:
     paths:
@@ -50,7 +50,7 @@ jobs:
       - name: Retain review packages and lint report
         uses: actions/upload-artifact@v4
         with:
-          name: rindecasa-android-review-${{ github.sha }}
+          name: donde-rinde-android-review-${{ github.sha }}
           retention-days: 14
           if-no-files-found: error
           path: |

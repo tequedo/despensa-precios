@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Development icon; the final owned brand artwork is a publication prerequisite. -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp" android:height="108dp"
-    android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#156A52" android:pathData="M0,0H108V108H0Z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M30,25H57C73,25 81,32 81,46C81,57 75,63 64,66L82,84H66L48,66H43V84H30ZM43,37V54H56C64,54 68,52 68,46C68,40 64,37 56,37Z" />
+<!-- Dónde Rinde: geometry from scripts/build-brand-icon.py; Outfit Bold D outline, SIL OFL 1.1. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="256" android:viewportHeight="256">
+    <path android:fillColor="#FFFFFF" android:pathData="M44,0H212Q256,0 256,44V212Q256,256 212,256H44Q0,256 0,212V44Q0,0 44,0Z" />
+    <path android:fillColor="#006B8E" android:pathData="M128,20L232,112L214,132L206,125L206,230L50,230L50,125L42,132L24,112Z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M92 207.862V130.138H123.156Q131.853 130.138 139.339 133Q146.826 135.862 152.33 141.037Q157.835 146.211 160.917 153.312Q164 160.413 164 169Q164 177.477 160.917 184.633Q157.835 191.789 152.33 196.963Q146.826 202.138 139.45 205Q132.073 207.862 123.376 207.862ZM122.936 145.22H109.284V192.67H122.936Q133.505 192.67 139.89 186.394Q146.275 180.119 146.275 168.89Q146.275 157.771 139.835 151.495Q133.394 145.22 122.936 145.22Z" />
 </vector>

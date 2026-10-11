@@ -1,6 +1,6 @@
-# RINDECASA — piloto Android
+# Dónde Rinde — piloto Android
 
-Preparación del 2 de octubre de 2026. Este proyecto abre la app existente mediante una Trusted Web Activity del navegador; conserva el mismo backend y evita duplicar inventarios y reglas de precios. El nombre elegido es RINDECASA, cuya concesión marcaria todavía debe acreditarse. El identificador `ar.rindecasa.app` es provisorio hasta comprobarlo en Play Console: después de publicar no se puede cambiar el identificador de esa app.
+Preparación del 2 de octubre de 2026. Este proyecto abre la app existente mediante una Trusted Web Activity del navegador; conserva el mismo backend y evita duplicar inventarios y reglas de precios. El nombre elegido el 11/10/2026 es Dónde Rinde, cuya solicitud y concesión marcaria todavía deben acreditarse. Las búsquedas fonéticas pagadas anteriores corresponden a RINDECASA. El identificador `ar.rindecasa.app` es provisorio hasta comprobarlo en Play Console: después de publicar no se puede cambiar el identificador de esa app.
 
 ## Compilación de revisión
 
@@ -11,7 +11,7 @@ cd mobile/android
 gradle --no-daemon :app:lint :app:assembleDebug :app:bundleRelease
 ```
 
-La acción `RINDECASA Android review build` produce un APK de prueba y un AAB **sin firma de publicación**. Ningún paso envía paquetes a Play. El icono es de desarrollo y debe reemplazarse por el arte final propio.
+La acción `Donde Rinde Android review build` produce un APK de prueba y un AAB **sin firma de publicación**. Ningún paso envía paquetes a Play. El icono es de desarrollo y debe reemplazarse por el arte final propio.
 
 ## Antes de probar sin barra del navegador
 
@@ -35,3 +35,7 @@ Confirmado el paquete en Play Console, definir `RINDECASA_APPLICATION_ID_CONFIRM
 El preflight tiene pruebas positivas/negativas, no reemplaza las pruebas físicas. Consultar [el protocolo Android](../../docs/play/PRUEBAS_FISICAS_ANDROID.md) y [el plan de lanzamiento](../../docs/play/PLAN_DE_LANZAMIENTO.md). El contenedor no elimina restricciones del proveedor de precios.
 
 Fuentes técnicas: [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start), [AGP 9.1](https://developer.android.com/build/releases/agp-9-1-0-release-notes), [AndroidX Browser](https://developer.android.com/jetpack/androidx/releases/browser), [android-browser-helper](https://github.com/GoogleChrome/android-browser-helper/releases).
+
+## Identidad del 11/10/2026
+
+El nombre instalado es **Dónde Rinde**, con el mismo nombre en la web y una D en el icono derivado de Outfit Bold bajo SIL OFL. La receta y la licencia se conservan en la fuente web. No se invoca registro ni exclusividad sobre geometrías genéricas. `ar.rindecasa.app` y las variables `RINDECASA_*` se conservan como identificadores técnicos: cambiar el nombre visible no cambia la identidad de una app. El paquete continúa provisorio y requiere confirmación en Play antes de la primera publicación. No se generó ni custodió una clave de carga por este cambio.

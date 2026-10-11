@@ -1,4 +1,4 @@
-# RINDECASA — protocolo de piloto Android
+# Dónde Rinde — protocolo de piloto Android
 
 Preparado el 9 de octubre de 2026. **No ejecutado en teléfonos en esta preparación.** Un test de servidor o una foto previa no reemplaza pruebas físicas de cámara y micrófono.
 
@@ -20,3 +20,7 @@ Usar dos teléfonos y cuentas controladas, sin datos de terceros. Registrar comm
 | Eliminación | Tras implementarla, confirmar borrado de A y volver desde ambos teléfonos | Datos eliminados según política, B intacta, sesión vieja sin exponer datos de A |
 
 Si no se puede probar, marcar pendiente/bloqueado. Cada fallo exige reproducción, corrección, nueva versión y repetición. Verificar los requisitos Google con tipo/antigüedad reales de la cuenta de desarrollador.
+
+## Inicio del piloto — 11/10/2026
+
+Nombre visible esperado: Dónde Rinde. El APK de revisión se usa sólo en dispositivos controlados y muestra una barra del navegador cuando no hay asociación validada. El artefacto debug no inicia ni acredita una prueba cerrada de Play. Registrar primero cuenta A/B, localidad elegida, fecha real de la cotización y commit del APK; no tratar la fecha de generación de una réplica como fecha del precio. La prueba debe incluir recuperación de la cuenta en el segundo teléfono y un producto exacto cotizado por ChangoMás con filtros desactivados y activados. No se envían correos ni se graban terceros sin autorización. Todos los casos de la tabla continúan sin ejecución física documentada.
