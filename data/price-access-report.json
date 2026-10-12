@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-11T21:22:17.712Z",
+  "checkedAt": "2026-10-12T00:55:33.261Z",
   "completed": false,
   "freshTestProfile": true,
   "priceRefreshRestored": false,
@@ -8,13 +8,13 @@
     {
       "code": "AR-C",
       "name": "Ciudad Autónoma de Buenos Aires",
-      "catalogueStores": 926,
-      "catalogueLocalityLabels": 37,
+      "catalogueStores": 961,
+      "catalogueLocalityLabels": 47,
       "catalogueSourceDates": [
         "2026-10-08",
         "2026-10-09"
       ],
-      "catalogueWithinAgeLimit": 926,
+      "catalogueWithinAgeLimit": 961,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -26,13 +26,13 @@
     {
       "code": "AR-B",
       "name": "Buenos Aires",
-      "catalogueStores": 885,
-      "catalogueLocalityLabels": 241,
+      "catalogueStores": 898,
+      "catalogueLocalityLabels": 248,
       "catalogueSourceDates": [
         "2026-10-08",
         "2026-10-09"
       ],
-      "catalogueWithinAgeLimit": 885,
+      "catalogueWithinAgeLimit": 898,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -78,12 +78,12 @@
     {
       "code": "AR-U",
       "name": "Chubut",
-      "catalogueStores": 44,
+      "catalogueStores": 45,
       "catalogueLocalityLabels": 14,
       "catalogueSourceDates": [
         "2026-10-09"
       ],
-      "catalogueWithinAgeLimit": 44,
+      "catalogueWithinAgeLimit": 45,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -284,12 +284,12 @@
     {
       "code": "AR-A",
       "name": "Salta",
-      "catalogueStores": 46,
-      "catalogueLocalityLabels": 8,
+      "catalogueStores": 49,
+      "catalogueLocalityLabels": 11,
       "catalogueSourceDates": [
         "2026-10-09"
       ],
-      "catalogueWithinAgeLimit": 46,
+      "catalogueWithinAgeLimit": 49,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -352,12 +352,12 @@
     {
       "code": "AR-S",
       "name": "Santa Fe",
-      "catalogueStores": 45,
-      "catalogueLocalityLabels": 17,
+      "catalogueStores": 46,
+      "catalogueLocalityLabels": 18,
       "catalogueSourceDates": [
         "2026-10-09"
       ],
-      "catalogueWithinAgeLimit": 45,
+      "catalogueWithinAgeLimit": 46,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-11T21:22:18.379Z",
+  "checkedAt": "2026-10-12T00:55:37.901Z",
   "outcome": "success",
   "status": "replica_integrity_checked",
   "sourceType": "replica",
@@ -12,24 +12,24 @@
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-10-11T21:02:26.707Z",
+        "startedAt": "2026-10-12T00:40:28.521Z",
         "status": "failed",
-        "error": "SEPA por IPv4: Command failed: curl --ipv4 --fail --silent --show-error --proto =https --connect-timeout 20 --max-time 30 --max-filesize 10000000 --header Accept-Encoding: identity --output /home/runner/work/_temp/sepa-originals/acquisition-6z5Sct/metadata-before.json.partial --dump-header /home/runner/work/_temp/sepa-originals/acquisition-6z5Sct/metadata-before.json.headers --write-out %{http_code}\n%{url_effective}\n https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios\ncurl: (28) Failed to connect to datos.produccion.gob.ar port 443 after 20002 ms: Timeout was reached\n; conexión inicial: UND_ERR_CONNECT_TIMEOUT",
+        "error": "SEPA por IPv4: Command failed: curl --ipv4 --fail --silent --show-error --proto =https --connect-timeout 20 --max-time 30 --max-filesize 10000000 --header Accept-Encoding: identity --output /home/runner/work/_temp/sepa-originals/acquisition-8J66ej/metadata-before.json.partial --dump-header /home/runner/work/_temp/sepa-originals/acquisition-8J66ej/metadata-before.json.headers --write-out %{http_code}\n%{url_effective}\n https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios\ncurl: (28) Failed to connect to datos.produccion.gob.ar port 443 after 20002 ms: Timeout was reached\n; conexión inicial: UND_ERR_CONNECT_TIMEOUT",
         "phase": "official_metadata_before",
         "http": null
       },
       {
         "source": "official-daily",
-        "startedAt": "2026-10-11T21:02:57.255Z",
+        "startedAt": "2026-10-12T00:40:59.081Z",
         "status": "failed",
-        "error": "SEPA por IPv4: Command failed: curl --ipv4 --fail --silent --show-error --proto =https --connect-timeout 20 --max-time 1200 --max-filesize 4294967296 --header Accept-Encoding: identity --output /home/runner/work/_temp/sepa-originals/daily-acquisition-A5KCmj/original.zip.partial --dump-header /home/runner/work/_temp/sepa-originals/daily-acquisition-A5KCmj/original.zip.headers --write-out %{http_code}\n%{url_effective}\n https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/f8e75128-515a-436e-bf8d-5c63a62f2005/download/sepa_domingo.zip\ncurl: (28) Failed to connect to datos.produccion.gob.ar port 443 after 20002 ms: Timeout was reached\n; conexión inicial: UND_ERR_CONNECT_TIMEOUT",
+        "error": "SEPA por IPv4: Command failed: curl --ipv4 --fail --silent --show-error --proto =https --connect-timeout 20 --max-time 1200 --max-filesize 4294967296 --header Accept-Encoding: identity --output /home/runner/work/_temp/sepa-originals/daily-acquisition-2X6mvH/original.zip.partial --dump-header /home/runner/work/_temp/sepa-originals/daily-acquisition-2X6mvH/original.zip.headers --write-out %{http_code}\n%{url_effective}\n https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/f8e75128-515a-436e-bf8d-5c63a62f2005/download/sepa_domingo.zip\ncurl: (28) Failed to connect to datos.produccion.gob.ar port 443 after 20002 ms: Timeout was reached\n; conexión inicial: UND_ERR_CONNECT_TIMEOUT",
         "phase": "official_daily_archive",
         "sourceModified": null,
         "http": null
       },
       {
         "source": "replica",
-        "startedAt": "2026-10-11T21:03:27.764Z",
+        "startedAt": "2026-10-12T00:41:29.589Z",
         "status": "replica_integrity_checked",
         "sourceModified": "2026-10-09T16:19:27.970Z"
       }
