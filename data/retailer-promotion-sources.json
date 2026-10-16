@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-15T23:59:19.731Z",
+  "generatedAt": "2026-10-16T20:21:46.550Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-10-15T23:57:38.383Z",
+      "checkedAt": "2026-10-16T20:17:31.869Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -18,7 +18,7 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-10-15T23:57:40.017Z",
+      "checkedAt": "2026-10-16T20:17:32.507Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -31,7 +31,7 @@
     {
       "retailer": "La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-10-15T23:58:27.747Z",
+      "checkedAt": "2026-10-16T20:18:01.215Z",
       "reachable": false,
       "sepaPromotions": 826,
       "corroboratedPromotions": 0,
@@ -41,15 +41,12 @@
     {
       "retailer": "Carrefour",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-10-15T23:59:19.731Z",
-      "reachable": true,
-      "rendered": true,
+      "checkedAt": "2026-10-16T20:21:46.539Z",
+      "reachable": false,
       "sepaPromotions": 107,
       "corroboratedPromotions": 0,
-      "activeWindows": [],
-      "mentionsSanJuan": false,
-      "nationwide": false,
-      "status": "reachable_without_complete_scoped_evidence"
+      "status": "unavailable",
+      "error": "No hay un navegador Chromium disponible"
     }
   ]
 }
