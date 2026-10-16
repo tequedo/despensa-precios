@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-15T20:46:18.114Z",
+  "checkedAt": "2026-10-16T00:00:44.769Z",
   "outcome": "success",
   "status": "replica_integrity_checked",
   "sourceType": "replica",
@@ -12,21 +12,21 @@
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-10-15T20:27:10.982Z",
+        "startedAt": "2026-10-15T23:45:26.162Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_metadata_before",
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "bc7bf4a8ac5e32c53ebf117476f25e7c",
+          "requestId": "740dc8f02919cf1fed69aa698f63a742",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "official-daily",
-        "startedAt": "2026-10-15T20:27:12.101Z",
+        "startedAt": "2026-10-15T23:45:27.283Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_daily_archive",
@@ -34,14 +34,14 @@
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "3d97558c5d7b84e7661c389e88e465bf",
+          "requestId": "002fe62b465d100afb3150cb9278a39b",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "replica",
-        "startedAt": "2026-10-15T20:27:12.413Z",
+        "startedAt": "2026-10-15T23:45:27.611Z",
         "status": "replica_integrity_checked",
         "sourceModified": "2026-10-15T16:19:08.834Z"
       }
