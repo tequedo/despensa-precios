@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-16T00:00:44.770Z",
+  "checkedAt": "2026-10-16T20:23:03.496Z",
   "latestAttempt": {
-    "day": "2026-10-15",
-    "checkedAt": "2026-10-16T00:00:44.770Z",
+    "day": "2026-10-16",
+    "checkedAt": "2026-10-16T20:23:03.496Z",
     "confirmed": false,
     "sourceDate": "2026-10-15",
     "sourceType": "replica",
     "revisionId": "719c024d-ff0f-4efe-8e22-b378d764c1a0",
     "appGeneration": null,
-    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/38825333806",
+    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/38958973805",
     "jurisdictionsWithCurrentPrices": 0,
     "physicalStores": 0,
     "changomasBranchesConfirmed": 0,
@@ -23,16 +23,6 @@
   "stabilizationComplete": false,
   "officialChannelRestored": false,
   "days": [
-    {
-      "day": "2026-10-02",
-      "checkedAt": "2026-10-02T23:45:48.916Z",
-      "confirmed": false,
-      "sourceDate": null,
-      "sourceType": "none_accepted",
-      "revisionId": null,
-      "appGeneration": "2026-09-25T13:36:48.448Z",
-      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/37078936348"
-    },
     {
       "day": "2026-10-03",
       "checkedAt": "2026-10-04T02:50:18.905Z",
@@ -186,6 +176,20 @@
       "revisionId": "719c024d-ff0f-4efe-8e22-b378d764c1a0",
       "appGeneration": null,
       "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/38825333806",
+      "jurisdictionsWithCurrentPrices": 0,
+      "physicalStores": 0,
+      "changomasBranchesConfirmed": 0,
+      "independentlyComparedWithOfficial": false
+    },
+    {
+      "day": "2026-10-16",
+      "checkedAt": "2026-10-16T20:23:03.496Z",
+      "confirmed": false,
+      "sourceDate": "2026-10-15",
+      "sourceType": "replica",
+      "revisionId": "719c024d-ff0f-4efe-8e22-b378d764c1a0",
+      "appGeneration": null,
+      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/38958973805",
       "jurisdictionsWithCurrentPrices": 0,
       "physicalStores": 0,
       "changomasBranchesConfirmed": 0,
