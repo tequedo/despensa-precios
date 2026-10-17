@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-17T00:03:35.066Z",
+  "checkedAt": "2026-10-17T19:49:43.320Z",
   "completed": false,
   "freshTestProfile": true,
   "priceRefreshRestored": false,
@@ -11,8 +11,8 @@
       "catalogueStores": 926,
       "catalogueLocalityLabels": 37,
       "catalogueSourceDates": [
-        "2026-10-14",
-        "2026-10-15"
+        "2026-10-16",
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 926,
       "httpStatus": 401,
@@ -26,13 +26,13 @@
     {
       "code": "AR-B",
       "name": "Buenos Aires",
-      "catalogueStores": 881,
+      "catalogueStores": 882,
       "catalogueLocalityLabels": 241,
       "catalogueSourceDates": [
-        "2026-10-14",
-        "2026-10-15"
+        "2026-10-16",
+        "2026-10-17"
       ],
-      "catalogueWithinAgeLimit": 881,
+      "catalogueWithinAgeLimit": 882,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -47,7 +47,7 @@
       "catalogueStores": 8,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 8,
       "httpStatus": 401,
@@ -64,7 +64,7 @@
       "catalogueStores": 5,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 5,
       "httpStatus": 401,
@@ -81,7 +81,7 @@
       "catalogueStores": 44,
       "catalogueLocalityLabels": 14,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 44,
       "httpStatus": 401,
@@ -95,12 +95,13 @@
     {
       "code": "AR-X",
       "name": "Córdoba",
-      "catalogueStores": 115,
-      "catalogueLocalityLabels": 34,
+      "catalogueStores": 126,
+      "catalogueLocalityLabels": 37,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-16",
+        "2026-10-17"
       ],
-      "catalogueWithinAgeLimit": 115,
+      "catalogueWithinAgeLimit": 126,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -115,7 +116,7 @@
       "catalogueStores": 24,
       "catalogueLocalityLabels": 6,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 24,
       "httpStatus": 401,
@@ -132,8 +133,8 @@
       "catalogueStores": 88,
       "catalogueLocalityLabels": 12,
       "catalogueSourceDates": [
-        "2026-10-14",
-        "2026-10-15"
+        "2026-10-16",
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 88,
       "httpStatus": 401,
@@ -150,7 +151,7 @@
       "catalogueStores": 5,
       "catalogueLocalityLabels": 3,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 5,
       "httpStatus": 401,
@@ -167,7 +168,7 @@
       "catalogueStores": 24,
       "catalogueLocalityLabels": 8,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 24,
       "httpStatus": 401,
@@ -184,7 +185,7 @@
       "catalogueStores": 21,
       "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 21,
       "httpStatus": 401,
@@ -201,7 +202,7 @@
       "catalogueStores": 4,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 4,
       "httpStatus": 401,
@@ -218,7 +219,7 @@
       "catalogueStores": 67,
       "catalogueLocalityLabels": 24,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 67,
       "httpStatus": 401,
@@ -235,7 +236,7 @@
       "catalogueStores": 10,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 10,
       "httpStatus": 401,
@@ -252,7 +253,7 @@
       "catalogueStores": 60,
       "catalogueLocalityLabels": 20,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 60,
       "httpStatus": 401,
@@ -269,7 +270,7 @@
       "catalogueStores": 65,
       "catalogueLocalityLabels": 26,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 65,
       "httpStatus": 401,
@@ -286,7 +287,7 @@
       "catalogueStores": 46,
       "catalogueLocalityLabels": 8,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 46,
       "httpStatus": 401,
@@ -303,7 +304,7 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 401,
@@ -320,7 +321,7 @@
       "catalogueStores": 7,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 7,
       "httpStatus": 401,
@@ -337,7 +338,7 @@
       "catalogueStores": 29,
       "catalogueLocalityLabels": 15,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 29,
       "httpStatus": 401,
@@ -354,7 +355,7 @@
       "catalogueStores": 45,
       "catalogueLocalityLabels": 17,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 45,
       "httpStatus": 401,
@@ -371,7 +372,7 @@
       "catalogueStores": 6,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 6,
       "httpStatus": 401,
@@ -388,7 +389,7 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 401,
@@ -405,7 +406,7 @@
       "catalogueStores": 26,
       "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-10-15"
+        "2026-10-17"
       ],
       "catalogueWithinAgeLimit": 26,
       "httpStatus": 401,
@@ -422,8 +423,8 @@
       "storeId": "11|2|1081",
       "branch": "Rawson San Juan",
       "locality": "BARRIO RAWSON",
-      "sourceDate": "2026-10-15",
-      "sourceRows": 1347,
+      "sourceDate": "2026-10-17",
+      "sourceRows": 1345,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
@@ -437,8 +438,8 @@
       "storeId": "11|5|1006",
       "branch": "San Juan",
       "locality": "BARRIO RIVADAVIA",
-      "sourceDate": "2026-10-15",
-      "sourceRows": 1346,
+      "sourceDate": "2026-10-17",
+      "sourceRows": 1344,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
@@ -452,8 +453,8 @@
       "storeId": "11|2|1092",
       "branch": "San Juan Norte",
       "locality": "SAN JUAN",
-      "sourceDate": "2026-10-15",
-      "sourceRows": 1347,
+      "sourceDate": "2026-10-17",
+      "sourceRows": 1345,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
