@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-17T19:34:59.070Z",
+  "checkedAt": "2026-10-17T23:15:13.464Z",
   "status": "replica_integrity_checked",
   "sourceType": "replica",
   "originalComparison": {
@@ -39,16 +39,16 @@
   "metadata": {
     "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/dataset-info.json",
     "sha256": "20fe55977fa3f3d1f439420abd22b7a862059dd902574301c0812e60ece80667",
-    "fetchedAt": "2026-10-17T19:34:59.310Z",
+    "fetchedAt": "2026-10-17T23:15:13.650Z",
     "etag": "W/\"18f436dfd9a72ebd7c0641c523e304d38c86f36ceb5d56be7de754c7e85c2dd2\""
   },
   "index": {
     "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/index.json",
     "sha256": "6e0f15d5f4045797eed3636ccffbb2ad4a6cf479a60c9a301405ae1b67d53f79",
-    "fetchedAt": "2026-10-17T19:34:59.708Z",
+    "fetchedAt": "2026-10-17T23:15:13.818Z",
     "etag": "W/\"21eeb5d79814637a652422841731e5731537d74f8e4f49847c57c6fa82698b5a\""
   },
-  "downloadedAt": "2026-10-17T19:35:01.748Z",
+  "downloadedAt": "2026-10-17T23:15:16.612Z",
   "archive": {
     "bytes": 66107526,
     "sha256": "e707bf1259cd5f1fb6d4723de25195e6cb1e150b5344fcc2c36a5a778b6c5192",
@@ -319,21 +319,21 @@
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-10-17T19:34:57.521Z",
+        "startedAt": "2026-10-17T23:15:12.036Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_metadata_before",
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "a138f6155fc1a808c95b9f281345f84c",
+          "requestId": "474b408a47a3766afcc464d375b85ff6",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "official-daily",
-        "startedAt": "2026-10-17T19:34:58.719Z",
+        "startedAt": "2026-10-17T23:15:13.162Z",
         "status": "failed",
         "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
         "phase": "official_daily_archive",
@@ -341,14 +341,14 @@
         "http": {
           "status": 403,
           "host": "datos.produccion.gob.ar",
-          "requestId": "9176153c7f88700c3e4ad957e5ca73bb",
+          "requestId": "88cac66ad50c45f4303f4987c4b89c71",
           "protection": "BunkerWeb",
           "accessDenied": true
         }
       },
       {
         "source": "replica",
-        "startedAt": "2026-10-17T19:34:59.070Z",
+        "startedAt": "2026-10-17T23:15:13.464Z",
         "status": "replica_integrity_checked",
         "sourceModified": "2026-10-17T16:18:55.049Z"
       }
