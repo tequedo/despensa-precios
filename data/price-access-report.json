@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-18T23:44:36.628Z",
+  "checkedAt": "2026-10-19T21:55:27.243Z",
   "completed": false,
   "freshTestProfile": true,
   "priceRefreshRestored": false,
@@ -8,13 +8,12 @@
     {
       "code": "AR-C",
       "name": "Ciudad Autónoma de Buenos Aires",
-      "catalogueStores": 1106,
+      "catalogueStores": 1088,
       "catalogueLocalityLabels": 37,
       "catalogueSourceDates": [
-        "2026-10-17",
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 1106,
+      "catalogueWithinAgeLimit": 1088,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -26,13 +25,12 @@
     {
       "code": "AR-B",
       "name": "Buenos Aires",
-      "catalogueStores": 880,
-      "catalogueLocalityLabels": 243,
+      "catalogueStores": 909,
+      "catalogueLocalityLabels": 253,
       "catalogueSourceDates": [
-        "2026-10-17",
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 880,
+      "catalogueWithinAgeLimit": 909,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -47,7 +45,7 @@
       "catalogueStores": 8,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 8,
       "httpStatus": 401,
@@ -64,7 +62,7 @@
       "catalogueStores": 13,
       "catalogueLocalityLabels": 3,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 13,
       "httpStatus": 401,
@@ -81,7 +79,7 @@
       "catalogueStores": 45,
       "catalogueLocalityLabels": 14,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 45,
       "httpStatus": 401,
@@ -95,13 +93,12 @@
     {
       "code": "AR-X",
       "name": "Córdoba",
-      "catalogueStores": 172,
-      "catalogueLocalityLabels": 39,
+      "catalogueStores": 163,
+      "catalogueLocalityLabels": 36,
       "catalogueSourceDates": [
-        "2026-10-17",
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 172,
+      "catalogueWithinAgeLimit": 163,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -116,7 +113,7 @@
       "catalogueStores": 24,
       "catalogueLocalityLabels": 6,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 24,
       "httpStatus": 401,
@@ -133,7 +130,7 @@
       "catalogueStores": 89,
       "catalogueLocalityLabels": 10,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 89,
       "httpStatus": 401,
@@ -150,7 +147,7 @@
       "catalogueStores": 6,
       "catalogueLocalityLabels": 3,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 6,
       "httpStatus": 401,
@@ -167,7 +164,7 @@
       "catalogueStores": 29,
       "catalogueLocalityLabels": 8,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 29,
       "httpStatus": 401,
@@ -181,12 +178,12 @@
     {
       "code": "AR-L",
       "name": "La Pampa",
-      "catalogueStores": 18,
-      "catalogueLocalityLabels": 6,
+      "catalogueStores": 25,
+      "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 18,
+      "catalogueWithinAgeLimit": 25,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -201,7 +198,7 @@
       "catalogueStores": 6,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 6,
       "httpStatus": 401,
@@ -218,7 +215,7 @@
       "catalogueStores": 69,
       "catalogueLocalityLabels": 24,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 69,
       "httpStatus": 401,
@@ -235,7 +232,7 @@
       "catalogueStores": 17,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 17,
       "httpStatus": 401,
@@ -252,7 +249,7 @@
       "catalogueStores": 60,
       "catalogueLocalityLabels": 20,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 60,
       "httpStatus": 401,
@@ -266,12 +263,12 @@
     {
       "code": "AR-R",
       "name": "Río Negro",
-      "catalogueStores": 64,
-      "catalogueLocalityLabels": 25,
+      "catalogueStores": 66,
+      "catalogueLocalityLabels": 26,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 64,
+      "catalogueWithinAgeLimit": 66,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -286,7 +283,7 @@
       "catalogueStores": 51,
       "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 51,
       "httpStatus": 401,
@@ -303,7 +300,7 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 401,
@@ -320,7 +317,7 @@
       "catalogueStores": 15,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 15,
       "httpStatus": 401,
@@ -337,7 +334,7 @@
       "catalogueStores": 29,
       "catalogueLocalityLabels": 15,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 29,
       "httpStatus": 401,
@@ -351,12 +348,12 @@
     {
       "code": "AR-S",
       "name": "Santa Fe",
-      "catalogueStores": 47,
+      "catalogueStores": 49,
       "catalogueLocalityLabels": 19,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
-      "catalogueWithinAgeLimit": 47,
+      "catalogueWithinAgeLimit": 49,
       "httpStatus": 401,
       "appSourceStatus": null,
       "appLastPriceDate": null,
@@ -371,7 +368,7 @@
       "catalogueStores": 11,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 11,
       "httpStatus": 401,
@@ -388,7 +385,7 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 401,
@@ -405,7 +402,7 @@
       "catalogueStores": 26,
       "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-10-18"
+        "2026-10-16"
       ],
       "catalogueWithinAgeLimit": 26,
       "httpStatus": 401,
@@ -422,8 +419,8 @@
       "storeId": "11|2|1081",
       "branch": "Rawson San Juan",
       "locality": "BARRIO RAWSON",
-      "sourceDate": "2026-10-18",
-      "sourceRows": 1345,
+      "sourceDate": "2026-10-16",
+      "sourceRows": 1347,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
@@ -437,8 +434,8 @@
       "storeId": "11|5|1006",
       "branch": "San Juan",
       "locality": "BARRIO RIVADAVIA",
-      "sourceDate": "2026-10-18",
-      "sourceRows": 1344,
+      "sourceDate": "2026-10-16",
+      "sourceRows": 1346,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
@@ -452,8 +449,8 @@
       "storeId": "11|2|1092",
       "branch": "San Juan Norte",
       "locality": "SAN JUAN",
-      "sourceDate": "2026-10-18",
-      "sourceRows": 1345,
+      "sourceDate": "2026-10-16",
+      "sourceRows": 1347,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 401,
