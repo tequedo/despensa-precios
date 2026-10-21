@@ -10,7 +10,7 @@ let cookie;
 async function query(scope, parameters, expectedGeneration) {
   const search = new URLSearchParams({...scope, best:'producto', ...parameters});
   for (let attempt = 0; attempt < 13; attempt++) {
-    const response = await fetch(origin+'/api/prices?'+search, {headers:{origin,cookie}, signal:AbortSignal.timeout(45000)});
+    const response = await fetch(origin+'/api/prices?'+search, {headers:{origin,cookie,authorization:`Bearer ${token}`}, redirect:'error', signal:AbortSignal.timeout(45000)});
     const body = await response.json();
     if (response.status === 200 && body.coverage?.generatedAt === expectedGeneration) return body;
     if ((response.status !== 503 && response.status !== 200) || attempt === 12) {
