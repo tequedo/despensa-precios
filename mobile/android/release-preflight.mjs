@@ -11,6 +11,9 @@ export function releasePreflight({ env, assetLinks = null, fileExists = existsSy
   if (env.RINDECASA_UPLOAD_KEYSTORE && !fileExists(env.RINDECASA_UPLOAD_KEYSTORE)) blockers.push('No está disponible el almacén de la clave de carga.');
   if (/^androiddebugkey$/i.test(env.RINDECASA_UPLOAD_KEY_ALIAS ?? '')) blockers.push('No se acepta la clave de depuración para publicación.');
   if (env.RINDECASA_APPLICATION_ID_CONFIRMED !== APPLICATION_ID) blockers.push('Falta confirmar el identificador definitivo de la aplicación.');
+  // The Play signing certificate is generated/selected after the first upload.
+  // An owner upload key is sufficient to build that first signed bundle.
+  const buildBlockers = [...blockers];
   const fingerprint = String(env.RINDECASA_PLAY_SIGNING_SHA256 ?? '').toUpperCase();
   const validFingerprint = /^([0-9A-F]{2}:){31}[0-9A-F]{2}$/.test(fingerprint) && new Set(fingerprint.replaceAll(':', '')).size > 1;
   if (!validFingerprint) blockers.push('Falta una huella SHA-256 real del certificado de firma de Play, no de la clave de carga.');
@@ -19,8 +22,8 @@ export function releasePreflight({ env, assetLinks = null, fileExists = existsSy
     link.target?.namespace === 'android_app' && link.target.package_name === APPLICATION_ID &&
     Array.isArray(link.target.sha256_cert_fingerprints) && link.target.sha256_cert_fingerprints.some(value => typeof value === 'string' && value.toUpperCase() === fingerprint));
   if (!associated) blockers.push('Falta comprobar assetlinks.json del origen público con el paquete y certificado de Play correctos.');
-  return { applicationId: APPLICATION_ID, origin: ORIGIN, readyForSignedBuild: blockers.length === 0,
-    readyForPlaySubmission: false, blockers,
+  return { applicationId: APPLICATION_ID, origin: ORIGIN, readyForSignedBuild: buildBlockers.length === 0, readyForTwaVerification: blockers.length === 0,
+    readyForPlaySubmission: false, blockers, buildBlockers,
     pendingBeyondBuild: ['Privacidad y eliminación de cuenta probadas.', 'Pruebas físicas en Android y acceso del revisor.', 'Marca según la condición del titular.', 'Ficha, Seguridad de los datos y revisión de Play.'] };
 }
 
