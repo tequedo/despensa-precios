@@ -42,7 +42,7 @@ export async function diagnosePriceAccess({ token, readJson, fetchImpl = fetch, 
   let cookie;
   const request = async (path, init = {}) => {
     const response = await fetchImpl(origin + path, { ...init, redirect: 'error', signal: AbortSignal.timeout(30_000),
-      headers: { origin, ...(cookie ? { cookie } : {}), ...init.headers } });
+      headers: { origin, authorization: `Bearer ${token}`, ...(cookie ? { cookie } : {}), ...init.headers } });
     let body = {}; try { body = await response.json(); } catch { /* invalid API response remains an unsuccessful check */ }
     return { status: response.status, body, response };
   };
