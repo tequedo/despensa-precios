@@ -55,7 +55,9 @@ test('a complete national diagnosis of stale sources is never reported as restor
       return new Response('{}', { headers: { 'set-cookie': 'despensa_profile=test-cookie; HttpOnly; Secure' } });
     }
     assert.equal(init.headers.cookie, 'despensa_profile=test-cookie');
-    assert.equal(init.headers.authorization, undefined);
+    // Production requires both the isolated test profile and the service
+    // credential on every read; a cookie alone must never authorize the check.
+    if (init.headers.authorization !== 'Bearer test-secret') return Response.json({}, { status: 401 });
     if (url.includes('/coverage?')) return Response.json({ sourceStatus: 'stale', lastPriceDate: '2026-09-22', stores: 0, locations: [], updatedAt: '2026-09-25T13:36:48Z' });
     if (url.includes('storeIds=')) return Response.json({ error: 'Una sucursal elegida ya no tiene precios recientes en este radio.' }, { status: 503 });
     return Response.json({ data: { options: [] }, coverage: { sourceStatus: 'stale', lastPriceDate: '2026-09-22', generatedAt: '2026-09-25T13:36:48Z' } });
