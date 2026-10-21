@@ -47,6 +47,8 @@ jobs:
           "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-36' 'build-tools;36.0.0'
       - name: Check and compile the Android pilot
         run: gradle --no-daemon --stacktrace :app:lint :app:assembleDebug :app:bundleRelease
+      - name: Record resolved release dependencies
+        run: gradle --no-daemon :app:dependencies --configuration releaseRuntimeClasspath > app/build/reports/release-runtime-dependencies.txt
       - name: Retain review packages and lint report
         uses: actions/upload-artifact@v4
         with:
@@ -57,3 +59,6 @@ jobs:
             mobile/android/app/build/outputs/apk/debug/app-debug.apk
             mobile/android/app/build/outputs/bundle/release/app-release.aab
             mobile/android/app/build/reports/lint-results-*.html
+            mobile/android/app/build/reports/release-runtime-dependencies.txt
+            mobile/android/app/build/intermediates/merged_manifests/release/**/AndroidManifest.xml
+            mobile/android/app/build/intermediates/merged_manifest/release/**/AndroidManifest.xml
