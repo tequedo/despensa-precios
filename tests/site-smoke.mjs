@@ -12,7 +12,7 @@ async function profile(label){
 }
 const a=await profile('Prueba técnica de publicación A'),b=await profile('Prueba técnica de publicación B');
 async function request(path,body,cookie=a){
- const r=await fetch(origin+path,{method:body===undefined?'GET':'POST',headers:{origin,cookie,'content-type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)}),signal:AbortSignal.timeout(45000)});
+ const r=await fetch(origin+path,{method:body===undefined?'GET':'POST',headers:{origin,cookie,authorization:`Bearer ${token}`,'content-type':'application/json'},...(body===undefined?{}:{body:JSON.stringify(body)}),redirect:'error',signal:AbortSignal.timeout(45000)});
  const d=await r.json();return {status:r.status,body:d};
 }
 const coverage=JSON.parse(await readFile('data/national/coverage.json','utf8'));assert.equal(coverage.geographyVerified,true);
