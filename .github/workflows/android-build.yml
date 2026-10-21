@@ -4,6 +4,7 @@ on:
     paths:
       - 'mobile/android/**'
       - 'tests/android-release-preflight.test.mjs'
+      - 'tests/android-upload-key.test.py'
       - 'docs/play/**'
       - '.github/workflows/android-build.yml'
   workflow_dispatch:
@@ -38,6 +39,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - name: Verify upload signing with disposable test keys
+        env:
+          REQUIRE_JAVA_SIGNING_TESTS: '1'
+        run: python3 ../../tests/android-upload-key.test.py
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '9.3.1'
