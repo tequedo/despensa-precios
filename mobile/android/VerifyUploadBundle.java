@@ -41,7 +41,7 @@ class VerifyUploadBundle {
                     if (!actual.equals(expected)) throw new SecurityException();
                     if (!(certificate.getPublicKey() instanceof RSAPublicKey rsa) ||
                         rsa.getModulus().bitLength() < 3072) throw new SecurityException();
-                    if (certificate.getSubjectX500Principal().getName().toLowerCase(Locale.ROOT).contains("android debug"))
+                    if (certificate.getSubjectX500Principal().getName().toLowerCase(Locale.ROOT).replace(" ", "").contains("androiddebug"))
                         throw new SecurityException();
                     payloadEntries++;
                 }

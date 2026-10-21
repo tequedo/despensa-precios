@@ -14,7 +14,7 @@ python3 mobile/android/upload-key.py create \
   --backup-directory /OTRA-UNIDAD-PRIVADA/donde-rinde-upload-respaldo
 ```
 
-En Windows, usar `py -3` y rutas absolutas propias entre comillas. Elegir una contraseña única de al menos 16 caracteres y guardarla en el gestor de contraseñas del titular. No enviarla por chat ni correo. No adjuntar `upload.p12` a un issue, un commit o una conversación. La herramienta no puede comprobar el cifrado ni la separación física de las unidades; son responsabilidad del titular.
+En Windows, usar `py -3` y rutas absolutas propias entre comillas. Elegir una contraseña única de al menos 16 caracteres ASCII visibles, compatible con PKCS12, y guardarla en el gestor de contraseñas del titular. No enviarla por chat ni correo. No adjuntar `upload.p12` a un issue, un commit o una conversación. La herramienta no puede comprobar el cifrado ni la separación física de las unidades; son responsabilidad del titular.
 
 Se crean `upload.p12`, `upload-certificate.pem` y `upload-metadata.json` en ambas ubicaciones y se compara su SHA-256. La clave es RSA de 3072 bits y el certificado dura 10.000 días, con nombre genérico sin domicilio, teléfono o identificación fiscal. La herramienta se detiene si las carpetas existen: **no regenerar una clave ya utilizada** por encontrar un error o perder una contraseña. Recuperar el respaldo y, cuando corresponda, usar el procedimiento de restablecimiento de clave de carga de Play.
 
