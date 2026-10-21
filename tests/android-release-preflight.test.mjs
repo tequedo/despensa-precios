@@ -16,15 +16,21 @@ test('a fully matched input allows signed build only, not a Play submission',()=
   const r=releasePreflight({env,assetLinks,fileExists:()=>true});assert.equal(r.readyForSignedBuild,true);assert.equal(r.readyForPlaySubmission,false);
 });
 test('wrong package, missing files, debug key and placeholder fingerprint never pass',()=>{
-  for(const delta of [{RINDECASA_APPLICATION_ID_CONFIRMED:'other.app'},{RINDECASA_UPLOAD_KEY_ALIAS:'androiddebugkey'},{RINDECASA_PLAY_SIGNING_SHA256:'00:'.repeat(31)+'00'},{RINDECASA_UPLOAD_KEY_PASSWORD:''}]) assert.equal(releasePreflight({env:{...env,...delta},assetLinks,fileExists:()=>true}).readyForSignedBuild,false);
+  for(const delta of [{RINDECASA_APPLICATION_ID_CONFIRMED:'other.app'},{RINDECASA_UPLOAD_KEY_ALIAS:'androiddebugkey'},{RINDECASA_UPLOAD_KEY_PASSWORD:''}]) assert.equal(releasePreflight({env:{...env,...delta},assetLinks,fileExists:()=>true}).readyForSignedBuild,false);
   assert.equal(releasePreflight({env,assetLinks,fileExists:()=>false}).readyForSignedBuild,false);
   const wrong=[{...assetLinks[0],target:{...assetLinks[0].target,package_name:'other.app'}}];
-  assert.equal(releasePreflight({env,assetLinks:wrong,fileExists:()=>true}).readyForSignedBuild,false);
-  assert.equal(releasePreflight({env,assetLinks:[null,{relation:'wrong'}],fileExists:()=>true}).readyForSignedBuild,false);
+  assert.equal(releasePreflight({env,assetLinks:wrong,fileExists:()=>true}).readyForTwaVerification,false);
+  assert.equal(releasePreflight({env,assetLinks:[null,{relation:'wrong'}],fileExists:()=>true}).readyForTwaVerification,false);
 });
 test('manifest and signing gate preserve the same origin and avoid debug signing',()=>{
   const manifest=readFileSync(new URL('../mobile/android/app/src/main/AndroidManifest.xml',import.meta.url),'utf8');
   assert.ok(manifest.includes(ORIGIN));
   const gradle=readFileSync(new URL('../mobile/android/app/build.gradle',import.meta.url),'utf8');
   assert.ok(gradle.includes(`applicationId '${APPLICATION_ID}'`));assert.ok(gradle.includes('if (signedRelease) signingConfig signingConfigs.upload'));assert.equal(gradle.includes('signingConfigs.debug'),false);
+});
+
+test('the first signed upload can precede Play certificate and TWA verification',()=>{
+  const r=releasePreflight({env:{...env,RINDECASA_PLAY_SIGNING_SHA256:''},fileExists:()=>true});
+  assert.equal(r.readyForSignedBuild,true);assert.equal(r.readyForTwaVerification,false);assert.equal(r.readyForPlaySubmission,false);assert.equal(r.buildBlockers.length,0);
+  assert.equal(releasePreflight({env:{...env,RINDECASA_PLAY_SIGNING_SHA256:'00:'.repeat(31)+'00'},assetLinks,fileExists:()=>true}).readyForTwaVerification,false);
 });
