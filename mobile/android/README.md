@@ -1,41 +1,38 @@
 # Dónde Rinde — piloto Android
 
-Preparación del 2 de octubre de 2026. Este proyecto abre la app existente mediante una Trusted Web Activity del navegador; conserva el mismo backend y evita duplicar inventarios y reglas de precios. El nombre elegido el 11/10/2026 es Dónde Rinde, cuya solicitud y concesión marcaria todavía deben acreditarse. Las búsquedas fonéticas pagadas anteriores corresponden a RINDECASA. El identificador `ar.rindecasa.app` es provisorio hasta comprobarlo en Play Console: después de publicar no se puede cambiar el identificador de esa app.
+Contenedor de la app existente mediante una Trusted Web Activity del navegador, con el mismo backend y reglas de precios. Nombre visible: **Dónde Rinde**. El identificador técnico es `ar.rindecasa.app`: se observó disponible en Play Console el 21/10/2026, pero todavía no se creó la ficha ni se publicó. Confirmarlo antes de la primera subida; cambiar el nombre visible no cambia ese identificador. No se afirma registro de marca concedido.
 
-## Compilación de revisión
+## Compilación y comprobación
 
-Herramientas fijadas: Java 17, Gradle 9.3.1, Android Gradle Plugin 9.1.1, compile/target SDK 36, mínimo Android 7.0/API 24, android-browser-helper 2.7.3 y AndroidX Browser 1.10.0. Se fija la versión publicada en Google Maven; el tag 2.7.4 anunciado en GitHub aún no estaba disponible allí al comprobar la primera compilación. Con Android SDK instalado:
+Java 17, Gradle 9.3.1, Android Gradle Plugin 9.1.1, compile/target SDK 36, mínimo Android 7.0/API 24, android-browser-helper 2.7.3 y AndroidX Browser 1.10.0. Se fijan las versiones utilizadas por el piloto, sin cambiar dependencias como parte de la firma. Con Android SDK instalado:
 
 ```bash
 cd mobile/android
 gradle --no-daemon :app:lint :app:assembleDebug :app:bundleRelease
 ```
 
-La acción `Donde Rinde Android review build` produce un APK de prueba y un AAB **sin firma de publicación**. Ningún paso envía paquetes a Play. El icono es de desarrollo y debe reemplazarse por el arte final propio.
+`Donde Rinde Android review build` genera un APK de depuración y un AAB de release **sin firma de carga**; conserva lint, dependencias resueltas y manifiestos. Ejecuta el preflight y pruebas de firma con claves desechables. No usa una clave del titular ni sube paquetes a Play. El APK de depuración no sirve como bundle de publicación.
 
-## Antes de probar sin barra del navegador
+## Firmar sin instalar Android Studio
 
-1. Confirmar identificador definitivo y dominio/URL de lanzamiento.
-2. Configurar Play App Signing y la clave de carga, manteniendo archivos y contraseñas fuera del repositorio.
-3. Obtener en Play Console la huella SHA-256 del certificado de firma de la app. No confundirla con la clave de carga.
-4. Publicar en el origen web `/.well-known/assetlinks.json` una asociación válida con el paquete y esa huella. No se publica aquí una huella inventada ni de depuración.
-5. Verificar la asociación en un dispositivo. Si falla, el navegador muestra una Custom Tab con su barra; la compilación por sí sola no acredita una TWA validada.
-6. Probar inicio de sesión, cierre de sesión, cambio de cuenta, retorno desde autenticación, cámara, voz, ubicación, pérdida de señal y eliminación de datos.
+El [procedimiento de clave de carga](../../docs/play/FIRMA_DE_SUBIDA.md) usa Python 3.11+ y un JDK 17 completo para generar una clave privada y verificar su respaldo en ubicaciones del titular, firmar una copia del AAB ya compilado y comprobar firma, certificado, paquete e integridad. No necesita Android SDK para esa operación. No pone contraseñas en argumentos, archivos o registros. Se ejecuta en la terminal del titular, no en este chat, y no hace solicitudes de red.
 
-El navegador gestiona los permisos de cámara, micrófono y ubicación para el sitio. Debe verificarse el resultado real en teléfonos; el contenedor no agrega permisos nativos innecesarios.
+El script no reemplaza claves o paquetes existentes, rechaza rutas dentro de un repositorio y exige un respaldo idéntico antes de firmar. La separación física y el cifrado de las unidades deben comprobarse por el titular. **Aún no se creó una clave del titular ni se firmó un AAB de lanzamiento.** Las claves de pruebas no son claves de publicación.
 
-## Preparación de firma — 9 de octubre de 2026
+También se conserva la vía de compilación firmada con Gradle. Requiere `RINDECASA_UPLOAD_KEYSTORE`, `RINDECASA_UPLOAD_STORE_PASSWORD`, `RINDECASA_UPLOAD_KEY_ALIAS`, `RINDECASA_UPLOAD_KEY_PASSWORD` y `RINDECASA_APPLICATION_ID_CONFIRMED=ar.rindecasa.app`, en un entorno privado. Operación explícita: `gradle --no-daemon -PrindecasaSignedRelease=true :app:bundleRelease`. Nunca usar la clave de depuración ni guardar estas entradas en el repositorio.
 
-Se incorporó una configuración separada de clave de **carga**, sin crear claves ni usar la de depuración. La compilación de revisión sigue sin firma de publicación. Para firmar hacen falta, en un entorno privado, `RINDECASA_UPLOAD_KEYSTORE` (ruta absoluta al almacén del titular), `RINDECASA_UPLOAD_STORE_PASSWORD`, `RINDECASA_UPLOAD_KEY_ALIAS` y `RINDECASA_UPLOAD_KEY_PASSWORD`. Nunca se guardan en el repositorio.
+`node release-preflight.mjs` separa `readyForSignedBuild` de `readyForTwaVerification`: permite preparar el primer bundle con la clave de carga antes de que Play asigne o seleccione su certificado de distribución. Para verificar la TWA requiere además la huella real `RINDECASA_PLAY_SIGNING_SHA256` y una copia comprobada de la asociación pública `RINDECASA_ASSETLINKS_FILE`. Nunca declara lista una presentación en Play.
 
-Confirmado el paquete en Play Console, definir `RINDECASA_APPLICATION_ID_CONFIRMED=ar.rindecasa.app`. La operación explícita será `gradle --no-daemon -PrindecasaSignedRelease=true :app:bundleRelease`. Falla si faltan entradas, el archivo no está disponible o se intenta usar `androiddebugkey`. No envía paquetes a Play. Verificar después la firma real con `jarsigner -verify` y el certificado de carga antes de entregar el AAB.
+## Después de la primera subida
 
-`node release-preflight.mjs` revisa entradas y asociación web sin mostrar credenciales. Requiere también `RINDECASA_PLAY_SIGNING_SHA256` y `RINDECASA_ASSETLINKS_FILE`, copia de la asociación servida realmente por el origen HTTPS, con evidencia de respuesta HTTP/fecha. No usar un ejemplo inventado. La huella es la de **firma de la app en Play**, que puede ser distinta de la clave de carga. El script no descarga ni publica la asociación y nunca declara lista una presentación en Play.
+1. Obtener los certificados reales de **firma de la app en Play**, distintos del certificado de carga cuando corresponda.
+2. Publicar `/.well-known/assetlinks.json` en el origen web con el paquete y esas huellas. No usar ejemplos, huellas de pruebas o del APK de depuración.
+3. Probar la asociación en un teléfono. Si falla, el navegador muestra una Custom Tab con barra; compilar no acredita una TWA validada.
+4. Probar comparación pública, autenticación opcional cuando esté activa, cierre/cambio de cuenta, retorno de autenticación, cámara, voz, ubicación, pérdida de señal, denuncia/bloqueo y eliminación de datos.
+5. Completar ficha, datos, clasificación, acceso de revisión y prueba cerrada según Play Console. No afirmar cobertura, stock, pagos, actualización oficial SEPA o acceso Google que no se hayan comprobado.
 
-El preflight tiene pruebas positivas/negativas, no reemplaza las pruebas físicas. Consultar [el protocolo Android](../../docs/play/PRUEBAS_FISICAS_ANDROID.md) y [el plan de lanzamiento](../../docs/play/PLAN_DE_LANZAMIENTO.md). El contenedor no elimina restricciones del proveedor de precios.
+El navegador gestiona cámara, micrófono y ubicación para el sitio. El contenedor no agrega permisos nativos de contactos, SMS o lectura del álbum completo. Las exclusiones de respaldo del contenedor no controlan los datos del navegador.
 
-Fuentes técnicas: [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start), [AGP 9.1](https://developer.android.com/build/releases/agp-9-1-0-release-notes), [AndroidX Browser](https://developer.android.com/jetpack/androidx/releases/browser), [android-browser-helper](https://github.com/GoogleChrome/android-browser-helper/releases).
+El icono instalado y el nombre se mantienen en la fuente Android; Outfit se usa bajo SIL OFL con la licencia incluida. La gráfica de la ficha y los controles de privacidad/contenido se mantienen en la fuente web. La compilación no acredita exclusividad marcaria ni resuelve las condiciones de las fuentes de precios.
 
-## Identidad del 11/10/2026
-
-El nombre instalado es **Dónde Rinde**, con el mismo nombre en la web y una D en el icono derivado de Outfit Bold bajo SIL OFL. La receta y la licencia se conservan en la fuente web. No se invoca registro ni exclusividad sobre geometrías genéricas. `ar.rindecasa.app` y las variables `RINDECASA_*` se conservan como identificadores técnicos: cambiar el nombre visible no cambia la identidad de una app. El paquete continúa provisorio y requiere confirmación en Play antes de la primera publicación. No se generó ni custodió una clave de carga por este cambio.
+Fuentes: [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start), [firma Android](https://developer.android.com/studio/publish/app-signing), [AGP 9.1](https://developer.android.com/build/releases/agp-9-1-0-release-notes), [AndroidX Browser](https://developer.android.com/jetpack/androidx/releases/browser).
