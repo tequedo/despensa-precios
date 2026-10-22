@@ -79,8 +79,25 @@ test("verifica el descuento de Carrefour sólo con sus condiciones completas", (
   assert.equal(discount.validFrom, "2026-09-01");
   assert.equal(discount.validTo, "2026-09-30");
   assert.equal(discount.capAmount, 15000);
+  assert.equal(discount.capPeriod, "month");
+  assert.equal(discount.capOwner, "person");
+  assert.match(discount.capRule, /mensual.*persona/);
   assert.equal(discount.calculationEligible, false);
   assert.equal(discount.sourceRecordId, "b5821964-430c-44e9-90d2-17fee264f019");
+});
+
+test("a monetary cap without its period or owner stays incomplete", () => {
+  const text = `Todos los lunes de Septiembre. 15% de descuento. Tope de $15.000.
+    Exclusivo con tarjeta de crédito de Mercado Pago (física y QR).
+    Beneficio válido en Argentina los días lunes hasta el 30/09/2026.
+    Todas las sucursales de Hipermercados Carrefour, Carrefour Market, Carrefour Express y Carrefour Maxi.
+    No válido para www.carrefour.com.ar. No incluye carnicería y huevos. Mercado Pago.`;
+  const result = parseCarrefourBenefits(text, {checkedAt:'2026-09-09T12:00:00Z'})[0];
+  assert.equal(result.status, 'incomplete');
+  assert.match(result.reasons.join(' '), /período y el titular/);
+  const reimbursement = parseCarrefourBenefits(text.replace('Tope de $15.000','Tope mensual por cliente de $15.000')+' Se acreditará en la cuenta dentro de 30 días.', {checkedAt:'2026-09-09T12:00:00Z'})[0];
+  assert.equal(reimbursement.status, 'verified');
+  assert.equal(reimbursement.kind, 'reimbursement');
 });
 
 test("bloquea el descuento de Carrefour si sus términos contradicen el uso de la app", () => {

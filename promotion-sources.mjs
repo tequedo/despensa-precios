@@ -1,4 +1,7 @@
+import { normalize } from './price-safety.mjs';
+
 // Official public sources. Reachability alone never authorizes a discount.
+export const productPromotionSourceMatches = (source, chain) => source.chain.test(normalize(chain));
 export const walletPromotionSources = [
   {
     id: "mercado_pago_public",

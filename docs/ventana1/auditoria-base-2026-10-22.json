@@ -1,0 +1,81 @@
+{
+  "reportType": "window1_read_only_audit",
+  "checkedAt": "2026-10-22T13:08:31.353Z",
+  "sourceCommit": "0b1972f88cf63077674b049f1b78cc4d1bc0ed49",
+  "notice": "Snapshot audit; this report does not verify shelf prices or deploy code.",
+  "inputHashes": {
+    "data/san-juan-promotions.json": "824ad1fe012de66165ad267a3596203d65553d58433a8cd12d4213c00147e181",
+    "data/retailer-promotions-verified.json": "a3e7e0783fb7f5d19019949269f3a0bed8f8d8a69bdc28d1f020fe6177a81d81",
+    "data/partner-promotions-verified.json": "9e84a32ce32519986cd6deb35c2b141f74bc62646d16f977ff566818cc0e03a6",
+    "data/wallet-benefits-verified.json": "cd926d5ffa6de0bd94097a8113b14d80f5196102fc7914f1a6675c69bbb61524",
+    "data/promotion-matrix.json": "0b95995b07a8f47d07093594d033773869fa7a7cf6e9428788b8a5d9494011ef",
+    "data/price-refresh-history.json": "97a81b9e4e4bbfda187622ce2351b9a1d76bd2c873d3b10121ae397afa6fef50",
+    "data/sepa-provenance.json": "f8d60dc697587d72713c31a3d12df96e56a28943a1b73a0dd889e6fa7d39c31c",
+    "data/national-geography-audit.json": "9f3c18d68114d62aa1460a0769b933661863c2596e0f8d8b90ea0720a5935cad"
+  },
+  "acquisition": {
+    "checkedAt": "2026-10-22T07:05:06.402Z",
+    "sourceType": "replica",
+    "integrity": "replica_integrity_checked",
+    "originalComparison": {
+      "status": "not_performed",
+      "reason": "No se obtuvo un original por un canal oficial independiente"
+    },
+    "officialChannelRestored": false
+  },
+  "stability": {
+    "latestAttempt": {
+      "day": "2026-10-22",
+      "checkedAt": "2026-10-22T07:21:47.081Z",
+      "confirmed": false,
+      "sourceDate": "2026-10-21",
+      "sourceType": "replica",
+      "revisionId": "47b7d367-68c3-4fd1-8a4d-911c564ecbc4",
+      "appGeneration": "2026-10-22T07:05:04.740Z",
+      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/39737295706",
+      "jurisdictionsWithCurrentPrices": 0,
+      "physicalStores": 2546,
+      "changomasBranchesConfirmed": 0,
+      "independentlyComparedWithOfficial": false
+    },
+    "recordedStreak": 0,
+    "confirmedStreakThroughToday": 0,
+    "sevenDaysProven": false,
+    "recordedDays": 14
+  },
+  "productCandidates": {
+    "generatedAt": "2026-10-22T07:15:37.116Z",
+    "count": 631,
+    "scopedLegacyKeys": 631,
+    "missingExplicitBarcode": 631,
+    "missingPresentation": 631,
+    "priceDates": [
+      "2026-10-21"
+    ],
+    "verifiedProductProofs": 0
+  },
+  "benefits": {
+    "generatedAt": "2026-10-22T12:35:41.242Z",
+    "verifiedTerms": 1,
+    "automaticallyCalculable": 0,
+    "cappedWithoutPeriodOrOwner": 1,
+    "unknownMinimum": 1
+  },
+  "publishedMatrix": {
+    "generatedAt": "2026-10-22T12:35:41.242Z",
+    "summary": {
+      "publicSources": 20,
+      "reachableSources": 17,
+      "sourcesCheckedToday": 20,
+      "candidates": 250,
+      "blocked": 250,
+      "auditableForCalculation": 0,
+      "productPromotions": 0,
+      "productSourcesCheckedToday": 10
+    }
+  },
+  "geography": {
+    "checkedAt": "2026-10-22T07:15:41.859Z",
+    "rejectedStores": 53
+  }
+}

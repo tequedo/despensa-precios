@@ -1,0 +1,239 @@
+{
+  "checkedAt": "2026-10-22T13:02:12.890Z",
+  "sourceCommit": "0b1972f88cf63077674b049f1b78cc4d1bc0ed49",
+  "sha256": "bee5328f03e47cd651bdb52af96a66cedb65dae140cb63074dd8552d249a2dae",
+  "rows": 22045,
+  "stores": 14,
+  "channels": {
+    "sucursal": 22045
+  },
+  "sourceDates": {
+    "2026-10-21": 22045
+  },
+  "barcodeStatuses": {
+    "valid_format_and_checksum": 21648,
+    "restricted": 387,
+    "internal": 10
+  },
+  "unresolvedPackageRows": 7381,
+  "unresolvedPackageExamples": [
+    {
+      "ean": "sepa:9:1:0000075032715",
+      "name": "cerveza CORONA Rubia 330cc BOT-330-cc.",
+      "presentation": "355.00 cc.",
+      "branch": "9|1|544"
+    },
+    {
+      "ean": "sepa:9:1:0000075032715",
+      "name": "cerveza CORONA Rubia 330cc BOT-330-cc.",
+      "presentation": "355.00 cc.",
+      "branch": "9|1|193"
+    },
+    {
+      "ean": "sepa:9:1:0000075032715",
+      "name": "cerveza CORONA Rubia 330cc BOT-330-cc.",
+      "presentation": "355.00 cc.",
+      "branch": "9|1|408"
+    },
+    {
+      "ean": "sepa:9:1:0000075032715",
+      "name": "cerveza CORONA Rubia 330cc BOT-330-cc.",
+      "presentation": "355.00 cc.",
+      "branch": "9|1|417"
+    },
+    {
+      "ean": "sepa:9:1:0000075032715",
+      "name": "cerveza CORONA Rubia 330cc BOT-330-cc.",
+      "presentation": "355.00 cc.",
+      "branch": "9|1|815"
+    }
+  ],
+  "observedControl": {
+    "barcode": "7790272001029",
+    "sampleType": "SEPA replica observations, not independently verified shelf prices",
+    "quotes": [
+      {
+        "storeId": "11|2|1081",
+        "branch": "Rawson San Juan",
+        "chain": "Changomas",
+        "ean": "sepa:11:2:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.5 L",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5989,
+        "total": 5989,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "11|5|1006",
+        "branch": "San Juan",
+        "chain": "HiperChangomas",
+        "ean": "sepa:11:5:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.5 L",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5989,
+        "total": 5989,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|193",
+        "branch": "Vea 27.",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|408",
+        "branch": "Vea 39 Calle Salta",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|417",
+        "branch": "Vea 48 Gral Acha",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|544",
+        "branch": "San Juan",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|194",
+        "branch": "Vea 28.",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|815",
+        "branch": "Vea 51 Rawson",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|415",
+        "branch": "Vea 46 Caucete",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|410",
+        "branch": "Vea 41 Trinidad",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "9|1|413",
+        "branch": "Vea 44 Shopping",
+        "chain": "Vea",
+        "ean": "sepa:9:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.50 lt.",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "10|1|123",
+        "branch": "San Juan",
+        "chain": "Hipermercado Carrefour",
+        "ean": "sepa:10:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1 UNI",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 5990,
+        "total": 5990,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "2|1|381",
+        "branch": "HIPERMERCADO SAN JUAN",
+        "chain": "La Anonima",
+        "ean": "sepa:2:1:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1500 cm3",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 6150,
+        "total": 6150,
+        "promotionApplied": false
+      },
+      {
+        "storeId": "11|2|1092",
+        "branch": "San Juan Norte",
+        "chain": "Changomas",
+        "ean": "sepa:11:2:7790272001029",
+        "barcode": "7790272001029",
+        "presentation": "1.5 L",
+        "validDate": "2026-10-21",
+        "channel": "sucursal",
+        "listPrice": 7469,
+        "total": 7469,
+        "promotionApplied": false
+      }
+    ]
+  }
+}
