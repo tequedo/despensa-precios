@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-22",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
+  "publishedWebVersion": 167,
+  "webBaseCommit": "d6122f03f4bcf567873334b596f910ded6eba77d",
+  "androidPr": 13,
+  "androidSourceCommit": "ee94d2056e51f40574e494c7918713613fa5cc2e",
+  "windowsReceived": {
+    "1": true,
+    "2": true,
+    "3": true
+  },
+  "integrationComplete": true,
+  "newWebPublication": false,
+  "androidPublished": false,
+  "classificationRule": "Cada estado se refiere al punto completo. Una corrección incorporada y probada no sustituye pruebas físicas, permisos, contratos o publicación.",
+  "points": [
+    {
+      "number": 1,
+      "title": "Acceso estable a SEPA",
+      "window": 1,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Diagnóstico de egreso y alternativas SEPA incorporados. No hay habilitación oficial ni IP autorizada acreditadas; la procedencia vigente sigue siendo réplica."
+    },
+    {
+      "number": 2,
+      "title": "Actualización diaria comprobada",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Auditoría de continuidad y lectura real de 12 cotizaciones recibidas. Éxito con réplica no acredita siete fechas oficiales consecutivas ni precios recién fechados."
+    },
+    {
+      "number": 3,
+      "title": "Identidad y calidad de productos",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Entrega auditó 22.045 observaciones y 7.381 filas sin presentación resoluble. Controles incorporados; rectificación y contrato de identidad/presentación pendientes."
+    },
+    {
+      "number": 4,
+      "title": "Cobertura geográfica real",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Entrega documenta 2.546 sucursales, 53 apartadas por inconsistencia geográfica y exclusión de canal Web. Falta corroboración física de tiendas y coordenadas."
+    },
+    {
+      "number": 5,
+      "title": "Adaptadores de promociones",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Extracción y revalidación reforzadas: mínimo, tope, provincia, canal y fecha deben probarse. Faltan legales completos y contenido dinámico de varias fuentes."
+    },
+    {
+      "number": 6,
+      "title": "Promociones por producto aplicables",
+      "window": 1,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "No se fabrica un EAN desde una clave interna. Extensión de identidad/presentación y caso oficial positivo por producto/sucursal pendientes."
+    },
+    {
+      "number": 7,
+      "title": "Beneficios personales",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Cálculo bloqueado ante mínimos, topes, período, titular o importes incompletos. Reintegro separado del pago en caja; elegibilidad y saldo requieren confirmación."
+    },
+    {
+      "number": 8,
+      "title": "Verificación completa en producción",
+      "window": 1,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Código conjunto compilado y 254 pruebas web aprobadas, incluidas rutas de precios/promociones. Parche aún sin validar en producción; no acredita nuevos descuentos reales."
+    },
+    {
+      "number": 9,
+      "title": "Canales oficiales y reutilización",
+      "window": 1,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Matriz de fuentes, reutilización y límites recibida. Contactos previos no son convenios; faltan permisos o confirmaciones cuando corresponda."
+    },
+    {
+      "number": 10,
+      "title": "Samsung y otro teléfono",
+      "window": 2,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Interfaz conservada y componentes comprobados. Arranque Android previamente validado en emulador; falta recorrido completo en Samsung y segundo teléfono."
+    },
+    {
+      "number": 11,
+      "title": "Voz, foto y códigos",
+      "window": 2,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Permisos tardíos, cancelación y borradores comprobados. Eliminado envío de foto original al fallar su preparación; faltan voz/foto/código físicos."
+    },
+    {
+      "number": 12,
+      "title": "Ubicación real",
+      "window": 2,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Cambio de provincia invalida GPS viejo; rechazo permite selección manual. Falta recorrido físico de GPS, radio, sucursales y conservación de lista."
+    },
+    {
+      "number": 13,
+      "title": "Cuentas y recuperación",
+      "window": 2,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Google configurado y aislamiento probado; recorrido real pendiente."
+    },
+    {
+      "number": 14,
+      "title": "Listas y existencias",
+      "window": 2,
+      "status": "requiere corrección",
+      "evidenceAndLimit": "Reintento de lote conservado al reabrir y guardados confirmados retirados del borrador. C1: compra parcial puede ocultar saldo. C2: operación individual puede duplicarse ante respuesta perdida."
+    },
+    {
+      "number": 15,
+      "title": "Borrado y restauración",
+      "window": 2,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Borrado activo, revocación, aislamiento y rollback probados con datos descartables. Restauración sin resucitar datos y eliminación externa sin acreditar."
+    },
+    {
+      "number": 16,
+      "title": "Proveedores y conservación",
+      "window": 2,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Matriz de proveedores y retención recibida. Los controles operativos de 90 días no acreditan contratos, regiones ni supresión de todas las copias externas."
+    },
+    {
+      "number": 17,
+      "title": "Privacidad, términos y reclamos",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Textos y procedimiento conciliados con entregas 1/2. Cierre pendiente de contacto operativo, conservación y comprobación externa."
+    },
+    {
+      "number": 18,
+      "title": "Licencias, imágenes y datos",
+      "window": 3,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Avisos de 53 coordenadas Android y asset web/Android idéntico. Inclusión previa en AAB aprobada; fotos externas sin derechos siguen suspendidas."
+    },
+    {
+      "number": 19,
+      "title": "Nombre y software INPI/DNDA",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Nombre vigente y preparación INPI/DNDA recuperados; antecedentes contextualizados. Sin nueva presentación, firma, pago ni concesión acreditados."
+    },
+    {
+      "number": 20,
+      "title": "Operación y soporte",
+      "window": 2,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Alertas, métricas y mantenimiento probados en suite. C3: restauración/revocaciones; C4: cuotas, timeout y cancelación del reconocimiento pendientes."
+    },
+    {
+      "number": 21,
+      "title": "Firma de producción y AAB",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Procedimiento y controles de firma incorporados. AAB revisado sin firma de carga; clave real y custodia del titular pendientes."
+    },
+    {
+      "number": 22,
+      "title": "Asociación sitio y Android",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Origen y paquetes Android conservados. Certificado real de distribución y asociación TWA/Asset Links pendientes de verificación."
+    },
+    {
+      "number": 23,
+      "title": "Acceso dedicado de revisión",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Procedimiento de acceso a revisión preparado. Cuenta dedicada repetible sin crear/probar; no se utiliza la cuenta personal como reemplazo."
+    },
+    {
+      "number": 24,
+      "title": "Preparación de Play Console",
+      "window": 3,
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Creación, declaraciones e IARC previos preservados; ficha y guiones preparados. Datos/acceso/público/países y revisión actual de Console pendientes."
+    },
+    {
+      "number": 25,
+      "title": "Capturas reales y coherencia",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Guion de capturas y coherencia preparado. Faltan paquete final y capturas en teléfono real sin datos personales."
+    },
+    {
+      "number": 26,
+      "title": "Prueba cerrada",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Protocolo y registro de prueba cerrada preparados. Participantes y período real no se acreditan por pruebas automáticas."
+    },
+    {
+      "number": 27,
+      "title": "Lanzamiento controlado",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Tres entregas combinadas y probadas en revisión. Web pública continúa en 167; firma, pruebas físicas, revisión y publicación Android pendientes."
+    },
+    {
+      "number": 28,
+      "title": "Primer piloto publicitario",
+      "window": 3,
+      "status": "bloqueado por dependencia",
+      "evidenceAndLimit": "Acuerdo propuesto y ficha de campaña preparados. Sin anunciante, aceptación, derechos, cobro ni campaña real acreditados."
+    },
+    {
+      "number": 29,
+      "title": "Más cadenas, bancos y comercios",
+      "window": 1,
+      "status": "ampliación posterior",
+      "evidenceAndLimit": "Fuentes mayoristas y bancarias adicionales propuestas con enlaces y límites. Sin nuevos contactos enviados ni cobertura completa declarada."
+    },
+    {
+      "number": 30,
+      "title": "Mayoristas y catálogo local",
+      "window": 1,
+      "status": "ampliación posterior",
+      "evidenceAndLimit": "Calculadoras/adaptadores no constituyen un catálogo mayorista real. Faltan cotizaciones por tienda, presentación, bulto, impuestos y vigencia."
+    },
+    {
+      "number": 31,
+      "title": "Historial y alertas ampliados",
+      "window": 1,
+      "status": "ampliación posterior",
+      "evidenceAndLimit": "Auditoría por commit/hashes e historial recibidos. Ampliación comparable requiere contrato de conservación; campanita interna no es push."
+    }
+  ],
+  "androidSourceBaseCommit": "9693488eb212c1a8c5eb48d83915f5a226d97501",
+  "androidReviewRun": 39784776544,
+  "verification": {
+    "webBaselineTests": 232,
+    "webBaselineFailed": 0,
+    "webAfterLegalLinkTests": 12,
+    "webAfterLegalLinkFailed": 0,
+    "androidPreflightLocalTests": 5,
+    "androidLicenseLocalTests": 5,
+    "androidUploadLocalPassed": 4,
+    "androidUploadLocalSkipped": 6,
+    "localJavaSignatureTests": "No full JDK available; six integration cases skipped. Existing CI and new CI recorded separately.",
+    "phoneTestsThisReview": false,
+    "livePlayConsoleVerified": false,
+    "androidCiReviewBuild": "passed",
+    "androidCiLicenseInclusion": "passed",
+    "androidCiSigningWithDisposableKeys": "passed",
+    "androidCiReviewArtifact": 12428012204,
+    "androidMergeTestCommit": "be7414c5c3a67a654781e30dee7b5b54e45cb334",
+    "androidCiEmulatorLaunch": "passed",
+    "androidCiTestsPassed": 20,
+    "integrationLocalPassed": 415,
+    "integrationLocalSkipped": 6,
+    "webIntegratedTests": 254,
+    "dataAndAndroidPreflightTests": 145,
+    "sepaDiagnosticTests": 7,
+    "androidLicensesTests": 5,
+    "androidSigningLocalPassed": 4,
+    "androidSigningLocalSkipped": 6
+  },
+  "androidFinalReview": {
+    "run": 39784776544,
+    "sourceCommit": "ee94d2056e51f40574e494c7918713613fa5cc2e",
+    "mergeTestCommit": "be7414c5c3a67a654781e30dee7b5b54e45cb334",
+    "artifact": 12428012204,
+    "aabSha256": "8fe7d0b262d66b8cbbbf9f440e32c27e57ef3c829280f28d5c6fcdfd061232bf",
+    "unsigned": true,
+    "licenseInclusionVerified": true,
+    "emulatorLaunch": "passed",
+    "summary": "CI 39784776544 aprobado: 5 controles de preflight, 10 pruebas de firma con claves descartables, 5 de licencias, lint, compilación, avisos en el AAB real y regresión de arranque API 36. Sin firma de producción ni prueba física.",
+    "launchArtifact": 12428997191,
+    "smokeApkSha256": "ab5676fdc82d4319122297d5d7d6a14c6e0067f5c2ab46f89e83234269c579c6"
+  },
+  "sourceCopy": {
+    "commit": "8a797111429c35563d66ffef5acb6dbd127027dc",
+    "files": 445,
+    "sha256": "1cb9c704d97ce9ca3dee6ddc9ef0909dfd86c510fcdbf35b5abc7ab103787a38",
+    "dndaFiled": false,
+    "scope": "Copia histórica de Ventana 3; no representa la fuente integrada actual."
+  },
+  "integrationScope": "Código y documentos de las tres entregas conciliados en rama de revisión y comprobados automáticamente; no significa que los 31 frentes estén cerrados ni que se haya publicado.",
+  "integrationBranch": "integracion/tres-frentes-20261022",
+  "integrationSources": {
+    "webBase": "d6122f03f4bcf567873334b596f910ded6eba77d",
+    "webCodeIntegrated": "222a90e3fc03a24a578d305bc4b0d57a76e528e3",
+    "webWindow1": "b966af101bd65bc501b6b0dbe1d546459fab6a13",
+    "webWindow2": "921c11a42cba65aa0a588313a7fedf12cac7b19b",
+    "webWindow3": "0a0dd8dab46688c241c7a10c16c59bf64ee73dcc",
+    "dataBase": "20b4da450f1502eb44da1c742c7de16d063ecf4b",
+    "dataCodeIntegrated": "1b3d3713cbce7e588112bbc45e88b42287afa627",
+    "dataWindow1": "b620e041846703f5c641211a447e5076fa8d4979",
+    "dataSepa": "199726355a33e6086310db2108c9c816743bfd61",
+    "android": "ee94d2056e51f40574e494c7918713613fa5cc2e"
+  },
+  "integrationValidation": "VALIDACION_CONJUNTA_2026-10-22.json",
+  "openCrossIssues": [
+    {
+      "id": "C1",
+      "points": [
+        14
+      ],
+      "title": "Compras parciales",
+      "detail": "Pedir 3 y recibir 1 debe conservar 2 pendientes; la ruta actual puede ocultarlos. Requiere coordinar saldo, API, comparación y migración compatible."
+    },
+    {
+      "id": "C2",
+      "points": [
+        11,
+        14,
+        15
+      ],
+      "title": "Respuesta perdida en operaciones individuales",
+      "detail": "Repetir un alta o una compra individual tras perder la respuesta puede sumar dos veces. Falta comprobante transaccional por operación y recuperación tras recarga."
+    },
+    {
+      "id": "C3",
+      "points": [
+        15,
+        16,
+        20
+      ],
+      "title": "Restauración y revocaciones",
+      "detail": "Un respaldo anterior puede perder barreras de borrado. Falta procedimiento admitido por el alojamiento y prueba aislada antes de reabrir acceso."
+    },
+    {
+      "id": "C4",
+      "points": [
+        11,
+        16,
+        20
+      ],
+      "title": "Límites del reconocimiento",
+      "detail": "Faltan cuotas por perfil, timeout y propagación de cancelación. Cancelar en la pantalla no demuestra cancelación ni ausencia de costo del proveedor."
+    }
+  ]
+}

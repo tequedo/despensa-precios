@@ -1,6 +1,6 @@
 import { cencosudCandidates, cotoCandidates, publicPageCandidates } from './official-promotion-discovery.mjs';
 import { walletPromotionSources } from './promotion-sources.mjs';
-import {discoverBankPromotion} from './bank-promotion-discovery.mjs';
+import {discoverBankPromotion, benefitKindFromTerms} from './bank-promotion-discovery.mjs';
 import { buildPromotionMatrix } from './promotion-coverage.mjs';
 import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
@@ -268,7 +268,7 @@ export function parseChangoBenefits(
       id: `mercado-pago-changomas-${window?.from ?? "sin-vigencia"}`,
       provider: "Mercado Pago",
       chain: "ChangoMás",
-      kind: "discount",
+      kind: benefitKindFromTerms(discountTerms, {discountPercent:percent}),
       title: percent && window ? `${percent}% con Mercado Pago los ${window.dayName}` : "Beneficio Mercado Pago",
       discountPercent: percent,
       daysOfWeek: window?.dayOfWeek === null || window?.dayOfWeek === undefined ? [] : [window.dayOfWeek],
@@ -383,8 +383,12 @@ export function parseCarrefourBenefits(
   const noCap = /SIN TOPE(?: DE REINTEGRO)?/.test(text);
   const capMatch = text.match(/TOPE(?: MENSUAL)?(?: POR CLIENTE)?(?: DE)?\s*\$\s*([\d.]+(?:,\d+)?)/);
   const capAmount = noCap ? null : moneyValue(capMatch?.[1]);
+  // These fields already belong to the wallet contract. The specialized
+  // parser must retain the same cap period/owner as generic discovery.
+  const discoveredTerms = discoverBankPromotion({terms:text,checkedAt});
+  const {capPeriod,capOwner} = discoveredTerms;
   const minimumMatch = text.match(/(?:MINIMO DE COMPRA|COMPRAS A PARTIR DE(?: LOS)?)\s*\$\s*([\d.]+(?:,\d+)?)/);
-  const minimumPurchase = moneyValue(minimumMatch?.[1]);
+  const minimumPurchase = /SIN (?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)/.test(text) ? 0 : moneyValue(minimumMatch?.[1]);
   const moneyInAccount = /MEDIO DE PAGO DINERO EN CUENTA|EXCLUSIVO CON DINERO EN CUENTA/.test(text);
   const creditCard = /TARJETA DE CREDITO \(FISICA Y QR\)|TARJETA DE CREDITO DE MERCADO PAGO/.test(text);
   const installmentCredit = /CUOTAS SIN TARJETA/.test(text);
@@ -427,23 +431,26 @@ export function parseCarrefourBenefits(
   if (!daysOfWeek.length) reasons.push("No se pudieron verificar los días del beneficio.");
   if (!installments && !percent) reasons.push("No se pudo verificar el porcentaje.");
   if (!installments && !noCap && !capAmount) reasons.push("No se pudo verificar el tope.");
+  if (!installments && capAmount != null && (!capPeriod || !capOwner)) reasons.push("No se pudo verificar el período y el titular del tope.");
   if (!paymentRequirement) reasons.push("No se pudo verificar el medio de pago exacto.");
   if (!scopeVerified) reasons.push("No se pudo verificar el formato de sucursal alcanzado.");
   if (!installments && !exclusions.complete) reasons.push("No se pudo verificar la existencia de exclusiones.");
   if (monthConflict) reasons.push("La publicación menciona meses distintos dentro del mismo beneficio.");
   if (paymentConflict) reasons.push("El legal exige la app de Mercado Pago y luego indica que no es válida.");
 
-  const conflict = monthConflict || paymentConflict;
+  const financialConflicts = discoveredTerms.reasons.filter(reason => /Topes ambiguos|Porcentajes contradictorios|Mínimos ambiguos/.test(reason));
+  reasons.push(...financialConflicts);
+  const conflict = monthConflict || paymentConflict || financialConflicts.length > 0;
   const complete = Boolean(
     validity.from &&
       validity.to &&
       daysOfWeek.length &&
       paymentRequirement &&
       scopeVerified &&
-      (installments || (percent && (noCap || capAmount) && exclusions.complete)),
+      (installments || (percent && (noCap || capAmount && capPeriod && capOwner) && exclusions.complete)),
   );
   const active = complete ? activeOn(asOf, validity.from, validity.to) : false;
-  const kind = installments ? "installments" : "discount";
+  const kind = benefitKindFromTerms(text, {installments,discountPercent:percent});
   const status = conflict ? "conflict" : complete && active && !installments ? "verified" : complete && !active ? "expired" : "incomplete";
 
   return [{
@@ -463,7 +470,9 @@ export function parseCarrefourBenefits(
     validTo: validity.to,
     minimumPurchase,
     capAmount,
-    capRule: noCap ? "Sin tope" : capAmount ? `Tope $${capAmount.toLocaleString("es-AR")}` : "No verificado",
+    capPeriod,
+    capOwner,
+    capRule: discoveredTerms.capRule,
     paymentRequirement,
     channels,
     geographicScope,

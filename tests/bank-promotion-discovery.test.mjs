@@ -41,3 +41,16 @@ test('plural day labels and colon-delimited caps are extracted, not made calcula
   assert.deepEqual(b.daysOfWeek,[0]);assert.equal(b.capAmount,20000);assert.equal(b.capPeriod,'month');assert.equal(b.capOwner,'person');
   assert.match(b.capRule,/mensual.*persona/);assert.equal(b.calculationEligible,false);
 });
+test('the phrase sin tope de reintegro does not turn a checkout discount into a reimbursement',()=>{
+ const immediate=discoverBankPromotion({...input,title:'20% de descuento',terms:'Válido del 01/09/2026 al 30/09/2026. Los lunes 20% de descuento pagando con QR. Sin tope de reintegro.'});
+ assert.equal(immediate.kind,'discount');
+ const later=discoverBankPromotion({...input,title:'20% de descuento',terms:immediate.termsText+' Se acreditará en la cuenta dentro de 30 días.'});
+ assert.equal(later.kind,'reimbursement');
+});
+test('zero minimum requires explicit evidence; absent terms retain null',()=>{
+ assert.equal(discoverBankPromotion(input).minimumPurchase,null);
+ assert.equal(discoverBankPromotion({...input,terms:input.terms+' Sin compra mínima.'}).minimumPurchase,0);
+ const conflict=discoverBankPromotion({...input,terms:input.terms+' Sin compra mínima. Compra mínima de $10.000.'});
+ assert.equal(conflict.status,'conflict');
+ assert.match(conflict.calculationBlockedReason,/Mínimos ambiguos/);
+});

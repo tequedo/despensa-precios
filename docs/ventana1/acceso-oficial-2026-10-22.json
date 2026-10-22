@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-22T13:01:24.548806+00:00",
+  "environment": "workspace",
+  "results": [
+    {
+      "url": "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios",
+      "httpStatus": 403,
+      "server": "envoy"
+    }
+  ],
+  "officialAccessRestored": false,
+  "productionChanged": false
+}
