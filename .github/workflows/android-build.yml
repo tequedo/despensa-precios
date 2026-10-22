@@ -73,6 +73,7 @@ jobs:
       contents: read
     env:
       SYSTEM_IMAGE: system-images;android-36;google_apis_playstore;x86_64
+      ANDROID_AVD_HOME: ${{ runner.temp }}/donde-rinde-avd
     steps:
     - uses: actions/checkout@v4
       with:
@@ -119,8 +120,15 @@ jobs:
         export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
         # SDK licenses are normally preaccepted by GitHub's official runner image.
         sdkmanager 'platform-tools' 'emulator' 'platforms;android-36' 'build-tools;36.0.0' "$SYSTEM_IMAGE"
-        echo no | avdmanager create avd --name donde-rinde-api36 --package "$SYSTEM_IMAGE" --device pixel_6
+        mkdir -p "$ANDROID_AVD_HOME"
+        echo no | avdmanager create avd --name donde-rinde-api36 --package "$SYSTEM_IMAGE" --device pixel_6 --path "$ANDROID_AVD_HOME/donde-rinde-api36.avd" --force
+        test -f "$ANDROID_AVD_HOME/donde-rinde-api36.ini"
+        emulator -list-avds | tee launch-smoke/available-avds.txt
+        grep -Fxq donde-rinde-api36 launch-smoke/available-avds.txt
         emulator -avd donde-rinde-api36 -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect -accel on -memory 4096 > launch-smoke/emulator.log 2>&1 &
+        emulator_pid=$!
+        sleep 2
+        if ! kill -0 "$emulator_pid" 2>/dev/null; then cat launch-smoke/emulator.log; exit 1; fi
         timeout 180s adb wait-for-device
         booted=0
         for attempt in $(seq 1 150); do
