@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node update-san-juan.mjs",
-    "check": "node --check update-san-juan.mjs && node --check verify-retailer-promotions.mjs && node --check verify-wallet-benefits.mjs && node --check promotion-sources.mjs && node --check verify-partner-promotions.mjs && node --test tests/*.test.mjs"
+    "check": "node --check update-san-juan.mjs && node --check verify-retailer-promotions.mjs && node --check verify-wallet-benefits.mjs && node --check promotion-sources.mjs && node --check official-promotion-discovery.mjs && node --check verify-partner-promotions.mjs && node --test tests/*.test.mjs",
+    "promotions": "node verify-retailer-promotions.mjs && node verify-partner-promotions.mjs && node verify-wallet-benefits.mjs"
   }
 }

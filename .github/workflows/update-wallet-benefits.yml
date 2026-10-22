@@ -9,6 +9,8 @@ on:
       - "bank-promotion-discovery.mjs"
       - "promotion-coverage.mjs"
       - "promotion-sources.mjs"
+      - "official-promotion-discovery.mjs"
+      - "tests/official-promotion-discovery.test.mjs"
       - "verify-retailer-promotions.mjs"
       - "verify-partner-promotions.mjs"
       - "promotion-evidence.mjs"
@@ -34,7 +36,7 @@ concurrency:
 jobs:
   verificar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 35
     steps:
       - name: Descargar el repositorio
         uses: actions/checkout@v4

@@ -1,3 +1,4 @@
+import { cencosudCandidates, cotoCandidates, publicPageCandidates } from './official-promotion-discovery.mjs';
 import { walletPromotionSources } from './promotion-sources.mjs';
 import {discoverBankPromotion} from './bank-promotion-discovery.mjs';
 import { buildPromotionMatrix } from './promotion-coverage.mjs';
@@ -673,6 +674,29 @@ async function carrefourStructuredData(source, checkedAt) {
   };
 }
 
+const cencosudCache = new Map();
+async function cencosudStructuredData(source, checkedAt) {
+  const url = 'https://www.vea.com.ar/api/dataentities/JN/documents/bankDiscount?_fields=value,id&an=jumboargentina';
+  if (!cencosudCache.has(url)) cencosudCache.set(url, (async () => {
+    const response = await fetch(url, { headers: { accept: 'application/json' }, signal: AbortSignal.timeout(30000) });
+    if (!response.ok) throw new Error(`Cencosud respondió HTTP ${response.status}`);
+    const payload = await response.json();
+    return JSON.parse(payload.value);
+  })());
+  const records = await cencosudCache.get(url);
+  const found = cencosudCandidates(records, source, checkedAt);
+  return { promotions: records, ...found, sourceRecords: records.length, accessMethod: 'official_public_document', evidenceUrl: url };
+}
+
+async function cotoStructuredData(source, checkedAt) {
+  const url = 'https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal?enviroment=ag';
+  const response = await fetch(url, {headers:{accept:'application/json'},signal:AbortSignal.timeout(30000)});
+  if (!response.ok) throw new Error(`Coto respondió HTTP ${response.status}`);
+  const payload = await response.json();
+  const candidates = cotoCandidates(payload, source, checkedAt);
+  return { promotions: payload.result, candidates, sourceRecords: candidates.length, accessMethod:'official_public_multichannel_summary', evidenceUrl:url };
+}
+
 async function sourceHtml(source) {
   if (source.render) return { body: await renderedHtml(source.url), rendered: true };
   const response = await fetch(source.url, {
@@ -694,11 +718,15 @@ async function run() {
     ? sources.filter((source) => selectedSourceIds.has(source.id))
     : sources;
 
-  for (const source of activeSources) {
+  async function inspectSource(source) {
     try {
       const structured = source.structured === "vtex_master_data"
         ? await changoStructuredData(source, checkedAt)
-        : source.structured === "carrefour_vtex"
+        : source.structured === "coto_public"
+          ? await cotoStructuredData(source, checkedAt)
+          : source.structured === "cencosud_public"
+          ? await cencosudStructuredData(source, checkedAt)
+          : source.structured === "carrefour_vtex"
           ? await carrefourStructuredData(source, checkedAt)
           : null;
       const { body, rendered } = structured
@@ -706,7 +734,7 @@ async function run() {
         : await sourceHtml(source);
       const text = structured ? body : htmlToText(body);
       const mentions = text.match(/mercado\s+pago/gi)?.length ?? 0;
-      const found = structured?.candidates ?? [];
+      const found = structured?.candidates ?? publicPageCandidates(body, source, checkedAt);
       candidates.push(...found);
       report.push({
         sourceId: source.id,
@@ -714,6 +742,7 @@ async function run() {
         chain: source.chain ?? null,
         role: source.role,
         url: source.url,
+        evidenceUrl: structured?.evidenceUrl ?? source.url,
         checkedAt,
         reachable: true,
         rendered,
@@ -727,6 +756,9 @@ async function run() {
         officialEntityId: structured?.mercadoPago?.id ?? null,
         mercadoPagoMentions: mentions,
         contentHash: hash(compact(text)),
+        expiredSourceRecords: structured?.expiredRecords ?? 0,
+        excludedSourceRecords: structured?.excludedRecords ?? 0,
+        extractionStatus: found.length ? "candidates_extracted" : "no_conditions_extracted",
         extractedCandidates: found.length,
         verifiedBenefits: found.filter((item) => item.status === "verified").length,
         status: mentions ? "reachable_with_mercado_pago_mentions" : "reachable_without_mercado_pago_mentions",
@@ -752,6 +784,12 @@ async function run() {
     }
   }
 
+  // Bound concurrent public visits; the shared Cencosud document is fetched once.
+  let cursor = 0;
+  await Promise.all(Array.from({length: Math.min(3, activeSources.length)}, async () => {
+    while (cursor < activeSources.length) await inspectSource(activeSources[cursor++]);
+  }));
+  report.sort((a,b)=>activeSources.findIndex(s=>s.id===a.sourceId)-activeSources.findIndex(s=>s.id===b.sourceId));
   const verified = candidates.filter((item) => item.status === "verified");
   const optionalReport = async path => {
     try { return JSON.parse(await readFile(path, 'utf8')); }

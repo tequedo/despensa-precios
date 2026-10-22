@@ -23,3 +23,15 @@ El verificador diario vuelve a comprobar la evidencia estructurada oficial de ca
 `wallet-benefits-verified.json` contiene términos verificados; esto no significa elegibilidad automática. Mercado Pago y MODO requieren banco, tarjeta y modalidad precisos. Jubilación, productos excluidos y saldo del tope personal se confirman en la app. El reintegro posterior se separa del importe a pagar. Las cuotas sin interés son financiación y nunca se restan como porcentaje del precio.
 
 La campanita muestra ofertas actuales y próximas de la provincia, condiciones, fuente y fecha de revisión. Una notificación no afirma que esa cadena tenga el menor precio ni que un beneficio personal ya se haya aplicado. Las fuentes caídas, incompletas y desactualizadas quedan visibles como limitaciones.
+
+## Comando de control y cobertura web (22/10/2026)
+
+`npm run promotions` ejecuta ofertas por producto, aportes oficiales y bancos/billeteras. En GitHub Actions se instala Chrome y se pasa `CHROME_PATH`; ejecutar sin navegador no acredita la revisión de páginas dinámicas. El horario diario sigue siendo 09:15 de Argentina. Una ejecución completa puede mantener cero descuentos aplicables si faltan pruebas.
+
+El registro incluye páginas promocionales de las diez cadenas contactadas: Vea, Jumbo, Disco, Carrefour, La Anónima, DIA, Coto, Hiper Libertad, Átomo y ChangoMás. Son diez cadenas seleccionadas, no todos los supermercados argentinos. Incluye además Mercado Pago, MODO, Banco San Juan, Nación, Naranja X, Macro, Santander, BBVA, Galicia y Supervielle. No se utiliza el portal Visa mediante extracción automática sin autorización.
+
+Vea, Jumbo y Disco se consultan mediante el documento público utilizado por su componente web de descuentos; se filtra por las marcas habilitadas y se conservan sus restricciones de sucursales, categorías y canales. Las fechas estructuradas no reemplazan fechas legales faltantes. Los registros vencidos se contabilizan separadamente; una contradicción de días o vigencia bloquea el cálculo. El documento compartido no convierte un beneficio de Disco en una promoción de Vea.
+
+Coto se consulta mediante su resumen multicanal público; se separan las promociones físicas de las digitales y todos los resúmenes quedan pendientes hasta recuperar sus legales completos. Las otras páginas tienen descubrimiento por contenedores de legales independientes cuando existen. Una página accesible sin un formato reconocido se informa como consultada sin condiciones extraídas; no se presume extracción completa. Las ofertas online de Átomo o Libertad nunca acreditan por sí solas una promoción de sucursal física. Mercado Pago puede restringir el acceso público; sus beneficios también se contrastan en las páginas oficiales de las cadenas. No se consultan cuentas personales ni se eluden bloqueos.
+
+La campanita y el comparador consumen los archivos verificados públicos, con caché breve. Los candidatos incompletos permanecen en los informes de auditoría y en el contador de pendientes; no se anuncian como descuentos ya aplicados. La campanita conserva mínimos, período/titular del tope, acumulación y financiación cuando están comprobados.
