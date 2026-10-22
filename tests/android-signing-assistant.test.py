@@ -71,6 +71,29 @@ class OwnerWorkflowTests(unittest.TestCase):
         prompt.assert_not_called()
         sign.assert_not_called()
 
+    @unittest.skipUnless(fixtures.JAVA_SIGNING, 'Full JDK required; CI must execute this case.')
+    def test_owner_flow_checks_a_real_signature_with_disposable_keys(self):
+        primary, backup, output = self.path / 'key', self.path / 'backup', self.path / 'signed.aab'
+        calls = []
+
+        def local_test_runner(arguments):
+            calls.append(arguments[0])
+            values = dict(zip(arguments[1::2], arguments[2::2]))
+            if arguments[0] == 'create':
+                assistant.upload.create_key(Path(values['--directory']), Path(values['--backup-directory']),
+                                            fixtures.PASSWORD)
+            else:
+                assistant.upload.sign_bundle(Path(values['--directory']), Path(values['--backup-directory']),
+                                             Path(values['--bundle']), Path(values['--output']),
+                                             values['--bundle-sha256'], values['--upload-sha256'], fixtures.PASSWORD)
+
+        proof = assistant.owner_sign(self.bundle, self.release, primary, backup, output, True, local_test_runner)
+        self.assertEqual(calls, ['create', 'sign'])
+        self.assertTrue(proof['signatureVerified'])
+        self.assertFalse(proof['readyForPlaySubmission'])
+        self.assertEqual(assistant.upload.bundle_payload(output), assistant.upload.bundle_payload(self.bundle))
+        self.assertNotIn(fixtures.PASSWORD, output.with_suffix('.verification.json').read_text())
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

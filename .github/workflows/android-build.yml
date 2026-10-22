@@ -45,6 +45,8 @@ jobs:
         REQUIRE_JAVA_SIGNING_TESTS: '1'
       run: python3 ../../tests/android-upload-key.test.py
     - name: Verify owner signing assistant safety gates
+      env:
+        REQUIRE_JAVA_SIGNING_TESTS: '1'
       run: python3 ../../tests/android-signing-assistant.test.py
     - name: Test license distribution checks
       run: python3 ../../tests/android-licenses.test.py

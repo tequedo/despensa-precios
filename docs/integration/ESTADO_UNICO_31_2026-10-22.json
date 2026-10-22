@@ -3,17 +3,17 @@
   "asOf": "2026-10-22",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 167,
-  "webBaseCommit": "d6122f03f4bcf567873334b596f910ded6eba77d",
-  "androidPr": 13,
-  "androidSourceCommit": "ee94d2056e51f40574e494c7918713613fa5cc2e",
+  "publishedWebVersion": 168,
+  "webBaseCommit": "753215f2075f8dfd41464b91fddf735a5fc69297",
+  "androidPr": 19,
+  "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
     "1": true,
     "2": true,
     "3": true
   },
   "integrationComplete": true,
-  "newWebPublication": false,
+  "newWebPublication": true,
   "androidPublished": false,
   "classificationRule": "Cada estado se refiere al punto completo. Una corrección incorporada y probada no sustituye pruebas físicas, permisos, contratos o publicación.",
   "points": [
@@ -22,7 +22,7 @@
       "title": "Acceso estable a SEPA",
       "window": 1,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Diagnóstico de egreso y alternativas SEPA incorporados. No hay habilitación oficial ni IP autorizada acreditadas; la procedencia vigente sigue siendo réplica."
+      "evidenceAndLimit": "Acceso y descarga directa pendientes de respuesta de SEPA por instrucción del titular. PR20 prepara la prueba real como ejecución manual explícita; no hay habilitación oficial ni IP autorizada acreditadas. Procedencia vigente: réplica."
     },
     {
       "number": 2,
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Código conjunto compilado y 254 pruebas web aprobadas, incluidas rutas de precios/promociones. Parche aún sin validar en producción; no acredita nuevos descuentos reales."
+      "evidenceAndLimit": "Integración web 168 publicada, fuente 753215f2075f; 254 pruebas web del corte aprobadas. Falta verificación completa de recorridos en producción y dispositivos; no acredita descuentos reales nuevos."
     },
     {
       "number": 9,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Interfaz conservada y componentes comprobados. Arranque Android previamente validado en emulador; falta recorrido completo en Samsung y segundo teléfono."
+      "evidenceAndLimit": "APK Dónde Rinde Prueba Nueva 0.1.2, paquete independiente preview012, entregado. CI39828245411 comprueba arranque y coexistencia con preview. Instalación en el Samsung y recorrido del segundo teléfono sin confirmar."
     },
     {
       "number": 11,
@@ -134,21 +134,21 @@
       "title": "Privacidad, términos y reclamos",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Textos y procedimiento conciliados con entregas 1/2. Cierre pendiente de contacto operativo, conservación y comprobación externa."
+      "evidenceAndLimit": "Privacidad y tratamiento cotejados con fuente web 168 y Console en vivo; cierre legal preparado. Faltan contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa."
     },
     {
       "number": 18,
       "title": "Licencias, imágenes y datos",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Avisos de 53 coordenadas Android y asset web/Android idéntico. Inclusión previa en AAB aprobada; fotos externas sin derechos siguen suspendidas."
+      "evidenceAndLimit": "CI39828245411 comprueba avisos y dependencias en el AAB 0.1.2 revisado. El inventario web y condiciones por fuente mantienen pendientes; fotos externas sin derechos siguen suspendidas."
     },
     {
       "number": 19,
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Nombre vigente y preparación INPI/DNDA recuperados; antecedentes contextualizados. Sin nueva presentación, firma, pago ni concesión acreditados."
+      "evidenceAndLimit": "Nombre vigente Dónde Rinde y preparación INPI/DNDA conservados. Requisitos oficiales reconsultados el 22/10; antecedentes actuales, titularidad/cesiones y ejecución pendientes. Sin presentación, pago o concesión nueva acreditados."
     },
     {
       "number": 20,
@@ -162,7 +162,7 @@
       "title": "Firma de producción y AAB",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Procedimiento y controles de firma incorporados. AAB revisado sin firma de carga; clave real y custodia del titular pendientes."
+      "evidenceAndLimit": "AAB 0.1.2/código 3 revisado, sin firma de carga. PR20 agrega asistente local y comprobante del hash. Clave real, respaldo y firma bajo control del titular siguen pendientes."
     },
     {
       "number": 22,
@@ -176,35 +176,35 @@
       "title": "Acceso dedicado de revisión",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Procedimiento de acceso a revisión preparado. Cuenta dedicada repetible sin crear/probar; no se utiliza la cuenta personal como reemplazo."
+      "evidenceAndLimit": "Detalles de acceso revisado en Console: sin respuesta ni cuenta dedicada repetible comprobada. No se sustituye por la cuenta personal del titular. El acceso público a precios no abre todas las funciones privadas."
     },
     {
       "number": 24,
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Creación, declaraciones e IARC previos preservados; ficha y guiones preparados. Datos/acceso/público/países y revisión actual de Console pendientes."
+      "evidenceAndLimit": "Console revalidada en vivo: app borrador, 7/11 tareas; icono definitivo guardado y comprobado al reabrir. Pendientes acceso de revisión, público, Seguridad de datos y capturas/ficha; países y envío final sin acreditar."
     },
     {
       "number": 25,
       "title": "Capturas reales y coherencia",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Guion de capturas y coherencia preparado. Faltan paquete final y capturas en teléfono real sin datos personales."
+      "evidenceAndLimit": "Ficha reabierta: icono actualizado, gráfico y textos conservados; sin capturas de teléfono. Faltan paquete final y al menos dos capturas fieles sin datos personales."
     },
     {
       "number": 26,
       "title": "Prueba cerrada",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Protocolo y registro de prueba cerrada preparados. Participantes y período real no se acreditan por pruebas automáticas."
+      "evidenceAndLimit": "Console muestra 0 participantes adheridos. Pendientes versión cerrada y 12 participantes durante 14 días consecutivos. APK externo y pruebas automáticas no inician ese período."
     },
     {
       "number": 27,
       "title": "Lanzamiento controlado",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Tres entregas combinadas y probadas en revisión. Web pública continúa en 167; firma, pruebas físicas, revisión y publicación Android pendientes."
+      "evidenceAndLimit": "Integración publicada en web 168; Android continúa como borrador. Firma, certificados, pruebas físicas, declaraciones pendientes, prueba cerrada, revisión y publicación Android sin completar."
     },
     {
       "number": 28,
@@ -235,8 +235,8 @@
       "evidenceAndLimit": "Auditoría por commit/hashes e historial recibidos. Ampliación comparable requiere contrato de conservación; campanita interna no es push."
     }
   ],
-  "androidSourceBaseCommit": "9693488eb212c1a8c5eb48d83915f5a226d97501",
-  "androidReviewRun": 39784776544,
+  "androidSourceBaseCommit": "48ab688f65a9843b6eabfb0f7e630ed4e98633ee",
+  "androidReviewRun": 39828245411,
   "verification": {
     "webBaselineTests": 232,
     "webBaselineFailed": 0,
@@ -248,11 +248,11 @@
     "androidUploadLocalSkipped": 6,
     "localJavaSignatureTests": "No full JDK available; six integration cases skipped. Existing CI and new CI recorded separately.",
     "phoneTestsThisReview": false,
-    "livePlayConsoleVerified": false,
+    "livePlayConsoleVerified": true,
     "androidCiReviewBuild": "passed",
     "androidCiLicenseInclusion": "passed",
     "androidCiSigningWithDisposableKeys": "passed",
-    "androidCiReviewArtifact": 12428012204,
+    "androidCiReviewArtifact": 12446594671,
     "androidMergeTestCommit": "be7414c5c3a67a654781e30dee7b5b54e45cb334",
     "androidCiEmulatorLaunch": "passed",
     "androidCiTestsPassed": 20,
@@ -263,20 +263,26 @@
     "sepaDiagnosticTests": 7,
     "androidLicensesTests": 5,
     "androidSigningLocalPassed": 4,
-    "androidSigningLocalSkipped": 6
+    "androidSigningLocalSkipped": 6,
+    "playSetupCompleted": 7,
+    "playSetupTotal": 11,
+    "playClosedTestOptedIn": 0,
+    "playIconSavedAndReopened": true,
+    "androidOwnerSigningAssistantLocalTests": 4
   },
   "androidFinalReview": {
-    "run": 39784776544,
-    "sourceCommit": "ee94d2056e51f40574e494c7918713613fa5cc2e",
-    "mergeTestCommit": "be7414c5c3a67a654781e30dee7b5b54e45cb334",
-    "artifact": 12428012204,
-    "aabSha256": "8fe7d0b262d66b8cbbbf9f440e32c27e57ef3c829280f28d5c6fcdfd061232bf",
+    "run": 39828245411,
+    "sourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
+    "mergeCommit": "06bb644362a8e929708b381cb24eebc6d3a68875",
+    "artifact": 12446594671,
+    "aabSha256": "e9a1b27830bd117bd6b02c1e637ff1a4315f18aec36ce7f6b7ee1864091f879d",
+    "versionName": "0.1.2",
+    "versionCode": 3,
     "unsigned": true,
     "licenseInclusionVerified": true,
     "emulatorLaunch": "passed",
-    "summary": "CI 39784776544 aprobado: 5 controles de preflight, 10 pruebas de firma con claves descartables, 5 de licencias, lint, compilación, avisos en el AAB real y regresión de arranque API 36. Sin firma de producción ni prueba física.",
-    "launchArtifact": 12428997191,
-    "smokeApkSha256": "ab5676fdc82d4319122297d5d7d6a14c6e0067f5c2ab46f89e83234269c579c6"
+    "previewCoexistence": "passed",
+    "summary": "CI aprobado; sin firma del titular ni instalación física confirmada."
   },
   "sourceCopy": {
     "commit": "8a797111429c35563d66ffef5acb6dbd127027dc",
@@ -285,7 +291,7 @@
     "dndaFiled": false,
     "scope": "Copia histórica de Ventana 3; no representa la fuente integrada actual."
   },
-  "integrationScope": "Código y documentos de las tres entregas conciliados en rama de revisión y comprobados automáticamente; no significa que los 31 frentes estén cerrados ni que se haya publicado.",
+  "integrationScope": "Código de las tres ventanas integrado y publicado como web 168. Los 31 frentes mantienen sus límites; Android y legales conservan dependencias expresas.",
   "integrationBranch": "integracion/tres-frentes-20261022",
   "integrationSources": {
     "webBase": "d6122f03f4bcf567873334b596f910ded6eba77d",
@@ -339,5 +345,11 @@
       "title": "Límites del reconocimiento",
       "detail": "Faltan cuotas por perfil, timeout y propagación de cancelación. Cancelar en la pantalla no demuestra cancelación ni ausencia de costo del proveedor."
     }
-  ]
+  ],
+  "androidSigningAssistant": {
+    "pr": 20,
+    "status": "prepared; CI and merge must be checked",
+    "productionKeyCreated": false,
+    "productionBundleSigned": false
+  }
 }
