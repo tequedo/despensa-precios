@@ -1,0 +1,32 @@
+{
+  "durationSeconds": 30.0,
+  "width": 1080,
+  "height": 1920,
+  "frameRate": "30/1",
+  "frames": 900,
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "sizeBytes": 4614381,
+  "sha256": "fc2358249845d3a609e0627c970cc139a59a486d0621b6fc4f673610d26a33e0",
+  "fullDecode": "passed",
+  "framesCheckedSeconds": [
+    0,
+    6.5,
+    11.5,
+    17,
+    22.5,
+    27.5
+  ],
+  "status": "draft for review",
+  "publicPosted": false,
+  "apiCalls": 0,
+  "paidAssets": 0,
+  "adSpend": 0,
+  "spokenNarration": false,
+  "generativeVideo": false,
+  "realAppScreens": false,
+  "audioMeanDb": -21.6,
+  "audioPeakDb": -9.6,
+  "visualReview": "six sampled scenes inspected; readable text and consistent approved branding"
+}

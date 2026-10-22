@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Console revalidada en vivo: app borrador, 7/11 tareas; icono definitivo guardado y comprobado al reabrir. Pendientes acceso de revisión, público, Seguridad de datos y capturas/ficha; países y envío final sin acreditar."
+      "evidenceAndLimit": "Play Console: borrador, 7/11 tareas. Textos breve/completo guardados con lista por teclado, despensa, gastos y comparación; ícono definitivo conservado. Seguridad de los datos avanzó al paso 3/5: cifrado en tránsito Sí y selección inicial de 9 tipos preparada como borrador. Faltan completar categorías/finalidades/proveedores, acceso de revisión, público y capturas. Bloqueo de origen resuelto al comprobar la URL oficial; sin envío a revisión."
     },
     {
       "number": 25,
@@ -431,12 +431,73 @@
     {
       "number": 32,
       "title": "Difusión y promoción de Dónde Rinde",
-      "status": "preparación iniciada; campaña posterior a publicación",
+      "status": "primer video vertical de 30 segundos producido y verificado; campaña posterior a publicación",
       "original31": false,
       "evidence": "DIFUSION_LANZAMIENTO_2026-10-22.md",
       "spendingAuthorized": false,
       "accountsCreated": false,
-      "postsPublished": false
+      "postsPublished": false,
+      "video": {
+        "fileName": "Donde_Rinde_promocion_borrador_01.mp4",
+        "seconds": 30,
+        "width": 1080,
+        "height": 1920,
+        "sha256": "fc2358249845d3a609e0627c970cc139a59a486d0621b6fc4f673610d26a33e0",
+        "sizeBytes": 4614381,
+        "spokenNarration": false,
+        "generativeVideoModelUsed": false,
+        "apiCalls": 0,
+        "paidAssets": 0,
+        "adSpend": 0,
+        "mockAppScreens": false,
+        "publicPosted": false,
+        "evidence": "VIDEO_PROMOCION_01_2026-10-22.json"
+      }
     }
-  ]
+  ],
+  "playListingProgress": {
+    "date": "2026-10-22",
+    "status": "draft saved",
+    "locale": "es-419",
+    "copyScope": [
+      "keyboard product entry",
+      "pantry stock",
+      "partial shopping balance",
+      "recorded expenses",
+      "available branch prices with date/source"
+    ],
+    "aiRecognitionAdvertised": false,
+    "iconChanged": false,
+    "savedToastObserved": true,
+    "reopenedAfterSave": false,
+    "phoneScreenshotsUploaded": 0,
+    "appSubmitted": false,
+    "dataSafetyChanged": true,
+    "dataSafetyBrowserBlocked": false,
+    "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
+    "dataSafetyStep": 3,
+    "dataSafetyTotalSteps": 5,
+    "dataSafetyDraftComplete": false,
+    "encryptedInTransit": true,
+    "selectedDataTypes": [
+      "approximate location",
+      "precise location",
+      "name",
+      "email",
+      "user ID",
+      "other personal information (retirement preference)",
+      "purchase history",
+      "photos (manual optional attachment)",
+      "device or other IDs"
+    ],
+    "dataSafetyRemaining": [
+      "complete and verify app activity and diagnostic categories",
+      "resolve merchant contact/address scope",
+      "collected/shared and purpose for each type",
+      "provider conditions and retention consistency",
+      "final preview before submission"
+    ],
+    "browserOriginConfirmed": "https://play.google.com",
+    "browserOriginCheck": "Read-only tab URL confirmed the official origin; the subsequently authorized form read succeeded."
+  }
 }
