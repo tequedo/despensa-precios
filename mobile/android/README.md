@@ -43,4 +43,14 @@ El navegador gestiona cámara, micrófono y ubicación para el sitio. El contene
 
 El icono instalado y el nombre se mantienen en la fuente Android; Outfit se usa bajo SIL OFL con la licencia incluida. La gráfica de la ficha y los controles de privacidad/contenido se mantienen en la fuente web. La compilación no acredita exclusividad marcaria ni resuelve las condiciones de las fuentes de precios.
 
+## Avisos de bibliotecas revisados el 22/10/2026
+
+`collect-licenses.py` recupera POMs y avisos de las versiones exactas del reporte resuelto, desde Google Maven y Maven Central, sin ejecutar los artefactos. El corte de la compilación `39704292503` conserva 53 coordenadas (50 artefactos de ejecución resueltos y 3 metadatos POM), todos con declaración Apache 2.0 en los POMs comprobados. Eso no afirma que cada artefacto completo termine distribuido en el APK.
+
+`legal/android-license-evidence.json` conserva URLs, hashes, versiones y avisos. El texto para distribución está en `app/src/main/assets/legal/ANDROID_THIRD_PARTY_NOTICES.txt`; se mantiene además Outfit-OFL.txt. Esta recopilación no autoriza fotografías, catálogos o promociones ni certifica el cumplimiento jurídico integral.
+
+El workflow comprueba que el conjunto resuelto coincide con el revisado y que el AAB real contiene exactamente los avisos y la licencia de Outfit. Si cambia una dependencia, revisar sus obligaciones y regenerar la evidencia. No se ejecuta una descarga silenciosa de licencias en cada CI para aceptar bibliotecas nuevas automáticamente.
+
+El AAB anterior `8e05fca8…` no contiene los nuevos avisos. Recompilar y registrar el nuevo artefacto/hash antes de firmar; los hashes de una compilación previa no identifican este árbol modificado. El cambio no crea otro proyecto, identificador de release, clave o publicación en Play.
+
 Fuentes: [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/quick-start), [firma Android](https://developer.android.com/studio/publish/app-signing), [AGP 9.1](https://developer.android.com/build/releases/agp-9-1-0-release-notes), [AndroidX Browser](https://developer.android.com/jetpack/androidx/releases/browser).

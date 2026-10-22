@@ -5,6 +5,7 @@ name: Donde Rinde Android review build
     - mobile/android/**
     - tests/android-release-preflight.test.mjs
     - tests/android-upload-key.test.py
+    - tests/android-licenses.test.py
     - tests/fixtures/android-launch-baseline-manifest.xml
     - scripts/android-launch-smoke.sh
     - docs/play/**
@@ -42,6 +43,8 @@ jobs:
       env:
         REQUIRE_JAVA_SIGNING_TESTS: '1'
       run: python3 ../../tests/android-upload-key.test.py
+    - name: Test license distribution checks
+      run: python3 ../../tests/android-licenses.test.py
     - uses: gradle/actions/setup-gradle@v4
       with:
         gradle-version: 9.3.1
@@ -53,6 +56,13 @@ jobs:
       run: gradle --no-daemon --stacktrace :app:lint :app:assembleDebug :app:bundleRelease
     - name: Record resolved release dependencies
       run: gradle --no-daemon :app:dependencies --configuration releaseRuntimeClasspath > app/build/reports/release-runtime-dependencies.txt
+    - name: Verify reviewed notices in the actual release bundle
+      run: |
+        python3 verify-license-distribution.py \
+          --bundle app/build/outputs/bundle/release/app-release.aab \
+          --dependency-report app/build/reports/release-runtime-dependencies.txt \
+          --evidence legal/android-license-evidence.json \
+          --notice app/src/main/assets/legal/ANDROID_THIRD_PARTY_NOTICES.txt
     - name: Retain review packages and lint report
       uses: actions/upload-artifact@v4
       with:
@@ -64,6 +74,7 @@ jobs:
           mobile/android/app/build/outputs/bundle/release/app-release.aab
           mobile/android/app/build/reports/lint-results-*.html
           mobile/android/app/build/reports/release-runtime-dependencies.txt
+          mobile/android/legal/android-license-evidence.json
           mobile/android/app/build/intermediates/merged_manifests/release/**/AndroidManifest.xml
           mobile/android/app/build/intermediates/merged_manifest/release/**/AndroidManifest.xml
   android-launch-api36:
