@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Play Console revalidada: borrador, 7/11 tareas. Ficha breve/completa actualizada y guardada con lista por teclado, despensa, gastos y comparación; ícono definitivo conservado. Acceso de revisión, público objetivo, Seguridad de los datos y capturas siguen pendientes. Lectura de Seguridad de los datos bloqueada por revisión automática de origen; no se cambiaron sus respuestas."
+      "evidenceAndLimit": "Play Console: borrador, 7/11 tareas. Textos breve/completo guardados con lista por teclado, despensa, gastos y comparación; ícono definitivo conservado. Seguridad de los datos avanzó al paso 3/5: cifrado en tránsito Sí y selección inicial de 9 tipos preparada como borrador. Faltan completar categorías/finalidades/proveedores, acceso de revisión, público y capturas. Bloqueo de origen resuelto al comprobar la URL oficial; sin envío a revisión."
     },
     {
       "number": 25,
@@ -472,8 +472,32 @@
     "reopenedAfterSave": false,
     "phoneScreenshotsUploaded": 0,
     "appSubmitted": false,
-    "dataSafetyChanged": false,
-    "dataSafetyBrowserBlocked": true,
-    "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md"
+    "dataSafetyChanged": true,
+    "dataSafetyBrowserBlocked": false,
+    "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
+    "dataSafetyStep": 3,
+    "dataSafetyTotalSteps": 5,
+    "dataSafetyDraftComplete": false,
+    "encryptedInTransit": true,
+    "selectedDataTypes": [
+      "approximate location",
+      "precise location",
+      "name",
+      "email",
+      "user ID",
+      "other personal information (retirement preference)",
+      "purchase history",
+      "photos (manual optional attachment)",
+      "device or other IDs"
+    ],
+    "dataSafetyRemaining": [
+      "complete and verify app activity and diagnostic categories",
+      "resolve merchant contact/address scope",
+      "collected/shared and purpose for each type",
+      "provider conditions and retention consistency",
+      "final preview before submission"
+    ],
+    "browserOriginConfirmed": "https://play.google.com",
+    "browserOriginCheck": "Read-only tab URL confirmed the official origin; the subsequently authorized form read succeeded."
   }
 }

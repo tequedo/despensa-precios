@@ -8,13 +8,13 @@ Descripción breve guardada: «Compará precios, armá tu lista y organizá tu d
 
 El panel continúa en **7 de 11** tareas. Faltan acceso de revisión, público objetivo, Seguridad de los datos y capturas para la ficha. El texto guardado no sustituye las dos capturas requeridas. No hay paquete subido, envío a revisión ni publicación Android nuevos. Web 170 sigue publicada, según consulta al alojamiento realizada durante este avance.
 
-Al salir de la ficha, la consola pidió descartar cambios no guardados pese al aviso anterior de guardado; se salió después de observar ese aviso de éxito. La reapertura para comprobar persistencia no se completó por el bloqueo descrito abajo. El alcance verificado es el guardado informado por la consola, no una nueva lectura de la ficha.
+Al salir de la ficha, la consola pidió descartar cambios no guardados pese al aviso anterior de guardado; se salió después de observar ese aviso de éxito. La reapertura para comprobar persistencia no se completó durante este avance. El alcance verificado es el guardado informado por la consola, no una nueva lectura de la ficha.
 
-## Seguridad de los datos: revisión técnica preparada, sin cambios en Console
+## Seguridad de los datos: borrador avanzado al paso 3 de 5
 
-La lectura del formulario fue rechazada por la revisión automática de seguridad del navegador. Informó falta de autorización del origen y mencionó `google.play`, distinto del dominio oficial `play.google.com` usado en la sesión anterior. Se detuvo la interacción bloqueada; no se cambiaron respuestas ni se intentó un acceso alternativo al formulario.
+La lectura del formulario fue rechazada por la revisión automática de seguridad del navegador. Informó falta de autorización del origen y mencionó `google.play`, distinto del dominio oficial `play.google.com` usado en la sesión anterior. Se detuvo la lectura bloqueada y se continuó trabajo independiente. Después, una comprobación de solo la URL de la pestaña confirmó el dominio oficial `https://play.google.com`; la lectura posterior del mismo formulario fue autorizada y se pudo continuar. No se navegó a `google.play`. El bloqueo de origen quedó resuelto.
 
-La revisión de fuente identifica estos tratamientos para preparar el formulario. Las categorías y finalidades definitivas requieren cotejar todo el recorrido y las condiciones efectivas de los proveedores; esta tabla no es una declaración enviada.
+La revisión de fuente identifica estos tratamientos para preparar el formulario. Se dejó una selección inicial de 9 tipos: ubicación aproximada/precisa, nombre, correo, ID de usuario, otra información personal (preferencia de jubilado/pensionado), historial de compras, fotos opcionales y dispositivo/otros IDs. Faltan completar las categorías de actividad/diagnóstico, resolver contacto/dirección comercial y documentar recopilado/compartido y finalidades por tipo. Las categorías y finalidades definitivas requieren cotejar todo el recorrido y las condiciones efectivas de los proveedores; esta tabla no es una declaración enviada.
 
 | Tratamiento actual | Evidencia de código en web 170 | Criterio preparado |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ La revisión de fuente identifica estos tratamientos para preparar el formulario
 | Reclamos y propuestas comerciales | Formularios de solicitudes y comercios | Nombres, correos y contenido aportado. El campo de contacto público del comercio admite información de contacto; cotejar teléfono/dirección y su relación con el usuario antes de resolver categorías. |
 | Eventos de actividad, fallos y dispositivo | `app/notifications.ts`, `app-feedback`, cookie de dispositivo | Interacciones, diagnósticos e identificadores se revisan aunque sean opacos. No equivale a integrar un SDK publicitario ni a datos anónimos por defecto. |
 
-Para cifrado en tránsito, la fuente revisada utiliza HTTPS entre el dispositivo y el sitio; Android declara `usesCleartextTraffic=false` y un origen HTTPS. Google Identity, la consulta geográfica y Resend tienen destinos HTTPS en el código. La voz del navegador está pausada. Esto sustenta preparar **Sí** para este alcance de transporte, separado de cifrado de extremo a extremo, conservación, contratos o eliminación externa. La respuesta no llegó a seleccionarse en Console.
+Para cifrado en tránsito, la fuente revisada utiliza HTTPS entre el dispositivo y el sitio; Android declara `usesCleartextTraffic=false` y un origen HTTPS. Google Identity, la consulta geográfica y Resend tienen destinos HTTPS en el código. La voz del navegador está pausada. Esto sustenta preparar **Sí** para este alcance de transporte, separado de cifrado de extremo a extremo, conservación, contratos o eliminación externa. Se seleccionó **Sí** en Console, se conservó OAuth y los enlaces de eliminación, y se guardó el borrador. El paso de seguridad quedó completo y la consola permitió avanzar al paso 3 de 5.
 
 Google define cifrado en tránsito para el flujo dispositivo-servidor e incluye HTTPS/TLS como técnicas habituales. También distingue recopilación de la excepción de compartido aplicable a proveedores que actúan únicamente por cuenta del desarrollador. No se adopta una excepción universal sin verificar esas condiciones. [Ayuda oficial consultada el 22/10/2026](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en).
 
