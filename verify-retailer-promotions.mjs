@@ -1,3 +1,4 @@
+import { productPromotionSources } from './promotion-sources.mjs';
 import { scopedPromotionEvidence } from "./promotion-evidence.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
@@ -12,12 +13,7 @@ const reportFile = process.env.RETAILER_REPORT_FILE ?? "data/retailer-promotion-
 const verifiedFile = process.env.RETAILER_VERIFIED_FILE ?? "data/retailer-promotions-verified.json";
 const maxAgeHours = Number(process.env.PROMOTION_MAX_AGE_HOURS ?? 72);
 
-const sources = [
-  { id: "vea", chain: /vea/i, name: "Vea", url: "https://www.vea.com.ar/ofertas-y-catalogo" },
-  { id: "changomas", chain: /chango|walmart|mas online/i, name: "ChangoMás", url: "https://www.masonline.com.ar/3195?map=productClusterIds" },
-  { id: "libertad", chain: /la anonima/i, name: "La Anónima", url: "https://www.laanonima.com.ar/empresa/catalogos", render: true },
-  { id: "carrefour", chain: /carrefour/i, name: "Carrefour", url: "https://www.carrefour.com.ar/promociones", render: true }
-];
+const sources = productPromotionSources;
 
 const normalize = value => String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const htmlText = html => normalize(html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ").replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " "));
@@ -29,7 +25,7 @@ const dateWindows = text => {
   }));
 };
 const signature = item => normalize(`${item.product} ${item.brand ?? ""}`).split(" ").filter(word => word.length >= 4 && !["para","con","del","los","las","producto","unidad"].includes(word)).slice(0, 4);
-const recent = observedAt => Number.isFinite(new Date(observedAt).getTime()) && Date.now() - new Date(observedAt).getTime() <= maxAgeHours * 3600000;
+const recent = observedAt => Number.isFinite(new Date(observedAt).getTime()) && Date.now() - new Date(observedAt).getTime() >= 0 && Date.now() - new Date(observedAt).getTime() <= maxAgeHours * 3600000;
 
 async function renderedHtml(url) {
   const browsers = [process.env.CHROME_PATH, "google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].filter(Boolean);
@@ -119,4 +115,5 @@ await writeFile(verifiedFile, JSON.stringify({
   promotions: accepted
 }, null, 2) + "\n");
 console.log(JSON.stringify({ checkedSources: report.length, reachableSources: report.filter(item => item.reachable).length, verifiedPromotions: accepted.length, reportFile, verifiedFile }));
+
 

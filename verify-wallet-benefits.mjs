@@ -1,3 +1,4 @@
+import { walletPromotionSources } from './promotion-sources.mjs';
 import {discoverBankPromotion} from './bank-promotion-discovery.mjs';
 import { buildPromotionMatrix } from './promotion-coverage.mjs';
 import { createHash } from "node:crypto";
@@ -20,55 +21,7 @@ const selectedSourceIds = new Set(
     .filter(Boolean),
 );
 
-const sources = [
-  {
-    id: "mercado_pago_public",
-    name: "Mercado Pago — promociones públicas",
-    url: "https://promociones.mercadopago.com.ar/tipocat/supermercado/",
-    render: true,
-    role: "discovery",
-  },
-  {
-    id: "changomas",
-    name: "ChangoMás / Más Online",
-    chain: "ChangoMás",
-    url: "https://www.masonline.com.ar/promociones-bancarias",
-    structured: "vtex_master_data",
-    role: "retailer_terms",
-  },
-  {
-    id: "la_anonima",
-    name: "La Anónima",
-    chain: "La Anónima",
-    url: "https://www.laanonima.com.ar/",
-    render: true,
-    role: "retailer_terms",
-  },
-  {
-    id: "vea",
-    name: "Vea",
-    chain: "Vea",
-    url: "https://www.vea.com.ar/descuentos-del-dia?type=por-banco",
-    render: true,
-    role: "retailer_terms",
-  },
-  {
-    id: "dia",
-    name: "DIA",
-    chain: "DIA",
-    url: "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
-    render: true,
-    role: "retailer_terms",
-  },
-  {
-    id: "carrefour",
-    name: "Carrefour",
-    chain: "Carrefour",
-    url: "https://www.carrefour.com.ar/descuentos-bancarios",
-    structured: "carrefour_vtex",
-    role: "retailer_terms",
-  },
-];
+const sources = walletPromotionSources;
 
 const MONTHS = new Map([
   ["ENERO", 0],
@@ -853,4 +806,5 @@ async function run() {
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) await run();
+
 
