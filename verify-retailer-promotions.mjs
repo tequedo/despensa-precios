@@ -42,6 +42,7 @@ async function renderedHtml(url) {
         url
       ], { timeout: 45000, maxBuffer: 30 * 1024 * 1024 });
       if (stdout?.trim()) return stdout;
+      throw new Error("La página pública se abrió, pero no devolvió contenido utilizable.");
     } catch (error) {
       lastError = error;
       if (error?.code !== "ENOENT") break;
