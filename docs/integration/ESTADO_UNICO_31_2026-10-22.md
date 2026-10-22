@@ -1,10 +1,10 @@
 # Dónde Rinde — estado único de los 31 frentes
 
-Corte: 22/10/2026, Argentina. Publicación verificada: web 169, fuente `75d5d5426d8cbf617b0b42984bd5bd7c7fe60950`. C1/C2 publicados; migración de comprobantes verificada en D1. Android 0.1.2 revisado; Play sigue en borrador, 7/11 tareas.
+Corte: 22/10/2026, Argentina. Publicación verificada: web 170, fuente `4924c5c3f8ea51f4314778e42c218305592d6c71`. C1/C2 publicados; migración de comprobantes verificada en D1. Android 0.1.2 revisado; Play sigue en borrador, 7/11 tareas.
 
 Cada estado se refiere al punto completo. Una corrección incorporada y probada no sustituye pruebas físicas, permisos, contratos o publicación.
 
-Dos defectos de código resueltos (C1/C2); frente 14 implementado, pendiente de prueba física. Los 31 frentes completos se conservan: 0 cerrados, 14 implementados pendientes de validar, 14 bloqueados y 3 ampliaciones posteriores.
+C1/C2 corregidos y C4 resuelto para el alcance manual actual mediante la pausa de IA; frente 14 implementado, pendiente de prueba física. Los 31 frentes completos se conservan: 0 cerrados, 14 implementados pendientes de validar, 14 bloqueados y 3 ampliaciones posteriores.
 
 | N.º | Frente | Estado | Avance y límite |
 | --- | --- | --- | --- |
@@ -15,31 +15,33 @@ Dos defectos de código resueltos (C1/C2); frente 14 implementado, pendiente de 
 | 5 | Adaptadores de promociones | implementado pendiente de validar | Extracción y revalidación reforzadas: mínimo, tope, provincia, canal y fecha deben probarse. Faltan legales completos y contenido dinámico de varias fuentes. |
 | 6 | Promociones por producto aplicables | bloqueado por dependencia | No se fabrica un EAN desde una clave interna. Extensión de identidad/presentación y caso oficial positivo por producto/sucursal pendientes. |
 | 7 | Beneficios personales | implementado pendiente de validar | Cálculo bloqueado ante mínimos, topes, período, titular o importes incompletos. Reintegro separado del pago en caja; elegibilidad y saldo requieren confirmación. |
-| 8 | Verificación completa en producción | implementado pendiente de validar | Integración web 168 publicada, fuente 753215f2075f; 254 pruebas web del corte aprobadas. Falta verificación completa de recorridos en producción y dispositivos; no acredita descuentos reales nuevos. |
+| 8 | Verificación completa en producción | implementado pendiente de validar | Web 170 publicada, fuente 4924c5c3f8ea; 298 pruebas web aprobadas sin fallos ni omitidas. Falta recorrido completo autenticado de navegador y dispositivos; no acredita descuentos reales nuevos. |
 | 9 | Canales oficiales y reutilización | bloqueado por dependencia | Matriz de fuentes, reutilización y límites recibida. Contactos previos no son convenios; faltan permisos o confirmaciones cuando corresponda. |
 | 10 | Samsung y otro teléfono | implementado pendiente de validar | APK Dónde Rinde Prueba Nueva 0.1.2, paquete independiente preview012, entregado. CI39828245411 comprueba arranque y coexistencia con preview. Instalación en el Samsung y recorrido del segundo teléfono sin confirmar. |
-| 11 | Voz, foto y códigos | implementado pendiente de validar | Permisos tardíos, cancelación y borradores comprobados. Eliminado envío de foto original al fallar su preparación; faltan voz/foto/código físicos. |
+| 11 | Voz, foto y códigos | implementado pendiente de validar | Decisión del titular: reconocimiento pago por voz/foto pausado hasta poder financiarlo. Botones retirados, servidor bloqueado incluso con clave configurada y carga manual con teclado conservada. Código y controles futuros retenidos. Lector de códigos sin IA se conserva; prueba física pendiente. |
 | 12 | Ubicación real | implementado pendiente de validar | Cambio de provincia invalida GPS viejo; rechazo permite selección manual. Falta recorrido físico de GPS, radio, sucursales y conservación de lista. |
 | 13 | Cuentas y recuperación | implementado pendiente de validar | Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Google configurado y aislamiento probado; recorrido real pendiente. |
 | 14 | Listas y existencias | implementado pendiente de validar | C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. |
 | 15 | Borrado y restauración | bloqueado por dependencia | Borrado activo, revocación, aislamiento y rollback probados con datos descartables. Restauración sin resucitar datos y eliminación externa sin acreditar. |
 | 16 | Proveedores y conservación | bloqueado por dependencia | Matriz de proveedores y retención recibida. Los controles operativos de 90 días no acreditan contratos, regiones ni supresión de todas las copias externas. |
-| 17 | Privacidad, términos y reclamos | bloqueado por dependencia | Privacidad y tratamiento cotejados con fuente web 168 y Console en vivo; cierre legal preparado. Faltan contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa. |
+| 17 | Privacidad, términos y reclamos | bloqueado por dependencia | Privacidad e información del servicio actualizadas en web 170 para la pausa de IA y carga manual vigente. Cierre legal preparado; contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa pendientes. |
 | 18 | Licencias, imágenes y datos | implementado pendiente de validar | CI39828245411 comprueba avisos y dependencias en el AAB 0.1.2 revisado. El inventario web y condiciones por fuente mantienen pendientes; fotos externas sin derechos siguen suspendidas. |
 | 19 | Nombre y software INPI/DNDA | bloqueado por dependencia | Nombre vigente Dónde Rinde y preparación INPI/DNDA conservados. Requisitos oficiales reconsultados el 22/10; antecedentes actuales, titularidad/cesiones y ejecución pendientes. Sin presentación, pago o concesión nueva acreditados. |
-| 20 | Operación y soporte | implementado pendiente de validar | Alertas, métricas y mantenimiento probados en suite. C3: restauración/revocaciones; C4: cuotas, timeout y cancelación del reconocimiento pendientes. |
+| 20 | Operación y soporte | implementado pendiente de validar | C4: reconocimiento pago desactivado por decisión del titular. Cuotas durables, timeout, cancelación y límites de archivos preparados y probados con proveedor simulado; no constituyen autorización para reactivar. C3 (restauración/revocaciones) y validación operativa siguen pendientes. |
 | 21 | Firma de producción y AAB | bloqueado por dependencia | AAB 0.1.2/código 3 revisado, sin firma de carga. PR20 agrega asistente local y comprobante del hash. Clave real, respaldo y firma bajo control del titular siguen pendientes. |
 | 22 | Asociación sitio y Android | bloqueado por dependencia | Origen y paquetes Android conservados. Certificado real de distribución y asociación TWA/Asset Links pendientes de verificación. |
 | 23 | Acceso dedicado de revisión | bloqueado por dependencia | Detalles de acceso revisado en Console: sin respuesta ni cuenta dedicada repetible comprobada. No se sustituye por la cuenta personal del titular. El acceso público a precios no abre todas las funciones privadas. |
 | 24 | Preparación de Play Console | implementado pendiente de validar | Console revalidada en vivo: app borrador, 7/11 tareas; icono definitivo guardado y comprobado al reabrir. Pendientes acceso de revisión, público, Seguridad de datos y capturas/ficha; países y envío final sin acreditar. |
 | 25 | Capturas reales y coherencia | bloqueado por dependencia | Ficha reabierta: icono actualizado, gráfico y textos conservados; sin capturas de teléfono. Faltan paquete final y al menos dos capturas fieles sin datos personales. |
 | 26 | Prueba cerrada | bloqueado por dependencia | Console muestra 0 participantes adheridos. Pendientes versión cerrada y 12 participantes durante 14 días consecutivos. APK externo y pruebas automáticas no inician ese período. |
-| 27 | Lanzamiento controlado | bloqueado por dependencia | Integración publicada en web 168; Android continúa como borrador. Firma, certificados, pruebas físicas, declaraciones pendientes, prueba cerrada, revisión y publicación Android sin completar. |
+| 27 | Lanzamiento controlado | bloqueado por dependencia | Web 170 publicada con reconocimiento pago pausado. Android sigue en borrador; firma, certificados, pruebas físicas, declaraciones, prueba cerrada, revisión y publicación Android sin completar. |
 | 28 | Primer piloto publicitario | bloqueado por dependencia | Acuerdo propuesto y ficha de campaña preparados. Sin anunciante, aceptación, derechos, cobro ni campaña real acreditados. |
 | 29 | Más cadenas, bancos y comercios | ampliación posterior | Fuentes mayoristas y bancarias adicionales propuestas con enlaces y límites. Sin nuevos contactos enviados ni cobertura completa declarada. |
 | 30 | Mayoristas y catálogo local | ampliación posterior | Calculadoras/adaptadores no constituyen un catálogo mayorista real. Faltan cotizaciones por tienda, presentación, bulto, impuestos y vigencia. |
 | 31 | Historial y alertas ampliados | ampliación posterior | Auditoría por commit/hashes e historial recibidos. Ampliación comparable requiere contrato de conservación; campanita interna no es push. |
 
-C1/C2: [evidencia del cierre técnico](CIERRE_C1_C2_2026-10-22.md). Continúan abiertos C3 (restauración/revocaciones) y C4 (cuotas, timeout y cancelación).
+C1/C2: [evidencia del cierre técnico](CIERRE_C1_C2_2026-10-22.md). Continúa abierto C3 (restauración/revocaciones). C4 queda resuelto para el alcance manual actual mediante la pausa del reconocimiento pago; pausa publicada en web 170. [Evidencia y controles preparados](PAUSA_RECONOCIMIENTO_2026-10-22.md).
 
 PR20 de firma asistida integrado; CI39836366729 aprobada (25 pruebas, ninguna omitida). Clave real y firma del titular pendientes.
+
+Frente adicional 32: [difusión y promoción](DIFUSION_LANZAMIENTO_2026-10-22.md), preparación iniciada. Se suma a los 31 originales sin cambiar sus cuentas. Videos y guion en preparación; difusión pública después del lanzamiento. Sin gasto, cuentas nuevas ni publicaciones autorizadas en esta etapa.
