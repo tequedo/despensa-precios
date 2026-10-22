@@ -73,7 +73,7 @@ jobs:
       contents: read
     env:
       SYSTEM_IMAGE: system-images;android-36;google_apis_playstore;x86_64
-      ANDROID_AVD_HOME: ${{ runner.temp }}/donde-rinde-avd
+      ANDROID_AVD_HOME: /tmp/donde-rinde-avd
     steps:
     - uses: actions/checkout@v4
       with:
