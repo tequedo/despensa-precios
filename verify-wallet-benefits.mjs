@@ -469,7 +469,7 @@ export function parseCarrefourBenefits(
     geographicScope,
     exclusions: exclusions.labels,
     exclusionsVerified: exclusions.complete,
-    accumulable: /ACUMULABLE CON TODAS/.test(text) && !/NO ACUMULABLE/.test(text),
+    accumulable: /NO ACUMULABLE/.test(text) ? false : /ACUMULABLE CON TODAS/.test(text) ? true : null,
     sourceUrl,
     checkedAt,
     termsHash: hash(text),

@@ -1,0 +1,36 @@
+name: Comprobar lectura de promociones en la app
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tests/promotions-live-smoke.mjs"
+      - ".github/workflows/test-promotions.yml"
+  workflow_run:
+    workflows: ["Verificar promociones de productos, bancos y billeteras"]
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  comprobar:
+    if: github.event_name == 'push' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verificar fuentes, condiciones y lectura de la campanita
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+          PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
+        run: node tests/promotions-live-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: comprobacion-promociones-app
+          path: promotion-app-check.json
+          if-no-files-found: ignore
+          retention-days: 14
