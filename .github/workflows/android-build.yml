@@ -1,0 +1,176 @@
+name: Donde Rinde Android review build
+'on':
+  pull_request:
+    paths:
+    - mobile/android/**
+    - tests/android-release-preflight.test.mjs
+    - tests/android-upload-key.test.py
+    - tests/android-licenses.test.py
+    - tests/fixtures/android-launch-baseline-manifest.xml
+    - scripts/android-launch-smoke.sh
+    - docs/play/**
+    - .github/workflows/android-build.yml
+  workflow_dispatch: null
+permissions:
+  contents: read
+concurrency:
+  group: android-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  review-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: mobile/android
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          mobile/android
+          .github/workflows
+          tests
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - name: Check release safety gates
+      run: node --test ../../tests/android-release-preflight.test.mjs
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+    - name: Verify upload signing with disposable test keys
+      env:
+        REQUIRE_JAVA_SIGNING_TESTS: '1'
+      run: python3 ../../tests/android-upload-key.test.py
+    - name: Test license distribution checks
+      run: python3 ../../tests/android-licenses.test.py
+    - uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: 9.3.1
+    - name: Install Android 36 build dependencies
+      run: |
+        test -n "$ANDROID_SDK_ROOT"
+        "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-36' 'build-tools;36.0.0'
+    - name: Check and compile the Android pilot
+      run: gradle --no-daemon --stacktrace :app:lint :app:assembleDebug :app:bundleRelease
+    - name: Record resolved release dependencies
+      run: gradle --no-daemon :app:dependencies --configuration releaseRuntimeClasspath > app/build/reports/release-runtime-dependencies.txt
+    - name: Verify reviewed notices in the actual release bundle
+      run: |
+        python3 verify-license-distribution.py \
+          --bundle app/build/outputs/bundle/release/app-release.aab \
+          --dependency-report app/build/reports/release-runtime-dependencies.txt \
+          --evidence legal/android-license-evidence.json \
+          --notice app/src/main/assets/legal/ANDROID_THIRD_PARTY_NOTICES.txt
+    - name: Retain review packages and lint report
+      uses: actions/upload-artifact@v4
+      with:
+        name: donde-rinde-android-review-${{ github.sha }}
+        retention-days: 14
+        if-no-files-found: error
+        path: |
+          mobile/android/app/build/outputs/apk/debug/app-debug.apk
+          mobile/android/app/build/outputs/bundle/release/app-release.aab
+          mobile/android/app/build/reports/lint-results-*.html
+          mobile/android/app/build/reports/release-runtime-dependencies.txt
+          mobile/android/legal/android-license-evidence.json
+          mobile/android/app/build/intermediates/merged_manifests/release/**/AndroidManifest.xml
+          mobile/android/app/build/intermediates/merged_manifest/release/**/AndroidManifest.xml
+  android-launch-api36:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      SYSTEM_IMAGE: system-images;android-36;google_apis_playstore;x86_64
+      ANDROID_AVD_HOME: /tmp/donde-rinde-avd
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+        sparse-checkout: |
+          mobile/android
+          tests
+          scripts
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+    - uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: 9.3.1
+    - name: Install Android 36 build dependencies
+      shell: bash
+      run: |
+        set -euo pipefail
+        "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-36' 'build-tools;36.0.0'
+    - name: Build fixed APK and controlled baseline from manifest fixture
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p launch-smoke/apks
+        manifest=mobile/android/app/src/main/AndroidManifest.xml
+        backup=$(mktemp)
+        cp "$manifest" "$backup"
+        trap 'cp "$backup" "$manifest"; rm -f "$backup"' EXIT
+        gradle --no-daemon -p mobile/android :app:assembleDebug
+        cp mobile/android/app/build/outputs/apk/debug/app-debug.apk launch-smoke/apks/fixed.apk
+        cp tests/fixtures/android-launch-baseline-manifest.xml "$manifest"
+        gradle --no-daemon -p mobile/android :app:assembleDebug
+        cp mobile/android/app/build/outputs/apk/debug/app-debug.apk launch-smoke/apks/baseline.apk
+        cp "$backup" "$manifest"
+        sha256sum launch-smoke/apks/*.apk > launch-smoke/apks/SHA256SUMS
+    - name: Provision official API36 emulator with KVM
+      timeout-minutes: 12
+      shell: bash
+      run: |
+        set -euo pipefail
+        test -e /dev/kvm
+        sudo chmod 666 /dev/kvm
+        export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+        # SDK licenses are normally preaccepted by GitHub's official runner image.
+        sdkmanager 'platform-tools' 'emulator' 'platforms;android-36' 'build-tools;36.0.0' "$SYSTEM_IMAGE"
+        mkdir -p "$ANDROID_AVD_HOME"
+        echo no | avdmanager create avd --name donde-rinde-api36 --package "$SYSTEM_IMAGE" --device pixel_6 --path "$ANDROID_AVD_HOME/donde-rinde-api36.avd" --force
+        test -f "$ANDROID_AVD_HOME/donde-rinde-api36.ini"
+        emulator -list-avds | tee launch-smoke/available-avds.txt
+        grep -Fxq donde-rinde-api36 launch-smoke/available-avds.txt
+        emulator -avd donde-rinde-api36 -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect -accel on -memory 4096 > launch-smoke/emulator.log 2>&1 &
+        emulator_pid=$!
+        sleep 2
+        if ! kill -0 "$emulator_pid" 2>/dev/null; then cat launch-smoke/emulator.log; exit 1; fi
+        timeout 180s adb wait-for-device
+        booted=0
+        for attempt in $(seq 1 150); do
+          if [[ "$(adb shell getprop sys.boot_completed | tr -d '\r')" == 1 ]]; then booted=1; break; fi
+          sleep 2
+        done
+        test "$booted" == 1
+        adb shell input keyevent 82
+        adb shell settings put global window_animation_scale 0
+        adb shell settings put global transition_animation_scale 0
+        adb shell settings put global animator_duration_scale 0
+    - name: Reproduce baseline and verify native launch fix
+      timeout-minutes: 5
+      shell: bash
+      run: |
+        export PATH="$ANDROID_HOME/platform-tools:$PATH"
+        bash scripts/android-launch-smoke.sh launch-smoke/apks/baseline.apk launch-smoke/apks/fixed.apk launch-smoke/runtime ar.rindecasa.app.preview
+    - name: Collect emulator diagnostics
+      if: ${{ always() && !cancelled() }}
+      shell: bash
+      run: |
+        mkdir -p launch-smoke/final
+        timeout 10s "$ANDROID_HOME/platform-tools/adb" logcat -d -v threadtime > launch-smoke/final/logcat.txt || true
+        timeout 10s "$ANDROID_HOME/platform-tools/adb" shell dumpsys activity activities > launch-smoke/final/activities.txt || true
+        timeout 10s "$ANDROID_HOME/platform-tools/adb" exec-out screencap -p > launch-smoke/final/screen.png || true
+        timeout 10s "$ANDROID_HOME/platform-tools/adb" emu kill || true
+      timeout-minutes: 1
+    - uses: actions/upload-artifact@v4
+      if: ${{ always() && !cancelled() }}
+      timeout-minutes: 2
+      with:
+        name: donde-rinde-android-launch-api36-${{ github.sha }}
+        path: launch-smoke/
+        retention-days: 14

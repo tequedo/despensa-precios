@@ -1,0 +1,216 @@
+{
+  "asOf": "2026-10-22T16:33:15.974358+00:00",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "branch": "integracion/tres-frentes-20261022",
+  "sources": {
+    "webBase": "d6122f03f4bcf567873334b596f910ded6eba77d",
+    "webCodeIntegrated": "222a90e3fc03a24a578d305bc4b0d57a76e528e3",
+    "webWindow1": "b966af101bd65bc501b6b0dbe1d546459fab6a13",
+    "webWindow2": "921c11a42cba65aa0a588313a7fedf12cac7b19b",
+    "webWindow3": "0a0dd8dab46688c241c7a10c16c59bf64ee73dcc",
+    "dataBase": "20b4da450f1502eb44da1c742c7de16d063ecf4b",
+    "dataCodeIntegrated": "1b3d3713cbce7e588112bbc45e88b42287afa627",
+    "dataWindow1": "b620e041846703f5c641211a447e5076fa8d4979",
+    "dataSepa": "199726355a33e6086310db2108c9c816743bfd61",
+    "android": "ee94d2056e51f40574e494c7918713613fa5cc2e"
+  },
+  "web": [
+    {
+      "label": "web-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 6.88,
+      "logFile": "web-build.log",
+      "logSha256": "58644ef322b181f6dd3c0943be47aa429e18070b9172744ce4791766f4096f0d"
+    },
+    {
+      "label": "web-tests",
+      "command": [
+        "node",
+        "--test",
+        "--test-concurrency=1",
+        "--test-reporter=tap",
+        "tests/account-erasure.test.mjs",
+        "tests/account-profile.test.mjs",
+        "tests/activity-metrics.test.mjs",
+        "tests/app-feedback.test.mjs",
+        "tests/benefit-calculation.test.mjs",
+        "tests/capture-session.test.mjs",
+        "tests/checkout-attempt.test.mjs",
+        "tests/client-components.test.mjs",
+        "tests/commerce.test.mjs",
+        "tests/data-retention.test.mjs",
+        "tests/google-account.test.mjs",
+        "tests/image-permissions.test.mjs",
+        "tests/legal-requests.test.mjs",
+        "tests/mandatory-account.test.mjs",
+        "tests/market-coverage.test.mjs",
+        "tests/market-evidence.test.mjs",
+        "tests/market-features.test.mjs",
+        "tests/market-freshness.test.mjs",
+        "tests/market-identity.test.mjs",
+        "tests/market-localities.test.mjs",
+        "tests/meat-pricing.test.mjs",
+        "tests/notification-policy.test.mjs",
+        "tests/notifications.test.mjs",
+        "tests/offline-worker.test.mjs",
+        "tests/openai-shopping.test.mjs",
+        "tests/pantry-flows.test.mjs",
+        "tests/price-client.test.mjs",
+        "tests/price-routes.test.mjs",
+        "tests/price-safety.test.mjs",
+        "tests/private-requests.test.mjs",
+        "tests/product-fields.test.mjs",
+        "tests/product-identity.test.mjs",
+        "tests/product-promotions.test.mjs",
+        "tests/product-search.test.mjs",
+        "tests/profile-access.test.mjs",
+        "tests/rendered-html.test.mjs",
+        "tests/reported-price-review.test.mjs",
+        "tests/search-guidance.test.mjs",
+        "tests/shared-list-safety.test.mjs",
+        "tests/shopping-quantities.test.mjs",
+        "tests/shopping-tools.test.mjs",
+        "tests/source-provenance.test.mjs",
+        "tests/spending-period.test.mjs",
+        "tests/ui-components.test.mjs",
+        "tests/visitor-profile.test.mjs",
+        "tests/wholesale-math.test.mjs"
+      ],
+      "exitCode": 0,
+      "seconds": 21.18,
+      "tests": 254,
+      "pass": 254,
+      "fail": 0,
+      "skipped": 0,
+      "logFile": "web-tests.log",
+      "logSha256": "dde4b68cfb4a1e175bfcb44b130668a59ed95d6dd1a63a5e2d16f291965e44f4"
+    },
+    {
+      "label": "web-types",
+      "command": [
+        "node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false",
+        "--pretty",
+        "false"
+      ],
+      "exitCode": 0,
+      "seconds": 8.78,
+      "logFile": "web-types.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "web-diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.01,
+      "logFile": "web-diff.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "dataAndAndroid": [
+    {
+      "label": "data-check",
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "exitCode": 0,
+      "seconds": 3.21,
+      "tests": 145,
+      "pass": 145,
+      "fail": 0,
+      "skipped": 0,
+      "logFile": "data-check.log",
+      "logSha256": "90f2102cba1a155dcb1fe198ed5b655cf6e74c6db2b520c982aa27de1b554f9b"
+    },
+    {
+      "label": "sepa-probe-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_sepa_egress_probe.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "seconds": 0.08,
+      "tests": 7,
+      "skipped": 0,
+      "pass": 7,
+      "logFile": "sepa-probe-tests.log",
+      "logSha256": "11ba338f0b1ccbbd8f077658099f67170844cc54109600006ae1f2d78b4e0882"
+    },
+    {
+      "label": "android-license-tests",
+      "command": [
+        "python3",
+        "tests/android-licenses.test.py"
+      ],
+      "exitCode": 0,
+      "seconds": 0.07,
+      "tests": 5,
+      "skipped": 0,
+      "pass": 5,
+      "logFile": "android-license-tests.log",
+      "logSha256": "ca913df24f8d6cf5b700bbdfd8f3d5c74a436e6aa5da1ca0163697cc44169c0f"
+    },
+    {
+      "label": "android-signing-tests",
+      "command": [
+        "python3",
+        "tests/android-upload-key.test.py"
+      ],
+      "exitCode": 0,
+      "seconds": 1.18,
+      "tests": 10,
+      "skipped": 6,
+      "pass": 4,
+      "logFile": "android-signing-tests.log",
+      "logSha256": "1d962bc46a6c471e1c88837997363ae3ef250cfaba8331e9eea38099cdff9167"
+    },
+    {
+      "label": "data-diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.0,
+      "logFile": "data-diff.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "localPassedTotal": 415,
+  "localSkippedTotal": 6,
+  "dataIncludesAndroidPreflightTests": 5,
+  "androidNativeBuildRepeated": false,
+  "androidPreviousCi": {
+    "run": 39784776544,
+    "source": "ee94d2056e51f40574e494c7918713613fa5cc2e",
+    "passed": true,
+    "tests": 20,
+    "scope": "Compilación y arranque previos sobre la fuente Android conservada; no es prueba física."
+  },
+  "webAndAndroidNoticesIdentical": true,
+  "publicWebVersion": 167,
+  "productionDeploymentPerformed": false,
+  "protectedDataHostingWorkerAndMigrationsUnchanged": true,
+  "browserAndPhysicalQaPerformed": false
+}

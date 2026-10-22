@@ -1,4 +1,4 @@
-import { productPromotionSources } from './promotion-sources.mjs';
+import { productPromotionSources, productPromotionSourceMatches } from './promotion-sources.mjs';
 import { scopedPromotionEvidence } from "./promotion-evidence.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
@@ -54,6 +54,7 @@ async function renderedHtml(url) {
 async function sourceHtml(source) {
   if (source.render) return { body: await renderedHtml(source.url), rendered: true };
   const response = await fetch(source.url, {
+    redirect: 'error',
     headers: { accept: "text/html,application/xhtml+xml", "user-agent": "Despensa-Inteligente-Promotion-Verifier/1.0" },
     signal: AbortSignal.timeout(25000)
   });
@@ -66,7 +67,7 @@ const accepted = [];
 const report = [];
 
 for (const source of sources) {
-  const candidates = (input.promotions ?? []).filter(item => source.chain.test(item.chain ?? "") && recent(item.observedAt));
+  const candidates = (input.promotions ?? []).filter(item => productPromotionSourceMatches(source, item.chain ?? "") && recent(item.observedAt));
   try {
     const { body, rendered } = await sourceHtml(source);
     const text = htmlText(body);

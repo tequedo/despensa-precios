@@ -29,6 +29,14 @@ const dayValues = text => /TODOS LOS DIAS/.test(text) ? [0, 1, 2, 3, 4, 5, 6]
 const money = value => Number(value.replace(/\./g, '').replace(',', '.'));
 const capValues = text => [...text.matchAll(/(?:TOPE(?:\s+(?:DE|MAXIMO|MENSUAL|SEMANAL|DIARIO|POR CLIENTE)){0,3}|HASTA)\s*:?\s*(?:DE\s*)?\$\s*([\d.]+(?:,\d{1,2})?)/g)].map(m => money(m[1]));
 
+export function benefitKindFromTerms(terms, {installments = false, discountPercent = null} = {}) {
+  if (installments && !discountPercent) return 'installments';
+  // A cap's name does not establish when the customer receives the benefit.
+  // Keep actual reimbursement/accreditation wording separate from checkout discounts.
+  const text = normalized(terms).replace(/\b(?:TOPE|LIMITE)(?:\s+(?:DE|MAXIMO|MENSUAL|SEMANAL|DIARIO|POR CLIENTE)){0,4}\s+(?:REINTEGRO|DEVOLUCION)\b/g, '');
+  return /\b(?:REINTEGRO|DEVOLUCION)\b|\bSE ACREDITARA\b|\bSERA ACREDITAD[OA]\b/.test(text) ? 'reimbursement' : 'discount';
+}
+
 // Discovery preserves a promotion's own legal, never another card's terms.
 // Richly parsed candidates remain non-calculable until branch, product and
 // personal restrictions are independently verified.
@@ -52,7 +60,7 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
   const retiredOnly = /JUBILAD|PENSIONAD/.test(header) || /(?:PARA|CLIENTES|BENEFICIARIOS)\s+(?:LOS\s+)?JUBILAD|(?:PARA|CLIENTES|BENEFICIARIOS)\s+(?:LOS\s+)?PENSIONAD/.test(text);
   const issuer = plain(provider) || (/MODO/.test(header) ? 'MODO' : retiredOnly ? 'Jubilados y pensionados' : 'Banco o tarjeta: ver condiciones');
   const installments = text.match(/(\d{1,2})\s*CUOTAS?\s*SIN\s*INTERES/);
-  const kind = installments && !discountPercent ? 'installments' : /REINTEGRO/.test(text) ? 'reimbursement' : 'discount';
+  const kind = benefitKindFromTerms(text, {installments, discountPercent});
   const capMatches = [...capValues(text), ...capValues(header)];
   const noCap = /SIN TOPE|SIN LIMITE DE (?:REINTEGRO|DESCUENTO)/.test(text + ' ' + header);
   const caps = [...new Set(capMatches.filter(n => n > 0))];
@@ -66,6 +74,8 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
     : /(?:POR|CADA)\s+CUENTA/.test(text) ? 'account'
     : /(?:POR|CADA)\s+TARJETA/.test(text) ? 'card' : null;
   const minimum = text.match(/(?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)\s*(?:DE\s*)?\$\s*([\d.]+(?:,\d{1,2})?)/);
+  const noMinimum = /SIN (?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)/.test(text);
+  if (noMinimum && minimum && money(minimum[1]) > 0) conflicts.push('Mínimos ambiguos o contradictorios.');
   const payment = original.match(/(?:solo\s+pagando|pagando|utilizando|abonando)\s+(?:con|a trav[eé]s de)[^.]{4,800}/i);
   const paymentRequirement = payment ? plain(payment[0]) : null;
   const nationwide = /TODO EL PAIS|TODAS LAS TIENDAS DE(?:L)? PAIS|TODO EL TERRITORIO (?:NACIONAL|ARGENTINO)/.test(text);
@@ -90,7 +100,7 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
   return { id: 'bank-' + chain + '-' + (id || sha(original).slice(0,20)), provider: issuer, chain,
     title: summary || issuer, kind, discountPercent, installments: installments ? Number(installments[1]) : null,
     daysOfWeek, dayLabels: DAYS.filter(([,n]) => daysOfWeek.includes(n)).map(([name]) => name.toLowerCase()),
-    ...range, retiredOnly, paymentRequirement, minimumPurchase: minimum ? money(minimum[1]) : null,
+    ...range, retiredOnly, paymentRequirement, minimumPurchase: minimum ? money(minimum[1]) : noMinimum ? 0 : null,
     capAmount, capPeriod, capOwner, capRule: noCap ? 'Sin tope' : capAmount != null ? 'Tope $' + capAmount.toLocaleString('es-AR') + '; período ' + ({month:'mensual',week:'semanal',day:'diario',purchase:'por compra'}[capPeriod] ?? 'no comprobado') + '; por ' + ({person:'persona',account:'cuenta',card:'tarjeta'}[capOwner] ?? 'titular no comprobado') : 'Tope no comprobado',
     geographicScope: nationwide ? (restrictedBranches ? 'Argentina; solo sucursales adheridas, pendientes de validar' : 'Argentina; verificar sucursales y formatos') : null,
     branchEligibilityVerified: false, channels, exclusions, exclusionsVerified: false,
