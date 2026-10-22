@@ -3,8 +3,8 @@
   "asOf": "2026-10-22",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 168,
-  "webBaseCommit": "753215f2075f8dfd41464b91fddf735a5fc69297",
+  "publishedWebVersion": 169,
+  "webBaseCommit": "75d5d5426d8cbf617b0b42984bd5bd7c7fe60950",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -112,8 +112,8 @@
       "number": 14,
       "title": "Listas y existencias",
       "window": 2,
-      "status": "requiere corrección",
-      "evidenceAndLimit": "Reintento de lote conservado al reabrir y guardados confirmados retirados del borrador. C1: compra parcial puede ocultar saldo. C2: operación individual puede duplicarse ante respuesta perdida."
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado."
     },
     {
       "number": 15,
@@ -258,7 +258,7 @@
     "androidCiTestsPassed": 20,
     "integrationLocalPassed": 415,
     "integrationLocalSkipped": 6,
-    "webIntegratedTests": 254,
+    "webIntegratedTests": 272,
     "dataAndAndroidPreflightTests": 145,
     "sepaDiagnosticTests": 7,
     "androidLicensesTests": 5,
@@ -268,7 +268,14 @@
     "playSetupTotal": 11,
     "playClosedTestOptedIn": 0,
     "playIconSavedAndReopened": true,
-    "androidOwnerSigningAssistantLocalTests": 4
+    "androidOwnerSigningAssistantLocalTests": 4,
+    "pantryClosureTests": 272,
+    "pantryClosureFailed": 0,
+    "pantryBuiltWorkerFlow": true,
+    "pantryPublicPreviewHydrated": true,
+    "pantryAuthenticatedBrowserFlow": false,
+    "pantryPhysicalPhones": false,
+    "pantryProductionMigrationVerified": true
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -308,24 +315,6 @@
   "integrationValidation": "VALIDACION_CONJUNTA_2026-10-22.json",
   "openCrossIssues": [
     {
-      "id": "C1",
-      "points": [
-        14
-      ],
-      "title": "Compras parciales",
-      "detail": "Pedir 3 y recibir 1 debe conservar 2 pendientes; la ruta actual puede ocultarlos. Requiere coordinar saldo, API, comparación y migración compatible."
-    },
-    {
-      "id": "C2",
-      "points": [
-        11,
-        14,
-        15
-      ],
-      "title": "Respuesta perdida en operaciones individuales",
-      "detail": "Repetir un alta o una compra individual tras perder la respuesta puede sumar dos veces. Falta comprobante transaccional por operación y recuperación tras recarga."
-    },
-    {
       "id": "C3",
       "points": [
         15,
@@ -348,8 +337,63 @@
   ],
   "androidSigningAssistant": {
     "pr": 20,
-    "status": "prepared; CI and merge must be checked",
+    "status": "merged and CI passed; owner signature pending",
     "productionKeyCreated": false,
-    "productionBundleSigned": false
+    "productionBundleSigned": false,
+    "commit": "db521195b9edcb1587958ab9d1d25dc16c5ac422",
+    "mergeCommit": "21ea98471d7928ab8b7ef7874ff993115d8b84cc",
+    "run": 39836366729,
+    "ciTestsPassed": 25,
+    "ciTestsSkipped": 0
+  },
+  "resolvedCrossIssues": [
+    {
+      "id": "C1",
+      "points": [
+        14
+      ],
+      "title": "Compras parciales",
+      "detail": "Pedir 3 y recibir 1 conserva 2 visibles, también por encima del mínimo. Fracciones, cantidades para listas, reintentos y migración comprobados.",
+      "status": "corregido y validado en código",
+      "evidence": "CIERRE_C1_C2_2026-10-22.md",
+      "publication": "web 169"
+    },
+    {
+      "id": "C2",
+      "points": [
+        11,
+        14,
+        15
+      ],
+      "title": "Respuesta perdida en operaciones individuales",
+      "detail": "Comprobante y escritura se confirman en una transacción. Reintentos, respuesta perdida, recarga, cambio de perfil, concurrencia y rollback comprobados.",
+      "status": "corregido y validado en código",
+      "evidence": "CIERRE_C1_C2_2026-10-22.md",
+      "publication": "web 169"
+    }
+  ],
+  "pantryClosure": {
+    "date": "2026-10-22",
+    "resolvedCodeDefects": [
+      "C1",
+      "C2"
+    ],
+    "front": 14,
+    "fullyClosed": false,
+    "publication": "succeeded",
+    "validation": "CIERRE_C1_C2_2026-10-22.md",
+    "priorVerifiedWebVersion": 168,
+    "priorVerifiedWebCommit": "753215f2075f8dfd41464b91fddf735a5fc69297",
+    "webVersion": 169,
+    "commit": "75d5d5426d8cbf617b0b42984bd5bd7c7fe60950",
+    "deploymentId": "appgdep_6ada8fa52b8c8191b4774e320d6fb0dc",
+    "url": "https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site"
+  },
+  "counts": {
+    "fullyClosed": 0,
+    "implementedPendingValidation": 14,
+    "blocked": 14,
+    "requiresCorrection": 0,
+    "laterExpansion": 3
   }
 }
