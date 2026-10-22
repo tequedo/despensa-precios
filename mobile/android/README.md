@@ -1,6 +1,14 @@
 # Dónde Rinde — piloto Android
 
-Contenedor de la app existente mediante una Trusted Web Activity del navegador, con el mismo backend y reglas de precios. Nombre visible: **Dónde Rinde**. El identificador técnico es `ar.rindecasa.app`: se observó disponible en Play Console el 21/10/2026, pero todavía no se creó la ficha ni se publicó. Confirmarlo antes de la primera subida; cambiar el nombre visible no cambia ese identificador. No se afirma registro de marca concedido.
+Contenedor de la app existente mediante una Trusted Web Activity del navegador, con el mismo backend y reglas de precios. Nombre visible: **Dónde Rinde**. El identificador de release es `ar.rindecasa.app`; ya existe una ficha borrador en Play Console, sin publicación. No se afirma registro de marca concedido.
+
+El APK privado de depuración usa `ar.rindecasa.app.preview` y el nombre **Dónde Rinde Prueba**. Puede instalarse al lado del piloto anterior, sin desinstalarlo ni borrar sus datos. No utiliza el certificado de distribución de Play y la asociación TWA no está validada; puede mostrar una barra del navegador. Los APK debug de distintos trabajos de CI pueden tener certificados diferentes: nunca indicar que se desinstale una app con datos sin revisar qué se perdería.
+
+## Corrección del inicio 0.1.1
+
+El piloto 0.1.0 podía fallar al iniciar: Android Browser Helper 2.7.3 llama siempre a `ManageDataLauncherActivity.addSiteSettingsShortcut()`, que habilita o deshabilita ese componente. Faltaba declararlo en el manifiesto de la app. Se añade como actividad privada, con la URL del sitio, y también se declara `FocusActivity`, utilizada por la biblioteca al volver a una tarea existente. No se agregan servicios de notificaciones delegadas ni una WebView.
+
+`tests/fixtures/android-launch-baseline-manifest.xml` conserva únicamente el manifiesto de `f73022f6f13fbe7a3a81eba323bdec407731deb8` para una prueba de regresión de inicio. El humo de Android debe distinguir el fallo del manifiesto anterior de la corrección, conservar logcat y comprobar un navegador visible; compilar o verificar una firma no prueba el inicio. El emulador no sustituye la comprobación en el teléfono real ni acredita los recorridos de Google, cámara o voz.
 
 ## Compilación y comprobación
 
