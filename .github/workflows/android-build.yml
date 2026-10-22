@@ -5,6 +5,7 @@ name: Donde Rinde Android review build
     - mobile/android/**
     - tests/android-release-preflight.test.mjs
     - tests/android-upload-key.test.py
+    - tests/android-signing-assistant.test.py
     - tests/android-licenses.test.py
     - tests/fixtures/android-launch-baseline-manifest.xml
     - scripts/android-launch-smoke.sh
@@ -43,6 +44,10 @@ jobs:
       env:
         REQUIRE_JAVA_SIGNING_TESTS: '1'
       run: python3 ../../tests/android-upload-key.test.py
+    - name: Verify owner signing assistant safety gates
+      env:
+        REQUIRE_JAVA_SIGNING_TESTS: '1'
+      run: python3 ../../tests/android-signing-assistant.test.py
     - name: Test license distribution checks
       run: python3 ../../tests/android-licenses.test.py
     - uses: gradle/actions/setup-gradle@v4

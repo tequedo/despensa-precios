@@ -1,5 +1,49 @@
 # Clave de carga bajo control del titular
 
+**Actualización del 22/10/2026:** el AAB vigente es **0.1.2, código 3**,
+`ar.rindecasa.app`, SHA-256
+`e9a1b27830bd117bd6b02c1e637ff1a4315f18aec36ce7f6b7ee1864091f879d`.
+Fuente revisada `300d0c87dadff02826bd0d0feca3d6964b444dbb`,
+[CI 39828245411](https://github.com/tequedo/despensa-precios/actions/runs/39828245411),
+artefacto `12446594671`. Compilación, licencias, firmas con claves desechables,
+arranque y coexistencia de los dos paquetes de prueba aprobados. El AAB sigue
+sin firma del titular. Las referencias 0.1.1/PR13 siguientes son antecedentes;
+no seleccionar esos bundles para el lanzamiento actual.
+
+## Asistente local para el titular
+
+El asistente `mobile/android/firma-asistida.py` reúne los pasos ya verificados.
+Comprueba el hash y el paquete antes de crear claves. Pide las rutas de clave,
+respaldo y salida; la contraseña la solicita directamente la herramienta local,
+oculta, sin pasar por el asistente ni por el chat. Permite usar una clave existente
+y conserva la prohibición de sobrescribirla. No envía archivos a Google ni acepta
+acuerdos. No acredita que las unidades estén cifradas o sean físicamente separadas.
+
+1. En la computadora del titular, descargar la fuente de esta revisión y extraer
+   el ZIP del AAB 0.1.2 preparado. Instalar Python 3.11+ y JDK 17 completo desde sus
+   proveedores oficiales si faltan.
+2. Abrir `mobile/android/INICIAR_FIRMA_WINDOWS.cmd` en Windows. En macOS, abrir una
+   Terminal y ejecutar `python3 mobile/android/firma-asistida.py`; el archivo
+   `INICIAR_FIRMA_MAC.command` ofrece el mismo inicio si conserva permiso de ejecución.
+3. Indicar la ruta del AAB, elegir crear o reutilizar clave y completar las rutas
+   privadas. Al crear, elegir dos carpetas nuevas en unidades separadas. La carpeta
+   para el AAB firmado debe existir y quedar fuera del repositorio.
+4. Guardar la contraseña en el gestor del titular. Para continuar la publicación
+   sólo compartir el AAB firmado, su `.verification.json` y `upload-certificate.pem`.
+   Nunca compartir `upload.p12`, la contraseña ni un ZIP de las carpetas privadas.
+
+Comprobación sin crear claves ni firmar:
+
+```bash
+python3 mobile/android/firma-asistida.py --check-only --bundle /DESCARGAS/Donde_Rinde_Android_0.1.2_sin_firma.aab
+```
+
+El comprobante `reviewed-release.json` identifica el AAB revisado. Si se modifica
+el contenedor o se selecciona otra compilación, actualizar la evidencia después
+de verificar ese artefacto, nunca cambiar el hash para eludir un rechazo.
+
+## Procedimiento individual y antecedentes
+
 Procedimiento del 21/10/2026 para el primer piloto de Dónde Rinde. Python 3.11 o superior y un **JDK 17 completo** de un proveedor oficial son suficientes para firmar el AAB ya compilado en CI. No hace falta instalar Android Studio ni el SDK para esta operación. El equipo debe ser propio o de confianza, con almacenamiento cifrado y sin grabación de terminal.
 
 La herramienta no se conecta a Internet, no carga claves a GitHub, no acepta acuerdos y no envía paquetes a Play. Su contraseña se pide sin mostrarla; no se guarda ni se pasa como argumento de un proceso. La clave PKCS12 se cifra con esa contraseña. El certificado y su huella son públicos; la clave y contraseña son privados. El entorno de los procesos Java contiene la contraseña mientras se ejecutan: no usar un equipo compartido o comprometido.
@@ -24,7 +68,7 @@ Si una operación falla después de crear archivos, conservarlos y revisar la ca
 
 El piloto 0.1.0 anterior queda descartado para publicación por el fallo de inicio identificado el 21/10/2026. No firmar ni subir los artefactos antiguos `12379881040` o `12381885593`, ni reutilizar su hash `504d7273c943b25be198ec1b69ed58d384a26ccb2fb8005da34bc46a382d0fff` como paquete vigente.
 
-Descargar el AAB **release** de una compilación del [PR 13](https://github.com/tequedo/despensa-precios/pull/13) que incluya la corrección 0.1.1 y tenga el humo `android-launch-api36` aprobado. Registrar la fuente exacta, el run, el artefacto y el SHA-256 del `app-release.aab` descargado, comparándolo con la verificación conservada para esa misma compilación. Los hashes del ZIP exterior, del APK debug y del AAB son distintos: usar el del AAB de entrada. Si el artefacto venció, recompilar la misma fuente y verificar el nuevo contenido; no adivinar ni copiar el hash de otra compilación.
+Usar el AAB **release 0.1.2** revisado del [PR 19](https://github.com/tequedo/despensa-precios/pull/19), CI `39828245411`, artefacto `12446594671`, identificado en la actualización y en `reviewed-release.json`. El paquete de descarga ya contiene `Donde_Rinde_Android_0.1.2_sin_firma.aab`. Los hashes del ZIP exterior, del APK debug y del AAB son distintos: usar el del AAB de entrada. Si el artefacto venció, recompilar la misma fuente y verificar el nuevo contenido; no adivinar ni copiar el hash de otra compilación.
 
 El APK **Dónde Rinde Prueba** usa el paquete `ar.rindecasa.app.preview` y sirve para la prueba privada. No es el bundle de publicación, que mantiene `ar.rindecasa.app`.
 

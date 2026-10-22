@@ -1,4 +1,12 @@
-# RINDECASA — inventario previo a Seguridad de los datos
+# Dónde Rinde — inventario previo a Seguridad de los datos
+
+**Actualización del 22/10/2026:** ver [cierre legal y Google Play](CIERRE_LEGAL_PLAY_2026-10-22.md).
+La web 168 ya implementa limpieza operativa de más de 90 días, comparación pública
+y Google opcional para guardar datos. La declaración de Play se revalidó en vivo:
+recopilación Sí, OAuth y ambos mecanismos de eliminación guardados; cifrado
+universal y tratamiento completo de proveedores pendientes. El inventario histórico
+siguiente no acredita ausencia de recopilación, retención cero ni eliminación de
+todas las copias externas.
 
 Revisión ampliada de fuente web al 10/10/2026, web 137, commit `a943af13f6b5f0cc6591b65797c88ca667e5704c`. Documento de trabajo; no es política definitiva ni declaración enviada a Google. [Mapa detallado](../legal/PRIVACIDAD_DATOS_BORRADOR.md).
 

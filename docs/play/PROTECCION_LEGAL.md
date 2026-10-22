@@ -1,4 +1,9 @@
-# RINDECASA — protección legal y derechos antes del lanzamiento
+# Dónde Rinde — protección legal y derechos antes del lanzamiento
+
+**Lectura vigente del 22/10/2026:** [cierre legal y Google Play](CIERRE_LEGAL_PLAY_2026-10-22.md).
+Web 168 y AAB 0.1.2 comprobados; Play sigue como borrador 7/11. El nombre actual es
+Dónde Rinde. Los apartados siguientes conservan antecedentes del 10/10 y no
+sustituyen esa revisión actual ni acreditan trámites, firma o publicación Android.
 
 Actualización del 10/10/2026. Trabajo preparado y controles web publicados; no es dictamen jurídico ni garantía de ausencia de denuncias. No se presentaron registros, realizaron pagos, contrataron abogados ni enviaron paquetes a Google.
 
