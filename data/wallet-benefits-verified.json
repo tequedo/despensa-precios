@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T13:39:56.560Z",
+  "generatedAt": "2026-10-22T17:28:20.771Z",
   "scope": "Argentina; alcance sujeto a cada promoción",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -7,7 +7,7 @@
       "id": "mercado-pago-carrefour-b5821964-430c-44e9-90d2-17fee264f019",
       "provider": "Mercado Pago",
       "chain": "Carrefour",
-      "kind": "discount",
+      "kind": "reimbursement",
       "title": "15% con Mercado Pago los lunes",
       "discountPercent": 15,
       "daysOfWeek": [
@@ -20,7 +20,9 @@
       "validTo": "2026-10-31",
       "minimumPurchase": null,
       "capAmount": 15000,
-      "capRule": "Tope $15.000",
+      "capPeriod": "month",
+      "capOwner": "person",
+      "capRule": "Tope $15.000; período mensual; por persona",
       "paymentRequirement": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
       "channels": [
         "Sucursales físicas"
@@ -44,7 +46,7 @@
       "exclusionsVerified": true,
       "accumulable": true,
       "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-22T13:39:56.560Z",
+      "checkedAt": "2026-10-22T17:28:20.771Z",
       "termsHash": "68be94e522abb4b4f2a01540cabc8f24ce5d610c530d342fabfc45544b1adc66",
       "status": "verified",
       "calculationEligible": false,
