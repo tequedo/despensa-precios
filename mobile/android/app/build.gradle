@@ -49,6 +49,14 @@ android {
             applicationIdSuffix '.preview'
             versionNameSuffix '-prueba'
         }
+        compatibility {
+            // A different package can coexist with previously installed test APKs
+            // whose disposable CI signing keys cannot be used for an update.
+            initWith debug
+            applicationIdSuffix '.preview012'
+            versionNameSuffix '-prueba-independiente'
+            matchingFallbacks = ['debug']
+        }
         release {
             minifyEnabled false
             if (signedRelease) signingConfig signingConfigs.upload
