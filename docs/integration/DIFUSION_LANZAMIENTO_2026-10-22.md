@@ -1,6 +1,6 @@
 # Frente adicional 32 — difusión y promoción
 
-Abierto por pedido del titular el 22/10/2026. Se suma a los 31 frentes originales y no modifica sus cuentas. Estado: preproducción iniciada; no hay video terminado, cuentas creadas, anuncios contratados ni publicaciones enviadas. La difusión con enlace de descarga comienza después de verificar la publicación y descarga real en Play.
+Abierto por pedido del titular el 22/10/2026. Se suma a los 31 frentes originales y no modifica sus cuentas. Estado actualizado: primer borrador de video producido y verificado. Dura 30 segundos y presenta beneficios mediante textos animados, el logo aprobado y música sintetizada original. No incluye locución, pantallas de la app ni escenas producidas con un modelo generativo de video. No hay cuentas nuevas, anuncios contratados ni publicaciones enviadas. La difusión con enlace de descarga comienza después de verificar la publicación y descarga real en Play.
 
 ## Objetivo y costo inicial
 
@@ -54,4 +54,6 @@ Revisar vistas completas, visitas a la ficha, instalaciones informadas por Play 
 
 ## Próxima entrega y cierre
 
-Quedan por producir capturas de la versión final, voz, subtítulos y un MP4 revisable. Para cerrar el frente se necesita pieza aprobada, ficha y enlace reales, canales bajo control del titular y evidencia de la primera difusión. Cualquier gasto o campaña concreta se presenta con pieza, destino, fechas e importe antes de ejecutarse.
+Ya existe un MP4 revisable: `Donde_Rinde_promocion_borrador_01.mp4`, 1080 × 1920, H.264/AAC, 30 segundos, 4.614.381 bytes, SHA-256 `fc2358249845d3a609e0627c970cc139a59a486d0621b6fc4f673610d26a33e0`. Se comprobó la decodificación completa y seis momentos de las escenas. La pieza está rotulada como borrador anterior al lanzamiento. Producción local con `scripts/create-promo-video.py`; sin APIs ni recursos pagos.
+
+Quedan por producir capturas reales de la versión final y, si se adopta, una locución con IA gratuita. El guion de capturas de arriba sigue siendo la propuesta de la siguiente pieza; no describe imágenes que ya estén incluidas en este borrador. Para cerrar el frente se necesita pieza aprobada, ficha y enlace reales, canales bajo control del titular y evidencia de la primera difusión. Cualquier gasto o campaña concreta se presenta con pieza, destino, fechas e importe antes de ejecutarse.
