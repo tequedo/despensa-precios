@@ -68,7 +68,7 @@ Si una operación falla después de crear archivos, conservarlos y revisar la ca
 
 El piloto 0.1.0 anterior queda descartado para publicación por el fallo de inicio identificado el 21/10/2026. No firmar ni subir los artefactos antiguos `12379881040` o `12381885593`, ni reutilizar su hash `504d7273c943b25be198ec1b69ed58d384a26ccb2fb8005da34bc46a382d0fff` como paquete vigente.
 
-Descargar el AAB **release** de una compilación del [PR 13](https://github.com/tequedo/despensa-precios/pull/13) que incluya la corrección 0.1.1 y tenga el humo `android-launch-api36` aprobado. Registrar la fuente exacta, el run, el artefacto y el SHA-256 del `app-release.aab` descargado, comparándolo con la verificación conservada para esa misma compilación. Los hashes del ZIP exterior, del APK debug y del AAB son distintos: usar el del AAB de entrada. Si el artefacto venció, recompilar la misma fuente y verificar el nuevo contenido; no adivinar ni copiar el hash de otra compilación.
+Usar el AAB **release 0.1.2** revisado del [PR 19](https://github.com/tequedo/despensa-precios/pull/19), CI `39828245411`, artefacto `12446594671`, identificado en la actualización y en `reviewed-release.json`. El paquete de descarga ya contiene `Donde_Rinde_Android_0.1.2_sin_firma.aab`. Los hashes del ZIP exterior, del APK debug y del AAB son distintos: usar el del AAB de entrada. Si el artefacto venció, recompilar la misma fuente y verificar el nuevo contenido; no adivinar ni copiar el hash de otra compilación.
 
 El APK **Dónde Rinde Prueba** usa el paquete `ar.rindecasa.app.preview` y sirve para la prueba privada. No es el bundle de publicación, que mantiene `ar.rindecasa.app`.
 

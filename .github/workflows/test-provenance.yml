@@ -1,5 +1,12 @@
 name: Probar procedencia SEPA sin publicar datos
 on:
+  workflow_dispatch:
+    inputs:
+      run_network_probe:
+        description: 'Ejecutar una consulta real de SEPA; habilitar sólo cuando corresponda retomar el acceso'
+        type: boolean
+        required: false
+        default: false
   push:
     branches: ['fix/sepa-procedencia-4-2', 'fix/sepa-identificacion-4-3']
   pull_request:
@@ -26,6 +33,9 @@ jobs:
       - run: python3 -m unittest discover -s tests -p 'test_sepa_archive.py'
       - name: Comprobar descarga real sin actualizar precios ni avisar a usuarios
         id: real_source
+        # Keep code checks automatic; direct access is awaiting SEPA's response.
+        # An unrelated Android/test PR must not start a new network probe.
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_network_probe }}
         continue-on-error: true
         env:
           SEPA_ORIGINAL_DIR: ${{ runner.temp }}/sepa-source-probe
