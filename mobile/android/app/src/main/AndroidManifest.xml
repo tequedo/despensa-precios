@@ -20,9 +20,6 @@
                 android:value="https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site" />
         </activity>
         <activity
-            android:name="com.google.androidbrowserhelper.trusted.FocusActivity"
-            android:exported="false" />
-        <activity
             android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
             android:exported="true">
             <meta-data

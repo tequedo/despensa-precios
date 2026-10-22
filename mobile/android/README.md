@@ -6,7 +6,7 @@ El APK privado de depuración usa `ar.rindecasa.app.preview` y el nombre **Dónd
 
 ## Corrección del inicio 0.1.1
 
-El piloto 0.1.0 podía fallar al iniciar: Android Browser Helper 2.7.3 llama siempre a `ManageDataLauncherActivity.addSiteSettingsShortcut()`, que habilita o deshabilita ese componente. Faltaba declararlo en el manifiesto de la app. Se añade como actividad privada, con la URL del sitio, y también se declara `FocusActivity`, utilizada por la biblioteca al volver a una tarea existente. No se agregan servicios de notificaciones delegadas ni una WebView.
+El piloto 0.1.0 podía fallar al iniciar: Android Browser Helper 2.7.3 llama siempre a `ManageDataLauncherActivity.addSiteSettingsShortcut()`, que habilita o deshabilita ese componente. Faltaba declararlo en el manifiesto de la app. Se añade como actividad privada, con la URL del sitio. No se agregan servicios de notificaciones delegadas ni una WebView. `FocusActivity` se mantiene ausente: la biblioteca comprueba su existencia antes de utilizar esa función opcional de reordenación.
 
 `tests/fixtures/android-launch-baseline-manifest.xml` conserva únicamente el manifiesto de `f73022f6f13fbe7a3a81eba323bdec407731deb8` para una prueba de regresión de inicio. El humo de Android debe distinguir el fallo del manifiesto anterior de la corrección, conservar logcat y comprobar un navegador visible; compilar o verificar una firma no prueba el inicio. El emulador no sustituye la comprobación en el teléfono real ni acredita los recorridos de Google, cámara o voz.
 
