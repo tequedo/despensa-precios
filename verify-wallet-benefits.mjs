@@ -438,7 +438,7 @@ export function parseCarrefourBenefits(
   if (monthConflict) reasons.push("La publicación menciona meses distintos dentro del mismo beneficio.");
   if (paymentConflict) reasons.push("El legal exige la app de Mercado Pago y luego indica que no es válida.");
 
-  const financialConflicts = discoveredTerms.reasons.filter(reason => /Topes ambiguos|Porcentajes contradictorios/.test(reason));
+  const financialConflicts = discoveredTerms.reasons.filter(reason => /Topes ambiguos|Porcentajes contradictorios|Mínimos ambiguos/.test(reason));
   reasons.push(...financialConflicts);
   const conflict = monthConflict || paymentConflict || financialConflicts.length > 0;
   const complete = Boolean(

@@ -98,6 +98,9 @@ test("a monetary cap without its period or owner stays incomplete", () => {
   const reimbursement = parseCarrefourBenefits(text.replace('Tope de $15.000','Tope mensual por cliente de $15.000')+' Se acreditará en la cuenta dentro de 30 días.', {checkedAt:'2026-09-09T12:00:00Z'})[0];
   assert.equal(reimbursement.status, 'verified');
   assert.equal(reimbursement.kind, 'reimbursement');
+  const contradictory = parseCarrefourBenefits(text+' Sin compra mínima. Mínimo de compra de $10.000.', {checkedAt:'2026-09-09T12:00:00Z'})[0];
+  assert.equal(contradictory.status, 'conflict');
+  assert.match(contradictory.reasons.join(' '), /Mínimos ambiguos/);
 });
 
 test("bloquea el descuento de Carrefour si sus términos contradicen el uso de la app", () => {

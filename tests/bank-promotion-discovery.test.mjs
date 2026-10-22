@@ -50,4 +50,7 @@ test('the phrase sin tope de reintegro does not turn a checkout discount into a 
 test('zero minimum requires explicit evidence; absent terms retain null',()=>{
  assert.equal(discoverBankPromotion(input).minimumPurchase,null);
  assert.equal(discoverBankPromotion({...input,terms:input.terms+' Sin compra mínima.'}).minimumPurchase,0);
+ const conflict=discoverBankPromotion({...input,terms:input.terms+' Sin compra mínima. Compra mínima de $10.000.'});
+ assert.equal(conflict.status,'conflict');
+ assert.match(conflict.calculationBlockedReason,/Mínimos ambiguos/);
 });

@@ -74,6 +74,8 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
     : /(?:POR|CADA)\s+CUENTA/.test(text) ? 'account'
     : /(?:POR|CADA)\s+TARJETA/.test(text) ? 'card' : null;
   const minimum = text.match(/(?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)\s*(?:DE\s*)?\$\s*([\d.]+(?:,\d{1,2})?)/);
+  const noMinimum = /SIN (?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)/.test(text);
+  if (noMinimum && minimum && money(minimum[1]) > 0) conflicts.push('Mínimos ambiguos o contradictorios.');
   const payment = original.match(/(?:solo\s+pagando|pagando|utilizando|abonando)\s+(?:con|a trav[eé]s de)[^.]{4,800}/i);
   const paymentRequirement = payment ? plain(payment[0]) : null;
   const nationwide = /TODO EL PAIS|TODAS LAS TIENDAS DE(?:L)? PAIS|TODO EL TERRITORIO (?:NACIONAL|ARGENTINO)/.test(text);
@@ -98,7 +100,7 @@ export function discoverBankPromotion({ id, title, terms, provider, chain, sourc
   return { id: 'bank-' + chain + '-' + (id || sha(original).slice(0,20)), provider: issuer, chain,
     title: summary || issuer, kind, discountPercent, installments: installments ? Number(installments[1]) : null,
     daysOfWeek, dayLabels: DAYS.filter(([,n]) => daysOfWeek.includes(n)).map(([name]) => name.toLowerCase()),
-    ...range, retiredOnly, paymentRequirement, minimumPurchase: minimum ? money(minimum[1]) : /SIN (?:COMPRA MINIMA|MONTO MINIMO|MINIMO DE COMPRA)/.test(text) ? 0 : null,
+    ...range, retiredOnly, paymentRequirement, minimumPurchase: minimum ? money(minimum[1]) : noMinimum ? 0 : null,
     capAmount, capPeriod, capOwner, capRule: noCap ? 'Sin tope' : capAmount != null ? 'Tope $' + capAmount.toLocaleString('es-AR') + '; período ' + ({month:'mensual',week:'semanal',day:'diario',purchase:'por compra'}[capPeriod] ?? 'no comprobado') + '; por ' + ({person:'persona',account:'cuenta',card:'tarjeta'}[capOwner] ?? 'titular no comprobado') : 'Tope no comprobado',
     geographicScope: nationwide ? (restrictedBranches ? 'Argentina; solo sucursales adheridas, pendientes de validar' : 'Argentina; verificar sucursales y formatos') : null,
     branchEligibilityVerified: false, channels, exclusions, exclusionsVerified: false,
