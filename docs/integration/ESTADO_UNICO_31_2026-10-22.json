@@ -3,8 +3,8 @@
   "asOf": "2026-10-22",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 169,
-  "webBaseCommit": "75d5d5426d8cbf617b0b42984bd5bd7c7fe60950",
+  "publishedWebVersion": 170,
+  "webBaseCommit": "4924c5c3f8ea51f4314778e42c218305592d6c71",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Integración web 168 publicada, fuente 753215f2075f; 254 pruebas web del corte aprobadas. Falta verificación completa de recorridos en producción y dispositivos; no acredita descuentos reales nuevos."
+      "evidenceAndLimit": "Web 170 publicada, fuente 4924c5c3f8ea; 298 pruebas web aprobadas sin fallos ni omitidas. Falta recorrido completo autenticado de navegador y dispositivos; no acredita descuentos reales nuevos."
     },
     {
       "number": 9,
@@ -92,7 +92,7 @@
       "title": "Voz, foto y códigos",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Permisos tardíos, cancelación y borradores comprobados. Eliminado envío de foto original al fallar su preparación; faltan voz/foto/código físicos."
+      "evidenceAndLimit": "Decisión del titular: reconocimiento pago por voz/foto pausado hasta poder financiarlo. Botones retirados, servidor bloqueado incluso con clave configurada y carga manual con teclado conservada. Código y controles futuros retenidos. Lector de códigos sin IA se conserva; prueba física pendiente."
     },
     {
       "number": 12,
@@ -134,7 +134,7 @@
       "title": "Privacidad, términos y reclamos",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Privacidad y tratamiento cotejados con fuente web 168 y Console en vivo; cierre legal preparado. Faltan contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa."
+      "evidenceAndLimit": "Privacidad e información del servicio actualizadas en web 170 para la pausa de IA y carga manual vigente. Cierre legal preparado; contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa pendientes."
     },
     {
       "number": 18,
@@ -155,7 +155,7 @@
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Alertas, métricas y mantenimiento probados en suite. C3: restauración/revocaciones; C4: cuotas, timeout y cancelación del reconocimiento pendientes."
+      "evidenceAndLimit": "C4: reconocimiento pago desactivado por decisión del titular. Cuotas durables, timeout, cancelación y límites de archivos preparados y probados con proveedor simulado; no constituyen autorización para reactivar. C3 (restauración/revocaciones) y validación operativa siguen pendientes."
     },
     {
       "number": 21,
@@ -204,7 +204,7 @@
       "title": "Lanzamiento controlado",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Integración publicada en web 168; Android continúa como borrador. Firma, certificados, pruebas físicas, declaraciones pendientes, prueba cerrada, revisión y publicación Android sin completar."
+      "evidenceAndLimit": "Web 170 publicada con reconocimiento pago pausado. Android sigue en borrador; firma, certificados, pruebas físicas, declaraciones, prueba cerrada, revisión y publicación Android sin completar."
     },
     {
       "number": 28,
@@ -275,7 +275,13 @@
     "pantryPublicPreviewHydrated": true,
     "pantryAuthenticatedBrowserFlow": false,
     "pantryPhysicalPhones": false,
-    "pantryProductionMigrationVerified": true
+    "pantryProductionMigrationVerified": true,
+    "recognitionPausedReleaseTests": 298,
+    "recognitionPausedReleaseFailed": 0,
+    "recognitionPausedReleaseSkipped": 0,
+    "recognitionPausedBuiltWorker": true,
+    "recognitionProviderCallsInPausedWorkerTest": 0,
+    "recognitionPaidCallsForValidation": 0
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -298,7 +304,7 @@
     "dndaFiled": false,
     "scope": "Copia histórica de Ventana 3; no representa la fuente integrada actual."
   },
-  "integrationScope": "Código de las tres ventanas integrado y publicado como web 168. Los 31 frentes mantienen sus límites; Android y legales conservan dependencias expresas.",
+  "integrationScope": "Código de las tres ventanas integrado y publicado; web 170 conserva carga manual y pausa el reconocimiento pago por decisión del titular. Los 31 frentes originales mantienen sus límites y se agrega el frente 32 de difusión.",
   "integrationBranch": "integracion/tres-frentes-20261022",
   "integrationSources": {
     "webBase": "d6122f03f4bcf567873334b596f910ded6eba77d",
@@ -323,16 +329,6 @@
       ],
       "title": "Restauración y revocaciones",
       "detail": "Un respaldo anterior puede perder barreras de borrado. Falta procedimiento admitido por el alojamiento y prueba aislada antes de reabrir acceso."
-    },
-    {
-      "id": "C4",
-      "points": [
-        11,
-        16,
-        20
-      ],
-      "title": "Límites del reconocimiento",
-      "detail": "Faltan cuotas por perfil, timeout y propagación de cancelación. Cancelar en la pantalla no demuestra cancelación ni ausencia de costo del proveedor."
     }
   ],
   "androidSigningAssistant": {
@@ -370,6 +366,19 @@
       "status": "corregido y validado en código",
       "evidence": "CIERRE_C1_C2_2026-10-22.md",
       "publication": "web 169"
+    },
+    {
+      "id": "C4",
+      "points": [
+        11,
+        16,
+        20
+      ],
+      "title": "Reconocimiento pago pausado y controles preparados",
+      "detail": "Botones de reconocimiento por voz/foto retirados. Las rutas bloquean todo reconocimiento pago antes de procesar el cuerpo, registrar un intento o llamar a OpenAI, incluida la interpretación de texto. El formulario manual sigue disponible. Cuotas, cancelación, timeout y validación de archivos se conservan para una posible reactivación futura, que requiere nueva decisión.",
+      "status": "resuelto y publicado para el alcance manual actual",
+      "evidence": "PAUSA_RECONOCIMIENTO_2026-10-22.md",
+      "publication": "web 170"
     }
   ],
   "pantryClosure": {
@@ -395,5 +404,39 @@
     "blocked": 14,
     "requiresCorrection": 0,
     "laterExpansion": 3
-  }
+  },
+  "recognitionPolicy": {
+    "enabled": false,
+    "decisionDate": "2026-10-22",
+    "ownerDecision": "Pausar foto y voz hasta poder solventar el costo; conservar carga manual con teclado.",
+    "manualEntryEnabled": true,
+    "providerCallsInPausedWorkerTest": 0,
+    "paidProviderCallsForValidation": 0,
+    "validation": "PAUSA_RECONOCIMIENTO_2026-10-22.md",
+    "publication": "succeeded",
+    "futureReactivation": "Solo con decisión expresa del titular, presupuesto y comprobación de controles/dispositivos.",
+    "version": 170,
+    "commit": "4924c5c3f8ea51f4314778e42c218305592d6c71",
+    "versionId": "appgprj_6a9c53ae66f4819182c306fba4c263ca~appgver_4aa9d02fef548191acfd1b6618eb91ec",
+    "deploymentId": "appgdep_6ada95300c048191ba943df30a45c33c",
+    "deploymentUpdatedAt": "2026-10-22T22:59:18.019371+00:00",
+    "archiveSha256": "dd7de4e066195614353578d053165d7e4e611404382426a75e9cc6cf7b010113",
+    "archiveSizeBytes": 5672960,
+    "environmentRevision": 12,
+    "browserPreviewAuthenticatedFlow": false,
+    "browserPreviewLimit": "La vista previa no completó la carga del módulo de la página; no se acredita recorrido autenticado por navegador. Pruebas del componente y Worker compilado aprobadas.",
+    "physicalPhoneValidated": false
+  },
+  "additionalFronts": [
+    {
+      "number": 32,
+      "title": "Difusión y promoción de Dónde Rinde",
+      "status": "preparación iniciada; campaña posterior a publicación",
+      "original31": false,
+      "evidence": "DIFUSION_LANZAMIENTO_2026-10-22.md",
+      "spendingAuthorized": false,
+      "accountsCreated": false,
+      "postsPublished": false
+    }
+  ]
 }
