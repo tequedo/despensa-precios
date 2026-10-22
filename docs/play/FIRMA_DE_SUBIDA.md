@@ -22,13 +22,11 @@ Si una operación falla después de crear archivos, conservarlos y revisar la ca
 
 ## 2. Firmar el artefacto de CI revisado
 
-Descargar el artefacto de la compilación verificada en el [PR 13](https://github.com/tequedo/despensa-precios/pull/13). Compilación de referencia: workflow `39670052662`, artefacto `12379881040`, fuente `550f022a9f2bb37e5f59f129dc4ee062054e0ff5`. El artefacto temporal de GitHub vence el 04/11/2026; si no está disponible, volver a compilar la fuente revisada y registrar el SHA-256 nuevo. **No usar el hash anterior para un bundle nuevo.**
+El piloto 0.1.0 anterior queda descartado para publicación por el fallo de inicio identificado el 21/10/2026. No firmar ni subir los artefactos antiguos `12379881040` o `12381885593`, ni reutilizar su hash `504d7273c943b25be198ec1b69ed58d384a26ccb2fb8005da34bc46a382d0fff` como paquete vigente.
 
-SHA-256 del `app-release.aab` de esa compilación, antes de firmar:
+Descargar el AAB **release** de una compilación del [PR 13](https://github.com/tequedo/despensa-precios/pull/13) que incluya la corrección 0.1.1 y tenga el humo `android-launch-api36` aprobado. Registrar la fuente exacta, el run, el artefacto y el SHA-256 del `app-release.aab` descargado, comparándolo con la verificación conservada para esa misma compilación. Los hashes del ZIP exterior, del APK debug y del AAB son distintos: usar el del AAB de entrada. Si el artefacto venció, recompilar la misma fuente y verificar el nuevo contenido; no adivinar ni copiar el hash de otra compilación.
 
-```text
-504d7273c943b25be198ec1b69ed58d384a26ccb2fb8005da34bc46a382d0fff
-```
+El APK **Dónde Rinde Prueba** usa el paquete `ar.rindecasa.app.preview` y sirve para la prueba privada. No es el bundle de publicación, que mantiene `ar.rindecasa.app`.
 
 Usar la huella pública impresa al crear la clave, que también figura en `upload-metadata.json`. Confirmar antes en Play Console que se mantendrá `ar.rindecasa.app`; el nombre visible es Dónde Rinde. La herramienta rechaza un manifiesto de otro paquete, pero no decide la identidad comercial por el titular.
 
@@ -38,7 +36,7 @@ python3 mobile/android/upload-key.py sign \
   --backup-directory /OTRA-UNIDAD-PRIVADA/donde-rinde-upload-respaldo \
   --bundle /DESCARGAS/app-release.aab \
   --output /ENTREGAS/donde-rinde-upload.aab \
-  --bundle-sha256 504d7273c943b25be198ec1b69ed58d384a26ccb2fb8005da34bc46a382d0fff \
+  --bundle-sha256 SHA256-REAL-DEL-AAB-RELEASE-VERIFICADO \
   --upload-sha256 HUELLA-PUBLICA-REAL-DE-64-CARACTERES
 ```
 
