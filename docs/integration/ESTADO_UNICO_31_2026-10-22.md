@@ -1,8 +1,10 @@
 # Dónde Rinde — estado único de los 31 frentes
 
-Corte: 22/10/2026, Argentina. Integración publicada en web 168, fuente `753215f2075f8dfd41464b91fddf735a5fc69297`. Android 0.1.2 revisado; Play permanece en borrador, 7/11 tareas.
+Corte: 22/10/2026, Argentina. Publicación verificada: web 169, fuente `75d5d5426d8cbf617b0b42984bd5bd7c7fe60950`. C1/C2 publicados; migración de comprobantes verificada en D1. Android 0.1.2 revisado; Play sigue en borrador, 7/11 tareas.
 
 Cada estado se refiere al punto completo. Una corrección incorporada y probada no sustituye pruebas físicas, permisos, contratos o publicación.
+
+Dos defectos de código resueltos (C1/C2); frente 14 implementado, pendiente de prueba física. Los 31 frentes completos se conservan: 0 cerrados, 14 implementados pendientes de validar, 14 bloqueados y 3 ampliaciones posteriores.
 
 | N.º | Frente | Estado | Avance y límite |
 | --- | --- | --- | --- |
@@ -19,7 +21,7 @@ Cada estado se refiere al punto completo. Una corrección incorporada y probada 
 | 11 | Voz, foto y códigos | implementado pendiente de validar | Permisos tardíos, cancelación y borradores comprobados. Eliminado envío de foto original al fallar su preparación; faltan voz/foto/código físicos. |
 | 12 | Ubicación real | implementado pendiente de validar | Cambio de provincia invalida GPS viejo; rechazo permite selección manual. Falta recorrido físico de GPS, radio, sucursales y conservación de lista. |
 | 13 | Cuentas y recuperación | implementado pendiente de validar | Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Google configurado y aislamiento probado; recorrido real pendiente. |
-| 14 | Listas y existencias | requiere corrección | Reintento de lote conservado al reabrir y guardados confirmados retirados del borrador. C1: compra parcial puede ocultar saldo. C2: operación individual puede duplicarse ante respuesta perdida. |
+| 14 | Listas y existencias | implementado pendiente de validar | C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. |
 | 15 | Borrado y restauración | bloqueado por dependencia | Borrado activo, revocación, aislamiento y rollback probados con datos descartables. Restauración sin resucitar datos y eliminación externa sin acreditar. |
 | 16 | Proveedores y conservación | bloqueado por dependencia | Matriz de proveedores y retención recibida. Los controles operativos de 90 días no acreditan contratos, regiones ni supresión de todas las copias externas. |
 | 17 | Privacidad, términos y reclamos | bloqueado por dependencia | Privacidad y tratamiento cotejados con fuente web 168 y Console en vivo; cierre legal preparado. Faltan contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa. |
@@ -38,6 +40,6 @@ Cada estado se refiere al punto completo. Una corrección incorporada y probada 
 | 30 | Mayoristas y catálogo local | ampliación posterior | Calculadoras/adaptadores no constituyen un catálogo mayorista real. Faltan cotizaciones por tienda, presentación, bulto, impuestos y vigencia. |
 | 31 | Historial y alertas ampliados | ampliación posterior | Auditoría por commit/hashes e historial recibidos. Ampliación comparable requiere contrato de conservación; campanita interna no es push. |
 
-Continúan abiertos C1 (saldo de compra parcial), C2 (idempotencia individual), C3 (restauración/revocaciones) y C4 (cuotas, timeout y cancelación de reconocimiento).
+C1/C2: [evidencia del cierre técnico](CIERRE_C1_C2_2026-10-22.md). Continúan abiertos C3 (restauración/revocaciones) y C4 (cuotas, timeout y cancelación).
 
-Firma y cierre legal: [procedimiento de firma](../play/FIRMA_DE_SUBIDA.md) y [comprobaciones de Play y legal](../play/CIERRE_LEGAL_PLAY_2026-10-22.md). La preparación del PR20 no acredita por sí sola CI, merge o firma del titular.
+PR20 de firma asistida integrado; CI39836366729 aprobada (25 pruebas, ninguna omitida). Clave real y firma del titular pendientes.
