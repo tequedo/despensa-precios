@@ -42,3 +42,7 @@ El video usa textos y gráficos; no presenta pantallas simuladas como capturas d
 Comprobaciones: decodificación completa aprobada, 900 fotogramas, seis escenas inspeccionadas, audio sin saturación y formato compatible con reproductores habituales. [Metadatos y hash](VIDEO_PROMOCION_01_2026-10-22.json). Producción reproducible con `scripts/create-promo-video.py`; requiere Pillow, numpy y ffmpeg disponibles, sin instalar ni descargar dependencias automáticamente.
 
 Costo ejecutado de esta pieza: **0 llamadas de API, 0 activos pagos y 0 pauta contratada**. No se crearon cuentas, se enviaron mensajes ni se aceptaron contratos nuevos. Los 31 frentes originales mantienen sus límites; el frente 32 ahora tiene un borrador audiovisual concreto para revisar.
+
+## Actualización posterior: paso 4 y nueva interrupción
+
+Se observó el paso 4/5 con 16 tipos, incorporando actividad, diagnósticos, fallas y preferencias financieras heredadas. El guardado posterior quedó en «Enviando…» y no se verificó su persistencia. Una captura del titular documenta una nueva denegación de la revisión automática de ChatGPT por dominio no verificado/riesgo alto; el acceso del navegador se mantiene en pausa. El bloqueo previo resuelto descrito arriba no equivale a autorización de esta nueva acción. La matriz técnica y la secuencia para retomar están en [el punto de reanudación](PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md). No se completó ni envió la declaración.
