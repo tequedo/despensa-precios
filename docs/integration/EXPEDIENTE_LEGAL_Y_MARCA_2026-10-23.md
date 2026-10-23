@@ -40,7 +40,7 @@ Se conservan las opciones examinadas como antecedentes de contingencia. El titul
 
 AHORUMO y DESPIVIO se alejan verbalmente de RINDE por no contener esa palabra. Es una observación limitada; no prueba menor riesgo frente al universo de marcas. Las búsquedas web exactas no aportaron una verificación de disponibilidad. Tampoco se reservaron dominios ni usuarios. [S0]
 
-**Continuación con DÓNDE RINDE:** ampliar la evaluación de semejanzas y revisar el logo; recuperar el borrador existente mediante el acceso autenticado; cotejar titular, servicios y arancel vigente antes de presentar. Los informes fonéticos pagados de RINDECASA siguen siendo antecedentes de ese nombre, no del nuevo.
+**Continuación con DÓNDE RINDE:** ampliar la evaluación de semejanzas y revisar el logo; completar la revisión del borrador existente ya recuperado; cotejar todos los datos del titular, servicios y aranceles antes de presentar. Los informes fonéticos pagados de RINDECASA siguen siendo antecedentes de ese nombre, no del nuevo.
 
 <!-- page -->
 
@@ -54,21 +54,21 @@ El titular confirmó DÓNDE RINDE. La base recuperada propone una marca denomina
 | 35 | Comparación de precios; información y asesoramiento comercial al consumidor; información comercial por sitios web. Publicidad y promoción para terceros sólo conforme al servicio previsto. |
 | 42 | Software como servicio y utilización temporal de software no descargable para inventarios: aplicación web. |
 
-Es una propuesta de servicios a verificar, no una instrucción de solicitar toda una clase ni cobertura obtenida. El acceso actual mostró el ingreso de ARCA; el borrador todavía no se pudo revalidar en esta reanudación. El borrador histórico DONDE RINDE de clase 9 y los de RINDECASA deben recuperarse antes de crear duplicados. Un borrador o una búsqueda pagada no acreditan prioridad de presentación. [S1, S4]
+Es una propuesta de servicios a verificar, no una instrucción de solicitar toda una clase ni cobertura obtenida. El ingreso por ARCA quedó verificado. Se recuperó DONDE RINDE de clase 9: modalidad denominativa y un término seleccionado, APLICACIONES DE SOFTWARE DESCARGABLES. Su cuadro de arancel calculó 100 UMAPI. Falta la revisión integral de datos y de los formularios de clases 35 y 42; los existentes de RINDECASA no se consideran del nombre actual. Un borrador o una búsqueda pagada no acreditan prioridad de presentación. [S1, S4]
 
 **Presupuesto de tasas, verificado el 23/10:** el anexo oficial fija 100 UMAPI para solicitud nueva por clase, hasta 20 términos (código 110001), y 4 por término excedente (110100). A $412,59 por UMAPI: [S16, S17]
 
 | Concepto | Importe base | Alcance pendiente de cotejo |
 | --- | --- | --- |
-| Marca, una clase | $41.259,00 | Hasta 20 términos. |
-| Marca, clases 9/35/42 | $123.777,00 | Tres solicitudes propuestas; servicios y borradores aún sin validar. |
+| Marca, clase 9 comprobada | $41.259,00 | El borrador calculó 100 UMAPI con un término seleccionado. |
+| Marca, clases 9/35/42 | $123.777,00 | Clase 9 comprobada en unidades; clases 35 y 42 presupuestadas y pendientes de revisión. |
 | Fonética, por clase | $9.076,98 | Opcional, código 141100; tres clases: $27.230,94. No solicitada. |
 | DNDA, software publicado | $3.800 más tasa legal | Tasa publicada: 0,2% del costo del ejemplar, mínimo $4,11. Falta base real. [S7] |
 | AAIP, responsable y bases | Gratuitos | Trámites separados. No se presentó una inscripción. [S11, S12] |
 
-El INPI anuncia $420,43 por UMAPI desde el 01/11/2026: la base de tres clases pasaría a $126.129,00. Esto no es una liquidación del borrador ni incluye suplementos, otra modalidad para el logo, oposiciones u honorarios externos. Revalidar al pagar. [S16]
+El INPI anuncia $420,43 por UMAPI desde el 01/11/2026: la base de tres clases pasaría a $126.129,00. El presupuesto conjunto aún no es una liquidación de tres formularios ni incluye suplementos, otra modalidad para el logo, oposiciones u honorarios externos. Revalidar al pagar. [S16]
 
-**Instrucción del titular:** avanzar con toda la preparación posible y avisar si hay que pagar. No hay un gasto aprobado ni una orden generada. La solicitud concreta, los datos y el total se muestran antes de firma, presentación o pago. El plan de cambio de nombre queda archivado; se continúa con Dónde Rinde.
+**Instrucción del titular:** avanzar con toda la preparación posible y avisar si hay que pagar. No hay un gasto aprobado ni una orden generada. El pago histórico revisado de $26.775,54 cubrió tres búsquedas fonéticas, no una solicitud de marca. La solicitud concreta, los datos y el total se muestran antes de firma, presentación o pago. El plan de cambio de nombre queda archivado; se continúa con Dónde Rinde.
 
 <!-- page -->
 

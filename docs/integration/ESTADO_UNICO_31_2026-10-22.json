@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica actual web 172 (490 archivos) y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión autenticada del borrador, datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica actual web 172 (490 archivos) y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios (clase 9 recuperada y arancel comprobado), datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
     },
     {
       "number": 20,
@@ -694,7 +694,7 @@
       ],
       "status": "closed for dated official base-fee calculation and identification of unresolved DNDA cost basis",
       "evidence": "ARANCELES_LEGALES_2026-10-23.json",
-      "limit": "Not verification of an authenticated draft total, payment approval, order, fee waiver or payment."
+      "limit": "Authenticated class 9 fee verified separately; classes 35/42 still require review. Not payment approval, order, fee waiver or payment."
     }
   ],
   "legalFiscalPreparation": {
@@ -703,7 +703,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Dónde Rinde explicitly retained by owner; existing draft requires authenticated review; preliminary risk findings preserved, final scope and filing stages pending",
+      "status": "Dónde Rinde retained; authenticated class 9 draft recovered and 100 UMAPI fee verified; complete holder fields and classes 35/42 review, final scope and filing stages pending",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -757,10 +757,16 @@
       },
       "authenticatedDraftReview": {
         "date": "2026-10-23",
-        "status": "Fresh INPI verification showed no authenticated session; ARCA sign-in required; existing draft not yet revalidated",
+        "status": "Signed in via secure ARCA flow; existing DONDE RINDE class 9 denomination, modality, selected term, owner row and fee calculation inspected; full form review pending",
+        "authenticatedSessionVerified": true,
+        "class9DraftRecovered": true,
         "draftRevalidated": false,
         "duplicateDraftCreated": false,
-        "feeUnitsForActualRequestRevalidated": false
+        "feeUnitsForActualRequestRevalidated": true,
+        "verifiedFeeScopeClass": 9,
+        "verifiedFeeUmapi": 100,
+        "verifiedSelectedTerms": 1,
+        "classes35And42Reviewed": false
       },
       "currentFeeReference": {
         "date": "2026-10-23",
@@ -768,17 +774,21 @@
         "arsPerUnit": "412.59",
         "announcedFrom": "2026-11-01",
         "announcedArsPerUnit": "420.43",
-        "actualRequestTotalVerified": false,
-        "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles"
+        "actualRequestTotalVerified": true,
+        "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
+        "actualRequestTotalVerifiedScopeClass": 9,
+        "allThreeActualRequestTotalsVerified": false
       },
       "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
       "feeBudget": {
         "evidence": "ARANCELES_LEGALES_2026-10-23.json",
-        "sha256": "af26991590ee7e39a74a29b9f1577021583ebd87d9e27500e91ffc5080e71e6b",
+        "sha256": "24081552e36b8efd924eab3330b07ebc0b357ab8ae06028707eaff13c9c53007",
         "baseArsPerClass": "41259.00",
         "baseArsForThreeProposedClasses": "123777.00",
-        "actualDraftTotalVerified": false,
-        "paymentOrderCreated": false
+        "actualDraftTotalVerified": true,
+        "paymentOrderCreated": false,
+        "actualDraftTotalVerifiedScopeClass": 9,
+        "allThreeActualDraftTotalsVerified": false
       }
     },
     "software": {
