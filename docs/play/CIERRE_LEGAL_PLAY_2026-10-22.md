@@ -1,5 +1,6 @@
 # Dónde Rinde — comprobaciones para cerrar Android y lo legal
 
+**Expediente vigente del 23/10:** [revisión legal y contingencia de nombre](../integration/EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md). Incluye cotejo gráfico preliminar, alternativas, ficha de titularidad, preparación AAIP y continuidad ante un cambio. No acredita disponibilidad, trámites presentados ni cumplimiento fiscal.
 **Actualización del 23/10/2026:** el texto que sigue conserva el corte histórico del 22/10. El estado vigente es web 172; C1/C2 y C4 tienen cierres parciales registrados. Seguridad de los datos tiene 16/16 tipos completos en borrador, paso 5/5, sin envío. Se comprobó ingreso real con Google y recuperación de la vinculación en web; el acceso dedicado para revisores sigue pendiente. La revisión fiscal de ARCA se añadió como subtarea explícita del frente 28, vinculada al 17. Véanse el [estado canónico](../integration/ESTADO_UNICO_31_2026-10-22.md), el [mapa legal y fiscal](../integration/PROTECCION_LEGAL_Y_FISCAL_2026-10-23.md) y la [evidencia de web 172](../integration/CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md).
 
 Corte: 22/10/2026, Argentina. Web 168, fuente

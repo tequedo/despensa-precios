@@ -1,5 +1,6 @@
 # Dónde Rinde — protección de marca, software y preparación fiscal
 
+**Expediente vigente del 23/10:** [revisión legal y contingencia de nombre](EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md). Incluye cotejo gráfico preliminar, alternativas, ficha de titularidad, preparación AAIP y continuidad ante un cambio. No acredita disponibilidad, trámites presentados ni cumplimiento fiscal.
 Corte: 23/10/2026. Este registro hace explícitos los comprobantes pendientes. Conserva los 31 frentes originales; la tarea fiscal se incorpora al frente 28, con referencia al 17. No acredita cumplimiento integral ni ausencia de conflictos con terceros.
 
 ## Qué estaba incluido
@@ -17,11 +18,11 @@ La protección de marca se tramita ante INPI. Su portal utiliza clave fiscal de 
 
 El nombre vigente es **Dónde Rinde**. Los informes fonéticos pagados conservados corresponden a **RINDECASA**, nombre anterior. No se trasladan sus conclusiones al nombre actual. Las consultas exactas del 11/10/2026 de DONDE RINDE, DONDERINDE y DÓNDE RINDE no mostraron coincidencias entonces; no constituyen una búsqueda actual y completa de similitudes fonéticas, gráficas o conceptuales. Los antecedentes que contienen RINDE requieren valoración.
 
-**Consulta actual completada el 23/10:** cinco variantes nominales no mostraron registros por los caracteres consultados; se revisaron resultados de RINDE en clases 9/35/42 y cinco fichas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS tiene concesiones en 9/42; RINDEGASTOS tiene actas concedidas en 35, una con comparación de precios e inventarios. [Actas, filtros, cobertura y límites](INPI_ANTECEDENTES_ACTUALES_2026-10-23.md). Se completó la consulta preliminar gratuita; la evaluación de similitud, distintividad y logo sigue pendiente.
+**Consulta actual completada el 23/10:** cinco variantes nominales no mostraron registros por los caracteres consultados; se revisaron resultados de RINDE en clases 9/35/42 y cinco fichas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS tiene concesiones en 9/42; RINDEGASTOS tiene actas concedidas en 35, una con comparación de precios e inventarios. [Actas, filtros, cobertura y límites](INPI_ANTECEDENTES_ACTUALES_2026-10-23.md). Se completó la consulta preliminar gratuita; el cotejo preliminar verbal/conceptual y de cuatro representaciones se añadió al expediente vigente; la evaluación final sigue pendiente.
 
 Para completar este tramo del frente 19 faltan:
 
-1. Completar el cotejo de similitud fonética, conceptual y gráfica sobre la consulta actual ya documentada, incluyendo los antecedentes seleccionados y otros que resulten pertinentes. Evaluar riesgo de confusión y distintividad del signo completo; la consulta por caracteres no sustituye ese análisis.
+1. Ampliar la evaluación final de semejanzas sobre la consulta actual y el cotejo preliminar verbal/conceptual y de cuatro dibujos ya documentados, incluyendo otros antecedentes pertinentes. Evaluar riesgo de confusión y distintividad del signo completo; la consulta por caracteres no sustituye ese análisis.
 2. Confirmar titular, tipo de marca y servicios concretos. Las clases 9/35/42 son una propuesta previa a revisar, no una cobertura ya obtenida ni una instrucción de solicitar toda una clase.
 3. Registrar la decisión sobre nombre/logo y servicios antes de firmar o pagar una solicitud. Conservar luego la constancia de presentación, seguimiento y resultado como etapas distintas.
 

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "source": "Direct observation of official public INPI interface and primary public websites",
+  "publicSearchUrl": "https://portaltramites.inpi.gob.ar/marcasconsultas/busqueda",
+  "limit": "Preliminary character searches and comparison of four selected official mixed-mark representations; no complete phonetic/image clearance or legal determination of registrability.",
+  "queries": [
+    {
+      "query": "AHORUMO",
+      "mode": "CONTIENE",
+      "classes": "TODAS",
+      "resolutions": "Todas",
+      "onlyCurrent": false,
+      "rows": [],
+      "loadingFinishedObserved": true
+    },
+    {
+      "query": "DESPIVIO",
+      "mode": "CONTIENE",
+      "classes": "TODAS",
+      "resolutions": "Todas",
+      "onlyCurrent": false,
+      "rows": [],
+      "loadingFinishedObserved": true
+    },
+    {
+      "query": "CASA SABE",
+      "mode": "CONTIENE",
+      "classes": "TODAS",
+      "resolutions": "Todas",
+      "onlyCurrent": false,
+      "rows": [
+        {
+          "acta": "4472216",
+          "class": "43",
+          "denomination": "CASA SABE LA SELVA",
+          "type": "Denominativa",
+          "resolution": "3710550",
+          "stateAsDisplayed": "C",
+          "expiryAsDisplayed": "21/07/2035"
+        },
+        {
+          "acta": "4472265",
+          "class": "43",
+          "denomination": "CASA SABE LA SELVA & RIO",
+          "type": "Denominativa",
+          "resolution": "3772758",
+          "stateAsDisplayed": "C",
+          "expiryAsDisplayed": "06/01/2036"
+        }
+      ],
+      "loadingFinishedObserved": true,
+      "servicesNotRead": true
+    },
+    {
+      "query": "CASASABE",
+      "mode": "CONTIENE",
+      "classes": "TODAS",
+      "resolutions": "Todas",
+      "onlyCurrent": false,
+      "rows": [],
+      "loadingFinishedObserved": true
+    }
+  ],
+  "officialMarkRepresentations": [
+    {
+      "acta": "4361602",
+      "denomination": "R RINDE PLUS",
+      "class": "9",
+      "representationViewed": true,
+      "observation": "Large yellow R with bird-like figure; blue Rinde Plus wording."
+    },
+    {
+      "acta": "4361603",
+      "denomination": "R RINDE PLUS",
+      "class": "42",
+      "representationViewed": true,
+      "observation": "Large yellow R with bird-like figure; blue Rinde Plus wording."
+    },
+    {
+      "acta": "4192462",
+      "denomination": "RINDEGASTOS",
+      "class": "35",
+      "representationViewed": true,
+      "observation": "Light-blue symbol with white mark and narrow light-blue rindegastos lettering."
+    },
+    {
+      "acta": "4716623",
+      "denomination": "RINDEGASTOS",
+      "class": "35",
+      "representationViewed": true,
+      "observation": "Blue square with angular white symbol and blue rindegastos lettering; a different layout from acta 4192462."
+    }
+  ],
+  "ownCurrentIcon": {
+    "path": "public/brand/donde-rinde-icon-v2-512.png",
+    "webCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+    "sha256": "17b4b371bfbf3f0095d67554a09c896198b7bfeacd86151b246d0395084f0cf6",
+    "observation": "Blue D integrated with a house/roof and orange R on white background.",
+    "exclusiveOriginalityCertified": false
+  },
+  "comparison": {
+    "status": "preliminary qualitative comparison completed for these selected representations",
+    "inference": "The compositions differ; shared RINDE wording and related software/price comparison/inventory services remain relevant. Neither infringement nor absence of confusion is determined.",
+    "worldwideImageSearchPerformed": false,
+    "completePhoneticSearchPerformed": false
+  },
+  "publicSameNameUse": {
+    "url": "https://donderinde.com/",
+    "aboutUrl": "https://donderinde.com/acerca-de/",
+    "observedFocus": "Mexico; financial comparisons and other tools",
+    "operatorIdentityVerified": false,
+    "relationshipToAppOwnerVerified": false,
+    "argentineTrademarkRegistrationVerified": false,
+    "limit": "A public domain/site is not itself proof of an Argentine trademark right or automatic prohibition."
+  },
+  "candidateMarketSearch": {
+    "queries": [
+      "\"Ahorumo\"",
+      "\"Casa Sabe\" marca app",
+      "\"Despivio\""
+    ],
+    "availabilityEstablished": false,
+    "domainsOrHandlesReserved": false
+  },
+  "ownerDecisions": {
+    "currentName": "Dónde Rinde",
+    "publicRenamePerformed": false,
+    "newNameChosen": false,
+    "recoveredGoogleAccountPurpose": "personal; explicitly confirmed by owner",
+    "personalAccountExcludedFromReviewerAccess": true
+  },
+  "newPayments": 0,
+  "newTrademarkFilings": 0,
+  "dndaFilingPerformed": false,
+  "aaipFilingPerformed": false,
+  "taxFilingPerformed": false,
+  "thirdPartyContactsSent": 0
+}
