@@ -18,6 +18,32 @@ Solicitar EAN/SKU, presentación, sucursal e identificador SEPA, provincia, cana
 
 El verificador diario vuelve a comprobar la evidencia estructurada oficial de cada aporte. Si falla, marca `status:"incomplete"` y conserva la fecha original: nunca simula una revisión exitosa. La app exige evidencia reciente (hasta 26 horas), vigencia, sucursal, provincia, canal y cantidad; el descuento no se acumula automáticamente con otra oferta. Los aportes pendientes no se descuentan ni se anuncian como verificados.
 
+## Seguimiento Cencosud
+
+Última revisión: **23/10/2026, 00:36 (Argentina, UTC−03:00)**. Se revisaron los tres hilos y se buscaron mensajes posteriores por número de caso, dominio de Cencosud/cadenas y asunto, incluidos spam y papelera. **No se encontraron respuestas posteriores a las del 22/10/2026** al momento de esta revisión. La fecha de revisión no sustituye la fecha de recepción.
+
+| Cadena de la solicitud original | Caso | Fecha de solicitud | Última respuesta recibida (Argentina) | Situación comprobada |
+| --- | --- | --- | --- | --- |
+| Vea | #1000871 | 22/10/2026 | 22/10/2026, 09:07:20 | Atención al Cliente anuncia que enviará la propuesta al área comercial para evaluación. Sin confirmación de ejecución de la derivación ni respuesta del área comercial. |
+| Disco | #1000872 | 22/10/2026 | 22/10/2026, 09:06:49 | Atención al Cliente anuncia que enviará la propuesta al área comercial para evaluación. Sin confirmación de ejecución de la derivación ni respuesta del área comercial. |
+| Jumbo | #1000873 | 22/10/2026; reenvío el mismo día | 22/10/2026, 09:06:21 | El asunto corresponde a Jumbo, pero la respuesta usa una plantilla que menciona Disco. Se conserva Jumbo como cadena de origen; su derivación específica no está confirmada. |
+
+La solicitud original de Jumbo fue rechazada por buzón lleno el 22/10/2026 y reenviada al canal general de Cencosud ese mismo día. El caso #1000873 corresponde a ese reenvío: no se fusiona con el caso separado de Disco ni se cuenta como una cuarta solicitud.
+
+Las tres contestaciones son anuncios de derivación para evaluación. Ninguna entrega un archivo de promociones, una API, un canal de suministro acordado, un contacto comercial responsable ni autorización expresa de reutilización. No acreditan una evaluación comercial concluida, un convenio, una alianza ni permiso para consultar o publicar datos automáticamente. Este registro conserva solo una síntesis operativa: la evidencia de correo permanece fuera del repositorio, sin transcripciones, encabezados, enlaces de Gmail, adjuntos ni contactos personales.
+
+### Información pendiente para incorporar promociones
+
+Para **cada una de las tres cadenas** sigue pendiente completar la información exigida en «Información recibida por correo»:
+
+1. **Responsable y alcance:** respuesta del área comercial y confirmación de la cadena atendida; para Jumbo, aclarar la referencia a Disco antes de atribuirle una derivación específica.
+2. **Suministro oficial mantenible:** archivo CSV/Excel, API o URL oficial con datos y legales completos; formato, frecuencia de actualización, fecha de origen y mecanismo de aviso de cambios o cancelaciones. No se exige una API si otro canal oficial permite comprobar esos datos.
+3. **Condiciones de uso:** permiso expreso y alcance de reutilización/atribución, consulta automática y sus límites, y conservación de evidencia, cuando corresponda. La recepción de la propuesta no concede esos permisos.
+4. **Identidad y cobertura:** EAN/GTIN o SKU documentado, marca, presentación y cantidades; correspondencia comprobada con la identidad interna del producto, sucursal e identificador SEPA, provincia y canal. Un SKU interno no se convierte en EAN ni una oferta online en precio de sucursal.
+5. **Reglas completas de cada oferta:** precio o régimen y cantidades requeridas, vigencia inicial/final, días/horarios, mínimos, topes con período y titular, exclusiones y acumulación. Para beneficios personales, banco, tarjeta, modalidad de pago y requisitos de elegibilidad; distinguir descuento en caja, reintegro y financiación.
+
+Recibir esos datos permite **evaluar** la incorporación; no la habilita por sí solo. Cada oferta debe superar los controles de identidad, presentación, sucursal, provincia, canal, vigencia, condiciones y evidencia oficial reciente ya documentados. Los casos de atención no son promociones: no se agregan a los archivos de ofertas verificadas ni habilitan descuentos o notificaciones. El descubrimiento web existente mantiene sus controles y no adquiere permisos ni evidencia adicional por estas respuestas.
+
 ## Bancos, billeteras y financiación
 
 `wallet-benefits-verified.json` contiene términos verificados; esto no significa elegibilidad automática. Mercado Pago y MODO requieren banco, tarjeta y modalidad precisos. Jubilación, productos excluidos y saldo del tope personal se confirman en la app. El reintegro posterior se separa del importe a pagar. Las cuotas sin interés son financiación y nunca se restan como porcentaje del precio.
