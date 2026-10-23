@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Play Console: borrador, 7/11 tareas. Textos breve/completo guardados con lista por teclado, despensa, gastos y comparación; ícono definitivo conservado. Seguridad de los datos avanzó al paso 3/5: cifrado en tránsito Sí y selección inicial de 9 tipos preparada como borrador. Faltan completar categorías/finalidades/proveedores, acceso de revisión, público y capturas. Bloqueo de origen resuelto al comprobar la URL oficial; sin envío a revisión."
+      "evidenceAndLimit": "Play Console sigue en borrador; último panel comprobado 7/11. Textos e ícono preparados. Se observó Seguridad de los datos en paso 4/5 con 16 tipos seleccionados, sin finalidades individuales completas. Último Guardar borrador quedó en Enviando: persistencia no verificada. Revisión automática interrumpió el acceso al navegador por dominio no verificado/riesgo alto; interacción pausada. Matriz técnica y punto de reanudación documentados. Sin envío a revisión."
     },
     {
       "number": 25,
@@ -473,9 +473,9 @@
     "phoneScreenshotsUploaded": 0,
     "appSubmitted": false,
     "dataSafetyChanged": true,
-    "dataSafetyBrowserBlocked": false,
+    "dataSafetyBrowserBlocked": true,
     "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
-    "dataSafetyStep": 3,
+    "dataSafetyStep": 4,
     "dataSafetyTotalSteps": 5,
     "dataSafetyDraftComplete": false,
     "encryptedInTransit": true,
@@ -487,17 +487,34 @@
       "user ID",
       "other personal information (retirement preference)",
       "purchase history",
+      "other financial information (benefit preferences)",
       "photos (manual optional attachment)",
+      "app interactions",
+      "in-app search history",
+      "other user-generated content",
+      "other actions",
+      "crash logs",
+      "diagnostics",
       "device or other IDs"
     ],
     "dataSafetyRemaining": [
-      "complete and verify app activity and diagnostic categories",
-      "resolve merchant contact/address scope",
+      "verify persistence of 16 selected types when browser access is authorized",
       "collected/shared and purpose for each type",
       "provider conditions and retention consistency",
       "final preview before submission"
     ],
     "browserOriginConfirmed": "https://play.google.com",
-    "browserOriginCheck": "Read-only tab URL confirmed the official origin; the subsequently authorized form read succeeded."
+    "browserOriginCheck": "Official origin confirmed earlier; subsequent automatic review interruption reported by owner. Blocked interaction is paused; prior origin confirmation does not override later denial.",
+    "dataSafetyTypesObserved": 16,
+    "dataSafetyLatestSaveConfirmed": false,
+    "dataSafetyLatestSaveState": "Save draft clicked; last observation showed sending. No success toast or reload confirmed before interruption.",
+    "dataSafetyCheckpoint": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
+    "browserReviewBlock": {
+      "reportedBy": "owner screenshot",
+      "scope": "browser session access in Play Console",
+      "reason": "unverified domain and high risk as displayed by automatic review",
+      "workaroundAttempted": false,
+      "websiteFaultEstablished": false
+    }
   }
 }
