@@ -26,3 +26,22 @@ No se generaron pagos ni se firmaron o presentaron solicitudes. La confirmación
 5. Preparar una vista revisable con los campos efectivos y el importe oficial. La firma, pago, presentación, seguimiento y concesión son etapas distintas.
 
 Fuentes oficiales consultadas el 23/10: [portal INPI](https://portaltramites.inpi.gob.ar/), [registro de marca](https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca) y [aranceles](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). El registro de fuentes públicas no sustituye la revisión autenticada del borrador.
+
+
+## Secuencia histórica de contingencia
+
+El titular decidió conservar Dónde Rinde. Se archiva aquí el plan preparado por si en el futuro cambia esa decisión; no es la acción vigente.
+
+**Secuencia de contingencia, sólo si más adelante se decide cambiar:**
+
+1. Conservar la evidencia y el historial de los nombres anteriores. Validar el nuevo signo completo y los servicios antes de invertir en piezas finales o presentar.
+2. Unificar nombre visible, textos legales, ficha y gráficos de Play, manifiesto web, títulos y pantallas, correos operativos y materiales de difusión. Si cambian las iniciales, revisar también el monograma D/R.
+3. Mantener el paquete actual `ar.rindecasa.app`, las identidades de cuenta, claves de almacenamiento y datos. El nombre visible puede cambiar en Play; el paquete es permanente. No es necesario descartar el proyecto por el nombre visible. [S5]
+4. Mantener el origen y la configuración de acceso existentes durante ese cambio. Si se decide además otro dominio, revisar por separado OAuth, certificados, Asset Links, rutas legales, enlaces y migración antes de moverlo.
+5. Compilar con el nombre e icono aprobados; verificar actualización sobre instalación anterior, cuentas y datos, capturas reales y coherencia de Play. Después comunicar el cambio por los canales autorizados.
+
+**Modelo de aviso, para completar cuando haya decisión:** Desde [fecha], [nombre nuevo] identificará el servicio antes denominado Dónde Rinde. Si se mantienen el responsable y el servicio, se informará expresamente esa continuidad y cómo acceder a cuentas, solicitudes y condiciones. Si también cambia el responsable o el tratamiento, preparar la información y los instrumentos correspondientes antes de ejecutar ese cambio. No se envió este aviso.
+
+## Reanudación con autorización de preparar todo lo posible
+
+El 23/10 el titular pidió avanzar con lo legal y avisarle si hay que pagar. No dio un límite de gasto. La comprobación nueva del portal mostró que no había sesión INPI autenticada y que se necesitaba nuevamente el ingreso de ARCA. No se revalidó ni duplicó el borrador. Se verificaron el código 110001 (100 UMAPI hasta 20 posiciones), el 110100 (4 UMAPI por excedente) y el 141100 (22 UMAPI por clase para búsqueda fonética). Véase `ARANCELES_LEGALES_2026-10-23.json`.

@@ -30,7 +30,7 @@ El logo geométrico y sus archivos propios no acreditan por sí mismos exclusivi
 
 ## Software: DNDA y titularidad
 
-La DNDA contempla el registro del software publicado, con copia de la obra completa, identificación de autor/coordinador y titular. Sigue pendiente acreditar los aportes humanos y cesiones que correspondan, y seleccionar una copia completa del corte a registrar, distinguiendo web y Android. Los componentes, fuentes tipográficas y datos de terceros mantienen sus respectivas licencias y titulares.
+La DNDA contempla el registro del software publicado, con copia de la obra completa, identificación de autor/coordinador y titular. Ya se preparó y verificó la copia técnica de web 172 y el proyecto Android, separados e identificados en `COPIA_DNDA_2026-10-23.json`. Siguen pendientes los aportes humanos y titularidad que correspondan, los datos reales de publicación y los campos/formato del trámite. Los componentes, fuentes tipográficas y datos de terceros mantienen sus respectivas licencias y titulares.
 
 La copia histórica conservada no se presenta como fuente integrada actual. Un archivo con hash o un generador de depósito tampoco constituyen presentación ni certificado de la DNDA.
 
@@ -54,3 +54,7 @@ La copia histórica conservada no se presenta como fuente integrada actual. Un a
 - [ARCA: facturación](https://www.arca.gob.ar/monotributo/ayuda/facturacion.asp): comprobantes y punto de venta para quienes encuadren en ese régimen.
 
 Estado general y cierres parciales: [registro único de los 31 frentes](ESTADO_UNICO_31_2026-10-22.md) y [evidencia técnica de web 172](CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md).
+
+## Aranceles y copia técnica actuales
+
+`ARANCELES_LEGALES_2026-10-23.json` conserva los códigos y cálculos oficiales: INPI $41.259 por clase hasta 20 términos ($123.777 para tres clases propuestas), búsqueda fonética opcional $9.076,98 por clase y DNDA $3.800 más tasa con base aún sin verificar. AAIP informa ambos trámites gratuitos. No hubo orden, pago ni presentación. `COPIA_DNDA_2026-10-23.json` identifica el paquete técnico verificado; los formularios aún requieren acceso autenticado y cotejo.

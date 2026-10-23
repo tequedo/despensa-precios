@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Consulta INPI actual y cinco fichas conservadas; cotejo verbal/conceptual preliminar y cuatro representaciones mixtas revisados. Expediente vigente, ficha de titularidad y plan de cambio de nombre preparados. AHORUMO y DESPIVIO sin coincidencias por caracteres; CASA SABE con dos cadenas relacionadas en clase 43. Sitio público DondeRinde orientado a México observado, sin titularidad ni registro argentino acreditados. El titular reconfirmó Dónde Rinde y pidió continuar con ese nombre; alternativas archivadas. Faltan evaluación final de semejanzas/servicios, revisión autenticada del borrador, aportes originales/titularidad y etapas INPI/DNDA. Sin nueva presentación, pago ni concesión."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica actual web 172 (490 archivos) y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión autenticada del borrador, datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
     },
     {
       "number": 20,
@@ -675,7 +675,26 @@
       ],
       "status": "closed for documentary preparation: preliminary comparisons, candidate character screening, software/ownership and AAIP worksheets, rename continuity plan",
       "evidence": "EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md",
-      "limit": "Not full trademark clearance, name approval, legal title certification, registration, signed instrument, tax review or launch approval."
+      "limit": "Name choice confirmed separately by owner. This documentary preparation is not full trademark clearance, title certification, registration, signed instrument, tax review or launch approval."
+    },
+    {
+      "id": "P19-CURRENT-SOURCE-COPY",
+      "points": [
+        19
+      ],
+      "status": "closed for technical copies of web 172 and the complete tracked Android project directory, with file manifests and archive verification",
+      "evidence": "COPIA_DNDA_2026-10-23.json",
+      "limit": "Not a DNDA filing, accepted deposit format, authorship certificate or production Android release."
+    },
+    {
+      "id": "P19-PUBLISHED-FEE-BUDGET",
+      "points": [
+        17,
+        19
+      ],
+      "status": "closed for dated official base-fee calculation and identification of unresolved DNDA cost basis",
+      "evidence": "ARANCELES_LEGALES_2026-10-23.json",
+      "limit": "Not verification of an authenticated draft total, payment approval, order, fee waiver or payment."
     }
   ],
   "legalFiscalPreparation": {
@@ -738,7 +757,7 @@
       },
       "authenticatedDraftReview": {
         "date": "2026-10-23",
-        "status": "ARCA login shown; authentication required to revalidate existing draft",
+        "status": "Fresh INPI verification showed no authenticated session; ARCA sign-in required; existing draft not yet revalidated",
         "draftRevalidated": false,
         "duplicateDraftCreated": false,
         "feeUnitsForActualRequestRevalidated": false
@@ -752,11 +771,19 @@
         "actualRequestTotalVerified": false,
         "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles"
       },
-      "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md"
+      "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
+      "feeBudget": {
+        "evidence": "ARANCELES_LEGALES_2026-10-23.json",
+        "sha256": "af26991590ee7e39a74a29b9f1577021583ebd87d9e27500e91ffc5080e71e6b",
+        "baseArsPerClass": "41259.00",
+        "baseArsForThreeProposedClasses": "123777.00",
+        "actualDraftTotalVerified": false,
+        "paymentOrderCreated": false
+      }
     },
     "software": {
       "point": 19,
-      "status": "owner confirmed no other human contributors; concrete original human contributions, legal title, publication data and selected complete source copy still require verification",
+      "status": "Current web source and complete Android project directory copied and verified; legal ownership fields, actual publication data, tax basis and accepted deposit format still require review",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
       "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
@@ -772,6 +799,22 @@
         "statementIsSwornOrSigned": false,
         "exclusiveHumanAuthorshipCertified": false,
         "thirdPartyMaterialRightsChanged": false
+      },
+      "completeSourceCopy": {
+        "prepared": true,
+        "evidence": "COPIA_DNDA_2026-10-23.json",
+        "packageSha256": "c5f8ea9765f8bac77b0ffb0a9fa306950c85c0459f8fdd2951fc536afbb05ad8",
+        "webFiles": 490,
+        "androidProjectFiles": 24,
+        "webCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+        "androidCommit": "24afb74617347eab9a73361f4947d6af69a5e947",
+        "depositFiled": false,
+        "authorshipCertified": false
+      },
+      "publishedFees": {
+        "procedureArs": "3800.00",
+        "legalRateBasisPending": true,
+        "evidence": "ARANCELES_LEGALES_2026-10-23.json"
       }
     },
     "tax": {
@@ -798,7 +841,13 @@
       "filingPerformed": false,
       "evidence": "FICHA_AAIP_2026-10-23.md"
     },
-    "currentPacket": "EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md"
+    "currentPacket": "EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md",
+    "ownerAuthorization": {
+      "date": "2026-10-23",
+      "scope": "Complete as much legal preparation as possible and notify owner before payment",
+      "spendingLimitGranted": false,
+      "paymentApproved": false
+    }
   },
   "legalFiscalLedgerIntegration": {
     "pr": 27,

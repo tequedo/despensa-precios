@@ -1,0 +1,52 @@
+{
+  "reviewedOn": "2026-10-23",
+  "currency": "ARS",
+  "permission": "Prepare legal work and notify owner before any payment; no spending limit granted.",
+  "umapi": "412.59",
+  "announcedUmapiFrom": "2026-11-01",
+  "announcedUmapi": "420.43",
+  "newTrademarkApplication": {
+    "code": "110001",
+    "umapi": 100,
+    "termsIncludedUpTo": 20,
+    "perClassArs": "41259.00",
+    "threeProposedClasses": [
+      9,
+      35,
+      42
+    ],
+    "threeClassesBaseArs": "123777.00",
+    "announcedThreeClassesBaseArs": "126129.00",
+    "additionalTermCode": "110100",
+    "additionalTermUmapi": 4,
+    "additionalTermArs": "1650.36"
+  },
+  "optionalPhoneticSearch": {
+    "code": "141100",
+    "umapiPerClass": 22,
+    "perClassArs": "9076.98",
+    "threeClassesArs": "27230.94",
+    "ordered": false
+  },
+  "dndaPublishedSoftware": {
+    "publishedProcedureArs": "3800.00",
+    "legalRatePercent": "0.2",
+    "minimumLegalRateArs": "4.11",
+    "costBasisVerified": false,
+    "finalTotalVerified": false
+  },
+  "aaipResponsibleFeeArs": "0.00",
+  "aaipDatabaseFeeArs": "0.00",
+  "actualInpiDraftTotalVerified": false,
+  "paymentOrderCreated": false,
+  "paymentMade": false,
+  "filingPerformed": false,
+  "sources": [
+    "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
+    "https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf",
+    "https://www.argentina.gob.ar/servicio/registrar-un-software-puesto-en-conocimiento-publico",
+    "https://www.argentina.gob.ar/justicia/derechodeautor/tasas-para-el-registrar-un-software-puesto-en-conocimiento-publico",
+    "https://www.argentina.gob.ar/servicio/inscribir-un-responsable-de-bases-de-datos-personales-privadas",
+    "https://www.argentina.gob.ar/registrar-bases-de-datos-personales-privadas"
+  ]
+}
