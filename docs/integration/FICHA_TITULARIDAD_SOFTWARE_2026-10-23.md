@@ -7,7 +7,7 @@
 - Proyecto actual: Dónde Rinde. Nombres históricos: RINDECASA / Rinde Casa / Despensa Inteligente.
 - Titular propuesto del proyecto: Aníbal Pringles. Los datos personales previamente aportados se cotejan en privado; no se solicita volver a escribirlos en un repositorio.
 - Web 172: `dbfc57ed1916ed21e4f925dda5c8044479679cf3`.
-- Android: proyecto separado, paquete `ar.rindecasa.app`; no publicado en Play. Base de fuente/documentación integrada `df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0`.
+- Android: proyecto separado, paquete `ar.rindecasa.app`; no publicado en Play. Copia del proyecto Android fijada en `24afb74617347eab9a73361f4947d6af69a5e947`; documentación posterior no modifica esa fuente Android.
 - Descripción actual: [expediente vigente, sección 4](EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md). Reconocimiento pago por voz/foto pausado; teclado habilitado.
 
 ## Confirmación del titular del 23/10/2026
@@ -36,3 +36,7 @@ Las expresiones originales humanas se identificarán individualmente con su evid
 Seleccionar el corte de fuente y la modalidad admitida; generar y verificar la copia completa de web y la copia Android que corresponda, con sus avisos de terceros. Excluir credenciales y bases de personas. Conservar el manifiesto y los hashes como integridad técnica, no como certificado de autoría. Cotejar los campos privados y cualquier instrumento real antes de autorizar presentación y pago. Guardar expediente, recibo y certificado como hitos diferentes.
 
 Fuentes y alcance legal: [expediente vigente](EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md), S6-S8. Ningún instrumento fue firmado ni se inició un depósito en esta revisión.
+
+## Copia técnica actual ya preparada
+
+El 23/10 se generaron y verificaron los 490 archivos de la fuente web 172 y los 24 del proyecto Android `mobile/android`, como implementaciones separadas. El paquete y sus hashes constan en `COPIA_DNDA_2026-10-23.json`. Esta subtarea técnica está terminada. Quedan los datos de autor/titular/editor y publicación reales, el costo de producción para la tasa y el formato admitido por TAD. Aranceles: `ARANCELES_LEGALES_2026-10-23.json`. No hubo presentación ni pago.

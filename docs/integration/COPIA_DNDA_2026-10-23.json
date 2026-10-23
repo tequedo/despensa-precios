@@ -1,0 +1,28 @@
+{
+  "preparedOn": "2026-10-23",
+  "file": "Donde_Rinde_Preparacion_DNDA_2026-10-23.zip",
+  "bytes": 3236425,
+  "sha256": "c5f8ea9765f8bac77b0ffb0a9fa306950c85c0459f8fdd2951fc536afbb05ad8",
+  "webVersion": 172,
+  "components": [
+    {
+      "file": "Donde_Rinde_Copia_software_dbfc57ed1916.zip",
+      "commit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+      "files": 490,
+      "sha256": "74b1d7e68721711629b478d560423c33be09451f43a74eecf906ec3303ae2ff6",
+      "scope": "Complete tracked web source"
+    },
+    {
+      "file": "Donde_Rinde_Fuente_Android_24afb7461734.zip",
+      "commit": "24afb74617347eab9a73361f4947d6af69a5e947",
+      "files": 24,
+      "sha256": "162864b66a5728193ab9c0741eee7e6d02d59a85dbb88579cf0007f564e61c56",
+      "scope": "Complete tracked mobile/android project directory"
+    }
+  ],
+  "sourceCopyVerified": true,
+  "authorshipCertified": false,
+  "dndaFiled": false,
+  "paymentMade": false,
+  "verification": "outer ZIP and both component contents verified"
+}

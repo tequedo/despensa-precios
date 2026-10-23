@@ -56,17 +56,19 @@ El titular confirmó DÓNDE RINDE. La base recuperada propone una marca denomina
 
 Es una propuesta de servicios a verificar, no una instrucción de solicitar toda una clase ni cobertura obtenida. El acceso actual mostró el ingreso de ARCA; el borrador todavía no se pudo revalidar en esta reanudación. El borrador histórico DONDE RINDE de clase 9 y los de RINDECASA deben recuperarse antes de crear duplicados. Un borrador o una búsqueda pagada no acreditan prioridad de presentación. [S1, S4]
 
-**Arancel unitario verificado el 23/10:** $412,59 por UMAPI; el portal anuncia $420,43 desde el 01/11/2026. La cantidad de unidades, suplementos e importe final deben cotejarse para cada solicitud concreta antes de pagar; no se generó un pago. [S16]
+**Presupuesto de tasas, verificado el 23/10:** el anexo oficial fija 100 UMAPI para solicitud nueva por clase, hasta 20 términos (código 110001), y 4 por término excedente (110100). A $412,59 por UMAPI: [S16, S17]
 
-**Secuencia de contingencia, sólo si más adelante se decide cambiar:**
+| Concepto | Importe base | Alcance pendiente de cotejo |
+| --- | --- | --- |
+| Marca, una clase | $41.259,00 | Hasta 20 términos. |
+| Marca, clases 9/35/42 | $123.777,00 | Tres solicitudes propuestas; servicios y borradores aún sin validar. |
+| Fonética, por clase | $9.076,98 | Opcional, código 141100; tres clases: $27.230,94. No solicitada. |
+| DNDA, software publicado | $3.800 más tasa legal | Tasa publicada: 0,2% del costo del ejemplar, mínimo $4,11. Falta base real. [S7] |
+| AAIP, responsable y bases | Gratuitos | Trámites separados. No se presentó una inscripción. [S11, S12] |
 
-1. Conservar la evidencia y el historial de los nombres anteriores. Validar el nuevo signo completo y los servicios antes de invertir en piezas finales o presentar.
-2. Unificar nombre visible, textos legales, ficha y gráficos de Play, manifiesto web, títulos y pantallas, correos operativos y materiales de difusión. Si cambian las iniciales, revisar también el monograma D/R.
-3. Mantener el paquete actual `ar.rindecasa.app`, las identidades de cuenta, claves de almacenamiento y datos. El nombre visible puede cambiar en Play; el paquete es permanente. No es necesario descartar el proyecto por el nombre visible. [S5]
-4. Mantener el origen y la configuración de acceso existentes durante ese cambio. Si se decide además otro dominio, revisar por separado OAuth, certificados, Asset Links, rutas legales, enlaces y migración antes de moverlo.
-5. Compilar con el nombre e icono aprobados; verificar actualización sobre instalación anterior, cuentas y datos, capturas reales y coherencia de Play. Después comunicar el cambio por los canales autorizados.
+El INPI anuncia $420,43 por UMAPI desde el 01/11/2026: la base de tres clases pasaría a $126.129,00. Esto no es una liquidación del borrador ni incluye suplementos, otra modalidad para el logo, oposiciones u honorarios externos. Revalidar al pagar. [S16]
 
-**Modelo de aviso, para completar cuando haya decisión:** Desde [fecha], [nombre nuevo] identificará el servicio antes denominado Dónde Rinde. Si se mantienen el responsable y el servicio, se informará expresamente esa continuidad y cómo acceder a cuentas, solicitudes y condiciones. Si también cambia el responsable o el tratamiento, preparar la información y los instrumentos correspondientes antes de ejecutar ese cambio. No se envió este aviso.
+**Instrucción del titular:** avanzar con toda la preparación posible y avisar si hay que pagar. No hay un gasto aprobado ni una orden generada. La solicitud concreta, los datos y el total se muestran antes de firma, presentación o pago. El plan de cambio de nombre queda archivado; se continúa con Dónde Rinde.
 
 <!-- page -->
 
@@ -76,7 +78,7 @@ Es una propuesta de servicios a verificar, no una instrucción de solicitar toda
 
 Esta descripción reemplaza, para este expediente actual, la preparación histórica que presentaba voz/fotografía con IA como una función habilitada.
 
-**Corte de fuente identificado:** web 172, commit `dbfc57ed1916ed21e4f925dda5c8044479679cf3`. Android y documentación: repositorio tequedo/despensa-precios, base integrada `df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0`. La última integración sólo documenta antecedentes. Son fuentes distintas; no se presenta la antigua copia web 139 como depósito actualizado. El generador de copia completa existe, pero este informe no acredita un nuevo depósito ni una nueva copia ZIP entregada.
+**Copia actual preparada y verificada:** web 172, commit `dbfc57ed1916ed21e4f925dda5c8044479679cf3`, con sus 490 archivos seguidos por Git; proyecto Android `mobile/android`, 24 archivos del repositorio `tequedo/despensa-precios`, commit `24afb74617347eab9a73361f4947d6af69a5e947`. Son dos implementaciones separadas. Se conservaron instrucciones, dependencias y avisos; se excluyen claves de producción y bases personales. Los ZIP se comprobaron contra sus manifiestos por archivo. El paquete pesa 3.236.425 bytes y queda identificado en `COPIA_DNDA_2026-10-23.json`. No es un depósito presentado ni una certificación de autoría; el formato aceptado debe cotejarse en TAD.
 
 La Ley 11.723 incluye código fuente y objeto y protege la expresión, no la idea o el método. La vía DNDA de software publicado exige identificación y copia completa. Corresponde revisar la modalidad, editor, fecha/lugar de publicación, aportes y derechos verdaderos; no se adjudica automáticamente toda la creación a quien tuvo la idea. [S6, S7]
 
@@ -88,7 +90,7 @@ La Ley 11.723 incluye código fuente y objeto y protege la expresión, no la ide
 | Herramientas de IA | Registrar herramienta y términos aplicables al aporte; conservar revisión humana e historial. Los términos de OpenAI asignan sus derechos, si los hay y dentro de la ley, pero no garantizan resultados únicos ni autoría humana. [S8] |
 | Exclusiones | Bibliotecas, fuentes, datos, fotos de terceros y contenido de usuarios conservan sus derechos. No se reivindican como creación exclusiva. |
 
-Se agregó una ficha de aportes sin firmar para completar esta verificación. La presentación, pago, expediente y certificado DNDA son etapas posteriores distintas. El cambio de nombre se registra en el historial de la misma obra cuando corresponda; no sustituye la cadena de derechos.
+Se prepararon ficha de la obra, manifiestos y ficha de aportes sin firmar para completar esta verificación. La copia técnica ya está armada; quedan los campos jurídicos y de publicación reales. La presentación, pago, expediente y certificado DNDA son etapas posteriores distintas. El cambio de nombre se registra en el historial de la misma obra cuando corresponda; no sustituye la cadena de derechos.
 
 <!-- page -->
 
@@ -119,7 +121,7 @@ La política y operación deben permitir acceso, rectificación y supresión. AA
 | Se entrega preparado en esta revisión | Evidencia que falta para el cierre correspondiente |
 | --- | --- |
 | Evaluación preliminar de nombre, antecedentes y dibujos; opciones de contingencia. | Nombre confirmado: Dónde Rinde. Faltan revisión final de semejanzas/servicios, cotejo del borrador y etapas de presentación y resultado. |
-| Ficha técnica actual y formulario de aportes/exclusiones para DNDA. | Aportes humanos, titularidad/cesiones y datos reales de publicación; copia completa elegida y trámite correspondiente. |
+| Ficha técnica actual y formulario de aportes/exclusiones para DNDA. | Copia actual web/Android ya preparada y verificada. Faltan aportes humanos, titularidad, datos reales de publicación, base de la tasa y trámite correspondiente. |
 | Ficha operativa para AAIP y obligaciones de privacidad. | Inscripción previa o nuevas constancias, campos efectivos de proveedores/retención y pruebas operativas pendientes. |
 | Ruta de cambio de nombre que conserva cuentas y paquete Android. | Nombre/logo aprobados y ejecución comprobada en web, app y Play. |
 | Inventario de licencias y límites de fotos/datos documentados. | Resolver obligaciones y permisos por material y uso efectivamente distribuido. |
@@ -151,6 +153,7 @@ Fuentes públicas consultadas el 23/10/2026. Las valoraciones indicadas como inf
 - [S13. AAIP: derechos sobre datos personales](https://www.argentina.gob.ar/aaip/datospersonales/derechos).
 - [S14. Ley 24.240, texto actualizado](https://www.argentina.gob.ar/normativa/nacional/ley-24240-638/actualizacion). Usuarios, información y publicidad.
 - [S15. ARCA: inicio y actividades, referencia condicionada al régimen](https://www.arca.gob.ar/monotributo/ayuda/inicio.asp).
-- [S16. INPI: aranceles vigentes y UMAPI](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). Valor unitario actual y aumento anunciado; no es liquidación de nuestras solicitudes.
+- [S16. INPI: aranceles vigentes y UMAPI](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). Valor unitario actual y aumento anunciado.
+- [S17. INPI: anexo oficial de aranceles](https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf). Códigos 110001, 110100 y 141100; recalcular con la UMAPI actual.
 
 Evidencia interna: web 172 e inventarios; `INPI_CONSULTAS_2026-10-23.json`; `CONTINGENCIA_MARCA_2026-10-23.json`; fichas de titularidad y AAIP de esta fecha; estado único de los 31 frentes. Los informes históricos y los datos privados del titular no se sustituyen ni se publican mediante este documento.
