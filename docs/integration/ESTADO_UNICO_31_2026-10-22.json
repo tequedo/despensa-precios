@@ -3,8 +3,8 @@
   "asOf": "2026-10-22",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 170,
-  "webBaseCommit": "4924c5c3f8ea51f4314778e42c218305592d6c71",
+  "publishedWebVersion": 171,
+  "webBaseCommit": "ae08b5cf6246830fd8ea81cb0080619f7a35f550",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Web 170 publicada, fuente 4924c5c3f8ea; 298 pruebas web aprobadas sin fallos ni omitidas. Falta recorrido completo autenticado de navegador y dispositivos; no acredita descuentos reales nuevos."
+      "evidenceAndLimit": "Web 171 publicada, fuente ae08b5cf6246; 299 pruebas web aprobadas sin fallos ni omitidas. Resumen diario por correo sin nombres, con conteos conservados. Falta recorrido completo autenticado de navegador y dispositivos; no acredita descuentos reales nuevos."
     },
     {
       "number": 9,
@@ -127,14 +127,14 @@
       "title": "Proveedores y conservación",
       "window": 2,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Matriz de proveedores y retención recibida. Los controles operativos de 90 días no acreditan contratos, regiones ni supresión de todas las copias externas."
+      "evidenceAndLimit": "DPA público de ChatGPT Sites y roles de Resend contrastados con Google para el borrador de datos. Configuración publicada confirma registros del alojamiento. El mantenimiento operativo de 90 días no acredita supresión de copias externas, regiones ni todas las condiciones efectivas; siguen pendientes esas comprobaciones."
     },
     {
       "number": 17,
       "title": "Privacidad, términos y reclamos",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Privacidad e información del servicio actualizadas en web 170 para la pausa de IA y carga manual vigente. Cierre legal preparado; contacto operativo, condiciones efectivas de proveedores, conservación y comprobación externa pendientes."
+      "evidenceAndLimit": "Privacidad actualizada en web 171: roles de alojamiento, registros técnicos y conexión de Google Identity, además de pausa de IA y carga manual. Resumen diario sin nombres. Contacto operativo, conservación externa y comprobación de condiciones efectivas pendientes."
     },
     {
       "number": 18,
@@ -155,7 +155,7 @@
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C4: reconocimiento pago desactivado por decisión del titular. Cuotas durables, timeout, cancelación y límites de archivos preparados y probados con proveedor simulado; no constituyen autorización para reactivar. C3 (restauración/revocaciones) y validación operativa siguen pendientes."
+      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados, con regresión automatizada. C3 (restauración/revocaciones) y validación operativa siguen pendientes."
     },
     {
       "number": 21,
@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Play Console sigue en borrador; último panel comprobado 7/11. Textos e ícono preparados. Acceso restablecido en la sesión existente tras comprobar el origen oficial play.google.com. Paso 4/5 y 16 tipos conservados; confirmación de guardado observada. Faltan finalidades/compartido por tipo, proveedores, acceso de revisión, público y capturas. Sin envío a revisión ni publicación Android; no se afirma una corrección permanente del control automático."
+      "evidenceAndLimit": "Seguridad de los datos: 16/16 tipos con uso y manejo completos, guardado confirmado y vista previa en paso 5/5. Ubicación precisa e IDs declarados compartidos por sus recorridos. Envío bloqueado por público objetivo/contenido; acceso dedicado y capturas pendientes. Último panel observado 7/11, sin recuento nuevo. Sin AAB subido ni envío a revisión; no se afirma reparación permanente de la revisión automática."
     },
     {
       "number": 25,
@@ -204,7 +204,7 @@
       "title": "Lanzamiento controlado",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Web 170 publicada con reconocimiento pago pausado. Android sigue en borrador; firma, certificados, pruebas físicas, declaraciones, prueba cerrada, revisión y publicación Android sin completar."
+      "evidenceAndLimit": "Web 171 publicada con reconocimiento pago pausado y minimización del resumen por correo. Android sigue en borrador; firma, certificados, pruebas físicas, público objetivo/acceso, capturas, prueba cerrada, revisión y publicación Android sin completar."
     },
     {
       "number": 28,
@@ -281,7 +281,14 @@
     "recognitionPausedReleaseSkipped": 0,
     "recognitionPausedBuiltWorker": true,
     "recognitionProviderCallsInPausedWorkerTest": 0,
-    "recognitionPaidCallsForValidation": 0
+    "recognitionPaidCallsForValidation": 0,
+    "notificationPrivacyReleaseTests": 299,
+    "notificationPrivacyReleaseFailed": 0,
+    "notificationPrivacyReleaseSkipped": 0,
+    "notificationPrivacyFocusedTests": 19,
+    "notificationPrivacyTypesPassed": true,
+    "notificationPrivacyBuildPassed": true,
+    "notificationPrivacyRealEmailsSent": 0
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -475,9 +482,9 @@
     "dataSafetyChanged": true,
     "dataSafetyBrowserBlocked": false,
     "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
-    "dataSafetyStep": 4,
+    "dataSafetyStep": 5,
     "dataSafetyTotalSteps": 5,
-    "dataSafetyDraftComplete": false,
+    "dataSafetyDraftComplete": true,
     "encryptedInTransit": true,
     "selectedDataTypes": [
       "approximate location",
@@ -498,15 +505,15 @@
       "device or other IDs"
     ],
     "dataSafetyRemaining": [
-      "collected/shared and purpose for each type",
-      "provider conditions and retention consistency",
-      "final preview before submission"
+      "target audience and content prerequisite",
+      "dedicated repeatable reviewer access",
+      "final consistency review before submission; no Android upload/review performed"
     ],
     "browserOriginConfirmed": "https://play.google.com",
     "browserOriginCheck": "Fresh metadata-only URL check confirmed https://play.google.com. The subsequent normal page read was authorized and succeeded; no browser permission or security policy was changed.",
     "dataSafetyTypesObserved": 16,
     "dataSafetyLatestSaveConfirmed": true,
-    "dataSafetyLatestSaveState": "Reopened the retained page in the existing browser session: step 4, 16 selected types, saved confirmation visible, Save draft disabled.",
+    "dataSafetyLatestSaveState": "Step 5 of 5 preview; all 16 types completed. Saved confirmation visible. Save and Save draft disabled. Target audience/content prerequisite prevents submission.",
     "dataSafetyCheckpoint": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
     "browserReviewBlock": {
       "reportedBy": "owner screenshot",
@@ -523,6 +530,44 @@
       "savedConfirmationVisible": true,
       "securitySettingsChanged": false,
       "lastingPolicyFixClaimed": false
-    }
+    },
+    "dataSafetyCompletedTypes": 16,
+    "dataSafetyEphemeral": false,
+    "dataSafetySubmitted": false,
+    "dataSafetyPreviewReviewed": true,
+    "dataSafetySharedTypes": [
+      "precise location",
+      "device or other IDs"
+    ],
+    "dataSafetyRequiredTypes": [
+      "approximate location",
+      "crash logs",
+      "diagnostics",
+      "app interactions",
+      "in-app search history",
+      "device or other IDs"
+    ],
+    "dataSafetyPurposeReview": {
+      "initialActionRejected": true,
+      "reason": "Personalization for purchase and financial preferences required source validation",
+      "validatedAgainst": [
+        "components/market-personal-tools.tsx and replenishment(items,purchases,days)",
+        "app/api/prices/basket/route.ts and benefit preferred ordering",
+        "Google Data Safety personalization definition"
+      ],
+      "subsequentNormalSavesSucceeded": true,
+      "securityControlsChanged": false
+    },
+    "dataSafetySubmissionBlock": "Preview requires target audience and content. No final Save or submission action performed."
+  },
+  "notificationPrivacyRelease": {
+    "version": 171,
+    "commit": "ae08b5cf6246830fd8ea81cb0080619f7a35f550",
+    "status": "published",
+    "deploymentId": "appgdep_6adabf208c1081919e7fdb26e61f0596",
+    "change": "Daily digest retains returning-user/session counts and omits user-name enumeration; no user-name query remains. Historical emails are not erased.",
+    "aiRecognitionPaused": true,
+    "providerCallsForValidation": 0,
+    "realEmailsForValidation": 0
   }
 }

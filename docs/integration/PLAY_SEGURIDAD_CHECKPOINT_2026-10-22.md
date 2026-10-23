@@ -1,65 +1,75 @@
-# Seguridad de los datos: punto de reanudación
+# Seguridad de los datos: borrador completo y punto de reanudación
 
-Corte: 22/10/2026, Argentina. Fuente revisada: web 170, commit `4924c5c3f8ea51f4314778e42c218305592d6c71`. Este documento es un registro técnico; no es una declaración presentada a Google ni una verificación de contratos.
+Corte: 22/10/2026, Argentina. Fuente publicada: web 171, commit `ae08b5cf6246830fd8ea81cb0080619f7a35f550`. Este registro no es una declaración enviada a Google ni certifica todos los contratos o la supresión externa.
 
-## Actualización al retomar: acceso y guardado verificados
+## Resultado comprobado
 
-Se comprobó primero únicamente la URL de la pestaña conservada: `https://play.google.com`. La lectura normal posterior fue autorizada y tuvo éxito. Se observó el paso 4/5 con los mismos 16 tipos y **Se guardaron los cambios**, con Guardar borrador deshabilitado. El diálogo pendiente de ubicación se cerró mediante el control normal y la página siguió accesible. La captura de comprobación muestra el borrador guardado.
+Se completaron y guardaron **16/16 tipos**, con recopilación, compartido, finalidades, opcionalidad y tratamiento no efímero. Se avanzó a **paso 5/5, Vista previa**. La consola mostró «Se guardó el cambio. Envíalo a revisión en Descripción general de la publicación». Guardar y Guardar como borrador quedaron deshabilitados.
 
-El bloqueo no se reproduce en esta sesión. No se cambiaron permisos, políticas, navegador, dominio ni credenciales. Esto comprueba que se pudo retomar; no demuestra ni promete una reparación permanente del mecanismo de revisión automática. Continúan pendientes las respuestas de uso/manejo y las condiciones de proveedores. No se envió la declaración.
+La vista previa exige completar **Público objetivo y contenido** antes de enviar. No se pulsó envío a revisión, no se subió AAB y no se publicó Android. La captura comprobó paso 5 y el aviso de guardado. La exportación CSV no se obtuvo: la espera terminó por timeout; no se considera una denegación de revisión automática ni evidencia de un archivo descargado.
 
-## Registro de la interrupción anterior
+## Matriz guardada en Console
 
-Se avanzó del paso 3 al **paso 4 de 5, Uso y manejo de datos**. Las siete secciones mostraron 16 tipos seleccionados: 4 personales, 2 financieros, 2 de ubicación, 1 de fotos, 2 de rendimiento, 4 de actividad y 1 de identificadores. Ninguna finalidad individual se había completado.
+Todas las filas: recopilado **Sí**, tratamiento efímero **No**. Las finalidades indicadas son de recopilación salvo la columna de compartido. «Seguridad» abrevia prevención de fraudes, seguridad y cumplimiento; «cuenta» abrevia administración de la cuenta.
 
-Se pulsó **Guardar borrador** y el último resultado mostró **Enviando…**. No se llegó a observar el aviso final de guardado ni a reabrir el borrador. La persistencia de este avance debe comprobarse antes de dar el paso por terminado. El borrador anterior de nueve tipos sí había mostrado confirmación de guardado.
-
-La siguiente lectura fue interrumpida. La captura aportada por el titular muestra que la revisión automática de ChatGPT rechazó el acceso a la sesión por dominio no verificado y riesgo alto, y terminó el turno. No se atribuye el rechazo a Google ni a un error de la app. El origen oficial observado antes fue `https://play.google.com`; ese antecedente no anula la revisión posterior. Se pausa la interacción bloqueada; no se usa otro navegador, dominio o acceso directo para sortearla.
-
-## Matriz técnica para el paso 4
-
-En todas estas filas existe recopilación según el código. **Compartido queda pendiente por recorrido y proveedor**: ni una respuesta universal negativa ni marcar todo como compartido sustituyen esa comprobación. No se declara tratamiento efímero sin verificar alojamiento y registros. Las finalidades siguientes están preparadas para revisión; todavía no están introducidas en Console.
-
-| Tipo | Opcionalidad sustentada | Finalidades preparadas | Evidencia |
+| Tipo | Elección | Finalidades de recopilación | Compartido |
 | --- | --- | --- | --- |
-| Ubicación aproximada | Necesaria para comparar por localidad | Funcionalidades; análisis; publicidad o marketing en patrocinios | Localidad a APIs; país en accesos; anuncios por zona. |
-| Ubicación precisa | Opcional, hay selección manual | Funcionalidades | GPS y consulta HTTPS a Georef; no se envía al módulo de patrocinios. |
-| Nombre | Opcional respecto de la comparación pública | Funcionalidades; administración de cuenta | Google, perfil y solicitudes voluntarias. |
-| Correo | Opcional respecto de la comparación pública | Funcionalidades; administración de cuenta | Identidad de Google y contacto voluntario. Verificar antes de añadir comunicaciones del desarrollador. |
-| ID de usuario | Opcional respecto de la comparación pública | Funcionalidades; administración de cuenta; seguridad; análisis | Identidad verificada, aislamiento, revocación y actividad. |
-| Otra información personal | Opcional | Funcionalidades; personalización | Preferencia de jubilado/pensionado: Sin informar/Sí/No. |
-| Historial de compras | Opcional | Funcionalidades; personalización | Compras, importes, comercios, stock y reposición; sin procesamiento del pago. |
-| Otra información financiera | Opcional | Funcionalidades; personalización | Preferencias heredadas de bancos, tarjetas y medios de pago que el servidor conserva para beneficios; no números de cuenta ni claves. |
-| Fotos | Opcional | Funcionalidades | Imagen adjuntada manualmente al producto. El reconocimiento pago está pausado. |
-| Interacciones en la app | Automática en los recorridos que la generan | Funcionalidades; análisis; publicidad o marketing en patrocinios | Acciones operativas y vistas de anuncios. |
-| Historial de búsqueda en la app | Consulta necesaria para buscar; memoria opcional | Funcionalidades; personalización para memoria | API pública recibe consultas; desactivar memoria no convierte la búsqueda en local. |
-| Otro contenido generado por usuarios | Opcional | Funcionalidades; seguridad para reportes/moderación | Listas, propuestas, solicitudes y reclamos. |
-| Otras acciones | Opcional | Funcionalidades; personalización | Favoritos y preferencias de marcas, comercios y días. |
-| Registros de fallas | Los propios requieren perfil; alcance del alojamiento pendiente | Análisis | `client_runtime_error` y `app_error` en `/api/activity`. |
-| Diagnóstico | Los propios requieren perfil; alcance del alojamiento pendiente | Análisis | Etapa, estado técnico, cliente normalizado y errores de procesos. |
-| Dispositivo u otros IDs | Necesarios en el acceso público | Funcionalidades; seguridad; análisis; publicidad o marketing en patrocinios | IP para límite temporal de acceso público, cookie de dispositivo y sesión de anuncios; no ID publicitario Android. |
+| Nombre | Opcional | Funcionalidades; cuenta | No |
+| Dirección de correo electrónico | Opcional | Funcionalidades; cuenta | No |
+| ID de usuario | Opcional | Funcionalidades; cuenta; seguridad; análisis | No |
+| Otra información personal | Opcional | Funcionalidades; personalización | No |
+| Historial de compras | Opcional | Funcionalidades; personalización | No |
+| Otra información financiera | Opcional | Funcionalidades; personalización | No |
+| Ubicación aproximada | Obligatoria | Funcionalidades; análisis; publicidad o marketing | No |
+| Ubicación precisa | Opcional | Funcionalidades | Sí; funcionalidades (Georef) |
+| Fotos | Opcional | Funcionalidades | No |
+| Registros de fallas | Obligatoria | Análisis | No |
+| Diagnóstico | Obligatoria | Análisis | No |
+| Interacciones en la app | Obligatoria | Funcionalidades; análisis; publicidad o marketing | No |
+| Historial de búsqueda en la app | Obligatoria al buscar en servidor | Funcionalidades; personalización (memoria opcional) | No |
+| Otro contenido generado por usuarios | Opcional | Funcionalidades; seguridad | No |
+| Otras acciones | Opcional | Funcionalidades; personalización | No |
+| Dispositivo u otros IDs | Obligatoria | Funcionalidades; seguridad; análisis; publicidad o marketing; cuenta | Sí; funcionalidades y seguridad (conexión de Google Identity) |
 
-No se seleccionaron audio, videos, contactos, calendario, apps instaladas, navegación web, calificación crediticia ni información de pago del usuario. La dirección de una sucursal y su contacto público no se clasificaron automáticamente como domicilio o teléfono personal del usuario: el formulario de propuesta pide información del comercio. Si cambia el propósito o se pide contacto personal por teléfono, revisar la clasificación.
+La comparación pública permite prescindir de cuenta, fotos, GPS y herramientas privadas. La obligatoriedad de registros técnicos se sustenta en la configuración publicada del alojamiento (`observability.enabled=true`, sin desactivación de registros de invocación ni opt-out de la app). No se deduce únicamente de los eventos de perfiles.
 
-## Evidencia que se conserva
+No se seleccionaron audio, videos, contactos, calendario, apps instaladas, navegación web, calificación crediticia ni información de pago del usuario. Las preferencias financieras son bancos/tarjetas/medios elegidos para ordenar beneficios; no números de tarjeta ni cuentas bancarias. Las fotos corresponden al adjunto manual opcional; el reconocimiento pago sigue pausado y las rutas bloqueadas.
 
-- `db/schema.ts`: perfiles, compras, accesos y eventos.
-- `app/api/activity/route.ts`, `app/app-activity.ts`, `app/notifications.ts`: eventos y errores.
-- `components/search-memory.tsx`, `components/market-personal-tools.tsx`, `lib/shopping-tools.mjs`: memoria y preferencias.
-- `lib/public-read-limit.ts`, `components/sponsored-placement.tsx`, `app/api/patrocinios/route.ts`: acceso público y patrocinios.
-- `app/api/location/route.ts`: envío de coordenadas a Georef.
-- `app/comercios/solicitud.tsx`, `app/api/feedback/route.ts`: solicitudes y avisos.
-- `lib/data-retention.mjs`: mantenimiento operativo de 90 días; no elimina automáticamente despensas o cuentas inactivas.
-- `lib/recognition-availability.mjs`, `components/product-entry-actions.tsx`: reconocimiento pago pausado y teclado conservado.
-- Matriz previa: `docs/play/MATRIZ_DATOS_VERIFICADA_2026-10-21.md` en la fuente web. Audio/cifrado/Google de esa revisión histórica deben leerse con los cambios de web 170.
+## Comprobaciones que sustentan las respuestas
+
+- Sites: el DPA público para ChatGPT Sites incluye datos alojados, registros, uso y cookies, bajo instrucciones del titular. Se distinguió ese alojamiento del uso de ChatGPT para desarrollar. No se extendió esa excepción a todos los proveedores.
+- Resend: el DPA distingue tratamiento de contenido por cuenta del cliente de sus propios datos de cuenta/uso del servicio. El resumen por correo ya no enumera nombres de usuarios.
+- Google: la identidad voluntaria por SSO se distinguió de los datos técnicos de conexión. Mi cuenta carga el script de Google antes de pulsar Ingresar; por eso los IDs técnicos se declaran compartidos para funcionalidad/seguridad, sin atribuir a Google publicidad no demostrada.
+- Georef: la ruta envía coordenadas precisas para resolver ubicación. No se acreditó rol de encargado ni aviso suficiente para una exención; se declaró compartido. Hay alternativa manual.
+- Compras y preferencias: `replenishment(items,purchases,days)` usa compras para sugerir reposición. La API de canasta y el catálogo priorizan bancos/tarjetas/medios elegidos. Sustentan personalización.
+- Listas compartidas: requieren aceptación explícita de las condiciones antes del enlace. No se declaró toda lista pública por defecto.
+- El mantenimiento operativo de 90 días es distinto de la retención de registros/copias del alojamiento. No acredita eliminación de correos o copias históricas.
+
+## Corrección publicada y validación
+
+Web **171** elimina la consulta y enumeración de nombres en el resumen diario, conservando conteos de perfiles y reingresos. La prueba nueva falló antes de la corrección y después comprobó 2 perfiles/3 reingresos sin identidades, con registros conservados y sin envío duplicado. No elimina correos históricos.
+
+Validación: **299 pruebas web aprobadas, 0 fallos, 0 omitidas**; 19 pruebas específicas de notificaciones, TypeScript y compilación aprobados. Solo transporte de correo simulado: 0 correos reales y 0 llamadas a reconocimiento pago. La privacidad publicada aclara roles del alojamiento, registros y conexión técnica de Google.
+
+## Registro de las interrupciones
+
+La revisión automática de ChatGPT había interrumpido una lectura por origen no verificado/riesgo alto según la captura del titular. Se comprobó únicamente la URL oficial `https://play.google.com`; la lectura normal de la misma sesión fue permitida y se verificó el borrador. No se cambiaron políticas, permisos, dominio, navegador ni credenciales.
+
+Después se rechazó un guardado por falta de respaldo de «Personalización» en compras y preferencias financieras. Se detuvo esa acción, se cotejaron los recorridos de reposición y beneficios con la definición oficial y se reanudaron los guardados normales con esa evidencia. Los dos se permitieron y las 16 filas quedaron guardadas. No se afirma una reparación permanente del mecanismo automático ni se atribuye la interrupción a Google.
 
 ## Continuación concreta
 
-1. Acceso y persistencia comprobados al retomar: paso 4/5, 16 tipos, confirmación de guardado. Mantener la comprobación de origen y los controles normales en próximas acciones.
-2. Resolver el tratamiento y los posibles supuestos de exención por proveedor: Sites/Cloudflare, Resend y buzón, Google Identity, Georef y acciones voluntarias de compartir. OpenAI no recibe nuevas solicitudes por el alcance pausado; ello no demuestra eliminación de envíos históricos.
-3. Introducir uso y manejo por tipo con evidencia; revisar opcionalidad y procesamiento no efímero.
-4. Revisar la vista previa y su coherencia con privacidad, eliminación, app y paquete Android. No enviar una declaración incompleta ni certificar condiciones desconocidas.
+1. Completar público objetivo/contenido y sus dependencias con respuestas verificadas. El acceso dedicado de revisión sigue pendiente; no usar la cuenta personal del titular.
+2. Cotejar nuevamente la vista previa con privacidad, eliminación y el paquete que efectivamente se vaya a presentar antes de un envío final.
+3. Mantener pendientes firma/certificado real, capturas de teléfono, pruebas físicas y prueba cerrada. El borrador de datos completo no sustituye esos requisitos.
 
-El frente 24 conserva su estado pendiente de validación. No se subió un AAB ni se envió una versión o declaración a revisión. Los demás frentes continúan con sus límites; este registro evita perder el avance o contarlo como cierre.
+El frente 24 mantiene su estado pendiente de validación, aunque la subtarea de las 16 filas ya quedó completa y guardada. Los 31 frentes conservan sus criterios completos.
 
-Fuentes oficiales contrastadas el 22/10/2026: [Google, Seguridad de los datos](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en) y [OpenAI Docs, revisiones automáticas](https://learn.chatgpt.com/docs/agent-approvals-security).
+Fuentes oficiales contrastadas el 22/10/2026:
+
+- [Google: Seguridad de los datos](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en).
+- [ChatGPT Sites: DPA](https://openai.com/policies/chatgpt-sites-data-processing-addendum/) y [términos](https://openai.com/policies/chatgpt-sites-terms/).
+- [Resend: DPA](https://resend.com/legal/dpa).
+- [Google Identity: descripción](https://developers.google.com/identity/gsi/web/guides/overview).
+- [Cloudflare: Workers Logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/).
+- [OpenAI: revisiones automáticas](https://learn.chatgpt.com/docs/agent-approvals-security).
