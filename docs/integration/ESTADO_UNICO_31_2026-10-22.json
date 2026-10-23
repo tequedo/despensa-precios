@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-22",
+  "asOf": "2026-10-23",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 171,
-  "webBaseCommit": "ae08b5cf6246830fd8ea81cb0080619f7a35f550",
+  "publishedWebVersion": 172,
+  "webBaseCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Web 171 publicada, fuente ae08b5cf6246; 299 pruebas web aprobadas sin fallos ni omitidas. Resumen diario por correo sin nombres, con conteos conservados. Falta recorrido completo autenticado de navegador y dispositivos; no acredita descuentos reales nuevos."
+      "evidenceAndLimit": "Web 172 publicada, fuente dbfc57ed1916; 306 pruebas web aprobadas sin fallos ni omitidas, TypeScript y compilación aprobados. Ingreso real con Google y recuperación de despensa vinculada comprobados en navegador. Faltan el recorrido privado completo y pruebas físicas Android; no acredita descuentos reales nuevos."
     },
     {
       "number": 9,
@@ -106,7 +106,7 @@
       "title": "Cuentas y recuperación",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Google configurado y aislamiento probado; recorrido real pendiente."
+      "evidenceAndLimit": "Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Ingreso real con Google, reintento tras vencimiento y recuperación de la vinculación existente comprobados en web el 23/10. No se modificó la despensa ni se almacenó la contraseña. Android físico y cuenta dedicada de revisión todavía sin validar."
     },
     {
       "number": 14,
@@ -134,28 +134,28 @@
       "title": "Privacidad, términos y reclamos",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Privacidad actualizada en web 171: roles de alojamiento, registros técnicos y conexión de Google Identity, además de pausa de IA y carga manual. Resumen diario sin nombres. Contacto operativo, conservación externa y comprobación de condiciones efectivas pendientes."
+      "evidenceAndLimit": "Privacidad actualizada en web 171: roles de alojamiento, registros técnicos y conexión de Google Identity, además de pausa de IA y carga manual. Resumen diario sin nombres. Contacto operativo, conservación externa y condiciones efectivas pendientes. La revisión fiscal de ARCA se hace explícita en P28-ARCA, sin alta ni régimen determinado."
     },
     {
       "number": 18,
       "title": "Licencias, imágenes y datos",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "CI39828245411 comprueba avisos y dependencias en el AAB 0.1.2 revisado. El inventario web y condiciones por fuente mantienen pendientes; fotos externas sin derechos siguen suspendidas."
+      "evidenceAndLimit": "Web 172 incorpora control previo a compilar: lock, inventarios, avisos y cinco archivos actuales de marca deben coincidir. 879 entradas registradas, 631 con aviso propio retenido y siete avisos suplementarios enlazados a versiones exactas. Coherencia técnica validada con siete regresiones y suite de 306; no certifica todas las licencias ni permisos de datos. 89 fotos externas siguen suspendidas. CI39828245411 conserva la evidencia separada del AAB 0.1.2."
     },
     {
       "number": 19,
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Nombre vigente Dónde Rinde y preparación INPI/DNDA conservados. Requisitos oficiales reconsultados el 22/10; antecedentes actuales, titularidad/cesiones y ejecución pendientes. Sin presentación, pago o concesión nueva acreditados."
+      "evidenceAndLimit": "Nombre vigente Dónde Rinde y preparación INPI/DNDA conservados. Riesgo de confusión de nombre/logo pendiente de evaluación actual; informes fonéticos pagados corresponden a RINDECASA, no al nombre vigente. Acceso con clave fiscal ARCA no es registro de marca. Faltan antecedentes actuales, titularidad/cesiones y ejecución; sin nueva presentación, pago o concesión acreditados."
     },
     {
       "number": 20,
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados, con regresión automatizada. C3 (restauración/revocaciones) y validación operativa siguen pendientes."
+      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes."
     },
     {
       "number": 21,
@@ -176,14 +176,14 @@
       "title": "Acceso dedicado de revisión",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Detalles de acceso revisado en Console: sin respuesta ni cuenta dedicada repetible comprobada. No se sustituye por la cuenta personal del titular. El acceso público a precios no abre todas las funciones privadas."
+      "evidenceAndLimit": "Ingreso real con Google y recuperación de la vinculación del usuario comprobados en web. Eso no acredita una cuenta exclusiva y reutilizable para revisores. Instrucciones de acceso preparadas en Console, todavía sin agregar ni guardar; credenciales no compartidas. El acceso público a precios no abre todas las funciones privadas."
     },
     {
       "number": 24,
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Seguridad de los datos: 16/16 tipos con uso y manejo completos, guardado confirmado y vista previa en paso 5/5. Ubicación precisa e IDs declarados compartidos por sus recorridos. Envío bloqueado por público objetivo/contenido; acceso dedicado y capturas pendientes. Último panel observado 7/11, sin recuento nuevo. Sin AAB subido ni envío a revisión; no se afirma reparación permanente de la revisión automática."
+      "evidenceAndLimit": "Seguridad de los datos: 16/16 tipos con uso y manejo completos, guardado confirmado y vista previa en paso 5/5. Ubicación precisa e IDs declarados compartidos por sus recorridos. Instrucciones de acceso preparadas sin guardar: falta cuenta dedicada comprobada. Público objetivo/contenido depende de completar acceso. Último panel observado 7/11, sin recuento nuevo. Sin AAB subido ni envío a revisión; no se afirma reparación permanente de la revisión automática."
     },
     {
       "number": 25,
@@ -204,14 +204,14 @@
       "title": "Lanzamiento controlado",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Web 171 publicada con reconocimiento pago pausado y minimización del resumen por correo. Android sigue en borrador; firma, certificados, pruebas físicas, público objetivo/acceso, capturas, prueba cerrada, revisión y publicación Android sin completar."
+      "evidenceAndLimit": "Web 172 publicada: reconocimiento pago pausado, resumen por correo minimizado y control reproducible del inventario legal. Android sigue en borrador; firma, certificados, pruebas físicas, público objetivo/acceso, capturas, prueba cerrada, revisión y publicación Android sin completar."
     },
     {
       "number": 28,
       "title": "Primer piloto publicitario",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Acuerdo propuesto y ficha de campaña preparados. Sin anunciante, aceptación, derechos, cobro ni campaña real acreditados."
+      "evidenceAndLimit": "Acuerdo propuesto y ficha de campaña preparados. Sin anunciante, aceptación, derechos, cobro ni campaña real acreditados. Se incorpora P28-ARCA: revisar titular que operará/cobrará, actividades, situación fiscal y facturación según el modelo real. No había una tarea fiscal explícita; sin revisión de constancias, alta, cambio de régimen ni comprobante emitido."
     },
     {
       "number": 29,
@@ -288,7 +288,17 @@
     "notificationPrivacyFocusedTests": 19,
     "notificationPrivacyTypesPassed": true,
     "notificationPrivacyBuildPassed": true,
-    "notificationPrivacyRealEmailsSent": 0
+    "notificationPrivacyRealEmailsSent": 0,
+    "legalInventoryReleaseTests": 306,
+    "legalInventoryReleaseFailed": 0,
+    "legalInventoryReleaseSkipped": 0,
+    "legalInventoryFocusedTests": 7,
+    "legalInventoryTypesPassed": true,
+    "legalInventoryBuildPassed": true,
+    "legalInventoryBuiltFilesMatched": 8,
+    "googleWebLoginVerified": true,
+    "googleLinkedProfileRecovered": true,
+    "reviewerDedicatedAccessVerified": false
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -311,7 +321,7 @@
     "dndaFiled": false,
     "scope": "Copia histórica de Ventana 3; no representa la fuente integrada actual."
   },
-  "integrationScope": "Código de las tres ventanas integrado y publicado; web 170 conserva carga manual y pausa el reconocimiento pago por decisión del titular. Los 31 frentes originales mantienen sus límites y se agrega el frente 32 de difusión.",
+  "integrationScope": "Código de las tres ventanas integrado y publicado. Web 172 conserva carga manual y pausa del reconocimiento pago; añade control de inventarios, avisos y marca. Los 31 frentes originales mantienen sus límites; difusión continúa como frente adicional 32. La revisión fiscal ARCA se explicita dentro del frente 28, vinculada al 17.",
   "integrationBranch": "integracion/tres-frentes-20261022",
   "integrationSources": {
     "webBase": "d6122f03f4bcf567873334b596f910ded6eba77d",
@@ -558,7 +568,12 @@
       "subsequentNormalSavesSucceeded": true,
       "securityControlsChanged": false
     },
-    "dataSafetySubmissionBlock": "Preview requires target audience and content. No final Save or submission action performed."
+    "dataSafetySubmissionBlock": "Preview requires target audience and content. No final Save or submission action performed.",
+    "accessInstructionsPrepared": true,
+    "accessInstructionsSaved": false,
+    "dedicatedReviewerAccountVerified": false,
+    "targetAudienceSaved": false,
+    "targetAudienceBlockedBy": "App access details must be completed first; user Google web login does not by itself supply dedicated repeatable reviewer credentials."
   },
   "notificationPrivacyRelease": {
     "version": 171,
@@ -569,5 +584,102 @@
     "aiRecognitionPaused": true,
     "providerCallsForValidation": 0,
     "realEmailsForValidation": 0
+  },
+  "legalInventoryRelease": {
+    "version": 172,
+    "commit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+    "status": "published",
+    "versionId": "appgprj_6a9c53ae66f4819182c306fba4c263ca~appgver_a4b2128900f08191b042c3ebbbf60900",
+    "deploymentId": "appgdep_6adade5333d08191935e7528e177623b",
+    "deploymentStatus": "succeeded",
+    "lockEntries": 879,
+    "installedEntries": 678,
+    "entriesWithOwnNoticeRetained": 631,
+    "bundledComponentNotices": 143,
+    "distinctNotices": 342,
+    "supplementalNoticeEntries": 7,
+    "supplementalProjects": 4,
+    "currentBrandFiles": 5,
+    "externalProductImagesStillSuppressed": 89,
+    "buildGuardEnabled": true,
+    "allDistributionObligationsCertified": false,
+    "trademarkClearanceCertified": false,
+    "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md"
+  },
+  "accountWebValidation": {
+    "date": "2026-10-23",
+    "provider": "Google",
+    "loginVerified": true,
+    "existingPantryLinkRecovered": true,
+    "normalRetryAfterAppChallengeExpiryVerified": true,
+    "pantryDataModified": false,
+    "passwordReadOrStored": false,
+    "credentialsSharedWithPlay": false,
+    "androidPhysicalVerified": false,
+    "dedicatedReviewerAccountVerified": false,
+    "dedicatedReviewerAccountStatus": "Account purpose has not been established; never treat a personal account as a reviewer account by inference.",
+    "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md"
+  },
+  "completedSubtasks": [
+    {
+      "id": "P13-GOOGLE-WEB",
+      "points": [
+        13
+      ],
+      "status": "closed for web login and existing-link recovery",
+      "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md",
+      "limit": "No physical Android validation, full private CRUD flow or dedicated reviewer access established."
+    },
+    {
+      "id": "P18-INVENTORY-CONSISTENCY",
+      "points": [
+        18,
+        20
+      ],
+      "status": "closed for technical inventory consistency; published web 172",
+      "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md",
+      "limit": "Does not clear all distribution obligations, product/data permissions or trademark risk."
+    },
+    {
+      "id": "P24-DATA-SAFETY-DRAFT",
+      "points": [
+        24
+      ],
+      "status": "closed for saved draft of all 16 types and step 5 preview",
+      "evidence": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
+      "limit": "Not submitted or approved; access and target audience prerequisites remain."
+    }
+  ],
+  "legalFiscalPreparation": {
+    "date": "2026-10-23",
+    "evidence": "PROTECCION_LEGAL_Y_FISCAL_2026-10-23.md",
+    "trademark": {
+      "point": 19,
+      "currentName": "Dónde Rinde",
+      "status": "current similarity and confusion review pending",
+      "priorPaidPhoneticReportsFor": "RINDECASA",
+      "newFilingConfirmed": false,
+      "newPaymentConfirmed": false,
+      "grantConfirmed": false
+    },
+    "software": {
+      "point": 19,
+      "status": "authorship, title, assignments and complete selected source copy pending",
+      "newFilingConfirmed": false
+    },
+    "tax": {
+      "id": "P28-ARCA",
+      "point": 28,
+      "relatedPoints": [
+        17
+      ],
+      "status": "explicit pending subtask added; actual tax situation unverified",
+      "wasPreviouslyExplicit": false,
+      "regimeSelected": false,
+      "accountChanged": false,
+      "invoiceIssued": false,
+      "filingPerformed": false
+    },
+    "completeLegalProtectionClaimed": false
   }
 }
