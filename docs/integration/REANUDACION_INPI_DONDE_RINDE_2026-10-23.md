@@ -6,27 +6,29 @@ El titular aclaró el dictado y confirmó mantener **Dónde Rinde** y continuar 
 
 ## Punto exacto de reanudación
 
-- El portal público del INPI abrió y mostró Inicio sesión ARCA. No se observó una sesión del titular autenticada en esta revisión.
-- Se abrió ese acceso y apareció el formulario oficial de ARCA, con CUIT/CUIL y Siguiente. La clave fiscal se solicitará por el ingreso seguro cuando el sitio la requiera; nunca por chat.
-- Falta revalidar el borrador histórico de Dónde Rinde en la cuenta, sus campos, servicios y liquidación. No se considera perdido ni presentado por estar guardado; no se creó un duplicado ni se reusaron formularios de RINDECASA como si fueran el nombre actual.
-- La propuesta denominativa y los servicios de clases 9, 35 y 42 están en [preparación de registro](../play/REGISTRO_DONDE_RINDE.md). Conservar la distinción entre propuesta y campos efectivamente guardados en la cuenta.
+El 23/10/2026 se completó el ingreso seguro por ARCA y se comprobó la sesión autenticada del titular en INPI. No se guardan credenciales ni identificadores privados en este repositorio.
 
-## Arancel unitario observado en fuente oficial
+- Se recuperó el borrador existente **DONDE RINDE, clase 9**, modalidad **D-DENOMINATIVA**. La denominación guardada aparece sin tilde; no se modificó.
+- Protecciones: un término marcado, **APLICACIONES DE SOFTWARE DESCARGABLES**. El cuadro oficial “Mostrar Importe a abonar” calculó **100 UMAPI**, sin términos excedentes. Con la unidad vigente de $412,59, corresponde a **$41.259,00**.
+- La tabla de titularidad muestra una persona humana con participación del 100%. Esto verifica la fila cargada, no todos los datos de domicilio ni una certificación de derechos. Falta la revisión integral de los campos antes de firmar.
+- La cuenta también contiene formularios de **RINDECASA** de clases 9, 35 y 42. No se consideran solicitudes del nombre actual. No se renombraron, firmaron ni pagaron; tampoco se crearon duplicados.
+- Se revisó el único pago ingresado visible: **$26.775,54** distribuido en tres **BÚSQUEDAS FONÉTICAS DE MARCAS** de $8.925,18 cada una. Es un pago de búsquedas, no de presentación de marca. El detalle de pago no muestra la denominación; los informes históricos ya documentados corresponden a RINDECASA. No se atribuye este pago a una búsqueda de Dónde Rinde.
 
-El portal publica **1 UMAPI = $412,59** al 23/10/2026 y anuncia **$420,43 desde el 01/11/2026**. El valor unitario no es una liquidación de nuestra solicitud. La cantidad de unidades del trámite, servicios seleccionados, suplementos y total final siguen sujetos al cotejo de cada formulario antes de generar o pagar un arancel.
+## Costos y límites de la comprobación
 
-No se generaron pagos ni se firmaron o presentaron solicitudes. La confirmación del nombre no se convierte en una firma o aceptación de un importe todavía no revalidado.
+La liquidación del borrador de clase 9 quedó comprobada en unidades. Para las clases propuestas 35 y 42 se conserva el presupuesto base de 100 UMAPI por clase, hasta 20 términos; sus formularios del nombre actual todavía requieren revisión. **$123.777,00** es la base de tres solicitudes, no una liquidación conjunta ya generada.
 
-## Comprobaciones para la vista concreta de la solicitud
+La búsqueda fonética nueva es opcional: 22 UMAPI por clase, **$27.230,94** para tres. No se ordenó. Presentación más esas búsquedas suman **$151.007,94**, antes de eventuales suplementos y otros trámites.
 
-1. Identificar el borrador ya existente y verificar denominación, modalidad y estado.
-2. Cotejar identidad/titularidad con los datos privados ya recuperados. No volcarlos al repositorio público.
-3. Revisar servicios específicos por clase, sin elegir toda una clase. La preparación actual propone aplicación descargable (9), comparación/información comercial y publicidad prevista (35), y software no descargable/SaaS para inventarios (42).
-4. Completar la evaluación final de antecedentes y servicios del nombre elegido; conservar el cotejo preliminar y sus límites. Los informes fonéticos pagados históricos siguen correspondiendo a RINDECASA.
-5. Preparar una vista revisable con los campos efectivos y el importe oficial. La firma, pago, presentación, seguimiento y concesión son etapas distintas.
+El INPI anuncia **$420,43 por UMAPI desde el 01/11/2026**; la base de tres clases pasaría a $126.129,00. No se generó orden de pago, ni se firmó o presentó una solicitud.
 
-Fuentes oficiales consultadas el 23/10: [portal INPI](https://portaltramites.inpi.gob.ar/), [registro de marca](https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca) y [aranceles](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). El registro de fuentes públicas no sustituye la revisión autenticada del borrador.
+## Próxima acción concreta
 
+1. Revisar servicios y formularios de clases 35 y 42 para Dónde Rinde, sin duplicar ni dar por válido un formulario de RINDECASA.
+2. Cotejar todos los datos privados del titular y el texto final de cada solicitud; completar la evaluación de antecedentes y alcance.
+3. Mostrar solicitudes e importes efectivos antes de firma, presentación y pago. La instrucción de avisar los costos no concede un límite de gasto.
+
+Fuentes oficiales: [portal INPI](https://portaltramites.inpi.gob.ar/), [registro de marca](https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca), [aranceles](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles) y anexo de aranceles. La sesión autenticada y la liquidación de clase 9 se observaron en la interfaz el 23/10.
 
 ## Secuencia histórica de contingencia
 
@@ -42,6 +44,6 @@ El titular decidió conservar Dónde Rinde. Se archiva aquí el plan preparado p
 
 **Modelo de aviso, para completar cuando haya decisión:** Desde [fecha], [nombre nuevo] identificará el servicio antes denominado Dónde Rinde. Si se mantienen el responsable y el servicio, se informará expresamente esa continuidad y cómo acceder a cuentas, solicitudes y condiciones. Si también cambia el responsable o el tratamiento, preparar la información y los instrumentos correspondientes antes de ejecutar ese cambio. No se envió este aviso.
 
-## Reanudación con autorización de preparar todo lo posible
+## Autorización vigente
 
-El 23/10 el titular pidió avanzar con lo legal y avisarle si hay que pagar. No dio un límite de gasto. La comprobación nueva del portal mostró que no había sesión INPI autenticada y que se necesitaba nuevamente el ingreso de ARCA. No se revalidó ni duplicó el borrador. Se verificaron el código 110001 (100 UMAPI hasta 20 posiciones), el 110100 (4 UMAPI por excedente) y el 141100 (22 UMAPI por clase para búsqueda fonética). Véase `ARANCELES_LEGALES_2026-10-23.json`.
+El titular pidió avanzar con lo legal y avisarle si hay que pagar. No dio un límite de gasto. La autenticación y la revisión parcial indicadas arriba sustituyen el checkpoint anterior que aún requería ingreso. Véase `ARANCELES_LEGALES_2026-10-23.json` para los importes y el alcance exacto de la liquidación comprobada.

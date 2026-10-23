@@ -37,7 +37,7 @@
   },
   "aaipResponsibleFeeArs": "0.00",
   "aaipDatabaseFeeArs": "0.00",
-  "actualInpiDraftTotalVerified": false,
+  "actualInpiDraftTotalVerified": true,
   "paymentOrderCreated": false,
   "paymentMade": false,
   "filingPerformed": false,
@@ -48,5 +48,27 @@
     "https://www.argentina.gob.ar/justicia/derechodeautor/tasas-para-el-registrar-un-software-puesto-en-conocimiento-publico",
     "https://www.argentina.gob.ar/servicio/inscribir-un-responsable-de-bases-de-datos-personales-privadas",
     "https://www.argentina.gob.ar/registrar-bases-de-datos-personales-privadas"
-  ]
+  ],
+  "actualInpiDraftTotalVerifiedScope": {
+    "class": 9,
+    "denomination": "DONDE RINDE",
+    "modality": "D-DENOMINATIVA",
+    "selectedTerm": "APLICACIONES DE SOFTWARE DESCARGABLES",
+    "selectedTermsCount": 1,
+    "umapi": 100,
+    "ars": "41259.00",
+    "source": "Authenticated INPI draft fee calculation, 2026-10-23",
+    "completeFormReviewFinished": false
+  },
+  "allThreeActualDraftTotalsVerified": false,
+  "previousPaymentReview": {
+    "date": "2026-10-23",
+    "totalArs": "26775.54",
+    "items": 3,
+    "itemType": "BÚSQUEDA FONÉTICA DE MARCAS",
+    "itemArs": "8925.18",
+    "isTrademarkApplicationPayment": false,
+    "nameNotVisibleInPaymentRow": true,
+    "newChargeGenerated": false
+  }
 }
