@@ -1,5 +1,7 @@
 # Dónde Rinde — preparación de registro
 
+**Actualización del 23/10/2026:** el buscador público del INPI respondió y se completó una [consulta actual por caracteres y cinco fichas dirigidas](../integration/INPI_ANTECEDENTES_ACTUALES_2026-10-23.md). Las cinco variantes nominales consultadas no mostraron registros; RINDE, R RINDE PLUS y RINDEGASTOS requieren evaluación por signo y servicios. El error 502 mencionado abajo es histórico: no se revalidó aquí el acceso autenticado ni el estado de los borradores. No se presentó ni pagó una solicitud.
+
 Preparado el 11 de octubre de 2026. Propuesta para revisión; no es una solicitud presentada, una opinión de disponibilidad ni una marca concedida. Los datos personales del titular permanecen fuera del repositorio público.
 
 ## Denominación y estado
