@@ -2,7 +2,13 @@
 
 Corte: 22/10/2026, Argentina. Fuente revisada: web 170, commit `4924c5c3f8ea51f4314778e42c218305592d6c71`. Este documento es un registro técnico; no es una declaración presentada a Google ni una verificación de contratos.
 
-## Resultado observado en Console
+## Actualización al retomar: acceso y guardado verificados
+
+Se comprobó primero únicamente la URL de la pestaña conservada: `https://play.google.com`. La lectura normal posterior fue autorizada y tuvo éxito. Se observó el paso 4/5 con los mismos 16 tipos y **Se guardaron los cambios**, con Guardar borrador deshabilitado. El diálogo pendiente de ubicación se cerró mediante el control normal y la página siguió accesible. La captura de comprobación muestra el borrador guardado.
+
+El bloqueo no se reproduce en esta sesión. No se cambiaron permisos, políticas, navegador, dominio ni credenciales. Esto comprueba que se pudo retomar; no demuestra ni promete una reparación permanente del mecanismo de revisión automática. Continúan pendientes las respuestas de uso/manejo y las condiciones de proveedores. No se envió la declaración.
+
+## Registro de la interrupción anterior
 
 Se avanzó del paso 3 al **paso 4 de 5, Uso y manejo de datos**. Las siete secciones mostraron 16 tipos seleccionados: 4 personales, 2 financieros, 2 de ubicación, 1 de fotos, 2 de rendimiento, 4 de actividad y 1 de identificadores. Ninguna finalidad individual se había completado.
 
@@ -49,7 +55,7 @@ No se seleccionaron audio, videos, contactos, calendario, apps instaladas, naveg
 
 ## Continuación concreta
 
-1. Reanudar únicamente cuando el acceso del navegador vuelva a estar autorizado; comprobar origen oficial y persistencia del borrador de 16 tipos.
+1. Acceso y persistencia comprobados al retomar: paso 4/5, 16 tipos, confirmación de guardado. Mantener la comprobación de origen y los controles normales en próximas acciones.
 2. Resolver el tratamiento y los posibles supuestos de exención por proveedor: Sites/Cloudflare, Resend y buzón, Google Identity, Georef y acciones voluntarias de compartir. OpenAI no recibe nuevas solicitudes por el alcance pausado; ello no demuestra eliminación de envíos históricos.
 3. Introducir uso y manejo por tipo con evidencia; revisar opcionalidad y procesamiento no efímero.
 4. Revisar la vista previa y su coherencia con privacidad, eliminación, app y paquete Android. No enviar una declaración incompleta ni certificar condiciones desconocidas.

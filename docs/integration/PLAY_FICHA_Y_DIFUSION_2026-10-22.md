@@ -46,3 +46,7 @@ Costo ejecutado de esta pieza: **0 llamadas de API, 0 activos pagos y 0 pauta co
 ## Actualización posterior: paso 4 y nueva interrupción
 
 Se observó el paso 4/5 con 16 tipos, incorporando actividad, diagnósticos, fallas y preferencias financieras heredadas. El guardado posterior quedó en «Enviando…» y no se verificó su persistencia. Una captura del titular documenta una nueva denegación de la revisión automática de ChatGPT por dominio no verificado/riesgo alto; el acceso del navegador se mantiene en pausa. El bloqueo previo resuelto descrito arriba no equivale a autorización de esta nueva acción. La matriz técnica y la secuencia para retomar están en [el punto de reanudación](PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md). No se completó ni envió la declaración.
+
+## Reanudación posterior verificada
+
+Tras comprobar solo la URL oficial `https://play.google.com`, se pudo leer normalmente el mismo formulario en la sesión conservada. Se observaron paso 4/5, 16 tipos y «Se guardaron los cambios». Se cerró el diálogo pendiente mediante su botón normal. El acceso funciona nuevamente; no se cambiaron controles de seguridad ni se afirma una reparación permanente de la revisión automática. El borrador sigue incompleto, sin envío a revisión.

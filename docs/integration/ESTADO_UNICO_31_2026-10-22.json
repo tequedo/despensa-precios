@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Play Console sigue en borrador; último panel comprobado 7/11. Textos e ícono preparados. Se observó Seguridad de los datos en paso 4/5 con 16 tipos seleccionados, sin finalidades individuales completas. Último Guardar borrador quedó en Enviando: persistencia no verificada. Revisión automática interrumpió el acceso al navegador por dominio no verificado/riesgo alto; interacción pausada. Matriz técnica y punto de reanudación documentados. Sin envío a revisión."
+      "evidenceAndLimit": "Play Console sigue en borrador; último panel comprobado 7/11. Textos e ícono preparados. Acceso restablecido en la sesión existente tras comprobar el origen oficial play.google.com. Paso 4/5 y 16 tipos conservados; confirmación de guardado observada. Faltan finalidades/compartido por tipo, proveedores, acceso de revisión, público y capturas. Sin envío a revisión ni publicación Android; no se afirma una corrección permanente del control automático."
     },
     {
       "number": 25,
@@ -473,7 +473,7 @@
     "phoneScreenshotsUploaded": 0,
     "appSubmitted": false,
     "dataSafetyChanged": true,
-    "dataSafetyBrowserBlocked": true,
+    "dataSafetyBrowserBlocked": false,
     "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
     "dataSafetyStep": 4,
     "dataSafetyTotalSteps": 5,
@@ -498,23 +498,31 @@
       "device or other IDs"
     ],
     "dataSafetyRemaining": [
-      "verify persistence of 16 selected types when browser access is authorized",
       "collected/shared and purpose for each type",
       "provider conditions and retention consistency",
       "final preview before submission"
     ],
     "browserOriginConfirmed": "https://play.google.com",
-    "browserOriginCheck": "Official origin confirmed earlier; subsequent automatic review interruption reported by owner. Blocked interaction is paused; prior origin confirmation does not override later denial.",
+    "browserOriginCheck": "Fresh metadata-only URL check confirmed https://play.google.com. The subsequent normal page read was authorized and succeeded; no browser permission or security policy was changed.",
     "dataSafetyTypesObserved": 16,
-    "dataSafetyLatestSaveConfirmed": false,
-    "dataSafetyLatestSaveState": "Save draft clicked; last observation showed sending. No success toast or reload confirmed before interruption.",
+    "dataSafetyLatestSaveConfirmed": true,
+    "dataSafetyLatestSaveState": "Reopened the retained page in the existing browser session: step 4, 16 selected types, saved confirmation visible, Save draft disabled.",
     "dataSafetyCheckpoint": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
     "browserReviewBlock": {
       "reportedBy": "owner screenshot",
       "scope": "browser session access in Play Console",
       "reason": "unverified domain and high risk as displayed by automatic review",
       "workaroundAttempted": false,
-      "websiteFaultEstablished": false
+      "websiteFaultEstablished": false,
+      "resolvedForCurrentSession": true
+    },
+    "browserReviewRecovery": {
+      "officialOriginMetadataVerified": true,
+      "normalPageReadSucceeded": true,
+      "normalDialogCloseSucceeded": true,
+      "savedConfirmationVisible": true,
+      "securitySettingsChanged": false,
+      "lastingPolicyFixClaimed": false
     }
   }
 }
