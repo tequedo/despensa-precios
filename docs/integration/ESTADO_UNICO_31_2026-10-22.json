@@ -134,7 +134,7 @@
       "title": "Privacidad, términos y reclamos",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Privacidad actualizada en web 171: roles de alojamiento, registros técnicos y conexión de Google Identity, además de pausa de IA y carga manual. Resumen diario sin nombres. Contacto operativo, conservación externa y condiciones efectivas pendientes. La revisión fiscal de ARCA se hace explícita en P28-ARCA, sin alta ni régimen determinado."
+      "evidenceAndLimit": "Privacidad actualizada en web 171: roles de alojamiento, registros técnicos y conexión de Google Identity, además de pausa de IA y carga manual. Resumen diario sin nombres. Contacto operativo, conservación externa y condiciones efectivas pendientes. La revisión fiscal de ARCA se hace explícita en P28-ARCA, sin alta ni régimen determinado. P17-AAIP: flujo gratuito de inscripción de responsable/bases contrastado con AAIP y ficha preparada; inscripción previa, campos efectivos y presentación sin verificar."
     },
     {
       "number": 18,
@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Consulta pública INPI del 23/10 completada: cinco variantes nominales sin resultados por caracteres, antecedentes RINDE en 9/35/42 y cinco fichas contrastadas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS y RINDEGASTOS tienen concesiones en servicios relevantes, incluida comparación de precios. Faltan evaluación de confusión/distintividad y logo, titularidad/cesiones y ejecución INPI/DNDA. Sin nueva presentación, pago o concesión del proyecto acreditados."
+      "evidenceAndLimit": "Consulta INPI actual y cinco fichas conservadas; cotejo verbal/conceptual preliminar y cuatro representaciones mixtas revisados. Expediente vigente, ficha de titularidad y plan de cambio de nombre preparados. AHORUMO y DESPIVIO sin coincidencias por caracteres; CASA SABE con dos cadenas relacionadas en clase 43. Sitio público DondeRinde orientado a México observado, sin titularidad ni registro argentino acreditados. Nombre actual conservado. Faltan decisión y evaluación final de semejanzas/servicios, aportes humanos/cesiones y etapas INPI/DNDA. Sin nueva presentación, pago ni concesión."
     },
     {
       "number": 20,
@@ -176,7 +176,7 @@
       "title": "Acceso dedicado de revisión",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Ingreso real con Google y recuperación de la vinculación del usuario comprobados en web. Eso no acredita una cuenta exclusiva y reutilizable para revisores. Instrucciones de acceso preparadas en Console, todavía sin agregar ni guardar; credenciales no compartidas. El acceso público a precios no abre todas las funciones privadas."
+      "evidenceAndLimit": "El titular confirmó que la cuenta Google recuperada es personal y queda excluida del acceso de revisores. Hace falta identidad de prueba dedicada y acceso repetible comprobado. Instrucciones de Console preparadas sin guardar; credenciales no compartidas. Precios públicos no abren todas las funciones privadas."
     },
     {
       "number": 24,
@@ -623,8 +623,10 @@
     "credentialsSharedWithPlay": false,
     "androidPhysicalVerified": false,
     "dedicatedReviewerAccountVerified": false,
-    "dedicatedReviewerAccountStatus": "Account purpose has not been established; never treat a personal account as a reviewer account by inference.",
-    "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md"
+    "dedicatedReviewerAccountStatus": "Recovered Google account is personal, explicitly confirmed by owner; excluded from reviewer credentials. A separate dedicated identity remains unverified.",
+    "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md",
+    "ownerConfirmedAccountPurpose": "personal",
+    "personalAccountExcludedFromReviewerAccess": true
   },
   "completedSubtasks": [
     {
@@ -663,6 +665,17 @@
       "status": "closed for dated free character searches and five directed official records",
       "evidence": "INPI_ANTECEDENTES_ACTUALES_2026-10-23.md",
       "limit": "Not a complete phonetic or graphic review, registrability/confusion opinion, filing, payment or grant. INPI/DNDA front remains open."
+    },
+    {
+      "id": "P19-LEGAL-CONTINGENCY-PACKET",
+      "points": [
+        17,
+        19,
+        28
+      ],
+      "status": "closed for documentary preparation: preliminary comparisons, candidate character screening, software/ownership and AAIP worksheets, rename continuity plan",
+      "evidence": "EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md",
+      "limit": "Not full trademark clearance, name approval, legal title certification, registration, signed instrument, tax review or launch approval."
     }
   ],
   "legalFiscalPreparation": {
@@ -671,7 +684,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "current public character searches and five directed records reviewed; confusion, distinctiveness and graphic review pending",
+      "status": "preliminary verbal/conceptual and four selected graphic comparisons completed; final clearance, brand decision, existing drafts and filing stages pending",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -701,13 +714,26 @@
         "graphicComparisonCompleted": false,
         "evidence": "INPI_ANTECEDENTES_ACTUALES_2026-10-23.md",
         "data": "INPI_CONSULTAS_2026-10-23.json",
-        "dataSha256": "76bc405236e69338b91ae2383da99299a9b37c37c0c9a3e587bfc47b71f596bc"
+        "dataSha256": "76bc405236e69338b91ae2383da99299a9b37c37c0c9a3e587bfc47b71f596bc",
+        "selectedGraphicRepresentationsViewed": 4,
+        "selectedGraphicComparisonCompleted": true
+      },
+      "contingencyReview": {
+        "queries": 4,
+        "selectedGraphicRepresentations": 4,
+        "newNameChosen": false,
+        "publicRenamePerformed": false,
+        "completePhoneticOrImageClearance": false,
+        "evidence": "CONTINGENCIA_MARCA_2026-10-23.json",
+        "sha256": "b7767c98dfce199e6d97d5c76a49b94c56009448ac85e3e34045b0a23f41fa78"
       }
     },
     "software": {
       "point": 19,
       "status": "authorship, title, assignments and complete selected source copy pending",
-      "newFilingConfirmed": false
+      "newFilingConfirmed": false,
+      "currentDescriptionUpdatedInPacket": true,
+      "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md"
     },
     "tax": {
       "id": "P28-ARCA",
@@ -722,7 +748,18 @@
       "invoiceIssued": false,
       "filingPerformed": false
     },
-    "completeLegalProtectionClaimed": false
+    "completeLegalProtectionClaimed": false,
+    "privacyRegistry": {
+      "id": "P17-AAIP",
+      "point": 17,
+      "officialProceduresReviewed": true,
+      "officialResponsibleAndDatabaseFees": "free as published on 2026-10-23",
+      "draftPrepared": true,
+      "existingRegistrationVerified": false,
+      "filingPerformed": false,
+      "evidence": "FICHA_AAIP_2026-10-23.md"
+    },
+    "currentPacket": "EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md"
   },
   "legalFiscalLedgerIntegration": {
     "pr": 27,
@@ -733,5 +770,12 @@
     "reviewBuild": "success",
     "emulatorLaunchApi36": "success",
     "physicalAndroidTestEstablished": false
+  },
+  "brandEvidenceIntegration": {
+    "pr": 28,
+    "headCommit": "b1b1d6fa8d0dad7a40fc1a42cbbc81ecf39efaf4",
+    "mergeCommit": "df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0",
+    "workflowRun": 39901887671,
+    "workflowConclusion": "success"
   }
 }

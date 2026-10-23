@@ -1,5 +1,6 @@
 # Dónde Rinde — protección legal y derechos antes del lanzamiento
 
+**Expediente vigente del 23/10:** [revisión legal y contingencia de nombre](../integration/EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md). Incluye cotejo gráfico preliminar, alternativas, ficha de titularidad, preparación AAIP y continuidad ante un cambio. No acredita disponibilidad, trámites presentados ni cumplimiento fiscal.
 **Lectura vigente del 22/10/2026:** [cierre legal y Google Play](CIERRE_LEGAL_PLAY_2026-10-22.md).
 Web 168 y AAB 0.1.2 comprobados; Play sigue como borrador 7/11. El nombre actual es
 Dónde Rinde. Los apartados siguientes conservan antecedentes del 10/10 y no
