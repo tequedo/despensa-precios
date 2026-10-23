@@ -17,9 +17,11 @@ La protección de marca se tramita ante INPI. Su portal utiliza clave fiscal de 
 
 El nombre vigente es **Dónde Rinde**. Los informes fonéticos pagados conservados corresponden a **RINDECASA**, nombre anterior. No se trasladan sus conclusiones al nombre actual. Las consultas exactas del 11/10/2026 de DONDE RINDE, DONDERINDE y DÓNDE RINDE no mostraron coincidencias entonces; no constituyen una búsqueda actual y completa de similitudes fonéticas, gráficas o conceptuales. Los antecedentes que contienen RINDE requieren valoración.
 
+**Consulta actual completada el 23/10:** cinco variantes nominales no mostraron registros por los caracteres consultados; se revisaron resultados de RINDE en clases 9/35/42 y cinco fichas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS tiene concesiones en 9/42; RINDEGASTOS tiene actas concedidas en 35, una con comparación de precios e inventarios. [Actas, filtros, cobertura y límites](INPI_ANTECEDENTES_ACTUALES_2026-10-23.md). Se completó la consulta preliminar gratuita; la evaluación de similitud, distintividad y logo sigue pendiente.
+
 Para completar este tramo del frente 19 faltan:
 
-1. Documentar una búsqueda actual de denominación y signos similares para el nombre y logo vigentes, con número, titular, estado y productos/servicios de cada antecedente relevante. Evaluar el riesgo de confusión, no solamente coincidencias exactas.
+1. Completar el cotejo de similitud fonética, conceptual y gráfica sobre la consulta actual ya documentada, incluyendo los antecedentes seleccionados y otros que resulten pertinentes. Evaluar riesgo de confusión y distintividad del signo completo; la consulta por caracteres no sustituye ese análisis.
 2. Confirmar titular, tipo de marca y servicios concretos. Las clases 9/35/42 son una propuesta previa a revisar, no una cobertura ya obtenida ni una instrucción de solicitar toda una clase.
 3. Registrar la decisión sobre nombre/logo y servicios antes de firmar o pagar una solicitud. Conservar luego la constancia de presentación, seguimiento y resultado como etapas distintas.
 

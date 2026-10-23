@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Nombre vigente Dónde Rinde y preparación INPI/DNDA conservados. Riesgo de confusión de nombre/logo pendiente de evaluación actual; informes fonéticos pagados corresponden a RINDECASA, no al nombre vigente. Acceso con clave fiscal ARCA no es registro de marca. Faltan antecedentes actuales, titularidad/cesiones y ejecución; sin nueva presentación, pago o concesión acreditados."
+      "evidenceAndLimit": "Consulta pública INPI del 23/10 completada: cinco variantes nominales sin resultados por caracteres, antecedentes RINDE en 9/35/42 y cinco fichas contrastadas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS y RINDEGASTOS tienen concesiones en servicios relevantes, incluida comparación de precios. Faltan evaluación de confusión/distintividad y logo, titularidad/cesiones y ejecución INPI/DNDA. Sin nueva presentación, pago o concesión del proyecto acreditados."
     },
     {
       "number": 20,
@@ -298,7 +298,13 @@
     "legalInventoryBuiltFilesMatched": 8,
     "googleWebLoginVerified": true,
     "googleLinkedProfileRecovered": true,
-    "reviewerDedicatedAccessVerified": false
+    "reviewerDedicatedAccessVerified": false,
+    "inpiPublicSearchDate": "2026-10-23",
+    "inpiCharacterQueriesCompleted": 8,
+    "inpiNominalVariantsCompleted": 5,
+    "inpiDirectedRecordsRead": 5,
+    "inpiNewPaymentsThisReview": 0,
+    "inpiNewFilingsThisReview": 0
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -648,6 +654,15 @@
       "status": "closed for saved draft of all 16 types and step 5 preview",
       "evidence": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
       "limit": "Not submitted or approved; access and target audience prerequisites remain."
+    },
+    {
+      "id": "P19-PUBLIC-ANTECEDENTS",
+      "points": [
+        19
+      ],
+      "status": "closed for dated free character searches and five directed official records",
+      "evidence": "INPI_ANTECEDENTES_ACTUALES_2026-10-23.md",
+      "limit": "Not a complete phonetic or graphic review, registrability/confusion opinion, filing, payment or grant. INPI/DNDA front remains open."
     }
   ],
   "legalFiscalPreparation": {
@@ -656,11 +671,38 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "current similarity and confusion review pending",
+      "status": "current public character searches and five directed records reviewed; confusion, distinctiveness and graphic review pending",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
-      "grantConfirmed": false
+      "grantConfirmed": false,
+      "currentPublicSearch": {
+        "date": "2026-10-23",
+        "queries": 8,
+        "nominalVariants": 5,
+        "nominalMode": "CONTIENE",
+        "nominalAllClasses": true,
+        "nominalOnlyCurrent": false,
+        "nominalRowsFound": 0,
+        "rindeClass9": {
+          "rows": 2,
+          "onlyCurrent": true
+        },
+        "rindeClass35": {
+          "rows": 21,
+          "onlyCurrent": true
+        },
+        "rindeClass42": {
+          "rows": 12,
+          "onlyCurrent": false
+        },
+        "directedRecords": 5,
+        "professionalClearanceEstablished": false,
+        "graphicComparisonCompleted": false,
+        "evidence": "INPI_ANTECEDENTES_ACTUALES_2026-10-23.md",
+        "data": "INPI_CONSULTAS_2026-10-23.json",
+        "dataSha256": "76bc405236e69338b91ae2383da99299a9b37c37c0c9a3e587bfc47b71f596bc"
+      }
     },
     "software": {
       "point": 19,
@@ -681,5 +723,15 @@
       "filingPerformed": false
     },
     "completeLegalProtectionClaimed": false
+  },
+  "legalFiscalLedgerIntegration": {
+    "pr": 27,
+    "headCommit": "b92ac0811a5124b45094125c1e933753b72eacb0",
+    "mergeCommit": "4cc46ec45e24b3cc6fa2d2848ccd8cae39c06d76",
+    "workflowRun": 39899795470,
+    "workflowConclusion": "success",
+    "reviewBuild": "success",
+    "emulatorLaunchApi36": "success",
+    "physicalAndroidTestEstablished": false
   }
 }
