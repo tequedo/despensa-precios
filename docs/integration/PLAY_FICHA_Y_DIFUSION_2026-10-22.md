@@ -50,3 +50,11 @@ Se observó el paso 4/5 con 16 tipos, incorporando actividad, diagnósticos, fal
 ## Reanudación posterior verificada
 
 Tras comprobar solo la URL oficial `https://play.google.com`, se pudo leer normalmente el mismo formulario en la sesión conservada. Se observaron paso 4/5, 16 tipos y «Se guardaron los cambios». Se cerró el diálogo pendiente mediante su botón normal. El acceso funciona nuevamente; no se cambiaron controles de seguridad ni se afirma una reparación permanente de la revisión automática. El borrador sigue incompleto, sin envío a revisión.
+
+## Actualización posterior: 16 tipos completos y web 171 publicada
+
+La consola llegó a **paso 5/5, Vista previa** con uso y manejo de los **16/16 tipos completos** y confirmación de guardado. Se revisaron los roles de Sites/Resend y los recorridos de Google y Georef; la vista previa declara ubicación precisa e IDs como compartidos. El aviso exige público objetivo/contenido antes de enviar. No se envió el formulario ni una versión Android; el recuento general 7/11 es la última observación previa, sin una nueva medición.
+
+Un guardado de Personalización fue inicialmente rechazado por la revisión automática. Después se verificaron en código reposición por historial de compras y ordenamiento por preferencias de beneficios; los guardados normales se permitieron. No se cambiaron controles de seguridad ni se promete una corrección permanente del sistema de revisión.
+
+Web **171**, fuente `ae08b5cf6246830fd8ea81cb0080619f7a35f550`, quedó publicada: resumen diario sin enumerar nombres, con conteos conservados, y privacidad actualizada para alojamiento/registros/Google. Validación: 299 pruebas aprobadas, sin fallos ni omitidas; correo simulado, sin envío real ni reconocimiento pago. [Matriz final guardada y continuación](PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md).
