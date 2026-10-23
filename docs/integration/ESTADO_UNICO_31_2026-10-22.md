@@ -81,3 +81,7 @@ Se completó la preparación documental [P19-LEGAL-CONTINGENCY-PACKET](EXPEDIENT
 P17-AAIP queda explícita dentro del frente 17: trámites gratuitos de responsable y bases contrastados; [ficha de preparación](FICHA_AAIP_2026-10-23.md), sin registro previo comprobado ni declaración presentada. La [ficha de aportes humanos y titularidad](FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md) queda sin firmar. Se mantienen abiertos los cierres legales que exigen decisiones, pruebas, titularidad o registros reales; los 31 frentes no cambian de cantidad.
 
 El PR28 se integró en `df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0` con CI39901887671 aprobada. La cuenta Google recuperada es personal por confirmación expresa del titular y no se ofrece para revisión de Play.
+
+### Titularidad: confirmación recibida el 23/10
+
+El titular confirmó que no participó ninguna otra persona en código, textos o logo, además de él y las herramientas de IA. La [ficha de titularidad](FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md) y el expediente actual registran esa manifestación. No se presume por ello autoría exclusiva de todos los elementos ni se modifican licencias de terceros; aportes originales, datos reales de publicación y trámite DNDA siguen pendientes.

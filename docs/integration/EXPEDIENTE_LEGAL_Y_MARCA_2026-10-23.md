@@ -80,7 +80,7 @@ La Ley 11.723 incluye código fuente y objeto y protege la expresión, no la ide
 | --- | --- |
 | Titular propuesto | Aníbal Pringles. Los datos de identidad ya aportados se cotejan en privado; el rótulo no acredita toda la cadena. |
 | Autor/coordinador y aportes humanos | Completar qué expresión concreta aportó cada persona, fechas, archivos/versiones y fundamento. No se inventan autores ni porcentajes. |
-| Colaboradores externos, si existieron | Individualizar aportes y revisar contratos/cesiones verdaderos. No consta aquí un instrumento firmado. |
+| Otras personas | El 23/10/2026 el titular confirmó que no participaron otras personas en código, textos ni logo. Se registra su manifestación; no certifica por sí sola autoría exclusiva ni sustituye las licencias de terceros. |
 | Herramientas de IA | Registrar herramienta y términos aplicables al aporte; conservar revisión humana e historial. Los términos de OpenAI asignan sus derechos, si los hay y dentro de la ley, pero no garantizan resultados únicos ni autoría humana. [S8] |
 | Exclusiones | Bibliotecas, fuentes, datos, fotos de terceros y contenido de usuarios conservan sus derechos. No se reivindican como creación exclusiva. |
 

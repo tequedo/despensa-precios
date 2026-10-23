@@ -10,6 +10,10 @@
 - Android: proyecto separado, paquete `ar.rindecasa.app`; no publicado en Play. Base de fuente/documentación integrada `df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0`.
 - Descripción actual: [expediente vigente, sección 4](EXPEDIENTE_LEGAL_Y_MARCA_2026-10-23.md). Reconocimiento pago por voz/foto pausado; teclado habilitado.
 
+## Confirmación del titular del 23/10/2026
+
+Aníbal confirmó en esta conversación que no participó ninguna otra persona en el código, los textos ni el logo, además de él y las herramientas de IA. Se registra su manifestación, sin convertirla en declaración jurada, firma, cesión ni certificación de autoría exclusiva. Las licencias y materiales de terceros se mantienen separados.
+
 ## Registro a completar sin presumir autoría
 
 | Elemento | Dato por acreditar |
@@ -18,7 +22,7 @@
 | Aporte concreto | Texto, código, selección/disposición original o gráfico; archivos y versiones identificables. |
 | Fechas y prueba | Versiones, historial y documento de origen conservado. Un commit o hash solo no identifica al autor. |
 | Uso de IA | Herramienta y contrato aplicable, aporte humano y revisión. No nombrar a la herramienta como persona autora ni inventar porcentajes. |
-| Otras personas | Confirmar si participaron; identificar aporte, relación y contratos existentes. Si faltan cesiones necesarias, preparar el instrumento específico para revisión y firma real. |
+| Otras personas | Ausencia de otros participantes humanos confirmada por el titular el 23/10/2026. No se inventan colaboradores ni cesiones a su nombre; los materiales de terceros conservan sus licencias. |
 | Titular y porcentajes | Fundamento verdadero de adquisición. El 100% propuesto para marca no prueba 100% de autoría del código. |
 | Editor y publicación | Persona, lugar, fecha, edición y modalidad reales; no inferir la primera publicación de la fecha de este informe. |
 | Representación | Sólo la existente y acreditable; este trabajo no constituye apoderamiento. |

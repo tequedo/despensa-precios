@@ -730,10 +730,23 @@
     },
     "software": {
       "point": 19,
-      "status": "authorship, title, assignments and complete selected source copy pending",
+      "status": "owner confirmed no other human contributors; concrete original human contributions, legal title, publication data and selected complete source copy still require verification",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
-      "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md"
+      "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
+      "otherHumanContributors": {
+        "declared": false,
+        "confirmedBy": "owner in conversation",
+        "date": "2026-10-23",
+        "scope": [
+          "code",
+          "texts",
+          "logo"
+        ],
+        "statementIsSwornOrSigned": false,
+        "exclusiveHumanAuthorshipCertified": false,
+        "thirdPartyMaterialRightsChanged": false
+      }
     },
     "tax": {
       "id": "P28-ARCA",
