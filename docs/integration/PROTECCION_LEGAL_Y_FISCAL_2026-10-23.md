@@ -16,15 +16,15 @@ Corte: 23/10/2026. Este registro hace explícitos los comprobantes pendientes. C
 
 La protección de marca se tramita ante INPI. Su portal utiliza clave fiscal de ARCA: disponer de esa clave o ingresar al portal no equivale a registrar una marca ni a completar la situación impositiva de la actividad.
 
-El nombre vigente es **Dónde Rinde**. Los informes fonéticos pagados conservados corresponden a **RINDECASA**, nombre anterior. No se trasladan sus conclusiones al nombre actual. Las consultas exactas del 11/10/2026 de DONDE RINDE, DONDERINDE y DÓNDE RINDE no mostraron coincidencias entonces; no constituyen una búsqueda actual y completa de similitudes fonéticas, gráficas o conceptuales. Los antecedentes que contienen RINDE requieren valoración.
+El nombre vigente es **Dónde Rinde**, reconfirmado expresamente por el titular el 23/10 para continuar su revisión y preparación registral. Las alternativas quedan como antecedentes de contingencia. Los informes fonéticos pagados conservados corresponden a **RINDECASA**, nombre anterior. No se trasladan sus conclusiones al nombre actual. Las consultas exactas del 11/10/2026 de DONDE RINDE, DONDERINDE y DÓNDE RINDE no mostraron coincidencias entonces; no constituyen una búsqueda actual y completa de similitudes fonéticas, gráficas o conceptuales. Los antecedentes que contienen RINDE requieren valoración.
 
 **Consulta actual completada el 23/10:** cinco variantes nominales no mostraron registros por los caracteres consultados; se revisaron resultados de RINDE en clases 9/35/42 y cinco fichas. RINDE tiene una solicitud de clase 9 sin resolución mostrada; R RINDE PLUS tiene concesiones en 9/42; RINDEGASTOS tiene actas concedidas en 35, una con comparación de precios e inventarios. [Actas, filtros, cobertura y límites](INPI_ANTECEDENTES_ACTUALES_2026-10-23.md). Se completó la consulta preliminar gratuita; el cotejo preliminar verbal/conceptual y de cuatro representaciones se añadió al expediente vigente; la evaluación final sigue pendiente.
 
 Para completar este tramo del frente 19 faltan:
 
 1. Ampliar la evaluación final de semejanzas sobre la consulta actual y el cotejo preliminar verbal/conceptual y de cuatro dibujos ya documentados, incluyendo otros antecedentes pertinentes. Evaluar riesgo de confusión y distintividad del signo completo; la consulta por caracteres no sustituye ese análisis.
-2. Confirmar titular, tipo de marca y servicios concretos. Las clases 9/35/42 son una propuesta previa a revisar, no una cobertura ya obtenida ni una instrucción de solicitar toda una clase.
-3. Registrar la decisión sobre nombre/logo y servicios antes de firmar o pagar una solicitud. Conservar luego la constancia de presentación, seguimiento y resultado como etapas distintas.
+2. Con el nombre ya confirmado, cotejar titular, tipo de marca y servicios concretos. Las clases 9/35/42 son una propuesta previa a revisar, no una cobertura ya obtenida ni una instrucción de solicitar toda una clase.
+3. La decisión de mantener Dónde Rinde queda registrada. Cotejar logo, servicios, campos y arancel de la solicitud antes de firmar o pagar. Conservar luego la constancia de presentación, seguimiento y resultado como etapas distintas.
 
 El logo geométrico y sus archivos propios no acreditan por sí mismos exclusividad frente a otras marcas. El inventario de materiales y la búsqueda marcaria resuelven cuestiones distintas.
 
