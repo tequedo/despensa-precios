@@ -4,7 +4,9 @@ Corte: 23 de octubre de 2026. Documento de preparación para el titular. Nombre 
 
 ## 1. Decisión sobre el nombre
 
-**Recomendación de esta revisión preliminar:** preparar un nombre más distintivo antes de invertir en promoción masiva. Dónde Rinde puede mantenerse como denominación de trabajo mientras se toma la decisión. Los hallazgos no permiten concluir que esté prohibido ni que esté libre. Volver a Rinde Casa conserva el elemento RINDE que motiva parte del examen.
+**Decisión confirmada del titular el 23/10/2026:** mantener **DÓNDE RINDE** y avanzar con ese nombre en la revisión legal y preparación del registro. Las alternativas quedan como antecedentes de contingencia.
+
+**Evaluación preliminar conservada:** se había recomendado explorar un nombre más distintivo antes de la difusión masiva. La decisión del titular fija el nombre con el que continuar; no altera los antecedentes ni acredita registrabilidad, ausencia de confusión o concesión. Tampoco se acreditó un impedimento que obligue a cambiarlo.
 
 La consulta oficial del 23/10 no encontró registros por las cadenas DONDE RINDE, DONDERINDE, DÓNDE RINDE, RINDECASA y RINDE CASA, con todas las clases y resoluciones, modo CONTIENE y sin limitar a vigentes. Se contrastaron además cinco fichas relevantes. Un resultado nominal negativo no resuelve la semejanza con otros signos. [S0, S1]
 
@@ -20,7 +22,7 @@ La consulta oficial del 23/10 no encontró registros por las cadenas DONDE RINDE
 
 <!-- page -->
 
-## 2. Cotejo preliminar y alternativas
+## 2. Cotejo preliminar y contingencias históricas
 
 **Fonética y concepto, como inferencia:** DÓNDE RINDE y RINDE CASA agregan palabras y una impresión de conjunto diferente a RINDE, RINDE PLUS o RINDEGASTOS. Aun así, mantienen una secuencia verbal común y evocan rendimiento o gasto. La cobertura de software, inventarios y comparación de precios hace relevante esa coincidencia. Esto exige evaluación de confundibilidad; no se determinó infracción.
 
@@ -28,7 +30,7 @@ La consulta oficial del 23/10 no encontró registros por las cadenas DONDE RINDE
 
 **Dibujos examinados:** el icono propio combina una D azul, techo/casa y R naranja. Las representaciones oficiales consultadas de R RINDE PLUS utilizan una R amarilla con figura de ave y texto azul. RINDEGASTOS muestra un símbolo y lettering propios. Se observaron diferencias de composición; eso no elimina el examen verbal ni acredita originalidad exclusiva del monograma de la app. El alcance exacto queda en la evidencia JSON. No se hizo una búsqueda mundial por imagen.
 
-Se prepararon opciones de contingencia, sin elegirlas ni aplicarlas:
+Se conservan las opciones examinadas como antecedentes de contingencia. El titular confirmó Dónde Rinde; ninguna de estas alternativas fue elegida o aplicada:
 
 | Opción | Consulta pública INPI del 23/10 | Qué falta |
 | --- | --- | --- |
@@ -38,13 +40,13 @@ Se prepararon opciones de contingencia, sin elegirlas ni aplicarlas:
 
 AHORUMO y DESPIVIO se alejan verbalmente de RINDE por no contener esa palabra. Es una observación limitada; no prueba menor riesgo frente al universo de marcas. Las búsquedas web exactas no aportaron una verificación de disponibilidad. Tampoco se reservaron dominios ni usuarios. [S0]
 
-**Para decidir:** seleccionar la denominación; ampliar semejanzas y revisar el logo definitivo; recuperar los borradores existentes; cotejar titular, servicios y arancel vigente antes de presentar. Los informes fonéticos pagados de RINDECASA siguen siendo antecedentes de ese nombre, no del nuevo.
+**Continuación con DÓNDE RINDE:** ampliar la evaluación de semejanzas y revisar el logo; recuperar el borrador existente mediante el acceso autenticado; cotejar titular, servicios y arancel vigente antes de presentar. Los informes fonéticos pagados de RINDECASA siguen siendo antecedentes de ese nombre, no del nuevo.
 
 <!-- page -->
 
-## 3. Preparación INPI y cambio de nombre
+## 3. Preparación INPI del nombre confirmado
 
-La base recuperada propone una marca denominativa de DÓNDE RINDE y un titular persona humana. Los datos privados ya aportados se conservan para su cotejo; no se publican aquí. El logo requiere análisis y, si se busca protegerlo, determinar la modalidad y solicitud apropiadas. No usar el símbolo de marca registrada sin acreditar el registro aplicable. [S1, S4]
+El titular confirmó DÓNDE RINDE. La base recuperada propone una marca denominativa y un titular persona humana. Los datos privados ya aportados se conservan para su cotejo; no se publican aquí. El logo requiere análisis y, si se busca protegerlo, determinar la modalidad y solicitud apropiadas. No usar el símbolo de marca registrada sin acreditar el registro aplicable. [S1, S4]
 
 | Clase propuesta | Uso real a cubrir y términos para cotejar en el portal |
 | --- | --- |
@@ -52,9 +54,11 @@ La base recuperada propone una marca denominativa de DÓNDE RINDE y un titular p
 | 35 | Comparación de precios; información y asesoramiento comercial al consumidor; información comercial por sitios web. Publicidad y promoción para terceros sólo conforme al servicio previsto. |
 | 42 | Software como servicio y utilización temporal de software no descargable para inventarios: aplicación web. |
 
-Es una propuesta de servicios a verificar, no una instrucción de solicitar toda una clase ni cobertura obtenida. El borrador histórico DONDE RINDE de clase 9 y los de RINDECASA deben recuperarse antes de crear duplicados. Un borrador o una búsqueda pagada no acreditan prioridad de presentación. [S1, S4]
+Es una propuesta de servicios a verificar, no una instrucción de solicitar toda una clase ni cobertura obtenida. El acceso actual mostró el ingreso de ARCA; el borrador todavía no se pudo revalidar en esta reanudación. El borrador histórico DONDE RINDE de clase 9 y los de RINDECASA deben recuperarse antes de crear duplicados. Un borrador o una búsqueda pagada no acreditan prioridad de presentación. [S1, S4]
 
-**Secuencia preparada si se elige otro nombre:**
+**Arancel unitario verificado el 23/10:** $412,59 por UMAPI; el portal anuncia $420,43 desde el 01/11/2026. La cantidad de unidades, suplementos e importe final deben cotejarse para cada solicitud concreta antes de pagar; no se generó un pago. [S16]
+
+**Secuencia de contingencia, sólo si más adelante se decide cambiar:**
 
 1. Conservar la evidencia y el historial de los nombres anteriores. Validar el nuevo signo completo y los servicios antes de invertir en piezas finales o presentar.
 2. Unificar nombre visible, textos legales, ficha y gráficos de Play, manifiesto web, títulos y pantallas, correos operativos y materiales de difusión. Si cambian las iniciales, revisar también el monograma D/R.
@@ -114,7 +118,7 @@ La política y operación deben permitir acceso, rectificación y supresión. AA
 
 | Se entrega preparado en esta revisión | Evidencia que falta para el cierre correspondiente |
 | --- | --- |
-| Evaluación preliminar de nombre, antecedentes y dibujos; opciones de contingencia. | Decisión de marca y revisión final de semejanzas/servicios; cotejo del borrador; presentación y resultado, si se decide registrar. |
+| Evaluación preliminar de nombre, antecedentes y dibujos; opciones de contingencia. | Nombre confirmado: Dónde Rinde. Faltan revisión final de semejanzas/servicios, cotejo del borrador y etapas de presentación y resultado. |
 | Ficha técnica actual y formulario de aportes/exclusiones para DNDA. | Aportes humanos, titularidad/cesiones y datos reales de publicación; copia completa elegida y trámite correspondiente. |
 | Ficha operativa para AAIP y obligaciones de privacidad. | Inscripción previa o nuevas constancias, campos efectivos de proveedores/retención y pruebas operativas pendientes. |
 | Ruta de cambio de nombre que conserva cuentas y paquete Android. | Nombre/logo aprobados y ejecución comprobada en web, app y Play. |
@@ -147,5 +151,6 @@ Fuentes públicas consultadas el 23/10/2026. Las valoraciones indicadas como inf
 - [S13. AAIP: derechos sobre datos personales](https://www.argentina.gob.ar/aaip/datospersonales/derechos).
 - [S14. Ley 24.240, texto actualizado](https://www.argentina.gob.ar/normativa/nacional/ley-24240-638/actualizacion). Usuarios, información y publicidad.
 - [S15. ARCA: inicio y actividades, referencia condicionada al régimen](https://www.arca.gob.ar/monotributo/ayuda/inicio.asp).
+- [S16. INPI: aranceles vigentes y UMAPI](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). Valor unitario actual y aumento anunciado; no es liquidación de nuestras solicitudes.
 
 Evidencia interna: web 172 e inventarios; `INPI_CONSULTAS_2026-10-23.json`; `CONTINGENCIA_MARCA_2026-10-23.json`; fichas de titularidad y AAIP de esta fecha; estado único de los 31 frentes. Los informes históricos y los datos privados del titular no se sustituyen ni se publican mediante este documento.

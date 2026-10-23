@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Consulta INPI actual y cinco fichas conservadas; cotejo verbal/conceptual preliminar y cuatro representaciones mixtas revisados. Expediente vigente, ficha de titularidad y plan de cambio de nombre preparados. AHORUMO y DESPIVIO sin coincidencias por caracteres; CASA SABE con dos cadenas relacionadas en clase 43. Sitio público DondeRinde orientado a México observado, sin titularidad ni registro argentino acreditados. Nombre actual conservado. Faltan decisión y evaluación final de semejanzas/servicios, aportes humanos/cesiones y etapas INPI/DNDA. Sin nueva presentación, pago ni concesión."
+      "evidenceAndLimit": "Consulta INPI actual y cinco fichas conservadas; cotejo verbal/conceptual preliminar y cuatro representaciones mixtas revisados. Expediente vigente, ficha de titularidad y plan de cambio de nombre preparados. AHORUMO y DESPIVIO sin coincidencias por caracteres; CASA SABE con dos cadenas relacionadas en clase 43. Sitio público DondeRinde orientado a México observado, sin titularidad ni registro argentino acreditados. El titular reconfirmó Dónde Rinde y pidió continuar con ese nombre; alternativas archivadas. Faltan evaluación final de semejanzas/servicios, revisión autenticada del borrador, aportes originales/titularidad y etapas INPI/DNDA. Sin nueva presentación, pago ni concesión."
     },
     {
       "number": 20,
@@ -684,7 +684,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "preliminary verbal/conceptual and four selected graphic comparisons completed; final clearance, brand decision, existing drafts and filing stages pending",
+      "status": "Dónde Rinde explicitly retained by owner; existing draft requires authenticated review; preliminary risk findings preserved, final scope and filing stages pending",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -725,8 +725,34 @@
         "publicRenamePerformed": false,
         "completePhoneticOrImageClearance": false,
         "evidence": "CONTINGENCIA_MARCA_2026-10-23.json",
-        "sha256": "b7767c98dfce199e6d97d5c76a49b94c56009448ac85e3e34045b0a23f41fa78"
-      }
+        "sha256": "ec1bd29b213b4fdd6ffba81723d85fb82139a85e340c8c0e764970186c7fa4b0"
+      },
+      "ownerNameDecision": {
+        "date": "2026-10-23",
+        "chosenName": "Dónde Rinde",
+        "status": "explicitly reconfirmed by owner after clarifying dictation",
+        "continueWithCurrentName": true,
+        "alternativesStatus": "historical contingency, not selected",
+        "riskAssessmentChangedByDecision": false,
+        "publicRenamePerformed": false
+      },
+      "authenticatedDraftReview": {
+        "date": "2026-10-23",
+        "status": "ARCA login shown; authentication required to revalidate existing draft",
+        "draftRevalidated": false,
+        "duplicateDraftCreated": false,
+        "feeUnitsForActualRequestRevalidated": false
+      },
+      "currentFeeReference": {
+        "date": "2026-10-23",
+        "unit": "UMAPI",
+        "arsPerUnit": "412.59",
+        "announcedFrom": "2026-11-01",
+        "announcedArsPerUnit": "420.43",
+        "actualRequestTotalVerified": false,
+        "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles"
+      },
+      "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md"
     },
     "software": {
       "point": 19,
