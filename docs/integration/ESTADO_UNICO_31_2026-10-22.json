@@ -3,8 +3,8 @@
   "asOf": "2026-10-25",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 172,
-  "webBaseCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+  "publishedWebVersion": 173,
+  "webBaseCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica actual web 172 (490 archivos) y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios (clase 9 recuperada y arancel comprobado), datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica web 172 (490 archivos), histórica desde que web 173 añadió assetlinks.json, y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios (clase 9 recuperada y arancel comprobado), datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
     },
     {
       "number": 20,
@@ -162,28 +162,28 @@
       "title": "Firma de producción y AAB",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "AAB 0.1.2/código 3 revisado, sin firma de carga. PR20 agrega asistente local y comprobante del hash. Clave real, respaldo y firma bajo control del titular siguen pendientes."
+      "evidenceAndLimit": "AAB 0.1.2/código 3 revisado, hash y paquete comprobados, sin firma de carga. Kit de firma entregado con el AAB exacto y seis archivos del asistente PR20 cotejados por blob. La comprobación completa local requiere JDK (faltan javac/jarsigner en el ejecutor). Clave real, respaldo y firma en el equipo del titular siguen pendientes."
     },
     {
       "number": 22,
       "title": "Asociación sitio y Android",
       "window": 3,
-      "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Origen y paquetes Android conservados. Certificado real de distribución y asociación TWA/Asset Links pendientes de verificación."
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Tres huellas públicas de distribución copiadas de la pantalla Firma de apps de Play Console. Asset Links publicado en web 173 para ar.rindecasa.app y comprobado con el verificador oficial de Google usando la huella en uso. Build y archivo desplegado revisados; no se usaron huellas de prueba. Falta validar la TWA y sus recorridos en el Android final firmado e instalado. Sin publicación Android."
     },
     {
       "number": 23,
       "title": "Acceso dedicado de revisión",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Identidad Google dedicada creada por el titular; acceso y despensa vinculada comprobados en web. Credenciales ingresadas directamente por el titular en Play Console; guardado confirmado. Instrucciones corregidas y guardadas para la entrada pública Mi cuenta opcional. Compra parcial 3→1 en casa+2 pendientes y recuperación tras cerrar sesión comprobadas, sin cargar gasto. Se reutilizó una sesión Google existente: faltan ingreso Google desde otro contexto/dispositivo, Android firmado y borrado/recreación. No se leyó ni copió la contraseña."
+      "evidenceAndLimit": "Identidad Google dedicada y despensa vinculada comprobadas en web; credenciales ingresadas por el titular y guardadas en Play Console, sin leerlas. Instrucciones corregidas de 451 caracteres guardadas. Se comprobaron compra parcial, recuperación tras cerrar sesión y gasto sólo al confirmar un importe. Fixture final: 2 en casa, 1 pendiente y ARS 1 ficticio, sin pago real. Se reutilizó la sesión Google existente: faltan otro contexto/dispositivo, Android firmado y borrado/recreación."
     },
     {
       "number": 24,
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Panel de Play Console: 10/11 tareas iniciales completadas. Acceso de revisión e instrucciones corregidas guardados; público 13–15, 16–17 y 18+ guardado. Seguridad de los datos: 16/16 tipos y vista previa 5/5 revisados; tras aprobación específica del titular se aceptó Guardar y se observó confirmación. El rechazo automático inicial no se eludió. Ficha es-419 coherente con web 172, ícono/gráfico cargados y 0 capturas de teléfono. No hay AAB subido ni envío a revisión."
+      "evidenceAndLimit": "Panel de Play Console: 10/11 tareas iniciales completadas. Acceso de revisión e instrucciones corregidas guardados; público 13–15, 16–17 y 18+ guardado. Seguridad de los datos: 16/16 tipos y vista previa 5/5 revisados; tras aprobación específica del titular se aceptó Guardar y se observó confirmación. El rechazo automático inicial no se eludió. Ficha es-419 coherente con las funciones de web 172/173 (173 sólo añade Asset Links), ícono/gráfico cargados y 0 capturas de teléfono. No hay AAB subido ni envío a revisión."
     },
     {
       "number": 25,
@@ -264,7 +264,7 @@
     "androidLicensesTests": 5,
     "androidSigningLocalPassed": 4,
     "androidSigningLocalSkipped": 6,
-    "playSetupCompleted": 7,
+    "playSetupCompleted": 10,
     "playSetupTotal": 11,
     "playClosedTestOptedIn": 0,
     "playIconSavedAndReopened": true,
@@ -304,7 +304,11 @@
     "inpiNominalVariantsCompleted": 5,
     "inpiDirectedRecordsRead": 5,
     "inpiNewPaymentsThisReview": 0,
-    "inpiNewFilingsThisReview": 0
+    "inpiNewFilingsThisReview": 0,
+    "reviewerDedicatedWebAccessVerified": true,
+    "androidAssetLinksPublished": true,
+    "androidAssetLinksGoogleOfficialTesterPassed": true,
+    "androidAssetLinksPhysicalValidation": false
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -363,7 +367,28 @@
     "mergeCommit": "21ea98471d7928ab8b7ef7874ff993115d8b84cc",
     "run": 39836366729,
     "ciTestsPassed": 25,
-    "ciTestsSkipped": 0
+    "ciTestsSkipped": 0,
+    "ownerExecutionKit": {
+      "date": "2026-10-25",
+      "fileName": "Donde_Rinde_0.1.2_kit_de_firma.zip",
+      "bytes": 3500139,
+      "sha256": "58af0c62aed4e7f465643612d07ae1581fd4750ff2d92354b5cdd4a9a4f1d7e4",
+      "sourceArchiveSha256": "682f7541f1d5afe8c7fac5562e004d673bf406eb050a27511e54d169ac1aac42",
+      "bundleSha256": "e9a1b27830bd117bd6b02c1e637ff1a4315f18aec36ce7f6b7ee1864091f879d",
+      "helperGitBlobsVerified": 6,
+      "bundleHashPackageAndUnsignedCheckPassed": true,
+      "fullLocalCheckOnlyPassed": false,
+      "localMissingJavaTools": [
+        "javac",
+        "jarsigner"
+      ],
+      "privateKeysIncluded": false,
+      "passwordsIncluded": false,
+      "apksIncluded": false,
+      "signed": false,
+      "ownerLocalExecutionPending": true,
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
+    }
   },
   "resolvedCrossIssues": [
     {
@@ -423,8 +448,8 @@
   },
   "counts": {
     "fullyClosed": 0,
-    "implementedPendingValidation": 15,
-    "blocked": 13,
+    "implementedPendingValidation": 16,
+    "blocked": 12,
     "requiresCorrection": 0,
     "laterExpansion": 3
   },
@@ -610,7 +635,17 @@
       "18+"
     ],
     "latestEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
-    "dataSafetyLatestSaveDate": "2026-10-25"
+    "dataSafetyLatestSaveDate": "2026-10-25",
+    "currentWebVersion": 173,
+    "latestWebChangeScope": "Only public/.well-known/assetlinks.json; application behavior and listing copy unchanged",
+    "finalAndroidSignaturePending": true,
+    "internalAppSharing": {
+      "termsReviewed": true,
+      "termsAccepted": false,
+      "enabled": false,
+      "uploaded": false,
+      "note": "Both existing APKs use separate preview package names. No APK was uploaded to the publication app and no new agreement was accepted."
+    }
   },
   "notificationPrivacyRelease": {
     "version": 171,
@@ -777,6 +812,24 @@
       "status": "closed for approved final Save of the 16-type Data safety declaration; dashboard confirms 10/11 initial tasks",
       "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
       "limit": "No app submission or Google approval. Signed Android consistency, store screenshots and other release prerequisites remain."
+    },
+    {
+      "id": "P21-OWNER-SIGNING-KIT",
+      "points": [
+        21
+      ],
+      "status": "closed for assembled owner delivery and verified pinned unsigned AAB/helper source",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "Owner key, backup, full JDK preflight and real signature are still pending; no signed bundle or Play upload."
+    },
+    {
+      "id": "P22-PUBLIC-ASSET-LINKS",
+      "points": [
+        22
+      ],
+      "status": "closed for publication of the real Play certificate association in web 173 and successful Google official tester check for the in-use certificate",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "Other listed Play fingerprints copied from Console; TWA behavior and final signed Android installation remain unverified."
     }
   ],
   "legalFiscalPreparation": {
@@ -875,7 +928,7 @@
     },
     "software": {
       "point": 19,
-      "status": "Current web source and complete Android project directory copied and verified; legal ownership fields, actual publication data, tax basis and accepted deposit format still require review",
+      "status": "Verified source copy covers web 172 and the Android project; web 173 adds Asset Links and is not included in that historical web copy. Update before a deposit; ownership, publication details, rate basis and accepted format still require review.",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
       "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
@@ -901,7 +954,14 @@
         "webCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
         "androidCommit": "24afb74617347eab9a73361f4947d6af69a5e947",
         "depositFiled": false,
-        "authorshipCertified": false
+        "authorshipCertified": false,
+        "matchesCurrentPublishedWeb": false,
+        "copiedWebVersion": 172,
+        "currentPublishedWebVersion": 173,
+        "newWebFilesNotInCopy": [
+          "public/.well-known/assetlinks.json"
+        ],
+        "newPublishedWebCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f"
       },
       "publishedFees": {
         "procedureArs": "3800.00",
@@ -1019,5 +1079,41 @@
       "currency": "ARS",
       "realPayment": false
     }
+  },
+  "androidAssociation": {
+    "date": "2026-10-25",
+    "publishedWebVersion": 173,
+    "sourceCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
+    "source": "Google Play Console > Protegido con Play > Firma de apps; Copiar todas las huellas digitales SHA-256",
+    "distributionFingerprints": [
+      "0A:F6:EF:2E:F6:10:7E:CE:B4:5D:89:CC:FF:57:B5:B6:AA:BD:71:0F:03:75:C5:87:25:37:63:5A:3A:6D:74:45",
+      "2D:BB:6C:15:0D:7B:18:7F:5F:E2:43:74:1F:91:9F:CF:83:BB:7D:73:5E:8A:47:9A:AB:75:04:FB:3F:4B:64:B0",
+      "FC:63:5B:DC:AF:64:DD:2F:1E:CC:4A:1A:19:5C:14:51:97:A9:82:A9:94:91:FA:3C:DB:E1:FF:BA:9F:4C:A7:C1"
+    ],
+    "url": "https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/.well-known/assetlinks.json",
+    "fileSha256": "d15a0a47f55dc824f31ea7f24a12b99e94f86d7f9f0cfb880b2b9c65dd91284a",
+    "deploymentId": "appgdep_6add8368fef88191bb3adf6e40176fcb",
+    "buildPassed": true,
+    "packagedFileMatchesSource": true,
+    "browserDocumentVerified": true,
+    "googleOfficialTester": {
+      "url": "https://developers.google.com/digital-asset-links/tools/generator",
+      "relation": "delegate_permission/common.handle_all_urls",
+      "package": "ar.rindecasa.app",
+      "testedFingerprint": "0A:F6:EF:2E:F6:10:7E:CE:B4:5D:89:CC:FF:57:B5:B6:AA:BD:71:0F:03:75:C5:87:25:37:63:5A:3A:6D:74:45",
+      "result": "Success: host grants app deep linking to ar.rindecasa.app",
+      "success": true
+    },
+    "anonymousExecutorGet": {
+      "status": 403,
+      "body": "error code: 1010",
+      "contentType": "text/plain",
+      "causeNotEstablished": true,
+      "controlBypassAttempted": false
+    },
+    "androidPhysicalVerified": false,
+    "finalAndroidUploaded": false,
+    "hashScope": "Source file and built client asset; raw HTTP body hash from deployed origin not measured",
+    "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
   }
 }
