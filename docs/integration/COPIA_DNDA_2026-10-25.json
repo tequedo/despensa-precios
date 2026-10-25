@@ -1,0 +1,51 @@
+{
+  "preparedOn": "2026-10-25",
+  "file": "Donde_Rinde_Preparacion_DNDA_2026-10-25.zip",
+  "bytes": 3251397,
+  "sha256": "65a88f59a17e88a6bbb9d5da2a704779fa1d6231639c60200216b2c635c3f978",
+  "webVersion": 173,
+  "components": [
+    {
+      "file": "Donde_Rinde_Copia_software_e9a8ae902a02.zip",
+      "commit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
+      "files": 491,
+      "sha256": "03af30c70a531a972e8c8d6ba4ba84c33da8445a1449cccf27e3881d8033fcc3",
+      "scope": "Complete tracked web source"
+    },
+    {
+      "file": "Donde_Rinde_Fuente_Android_24afb7461734.zip",
+      "commit": "24afb74617347eab9a73361f4947d6af69a5e947",
+      "files": 24,
+      "sha256": "162864b66a5728193ab9c0741eee7e6d02d59a85dbb88579cf0007f564e61c56",
+      "scope": "Complete tracked mobile/android project directory"
+    }
+  ],
+  "sourceCopyVerified": true,
+  "allWebGitBlobsVerified": true,
+  "allAndroidGitBlobsVerified": true,
+  "webFilesVerified": 491,
+  "androidFilesVerified": 24,
+  "changesFromPreviousCopy": {
+    "added": [
+      "public/.well-known/assetlinks.json"
+    ],
+    "modified": [],
+    "removed": []
+  },
+  "officialRequirementsRechecked": {
+    "date": "2026-10-25",
+    "source": "https://www.argentina.gob.ar/servicio/registrar-un-software-puesto-en-conocimiento-publico",
+    "publishedProcedureArs": "3800.00",
+    "publishedRatePercent": "0.2",
+    "publishedMinimumRateArs": "4.11",
+    "costBasisPending": true,
+    "digitalDepositInstructionsFollowInitiation": true,
+    "depositFormatAccepted": false
+  },
+  "authorshipCertified": false,
+  "dndaFiled": false,
+  "paymentMade": false,
+  "verification": "Outer ZIP and each component reopened; every source byte hash, size, path and mode verified. Original Android ZIP retained byte for byte.",
+  "libraryVersion": 1,
+  "libraryIdentityPreserved": true
+}
