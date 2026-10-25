@@ -97,7 +97,7 @@ Se publicaron esas huellas en [assetlinks.json](https://despensa-inteligente.f0d
 
 - Fuente web: `e9a8ae902a02631b11ecce363058a5e7775b7d0f`, versión **173**.
 - Publicación Sites: `appgdep_6add8368fef88191bb3adf6e40176fcb`, estado **succeeded**.
-- SHA-256 del archivo servido: `d15a0a47f55dc824f31ea7f24a12b99e94f86d7f9f0cfb880b2b9c65dd91284a`.
+- SHA-256 del archivo en la fuente y en el build: `d15a0a47f55dc824f31ea7f24a12b99e94f86d7f9f0cfb880b2b9c65dd91284a`.
 - Build y comprobación del JSON, paquete, formato de tres huellas y copia exacta en `dist/client`: aprobados. El control legal previo del build también pasó.
 - El manifiesto release del artefacto Android revisado declaró `ar.rindecasa.app`, versión 0.1.2/código 3 y el mismo origen HTTPS.
 - La navegación al archivo publicado mostró el JSON esperado.
