@@ -1,0 +1,115 @@
+{
+  "preparedOn": "2026-10-25",
+  "project": "Dónde Rinde",
+  "point": 19,
+  "scope": "Public classification and fee preparation for existing trademark work; not a signed or filed application.",
+  "currentNameDecision": "Keep Dónde Rinde, explicitly confirmed by owner on 2026-10-23.",
+  "existingClass9DraftDenomination": "DONDE RINDE",
+  "denominationNote": "Existing class 9 draft was observed without accent on 2026-10-23. Do not silently alter it; reconcile the exact final spelling across all three forms before submission.",
+  "modality": "D-DENOMINATIVA",
+  "classes": [
+    {
+      "number": 9,
+      "purpose": "Aplicación Android descargable",
+      "proposedTerms": [
+        {
+          "basicNumber": "090717",
+          "textEs": "APLICACIONES DE SOFTWARE DESCARGABLES",
+          "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=9&dateInForce=20260101&lang=esen&tab=&viewMode=flat"
+        }
+      ],
+      "existingDraftObservedOn": "2026-10-23",
+      "existingDraftSelectedTerms": 1,
+      "existingDraftFeeUmapi": 100,
+      "completeFormReviewFinished": false
+    },
+    {
+      "number": 35,
+      "purpose": "Servicio al consumidor para comparar cotizaciones y consultar información de comercios",
+      "proposedTerms": [
+        {
+          "basicNumber": "350091",
+          "textEs": "SERVICIOS DE COMPARACIÓN DE PRECIOS"
+        },
+        {
+          "basicNumber": "350119",
+          "textEs": "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+        }
+      ],
+      "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=35&dateInForce=20260101&lang=es&tab=&viewMode=flat",
+      "actualCurrentNameDraftReviewed": false,
+      "finalInpiTermMatchingPending": true,
+      "advertisingPilotScope": "Advertising for third parties remains a separate scope decision when checking the actual class 35 form. No advertising term was added by this public-only preparation."
+    },
+    {
+      "number": 42,
+      "purpose": "Uso en línea del software de inventario, listas y comparación",
+      "proposedTerms": [
+        {
+          "basicNumber": "420220",
+          "textEs": "SOFTWARE COMO SERVICIO [SAAS]"
+        }
+      ],
+      "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=42&dateInForce=20260101&lang=esen&tab=&viewMode=flat",
+      "actualCurrentNameDraftReviewed": false,
+      "finalInpiTermMatchingPending": true
+    }
+  ],
+  "classificationBasis": "Nice Classification, 13th edition, 2026 version; actual INPI selectable terms and final scope still require authenticated review.",
+  "feePreparation": {
+    "checkedOn": "2026-10-25",
+    "currency": "ARS",
+    "unit": "UMAPI",
+    "unitArs": "412.59",
+    "sourceUnit": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
+    "sourceUnits": "https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf",
+    "basePerClassUmapi": 100,
+    "termsIncludedUpTo": 20,
+    "basePerClassArs": "41259.00",
+    "proposedClasses": 3,
+    "baseTotalArs": "123777.00",
+    "additionalTermUmapi": 4,
+    "additionalTermArs": "1650.36",
+    "announcedFrom": "2026-11-01",
+    "announcedUnitArs": "420.43",
+    "announcedPerClassArs": "42043.00",
+    "announcedBaseTotalArs": "126129.00",
+    "notAnActualCombinedLiquidation": true,
+    "allThreeActualDraftTotalsVerified": false,
+    "note": "The annex identifies tariff units; historical peso amounts printed there use the earlier unit. Current estimates use the current official unit page."
+  },
+  "currentAuthentication": {
+    "observedOn": "2026-10-25",
+    "currentPortalSessionAuthenticated": false,
+    "loginOrigin": "https://auth.afip.gob.ar",
+    "securePromptAttempted": true,
+    "securePromptShown": false,
+    "identifierTransmitted": false,
+    "automaticReviewRejected": true,
+    "manualUserRejection": false,
+    "reason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+    "workaroundAttempted": false,
+    "retried": false,
+    "ownerSpecificApprovalPending": true,
+    "nextAction": "Obtain specific owner authorization for secure CUIT/CUIL and clave fiscal sign-in to ARCA for recovery/review of INPI drafts; then issue the normal browserAuth request."
+  },
+  "savedNewDrafts": false,
+  "editedExistingDrafts": false,
+  "signaturePerformed": false,
+  "paymentOrderCreated": false,
+  "paymentMade": false,
+  "filingPerformed": false,
+  "remainingBeforeFiling": [
+    "Authenticated review of all fields and holder data",
+    "Actual INPI catalog matching for classes 35/42",
+    "Consistent final denomination",
+    "Final scope including any advertising terms",
+    "Review of relevant antecedents and service overlap",
+    "Actual form totals",
+    "Owner review and action-time approval of the concrete filing and payment"
+  ],
+  "sources": [
+    "https://www.argentina.gob.ar/inpi/marcas/clasificacion-de-marcas",
+    "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca"
+  ]
+}
