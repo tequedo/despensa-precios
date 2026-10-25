@@ -4,7 +4,7 @@ Fecha de comprobación: **25/10/2026**, America/Argentina/Buenos_Aires. Alcance:
 
 ## Versión y alcance
 
-Se confirmó con Sites que la web activa sigue en la versión **172**, fuente `dbfc57ed1916ed21e4f925dda5c8044479679cf3`. Esta sesión no cambió código ni publicó otra versión. Los cambios operativos se limitaron al perfil de revisión y a metadatos de Play Console.
+Las pruebas funcionales de acceso y gastos se hicieron sobre la web **172**, fuente `dbfc57ed1916ed21e4f925dda5c8044479679cf3`. Después se publicó la web **173**, fuente `e9a8ae902a02631b11ecce363058a5e7775b7d0f`, con un único archivo nuevo: `public/.well-known/assetlinks.json`. La lógica de cuenta, despensa, gastos y reconocimiento no cambió. Sites confirmó la publicación de la versión 173.
 
 ## Acceso dedicado comprobado
 
@@ -70,7 +70,7 @@ Se reabrió y leyó la ficha es-419: nombre Dónde Rinde, descripción breve de 
 
 - Frente 23: identidad dedicada implementada y validada en el alcance web descrito; falta otra sesión/dispositivo, Android firmado y borrado/recreación con datos descartables.
 - Frente 24: 10/11 tareas iniciales; Seguridad de los datos guardada tras aprobación específica del titular y ficha pendiente de capturas.
-- Firma de producción, AAB, asociación de certificados y pruebas físicas mantienen su estado previo. No se subió una versión a Play.
+- El AAB sigue sin firma del titular y no se subió una versión Android a Play. La asociación pública de certificados sí quedó publicada en web 173 y comprobada por el verificador oficial de Google; la TWA y los recorridos físicos siguen pendientes.
 - La prueba cerrada continúa con 0 participantes observados; no se acredita el requisito de 12 participantes durante 14 días.
 - Los bloqueos de conservación, restauración y proveedores de los frentes 15–17 siguen abiertos. Este formulario no los cierra.
 
@@ -82,3 +82,39 @@ Fuente primaria para las definiciones: [Google Play — Data safety](https://sup
 Después de la primera prueba sin importe, se verificó el flujo con un dato ficticio de **$1 ARS**, exclusivamente en la cuenta dedicada. Desde las 2 unidades pendientes se eligió 1, se escribió el importe y el comercio **PRUEBA — sin compra real**, y se confirmó con Agregar a En casa. La app mostró 2 unidades disponibles y 1 pendiente. Gastos pasó de 0 a **1 compra registrada**, total $1, con ese nombre de comercio. No hubo pago ni compra real y el catálogo público no fue modificado. El estado final de esta fixture es 2 en casa, 1 pendiente y un importe ficticio registrado de $1.
 
 La confirmación ya existe en la interfaz como Pasar a En casa; el gasto usa el importe ingresado por el usuario y no el estimado del catálogo. Cuando se ingresa un importe, el campo Comercio pasa a ser obligatorio. No fue necesario agregar otra función para comprobar este comportamiento.
+
+## Asociación Android publicada y comprobada
+
+Se consultó la pantalla **Protegido con Play > Firma de apps** de la app existente. Se conservó el paquete `ar.rindecasa.app`. El fragmento JSON de Digital Asset Links mostró la huella de distribución en uso y la acción **Copiar todas las huellas digitales SHA-256 del certificado** devolvió tres huellas públicas de Play:
+
+```text
+0A:F6:EF:2E:F6:10:7E:CE:B4:5D:89:CC:FF:57:B5:B6:AA:BD:71:0F:03:75:C5:87:25:37:63:5A:3A:6D:74:45
+2D:BB:6C:15:0D:7B:18:7F:5F:E2:43:74:1F:91:9F:CF:83:BB:7D:73:5E:8A:47:9A:AB:75:04:FB:3F:4B:64:B0
+FC:63:5B:DC:AF:64:DD:2F:1E:CC:4A:1A:19:5C:14:51:97:A9:82:A9:94:91:FA:3C:DB:E1:FF:BA:9F:4C:A7:C1
+```
+
+Se publicaron esas huellas en [assetlinks.json](https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site/.well-known/assetlinks.json), únicamente para la relación `delegate_permission/common.handle_all_urls` y el paquete de publicación. No se agregó una relación para compartir contraseñas. No se publicaron certificados de prueba ni claves privadas.
+
+- Fuente web: `e9a8ae902a02631b11ecce363058a5e7775b7d0f`, versión **173**.
+- Publicación Sites: `appgdep_6add8368fef88191bb3adf6e40176fcb`, estado **succeeded**.
+- SHA-256 del archivo servido: `d15a0a47f55dc824f31ea7f24a12b99e94f86d7f9f0cfb880b2b9c65dd91284a`.
+- Build y comprobación del JSON, paquete, formato de tres huellas y copia exacta en `dist/client`: aprobados. El control legal previo del build también pasó.
+- El manifiesto release del artefacto Android revisado declaró `ar.rindecasa.app`, versión 0.1.2/código 3 y el mismo origen HTTPS.
+- La navegación al archivo publicado mostró el JSON esperado.
+- En [el verificador oficial de Google](https://developers.google.com/digital-asset-links/tools/generator), se eligió Deep Linking y se probaron el origen, el paquete y la primera huella. La herramienta confirmó que el host concede el manejo de vínculos a `ar.rindecasa.app`. Las otras dos huellas se copiaron de Play, sin prueba remota individual adicional.
+- La petición anónima con urllib desde el ejecutor devolvió HTTP 403 y `error code: 1010`. No se estableció su causa ni se cambiaron protecciones. La navegación y la comprobación oficial de Google sí funcionaron. No se afirma una medición HTTP anónima propia de tipo de contenido o ausencia de redirecciones.
+- Falta verificar en el Android final que la TWA valide el dominio y no muestre una barra de navegador inesperada. La confirmación del verificador no acredita esa instalación.
+
+El frente 22 pasa de dependencia bloqueada a **implementado pendiente de validar**. Los 31 frentes originales quedan: **0 cerrados integralmente, 16 implementados pendientes de validar, 12 bloqueados y 3 posteriores**. El frente adicional de difusión sigue separado.
+
+## Kit de firma listo para el equipo del titular
+
+Se recuperó el artefacto **12446594671** de CI **39828245411**. Su ZIP coincide con SHA-256 `682f7541f1d5afe8c7fac5562e004d673bf406eb050a27511e54d169ac1aac42`. El AAB 0.1.2/código 3 coincide con `e9a1b27830bd117bd6b02c1e637ff1a4315f18aec36ce7f6b7ee1864091f879d`; la función original `checked_bundle` comprobó el hash, el paquete y la ausencia de firma previa.
+
+Se entregó `Donde_Rinde_0.1.2_kit_de_firma.zip` (3.500.139 bytes), SHA-256 `58af0c62aed4e7f465643612d07ae1581fd4750ff2d92354b5cdd4a9a4f1d7e4`. Contiene el AAB, seis archivos originales del asistente de firma fijados a `db521195b9edcb1587958ab9d1d25dc16c5ac422`, lanzadores de raíz que seleccionan el AAB correcto, instrucciones y evidencias. Se cotejaron los seis blobs Git, la sintaxis Python, el contenido del ZIP y sus sumas. No contiene APK, claves privadas ni contraseñas.
+
+La ejecución `--check-only` se detuvo por faltar un JDK completo en este ejecutor: faltan `javac` y `jarsigner`. No se declara aprobado ese preflight completo ni una firma nueva. El asistente original mantiene las **25 pruebas aprobadas en CI** ya registradas. El titular debe ejecutar el kit con Python 3.11+ y JDK 17 en su computadora según [el procedimiento existente](../play/FIRMA_DE_SUBIDA.md), conservar clave y respaldo, y compartir sólo AAB firmado, informe `.verification.json` y certificado público.
+
+Los APK del artefacto resultaron ser `ar.rindecasa.app.preview` (0.1.2-prueba) y `ar.rindecasa.app.preview012` (0.1.2-prueba-independiente). No se confundieron con la app de publicación ni se subieron a su ficha. Se leyeron las condiciones de Uso compartido interno de apps y se canceló el diálogo: no se aceptó ese acuerdo nuevo, no se habilitó el servicio y no se compartió ningún APK.
+
+La copia técnica legal de web 172 sigue siendo una evidencia histórica verificada. Desde la incorporación de `assetlinks.json` en web 173 ya no representa exactamente la fuente publicada más reciente; debe actualizarse antes de un eventual depósito. No hubo presentación registral.
