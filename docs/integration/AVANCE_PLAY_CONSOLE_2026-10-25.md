@@ -118,3 +118,9 @@ La ejecución `--check-only` se detuvo por faltar un JDK completo en este ejecut
 Los APK del artefacto resultaron ser `ar.rindecasa.app.preview` (0.1.2-prueba) y `ar.rindecasa.app.preview012` (0.1.2-prueba-independiente). No se confundieron con la app de publicación ni se subieron a su ficha. Se leyeron las condiciones de Uso compartido interno de apps y se canceló el diálogo: no se aceptó ese acuerdo nuevo, no se habilitó el servicio y no se compartió ningún APK.
 
 La copia técnica legal de web 172 sigue siendo una evidencia histórica verificada. Desde la incorporación de `assetlinks.json` en web 173 ya no representa exactamente la fuente publicada más reciente; debe actualizarse antes de un eventual depósito. No hubo presentación registral.
+
+## Actualización posterior de la copia técnica DNDA
+
+El 25/10 se completó la actualización que había quedado indicada en este informe: [`COPIA_DNDA_2026-10-25.json`](COPIA_DNDA_2026-10-25.json) identifica el paquete para web **173**, con **491 archivos web y 24 Android**. Los 490 archivos web anteriores conservan contenido y modo; la única incorporación es `public/.well-known/assetlinks.json`. Se cotejaron los blobs Git, tamaños, huellas y modos de cada componente. El ZIP Android se conservó idéntico y también se verificó contra el árbol actual del proyecto. La copia coincide con el corte publicado y sustituye a la de web 172 como material técnico vigente. Conserva su historial de versiones.
+
+El expediente preparatorio y el estado único remiten al corte actualizado. No se inició ni presentó el depósito DNDA, no se certificó autoría ni se realizó un pago. Los datos jurídicos, la base de la tasa y el formato de depósito siguen pendientes. No hubo cambio de código ni nueva publicación web durante esta actualización documental.
