@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI de ocho búsquedas y cinco fichas y cotejos preliminares conservados. Presupuesto oficial de tasas calculado para las clases propuestas. Copia técnica web 172 (490 archivos), histórica desde que web 173 añadió assetlinks.json, y proyecto Android (24 archivos) preparada y verificada. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios (clase 9 recuperada y arancel comprobado), datos de titularidad y publicación, base de la tasa DNDA y etapas registrales. No se generó pago ni presentación."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI y cotejos preliminares del 23/10 conservados; tasas de marca presupuestadas. Copia técnica actualizada y verificada el 25/10: web 173, 491 archivos y proyecto Android de 24 archivos. Requisitos públicos DNDA reconsultados. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios INPI, datos de titularidad y publicación, base de tasa DNDA y presentación/resultado. No se generó pago ni presentación."
     },
     {
       "number": 20,
@@ -308,7 +308,13 @@
     "reviewerDedicatedWebAccessVerified": true,
     "androidAssetLinksPublished": true,
     "androidAssetLinksGoogleOfficialTesterPassed": true,
-    "androidAssetLinksPhysicalValidation": false
+    "androidAssetLinksPhysicalValidation": false,
+    "dndaSourceCopyCurrentWebVersion": 173,
+    "dndaSourceCopyWebFiles": 491,
+    "dndaSourceCopyAndroidFiles": 24,
+    "dndaSourceCopyVerified": true,
+    "dndaNewPaymentsThisReview": 0,
+    "dndaNewFilingsThisReview": 0
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -830,6 +836,15 @@
       "status": "closed for publication of the real Play certificate association in web 173 and successful Google official tester check for the in-use certificate",
       "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
       "limit": "Other listed Play fingerprints copied from Console; TWA behavior and final signed Android installation remain unverified."
+    },
+    {
+      "id": "P19-DNDA-SOURCE-COPY-173",
+      "points": [
+        19
+      ],
+      "status": "closed for the verified technical copy matching published web 173 and the current Android project subtree",
+      "evidence": "docs/integration/COPIA_DNDA_2026-10-25.json",
+      "limit": "This is preparatory technical material, not a filing, legal authorship certification, accepted deposit format or payment. The complete legal front remains blocked by its listed requirements."
     }
   ],
   "legalFiscalPreparation": {
@@ -928,7 +943,7 @@
     },
     "software": {
       "point": 19,
-      "status": "Verified source copy covers web 172 and the Android project; web 173 adds Asset Links and is not included in that historical web copy. Update before a deposit; ownership, publication details, rate basis and accepted format still require review.",
+      "status": "Complete tracked source copy for published web 173 and the separate Android project prepared and verified on 2026-10-25. Human contributions/title, actual publication details, tax basis and accepted deposit format still require review before filing.",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
       "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
@@ -947,27 +962,58 @@
       },
       "completeSourceCopy": {
         "prepared": true,
-        "evidence": "COPIA_DNDA_2026-10-23.json",
-        "packageSha256": "c5f8ea9765f8bac77b0ffb0a9fa306950c85c0459f8fdd2951fc536afbb05ad8",
-        "webFiles": 490,
+        "preparedOn": "2026-10-25",
+        "file": "Donde_Rinde_Preparacion_DNDA_2026-10-25.zip",
+        "evidence": "COPIA_DNDA_2026-10-25.json",
+        "packageSha256": "65a88f59a17e88a6bbb9d5da2a704779fa1d6231639c60200216b2c635c3f978",
+        "packageBytes": 3251397,
+        "webFiles": 491,
         "androidProjectFiles": 24,
-        "webCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+        "webCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
         "androidCommit": "24afb74617347eab9a73361f4947d6af69a5e947",
-        "depositFiled": false,
-        "authorshipCertified": false,
-        "matchesCurrentPublishedWeb": false,
-        "copiedWebVersion": 172,
+        "androidCurrentTreeVerified": "e29773e7e284ef09a57101838e3d96bc2ea935e6",
+        "allWebGitBlobsVerified": true,
+        "allAndroidGitBlobsVerified": true,
+        "androidComponentReusedByteForByte": true,
+        "copiedWebVersion": 173,
         "currentPublishedWebVersion": 173,
-        "newWebFilesNotInCopy": [
-          "public/.well-known/assetlinks.json"
-        ],
-        "newPublishedWebCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f"
+        "matchesCurrentPublishedWeb": true,
+        "newWebFilesNotInCopy": [],
+        "verification": "Every path, size, SHA-256 and file mode checked in the reopened components; 490 prior web files unchanged and one public Asset Links file added.",
+        "libraryIdentityPreserved": true,
+        "libraryVersion": 1,
+        "depositFiled": false,
+        "authorshipCertified": false
       },
       "publishedFees": {
         "procedureArs": "3800.00",
         "legalRateBasisPending": true,
-        "evidence": "ARANCELES_LEGALES_2026-10-23.json"
-      }
+        "evidence": "ARANCELES_LEGALES_2026-10-23.json",
+        "lastDndaRecheck": "2026-10-25",
+        "dndaRecheckEvidence": "COPIA_DNDA_2026-10-25.json",
+        "digitalDepositInstructionsFollowInitiation": true
+      },
+      "previousCompleteSourceCopies": [
+        {
+          "prepared": true,
+          "evidence": "COPIA_DNDA_2026-10-23.json",
+          "packageSha256": "c5f8ea9765f8bac77b0ffb0a9fa306950c85c0459f8fdd2951fc536afbb05ad8",
+          "webFiles": 490,
+          "androidProjectFiles": 24,
+          "webCommit": "dbfc57ed1916ed21e4f925dda5c8044479679cf3",
+          "androidCommit": "24afb74617347eab9a73361f4947d6af69a5e947",
+          "depositFiled": false,
+          "authorshipCertified": false,
+          "matchesCurrentPublishedWeb": false,
+          "copiedWebVersion": 172,
+          "currentPublishedWebVersion": 173,
+          "newWebFilesNotInCopy": [
+            "public/.well-known/assetlinks.json"
+          ],
+          "newPublishedWebCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
+          "scope": "Verified historical technical copy for web 172; replaced as current material on 2026-10-25."
+        }
+      ]
     },
     "tax": {
       "id": "P28-ARCA",
@@ -999,7 +1045,8 @@
       "scope": "Complete as much legal preparation as possible and notify owner before payment",
       "spendingLimitGranted": false,
       "paymentApproved": false
-    }
+    },
+    "lastTechnicalUpdate": "2026-10-25"
   },
   "legalFiscalLedgerIntegration": {
     "pr": 27,
