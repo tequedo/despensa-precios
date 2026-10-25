@@ -1,5 +1,24 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 25/10/2026: alcance preparado y acceso fiscal pendiente
+
+Se revisaron las fuentes oficiales de clasificación y aranceles. La propuesta de alcance e importes queda identificada en [`PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json`](PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json).
+
+- Clase 9: aplicación descargable, referencia Niza 090717; se mantiene como antecedente el término observado en el borrador del 23/10.
+- Clase 35: comparación de precios e información comercial por sitios web, referencias Niza 350091 y 350119.
+- Clase 42: uso del software en línea, referencia Niza 420220.
+- Los servicios publicitarios requieren concretar su alcance al revisar el formulario de clase 35. La preparación pública no añadió términos a una solicitud.
+- Niza consultada: edición 13, versión 2026. La coincidencia final con los términos seleccionables de INPI y los formularios completos de las clases 35/42 siguen pendientes.
+- Valor UMAPI reconsultado: $412,59; base de 100 unidades por clase, hasta 20 posiciones. Base calculada para tres solicitudes: $123.777,00. No es una liquidación conjunta ya generada. El anexo conserva valores históricos en pesos; la conversión usa la unidad actual.
+- Se conserva el anuncio de $420,43 por unidad desde el 01/11/2026, equivalente a $126.129,00 de base para tres clases.
+
+El portal INPI mostró ingreso por ARCA, sin sesión autenticada vigente. La página de ARCA mostró el primer campo CUIT/CUIL. La solicitud normal de formulario seguro fue **rechazada por revisión automática antes de mostrar el prompt o transmitir el identificador**, porque la instrucción general de continuar no establecía autorización específica para enviar el CUIT/CUIL a ARCA e iniciar ese acceso gubernamental. No fue un rechazo manual del titular. No se reintentó ni se buscó otra vía.
+
+**Próximo paso:** autorización específica del titular para el ingreso seguro de CUIT/CUIL y clave fiscal en ARCA, con el fin de recuperar y revisar los borradores de INPI. Después se retoma el mismo flujo seguro. No se crearon ni editaron borradores, no se generó una orden de pago y no se firmó ni presentó una solicitud el 25/10 mediante esta revisión.
+
+Las observaciones del 23/10 que siguen son antecedentes de la sesión anterior y no acreditan una sesión abierta actualmente.
+
+
 ## Decisión vigente
 
 El titular aclaró el dictado y confirmó mantener **Dónde Rinde** y continuar a fondo con ese nombre. Las opciones propuestas no fueron elegidas; quedan archivadas como contingencia. La decisión no acredita registrabilidad ni modifica la evidencia de antecedentes ya recopilada.
