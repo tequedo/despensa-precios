@@ -113,7 +113,7 @@
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0."
+      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público."
     },
     {
       "number": 15,
@@ -755,6 +755,16 @@
       "status": "closed for saved target groups 13-15, 16-17 and 18+",
       "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
       "limit": "No child-feature expansion or claim of universal local-policy compliance; Play review and production release remain pending."
+    },
+    {
+      "id": "P14-EXPENSE-CONFIRMATION-WEB",
+      "points": [
+        14,
+        23
+      ],
+      "status": "closed for the observed hosted-web confirmation flow: optional blank amount leaves spending at zero; confirming a fictitious ARS 1 amount creates one recorded expense",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "Dedicated test account only; no real payment or purchase. Physical Android, erasure/recreation and independent-device access remain pending."
     }
   ],
   "legalFiscalPreparation": {
@@ -976,6 +986,26 @@
     "erasureRecreationVerified": false,
     "instructionsCorrectedAndSaved": true,
     "runtimeCodeChanged": false,
-    "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
+    "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+    "expenseConfirmationTest": {
+      "currency": "ARS",
+      "amount": 1,
+      "merchant": "PRUEBA — sin compra real",
+      "realPurchase": false,
+      "pendingBefore": 2,
+      "quantityConfirmed": 1,
+      "pendingAfter": 1,
+      "inStockAfter": 2,
+      "expenseRecordsAfter": 1,
+      "spendingBefore": 0,
+      "spendingAfter": 1
+    },
+    "latestFixtureState": {
+      "inStock": 2,
+      "pending": 1,
+      "recordedFictitiousExpense": 1,
+      "currency": "ARS",
+      "realPayment": false
+    }
   }
 }
