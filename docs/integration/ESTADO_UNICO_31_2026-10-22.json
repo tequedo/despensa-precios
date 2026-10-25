@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-23",
+  "asOf": "2026-10-25",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
   "publishedWebVersion": 172,
@@ -106,14 +106,14 @@
       "title": "Cuentas y recuperación",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Ingreso real con Google, reintento tras vencimiento y recuperación de la vinculación existente comprobados en web el 23/10. No se modificó la despensa ni se almacenó la contraseña. Android físico y cuenta dedicada de revisión todavía sin validar."
+      "evidenceAndLimit": "Respuestas viejas se descartan; cierre/cambio/borrado invalidan operaciones antiguas. Ingreso real con Google, reintento tras vencimiento y recuperación de la vinculación existente comprobados en web el 23/10. No se modificó la despensa ni se almacenó la contraseña. Android físico y cuenta dedicada de revisión todavía sin validar. El 25/10/2026 también se comprobó recuperación de la cuenta dedicada después de cerrar la sesión propia de la app y seleccionar Google; no es un ingreso desde una sesión Google vacía ni prueba física."
     },
     {
       "number": 14,
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado."
+      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0."
     },
     {
       "number": 15,
@@ -175,15 +175,15 @@
       "number": 23,
       "title": "Acceso dedicado de revisión",
       "window": 3,
-      "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "El titular confirmó que la cuenta Google recuperada es personal y queda excluida del acceso de revisores. Hace falta identidad de prueba dedicada y acceso repetible comprobado. Instrucciones de Console preparadas sin guardar; credenciales no compartidas. Precios públicos no abren todas las funciones privadas."
+      "status": "implementado pendiente de validar",
+      "evidenceAndLimit": "Identidad Google dedicada creada por el titular; acceso y despensa vinculada comprobados en web. Credenciales ingresadas directamente por el titular en Play Console; guardado confirmado. Instrucciones corregidas y guardadas para la entrada pública Mi cuenta opcional. Compra parcial 3→1 en casa+2 pendientes y recuperación tras cerrar sesión comprobadas, sin cargar gasto. Se reutilizó una sesión Google existente: faltan ingreso Google desde otro contexto/dispositivo, Android firmado y borrado/recreación. No se leyó ni copió la contraseña."
     },
     {
       "number": 24,
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Seguridad de los datos: 16/16 tipos con uso y manejo completos, guardado confirmado y vista previa en paso 5/5. Ubicación precisa e IDs declarados compartidos por sus recorridos. Instrucciones de acceso preparadas sin guardar: falta cuenta dedicada comprobada. Público objetivo/contenido depende de completar acceso. Último panel observado 7/11, sin recuento nuevo. Sin AAB subido ni envío a revisión; no se afirma reparación permanente de la revisión automática."
+      "evidenceAndLimit": "Panel de Play Console: 9/11 tareas iniciales completadas. Acceso de revisión guardado; público objetivo 13–15, 16–17 y 18+ guardado. Seguridad de los datos: borrador existente con 16/16 tipos y vista previa 5/5 revisados; guardado final rechazado por revisión automática por validación pendiente y falta de aprobación específica. Ficha es-419 reabierta y coherente con la versión 172; ícono/gráfico cargados, 0 capturas de teléfono. No se subió AAB ni se envió a revisión."
     },
     {
       "number": 25,
@@ -423,8 +423,8 @@
   },
   "counts": {
     "fullyClosed": 0,
-    "implementedPendingValidation": 14,
-    "blocked": 14,
+    "implementedPendingValidation": 15,
+    "blocked": 13,
     "requiresCorrection": 0,
     "laterExpansion": 3
   },
@@ -479,7 +479,7 @@
     }
   ],
   "playListingProgress": {
-    "date": "2026-10-22",
+    "date": "2026-10-25",
     "status": "draft saved",
     "locale": "es-419",
     "copyScope": [
@@ -492,11 +492,11 @@
     "aiRecognitionAdvertised": false,
     "iconChanged": false,
     "savedToastObserved": true,
-    "reopenedAfterSave": false,
+    "reopenedAfterSave": true,
     "phoneScreenshotsUploaded": 0,
     "appSubmitted": false,
-    "dataSafetyChanged": true,
-    "dataSafetyBrowserBlocked": false,
+    "dataSafetyChanged": false,
+    "dataSafetyBrowserBlocked": true,
     "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
     "dataSafetyStep": 5,
     "dataSafetyTotalSteps": 5,
@@ -521,15 +521,15 @@
       "device or other IDs"
     ],
     "dataSafetyRemaining": [
-      "target audience and content prerequisite",
-      "dedicated repeatable reviewer access",
-      "final consistency review before submission; no Android upload/review performed"
+      "Validate and obtain owner-specific approval for the exact declaration flagged by automatic review",
+      "Check consistency with the final signed Android artifact",
+      "Final submission and Google review"
     ],
     "browserOriginConfirmed": "https://play.google.com",
     "browserOriginCheck": "Fresh metadata-only URL check confirmed https://play.google.com. The subsequent normal page read was authorized and succeeded; no browser permission or security policy was changed.",
     "dataSafetyTypesObserved": 16,
     "dataSafetyLatestSaveConfirmed": true,
-    "dataSafetyLatestSaveState": "Step 5 of 5 preview; all 16 types completed. Saved confirmation visible. Save and Save draft disabled. Target audience/content prerequisite prevents submission.",
+    "dataSafetyLatestSaveState": "Existing 16/16 draft retained. Step 5/5 preview reviewed on 2026-10-25; final Save rejected by automatic approval review. No submission.",
     "dataSafetyCheckpoint": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
     "browserReviewBlock": {
       "reportedBy": "owner screenshot",
@@ -574,12 +574,40 @@
       "subsequentNormalSavesSucceeded": true,
       "securityControlsChanged": false
     },
-    "dataSafetySubmissionBlock": "Preview requires target audience and content. No final Save or submission action performed.",
+    "dataSafetySubmissionBlock": "Final Save to publication overview rejected by automatic approval review on 2026-10-25; verification and owner-specific approval pending. No retry or workaround.",
     "accessInstructionsPrepared": true,
-    "accessInstructionsSaved": false,
-    "dedicatedReviewerAccountVerified": false,
-    "targetAudienceSaved": false,
-    "targetAudienceBlockedBy": "App access details must be completed first; user Google web login does not by itself supply dedicated repeatable reviewer credentials."
+    "accessInstructionsSaved": true,
+    "dedicatedReviewerAccountVerified": true,
+    "targetAudienceSaved": true,
+    "targetAudienceBlockedBy": null,
+    "lastObservedInitialTasksCompleted": 9,
+    "initialTasksTotal": 11,
+    "initialTasksPending": [
+      "Seguridad de los datos",
+      "Ficha de Play Store"
+    ],
+    "dataSafetyExistingDraftRetained": true,
+    "dataSafetyFinalSaveConfirmed": false,
+    "dataSafetySaveReview": {
+      "date": "2026-10-25",
+      "action": "Final Save of Data safety",
+      "rejected": true,
+      "reason": "Responses including universal encryption and shared data were flagged as not fully confirmed; exact content lacked specific owner approval.",
+      "attempts": 1,
+      "retried": false,
+      "workaroundAttempted": false,
+      "ownerSpecificApprovalPending": true
+    },
+    "accessInstructionsCharacters": 451,
+    "accessInstructionsLastChecked": "2026-10-25",
+    "accessPublicEntryVerified": "Mi cuenta opcional > Continuar con Google",
+    "dedicatedReviewerValidationScope": "Hosted web; renewed app session using an existing Google provider session. No independent Google session, physical Android or erasure/recreation validation.",
+    "targetAgeGroups": [
+      "13-15",
+      "16-17",
+      "18+"
+    ],
+    "latestEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
   },
   "notificationPrivacyRelease": {
     "version": 171,
@@ -622,11 +650,12 @@
     "passwordReadOrStored": false,
     "credentialsSharedWithPlay": false,
     "androidPhysicalVerified": false,
-    "dedicatedReviewerAccountVerified": false,
-    "dedicatedReviewerAccountStatus": "Recovered Google account is personal, explicitly confirmed by owner; excluded from reviewer credentials. A separate dedicated identity remains unverified.",
+    "dedicatedReviewerAccountVerified": true,
+    "dedicatedReviewerAccountStatus": "A separate dedicated Google identity is verified for hosted web and saved in Play Console by the owner. Owner personal account remains excluded; second-device Google login and signed Android remain pending.",
     "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md",
     "ownerConfirmedAccountPurpose": "personal",
-    "personalAccountExcludedFromReviewerAccess": true
+    "personalAccountExcludedFromReviewerAccess": true,
+    "dedicatedReviewerLastChecked": "2026-10-25"
   },
   "completedSubtasks": [
     {
@@ -636,7 +665,7 @@
       ],
       "status": "closed for web login and existing-link recovery",
       "evidence": "CONTROL_INVENTARIO_Y_ACCESO_2026-10-23.md",
-      "limit": "No physical Android validation, full private CRUD flow or dedicated reviewer access established."
+      "limit": "No physical Android or independent-device Google validation. Dedicated reviewer web access is now recorded separately; full erasure/recreation remains pending."
     },
     {
       "id": "P18-INVENTORY-CONSISTENCY",
@@ -655,7 +684,8 @@
       ],
       "status": "closed for saved draft of all 16 types and step 5 preview",
       "evidence": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
-      "limit": "Not submitted or approved; access and target audience prerequisites remain."
+      "limit": "Existing draft remains saved and 16/16 types were rechecked on 2026-10-25. Access and audience are now saved; final Save is blocked by automatic review. No Android upload, final submission or Google approval.",
+      "latestReviewEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
     },
     {
       "id": "P19-PUBLIC-ANTECEDENTS",
@@ -695,6 +725,36 @@
       "status": "closed for dated official base-fee calculation and identification of unresolved DNDA cost basis",
       "evidence": "ARANCELES_LEGALES_2026-10-23.json",
       "limit": "Authenticated class 9 fee verified separately; classes 35/42 still require review. Not payment approval, order, fee waiver or payment."
+    },
+    {
+      "id": "P23-DEDICATED-REVIEWER-WEB",
+      "points": [
+        13,
+        14,
+        23
+      ],
+      "status": "closed for dedicated identity provisioning, hosted-web app login, partial-list test and same-browser app-session recovery",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "Existing Google session reused; not an independent Google credential login, second device, signed Android or erasure/recreation test."
+    },
+    {
+      "id": "P24-ACCESS-DETAILS",
+      "points": [
+        23,
+        24
+      ],
+      "status": "closed for saved dedicated access details and corrected 451-character instructions",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "Credentials were entered by the owner and were not read. Repeatability from a new Google session/device remains pending; app not submitted."
+    },
+    {
+      "id": "P24-TARGET-AUDIENCE",
+      "points": [
+        24
+      ],
+      "status": "closed for saved target groups 13-15, 16-17 and 18+",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "No child-feature expansion or claim of universal local-policy compliance; Play review and production release remain pending."
     }
   ],
   "legalFiscalPreparation": {
@@ -875,5 +935,47 @@
     "mergeCommit": "df1bc7d4fc16bb12c8c4dab6ce1eb2a30c0900f0",
     "workflowRun": 39901887671,
     "workflowConclusion": "success"
+  },
+  "reviewerWebValidation": {
+    "date": "2026-10-25",
+    "provider": "Google",
+    "accountPurpose": "dedicated reviewer",
+    "pantryLinkRecovered": true,
+    "appSessionLogoutLoginRecovered": true,
+    "existingGoogleSessionReused": true,
+    "independentGoogleCredentialLoginVerified": false,
+    "androidPhysicalVerified": false,
+    "passwordReadOrCopied": false,
+    "credentialsEnteredByOwnerInPlayConsole": true,
+    "manualLocationTest": {
+      "province": "San Juan",
+      "locality": "San Juan · Capital",
+      "gpsRequested": false,
+      "locationRetainedAcrossSignOut": false
+    },
+    "partialPurchase": {
+      "requested": 3,
+      "movedToInventory": 1,
+      "pending": 2,
+      "inStock": 1,
+      "unit": "paquete",
+      "expenseAmountEntered": false,
+      "spendingTotalObserved": 0
+    },
+    "priceRead": {
+      "product": "Arroz",
+      "brand": "Gallo",
+      "presentation": "1 kg",
+      "consultedBranches": 12,
+      "branchesWithPrice": 4,
+      "observedPriceDates": [
+        "2026-10-23",
+        "2026-10-24"
+      ]
+    },
+    "erasureRecreationVerified": false,
+    "instructionsCorrectedAndSaved": true,
+    "runtimeCodeChanged": false,
+    "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
   }
 }
