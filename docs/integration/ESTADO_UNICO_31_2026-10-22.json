@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Consulta INPI y cotejos preliminares del 23/10 conservados; tasas de marca presupuestadas. Copia técnica actualizada y verificada el 25/10: web 173, 491 archivos y proyecto Android de 24 archivos. Requisitos públicos DNDA reconsultados. Faltan evaluación final de semejanzas/servicios, revisión integral de formularios INPI, datos de titularidad y publicación, base de tasa DNDA y presentación/resultado. No se generó pago ni presentación."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular; antecedentes INPI del 23/10 conservados. Propuesta pública de cobertura Niza 2026 para clases 9/35/42 y base de tasas actualizada el 25/10. Acceso fiscal actual bloqueado por revisión automática: falta autorización específica para enviar CUIT/CUIL a ARCA; no se transmitió el identificador ni se mostró el prompt seguro. Formulario de clase 9 revisado sólo parcialmente el 23/10; revisión integral y clases 35/42 pendientes. Copia DNDA web 173 (491 archivos) y Android (24) verificada. Siguen pendientes titularidad/publicación, tasa DNDA y presentaciones. Sin nuevos pagos ni firmas."
     },
     {
       "number": 20,
@@ -845,6 +845,15 @@
       "status": "closed for the verified technical copy matching published web 173 and the current Android project subtree",
       "evidence": "docs/integration/COPIA_DNDA_2026-10-25.json",
       "limit": "This is preparatory technical material, not a filing, legal authorship certification, accepted deposit format or payment. The complete legal front remains blocked by its listed requirements."
+    },
+    {
+      "id": "P19-NICE-SCOPE-PUBLIC-20261025",
+      "points": [
+        19
+      ],
+      "status": "closed for public Nice classification mapping and current base-fee calculation",
+      "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+      "limit": "Not a full form review, actual combined fee liquidation, clearance, filing or payment. Current fiscal sign-in awaits specific owner approval after an automatic-review rejection."
     }
   ],
   "legalFiscalPreparation": {
@@ -853,7 +862,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Dónde Rinde retained; authenticated class 9 draft recovered and 100 UMAPI fee verified; complete holder fields and classes 35/42 review, final scope and filing stages pending",
+      "status": "Public Nice scope and current fee basis prepared on 2026-10-25. Authenticated class 9 review remains historical to 2026-10-23; full forms and classes 35/42 still require current INPI access and owner review.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -919,7 +928,7 @@
         "classes35And42Reviewed": false
       },
       "currentFeeReference": {
-        "date": "2026-10-23",
+        "date": "2026-10-25",
         "unit": "UMAPI",
         "arsPerUnit": "412.59",
         "announcedFrom": "2026-11-01",
@@ -927,7 +936,9 @@
         "actualRequestTotalVerified": true,
         "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
         "actualRequestTotalVerifiedScopeClass": 9,
-        "allThreeActualRequestTotalsVerified": false
+        "allThreeActualRequestTotalsVerified": false,
+        "unitRecheckedOn": "2026-10-25",
+        "actualClass9DraftLastObserved": "2026-10-23"
       },
       "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
       "feeBudget": {
@@ -938,7 +949,54 @@
         "actualDraftTotalVerified": true,
         "paymentOrderCreated": false,
         "actualDraftTotalVerifiedScopeClass": 9,
-        "allThreeActualDraftTotalsVerified": false
+        "allThreeActualDraftTotalsVerified": false,
+        "lastPublicRecheck": "2026-10-25",
+        "currentPreparationEvidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+        "actualClass9DraftLastObserved": "2026-10-23"
+      },
+      "publicScopePreparation": {
+        "date": "2026-10-25",
+        "evidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+        "niceVersion": "13-2026",
+        "classes": [
+          {
+            "number": 9,
+            "basicNumbers": [
+              "090717"
+            ]
+          },
+          {
+            "number": 35,
+            "basicNumbers": [
+              "350091",
+              "350119"
+            ]
+          },
+          {
+            "number": 42,
+            "basicNumbers": [
+              "420220"
+            ]
+          }
+        ],
+        "actualInpiSelectionMatchedForAllClasses": false,
+        "newDraftsSaved": false,
+        "existingDraftsEdited": false
+      },
+      "currentAccessAttempt": {
+        "observedOn": "2026-10-25",
+        "currentPortalSessionAuthenticated": false,
+        "loginOrigin": "https://auth.afip.gob.ar",
+        "securePromptAttempted": true,
+        "securePromptShown": false,
+        "identifierTransmitted": false,
+        "automaticReviewRejected": true,
+        "manualUserRejection": false,
+        "reason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+        "workaroundAttempted": false,
+        "retried": false,
+        "ownerSpecificApprovalPending": true,
+        "nextAction": "Obtain specific owner authorization for secure CUIT/CUIL and clave fiscal sign-in to ARCA for recovery/review of INPI drafts; then issue the normal browserAuth request."
       }
     },
     "software": {
