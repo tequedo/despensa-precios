@@ -1,6 +1,6 @@
 # Dónde Rinde | Expediente legal y decisión de marca
 
-Corte: 23 de octubre de 2026. Documento de preparación para el titular. Nombre actual conservado; no se presentó una solicitud ni se firmó un instrumento mediante esta revisión.
+Corte jurídico y marcario: 23 de octubre de 2026. Actualización técnica del 25 de octubre: copia del software, asociación Android y estado de Play Console. Documento de preparación para el titular. Nombre actual conservado; no se presentó una solicitud ni se firmó un instrumento mediante esta revisión.
 
 ## 1. Decisión sobre el nombre
 
@@ -78,7 +78,9 @@ El INPI anuncia $420,43 por UMAPI desde el 01/11/2026: la base de tres clases pa
 
 Esta descripción reemplaza, para este expediente actual, la preparación histórica que presentaba voz/fotografía con IA como una función habilitada.
 
-**Copia actual preparada y verificada:** web 172, commit `dbfc57ed1916ed21e4f925dda5c8044479679cf3`, con sus 490 archivos seguidos por Git; proyecto Android `mobile/android`, 24 archivos del repositorio `tequedo/despensa-precios`, commit `24afb74617347eab9a73361f4947d6af69a5e947`. Son dos implementaciones separadas. Se conservaron instrucciones, dependencias y avisos; se excluyen claves de producción y bases personales. Los ZIP se comprobaron contra sus manifiestos por archivo. El paquete pesa 3.236.425 bytes y queda identificado en `COPIA_DNDA_2026-10-23.json`. No es un depósito presentado ni una certificación de autoría; el formato aceptado debe cotejarse en TAD.
+**Copia actual preparada y verificada, actualizada el 25/10:** web 173, commit `e9a8ae902a02631b11ecce363058a5e7775b7d0f`, con sus **491 archivos seguidos por Git**; proyecto Android `mobile/android`, **24 archivos**. El componente Android conserva el ZIP fijado a `24afb74617347eab9a73361f4947d6af69a5e947`; además se cotejó cada blob con el árbol vigente `e29773e7e284ef09a57101838e3d96bc2ea935e6` y todos coinciden. Son dos implementaciones separadas. Los 490 archivos web de la copia anterior conservaron contenido y modo; se añadió únicamente `public/.well-known/assetlinks.json`, con las huellas públicas reales de distribución. Se conservaron instrucciones, dependencias y avisos; se excluyen claves de producción y bases personales.
+
+El paquete actualizado pesa **3.251.397 bytes**, SHA-256 `65a88f59a17e88a6bbb9d5da2a704779fa1d6231639c60200216b2c635c3f978`, y queda identificado en [`COPIA_DNDA_2026-10-25.json`](COPIA_DNDA_2026-10-25.json). Se verificaron todos los archivos por ruta, bytes, huella y modo, y se reabrieron los ZIP. La identidad del archivo de preparación y su historial se conservaron; el corte del 23/10 permanece como antecedente. No es un depósito presentado ni una certificación de autoría. La página oficial de DNDA reconsultada el 25/10 indica que, para depósito digital, las instrucciones de carga se reciben después de iniciar el expediente: no se declara anticipadamente aceptado este ZIP. [S7]
 
 La Ley 11.723 incluye código fuente y objeto y protege la expresión, no la idea o el método. La vía DNDA de software publicado exige identificación y copia completa. Corresponde revisar la modalidad, editor, fecha/lugar de publicación, aportes y derechos verdaderos; no se adjudica automáticamente toda la creación a quien tuvo la idea. [S6, S7]
 
@@ -116,7 +118,7 @@ La política y operación deben permitir acceso, rectificación y supresión. AA
 
 **P28-ARCA, vinculado al frente 17:** la actividad médica previa no demuestra el encuadre fiscal de la app. Primero se define quién operará y cobrará y el modelo efectivo de ingresos; luego se revisan en privado actividades, régimen, obligaciones provinciales y facturación correspondientes. No se selecciona monotributo por defecto ni se deduce una exención fiscal por tratarse de una beta gratuita. La guía oficial de ARCA sobre RUT sirve de referencia de trámites, no de decisión de régimen. No se revisaron nuevas constancias ni se efectuó un alta o cambio. [S15]
 
-**Google Play:** la cuenta recuperada es personal, según tu aclaración. Queda excluida de credenciales para revisores. Hace falta una identidad dedicada de prueba, bajo tu control, sin datos de tu despensa real, y comprobar su acceso repetible. Las instrucciones de Console están preparadas sin guardar; no hay credenciales compartidas ni una versión Android enviada.
+**Google Play, actualizado el 25/10:** el titular creó una identidad dedicada y escribió las credenciales directamente en Console, sin que el asistente leyera la contraseña. Se guardaron las instrucciones de acceso corregidas y se comprobó el recorrido web usando la sesión Google existente. El panel muestra **10/11 tareas iniciales completas**, con Seguridad de los datos guardada tras aprobación específica y ficha pendiente de capturas. Público guardado: 13–15, 16–17 y 18+. La web 173 publica la asociación Android y el verificador oficial de Google confirmó el vínculo con el certificado en uso. Siguen pendientes la firma del titular, una sesión Google independiente, la instalación y capturas del Android final y el borrado/recreación. La cuenta personal se mantiene fuera de las credenciales de revisión; no se envió una versión Android a revisión. Evidencia: [`AVANCE_PLAY_CONSOLE_2026-10-25.md`](AVANCE_PLAY_CONSOLE_2026-10-25.md).
 
 | Se entrega preparado en esta revisión | Evidencia que falta para el cierre correspondiente |
 | --- | --- |
@@ -135,7 +137,7 @@ Antes de firmar, presentar o generar un pago se debe mostrar la solicitud concre
 
 ## 7. Fuentes y evidencia
 
-Fuentes públicas consultadas el 23/10/2026. Las valoraciones indicadas como inferencias son la evaluación preliminar de este expediente; las fichas observadas no son un dictamen del INPI sobre nuestra app.
+Fuentes públicas jurídicas y marcarias consultadas el 23/10/2026; S7 se volvió a consultar el 25/10/2026 para el paquete técnico. Las actualizaciones operativas del 25/10 se apoyan en la evidencia indicada del proyecto. Las valoraciones indicadas como inferencias son la evaluación preliminar de este expediente; las fichas observadas no son un dictamen del INPI sobre nuestra app.
 
 - [S0. Buscador público INPI](https://portaltramites.inpi.gob.ar/marcasconsultas/busqueda). Consultas y actas detalladas en los dos JSON de evidencia del proyecto. Reproducir por denominación/filtros o número de acta; la URL genérica de resultados no identifica una ficha.
 - [S1. Ley 22.362, texto actualizado](https://www.argentina.gob.ar/normativa/nacional/ley-22362-18803/actualizacion). Distintividad, antecedentes, registro y prioridad; arts. 1 a 4 y 8.
@@ -156,4 +158,4 @@ Fuentes públicas consultadas el 23/10/2026. Las valoraciones indicadas como inf
 - [S16. INPI: aranceles vigentes y UMAPI](https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles). Valor unitario actual y aumento anunciado.
 - [S17. INPI: anexo oficial de aranceles](https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf). Códigos 110001, 110100 y 141100; recalcular con la UMAPI actual.
 
-Evidencia interna: web 172 e inventarios; `INPI_CONSULTAS_2026-10-23.json`; `CONTINGENCIA_MARCA_2026-10-23.json`; fichas de titularidad y AAIP de esta fecha; estado único de los 31 frentes. Los informes históricos y los datos privados del titular no se sustituyen ni se publican mediante este documento.
+Evidencia interna: web 173 y copia técnica verificada `COPIA_DNDA_2026-10-25.json`; antecedentes de web 172 e inventarios; `INPI_CONSULTAS_2026-10-23.json`; `CONTINGENCIA_MARCA_2026-10-23.json`; fichas de titularidad y AAIP de esta fecha; estado único de los 31 frentes. Los informes históricos y los datos privados del titular no se sustituyen ni se publican mediante este documento.
