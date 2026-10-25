@@ -27,9 +27,9 @@ El ingreso reutilizó una sesión Google ya existente en este navegador. **No pr
 
 Se guardaron **13–15, 16–17 y mayores de 18 años**. El titular indicó conservar el alcance actual de la app si incluir grupos menores exigía ampliarlo; se retiró 9–12 y no se seleccionó 6–8. Esto no certifica cumplimiento de todas las reglas locales para adolescentes.
 
-El panel confirmó **9 de 11 tareas iniciales completadas**, incluidos acceso y público objetivo. Las pendientes son Seguridad de los datos y la ficha de Play Store. Este recuento no es el de los 31 frentes del proyecto.
+Después de la aprobación específica del titular y del guardado final de Seguridad de los datos, el panel confirmó **10 de 11 tareas iniciales completadas**, incluidos acceso, público objetivo y Seguridad de los datos. La única tarea inicial pendiente es la ficha de Play Store. Este recuento no es el de los 31 frentes del proyecto.
 
-## Seguridad de los datos: vista previa revisada, guardado final bloqueado
+## Seguridad de los datos: guardado final confirmado
 
 Se recorrieron los cinco pasos del borrador existente y se observaron **16 de 16 tipos completados**. Las categorías actuales excluyen audio. La fuente publicada mantiene `PAID_RECOGNITION_ENABLED = false` y ambos POST de reconocimiento devuelven la respuesta de pausa antes de procesar la carga o llamar al proveedor. Las fotos manuales adjuntas a productos siguen siendo una función distinta y opcional.
 
@@ -58,7 +58,7 @@ Datos compartidos declarados: **ubicación precisa**, para funciones; **disposit
 
 La respuesta existente de cifrado en tránsito es **Sí**. La revisión de fuente observó llamadas del cliente al mismo origen HTTPS y destinos HTTPS para Google, Georef, correo y datos de precios; el reconocimiento está pausado. La definición consultada de Google se refiere al transporte entre dispositivo y servidor de la app. Esto no constituye una auditoría independiente, cifrado de extremo a extremo ni validación del paquete Android final.
 
-Al intentar Guardar, la **revisión automática rechazó la acción**: señaló respuestas no confirmadas, como cifrado universal y datos compartidos, y falta de aprobación del titular para ese contenido exacto. No se reintentó ni se evitó ese rechazo. El borrador anterior se conserva; falta autorización específica y resolver la verificación requerida antes de afirmar guardado final. No se envió a revisión.
+Al intentar Guardar, la **revisión automática rechazó la acción**: señaló respuestas no confirmadas, como cifrado universal y datos compartidos, y falta de aprobación del titular para ese contenido exacto. No se evitó ese rechazo. Se presentó al titular la declaración exacta y su detalle; tras su aprobación expresa se realizó un segundo Guardar normal, que fue aceptado. La consola mostró **Se guardó el cambio** y el panel pasó a **10/11**, con Seguridad de los datos completada. La resolución corresponde a esta acción aprobada, no a una eliminación general de los controles de revisión. No se envió la app a revisión.
 
 ## Ficha de la tienda
 
@@ -69,7 +69,7 @@ Se reabrió y leyó la ficha es-419: nombre Dónde Rinde, descripción breve de 
 ## Límites y próximos cierres
 
 - Frente 23: identidad dedicada implementada y validada en el alcance web descrito; falta otra sesión/dispositivo, Android firmado y borrado/recreación con datos descartables.
-- Frente 24: 9/11 tareas iniciales; guardado final de Seguridad de los datos bloqueado por revisión automática y ficha pendiente de capturas.
+- Frente 24: 10/11 tareas iniciales; Seguridad de los datos guardada tras aprobación específica del titular y ficha pendiente de capturas.
 - Firma de producción, AAB, asociación de certificados y pruebas físicas mantienen su estado previo. No se subió una versión a Play.
 - La prueba cerrada continúa con 0 participantes observados; no se acredita el requisito de 12 participantes durante 14 días.
 - Los bloqueos de conservación, restauración y proveedores de los frentes 15–17 siguen abiertos. Este formulario no los cierra.
