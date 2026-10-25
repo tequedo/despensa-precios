@@ -183,7 +183,7 @@
       "title": "Preparación de Play Console",
       "window": 3,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Panel de Play Console: 9/11 tareas iniciales completadas. Acceso de revisión guardado; público objetivo 13–15, 16–17 y 18+ guardado. Seguridad de los datos: borrador existente con 16/16 tipos y vista previa 5/5 revisados; guardado final rechazado por revisión automática por validación pendiente y falta de aprobación específica. Ficha es-419 reabierta y coherente con la versión 172; ícono/gráfico cargados, 0 capturas de teléfono. No se subió AAB ni se envió a revisión."
+      "evidenceAndLimit": "Panel de Play Console: 10/11 tareas iniciales completadas. Acceso de revisión e instrucciones corregidas guardados; público 13–15, 16–17 y 18+ guardado. Seguridad de los datos: 16/16 tipos y vista previa 5/5 revisados; tras aprobación específica del titular se aceptó Guardar y se observó confirmación. El rechazo automático inicial no se eludió. Ficha es-419 coherente con web 172, ícono/gráfico cargados y 0 capturas de teléfono. No hay AAB subido ni envío a revisión."
     },
     {
       "number": 25,
@@ -496,7 +496,7 @@
     "phoneScreenshotsUploaded": 0,
     "appSubmitted": false,
     "dataSafetyChanged": false,
-    "dataSafetyBrowserBlocked": true,
+    "dataSafetyBrowserBlocked": false,
     "evidence": "PLAY_FICHA_Y_DIFUSION_2026-10-22.md",
     "dataSafetyStep": 5,
     "dataSafetyTotalSteps": 5,
@@ -521,15 +521,14 @@
       "device or other IDs"
     ],
     "dataSafetyRemaining": [
-      "Validate and obtain owner-specific approval for the exact declaration flagged by automatic review",
-      "Check consistency with the final signed Android artifact",
-      "Final submission and Google review"
+      "Consistency check against the final signed Android artifact if behavior changes",
+      "Google review with the app submission"
     ],
     "browserOriginConfirmed": "https://play.google.com",
     "browserOriginCheck": "Fresh metadata-only URL check confirmed https://play.google.com. The subsequent normal page read was authorized and succeeded; no browser permission or security policy was changed.",
     "dataSafetyTypesObserved": 16,
     "dataSafetyLatestSaveConfirmed": true,
-    "dataSafetyLatestSaveState": "Existing 16/16 draft retained. Step 5/5 preview reviewed on 2026-10-25; final Save rejected by automatic approval review. No submission.",
+    "dataSafetyLatestSaveState": "Final Save accepted after specific owner approval. Saved confirmation and dashboard 10/11 observed on 2026-10-25. App not submitted.",
     "dataSafetyCheckpoint": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
     "browserReviewBlock": {
       "reportedBy": "owner screenshot",
@@ -574,29 +573,32 @@
       "subsequentNormalSavesSucceeded": true,
       "securityControlsChanged": false
     },
-    "dataSafetySubmissionBlock": "Final Save to publication overview rejected by automatic approval review on 2026-10-25; verification and owner-specific approval pending. No retry or workaround.",
+    "dataSafetySubmissionBlock": "No current block on the approved saved Data safety declaration. Store listing screenshots and the final Android release prerequisites remain before app submission.",
     "accessInstructionsPrepared": true,
     "accessInstructionsSaved": true,
     "dedicatedReviewerAccountVerified": true,
     "targetAudienceSaved": true,
     "targetAudienceBlockedBy": null,
-    "lastObservedInitialTasksCompleted": 9,
+    "lastObservedInitialTasksCompleted": 10,
     "initialTasksTotal": 11,
     "initialTasksPending": [
-      "Seguridad de los datos",
       "Ficha de Play Store"
     ],
     "dataSafetyExistingDraftRetained": true,
-    "dataSafetyFinalSaveConfirmed": false,
+    "dataSafetyFinalSaveConfirmed": true,
     "dataSafetySaveReview": {
       "date": "2026-10-25",
       "action": "Final Save of Data safety",
       "rejected": true,
       "reason": "Responses including universal encryption and shared data were flagged as not fully confirmed; exact content lacked specific owner approval.",
-      "attempts": 1,
-      "retried": false,
+      "attempts": 2,
+      "retried": true,
       "workaroundAttempted": false,
-      "ownerSpecificApprovalPending": true
+      "ownerSpecificApprovalPending": false,
+      "ownerSpecificApprovalReceived": true,
+      "ownerApprovalDate": "2026-10-25",
+      "resolvedForApprovedSave": true,
+      "normalSaveSucceeded": true
     },
     "accessInstructionsCharacters": 451,
     "accessInstructionsLastChecked": "2026-10-25",
@@ -607,7 +609,8 @@
       "16-17",
       "18+"
     ],
-    "latestEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
+    "latestEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+    "dataSafetyLatestSaveDate": "2026-10-25"
   },
   "notificationPrivacyRelease": {
     "version": 171,
@@ -684,7 +687,7 @@
       ],
       "status": "closed for saved draft of all 16 types and step 5 preview",
       "evidence": "PLAY_SEGURIDAD_CHECKPOINT_2026-10-22.md",
-      "limit": "Existing draft remains saved and 16/16 types were rechecked on 2026-10-25. Access and audience are now saved; final Save is blocked by automatic review. No Android upload, final submission or Google approval.",
+      "limit": "Draft and final Save are now confirmed after the owner's specific approval on 2026-10-25. No Android upload, app review submission or Google approval.",
       "latestReviewEvidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
     },
     {
@@ -765,6 +768,15 @@
       "status": "closed for the observed hosted-web confirmation flow: optional blank amount leaves spending at zero; confirming a fictitious ARS 1 amount creates one recorded expense",
       "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
       "limit": "Dedicated test account only; no real payment or purchase. Physical Android, erasure/recreation and independent-device access remain pending."
+    },
+    {
+      "id": "P24-DATA-SAFETY-FINAL-SAVE",
+      "points": [
+        24
+      ],
+      "status": "closed for approved final Save of the 16-type Data safety declaration; dashboard confirms 10/11 initial tasks",
+      "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md",
+      "limit": "No app submission or Google approval. Signed Android consistency, store screenshots and other release prerequisites remain."
     }
   ],
   "legalFiscalPreparation": {
