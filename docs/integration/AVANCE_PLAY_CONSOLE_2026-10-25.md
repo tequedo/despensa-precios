@@ -75,3 +75,10 @@ Se reabrió y leyó la ficha es-419: nombre Dónde Rinde, descripción breve de 
 - Los bloqueos de conservación, restauración y proveedores de los frentes 15–17 siguen abiertos. Este formulario no los cierra.
 
 Fuente primaria para las definiciones: [Google Play — Data safety](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en). Requisitos para públicos infantiles: [Google Play Families Policies](https://support.google.com/googleplay/android-developer/answer/9893335?hl=en&ref_topic=9877766).
+
+
+## Prueba adicional del gasto confirmado
+
+Después de la primera prueba sin importe, se verificó el flujo con un dato ficticio de **$1 ARS**, exclusivamente en la cuenta dedicada. Desde las 2 unidades pendientes se eligió 1, se escribió el importe y el comercio **PRUEBA — sin compra real**, y se confirmó con Agregar a En casa. La app mostró 2 unidades disponibles y 1 pendiente. Gastos pasó de 0 a **1 compra registrada**, total $1, con ese nombre de comercio. No hubo pago ni compra real y el catálogo público no fue modificado. El estado final de esta fixture es 2 en casa, 1 pendiente y un importe ficticio registrado de $1.
+
+La confirmación ya existe en la interfaz como Pasar a En casa; el gasto usa el importe ingresado por el usuario y no el estimado del catálogo. Cuando se ingresa un importe, el campo Comercio pasa a ser obligatorio. No fue necesario agregar otra función para comprobar este comportamiento.
