@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 177,
-  "webBaseCommit": "046943eaabafc4a83dbfeb1bfad24e464c750e57",
+  "publishedWebVersion": 178,
+  "webBaseCommit": "5ee506adcc21c9a1cf6ef66de6e9945d05f78436",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -36,7 +36,7 @@
       "title": "Identidad y calidad de productos",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la repetición física de esta corrección."
+      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la validación de otros productos. El titular confirmó la comparación Natura en Samsung con captura posterior."
     },
     {
       "number": 4,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación y arranque de Dónde Rinde Prueba Nueva 0.1.2 en Samsung. Las capturas muestran una falla al comparar Natura girasol 1,5 L; reproducida y corregida en web 177. Falta repetir la comparación en el teléfono y completar el recorrido funcional y el segundo dispositivo. No se reconstruye el APK."
+      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia."
     },
     {
       "number": 11,
@@ -332,11 +332,12 @@
     "productIdentityTypesPassed": true,
     "productIdentityBuildPassed": true,
     "samsungOwnerReportedInstallAndLaunch": true,
-    "samsungComparisonAfterFixVerified": false,
+    "samsungComparisonAfterFixVerified": true,
     "comparisonSelectionReleaseTests": 326,
     "comparisonSelectionFocusedTests": 44,
     "comparisonSelectionTypesPassed": true,
-    "comparisonSelectionBuildPassed": true
+    "comparisonSelectionBuildPassed": true,
+    "samsungComparisonEvidence": "owner_confirmation_and_supplied_screenshot"
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -1976,9 +1977,39 @@
     "productionBrowserFlowVerified": false,
     "samsungInstallAndLaunch": "owner_reported",
     "samsungComparisonBeforeFix": "failed_owner_screenshots",
-    "samsungComparisonAfterFix": "pending_owner_retest",
+    "samsungComparisonAfterFix": "owner_confirmed_with_screenshot",
     "secondPhoneVerified": false,
     "androidRebuilt": false,
-    "pointFullyClosed": false
+    "pointFullyClosed": false,
+    "samsungConfirmationDate": "2026-10-26"
+  },
+  "visualDensityReview": {
+    "date": "2026-10-26",
+    "webVersion": 178,
+    "sourceCommit": "5ee506adcc21c9a1cf6ef66de6e9945d05f78436",
+    "deploymentId": "appgdep_6adf97488710819184f9f6b6ea2927a5",
+    "publication": "succeeded",
+    "evidence": "docs/integration/DENSIDAD_VISUAL_2026-10-26.md",
+    "sections": [
+      "En casa",
+      "Mi lista",
+      "Precios",
+      "Gastos",
+      "formularios y diálogos",
+      "mayoristas",
+      "promociones"
+    ],
+    "changeType": "CSS_only",
+    "informationPreserved": true,
+    "themePreserved": true,
+    "minimumControlHeightCssPx": 44,
+    "diffCheckPassed": true,
+    "buildPassed": true,
+    "functionalBaselineWebVersion": 177,
+    "functionalBaselineTests": 326,
+    "newFunctionalTestsRun": false,
+    "browserVisualVerified": false,
+    "samsungVisualAfterChangeVerified": false,
+    "secondPhoneVerified": false
   }
 }
