@@ -75,23 +75,52 @@
     "announcedPerClassArs": "42043.00",
     "announcedBaseTotalArs": "126129.00",
     "notAnActualCombinedLiquidation": true,
-    "allThreeActualDraftTotalsVerified": false,
-    "note": "The annex identifies tariff units; historical peso amounts printed there use the earlier unit. Current estimates use the current official unit page."
+    "allThreeActualDraftTotalsVerified": true,
+    "note": "The annex identifies tariff units; historical peso amounts printed there use the earlier unit. Current estimates use the current official unit page.",
+    "actualExistingDraftDialogsVerifiedOn": "2026-10-25",
+    "actualExistingDraftClassesAndTermCounts": [
+      {
+        "class": 9,
+        "terms": 1,
+        "umapi": 100
+      },
+      {
+        "class": 35,
+        "terms": 5,
+        "umapi": 100
+      },
+      {
+        "class": 42,
+        "terms": 3,
+        "umapi": 100
+      }
+    ],
+    "class35And42StillCarryPreviousName": true,
+    "allThreeCurrentNameRequestTotalsVerified": false
   },
   "currentAuthentication": {
     "observedOn": "2026-10-25",
-    "currentPortalSessionAuthenticated": false,
+    "currentPortalSessionAuthenticated": true,
     "loginOrigin": "https://auth.afip.gob.ar",
     "securePromptAttempted": true,
-    "securePromptShown": false,
-    "identifierTransmitted": false,
-    "automaticReviewRejected": true,
+    "securePromptShown": true,
+    "identifierTransmitted": true,
+    "automaticReviewRejected": false,
     "manualUserRejection": false,
     "reason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
     "workaroundAttempted": false,
     "retried": false,
-    "ownerSpecificApprovalPending": true,
-    "nextAction": "Obtain specific owner authorization for secure CUIT/CUIL and clave fiscal sign-in to ARCA for recovery/review of INPI drafts; then issue the normal browserAuth request."
+    "ownerSpecificApprovalPending": false,
+    "nextAction": "Specific authorization for the finalization operation described below; routine authorized sign-in does not need another approval.",
+    "ownerSpecificApprovalReceived": true,
+    "ownerApprovalDate": "2026-10-25",
+    "identifierTransmissionOwnerApproved": true,
+    "passwordReadOrCopied": false,
+    "automaticReviewRejectedHistorically": true,
+    "resolvedForApprovedLogin": true,
+    "retriedAfterSpecificApproval": true,
+    "normalApprovedLoginSucceeded": true,
+    "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success."
   },
   "savedNewDrafts": false,
   "editedExistingDrafts": false,
@@ -100,16 +129,109 @@
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Authenticated review of all fields and holder data",
-    "Actual INPI catalog matching for classes 35/42",
-    "Consistent final denomination",
-    "Final scope including any advertising terms",
-    "Review of relevant antecedents and service overlap",
-    "Actual form totals",
-    "Owner review and action-time approval of the concrete filing and payment"
+    "Owner approval to update the old-name drafts and finalize the three forms for review",
+    "Review the generated forms including complete stored holder addresses and any declarations",
+    "Consistent final denomination and goods/services scope",
+    "Final evaluation of relevant antecedents and service overlap",
+    "Owner action-time approval of actual signature and payment/final filing"
   ],
   "sources": [
     "https://www.argentina.gob.ar/inpi/marcas/clasificacion-de-marcas",
     "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca"
-  ]
+  ],
+  "authenticatedReview": {
+    "date": "2026-10-25",
+    "portalSessionConfirmed": true,
+    "credentialsHandledBySecureBrowserAuth": true,
+    "passwordReadOrCopied": false,
+    "reviewScope": "Visible draft sections and fee dialogs; saved holder address fields were not exposed by the draft summary table.",
+    "classes": [
+      {
+        "number": 9,
+        "currentDenomination": "DONDE RINDE",
+        "modality": "D-DENOMINATIVA",
+        "selectedCount": 1,
+        "selectedTerms": [
+          "APLICACIONES DE SOFTWARE DESCARGABLES"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      },
+      {
+        "number": 35,
+        "currentDenomination": "RINDECASA",
+        "proposedDenomination": "DONDE RINDE",
+        "modality": "D-DENOMINATIVA",
+        "selectedCount": 5,
+        "selectedTerms": [
+          "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+          "PROMOCIÓN DE VENTAS PARA TERCEROS",
+          "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+          "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+          "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      },
+      {
+        "number": 42,
+        "currentDenomination": "RINDECASA",
+        "proposedDenomination": "DONDE RINDE",
+        "modality": "D-DENOMINATIVA",
+        "selectedCount": 3,
+        "selectedTerms": [
+          "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+          "SOFTWARE COMO SERVICIO [SAAS]",
+          "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      }
+    ],
+    "sharedVisibleSections": {
+      "foreignPriorityRows": 0,
+      "representationFieldsEmpty": true,
+      "ownerAccountIsHolder": true,
+      "bankruptcyCheckboxChecked": false,
+      "olympicCommitteeSelection": "No Corresponde",
+      "observationsEmpty": true,
+      "supportingDocumentRows": 0
+    },
+    "sensitiveHolderIdentifiersStoredHere": false,
+    "fullStoredAddressReviewFinished": false,
+    "actualExistingFormsFeeDialogsVerified": true,
+    "allThreeCurrentNameRequestsReady": false,
+    "newDraftCreated": false,
+    "existingDraftEdited": false,
+    "finalized": false,
+    "signed": false,
+    "newPaymentMade": false,
+    "newFilingPerformed": false,
+    "proposedNextOperation": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing."
+  },
+  "finalizationReview": {
+    "date": "2026-10-25",
+    "action": "Confirm Sí after Finalizar on existing class 9 draft",
+    "automaticReviewRejected": true,
+    "manualUserRejection": false,
+    "reason": "Confirmation may generate or advance a formal trademark application and create legal or financial consequences; the specific user authorization covered access and review, not finalization or submission.",
+    "confirmationApplied": false,
+    "modalCancelledWithNo": true,
+    "workaroundAttempted": false,
+    "retried": false,
+    "ownerSpecificApprovalPending": true,
+    "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
+    "legalSigningPending": true,
+    "paymentPending": true,
+    "governmentFilingPending": true
+  }
 }
