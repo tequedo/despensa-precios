@@ -218,7 +218,7 @@
     "sessionExpiredBetweenTurns": true
   },
   "savedNewDrafts": false,
-  "editedExistingDrafts": false,
+  "editedExistingDrafts": true,
   "signaturePerformed": false,
   "paymentOrderCreated": false,
   "paymentMade": false,
@@ -462,5 +462,12 @@
     "currentContactEmailConfirmed": true,
     "civilCategoryConfirmed": true,
     "privateValuesOmitted": true
+  },
+  "existingDraftEditScope": {
+    "class": 9,
+    "source": "Previously finalized current-name form converted to draft",
+    "change": "Owner-confirmed missing holder field corrected",
+    "historicalOriginalDraftsUnchanged": true,
+    "correctedUnsignedFormVerified": true
   }
 }
