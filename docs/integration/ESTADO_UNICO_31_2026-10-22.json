@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 181,
-  "webBaseCommit": "b736f2c3b06eb6eb01512eb233686d0e0c5772eb",
+  "publishedWebVersion": 182,
+  "webBaseCommit": "a6ec7c14fc3202537346d838debd3abfbcd64d3e",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -64,14 +64,14 @@
       "title": "Beneficios personales",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Cálculo bloqueado ante mínimos, topes, período, titular o importes incompletos. Reintegro separado del pago en caja; elegibilidad y saldo requieren confirmación."
+      "evidenceAndLimit": "Cálculo bloqueado ante mínimos, topes, período, titular o importes incompletos. Reintegro separado del pago en caja; elegibilidad y saldo requieren confirmación. Web 182 integra la revisión de beneficios en el recorrido de Comparar lista, antes de Ya compré; aplicar un beneficio vuelve a calcular el total completo. Las reglas y límites de elegibilidad se mantienen."
     },
     {
       "number": 8,
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 179 incorpora cuatro regresiones sobre el Worker construido para cuenta, lista, compra parcial, reintento, aislamiento y borrado/recreación; suite completa de 330 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Se usan SQLite descartable y sesiones de la app firmadas localmente, sin OAuth real, datos ni escrituras de producción. El ingreso Google web observado anteriormente se conserva como evidencia separada. Recorrido alojado completo y Android físico siguen pendientes. La revisión de web 180 suma cinco regresiones de alta/variedad: 335 pruebas completas aprobadas, 0 fallos y 0 omitidas; tipos y compilación aprobados. No añade una comprobación alojada o física completa."
+      "evidenceAndLimit": "26/10: web 182 publicada; suite completa de 344 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Siete controles específicos del nuevo recorrido y cálculo completo aprobados. Se conserva la evidencia anterior de ingreso Google real y recuperación web. La ejecución alojada completa, confirmación de todos los pasos en Samsung y Android final siguen pendientes; no se operaron datos privados de producción en esta revisión."
     },
     {
       "number": 9,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia. Se actualiza la guía física vigente: conserva esos hitos confirmados y corrige instrucciones anteriores de reconocimiento pago y bloqueos C1/C2. No se ejecutó el recorrido físico restante. Las capturas posteriores muestran el formulario y el alta de 3 paquetes Arroz Gallo 500 g, stock 0 y precio pendiente por variedad sin resolver. Aún no acreditan pasar sólo 1 a En casa, dejar 2 pendientes y conservar los gastos. El titular informó que no encontraba Pasar a En casa; las capturas muestran Gallo 0 y Lucchetti 1, y no validan la recepción parcial de Gallo. Web 181 añade un acceso destacado al principio de Mi lista, antes de Agregar producto. Hace falta actualizar la pantalla y verificarlo físicamente."
+      "evidenceAndLimit": "El titular confirmó descarga, instalación, arranque y comparación Natura en Samsung. Sus capturas posteriores acreditan el alta de 3 Gallo con stock 0 y la visualización del acceso de web 181; el mensaje de éxito posterior no identifica las cantidades finales del caso Gallo. Web 182 reemplaza el acceso grande por Ya compré al final de la comparación completa, agrega carga sucesiva/finalización en En casa y compacta las tarjetas. Tres tarjetas por pantalla es un objetivo pendiente de medición física; recorrido completo y segundo dispositivo pendientes."
     },
     {
       "number": 11,
@@ -113,7 +113,7 @@
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público. 26/10: recorrido integrado del Worker construido confirma lista guardada/compartida, unidades y kg parciales, importes sólo explícitos, recuperación y reintento idempotente con reversión íntegra de un lote fallido; datos locales ficticios. El titular documentó en Samsung el alta de 3 paquetes y stock 0. La recepción parcial física sigue pendiente; web 180 además verifica por eventos que elegir la variedad no reinicia esas 3 unidades. Web 181 facilita el acceso al diálogo de recepción desde el principio de Mi lista; abrirlo no escribe existencias ni gastos. El caso físico Gallo 3 solicitadas, 1 recibida y 2 pendientes continúa sin confirmación."
+      "evidenceAndLimit": "Compra parcial, saldo pendiente, stock, importes sólo explícitos, recibos transaccionales e idempotencia conservan sus controles de rutas y Worker SQLite. La cuenta dedicada ya tuvo una prueba web con 2 en casa, 1 pendiente y ARS 1 ficticio, sin pago real. Web 182 agrega Guardar y agregar otro y Finalizar carga a En casa; la última entrada completa se guarda antes de cerrar y un fallo conserva el formulario. Ya compré se ofrece después de comparar el total de la lista y abre la confirmación que actualiza existencias. Suite completa de 344 aprobadas. El caso físico Gallo 3/1/2, resto del recorrido y segundo teléfono permanecen sin confirmación."
     },
     {
       "number": 15,
@@ -155,7 +155,7 @@
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3. Web 180: suite completa de 335 aprobadas después de corregir el selector de variedades del alta; guía y estados mantienen sus límites físicos y operativos."
+      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3. Web 180: suite completa de 335 aprobadas después de corregir el selector de variedades del alta; guía y estados mantienen sus límites físicos y operativos. Web 182 pasa 344 pruebas completas tras integrar carga inicial, comparación global y confirmación de lo comprado. No acredita operación del alojamiento, entrega real de correo ni cierre C3."
     },
     {
       "number": 21,
@@ -364,7 +364,15 @@
     "checkoutAccessBuildPassed": true,
     "samsungCheckoutNotVisibleReported": true,
     "checkoutAccessPostFixPhoneVerified": false,
-    "shoppingManualPhotoInputRemoved": true
+    "shoppingManualPhotoInputRemoved": true,
+    "purchaseFlowFocusedPassed": 7,
+    "purchaseFlowReleaseTests": 344,
+    "purchaseFlowFailed": 0,
+    "purchaseFlowSkipped": 0,
+    "purchaseFlowTypesPassed": true,
+    "purchaseFlowBuildPassed": true,
+    "purchaseFlowPostFixPhoneVerified": false,
+    "threeShoppingCardsPerScreenPhysicallyVerified": false
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -1000,6 +1008,18 @@
       "status": "closed for published prominent checkout entry and removal of the optional photo field from shopping entry, with 18 focused checks",
       "evidence": "docs/integration/ACCESO_A_EN_CASA_2026-10-26.md",
       "limit": "Exact visibility cause and post-fix phone behavior unconfirmed. Gallo partial-checkout test remains pending; no production data was changed."
+    },
+    {
+      "id": "P14-INVENTORY-COMPARE-BOUGHT-FLOW-182",
+      "points": [
+        7,
+        8,
+        10,
+        14
+      ],
+      "status": "closed for published continuous inventory entry, explicit finish, complete-basket comparison before bought confirmation and compact shopping cards; local validation passed",
+      "evidence": "docs/integration/RECORRIDO_COMPRA_Y_CARGA_2026-10-26.md",
+      "limit": "344 local tests, types and build only. No independent visual check, measured three-card screen, final physical Gallo 3/1/2 proof, second phone or whole-front closure."
     }
   ],
   "legalFiscalPreparation": {
@@ -2157,6 +2177,13 @@
       "request": "Reducir un poco más el espacio interno conservando información, estética y comodidad",
       "ownerRequestedTiming": "Después de terminar la prueba física en curso",
       "status": "pending; intentionally deferred by owner"
+    },
+    {
+      "id": "P10-THREE-SHOPPING-CARDS-SCREEN",
+      "requestedOn": "2026-10-26",
+      "target": "Tarjetas de productos de Mi lista",
+      "request": "Aproximadamente tres productos por pantalla conservando información y estética",
+      "status": "implemented in web 182; pending actual Samsung measurement and enlarged-text visual review"
     }
   ],
   "checkoutAccessReview": {
@@ -2187,6 +2214,41 @@
     },
     "postFixPhysicalVerified": false,
     "physicalPartialCheckoutVerified": false,
+    "wholeFrontsNewlyClosed": 0
+  },
+  "purchaseFlowReview": {
+    "asOf": "2026-10-26",
+    "publishedWebVersion": 182,
+    "sourceCommit": "a6ec7c14fc3202537346d838debd3abfbcd64d3e",
+    "evidence": "docs/integration/RECORRIDO_COMPRA_Y_CARGA_2026-10-26.md",
+    "inventoryContinuousEntry": true,
+    "inventorySaveAnother": true,
+    "inventoryFinishSavesCompleteCurrentProduct": true,
+    "inventoryFinishPreservesFormOnFailure": true,
+    "inventorySessionAtomic": false,
+    "wholeListComparisonForOneOrMoreProducts": true,
+    "comparisonIncludesVerifiedPromotionsAndApplicableBenefits": true,
+    "personalBenefitRecalculationBeforePurchaseConfirmation": true,
+    "cheapestCompleteBasketRegressionPassed": true,
+    "boughtActionPosition": "after whole-list comparison attempt, at the end of results; hidden while recalculating",
+    "oldLargeEntryRemoved": true,
+    "physicalPurchaseConfirmationRequired": true,
+    "estimatedPricesAutomaticallyRecordedAsExpenses": false,
+    "compactShoppingCards": true,
+    "allCardInformationRetained": true,
+    "minimumTouchTargetCssPx": 44,
+    "targetVisibleShoppingCards": 3,
+    "threeCardsPhysicallyMeasured": false,
+    "postFixPhoneVerified": false,
+    "newRegressionTests": 6,
+    "focusedPassed": 7,
+    "fullTestsPassed": 344,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "typesPassed": true,
+    "buildPassed": true,
+    "productionDataWrites": 0,
     "wholeFrontsNewlyClosed": 0
   }
 }
