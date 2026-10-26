@@ -1,5 +1,11 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Aclaración posterior del titular, 26/10: no realizó el pago
+
+El titular aclaró expresamente que **no pagó** las búsquedas fonéticas. Por lo tanto, la respuesta de Mago queda descartada como confirmación de esta orden. No se sabe a qué factura se refería ni se atribuye un pago al titular.
+
+**Estado vigente:** tres búsquedas firmadas; orden QR existente por **$27.230,94**, pendiente de abonar según el titular. La sesión de esta ventana sigue sin verificación autenticada reciente. El siguiente paso es ayudar a abrir el volante existente en el dispositivo del titular y abonarlo por Mercado Pago, y después cotejar el comprobante y la acreditación. No se exige un comprobante de un pago que el titular dice que todavía no hizo. No se genera otra orden salvo que se compruebe que la original venció o resulta inutilizable. El pago del registro de marca continúa pausado.
+
 ## Actualización del 26/10: mensaje de pago informado; comprobante pendiente
 
 El titular compartió una captura de un asistente llamado Mago que dice que la factura de ARCA ya figura paga y que no inició otro pago. La imagen no muestra comprobante de transacción, importe ni número que permita asociarlo a la orden fonética. **No se confirma el pago y no debe repetirse antes de comprobarlo.**
