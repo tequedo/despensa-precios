@@ -531,6 +531,81 @@
     "preliminaryGraphicRepresentationsViewed": 4,
     "fullPhoneticGraphicConceptualClearanceEstablished": false,
     "recommendation": "Complete the specific current-name phonetic search and evaluate relevant similar marks before resuming payment of the three registration requests. A report does not itself guarantee registrability.",
-    "officialGuidance": "https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada"
+    "officialGuidance": "https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada",
+    "ownerRequestedPaidPhoneticsOn": "2026-10-26",
+    "formsPreparedForClasses": [
+      9,
+      35,
+      42
+    ]
+  },
+  "currentNamePhoneticPreparation": {
+    "date": "2026-10-26",
+    "name": "DONDE RINDE",
+    "classes": [
+      9,
+      35,
+      42
+    ],
+    "threeSeparateForms": true,
+    "allApplicantDataMatchesConfirmedOwner": true,
+    "allThreeEmailsVisuallyVerified": true,
+    "unitsEach": 22,
+    "totalUnits": 66,
+    "unitArs": "412.59",
+    "estimatedTotalArs": "27230.94",
+    "finalizedRequests": 0,
+    "electronicSignatures": 0,
+    "vepCreated": false,
+    "paymentMade": false,
+    "registrationPaymentStillPaused": true,
+    "status": "Three separate unsaved INPI phonetic-search forms fully prepared and checked; finalization and signatures await specific owner confirmation after automatic review rejected the initial class-9-only confirmation.",
+    "formRows": [
+      {
+        "class": 9,
+        "denomination": "DONDE RINDE",
+        "umapi": 22
+      },
+      {
+        "class": 35,
+        "denomination": "DONDE RINDE",
+        "umapi": 22
+      },
+      {
+        "class": 42,
+        "denomination": "DONDE RINDE",
+        "umapi": 22
+      }
+    ],
+    "applicantType": "PARTICULAR",
+    "privateValuesPublished": false,
+    "optionalPhoneLeftBlank": true,
+    "searchResultsObtained": false,
+    "clearanceEstablished": false,
+    "reviewBlock": {
+      "date": "2026-10-26",
+      "action": "Confirm Finalizar on class-9-only new phonetic request",
+      "automaticReviewRejected": true,
+      "reason": "Only class 9 loaded while target classes 35/42 were not loaded, and confirmation of email match not established.",
+      "confirmationCancelled": true,
+      "paymentOrVepCreated": false,
+      "signaturePerformed": false,
+      "requestCreated": false,
+      "workaroundAttempted": false,
+      "next": "Verify displayed email and prepare the complete 9/35/42 scope through normal UI before any retry"
+    },
+    "blockCorrections": {
+      "allThreeClassesPreparedSeparately": true,
+      "allApplicantFieldsMatchConfirmedOwner": true,
+      "emailVisuallyVerifiedInAllThreeForms": true,
+      "deniedOperationRetried": false
+    },
+    "next": "Obtain one specific confirmation to finalize and electronically sign only these three phonetic-search requests and generate their VEP/QR; do not pay or include the paused trademark-registration requests.",
+    "sources": [
+      "https://www.argentina.gob.ar/servicio/solicitar-la-busqueda-fonetica-de-una-marca",
+      "https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf",
+      "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
+      "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf"
+    ]
   }
 }
