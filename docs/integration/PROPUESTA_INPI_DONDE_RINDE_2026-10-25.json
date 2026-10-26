@@ -18,10 +18,19 @@
           "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=9&dateInForce=20260101&lang=esen&tab=&viewMode=flat"
         }
       ],
-      "existingDraftObservedOn": "2026-10-23",
+      "existingDraftObservedOn": "2026-10-25",
       "existingDraftSelectedTerms": 1,
       "existingDraftFeeUmapi": 100,
-      "completeFormReviewFinished": false
+      "completeFormReviewFinished": false,
+      "existingDraftDenomination": "DONDE RINDE",
+      "existingDraftSelectedTermLabels": [
+        "APLICACIONES DE SOFTWARE DESCARGABLES"
+      ],
+      "visibleSectionsReviewed": true,
+      "fullStoredAddressAndGeneratedFormReviewPending": true,
+      "actualCurrentNameDraftReviewed": true,
+      "finalInpiTermMatchingPending": false,
+      "existingTermsRetainedInProposedNextOperation": true
     },
     {
       "number": 35,
@@ -38,8 +47,23 @@
       ],
       "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=35&dateInForce=20260101&lang=es&tab=&viewMode=flat",
       "actualCurrentNameDraftReviewed": false,
-      "finalInpiTermMatchingPending": true,
-      "advertisingPilotScope": "Advertising for third parties remains a separate scope decision when checking the actual class 35 form. No advertising term was added by this public-only preparation."
+      "finalInpiTermMatchingPending": false,
+      "advertisingPilotScope": "The existing draft already selects consumer advice, third-party sales promotion and online advertising alongside price comparison and website business information. The proposed owner approval retains all five existing labels; no term has been added, removed or attested in this review.",
+      "existingDraftObservedOn": "2026-10-25",
+      "existingDraftDenomination": "RINDECASA",
+      "existingDraftSelectedTerms": 5,
+      "existingDraftSelectedTermLabels": [
+        "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+        "PROMOCIÓN DE VENTAS PARA TERCEROS",
+        "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+        "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+        "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+      ],
+      "existingDraftFeeUmapi": 100,
+      "visibleSectionsReviewed": true,
+      "completeFormReviewFinished": false,
+      "fullStoredAddressAndGeneratedFormReviewPending": true,
+      "existingTermsRetainedInProposedNextOperation": true
     },
     {
       "number": 42,
@@ -52,7 +76,20 @@
       ],
       "source": "https://nclpub.wipo.int/esen/pdf-download.pdf?classNumber=42&dateInForce=20260101&lang=esen&tab=&viewMode=flat",
       "actualCurrentNameDraftReviewed": false,
-      "finalInpiTermMatchingPending": true
+      "finalInpiTermMatchingPending": false,
+      "existingDraftObservedOn": "2026-10-25",
+      "existingDraftDenomination": "RINDECASA",
+      "existingDraftSelectedTerms": 3,
+      "existingDraftSelectedTermLabels": [
+        "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+        "SOFTWARE COMO SERVICIO [SAAS]",
+        "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+      ],
+      "existingDraftFeeUmapi": 100,
+      "visibleSectionsReviewed": true,
+      "completeFormReviewFinished": false,
+      "fullStoredAddressAndGeneratedFormReviewPending": true,
+      "existingTermsRetainedInProposedNextOperation": true
     }
   ],
   "classificationBasis": "Nice Classification, 13th edition, 2026 version; actual INPI selectable terms and final scope still require authenticated review.",
@@ -107,7 +144,7 @@
     "identifierTransmitted": true,
     "automaticReviewRejected": false,
     "manualUserRejection": false,
-    "reason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+    "reason": "The owner specifically authorized secure ARCA sign-in for draft recovery/review. That sign-in succeeded; no current authentication block remains.",
     "workaroundAttempted": false,
     "retried": false,
     "ownerSpecificApprovalPending": false,
@@ -120,7 +157,8 @@
     "resolvedForApprovedLogin": true,
     "retriedAfterSpecificApproval": true,
     "normalApprovedLoginSucceeded": true,
-    "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success."
+    "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success.",
+    "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request."
   },
   "savedNewDrafts": false,
   "editedExistingDrafts": false,
