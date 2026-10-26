@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Solicitudes denominativas DONDE RINDE 9/35/42 firmadas con autorización específica y verificadas en Trámites para Ingresar el 26/10; datos corregidos y confirmados, 100 UMAPI por clase, selección total $123.777. Pago pausado por el titular antes de confirmar pagador; sin VEP, pago, ingreso efectivo verificado ni concesión. Fonética pagada histórica: RINDECASA; fonética específica de DONDE RINDE y evaluación final de antecedentes/logo pendientes. Copia DNDA web 173/Android preparada; presentación y otros frentes legales/fiscales abiertos."
+      "evidenceAndLimit": "Solicitudes denominativas DONDE RINDE 9/35/42 firmadas, 100 UMAPI por clase; pago de registro $123.777 pausado, sin VEP de registro ni presentación/concesión verificada. Tres búsquedas fonéticas actuales finalizadas, leídas y firmadas el 26/10, 22 UMAPI cada una. Orden QR generada y verificada por $27.230,94, pendiente de pago; apertura del volante bloqueada por la política URL de este navegador. Sin informes nuevos ni evaluación final de antecedentes/logo. Copia DNDA web 173/Android preparada, presentación y demás frentes legales/fiscales abiertos."
     },
     {
       "number": 20,
@@ -898,7 +898,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Three explicitly authorized DONDE RINDE denominative requests in classes 9/35/42 were signed and positively observed in Trámites para Ingresar on 2026-10-26. Payment paused at the owner's request before payer confirmation/VEP generation to verify current-name phonetics and legal completeness. Current-name official paid phonetic search remains undone; historical paid reports are for RINDECASA. No payment, effective filing, grant or complete legal clearance.",
+      "status": "Three DONDE RINDE registration requests remain signed with their ARS123777 payment paused. Three separate current-name phonetic requests in classes 9/35/42 were finalized, read and signed on 2026-10-26; their QR payment order is generated for ARS27230.94, unpaid. This browser's URL security policy blocks opening the payment slip. No phonetic reports, effective trademark filing, grant or complete legal clearance are confirmed.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -1194,7 +1194,7 @@
         "laterApprovedOperationCompleted": true,
         "noBypassUsed": true
       },
-      "nextProposedOperation": "Obtain one specific confirmation to finalize and electronically sign only these three phonetic-search requests and generate their VEP/QR; do not pay or include the paused trademark-registration requests.",
+      "nextProposedOperation": "Owner opens the existing generated payment in INPI > Mis Trámites > Trámites en Proceso de ingreso > Volante on their own device, verifies ARS27230.94 and pays with Mercado Pago QR. Verify payment afterward, then obtain and assess all three phonetic reports before resuming trademark-registration payment.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1384,7 +1384,7 @@
         "actualPublicSearchDate": "2026-10-23",
         "currentName": "DONDE RINDE",
         "paidHistoricalPhoneticReportsFor": "RINDECASA",
-        "paidPhoneticReportForCurrentNameRequested": false,
+        "paidPhoneticReportForCurrentNameRequested": true,
         "paidPhoneticReportForCurrentNameObtained": false,
         "currentNameCharacterVariantSearchesCompleted": true,
         "targetedSimilarMarkRecordsReviewed": 5,
@@ -1397,7 +1397,10 @@
           9,
           35,
           42
-        ]
+        ],
+        "newSearchRequestsSignedOn": "2026-10-26",
+        "newSearchPaymentOrderGenerated": true,
+        "newSearchPaymentConfirmed": false
       },
       "currentNamePhoneticPreparation": {
         "date": "2026-10-26",
@@ -1414,12 +1417,12 @@
         "totalUnits": 66,
         "unitArs": "412.59",
         "estimatedTotalArs": "27230.94",
-        "finalizedRequests": 0,
+        "finalizedRequests": 3,
         "electronicSignatures": 0,
         "vepCreated": false,
         "paymentMade": false,
         "registrationPaymentStillPaused": true,
-        "status": "Three separate unsaved INPI phonetic-search forms fully prepared and checked; finalization and signatures await specific owner confirmation after automatic review rejected the initial class-9-only confirmation.",
+        "status": "Three current-name phonetic searches finalized, generated forms read, electronically signed and included in one QR payment order. Payment pending by owner; no reports obtained.",
         "formRows": [
           {
             "class": 9,
@@ -1439,7 +1442,7 @@
         ],
         "applicantType": "PARTICULAR",
         "privateValuesPublished": false,
-        "optionalPhoneLeftBlank": true,
+        "optionalPhoneLeftBlank": false,
         "searchResultsObtained": false,
         "clearanceEstablished": false,
         "reviewBlock": {
@@ -1460,13 +1463,60 @@
           "emailVisuallyVerifiedInAllThreeForms": true,
           "deniedOperationRetried": false
         },
-        "next": "Obtain one specific confirmation to finalize and electronically sign only these three phonetic-search requests and generate their VEP/QR; do not pay or include the paused trademark-registration requests.",
+        "next": "Owner opens the existing generated payment in INPI > Mis Trámites > Trámites en Proceso de ingreso > Volante on their own device, verifies ARS27230.94 and pays with Mercado Pago QR. Verify payment afterward, then obtain and assess all three phonetic reports before resuming trademark-registration payment.",
         "sources": [
-          "https://www.argentina.gob.ar/servicio/solicitar-la-busqueda-fonetica-de-una-marca",
-          "https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf",
-          "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
-          "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf"
-        ]
+          "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
+          "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
+        ],
+        "generatedFormsReadAndMatched": true,
+        "phoneFromExistingInpiProfileUsed": true,
+        "successMessage": "Los trámites fueron firmados correctamente",
+        "signedRequests": 3,
+        "signedQueueObserved": "Trámites para Ingresar",
+        "selectedTotalArs": "27230.94",
+        "selectedOnlyPhoneticRequests": true,
+        "registrationRequestsExcluded": true,
+        "newVepConfirmed": true,
+        "qrConfirmed": true,
+        "paymentConfirmed": false,
+        "searchReportsObtained": false,
+        "userAuthorization": {
+          "date": "2026-10-26",
+          "received": true,
+          "scope": "Finalize and electronically sign three DONDE RINDE phonetic-search requests, classes 9/35/42, with reviewed owner data, generate VEP/QR for ARS27230.94, conditional on easy payment through Mercado Pago.",
+          "actualPaymentByOwner": true,
+          "registrationPaymentStillPaused": true
+        },
+        "feeCode": "141100",
+        "unitsPerClass": 22,
+        "qrGenerationSuccessObserved": "QR generado correctamente",
+        "orderStateObserved": "Q-ERECAUDA - GENERADO",
+        "orderGeneratedDate": "2026-10-26",
+        "orderAmountArs": "27230.94",
+        "qrPaymentOrderCreated": true,
+        "actualQrImageRetrieved": false,
+        "paymentScopeVerifiedInExpandedOrder": true,
+        "eachActualRequestArs": "9076.98",
+        "phoneRequiredByPortalValidation": true,
+        "currentBlock": {
+          "type": "browser URL security policy",
+          "action": "Open official payment-slip destination for generated QR",
+          "reason": "The browser URL policy did not grant access and reported an unsupported URL protocol.",
+          "siteBotBlock": false,
+          "automaticApprovalReview": false,
+          "qrRetrievalBlocked": true,
+          "blockedDestinationRetried": false,
+          "workaroundAttempted": false
+        },
+        "authorizationReview": {
+          "initialClass9RejectionResolvedBySpecificOwnerApproval": true,
+          "class35VerificationRejectionResolved": true,
+          "correction": "Applicant fields and ID/phone were independently verified; an explicit ready check prevented finalization until the exact single class row was present.",
+          "newRequestsSignedWithSpecificApproval": true
+        },
+        "registrationPaymentOrderCreated": false,
+        "sensitiveIdentifiersAndPrivatePaymentUrlPublished": false,
+        "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted."
       }
     },
     "software": {
