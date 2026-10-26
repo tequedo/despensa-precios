@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 173,
-  "webBaseCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
+  "publishedWebVersion": 174,
+  "webBaseCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -120,7 +120,7 @@
       "title": "Borrado y restauración",
       "window": 2,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Borrado activo, revocación, aislamiento y rollback probados con datos descartables. Restauración sin resucitar datos y eliminación externa sin acreditar."
+      "evidenceAndLimit": "26/10: recuperación física de una copia SQLite anterior al borrado y reaplicación de la revocación generada por el flujo real comprobadas. Se comparten las sentencias con el borrado normal; 6 regresiones nuevas y suite completa de 312 aprobadas. Sigue pendiente el procedimiento admitido para restaurar la D1 alojada, un registro independiente completo y la supresión de copias externas."
     },
     {
       "number": 16,
@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Solicitudes denominativas DONDE RINDE 9/35/42 firmadas, 100 UMAPI por clase; pago de registro $123.777 pausado, sin VEP de registro ni presentación/concesión verificada. Tres búsquedas fonéticas actuales finalizadas, leídas y firmadas el 26/10, 22 UMAPI cada una. Orden QR generada y verificada por $27.230,94, pendiente de pago; apertura del volante bloqueada por la política URL de este navegador. Sin informes nuevos ni evaluación final de antecedentes/logo. Copia DNDA web 173/Android preparada, presentación y demás frentes legales/fiscales abiertos."
+      "evidenceAndLimit": "26/10: INPI confirmó acreditado el pago de las búsquedas fonéticas DONDE RINDE en clases 9/35/42 por ARS 27.230,94; las tres figuran Ingresadas sin asignar, sin informes nuevos. Borradores actuales DÓNDE RINDE 9/35/42 guardados y reabiertos: denominativos, titular 100%, términos 1/2/2. No se finalizaron ni firmaron estos nuevos borradores ni se pagó/presentó el registro marcario. Copia DNDA web 173/Android conservada como corte anterior a web 174; presentación y demás frentes pendientes."
     },
     {
       "number": 20,
@@ -314,7 +314,16 @@
     "dndaSourceCopyAndroidFiles": 24,
     "dndaSourceCopyVerified": true,
     "dndaNewPaymentsThisReview": 0,
-    "dndaNewFilingsThisReview": 0
+    "dndaNewFilingsThisReview": 0,
+    "erasureRestoreLocalTests": 6,
+    "erasureRestoreFocusedTests": 19,
+    "erasureRestoreReleaseTests": 312,
+    "erasureRestoreFailed": 0,
+    "erasureRestoreSkipped": 0,
+    "erasureRestoreTypesPassed": true,
+    "erasureRestoreBuildPassed": true,
+    "hostedD1RestoreVerified": false,
+    "independentAuthoritativeRevocationsVerified": false
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -361,7 +370,8 @@
         20
       ],
       "title": "Restauración y revocaciones",
-      "detail": "Un respaldo anterior puede perder barreras de borrado. Falta procedimiento admitido por el alojamiento y prueba aislada antes de reabrir acceso."
+      "detail": "Exportación mínima y conciliación idempotente preparadas; recuperación física de SQLite con revocación efectiva probada. Siguen pendientes registro autoritativo independiente, cierre verificable de accesos/procesos y restauración aislada mediante el procedimiento admitido por el alojamiento.",
+      "evidence": "RESTAURACION_Y_REVOCACIONES_2026-10-26.md"
     }
   ],
   "androidSigningAssistant": {
@@ -898,10 +908,10 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Three DONDE RINDE registration requests remain signed with their ARS123777 payment paused. Three separate current-name phonetic requests in classes 9/35/42 were finalized, read and signed on 2026-10-26; their QR payment order is generated for ARS27230.94, unpaid. This browser's URL security policy blocks opening the payment slip. No phonetic reports, effective trademark filing, grant or complete legal clearance are confirmed.",
+      "status": "Búsquedas fonéticas actuales abonadas y acreditadas; borradores DÓNDE RINDE 9/35/42 guardados; informes pendientes.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
-      "newPaymentConfirmed": false,
+      "newPaymentConfirmed": true,
       "grantConfirmed": false,
       "currentPublicSearch": {
         "date": "2026-10-23",
@@ -1061,7 +1071,7 @@
         "allThreeCurrentNameRequestTotalsVerified": true,
         "actualCurrentNameFormsLastObserved": "2026-10-26"
       },
-      "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
+      "nextCheckpoint": "Esperar los tres informes actuales; no generar otro pago de fonética por la diferencia de tilde.",
       "feeBudget": {
         "evidence": "ARANCELES_LEGALES_2026-10-23.json",
         "sha256": "24081552e36b8efd924eab3330b07ebc0b357ab8ae06028707eaff13c9c53007",
@@ -1390,7 +1400,7 @@
         "targetedSimilarMarkRecordsReviewed": 5,
         "preliminaryGraphicRepresentationsViewed": 4,
         "fullPhoneticGraphicConceptualClearanceEstablished": false,
-        "recommendation": "Complete the specific current-name phonetic search and evaluate relevant similar marks before resuming payment of the three registration requests. A report does not itself guarantee registrability.",
+        "recommendation": "Esperar los tres informes actuales; no generar otro pago de fonética por la diferencia de tilde.",
         "officialGuidance": "https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada",
         "ownerRequestedPaidPhoneticsOn": "2026-10-26",
         "formsPreparedForClasses": [
@@ -1400,7 +1410,7 @@
         ],
         "newSearchRequestsSignedOn": "2026-10-26",
         "newSearchPaymentOrderGenerated": true,
-        "newSearchPaymentConfirmed": false
+        "newSearchPaymentConfirmed": true
       },
       "currentNamePhoneticPreparation": {
         "date": "2026-10-26",
@@ -1420,9 +1430,9 @@
         "finalizedRequests": 3,
         "electronicSignatures": 0,
         "vepCreated": false,
-        "paymentMade": false,
+        "paymentMade": true,
         "registrationPaymentStillPaused": true,
-        "status": "Three current-name phonetic searches finalized, generated forms read, electronically signed and included in one QR payment order. Payment pending by owner; no reports obtained.",
+        "status": "Paid and credited; three current requests Ingresadas sin asignar",
         "formRows": [
           {
             "class": 9,
@@ -1463,7 +1473,7 @@
           "emailVisuallyVerifiedInAllThreeForms": true,
           "deniedOperationRetried": false
         },
-        "next": "Have the owner make one fresh download from Volante on the confirmed current order and open that newly downloaded file in Chrome Downloads. Verify amount/date before paying. If the fresh PDF still contains the older slip, inspect the actual downloaded PDF and report the mismatch to INPI rather than repeating payment or creating duplicate orders.",
+        "next": "Esperar los tres informes actuales; no generar otro pago de fonética por la diferencia de tilde.",
         "sources": [
           "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
           "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
@@ -1478,7 +1488,7 @@
         "registrationRequestsExcluded": true,
         "newVepConfirmed": false,
         "qrConfirmed": true,
-        "paymentConfirmed": false,
+        "paymentConfirmed": true,
         "searchReportsObtained": false,
         "userAuthorization": {
           "date": "2026-10-26",
@@ -1498,16 +1508,7 @@
         "paymentScopeVerifiedInExpandedOrder": true,
         "eachActualRequestArs": "9076.98",
         "phoneRequiredByPortalValidation": true,
-        "currentBlock": {
-          "type": "browser URL security policy",
-          "action": "Open official payment-slip destination for generated QR",
-          "reason": "The browser URL policy did not grant access and reported an unsupported URL protocol.",
-          "siteBotBlock": false,
-          "automaticApprovalReview": false,
-          "qrRetrievalBlocked": true,
-          "blockedDestinationRetried": false,
-          "workaroundAttempted": false
-        },
+        "currentBlock": "Awaiting INPI phonetic-search reports",
         "authorizationReview": {
           "initialClass9RejectionResolvedBySpecificOwnerApproval": true,
           "class35VerificationRejectionResolved": true,
@@ -1521,16 +1522,12 @@
         "actualVepNumberObserved": false,
         "paymentVerification": {
           "date": "2026-10-26",
-          "evidence": "User screenshot of an AI assistant named Mago saying the ARCA bill already appears paid and no new payment was initiated.",
-          "actualTransactionReceiptVisible": false,
-          "matchingAmountVisible": false,
-          "matchingReferenceVisible": false,
-          "paymentConfirmed": false,
-          "inpiLiveVerification": "Authenticated session expired on refresh; no current paid/entered status was observed.",
-          "matchingEmailReceiptsFound": 0,
-          "emailChecks": "Read-only Outlook exact payment-reference and INPI searches, plus Gmail exact payment-reference/request/amount searches from 2026-10-26; no matching receipts.",
-          "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
-          "ownerClarifiedUnpaid": true
+          "evidence": "Authenticated INPI ConsultaComprobantesPago matched the current QR/e-Recauda order and ARS27230.94; three current searches reopened with status Ingresadas sin asignar.",
+          "paymentConfirmed": true,
+          "amountArs": "27230.94",
+          "source": "INPI live portal",
+          "reportsObtained": false,
+          "privatePaymentIdentifiersPublished": false
         },
         "ownerPaymentClarification": {
           "date": "2026-10-26",
@@ -1542,7 +1539,7 @@
           "existingQrOrderRemainsTarget": true,
           "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment."
         },
-        "ownerReportsUnpaid": true,
+        "ownerReportsUnpaid": false,
         "userDisplayedOlderExpiredSlip": {
           "observedOn": "2026-10-26",
           "source": "User-supplied screenshot of a PDF payment QR",
@@ -1570,12 +1567,49 @@
           "actualCurrentQrImageRetrieved": false,
           "next": "Have the owner make one fresh download from Volante on the confirmed current order and open that newly downloaded file in Chrome Downloads. Verify amount/date before paying. If the fresh PDF still contains the older slip, inspect the actual downloaded PDF and report the mismatch to INPI rather than repeating payment or creating duplicate orders.",
           "chromeDownloadsSource": "https://support.google.com/chrome/answer/95759?co=GENIE.Platform%3DAndroid&hl=es-419"
+        },
+        "previousPaymentVerification": {
+          "date": "2026-10-26",
+          "evidence": "User screenshot of an AI assistant named Mago saying the ARCA bill already appears paid and no new payment was initiated.",
+          "actualTransactionReceiptVisible": false,
+          "matchingAmountVisible": false,
+          "matchingReferenceVisible": false,
+          "paymentConfirmed": false,
+          "inpiLiveVerification": "Authenticated session expired on refresh; no current paid/entered status was observed.",
+          "matchingEmailReceiptsFound": 0,
+          "emailChecks": "Read-only Outlook exact payment-reference and INPI searches, plus Gmail exact payment-reference/request/amount searches from 2026-10-26; no matching receipts.",
+          "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
+          "ownerClarifiedUnpaid": true
         }
+      },
+      "newPaymentConfirmedScope": "Phonetic searches only: ARS27230.94. No trademark-registration payment.",
+      "latestDraftVerification": {
+        "date": "2026-10-26",
+        "name": "DÓNDE RINDE",
+        "classes": [
+          9,
+          35,
+          42
+        ],
+        "modality": "denominative",
+        "holderSharePercent": 100,
+        "selectedTermCounts": [
+          1,
+          2,
+          2
+        ],
+        "savedAndReopened": true,
+        "previousDraftsRetained": true,
+        "newDraftsFinalized": false,
+        "newDraftsSigned": false,
+        "trademarkRegistrationPaid": false,
+        "newDraftsFiled": false,
+        "privatePortalReferencesPublished": false
       }
     },
     "software": {
       "point": 19,
-      "status": "Complete tracked source copy for published web 173 and the separate Android project prepared and verified on 2026-10-25. Human contributions/title, actual publication details, tax basis and accepted deposit format still require review before filing.",
+      "status": "Verified technical copy for web 173 retained; web 174 adds restoration/revocation primitives. Refresh the copy for a filing covering the current code. Human contributions/title, first-publication details, tax basis and accepted deposit format still require review.",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
       "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
@@ -1608,14 +1642,26 @@
         "allAndroidGitBlobsVerified": true,
         "androidComponentReusedByteForByte": true,
         "copiedWebVersion": 173,
-        "currentPublishedWebVersion": 173,
-        "matchesCurrentPublishedWeb": true,
-        "newWebFilesNotInCopy": [],
+        "currentPublishedWebVersion": 174,
+        "matchesCurrentPublishedWeb": false,
+        "newWebFilesNotInCopy": [
+          "lib/erasure-restoration.mjs",
+          "tests/erasure-restoration.test.mjs",
+          "docs/integration/RESTAURACION_Y_REVOCACIONES_2026-10-26.md"
+        ],
         "verification": "Every path, size, SHA-256 and file mode checked in the reopened components; 490 prior web files unchanged and one public Asset Links file added.",
         "libraryIdentityPreserved": true,
         "libraryVersion": 1,
         "depositFiled": false,
-        "authorshipCertified": false
+        "authorshipCertified": false,
+        "changedWebFilesSinceCopy": [
+          "lib/account-erasure.mjs",
+          "tests/privacy-database.mjs",
+          "docs/integration/ESTADO_UNICO_31_2026-10-22.json",
+          "docs/integration/ESTADO_UNICO_31_2026-10-22.md"
+        ],
+        "newPublishedWebCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
+        "scope": "Verified historical technical copy for web 173; source changed in web 174 on 2026-10-26. New current source copy needed before any filing purporting to cover web 174."
       },
       "publishedFees": {
         "procedureArs": "3800.00",
@@ -1794,5 +1840,49 @@
     "finalAndroidUploaded": false,
     "hashScope": "Source file and built client asset; raw HTTP body hash from deployed origin not measured",
     "evidence": "docs/integration/AVANCE_PLAY_CONSOLE_2026-10-25.md"
+  },
+  "restorationReview": {
+    "date": "2026-10-26",
+    "points": [
+      15,
+      16,
+      20
+    ],
+    "cross": "C3",
+    "status": "local reconciliation prepared and verified; hosting dependency open",
+    "evidence": "docs/integration/RESTAURACION_Y_REVOCACIONES_2026-10-26.md",
+    "baseWebVersion": 173,
+    "baseWebCommit": "e9a8ae902a02631b11ecce363058a5e7775b7d0f",
+    "actualApplicationErasureUsed": true,
+    "physicalSQLiteBackupRestored": true,
+    "revocationDerivedFromSuccessfulErasure": true,
+    "otherAccountAndPublicDataPreserved": true,
+    "checksumIsAuthentication": false,
+    "exportStoredOutsideRestoredFileInTest": true,
+    "independentProductionLedgerProvisioned": false,
+    "hostedD1RestorePerformed": false,
+    "productionDataWritesForValidation": 0,
+    "paidProviderCallsForValidation": 0,
+    "liveReadOnlyObservation": {
+      "binding": "DB",
+      "table": "profile_erasure_guards",
+      "rows": 0,
+      "truncated": false,
+      "morePages": false,
+      "historicalAbsenceProven": false
+    },
+    "releaseTests": 312,
+    "focusedTests": 19,
+    "newTests": 6,
+    "typesPassed": true,
+    "buildPassed": true,
+    "publication": "succeeded",
+    "fullyClosed": false,
+    "supportInquiryPrepared": true,
+    "supportInquirySent": false,
+    "webVersion": 174,
+    "sourceCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
+    "deploymentId": "appgdep_6adf50ab8c488191924c26349c6973ae",
+    "url": "https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site"
   }
 }
