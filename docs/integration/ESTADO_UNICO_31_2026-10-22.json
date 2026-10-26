@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 186,
-  "webBaseCommit": "5341c3421b1be4bf3c5a47f73544e25183b63957",
+  "publishedWebVersion": 189,
+  "webBaseCommit": "1e71a1f13def34956ce01012d9466b584cd8eb3c",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -36,7 +36,7 @@
       "title": "Identidad y calidad de productos",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la validación de otros productos. El titular confirmó la comparación Natura en Samsung con captura posterior. Web 180 corrige otro caso informado por el titular: el alta de Arroz Gallo 500 g descartaba las opciones exactas que devolvía la API. Ahora ofrece un selector de variedad, consulta automáticamente el código elegido y guarda su identidad sin reiniciar la cantidad. Muestra real de 288 observaciones conservada; protección de identidades y precios de origen sin cambios. 335 pruebas aprobadas; revisión física posterior pendiente. Web 185 conecta Producto/Marca/Tamaño con las facetas reales para todas las familias, limita a dos las opciones iniciales y corrige los mínimos Desde entre cadenas. Primera revisión alfabética de San Juan: 792 códigos de la A encontrados, 701 cotizaciones coincidentes y 91 códigos sin precio utilizable. Se agregan veinte casos reales para separar producto, ingrediente y recipiente; abreviaturas y clasificación de algunos usos mantienen la A abierta. No valida otras provincias. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR."
+      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la validación de otros productos. El titular confirmó la comparación Natura en Samsung con captura posterior. Web 180 corrige otro caso informado por el titular: el alta de Arroz Gallo 500 g descartaba las opciones exactas que devolvía la API. Ahora ofrece un selector de variedad, consulta automáticamente el código elegido y guarda su identidad sin reiniciar la cantidad. Muestra real de 288 observaciones conservada; protección de identidades y precios de origen sin cambios. 335 pruebas aprobadas; revisión física posterior pendiente. Web 185 conecta Producto/Marca/Tamaño con las facetas reales para todas las familias, limita a dos las opciones iniciales y corrige los mínimos Desde entre cadenas. Primera revisión alfabética de San Juan: 792 códigos de la A encontrados, 701 cotizaciones coincidentes y 91 códigos sin precio utilizable. Se agregan veinte casos reales para separar producto, ingrediente y recipiente; abreviaturas y clasificación de algunos usos mantienen la A abierta. No valida otras provincias. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR. Web 188 clasifica con evidencia cinco GTIN abreviados (diez códigos locales), separa plurales/ingredientes/usos de aceite y conserva una familia abreviada pendiente. El barrido ampliado verifica los 792 códigos después de accionar Marca/Tamaño en 369 combinaciones; 701 cotizaciones coincidentes, cero incidencias locales y 91 códigos sin precio utilizable. No cierra la A ni valida otras provincias."
     },
     {
       "number": 4,
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 182 publicada; suite completa de 344 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Siete controles específicos del nuevo recorrido y cálculo completo aprobados. Se conserva la evidencia anterior de ingreso Google real y recuperación web. La ejecución alojada completa, confirmación de todos los pasos en Samsung y Android final siguen pendientes; no se operaron datos privados de producción en esta revisión. Web 185 publicada, 356 pruebas locales aprobadas, tipos y compilación aprobados; diez perfiles locales y cien recorridos de producto adicionales. No son cuentas Google reales. La muestra de navegador usa el perfil de prueba y puede registrar historial de búsqueda, sin cambios en lista, existencias o compras. No acredita el recorrido físico completo. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR."
+      "evidenceAndLimit": "26/10: web 182 publicada; suite completa de 344 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Siete controles específicos del nuevo recorrido y cálculo completo aprobados. Se conserva la evidencia anterior de ingreso Google real y recuperación web. La ejecución alojada completa, confirmación de todos los pasos en Samsung y Android final siguen pendientes; no se operaron datos privados de producción en esta revisión. Web 185 publicada, 356 pruebas locales aprobadas, tipos y compilación aprobados; diez perfiles locales y cien recorridos de producto adicionales. No son cuentas Google reales. La muestra de navegador usa el perfil de prueba y puede registrar historial de búsqueda, sin cambios en lista, existencias o compras. No acredita el recorrido físico completo. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR. Web 188 publicada con tipos, compilación y 362 pruebas completas aprobados, sin fallos, omitidas o canceladas. El barrido de Marca/Tamaño usa manejador y campos reales sobre copia fijada; no equivale a 792 recorridos en navegador."
     },
     {
       "number": 9,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "El titular confirmó descarga, instalación, arranque y comparación Natura en Samsung. Sus capturas posteriores acreditan el alta de 3 Gallo con stock 0 y la visualización del acceso de web 181; el mensaje de éxito posterior no identifica las cantidades finales del caso Gallo. Web 182 reemplaza el acceso grande por Ya compré al final de la comparación completa, agrega carga sucesiva/finalización en En casa y compacta las tarjetas. Tres tarjetas por pantalla es un objetivo pendiente de medición física; recorrido completo y segundo dispositivo pendientes. Web 183–185 compacta otra vez las tarjetas de Mi lista, En casa y resultados: textos completos, imagen de referencia de 32 píxeles y controles táctiles de 44 con menor relieve. Medición de escritorio de una tarjeta: 179 píxeles CSS; no prueba que entren tres en Samsung. El turquesa se entregó sólo como preview, sin cambiar la app."
+      "evidenceAndLimit": "El titular confirmó descarga, instalación, arranque y comparación Natura en Samsung. Sus capturas posteriores acreditan el alta de 3 Gallo con stock 0 y la visualización del acceso de web 181; el mensaje de éxito posterior no identifica las cantidades finales del caso Gallo. Web 182 reemplaza el acceso grande por Ya compré al final de la comparación completa, agrega carga sucesiva/finalización en En casa y compacta las tarjetas. Tres tarjetas por pantalla es un objetivo pendiente de medición física; recorrido completo y segundo dispositivo pendientes. Web 183–185 compacta otra vez las tarjetas de Mi lista, En casa y resultados: textos completos, imagen de referencia de 32 píxeles y controles táctiles de 44 con menor relieve. Medición de escritorio de una tarjeta: 179 píxeles CSS; no prueba que entren tres en Samsung. El turquesa se entregó sólo como preview, sin cambiar la app. Web 187–188 reduce 30% los factores de relleno, separaciones y relieve de botones; conserva controles de 44 px y textos completos. Medición publicada de escritorio: Agregar producto 162,172 × 44 px; las cuatro pestañas sin controles visibles por debajo de 44 px. La medición Samsung y tres tarjetas siguen pendientes."
     },
     {
       "number": 11,
@@ -113,7 +113,7 @@
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Compra parcial, saldo pendiente, stock, importes sólo explícitos, recibos transaccionales e idempotencia conservan sus controles de rutas y Worker SQLite. La cuenta dedicada ya tuvo una prueba web con 2 en casa, 1 pendiente y ARS 1 ficticio, sin pago real. Web 182 agrega Guardar y agregar otro y Finalizar carga a En casa; la última entrada completa se guarda antes de cerrar y un fallo conserva el formulario. Ya compré se ofrece después de comparar el total de la lista y abre la confirmación que actualiza existencias. Suite completa de 344 aprobadas. El caso físico Gallo 3/1/2, resto del recorrido y segundo teléfono permanecen sin confirmación. La integración adicional prueba diez perfiles locales y cien recorridos con fuentes fijadas, stock, cantidades, comparación, recepción parcial, reintento idempotente y recuperación. No se modificaron existencias ni compras de producción. Sigue pendiente Gallo físico 3/1/2 y segundo teléfono."
+      "evidenceAndLimit": "Compra parcial, saldo pendiente, stock, importes sólo explícitos, recibos transaccionales e idempotencia conservan sus controles de rutas y Worker SQLite. La cuenta dedicada ya tuvo una prueba web con 2 en casa, 1 pendiente y ARS 1 ficticio, sin pago real. Web 182 agrega Guardar y agregar otro y Finalizar carga a En casa; la última entrada completa se guarda antes de cerrar y un fallo conserva el formulario. Ya compré se ofrece después de comparar el total de la lista y abre la confirmación que actualiza existencias. Suite completa de 344 aprobadas. El caso físico Gallo 3/1/2, resto del recorrido y segundo teléfono permanecen sin confirmación. La integración adicional prueba diez perfiles locales y cien recorridos con fuentes fijadas, stock, cantidades, comparación, recepción parcial, reintento idempotente y recuperación. No se modificaron existencias ni compras de producción. Sigue pendiente Gallo físico 3/1/2 y segundo teléfono. La suite completa de web 188 mantiene los cien recorridos locales en diez perfiles y el flujo de existencias/lista/compra parcial; usa Atún en vez del caso mal llamado Ají, que era fideos Aji No Men. Sin nueva acreditación física ni cambios de existencias o compras en producción."
     },
     {
       "number": 15,
@@ -155,7 +155,7 @@
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3. Web 180: suite completa de 335 aprobadas después de corregir el selector de variedades del alta; guía y estados mantienen sus límites físicos y operativos. Web 182 pasa 344 pruebas completas tras integrar carga inicial, comparación global y confirmación de lo comprado. No acredita operación del alojamiento, entrega real de correo ni cierre C3. Web 185 pasa 356 pruebas, con copia completa de 14 archivos de San Juan y límites explícitos de E/S para las integraciones locales; no sustituye validación operativa del alojamiento. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR."
+      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3. Web 180: suite completa de 335 aprobadas después de corregir el selector de variedades del alta; guía y estados mantienen sus límites físicos y operativos. Web 182 pasa 344 pruebas completas tras integrar carga inicial, comparación global y confirmación de lo comprado. No acredita operación del alojamiento, entrega real de correo ni cierre C3. Web 185 pasa 356 pruebas, con copia completa de 14 archivos de San Juan y límites explícitos de E/S para las integraciones locales; no sustituye validación operativa del alojamiento. Web 186 añade unión visual de opciones idénticas sólo con GTIN validado, envase consistente y metadatos iguales; suite final de 357 aprobadas tras aislar las cachés de los arneses SSR. Web 188 aprueba 362 pruebas completas con cero fallos, omitidas o canceladas y documenta por código el barrido de la A, incluidas 369 combinaciones de filtros. Los bloqueos de operación y recuperación C3 conservan su estado."
     },
     {
       "number": 21,
@@ -373,7 +373,7 @@
     "purchaseFlowBuildPassed": true,
     "purchaseFlowPostFixPhoneVerified": false,
     "threeShoppingCardsPerScreenPhysicallyVerified": false,
-    "catalogSearchReleaseTests": 357,
+    "catalogSearchReleaseTests": 362,
     "catalogSearchFailed": 0,
     "catalogSearchSkipped": 0,
     "catalogSearchCancelled": 0,
@@ -384,7 +384,12 @@
     "catalogSearchRealSourceSemanticCases": 20,
     "catalogLetterACodes": 792,
     "catalogLetterAQuotes": 701,
-    "catalogLetterAQuoteMismatches": 0
+    "catalogLetterAQuoteMismatches": 0,
+    "catalogLetterABrandSizeGroups": 369,
+    "catalogLetterABrandSizeLocalCodes": 792,
+    "catalogSemanticAdditionalTests": 5,
+    "globalButtonDensityTypesPassed": true,
+    "globalButtonDensityBuildPassed": true
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -2277,8 +2282,8 @@
   },
   "catalogSearchReview": {
     "asOf": "2026-10-26",
-    "publishedWebVersion": 186,
-    "sourceCommit": "5341c3421b1be4bf3c5a47f73544e25183b63957",
+    "publishedWebVersion": 189,
+    "sourceCommit": "1e71a1f13def34956ce01012d9466b584cd8eb3c",
     "evidence": "docs/integration/BUSCADOR_FILTROS_Y_AUDITORIA_A_2026-10-26.md",
     "detailedAudit": "docs/integration/AUDITORIA_BUSCADOR_A_2026-10-26.json",
     "sourceRepository": "tequedo/despensa-precios",
@@ -2298,14 +2303,27 @@
       "quotesChecked": 701,
       "withoutUsablePrice": 91,
       "discoveryQueries": 55,
-      "pages": 130,
+      "pages": 131,
       "quoteMismatchesBefore": 154,
       "quoteMismatchesAfter": 0,
       "closed": false,
       "remaining": [
-        "Nombres abreviados AG RAMA LECHE, ANIMALES GRANJ TE y otros sin categoría acreditada",
-        "Aceite con usos alimentario y corporal; consultas generales requieren criterio de clasificación"
-      ]
+        "90 códigos locales sin evidencia suficiente de presentación",
+        "Agua Benedictino informada como 1500 lt, precio excluido hasta confirmar capacidad",
+        "AGUILA FRAMB LECHE (GTIN 7790580147822): familia pendiente; dos códigos locales conservan búsqueda específica y cotización exacta",
+        "Formas coloquiales no ensayadas y validación física de la interfaz"
+      ],
+      "specificFallbackQueries": [
+        "aji no men fideos listos pollo con verduras",
+        "aji no men fideos listos camaron"
+      ],
+      "filterGroupsChecked": 369,
+      "filterPages": 369,
+      "filteredLocalIdsChecked": 792,
+      "issuesAfter": 0,
+      "confirmedAbbreviatedGtins": 5,
+      "confirmedAbbreviatedLocalCodes": 10,
+      "pendingFamilyLocalCodes": 2
     },
     "sourceWaterException": [
       {
@@ -2318,7 +2336,7 @@
       }
     ],
     "checks": {
-      "fullPassed": 357,
+      "fullPassed": 362,
       "failed": 0,
       "skipped": 0,
       "cancelled": 0,
@@ -2327,7 +2345,10 @@
       "focusedSelectorAndPriceChecks": 65,
       "localProfiles": 10,
       "localProductFlows": 100,
-      "realSourceSemanticCases": 20
+      "realSourceSemanticCases": 20,
+      "additionalSemanticTests": 5,
+      "functionalSuiteVersion": 188,
+      "styleOnlyBuildVersion": 189
     },
     "tenLocalProfiles": {
       "passed": true,
@@ -2335,7 +2356,20 @@
       "productFlows": 100,
       "providerLogin": false,
       "productionPantryWrites": 0,
-      "sourceIO": "explicitly bound fixture; raw source dates retained; only price-domain clock fixed"
+      "sourceIO": "explicitly bound fixture; raw source dates retained; only price-domain clock fixed",
+      "productQueries": [
+        "aceite",
+        "aceitunas",
+        "actimel",
+        "ades",
+        "agua",
+        "atun",
+        "alfajor",
+        "arroz",
+        "arvejas",
+        "azucar"
+      ],
+      "ajiCorrection": "El caso positivo anterior era Aji No Men (fideos), no ají. El flujo positivo ahora usa Atún y la confusión con ají se verifica como caso semántico negativo."
     },
     "browserChecks": [
       {
@@ -2357,6 +2391,16 @@
         "version": 186,
         "product": "Yogurt → TREGAR → 280 gr",
         "result": "Campos habilitados y dos opciones con etiquetas diferentes; duplicado exacto retirado; selección del código exacto habilita la cantidad y Agregar a la lista sin guardar"
+      },
+      {
+        "version": 188,
+        "product": "Chocolate en rama → CHOCOLATIER → 0.04 KG → AG RAMA LECHE 40G",
+        "result": "Alias acreditado encuentra el registro original; filtros habilitados; elección explícita y comparación con 2 sucursales, mínimo admitido $4.769 en Changomas del 25/10/2026. Sin guardar productos."
+      },
+      {
+        "version": 189,
+        "product": "Opciones del encabezado",
+        "result": "Botón exterior 44 × 44 px, relleno 0 y sin desborde; fuente semántica de web 188 sin cambios."
       }
     ],
     "productionPantryWrites": 0,
@@ -2365,7 +2409,7 @@
     "phoneThreeCardsMeasured": false,
     "colorChanged": false,
     "wholeFrontsNewlyClosed": 0,
-    "nextLetter": "B; pending current A classification review",
+    "nextLetter": "B; pendiente de resolver y registrar límites del cierre de A",
     "catalogDeduplication": {
       "implemented": true,
       "sameVerifiedGtinRequired": true,
@@ -2375,6 +2419,97 @@
       "internalCodesCollapsed": false,
       "postDeploymentVisualCheck": "passed_web_186: Yogurt/TREGAR/280 gr replaces the duplicate with the next differently labelled source option, retaining both labels and complete price metadata"
     },
-    "testHarnessCaches": "eight SSR test files use unique temporary Vite caches and no HMR; the cache-contention failure was resolved before the final complete run"
+    "testHarnessCaches": "eight SSR test files use unique temporary Vite caches and no HMR; the cache-contention failure was resolved before the final complete run",
+    "semanticEvidence": "docs/integration/BUSCADOR_A_SEMANTICA_2026-10-26.md",
+    "semanticReview": {
+      "registry": "data/catalog-search-reviews.json in published Site source",
+      "confirmedGtins": 5,
+      "confirmedLocalCodes": 10,
+      "pendingGtins": 1,
+      "pendingLocalCodes": 2,
+      "verifiedGtinAndExactNameBrandFingerprintRequired": true,
+      "sourceFieldsUnchanged": true,
+      "externalPhotosImported": 0,
+      "externalPricesImported": 0,
+      "oilUsesSeparatedForSpecificQueries": true,
+      "riceDessertAndPuffedRiceSeparated": true,
+      "pluralsSupported": true,
+      "micellarWaterCategory": "Higiene",
+      "evidenceLimit": "Four Carrefour technical EAN/type listings were indexed; complete page bodies unavailable. Book matched distributor ISBN/EAN and title."
+    },
+    "semanticPublishedVersion": 188,
+    "semanticSourceCommit": "b3e1b68f9b9853bcc57b5f88579255c6de374789"
+  },
+  "buttonDensityReview": {
+    "asOf": "2026-10-26",
+    "initialPublishedVersion": 187,
+    "publishedWebVersion": 189,
+    "sourceCommit": "1e71a1f13def34956ce01012d9466b584cd8eb3c",
+    "evidence": "docs/integration/BOTONES_GLOBALES_2026-10-26.md",
+    "factor": 0.7,
+    "appliesTo": "padding, gaps, radius and relief; no blanket scale transform",
+    "minimumTapHeightCssPx": 44,
+    "primaryFontCssPx": 14,
+    "secondaryFontCssPx": 13,
+    "fullLabelsPreserved": true,
+    "colorsChanged": false,
+    "previewPublicAndLocationDialogPassed": true,
+    "previewLocationWritten": false,
+    "previewGeolocationRequested": false,
+    "published187AddProduct": {
+      "before": {
+        "width": 191.484,
+        "height": 48,
+        "font": 16,
+        "paddingBlock": 8,
+        "paddingInline": 12,
+        "relief": 5
+      },
+      "after": {
+        "width": 162.172,
+        "height": 44,
+        "font": 14,
+        "paddingBlock": 5.6,
+        "paddingInline": 8.4,
+        "relief": 3.5
+      },
+      "areaReductionApproxPercent": 22.4
+    },
+    "published187Tabs": [
+      {
+        "tab": "En casa",
+        "visibleControls": 16,
+        "below44": 0
+      },
+      {
+        "tab": "Precios",
+        "visibleControls": 13,
+        "below44": 0
+      },
+      {
+        "tab": "Gastos",
+        "visibleControls": 8,
+        "below44": 0
+      },
+      {
+        "tab": "Mi lista",
+        "visibleControls": 22,
+        "below44": 0
+      }
+    ],
+    "phoneMeasured": false,
+    "threeCardsPerScreenVerified": false,
+    "productionPantryWrites": 0,
+    "productionListWrites": 0,
+    "productionPurchaseWrites": 0,
+    "finalMenuMeasurement": {
+      "version": 189,
+      "widthCssPx": 44,
+      "heightCssPx": 44,
+      "paddingCssPx": 0,
+      "scrollWidthCssPx": 44,
+      "clientWidthCssPx": 44,
+      "overflow": false
+    }
   }
 }

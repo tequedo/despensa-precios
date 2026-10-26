@@ -25,8 +25,10 @@ Se fijaron los 14 archivos de `data/national/AR-J`, índice `89caada6631c5e50b65
 | Observaciones por sucursal | 1.691 |
 | Códigos locales diferentes | 792 |
 | Nombres tal como fueron informados | 659 |
-| Búsquedas / páginas recorridas | 55 / 130 |
+| Familias / consultas específicas adicionales / páginas recorridas | 55 / 2 / 131 |
 | Códigos encontrados | 792 |
+| Combinaciones de consulta, marca y presentación / páginas filtradas | 369 / 369 |
+| Códigos encontrados tras accionar Marca y Tamaño | 792 |
 | Cotizaciones comprobadas | 701 |
 | Sin presentación suficientemente acreditada | 90; siguen sin un importe utilizable |
 | Capacidad contradictoria de agua | 1; precio excluido hasta confirmar la presentación |
@@ -84,6 +86,10 @@ La prueba web 185 de Yogurt → TREGAR → 280 gr encontró dos opciones con el 
 
 La primera corrida completa de este último ajuste falló durante el arranque de la prueba de perfil por `ENOTEMPTY` al compartir la caché de Vite con otros procesos de ensayo; no fue un resultado funcional de ese perfil. Los ocho arneses SSR usan ahora directorios temporales únicos y desactivan HMR, con limpieza al cerrar. Se repite la suite completa con el artefacto ya construido; los archivos de aplicación no cambiaron después de la compilación aprobada. El resultado definitivo se registra en el corte publicado.
 
-## Publicación del corte
+## Corte de continuidad: filtros de cada código y semántica
 
-Web 186, fuente `5341c3421b1be4bf3c5a47f73544e25183b63957`, versión guardada `appgprj_6a9c53ae66f4819182c306fba4c263ca~appgver_1543c3bf91188191aefe067cafde909d`. Publicación confirmada por el alojamiento. Suite definitiva: 357 aprobadas, cero fallos, cero omitidas y cero canceladas; tipos y compilación aprobados. El barrido funcional de la A conserva 792 códigos, 701 cotizaciones, 91 sin precio utilizable y cero discrepancias, sobre 130 páginas. Las muestras posteriores del navegador y sus límites se registran en `AUDITORIA_BUSCADOR_A_2026-10-26.json` y en el estado único. El color turquesa sigue como preview; no se cambió la app ni se habilitaron fotos externas.
+El nuevo barrido ejecutó 55 consultas iniciales y dos formas específicas de Aji No Men, recorrió 131 páginas y encontró los 792 códigos. Accionó los eventos reales de Marca y Tamaño en 369 combinaciones, recorrió sus 369 páginas filtradas y recuperó los mismos 792 códigos, sin selección automática de un SKU. Verificó 701 cotizaciones y encontró cero incidencias de descubrimiento, campos, identidad o diferencia de importes. Los 91 códigos sin precio utilizable conservan su exclusión y detalle individual. Esta ejecución local sustituye los conteos de páginas de los cortes anteriores; no equivale a clics de navegador por cada producto.
+
+Se acreditaron cinco códigos abreviados mediante EAN/ISBN y nombre o tipo de un catálogo de origen comercial. Sus diez códigos locales reciben alias y familia sin modificar la fuente. `AGUILA FRAMB LECHE` conserva sus dos códigos locales y su estado pendiente; queda fuera de Leche hasta confirmar la familia. Los plurales de la A, arroz de postre o inflado, Aji No Men y los usos del aceite tienen controles adicionales con nombres reales. El detalle de evidencias y límites está en `BUSCADOR_A_SEMANTICA_2026-10-26.md` y en cada entrada aplicable del JSON.
+
+La compilación final, tipos y suite completa aprueban 362 pruebas, con cero fallos, omitidas o canceladas. Los diez perfiles locales mantienen cien recorridos; la selección positiva antes llamada Ají era Aji No Men y se reemplazó por Atún, con la confusión de fideos comprobada separadamente. Los límites físicos, de provincias y del cierre completo de la A se conservan.
