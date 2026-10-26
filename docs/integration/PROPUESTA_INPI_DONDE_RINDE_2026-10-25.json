@@ -27,10 +27,19 @@
         "APLICACIONES DE SOFTWARE DESCARGABLES"
       ],
       "visibleSectionsReviewed": true,
-      "fullStoredAddressAndGeneratedFormReviewPending": true,
+      "fullStoredAddressAndGeneratedFormReviewPending": false,
       "actualCurrentNameDraftReviewed": true,
       "finalInpiTermMatchingPending": false,
-      "existingTermsRetainedInProposedNextOperation": true
+      "existingTermsRetainedInProposedNextOperation": true,
+      "currentNameUnsignedFormCreatedOn": "2026-10-26",
+      "currentNameUnsignedFormDenomination": "DONDE RINDE",
+      "currentNameUnsignedFormReviewed": true,
+      "generatedFormTerms": [
+        "APLICACIONES DE SOFTWARE DESCARGABLES"
+      ],
+      "generatedFormSelectedCount": 1,
+      "generatedFormFeeUmapi": 100,
+      "ownerFactConfirmationPending": true
     },
     {
       "number": 35,
@@ -62,8 +71,21 @@
       "existingDraftFeeUmapi": 100,
       "visibleSectionsReviewed": true,
       "completeFormReviewFinished": false,
-      "fullStoredAddressAndGeneratedFormReviewPending": true,
-      "existingTermsRetainedInProposedNextOperation": true
+      "fullStoredAddressAndGeneratedFormReviewPending": false,
+      "existingTermsRetainedInProposedNextOperation": true,
+      "currentNameUnsignedFormCreatedOn": "2026-10-26",
+      "currentNameUnsignedFormDenomination": "DONDE RINDE",
+      "currentNameUnsignedFormReviewed": true,
+      "generatedFormTerms": [
+        "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+        "PROMOCIÓN DE VENTAS PARA TERCEROS",
+        "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+        "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+        "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+      ],
+      "generatedFormSelectedCount": 5,
+      "generatedFormFeeUmapi": 100,
+      "ownerFactConfirmationPending": true
     },
     {
       "number": 42,
@@ -88,13 +110,24 @@
       "existingDraftFeeUmapi": 100,
       "visibleSectionsReviewed": true,
       "completeFormReviewFinished": false,
-      "fullStoredAddressAndGeneratedFormReviewPending": true,
-      "existingTermsRetainedInProposedNextOperation": true
+      "fullStoredAddressAndGeneratedFormReviewPending": false,
+      "existingTermsRetainedInProposedNextOperation": true,
+      "currentNameUnsignedFormCreatedOn": "2026-10-26",
+      "currentNameUnsignedFormDenomination": "DONDE RINDE",
+      "currentNameUnsignedFormReviewed": true,
+      "generatedFormTerms": [
+        "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+        "SOFTWARE COMO SERVICIO [SAAS]",
+        "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+      ],
+      "generatedFormSelectedCount": 3,
+      "generatedFormFeeUmapi": 100,
+      "ownerFactConfirmationPending": true
     }
   ],
   "classificationBasis": "Nice Classification, 13th edition, 2026 version; actual INPI selectable terms and final scope still require authenticated review.",
   "feePreparation": {
-    "checkedOn": "2026-10-25",
+    "checkedOn": "2026-10-26",
     "currency": "ARS",
     "unit": "UMAPI",
     "unitArs": "412.59",
@@ -132,8 +165,27 @@
         "umapi": 100
       }
     ],
-    "class35And42StillCarryPreviousName": true,
-    "allThreeCurrentNameRequestTotalsVerified": false
+    "class35And42StillCarryPreviousName": false,
+    "allThreeCurrentNameRequestTotalsVerified": true,
+    "currentNameUnsignedFormFeeUnits": [
+      {
+        "class": 9,
+        "terms": 1,
+        "umapi": 100
+      },
+      {
+        "class": 35,
+        "terms": 5,
+        "umapi": 100
+      },
+      {
+        "class": 42,
+        "terms": 3,
+        "umapi": 100
+      }
+    ],
+    "originalOldNameDraftsRetained": true,
+    "actualCurrentNameFormsObservedOn": "2026-10-26"
   },
   "currentAuthentication": {
     "observedOn": "2026-10-25",
@@ -148,7 +200,7 @@
     "workaroundAttempted": false,
     "retried": false,
     "ownerSpecificApprovalPending": false,
-    "nextAction": "Specific authorization for the finalization operation described below; routine authorized sign-in does not need another approval.",
+    "nextAction": "Obtain current owner facts needed to resolve the generated-form discrepancy and verify notification details before any signature.",
     "ownerSpecificApprovalReceived": true,
     "ownerApprovalDate": "2026-10-25",
     "identifierTransmissionOwnerApproved": true,
@@ -158,7 +210,9 @@
     "retriedAfterSpecificApproval": true,
     "normalApprovedLoginSucceeded": true,
     "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success.",
-    "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request."
+    "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+    "lastRoutineSignInOn": "2026-10-26",
+    "sessionExpiredBetweenTurns": true
   },
   "savedNewDrafts": false,
   "editedExistingDrafts": false,
@@ -167,11 +221,10 @@
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Owner approval to update the old-name drafts and finalize the three forms for review",
-    "Review the generated forms including complete stored holder addresses and any declarations",
-    "Consistent final denomination and goods/services scope",
+    "Confirm current real address/contact details and marital status with the owner; resolve the inconsistent marital-status field before signature",
+    "Verify constitution/status of electronic legal domicile required for INPI notifications",
     "Final evaluation of relevant antecedents and service overlap",
-    "Owner action-time approval of actual signature and payment/final filing"
+    "Specific action-time authorization for any actual signature, payment order/payment and filing; none is included in the approved finalization"
   ],
   "sources": [
     "https://www.argentina.gob.ar/inpi/marcas/clasificacion-de-marcas",
@@ -266,10 +319,104 @@
     "modalCancelledWithNo": true,
     "workaroundAttempted": false,
     "retried": false,
-    "ownerSpecificApprovalPending": true,
+    "ownerSpecificApprovalPending": false,
     "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
     "legalSigningPending": true,
     "paymentPending": true,
-    "governmentFilingPending": true
-  }
+    "governmentFilingPending": true,
+    "historicalRejectionPreserved": true,
+    "ownerSpecificApprovalReceivedOn": "2026-10-26",
+    "resolvedBySpecificApproval": true,
+    "laterApprovedOperationCompleted": true,
+    "noBypassUsed": true
+  },
+  "lastUpdatedOn": "2026-10-26",
+  "finalizationAuthorization": {
+    "date": "2026-10-26",
+    "received": true,
+    "scope": "Rename class 35/42 to DONDE RINDE, retain existing selected terms, finalize classes 9/35/42 for pre-signature review; no signature, payment or filing.",
+    "signatureAuthorized": false,
+    "paymentAuthorized": false,
+    "filingAuthorized": false
+  },
+  "generatedFormsReview": {
+    "date": "2026-10-26",
+    "numberOfForms": 3,
+    "denomination": "DONDE RINDE",
+    "modality": "D-DENOMINATIVA",
+    "stateObserved": "Trámites para Firmar",
+    "classes": [
+      {
+        "number": 9,
+        "selectedCount": 1,
+        "selectedTerms": [
+          "APLICACIONES DE SOFTWARE DESCARGABLES"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      },
+      {
+        "number": 35,
+        "selectedCount": 5,
+        "selectedTerms": [
+          "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+          "PROMOCIÓN DE VENTAS PARA TERCEROS",
+          "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+          "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+          "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      },
+      {
+        "number": 42,
+        "selectedCount": 3,
+        "selectedTerms": [
+          "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+          "SOFTWARE COMO SERVICIO [SAAS]",
+          "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+        ],
+        "feeUmapi": 100,
+        "excessTerms": 0,
+        "holderCount": 1,
+        "holderType": "HUMANA",
+        "holderSharePercent": 100
+      }
+    ],
+    "allThreeFormsOpenedAndRead": true,
+    "actualNameClassScopeAndFeeCompared": true,
+    "addressAndContactFieldsViewed": true,
+    "addressAndContactCurrentnessOwnerConfirmed": false,
+    "maritalStatusInconsistentBetweenForms": true,
+    "ownerFactConfirmationPending": true,
+    "physicalLegalAddressFieldsBlank": true,
+    "physicalLegalAddressBlankAloneNotEstablishedAsError": true,
+    "electronicLegalDomicileConstitutionVerified": false,
+    "sensitiveHolderValuesStoredHere": false,
+    "officialGuidance": [
+      "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca",
+      "https://www.argentina.gob.ar/noticias/el-inpi-agiliza-el-registro-de-marcas-con-notificaciones-electronicas-obligatorias",
+      "https://portaltramites.inpi.gob.ar/Instructivos/marcas/Marcas_Nuevas.pdf"
+    ],
+    "originalDraftsRetained": true,
+    "historicalOldNameUnsignedFormsUntouched": true,
+    "newCurrentNameUnsignedFormsCreated": 3,
+    "signed": false,
+    "paymentOrderCreated": false,
+    "paid": false,
+    "filed": false,
+    "limit": "The saved forms have been technically compared but are not cleared for signature. Owner facts, electronic legal domicile status, relevant-antecedent evaluation and any action-time signing/payment authorization remain to resolve."
+  },
+  "finalizedCurrentNameForms": true,
+  "generatedCurrentNameUnsignedForms": 3,
+  "workingFormsDenominationUpdatedForClasses": [
+    35,
+    42
+  ]
 }
