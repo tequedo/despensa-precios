@@ -1194,7 +1194,7 @@
         "laterApprovedOperationCompleted": true,
         "noBypassUsed": true
       },
-      "nextProposedOperation": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof.",
+      "nextProposedOperation": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1463,7 +1463,7 @@
           "emailVisuallyVerifiedInAllThreeForms": true,
           "deniedOperationRetried": false
         },
-        "next": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof.",
+        "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
         "sources": [
           "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
           "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
@@ -1529,8 +1529,20 @@
           "inpiLiveVerification": "Authenticated session expired on refresh; no current paid/entered status was observed.",
           "matchingEmailReceiptsFound": 0,
           "emailChecks": "Read-only Outlook exact payment-reference and INPI searches, plus Gmail exact payment-reference/request/amount searches from 2026-10-26; no matching receipts.",
-          "next": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof."
-        }
+          "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
+          "ownerClarifiedUnpaid": true
+        },
+        "ownerPaymentClarification": {
+          "date": "2026-10-26",
+          "ownerExplicitlySaysNotPaid": true,
+          "ownerPaymentStatus": "unpaid",
+          "assistantMessageNotAcceptedAsPaymentEvidence": true,
+          "whichOtherBillAssistantMayReferTo": "unknown",
+          "liveInpiPaymentStatusReverified": false,
+          "existingQrOrderRemainsTarget": true,
+          "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment."
+        },
+        "ownerReportsUnpaid": true
       }
     },
     "software": {
