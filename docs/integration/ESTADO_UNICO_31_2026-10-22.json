@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 180,
-  "webBaseCommit": "2e96eafbbb85174b2d55980dfd20c7ee6479dbda",
+  "publishedWebVersion": 181,
+  "webBaseCommit": "b736f2c3b06eb6eb01512eb233686d0e0c5772eb",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -85,14 +85,14 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia. Se actualiza la guía física vigente: conserva esos hitos confirmados y corrige instrucciones anteriores de reconocimiento pago y bloqueos C1/C2. No se ejecutó el recorrido físico restante. Las capturas posteriores muestran el formulario y el alta de 3 paquetes Arroz Gallo 500 g, stock 0 y precio pendiente por variedad sin resolver. Aún no acreditan pasar sólo 1 a En casa, dejar 2 pendientes y conservar los gastos."
+      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia. Se actualiza la guía física vigente: conserva esos hitos confirmados y corrige instrucciones anteriores de reconocimiento pago y bloqueos C1/C2. No se ejecutó el recorrido físico restante. Las capturas posteriores muestran el formulario y el alta de 3 paquetes Arroz Gallo 500 g, stock 0 y precio pendiente por variedad sin resolver. Aún no acreditan pasar sólo 1 a En casa, dejar 2 pendientes y conservar los gastos. El titular informó que no encontraba Pasar a En casa; las capturas muestran Gallo 0 y Lucchetti 1, y no validan la recepción parcial de Gallo. Web 181 añade un acceso destacado al principio de Mi lista, antes de Agregar producto. Hace falta actualizar la pantalla y verificarlo físicamente."
     },
     {
       "number": 11,
       "title": "Voz, foto y códigos",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Decisión del titular: reconocimiento pago por voz/foto pausado hasta poder financiarlo. Botones retirados, servidor bloqueado incluso con clave configurada y carga manual con teclado conservada. Código y controles futuros retenidos. Lector de códigos sin IA se conserva; prueba física pendiente."
+      "evidenceAndLimit": "Decisión del titular: reconocimiento pago por voz/foto pausado hasta poder financiarlo. Botones retirados, servidor bloqueado incluso con clave configurada y carga manual con teclado conservada. Código y controles futuros retenidos. Lector de códigos sin IA se conserva; prueba física pendiente. Web 181 retira de Mi lista el campo manual Foto opcional por pedido del titular. La foto de producto se conserva en el alta propia de En casa; no reactiva reconocimiento pago ni borra imágenes guardadas."
     },
     {
       "number": 12,
@@ -113,7 +113,7 @@
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público. 26/10: recorrido integrado del Worker construido confirma lista guardada/compartida, unidades y kg parciales, importes sólo explícitos, recuperación y reintento idempotente con reversión íntegra de un lote fallido; datos locales ficticios. El titular documentó en Samsung el alta de 3 paquetes y stock 0. La recepción parcial física sigue pendiente; web 180 además verifica por eventos que elegir la variedad no reinicia esas 3 unidades."
+      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público. 26/10: recorrido integrado del Worker construido confirma lista guardada/compartida, unidades y kg parciales, importes sólo explícitos, recuperación y reintento idempotente con reversión íntegra de un lote fallido; datos locales ficticios. El titular documentó en Samsung el alta de 3 paquetes y stock 0. La recepción parcial física sigue pendiente; web 180 además verifica por eventos que elegir la variedad no reinicia esas 3 unidades. Web 181 facilita el acceso al diálogo de recepción desde el principio de Mi lista; abrirlo no escribe existencias ni gastos. El caso físico Gallo 3 solicitadas, 1 recibida y 2 pendientes continúa sin confirmación."
     },
     {
       "number": 15,
@@ -356,7 +356,15 @@
     "addProductVariantBuildPassed": true,
     "samsungShoppingListThreeUnitsAdded": true,
     "samsungPartialCheckoutVerified": false,
-    "addProductVariantPostFixPhoneVerified": false
+    "addProductVariantPostFixPhoneVerified": false,
+    "checkoutAccessFocusedPassed": 18,
+    "checkoutAccessFailed": 0,
+    "checkoutAccessSkipped": 0,
+    "checkoutAccessTypesPassed": true,
+    "checkoutAccessBuildPassed": true,
+    "samsungCheckoutNotVisibleReported": true,
+    "checkoutAccessPostFixPhoneVerified": false,
+    "shoppingManualPhotoInputRemoved": true
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -981,6 +989,17 @@
       "status": "closed for published exact-variety selection in product entry, retained quantity/identity and local regression validation",
       "evidence": "docs/integration/ALTA_PRODUCTO_VARIANTES_2026-10-26.md",
       "limit": "Real source sample and controlled component/Worker tests only; no post-fix phone/visual confirmation, physical partial-checkout completion or full-front closure."
+    },
+    {
+      "id": "P10-CHECKOUT-ENTRY-181",
+      "points": [
+        10,
+        11,
+        14
+      ],
+      "status": "closed for published prominent checkout entry and removal of the optional photo field from shopping entry, with 18 focused checks",
+      "evidence": "docs/integration/ACCESO_A_EN_CASA_2026-10-26.md",
+      "limit": "Exact visibility cause and post-fix phone behavior unconfirmed. Gallo partial-checkout test remains pending; no production data was changed."
     }
   ],
   "legalFiscalPreparation": {
@@ -2139,5 +2158,35 @@
       "ownerRequestedTiming": "Después de terminar la prueba física en curso",
       "status": "pending; intentionally deferred by owner"
     }
-  ]
+  ],
+  "checkoutAccessReview": {
+    "asOf": "2026-10-26",
+    "publishedWebVersion": 181,
+    "sourceCommit": "b736f2c3b06eb6eb01512eb233686d0e0c5772eb",
+    "evidence": "docs/integration/ACCESO_A_EN_CASA_2026-10-26.md",
+    "userReportedCheckoutNotVisible": true,
+    "exactVisibilityCauseConfirmed": false,
+    "prominentEntryAboveProductForm": true,
+    "existingLowerEntryRetained": true,
+    "shoppingManualPhotoInputRemoved": true,
+    "inventoryManualPhotoInputRetained": true,
+    "paidRecognitionReactivated": false,
+    "productionDataWrites": 0,
+    "focusedCheckoutTests": 14,
+    "focusedProductEntryTests": 4,
+    "totalFocusedPassed": 18,
+    "failed": 0,
+    "skipped": 0,
+    "typesPassed": true,
+    "buildPassed": true,
+    "lastCompleteSuite": {
+      "publishedWebVersion": 180,
+      "passed": 335,
+      "failed": 0,
+      "skipped": 0
+    },
+    "postFixPhysicalVerified": false,
+    "physicalPartialCheckoutVerified": false,
+    "wholeFrontsNewlyClosed": 0
+  }
 }
