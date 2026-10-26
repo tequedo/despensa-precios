@@ -1,5 +1,25 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 26/10: firmas completadas; pago pausado por revisión legal
+
+El titular autorizó específicamente la firma electrónica de las tres solicitudes actuales DONDE RINDE y acceder a la preparación del pago. Se seleccionaron sólo las clases 9, 35 y 42. El portal confirmó **“Los trámites fueron firmados correctamente”** y las tres aparecieron en **Trámites para Ingresar**, con 100 UMAPI cada una. Los formularios históricos RINDECASA no se firmaron.
+
+El total mostrado al seleccionar las tres solicitudes firmadas fue **$123.777**. Se abrió el selector del CUIT pagador, sin confirmarlo. Antes de continuar, el titular pidió verificar si el nombre era el usado y si estaban hechas la fonética y las demás gestiones legales. Se pausó el pago y se canceló ese selector. **No se generó VEP, QR ni orden de pago; no hubo pago, ingreso efectivo verificado ni concesión.** Mercado Pago por QR figura expresamente como medio admitido en el instructivo oficial del INPI, pero no se llegó a elegir plataforma para estas solicitudes.
+
+**Respuesta comprobada sobre el nombre y antecedentes:**
+- Las tres solicitudes firmadas dicen DONDE RINDE, modalidad denominativa, clases 9/35/42.
+- Los tres informes fonéticos pagados históricos corresponden a RINDECASA. No se trasladan al nombre actual.
+- Para DONDE RINDE se hicieron consultas gratuitas por caracteres y variantes, ampliación por RINDE, cinco fichas dirigidas y un cotejo preliminar de cuatro representaciones.
+- No se solicitó ni obtuvo la búsqueda fonética arancelada específica de DONDE RINDE, ni se estableció una evaluación profesional completa de semejanza, distintividad y cobertura.
+- La recomendación es completar la fonética del nombre actual y evaluar los antecedentes pertinentes antes de reanudar el pago de las solicitudes. No se afirma que un informe favorable garantice la concesión.
+
+**Otros frentes legales identificados que continúan abiertos:** software DNDA con copia técnica preparada pero sin presentación; evaluación y modalidad apropiada del logo; inscripción de responsable/bases AAIP preparada pero no acreditada; alcance efectivo de privacidad/términos; licencias y permisos de materiales/datos pendientes; situación fiscal de la actividad y facturación sin revisar. No se afirma que todos sean registros obligatorios idénticos ni que ya estén completados.
+
+Fuentes oficiales:
+- https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada
+- https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf
+- https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478
+
 ## Actualización del 26/10: datos confirmados y discrepancia corregida
 
 El titular confirmó los datos actuales de domicilio y contacto y aclaró la categoría civil que corresponde al formulario. Los valores personales no se publican en este repositorio.
