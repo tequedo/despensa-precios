@@ -1,5 +1,11 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Captura posterior del 26/10: el PDF abierto es un volante anterior vencido
+
+El PDF mostrado por el titular contiene un QR por **$26.775,54**, emitido el **13/09/2026** y vencido el **14/09/2026**. Su identificador es diferente del de la orden fonética actual. Se omiten identificadores personales y del pago privado en este repositorio.
+
+Ese documento no corresponde a la orden actual de **$27.230,94** y no prueba que ésta se haya pagado. No debe usarse ese QR vencido. El siguiente paso es cerrar el PDF anterior y abrir Volante en la fila de la orden actual, comprobando importe y fecha del documento mostrado antes de abonar. No se ha recuperado todavía la imagen del QR actual ni se confirma un pago. No se atribuye con certeza la respuesta de Mago a un pago concreto.
+
 ## Aclaración posterior del titular, 26/10: no realizó el pago
 
 El titular aclaró expresamente que **no pagó** las búsquedas fonéticas. Por lo tanto, la respuesta de Mago queda descartada como confirmación de esta orden. No se sabe a qué factura se refería ni se atribuye un pago al titular.
