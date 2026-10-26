@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Tres formularios DONDE RINDE 9/35/42 listos para autorización de firma. El titular confirmó datos actuales; discrepancia corregida y documento de clase 9 releído el 26/10. Mismo titular único al 100%, protecciones 1/5/3 y 100 UMAPI por clase. Cuenta del titular y base normativa de sede electrónica comprobadas; sin cambio de domicilio ni representación. Firma electrónica específica, orden/pago e ingreso efectivos pendientes; antecedentes con alcance preliminar. Copia DNDA web 173/Android verificada, otras dependencias legales y fiscales pendientes."
+      "evidenceAndLimit": "Solicitudes denominativas DONDE RINDE 9/35/42 firmadas con autorización específica y verificadas en Trámites para Ingresar el 26/10; datos corregidos y confirmados, 100 UMAPI por clase, selección total $123.777. Pago pausado por el titular antes de confirmar pagador; sin VEP, pago, ingreso efectivo verificado ni concesión. Fonética pagada histórica: RINDECASA; fonética específica de DONDE RINDE y evaluación final de antecedentes/logo pendientes. Copia DNDA web 173/Android preparada; presentación y otros frentes legales/fiscales abiertos."
     },
     {
       "number": 20,
@@ -871,7 +871,7 @@
       ],
       "status": "closed for the explicitly approved creation of three unsigned DONDE RINDE forms, retained selected terms and generated-form technical comparison",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "The later owner confirmation and class 9 data correction are complete and recorded separately. Specific electronic-signing approval, payment order/payment, effective filing, grant and full legal clearance remain pending."
+      "limit": "Preparation and holder-data correction were followed by separately authorized successful signatures. Current-name phonetic search and full clearance remain incomplete; payment is paused, with no VEP, payment, effective filing or grant."
     },
     {
       "id": "P19-OWNER-DATA-CONSISTENCY-20261026",
@@ -880,7 +880,16 @@
       ],
       "status": "closed for owner confirmation of current holder data, correction and reread of class 9, and identification of the same-owner portal account as electronic seat",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "No specific signature authorization, payment order/payment, filing, professional registrability clearance or grant."
+      "limit": "Signature authorization was later received and signatures completed separately. Payment/filing and full trademark/legal clearance remain pending; payment is currently paused."
+    },
+    {
+      "id": "P19-INPI-SIGNATURES-20261026",
+      "points": [
+        19
+      ],
+      "status": "closed for explicitly authorized electronic signatures of the three current DONDE RINDE requests and confirmation in the signed queue",
+      "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+      "limit": "Owner paused payment for current-name phonetic/legal review. No VEP, QR, payment, effective filing, grant, or complete legal protection."
     }
   ],
   "legalFiscalPreparation": {
@@ -889,7 +898,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Three current DONDE RINDE denominative requests in classes 9/35/42 are consistently prepared and await specific electronic-signing authorization. On 2026-10-26 the owner confirmed current address/contact and the civil category, the missing class 9 field was corrected, and the regenerated form read. The same-owner portal account and electronic-notification legal basis were checked. No signature, payment order, payment or filing.",
+      "status": "Three explicitly authorized DONDE RINDE denominative requests in classes 9/35/42 were signed and positively observed in Trámites para Ingresar on 2026-10-26. Payment paused at the owner's request before payer confirmation/VEP generation to verify current-name phonetics and legal completeness. Current-name official paid phonetic search remains undone; historical paid reports are for RINDECASA. No payment, effective filing, grant or complete legal clearance.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -1023,7 +1032,7 @@
         "generatedFormReviewFinished": true,
         "existingDraftEdited": true,
         "finalizationConfirmed": true,
-        "signaturePerformed": false,
+        "signaturePerformed": true,
         "paymentOrderCreated": false,
         "newPaymentMade": false,
         "newFilingPerformed": false,
@@ -1096,7 +1105,11 @@
         "allThreeCurrentNameRequestTotalsVerified": true,
         "currentNameFormFeeDialogsVerifiedOn": "2026-10-26",
         "fullOwnerFactValidationPending": false,
-        "finalFormVerificationScope": "Current name, class, selected term counts 1/5/3, fee units, and owner-confirmed holder data; not registrability clearance or signature approval."
+        "finalFormVerificationScope": "Current name, class, selected term counts 1/5/3, fee units, and owner-confirmed holder data; not registrability clearance or signature approval.",
+        "selectedSignedFormsTotalVerified": true,
+        "selectedSignedFormsTotalArs": "123777.00",
+        "actualVepLiquidationVerified": false,
+        "paymentPausedByOwner": true
       },
       "publicScopePreparation": {
         "date": "2026-10-25",
@@ -1146,7 +1159,7 @@
         "workaroundAttempted": false,
         "retried": false,
         "ownerSpecificApprovalPending": false,
-        "nextAction": "Obtain specific action-time authorization to electronically sign only the three current DONDE RINDE requests in classes 9/35/42; payment remains unapproved.",
+        "nextAction": "Payment paused. Resolve the current-name phonetic and remaining legal-preparation scope before any VEP generation or payment continuation.",
         "ownerSpecificApprovalReceived": true,
         "ownerApprovalDate": "2026-10-25",
         "identifierTransmissionOwnerApproved": true,
@@ -1172,7 +1185,7 @@
         "retried": false,
         "ownerSpecificApprovalPending": false,
         "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
-        "legalSigningPending": true,
+        "legalSigningPending": false,
         "paymentPending": true,
         "governmentFilingPending": true,
         "historicalRejectionPreserved": true,
@@ -1181,7 +1194,7 @@
         "laterApprovedOperationCompleted": true,
         "noBypassUsed": true
       },
-      "nextProposedOperation": "With specific action-time owner approval, electronically sign only the three current DONDE RINDE requests in classes 9/35/42, leaving payment separate and unapproved.",
+      "nextProposedOperation": "Keep payment paused; complete current-name phonetic/antecedent evaluation and clarify remaining legal fronts before resuming VEP/payment.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1268,25 +1281,28 @@
         "originalDraftsRetained": true,
         "historicalOldNameUnsignedFormsUntouched": true,
         "newCurrentNameUnsignedFormsCreated": 3,
-        "signed": false,
+        "signed": true,
         "paymentOrderCreated": false,
         "paid": false,
         "filed": false,
-        "limit": "Technical and owner-data consistency reviewed. This is not a professional registrability clearance, signature authorization, paid filing, grant, or proof of a future case notification.",
+        "limit": "Owner-confirmed data and technical form consistency checked, and signatures completed with specific authorization. Payment is paused; this is not effective paid filing, grant or complete legal protection.",
         "ownerFactsConfirmedOn": "2026-10-26",
         "maritalStatusInconsistencyPreviouslyObserved": true,
         "civilFieldCorrectedInClass9": true,
         "civilFieldCorrectionSavedAndVerifiedOn": "2026-10-26",
         "correctedClass9GeneratedFormRead": true,
-        "currentUnsignedFormsCount": 3,
-        "oneCurrentNameFormPerClassInUnsignedQueue": true,
+        "currentUnsignedFormsCount": 0,
+        "oneCurrentNameFormPerClassInUnsignedQueue": false,
         "oldIncompleteClass9FormMovedBackToDraft": true,
         "technicalFormComparisonFinished": true,
         "electronicLegalDomicileVerificationScope": "Existing owner account identified and accessible, profile read and notification inbox inspected. Under article 7 of Resolution P-250/2018, the portal user account constitutes the electronic seat. These own-name forms identify the same owner account. No new domicile or representative was requested and no Toma de Intervención was filed.",
         "electronicLegalDomicileNewDeclarationSubmitted": false,
         "profileUpdated": false,
         "notificationsMarkedRead": false,
-        "noticesOfNewTrademarkProceedingsAlreadyReceived": false
+        "noticesOfNewTrademarkProceedingsAlreadyReceived": false,
+        "currentSignedFormsCount": 3,
+        "oneCurrentNameFormPerClassInSignedQueue": true,
+        "latestObservedState": "Trámites para Ingresar"
       },
       "ownerDataConfirmation": {
         "date": "2026-10-26",
@@ -1316,8 +1332,67 @@
           "https://www.boletinoficial.gob.ar/pdf/aviso/primera/338752/20260226"
         ]
       },
-      "signatureAuthorized": false,
-      "signaturePerformed": false
+      "signatureAuthorized": true,
+      "signaturePerformed": true,
+      "signatureAuthorization": {
+        "date": "2026-10-26",
+        "received": true,
+        "scope": "Electronically sign the three current DONDE RINDE requests in classes 9/35/42 with the reviewed owner data, and access payment preparation. The owner subsequently paused payment to confirm trademark-search and legal completeness."
+      },
+      "signatureResult": {
+        "date": "2026-10-26",
+        "successMessageObserved": "Los trámites fueron firmados correctamente",
+        "signedQueueObserved": "Trámites para Ingresar",
+        "classes": [
+          9,
+          35,
+          42
+        ],
+        "denomination": "DONDE RINDE",
+        "termCounts": [
+          1,
+          5,
+          3
+        ],
+        "umapiPerClass": 100,
+        "actualCombinedSelectionArs": "123777.00",
+        "oldNameHistoricalRequestsNotSigned": true
+      },
+      "paymentPreparation": {
+        "date": "2026-10-26",
+        "userRequestedAccess": true,
+        "requestedProvider": "Mercado Pago",
+        "officialInpiGuideExplicitlySupportsMercadoPagoQr": true,
+        "signedRequestsSelected": 3,
+        "selectedTotalArs": "123777.00",
+        "payerSelectionDialogOpened": true,
+        "payerSelectionConfirmed": false,
+        "dialogCancelledAfterOwnerPause": true,
+        "paymentPlatformSelectionReached": false,
+        "paymentOrderCreated": false,
+        "vepGenerated": false,
+        "qrGenerated": false,
+        "paymentMade": false,
+        "pauseReason": "Owner asked to verify the current name, phonetic searches and remaining legal registrations before continuing.",
+        "officialSources": [
+          "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
+          "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
+        ]
+      },
+      "currentNameSearchStatus": {
+        "checkedAgainstProjectEvidenceOn": "2026-10-26",
+        "actualPublicSearchDate": "2026-10-23",
+        "currentName": "DONDE RINDE",
+        "paidHistoricalPhoneticReportsFor": "RINDECASA",
+        "paidPhoneticReportForCurrentNameRequested": false,
+        "paidPhoneticReportForCurrentNameObtained": false,
+        "currentNameCharacterVariantSearchesCompleted": true,
+        "targetedSimilarMarkRecordsReviewed": 5,
+        "preliminaryGraphicRepresentationsViewed": 4,
+        "fullPhoneticGraphicConceptualClearanceEstablished": false,
+        "recommendation": "Complete the specific current-name phonetic search and evaluate relevant similar marks before resuming payment of the three registration requests. A report does not itself guarantee registrability.",
+        "officialGuidance": "https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada"
+      }
     },
     "software": {
       "point": 19,
