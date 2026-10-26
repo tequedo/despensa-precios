@@ -1,5 +1,30 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 26/10: tres búsquedas fonéticas actuales preparadas; confirmación pendiente
+
+El titular pidió completar la fonética de DONDE RINDE e indicó que desea recibir el QR para pagar. Se prepararon tres formularios separados mediante la interfaz normal del INPI, uno por clase; el portal deja deshabilitado Agregar después de la primera fila en el mismo formulario, por lo que no se forzó ningún control ni se amplió a todas las clases.
+
+| Clase | Denominación | UMAPI | Importe calculado |
+| --- | --- | ---: | ---: |
+| 9 | DONDE RINDE | 22 | $9.076,98 |
+| 35 | DONDE RINDE | 22 | $9.076,98 |
+| 42 | DONDE RINDE | 22 | $9.076,98 |
+| Total | Tres pedidos independientes | 66 | **$27.230,94** |
+
+La unidad vigente observada y comprobada es $412,59. El importe es una previsión calculada a partir de las filas oficiales, no un VEP ya liquidado. Se verificaron en los tres formularios el nombre del solicitante, su identificador, tipo PARTICULAR, país, provincia, localidad, domicilio y correo. Los tres correos se comprobaron visualmente porque la lectura automatizada del campo aparece enmascarada. El teléfono opcional quedó vacío; no se inventó un número. No se publican valores personales en este repositorio.
+
+**Revisión automática:** la confirmación del primer pedido se rechazó cuando sólo estaba preparada la clase 9 y el correo todavía no estaba comprobado. Se canceló con No, sin crear el pedido. Después se completó el trabajo no afectado: las tres clases quedaron preparadas y los datos se verificaron. No se reintentó la operación rechazada ni se utilizó otra vía.
+
+**Próximo paso concreto:** confirmación específica para finalizar y firmar electrónicamente sólo estos tres nuevos pedidos fonéticos y generar su VEP/QR por el total indicado, sujeto a comprobar la liquidación efectiva. La autorización de firma anterior corresponde a las tres solicitudes de registro; no se extiende automáticamente a estos nuevos pedidos. No se realizará el débito del pago por el titular.
+
+**Estado exacto:** formularios fonéticos aún sin finalizar, cero firmas fonéticas, sin VEP, QR, pago ni informes nuevos. Las solicitudes de registro permanecen firmadas y con el pago de $123.777 pausado. No deben seleccionarse junto con las búsquedas. La fonética no se considera completada hasta obtener y examinar los informes; tampoco garantiza registrabilidad.
+
+Fuentes:
+- https://www.argentina.gob.ar/servicio/solicitar-la-busqueda-fonetica-de-una-marca
+- https://portaltramites.inpi.gob.ar/Documentos/Aranceles_Anexo.pdf
+- https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles
+- https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf
+
 ## Actualización del 26/10: firmas completadas; pago pausado por revisión legal
 
 El titular autorizó específicamente la firma electrónica de las tres solicitudes actuales DONDE RINDE y acceder a la preparación del pago. Se seleccionaron sólo las clases 9, 35 y 42. El portal confirmó **“Los trámites fueron firmados correctamente”** y las tres aparecieron en **Trámites para Ingresar**, con 100 UMAPI cada una. Los formularios históricos RINDECASA no se firmaron.
