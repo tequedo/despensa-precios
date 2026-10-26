@@ -224,7 +224,7 @@
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
+    "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying. Then verify payment and obtain the reports for classes 9/35/42; keep trademark-registration payment paused.",
     "Verify payment and obtain/read the reports for classes 9/35/42, then evaluate relevant similar marks before resuming the paused ARS123777 trademark-registration payment.",
     "Current name/logo protection scope and remaining legal fronts retain their documented limits.",
     "No trademark filing or grant is confirmed."
@@ -603,7 +603,7 @@
       "emailVisuallyVerifiedInAllThreeForms": true,
       "deniedOperationRetried": false
     },
-    "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment.",
+    "next": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying. Then verify payment and obtain the reports for classes 9/35/42; keep trademark-registration payment paused.",
     "sources": [
       "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
       "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
@@ -682,7 +682,19 @@
       "existingQrOrderRemainsTarget": true,
       "next": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment."
     },
-    "ownerReportsUnpaid": true
+    "ownerReportsUnpaid": true,
+    "userDisplayedOlderExpiredSlip": {
+      "observedOn": "2026-10-26",
+      "source": "User-supplied screenshot of a PDF payment QR",
+      "shownAmountArs": "26775.54",
+      "issueDate": "2026-09-13",
+      "expiryDate": "2026-09-14",
+      "referenceDiffersFromCurrentOrder": true,
+      "notCurrentPhoneticPaymentOrder": true,
+      "doesNotProveCurrentPayment": true,
+      "privateIdentifiersOmitted": true,
+      "recommendedAction": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying."
+    }
   },
-  "nextProposedOperation": "Help the owner open the existing INPI phonetic-search payment slip and pay ARS27230.94 through Mercado Pago QR. The owner explicitly clarified that no payment was made; the Mago message is not confirmation of this order. Do not create another order unless the original is actually expired or unusable. Verify the receipt/accreditation after payment."
+  "nextProposedOperation": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying. Then verify payment and obtain the reports for classes 9/35/42; keep trademark-registration payment paused."
 }
