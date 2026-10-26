@@ -1476,7 +1476,7 @@
         "selectedTotalArs": "27230.94",
         "selectedOnlyPhoneticRequests": true,
         "registrationRequestsExcluded": true,
-        "newVepConfirmed": true,
+        "newVepConfirmed": false,
         "qrConfirmed": true,
         "paymentConfirmed": false,
         "searchReportsObtained": false,
@@ -1516,7 +1516,9 @@
         },
         "registrationPaymentOrderCreated": false,
         "sensitiveIdentifiersAndPrivatePaymentUrlPublished": false,
-        "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted."
+        "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted.",
+        "officialQrPaymentOrderConfirmed": true,
+        "actualVepNumberObserved": false
       }
     },
     "software": {
