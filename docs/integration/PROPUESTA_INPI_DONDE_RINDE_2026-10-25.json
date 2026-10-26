@@ -203,7 +203,7 @@
     "workaroundAttempted": false,
     "retried": false,
     "ownerSpecificApprovalPending": false,
-    "nextAction": "Obtain specific action-time authorization to electronically sign only the three current DONDE RINDE requests in classes 9/35/42; payment remains unapproved.",
+    "nextAction": "Payment paused. Resolve the current-name phonetic and remaining legal-preparation scope before any VEP generation or payment continuation.",
     "ownerSpecificApprovalReceived": true,
     "ownerApprovalDate": "2026-10-25",
     "identifierTransmissionOwnerApproved": true,
@@ -219,14 +219,15 @@
   },
   "savedNewDrafts": false,
   "editedExistingDrafts": true,
-  "signaturePerformed": false,
+  "signaturePerformed": true,
   "paymentOrderCreated": false,
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Specific action-time owner approval of electronic signing of the three current-name requests",
-    "Owner review/approval of the actual payment order and payment, and verification of resulting filing status",
-    "Relevant-antecedent/service-overlap evaluation remains preliminary rather than professional clearance"
+    "Owner-requested payment pause: current-name paid phonetic search is not completed; evaluate similar-mark coverage and distinctiveness before resuming",
+    "Current name/logo protection scope and remaining legal fronts must retain their documented limits",
+    "On continuation, generate and verify the actual VEP/payment platform, amount and expiry, then obtain/perform the authorized payment and verify filing status",
+    "No trademark grant is confirmed"
   ],
   "sources": [
     "https://www.argentina.gob.ar/inpi/marcas/clasificacion-de-marcas",
@@ -323,7 +324,7 @@
     "retried": false,
     "ownerSpecificApprovalPending": false,
     "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
-    "legalSigningPending": true,
+    "legalSigningPending": false,
     "paymentPending": true,
     "governmentFilingPending": true,
     "historicalRejectionPreserved": true,
@@ -409,25 +410,28 @@
     "originalDraftsRetained": true,
     "historicalOldNameUnsignedFormsUntouched": true,
     "newCurrentNameUnsignedFormsCreated": 3,
-    "signed": false,
+    "signed": true,
     "paymentOrderCreated": false,
     "paid": false,
     "filed": false,
-    "limit": "Technical and owner-data consistency reviewed. This is not a professional registrability clearance, signature authorization, paid filing, grant, or proof of a future case notification.",
+    "limit": "Owner-confirmed data and technical form consistency checked, and signatures completed with specific authorization. Payment is paused; this is not effective paid filing, grant or complete legal protection.",
     "ownerFactsConfirmedOn": "2026-10-26",
     "maritalStatusInconsistencyPreviouslyObserved": true,
     "civilFieldCorrectedInClass9": true,
     "civilFieldCorrectionSavedAndVerifiedOn": "2026-10-26",
     "correctedClass9GeneratedFormRead": true,
-    "currentUnsignedFormsCount": 3,
-    "oneCurrentNameFormPerClassInUnsignedQueue": true,
+    "currentUnsignedFormsCount": 0,
+    "oneCurrentNameFormPerClassInUnsignedQueue": false,
     "oldIncompleteClass9FormMovedBackToDraft": true,
     "technicalFormComparisonFinished": true,
     "electronicLegalDomicileVerificationScope": "Existing owner account identified and accessible, profile read and notification inbox inspected. Under article 7 of Resolution P-250/2018, the portal user account constitutes the electronic seat. These own-name forms identify the same owner account. No new domicile or representative was requested and no Toma de Intervención was filed.",
     "electronicLegalDomicileNewDeclarationSubmitted": false,
     "profileUpdated": false,
     "notificationsMarkedRead": false,
-    "noticesOfNewTrademarkProceedingsAlreadyReceived": false
+    "noticesOfNewTrademarkProceedingsAlreadyReceived": false,
+    "currentSignedFormsCount": 3,
+    "oneCurrentNameFormPerClassInSignedQueue": true,
+    "latestObservedState": "Trámites para Ingresar"
   },
   "finalizedCurrentNameForms": true,
   "generatedCurrentNameUnsignedForms": 3,
@@ -469,5 +473,64 @@
     "change": "Owner-confirmed missing holder field corrected",
     "historicalOriginalDraftsUnchanged": true,
     "correctedUnsignedFormVerified": true
+  },
+  "signatureAuthorization": {
+    "date": "2026-10-26",
+    "received": true,
+    "scope": "Electronically sign the three current DONDE RINDE requests in classes 9/35/42 with the reviewed owner data, and access payment preparation. The owner subsequently paused payment to confirm trademark-search and legal completeness."
+  },
+  "signatureResult": {
+    "date": "2026-10-26",
+    "successMessageObserved": "Los trámites fueron firmados correctamente",
+    "signedQueueObserved": "Trámites para Ingresar",
+    "classes": [
+      9,
+      35,
+      42
+    ],
+    "denomination": "DONDE RINDE",
+    "termCounts": [
+      1,
+      5,
+      3
+    ],
+    "umapiPerClass": 100,
+    "actualCombinedSelectionArs": "123777.00",
+    "oldNameHistoricalRequestsNotSigned": true
+  },
+  "paymentPreparation": {
+    "date": "2026-10-26",
+    "userRequestedAccess": true,
+    "requestedProvider": "Mercado Pago",
+    "officialInpiGuideExplicitlySupportsMercadoPagoQr": true,
+    "signedRequestsSelected": 3,
+    "selectedTotalArs": "123777.00",
+    "payerSelectionDialogOpened": true,
+    "payerSelectionConfirmed": false,
+    "dialogCancelledAfterOwnerPause": true,
+    "paymentPlatformSelectionReached": false,
+    "paymentOrderCreated": false,
+    "vepGenerated": false,
+    "qrGenerated": false,
+    "paymentMade": false,
+    "pauseReason": "Owner asked to verify the current name, phonetic searches and remaining legal registrations before continuing.",
+    "officialSources": [
+      "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
+      "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
+    ]
+  },
+  "currentNameSearchStatus": {
+    "checkedAgainstProjectEvidenceOn": "2026-10-26",
+    "actualPublicSearchDate": "2026-10-23",
+    "currentName": "DONDE RINDE",
+    "paidHistoricalPhoneticReportsFor": "RINDECASA",
+    "paidPhoneticReportForCurrentNameRequested": false,
+    "paidPhoneticReportForCurrentNameObtained": false,
+    "currentNameCharacterVariantSearchesCompleted": true,
+    "targetedSimilarMarkRecordsReviewed": 5,
+    "preliminaryGraphicRepresentationsViewed": 4,
+    "fullPhoneticGraphicConceptualClearanceEstablished": false,
+    "recommendation": "Complete the specific current-name phonetic search and evaluate relevant similar marks before resuming payment of the three registration requests. A report does not itself guarantee registrability.",
+    "officialGuidance": "https://www.argentina.gob.ar/inpi/marcas/averigua-si-tu-marca-esta-registrada"
   }
 }
