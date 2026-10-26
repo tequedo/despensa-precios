@@ -1,5 +1,30 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Último estado del 25/10: ingreso completado y tres borradores revisados
+
+El titular dio autorización específica para el ingreso seguro a ARCA con CUIT/CUIL y clave fiscal destinado a recuperar y revisar INPI. El ingreso normal quedó confirmado en el dominio oficial de INPI. No se leyó ni copió la contraseña. La negativa automática anterior sobre el acceso quedó resuelta para este ingreso aprobado; no se requiere pedir de nuevo esa misma autorización rutinaria.
+
+Se revisaron los formularios existentes y sus cuadros de arancel:
+
+| Clase | Denominación guardada | Términos seleccionados | Arancel observado |
+| --- | --- | --- | --- |
+| 9 | DONDE RINDE | 1 | 100 UMAPI |
+| 35 | RINDECASA | 5 | 100 UMAPI |
+| 42 | RINDECASA | 3 | 100 UMAPI |
+
+Los términos exactos están en [`PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json`](PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json), sección `authenticatedReview`. Clase 35 incluye comparación, información/asesoramiento al consumidor, promoción y publicidad en línea. Clase 42 incluye inventario con software no descargable, SaaS y suministro de software en línea.
+
+En los tres se observó una fila de titular persona humana con 100%. No se cargaron prioridades, representantes, observaciones ni documentos nuevos. La casilla de quiebra estaba sin marcar y Comité Olímpico en No Corresponde; se conservaron esos valores anteriores. La tabla de titularidad no expone el detalle completo del domicilio guardado: esa revisión debe hacerse sobre los formularios generados antes de firmar.
+
+**Bloqueo actual distinto del ingreso:** la revisión automática rechazó confirmar **Sí** después de **Finalizar** en clase 9, porque interpreta que puede generar o avanzar una solicitud formal con consecuencias jurídicas/económicas y la autorización específica vigente sólo cubría acceso y revisión. La confirmación no se aplicó; se cerró con No. No se intentó por otra vía. Después se completó la revisión no afectada de clases 35/42.
+
+**Operación concreta que debe aprobar el titular:** conservar los productos/servicios observados, actualizar a DONDE RINDE los borradores existentes de clases 35 y 42 y finalizar los tres formularios para dejarlos listos para revisión previa a firma. Esa autorización no comprende firma, pago ni presentación. Con 100 UMAPI por formulario y la unidad visible de $412,59, la base de los tres es $123.777,00. Las dos solicitudes que aún dicen RINDECASA deben volver a comprobarse con el nombre actual antes de aprobar el paso final.
+
+No se editaron borradores, no se crearon duplicados, no se finalizó ninguno y no se generó orden de pago, firma o presentación durante esta revisión.
+
+Las secciones anteriores que figuran a continuación se conservan como historia; el bloqueo del CUIT allí descrito ya no es el bloqueo actual.
+
+
 ## Actualización del 25/10/2026: alcance preparado y acceso fiscal pendiente
 
 Se revisaron las fuentes oficiales de clasificación y aranceles. La propuesta de alcance e importes queda identificada en [`PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json`](PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json).
