@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-25",
+  "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
   "publishedWebVersion": 173,
@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Ingreso seguro a ARCA autorizado específicamente y completado; revisadas las secciones visibles y los aranceles de tres borradores: clase 9 DONDE RINDE (1 término), 35 RINDECASA (5) y 42 RINDECASA (3), 100 UMAPI por cada uno. La revisión automática bloqueó confirmar Finalizar: autorización específica pendiente para actualizar 35/42 y finalizar los tres para revisión previa a firma. No se modificaron borradores, firmó, pagó ni presentó. Domicilios completos y formularios generados pendientes de revisar. Copia DNDA web 173 (491 archivos) y Android (24) verificada; titularidad/publicación, base DNDA y presentaciones pendientes."
+      "evidenceAndLimit": "Tres formularios denominativos DONDE RINDE finalizados con autorización específica y revisados el 26/10, clases 9/35/42 con 1/5/3 términos conservados y 100 UMAPI cada una; visibles en Trámites para Firmar. Datos completos del titular vistos, con discrepancia de estado civil pendiente de confirmar y corregir; domicilio real/contacto actuales y constitución del domicilio legal electrónico por verificar. Se conservaron los borradores e históricos. Sin firmas, órdenes de pago, pagos ni presentaciones. Copia DNDA web 173 y Android verificada; demás dependencias legales y fiscales pendientes."
     },
     {
       "number": 20,
@@ -768,7 +768,7 @@
       ],
       "status": "closed for dated official base-fee calculation and identification of unresolved DNDA cost basis",
       "evidence": "ARANCELES_LEGALES_2026-10-23.json",
-      "limit": "All three existing-form fee dialogs were reviewed on 2026-10-25: 100 UMAPI each. Class 35/42 still carry the previous name; renamed final forms and any eventual payment order must be checked. No payment approval, order or payment."
+      "limit": "Three current-name unsigned forms verified on 2026-10-26 at 100 UMAPI each. No combined payment order, payment approval or payment."
     },
     {
       "id": "P23-DEDICATED-REVIEWER-WEB",
@@ -853,7 +853,7 @@
       ],
       "status": "closed for public Nice classification mapping and current base-fee calculation",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "Public classification mapping only; the later owner-approved authenticated review is recorded separately. Renamed final forms, full holder addresses, finalization, signature, filing and payment remain pending."
+      "limit": "Public classification mapping only; later authenticated form review and approved finalization are recorded separately. Owner-fact validation, electronic domicile, signature, payment, filing and clearance remain pending."
     },
     {
       "id": "P19-AUTHENTICATED-VISIBLE-REVIEW",
@@ -862,7 +862,16 @@
       ],
       "status": "closed for owner-approved secure ARCA sign-in, visible review of three existing INPI drafts and their fee dialogs",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "Class 35/42 still carry RINDECASA. No draft edit or finalization. Specific finalization approval, full stored holder addresses, generated forms, signature, payment, filing and clearance remain pending."
+      "limit": "Historical visible-draft review on 2026-10-25. Approved current-name finalization and generated-form review on 2026-10-26 are recorded separately; owner-fact validation, signature, payment, filing and clearance remain pending."
+    },
+    {
+      "id": "P19-INPI-UNSIGNED-FORMS-20261026",
+      "points": [
+        19
+      ],
+      "status": "closed for the explicitly approved creation of three unsigned DONDE RINDE forms, retained selected terms and generated-form technical comparison",
+      "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+      "limit": "Marital-status discrepancy, owner address/contact confirmation and electronic legal domicile status remain unresolved. No signature, payment order, payment, filing, grant or full legal clearance."
     }
   ],
   "legalFiscalPreparation": {
@@ -871,7 +880,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Owner-approved secure ARCA sign-in succeeded on 2026-10-25. All visible sections and fee dialogs of three existing drafts were reviewed. Class 9 is DONDE RINDE; classes 35 and 42 remain RINDECASA. Their rename and finalization for pre-signature review await specific owner authorization after an automatic-review rejection of the Finalizar confirmation. Full stored holder addresses and generated forms remain unreviewed.",
+      "status": "Three owner-approved DONDE RINDE denominative forms for classes 9/35/42 were finalized on 2026-10-26, observed in Trámites para Firmar, and their generated forms read. Exact terms/counts 1/5/3 and 100 UMAPI each were confirmed. Owner address/contact currentness, inconsistent marital-status fields and electronic legal domicile status remain to resolve before signature. No signature, payment order, payment or filing.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -1001,18 +1010,21 @@
           "observationsEmpty": true,
           "supportingDocumentRows": 0
         },
-        "fullStoredAddressReviewFinished": false,
-        "generatedFormReviewFinished": false,
+        "fullStoredAddressReviewFinished": true,
+        "generatedFormReviewFinished": true,
         "existingDraftEdited": false,
-        "finalizationConfirmed": false,
+        "finalizationConfirmed": true,
         "signaturePerformed": false,
         "paymentOrderCreated": false,
         "newPaymentMade": false,
         "newFilingPerformed": false,
-        "evidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json"
+        "evidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+        "latestGeneratedFormReviewOn": "2026-10-26",
+        "addressCurrentnessOwnerConfirmed": false,
+        "originalDraftsRetained": true
       },
       "currentFeeReference": {
-        "date": "2026-10-25",
+        "date": "2026-10-26",
         "unit": "UMAPI",
         "arsPerUnit": "412.59",
         "announcedFrom": "2026-11-01",
@@ -1021,11 +1033,12 @@
         "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
         "actualRequestTotalVerifiedScopeClass": 9,
         "allThreeActualRequestTotalsVerified": true,
-        "unitRecheckedOn": "2026-10-25",
+        "unitRecheckedOn": "2026-10-26",
         "actualClass9DraftLastObserved": "2026-10-25",
         "actualExistingDraftsLastObserved": "2026-10-25",
-        "actualRequestVerifiedScope": "Fee dialogs of the three existing drafts, classes 9/35/42; class 35 and 42 still carry RINDECASA.",
-        "allThreeCurrentNameRequestTotalsVerified": false
+        "actualRequestVerifiedScope": "Three generated DONDE RINDE unsigned forms in classes 9/35/42, 100 UMAPI each; no combined payment order.",
+        "allThreeCurrentNameRequestTotalsVerified": true,
+        "actualCurrentNameFormsLastObserved": "2026-10-26"
       },
       "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
       "feeBudget": {
@@ -1065,8 +1078,12 @@
         ],
         "allThreeFinalCurrentNameFormsVerified": false,
         "combinedPaymentOrderGenerated": false,
-        "class35And42StillCarryPreviousName": true,
-        "paymentApproved": false
+        "class35And42StillCarryPreviousName": false,
+        "paymentApproved": false,
+        "originalOldNameDraftsRetained": true,
+        "allThreeCurrentNameRequestTotalsVerified": true,
+        "currentNameFormFeeDialogsVerifiedOn": "2026-10-26",
+        "fullOwnerFactValidationPending": true
       },
       "publicScopePreparation": {
         "date": "2026-10-25",
@@ -1097,8 +1114,11 @@
         "newDraftsSaved": false,
         "existingDraftsEdited": false,
         "matchScope": "Public core labels matched to selected labels in the three existing forms. The class 35 and 42 forms also contain the retained additional terms listed in the authenticated review and still need their denomination updated.",
-        "currentNameFormsReady": false,
-        "actualVisibleDraftReviewOn": "2026-10-25"
+        "currentNameFormsReady": true,
+        "actualVisibleDraftReviewOn": "2026-10-25",
+        "readyScope": "Saved unsigned queue and generated-form technical comparison only; not ready for signature until owner-fact and electronic-domicile checks finish.",
+        "actualCurrentNameFormsReviewedOn": "2026-10-26",
+        "newUnsignedFormsCreated": 3
       },
       "currentAccessAttempt": {
         "observedOn": "2026-10-25",
@@ -1113,7 +1133,7 @@
         "workaroundAttempted": false,
         "retried": false,
         "ownerSpecificApprovalPending": false,
-        "nextAction": "Specific authorization for the finalization operation described below; routine authorized sign-in does not need another approval.",
+        "nextAction": "Obtain current owner facts needed to resolve the generated-form discrepancy and verify notification details before any signature.",
         "ownerSpecificApprovalReceived": true,
         "ownerApprovalDate": "2026-10-25",
         "identifierTransmissionOwnerApproved": true,
@@ -1123,7 +1143,9 @@
         "retriedAfterSpecificApproval": true,
         "normalApprovedLoginSucceeded": true,
         "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success.",
-        "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request."
+        "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+        "lastRoutineSignInOn": "2026-10-26",
+        "sessionExpiredBetweenTurns": true
       },
       "finalizationReview": {
         "date": "2026-10-25",
@@ -1135,13 +1157,18 @@
         "modalCancelledWithNo": true,
         "workaroundAttempted": false,
         "retried": false,
-        "ownerSpecificApprovalPending": true,
+        "ownerSpecificApprovalPending": false,
         "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
         "legalSigningPending": true,
         "paymentPending": true,
-        "governmentFilingPending": true
+        "governmentFilingPending": true,
+        "historicalRejectionPreserved": true,
+        "ownerSpecificApprovalReceivedOn": "2026-10-26",
+        "resolvedBySpecificApproval": true,
+        "laterApprovedOperationCompleted": true,
+        "noBypassUsed": true
       },
-      "nextProposedOperation": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
+      "nextProposedOperation": "Confirm current owner data and verify electronic legal domicile status; resolve the generated-form discrepancy before requesting any actual signature.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1151,6 +1178,88 @@
         "signatureApprovalIncluded": false,
         "paymentApprovalIncluded": false,
         "filingApprovalIncluded": false
+      },
+      "finalizationAuthorization": {
+        "date": "2026-10-26",
+        "received": true,
+        "scope": "Rename class 35/42 to DONDE RINDE, retain existing selected terms, finalize classes 9/35/42 for pre-signature review; no signature, payment or filing.",
+        "signatureAuthorized": false,
+        "paymentAuthorized": false,
+        "filingAuthorized": false
+      },
+      "generatedFormsReview": {
+        "date": "2026-10-26",
+        "numberOfForms": 3,
+        "denomination": "DONDE RINDE",
+        "modality": "D-DENOMINATIVA",
+        "stateObserved": "Trámites para Firmar",
+        "classes": [
+          {
+            "number": 9,
+            "selectedCount": 1,
+            "selectedTerms": [
+              "APLICACIONES DE SOFTWARE DESCARGABLES"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          },
+          {
+            "number": 35,
+            "selectedCount": 5,
+            "selectedTerms": [
+              "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+              "PROMOCIÓN DE VENTAS PARA TERCEROS",
+              "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+              "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+              "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          },
+          {
+            "number": 42,
+            "selectedCount": 3,
+            "selectedTerms": [
+              "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+              "SOFTWARE COMO SERVICIO [SAAS]",
+              "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          }
+        ],
+        "allThreeFormsOpenedAndRead": true,
+        "actualNameClassScopeAndFeeCompared": true,
+        "addressAndContactFieldsViewed": true,
+        "addressAndContactCurrentnessOwnerConfirmed": false,
+        "maritalStatusInconsistentBetweenForms": true,
+        "ownerFactConfirmationPending": true,
+        "physicalLegalAddressFieldsBlank": true,
+        "physicalLegalAddressBlankAloneNotEstablishedAsError": true,
+        "electronicLegalDomicileConstitutionVerified": false,
+        "sensitiveHolderValuesStoredHere": false,
+        "officialGuidance": [
+          "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca",
+          "https://www.argentina.gob.ar/noticias/el-inpi-agiliza-el-registro-de-marcas-con-notificaciones-electronicas-obligatorias",
+          "https://portaltramites.inpi.gob.ar/Instructivos/marcas/Marcas_Nuevas.pdf"
+        ],
+        "originalDraftsRetained": true,
+        "historicalOldNameUnsignedFormsUntouched": true,
+        "newCurrentNameUnsignedFormsCreated": 3,
+        "signed": false,
+        "paymentOrderCreated": false,
+        "paid": false,
+        "filed": false,
+        "limit": "The saved forms have been technically compared but are not cleared for signature. Owner facts, electronic legal domicile status, relevant-antecedent evaluation and any action-time signing/payment authorization remain to resolve."
       }
     },
     "software": {
@@ -1258,7 +1367,7 @@
       "spendingLimitGranted": false,
       "paymentApproved": false
     },
-    "lastTechnicalUpdate": "2026-10-25"
+    "lastTechnicalUpdate": "2026-10-26"
   },
   "legalFiscalLedgerIntegration": {
     "pr": 27,
