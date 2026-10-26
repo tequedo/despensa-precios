@@ -1,5 +1,15 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Captura del listado del titular, 26/10: la fila actual es correcta
+
+El titular mostró Trámites en Proceso de ingreso con una sola fila: la orden actual, por **$27.230,94**, fecha **26/10/2026**, estado **Q-ERECAUDA - GENERADO** y botón Volante. Se confirma la fila correcta; no está establecido que el titular haya elegido otro pago.
+
+El PDF mostrado anteriormente sigue siendo diferente, por $26.775,54 y con fechas de septiembre. La causa de la discrepancia no está comprobada: puede involucrar la copia que se abre o el documento entregado por el portal. No se afirma como hecho que sea caché, un error del INPI ni una equivocación del usuario.
+
+**Siguiente comprobación:** una descarga nueva desde Volante en la fila actual y apertura del archivo recién descargado en Chrome > Más > Descargas. Cotejar importe y fecha antes de pagar. Si sigue apareciendo el documento anterior, inspeccionar el PDF descargado y comunicar la discrepancia al soporte del INPI; no pagar el QR anterior ni generar órdenes duplicadas. No se envió ningún mensaje al soporte. La guía oficial de Chrome documenta la ubicación de las descargas, no garantiza que este paso resuelva la discrepancia.
+
+Fuente de ayuda: https://support.google.com/chrome/answer/95759?co=GENIE.Platform%3DAndroid&hl=es-419
+
 ## Captura posterior del 26/10: el PDF abierto es un volante anterior vencido
 
 El PDF mostrado por el titular contiene un QR por **$26.775,54**, emitido el **13/09/2026** y vencido el **14/09/2026**. Su identificador es diferente del de la orden fonética actual. Se omiten identificadores personales y del pago privado en este repositorio.
