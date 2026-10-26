@@ -616,7 +616,7 @@
     "selectedTotalArs": "27230.94",
     "selectedOnlyPhoneticRequests": true,
     "registrationRequestsExcluded": true,
-    "newVepConfirmed": true,
+    "newVepConfirmed": false,
     "qrConfirmed": true,
     "paymentConfirmed": false,
     "searchReportsObtained": false,
@@ -656,7 +656,9 @@
     },
     "registrationPaymentOrderCreated": false,
     "sensitiveIdentifiersAndPrivatePaymentUrlPublished": false,
-    "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted."
+    "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted.",
+    "officialQrPaymentOrderConfirmed": true,
+    "actualVepNumberObserved": false
   },
   "nextProposedOperation": "Owner opens the existing generated payment in INPI > Mis Trámites > Trámites en Proceso de ingreso > Volante on their own device, verifies ARS27230.94 and pays with Mercado Pago QR. Verify payment afterward, then obtain and assess all three phonetic reports before resuming trademark-registration payment."
 }
