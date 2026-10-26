@@ -1,5 +1,23 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 26/10: datos confirmados y discrepancia corregida
+
+El titular confirmó los datos actuales de domicilio y contacto y aclaró la categoría civil que corresponde al formulario. Los valores personales no se publican en este repositorio.
+
+Se pasó únicamente el formulario actual de clase 9 a borrador; se recuperó el mismo titular mediante el buscador del portal, se completó el dato faltante y se conservaron identidad, domicilio real, correo y participación del 100%. Luego se finalizó y se abrió el documento generado para verificar el resultado. Nombre DONDE RINDE, modalidad denominativa y la protección APLICACIONES DE SOFTWARE DESCARGABLES permanecen iguales. El documento generado ya coincide con las otras dos clases en el dato antes faltante.
+
+La cola **Trámites para Firmar** muestra exactamente tres formularios actuales DONDE RINDE: clases 9, 35 y 42, cada uno con 100 UMAPI. El formulario incompleto previo de clase 9 quedó en borrador; los históricos RINDECASA no se tocaron. No se borraron trámites ni se firmó, generó orden de pago, pagó o presentó.
+
+Se inspeccionaron **Mis Trámites > Mis Datos** y **Notificaciones**, sin actualizar el perfil ni marcar avisos como leídos. Hay tres avisos históricos de informes de búsquedas; no se reabrieron sus adjuntos. El artículo 7 del Anexo I de la Resolución P-250/2018 establece que la cuenta del portal constituye la sede electrónica. La cuenta del titular existe y está accesible, y los formularios propios identifican al mismo titular. Con esa base se identifica la sede existente para esta preparación; no se inició una toma de intervención ni se declaró un domicilio nuevo.
+
+La Resolución 63/2026 distingue notificaciones de trámite en sede electrónica y resoluciones finales en el Boletín de Marcas. Los plazos se computan desde el día siguiente a la notificación o publicación que corresponda. Esto no implica que los formularios aún sin presentar tengan un expediente o notificaciones nuevas.
+
+**Siguiente acción concreta:** pedir autorización específica para firmar electrónicamente sólo las tres solicitudes actuales en clases 9, 35 y 42. La autorización de preparación y corrección no incluye firma, pago ni presentación. Base visible: 300 UMAPI a $412,59, equivalentes a $123.777; todavía no existe un volante de pago conjunto. El análisis de antecedentes se mantiene con sus límites preliminares; no se afirma una autorización profesional de registrabilidad.
+
+Fuentes oficiales:
+- https://www.argentina.gob.ar/normativa/nacional/norma-314786/actualizacion
+- https://www.boletinoficial.gob.ar/pdf/aviso/primera/338752/20260226
+
 ## Actualización del 26/10: tres formularios DONDE RINDE finalizados y revisados
 
 El titular autorizó específicamente actualizar a DONDE RINDE las clases 35 y 42, conservar los términos seleccionados y finalizar las tres clases para revisión previa a firma. La autorización excluye firma, pago y presentación. La sesión había vencido; se completó nuevamente el ingreso normal por ARCA mediante los formularios seguros, sin leer ni copiar claves.
