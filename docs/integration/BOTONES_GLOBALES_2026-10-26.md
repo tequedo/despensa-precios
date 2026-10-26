@@ -26,3 +26,7 @@ Web 187, fuente `63ff93d0e345de5011f99b57a0b81dcb868ebdf7`, quedó publicada cor
 Se midieron los controles visibles de las cuatro pestañas en navegador de escritorio: En casa (16), Precios (13), Gastos (8) y Mi lista (22). Ninguno quedó por debajo de 44 px de altura. La insignia de notificación sobresale intencionalmente. El contenido interior de Opciones excedía dos píxeles por el borde exterior: el siguiente corte ajusta ese interior a 42 px y conserva el botón exterior de 44 px. No se modificaron existencias, listas ni compras durante estas comprobaciones.
 
 La continuidad semántica del buscador incorpora una compilación final y una suite completa de 362 pruebas aprobadas, cero fallos, omitidas o canceladas, con esta hoja de botones incluida. La medición en Samsung y el objetivo de tres tarjetas completas por pantalla siguen pendientes; la muestra de escritorio no los acredita.
+
+## Cierre de publicación y muestra final
+
+Web 188 publicó las correcciones semánticas y el barrido ampliado de la A; web 189 (`1e71a1f13def34956ce01012d9466b584cd8eb3c`) sólo completa el ajuste de relleno del menú. Su compilación pasó. La suite de 362 pruebas corresponde a la fuente funcional de web 188; no se repitió por este único cambio CSS. El navegador confirmó en web 189 que Opciones mide 44 × 44 px, con relleno 0 y sin desborde. La muestra de cuatro pestañas de web 187 sigue descrita por separado y no acredita Samsung.
