@@ -1,6 +1,35 @@
 # Dónde Rinde | Expediente legal y decisión de marca
 
-## Estado actual del 26/10/2026
+## Actualización del 26/10: búsquedas firmadas y pago QR generado
+
+El titular autorizó específicamente finalizar y firmar los tres pedidos fonéticos de DONDE RINDE y generar su pago por $27.230,94, con la condición de poder abonarlo fácilmente por Mercado Pago/QR. Se verificó en la fuente oficial y en la interfaz la opción QR. No se autorizó ni ejecutó un débito por el asistente.
+
+La sesión vencida se recuperó mediante el formulario seguro de ARCA; no se leyeron ni copiaron claves. Los formularios que habían perdido sus datos se repusieron sin duplicar pedidos. El portal exigió teléfono mediante la validación “Ingrese telefono del solicitante.”; se usó el contacto ya existente en Mis Datos del mismo titular. No se inventó un número ni se modificó el perfil.
+
+| Clase | Nombre verificado en el formulario generado | Arancel | Importe efectivo |
+| --- | --- | ---: | ---: |
+| 9 | DONDE RINDE | 22 UMAPI | $9.076,98 |
+| 35 | DONDE RINDE | 22 UMAPI | $9.076,98 |
+| 42 | DONDE RINDE | 22 UMAPI | $9.076,98 |
+| Total | Tres búsquedas | 66 UMAPI | **$27.230,94** |
+
+Se abrieron y leyeron los tres formularios generados: clase/nombre, arancel 141100, solicitante PARTICULAR, identidad, domicilio, correo y teléfono coinciden con los datos revisados. Los valores privados no se publican. Se seleccionaron únicamente las tres búsquedas para firmar; el INPI confirmó **“Los trámites fueron firmados correctamente”** y aparecieron en Trámites para Ingresar.
+
+La selección de pago mostró **$27.230,94**. Se confirmó al titular como pagador y se eligió QR. El portal confirmó **“QR generado correctamente”**. En Trámites en Proceso de ingreso apareció una única orden **Q-ERECAUDA - GENERADO**, con ese total; al desplegarla se verificaron sólo las tres búsquedas, cada una por $9.076,98. Las tres solicitudes de registro no integran esta orden y su pago continúa pausado.
+
+**Bloqueo actual:** el botón Volante no abrió un resultado visible. El destino oficial expuesto por ese botón se intentó abrir mediante navegación normal, pero la política URL del navegador negó el acceso e indicó un protocolo no permitido. Es una restricción de seguridad de esta ventana, no una prueba de caída del INPI ni de un bloqueo antibot. No se reintentó el destino bloqueado ni se buscó eludirlo. El QR está generado según el INPI, pero su imagen no pudo recuperarse; no se inventó ni reconstruyó.
+
+**Continuación concreta:** el titular debe abrir el pago ya existente en el INPI desde su dispositivo: Mis Trámites > Trámites en Proceso de ingreso > Volante; comprobar $27.230,94 y escanear el QR con Mercado Pago. El número privado del pago queda fuera de este repositorio. La página del INPI indica que el volante vence dentro del primer día hábil posterior a su generación; la hora exacta no pudo leerse en el volante bloqueado.
+
+**Estado exacto:** tres búsquedas finalizadas y firmadas, una orden QR generada, pago pendiente y cero informes nuevos obtenidos. Después del pago se debe verificar su acreditación y examinar los informes antes de retomar el pago del registro. No se afirma presentación efectiva de marca ni concesión.
+
+La revisión automática inicial quedó resuelta por la aprobación específica del titular. Hubo además un rechazo preventivo de una comprobación de clase 35 que no detenía la acción si fallaba una coincidencia; se corrigió con verificaciones independientes y una condición explícita de bloqueo. La fila arancelaria faltante se agregó mediante el control normal; sólo después de comprobar todos los datos se finalizó. No se eludieron rechazos.
+
+Fuentes oficiales:
+- https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf
+- https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478
+
+## Estado anterior a la nueva orden fonética del 26/10/2026
 
 Las tres solicitudes denominativas **DONDE RINDE**, clases **9, 35 y 42**, quedaron firmadas electrónicamente con autorización específica del titular y figuran en **Trámites para Ingresar**. Se cotejaron servicios, datos confirmados del titular y 100 UMAPI por clase. El total seleccionado fue $123.777.
 
