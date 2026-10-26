@@ -1,5 +1,17 @@
 # Dónde Rinde | Expediente legal y decisión de marca
 
+## Estado actual del 26/10/2026
+
+Las tres solicitudes denominativas **DONDE RINDE**, clases **9, 35 y 42**, quedaron firmadas electrónicamente con autorización específica del titular y figuran en **Trámites para Ingresar**. Se cotejaron servicios, datos confirmados del titular y 100 UMAPI por clase. El total seleccionado fue $123.777.
+
+El titular pidió pausar antes de continuar con el pago para comprobar búsquedas y protección legal. Se canceló el selector de pagador sin generar VEP ni efectuar pago. No se acredita ingreso efectivo de las solicitudes ni registro concedido.
+
+**La fonética arancelada específica de DONDE RINDE no está hecha.** Los informes fonéticos pagados históricos corresponden a RINDECASA; para el nombre actual se completaron consultas preliminares gratuitas por caracteres y variantes, fichas dirigidas y cotejos limitados. La evaluación de confundibilidad, distintividad y logo continúa abierta. Se recomienda resolver ese examen antes de reanudar el pago.
+
+La copia técnica DNDA está preparada y verificada para web 173 y Android; no se presentó el depósito. AAIP, privacidad efectiva, licencias/permisos y encuadre fiscal mantienen los pendientes documentados. **No está completada toda la protección legal.**
+
+El detalle vigente de formularios, firma y pausa se mantiene en [el checkpoint de INPI](REANUDACION_INPI_DONDE_RINDE_2026-10-23.md) y [el estado único](ESTADO_UNICO_31_2026-10-22.json). Las secciones siguientes conservan los cortes históricos del 23/10 y la actualización técnica del 25/10; sus referencias a formularios sin revisar o sin firmar no describen el estado actual de las tres solicitudes.
+
 Corte jurídico y marcario: 23 de octubre de 2026. Actualización técnica del 25 de octubre: copia del software, asociación Android y estado de Play Console. Documento de preparación para el titular. Nombre actual conservado; no se presentó una solicitud ni se firmó un instrumento mediante esta revisión.
 
 ## 1. Decisión sobre el nombre
