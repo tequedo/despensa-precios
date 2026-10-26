@@ -1194,7 +1194,7 @@
         "laterApprovedOperationCompleted": true,
         "noBypassUsed": true
       },
-      "nextProposedOperation": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying. Then verify payment and obtain the reports for classes 9/35/42; keep trademark-registration payment paused.",
+      "nextProposedOperation": "Have the owner make one fresh download from Volante on the confirmed current order and open that newly downloaded file in Chrome Downloads. Verify amount/date before paying. If the fresh PDF still contains the older slip, inspect the actual downloaded PDF and report the mismatch to INPI rather than repeating payment or creating duplicate orders.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1463,7 +1463,7 @@
           "emailVisuallyVerifiedInAllThreeForms": true,
           "deniedOperationRetried": false
         },
-        "next": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying. Then verify payment and obtain the reports for classes 9/35/42; keep trademark-registration payment paused.",
+        "next": "Have the owner make one fresh download from Volante on the confirmed current order and open that newly downloaded file in Chrome Downloads. Verify amount/date before paying. If the fresh PDF still contains the older slip, inspect the actual downloaded PDF and report the mismatch to INPI rather than repeating payment or creating duplicate orders.",
         "sources": [
           "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
           "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
@@ -1554,6 +1554,22 @@
           "doesNotProveCurrentPayment": true,
           "privateIdentifiersOmitted": true,
           "recommendedAction": "Do not pay this expired older slip. Open Volante on the existing current order for ARS27230.94 and verify the displayed amount and current issue date before paying."
+        },
+        "ownerCurrentOrderRowVerification": {
+          "date": "2026-10-26",
+          "source": "Owner screenshot of INPI Trámites en Proceso de ingreso",
+          "currentOrderRowConfirmed": true,
+          "amountArs": "27230.94",
+          "generationDate": "2026-10-26",
+          "stateObserved": "Q-ERECAUDA - GENERADO",
+          "onlyOneOrderRowVisible": true,
+          "pdfShownEarlierHasDifferentAmountReferenceAndSeptemberDates": true,
+          "causeOfPdfMismatchEstablished": false,
+          "ownerOpeningWrongRowNotEstablished": true,
+          "paymentConfirmed": false,
+          "actualCurrentQrImageRetrieved": false,
+          "next": "Have the owner make one fresh download from Volante on the confirmed current order and open that newly downloaded file in Chrome Downloads. Verify amount/date before paying. If the fresh PDF still contains the older slip, inspect the actual downloaded PDF and report the mismatch to INPI rather than repeating payment or creating duplicate orders.",
+          "chromeDownloadsSource": "https://support.google.com/chrome/answer/95759?co=GENIE.Platform%3DAndroid&hl=es-419"
         }
       }
     },
