@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Dónde Rinde confirmado por el titular; antecedentes INPI del 23/10 conservados. Propuesta pública de cobertura Niza 2026 para clases 9/35/42 y base de tasas actualizada el 25/10. Acceso fiscal actual bloqueado por revisión automática: falta autorización específica para enviar CUIT/CUIL a ARCA; no se transmitió el identificador ni se mostró el prompt seguro. Formulario de clase 9 revisado sólo parcialmente el 23/10; revisión integral y clases 35/42 pendientes. Copia DNDA web 173 (491 archivos) y Android (24) verificada. Siguen pendientes titularidad/publicación, tasa DNDA y presentaciones. Sin nuevos pagos ni firmas."
+      "evidenceAndLimit": "Dónde Rinde confirmado por el titular. Ingreso seguro a ARCA autorizado específicamente y completado; revisadas las secciones visibles y los aranceles de tres borradores: clase 9 DONDE RINDE (1 término), 35 RINDECASA (5) y 42 RINDECASA (3), 100 UMAPI por cada uno. La revisión automática bloqueó confirmar Finalizar: autorización específica pendiente para actualizar 35/42 y finalizar los tres para revisión previa a firma. No se modificaron borradores, firmó, pagó ni presentó. Domicilios completos y formularios generados pendientes de revisar. Copia DNDA web 173 (491 archivos) y Android (24) verificada; titularidad/publicación, base DNDA y presentaciones pendientes."
     },
     {
       "number": 20,
@@ -768,7 +768,7 @@
       ],
       "status": "closed for dated official base-fee calculation and identification of unresolved DNDA cost basis",
       "evidence": "ARANCELES_LEGALES_2026-10-23.json",
-      "limit": "Authenticated class 9 fee verified separately; classes 35/42 still require review. Not payment approval, order, fee waiver or payment."
+      "limit": "All three existing-form fee dialogs were reviewed on 2026-10-25: 100 UMAPI each. Class 35/42 still carry the previous name; renamed final forms and any eventual payment order must be checked. No payment approval, order or payment."
     },
     {
       "id": "P23-DEDICATED-REVIEWER-WEB",
@@ -853,7 +853,16 @@
       ],
       "status": "closed for public Nice classification mapping and current base-fee calculation",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "Not a full form review, actual combined fee liquidation, clearance, filing or payment. Current fiscal sign-in awaits specific owner approval after an automatic-review rejection."
+      "limit": "Public classification mapping only; the later owner-approved authenticated review is recorded separately. Renamed final forms, full holder addresses, finalization, signature, filing and payment remain pending."
+    },
+    {
+      "id": "P19-AUTHENTICATED-VISIBLE-REVIEW",
+      "points": [
+        19
+      ],
+      "status": "closed for owner-approved secure ARCA sign-in, visible review of three existing INPI drafts and their fee dialogs",
+      "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+      "limit": "Class 35/42 still carry RINDECASA. No draft edit or finalization. Specific finalization approval, full stored holder addresses, generated forms, signature, payment, filing and clearance remain pending."
     }
   ],
   "legalFiscalPreparation": {
@@ -862,7 +871,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Public Nice scope and current fee basis prepared on 2026-10-25. Authenticated class 9 review remains historical to 2026-10-23; full forms and classes 35/42 still require current INPI access and owner review.",
+      "status": "Owner-approved secure ARCA sign-in succeeded on 2026-10-25. All visible sections and fee dialogs of three existing drafts were reviewed. Class 9 is DONDE RINDE; classes 35 and 42 remain RINDECASA. Their rename and finalization for pre-signature review await specific owner authorization after an automatic-review rejection of the Finalizar confirmation. Full stored holder addresses and generated forms remain unreviewed.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -915,8 +924,8 @@
         "publicRenamePerformed": false
       },
       "authenticatedDraftReview": {
-        "date": "2026-10-23",
-        "status": "Signed in via secure ARCA flow; existing DONDE RINDE class 9 denomination, modality, selected term, owner row and fee calculation inspected; full form review pending",
+        "date": "2026-10-25",
+        "status": "Visible draft sections and fee dialogs; saved holder address fields were not exposed by the draft summary table.",
         "authenticatedSessionVerified": true,
         "class9DraftRecovered": true,
         "draftRevalidated": false,
@@ -925,7 +934,82 @@
         "verifiedFeeScopeClass": 9,
         "verifiedFeeUmapi": 100,
         "verifiedSelectedTerms": 1,
-        "classes35And42Reviewed": false
+        "classes35And42Reviewed": true,
+        "previousPartialReview": {
+          "date": "2026-10-23",
+          "status": "Signed in via secure ARCA flow; existing DONDE RINDE class 9 denomination, modality, selected term, owner row and fee calculation inspected; full form review pending",
+          "classes35And42Reviewed": false
+        },
+        "currentDrafts": [
+          {
+            "number": 9,
+            "currentDenomination": "DONDE RINDE",
+            "modality": "D-DENOMINATIVA",
+            "selectedCount": 1,
+            "selectedTerms": [
+              "APLICACIONES DE SOFTWARE DESCARGABLES"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          },
+          {
+            "number": 35,
+            "currentDenomination": "RINDECASA",
+            "proposedDenomination": "DONDE RINDE",
+            "modality": "D-DENOMINATIVA",
+            "selectedCount": 5,
+            "selectedTerms": [
+              "INFORMACIÓN Y ASESORAMIENTO COMERCIALES AL CONSUMIDOR EN LA SELECCIÓN DE PRODUCTOS Y SERVICIOS",
+              "PROMOCIÓN DE VENTAS PARA TERCEROS",
+              "PUBLICIDAD EN LÍNEA EN REDES INFORMÁTICAS",
+              "SERVICIOS DE COMPARACIÓN DE PRECIOS",
+              "SUMINISTRO DE INFORMACIÓN COMERCIAL POR SITIOS WEB"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          },
+          {
+            "number": 42,
+            "currentDenomination": "RINDECASA",
+            "proposedDenomination": "DONDE RINDE",
+            "modality": "D-DENOMINATIVA",
+            "selectedCount": 3,
+            "selectedTerms": [
+              "SERVICIOS DE UTILIZACIÓN TEMPORAL DE SOFTWARE NO DESCARGABLE EN LÍNEA PARA GESTIONAR INVENTARIOS",
+              "SOFTWARE COMO SERVICIO [SAAS]",
+              "SUMINISTRO DE SOFTWARE NO DESCARGABLE EN LÍNEA"
+            ],
+            "feeUmapi": 100,
+            "excessTerms": 0,
+            "holderCount": 1,
+            "holderType": "HUMANA",
+            "holderSharePercent": 100
+          }
+        ],
+        "sharedVisibleSections": {
+          "foreignPriorityRows": 0,
+          "representationFieldsEmpty": true,
+          "ownerAccountIsHolder": true,
+          "bankruptcyCheckboxChecked": false,
+          "olympicCommitteeSelection": "No Corresponde",
+          "observationsEmpty": true,
+          "supportingDocumentRows": 0
+        },
+        "fullStoredAddressReviewFinished": false,
+        "generatedFormReviewFinished": false,
+        "existingDraftEdited": false,
+        "finalizationConfirmed": false,
+        "signaturePerformed": false,
+        "paymentOrderCreated": false,
+        "newPaymentMade": false,
+        "newFilingPerformed": false,
+        "evidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json"
       },
       "currentFeeReference": {
         "date": "2026-10-25",
@@ -936,9 +1020,12 @@
         "actualRequestTotalVerified": true,
         "source": "https://portaltramites.inpi.gob.ar/InfoPortal/Aranceles",
         "actualRequestTotalVerifiedScopeClass": 9,
-        "allThreeActualRequestTotalsVerified": false,
+        "allThreeActualRequestTotalsVerified": true,
         "unitRecheckedOn": "2026-10-25",
-        "actualClass9DraftLastObserved": "2026-10-23"
+        "actualClass9DraftLastObserved": "2026-10-25",
+        "actualExistingDraftsLastObserved": "2026-10-25",
+        "actualRequestVerifiedScope": "Fee dialogs of the three existing drafts, classes 9/35/42; class 35 and 42 still carry RINDECASA.",
+        "allThreeCurrentNameRequestTotalsVerified": false
       },
       "nextCheckpoint": "REANUDACION_INPI_DONDE_RINDE_2026-10-23.md",
       "feeBudget": {
@@ -949,10 +1036,37 @@
         "actualDraftTotalVerified": true,
         "paymentOrderCreated": false,
         "actualDraftTotalVerifiedScopeClass": 9,
-        "allThreeActualDraftTotalsVerified": false,
+        "allThreeActualDraftTotalsVerified": true,
         "lastPublicRecheck": "2026-10-25",
         "currentPreparationEvidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-        "actualClass9DraftLastObserved": "2026-10-23"
+        "actualClass9DraftLastObserved": "2026-10-25",
+        "actualDraftTotalVerifiedScopeClasses": [
+          9,
+          35,
+          42
+        ],
+        "actualExistingDraftDialogsVerifiedOn": "2026-10-25",
+        "actualExistingDraftTerms": [
+          {
+            "class": 9,
+            "terms": 1,
+            "umapi": 100
+          },
+          {
+            "class": 35,
+            "terms": 5,
+            "umapi": 100
+          },
+          {
+            "class": 42,
+            "terms": 3,
+            "umapi": 100
+          }
+        ],
+        "allThreeFinalCurrentNameFormsVerified": false,
+        "combinedPaymentOrderGenerated": false,
+        "class35And42StillCarryPreviousName": true,
+        "paymentApproved": false
       },
       "publicScopePreparation": {
         "date": "2026-10-25",
@@ -979,24 +1093,64 @@
             ]
           }
         ],
-        "actualInpiSelectionMatchedForAllClasses": false,
+        "actualInpiSelectionMatchedForAllClasses": true,
         "newDraftsSaved": false,
-        "existingDraftsEdited": false
+        "existingDraftsEdited": false,
+        "matchScope": "Public core labels matched to selected labels in the three existing forms. The class 35 and 42 forms also contain the retained additional terms listed in the authenticated review and still need their denomination updated.",
+        "currentNameFormsReady": false,
+        "actualVisibleDraftReviewOn": "2026-10-25"
       },
       "currentAccessAttempt": {
         "observedOn": "2026-10-25",
-        "currentPortalSessionAuthenticated": false,
+        "currentPortalSessionAuthenticated": true,
         "loginOrigin": "https://auth.afip.gob.ar",
         "securePromptAttempted": true,
-        "securePromptShown": false,
-        "identifierTransmitted": false,
+        "securePromptShown": true,
+        "identifierTransmitted": true,
+        "automaticReviewRejected": false,
+        "manualUserRejection": false,
+        "reason": "The owner specifically authorized secure ARCA sign-in for draft recovery/review. That sign-in succeeded; no current authentication block remains.",
+        "workaroundAttempted": false,
+        "retried": false,
+        "ownerSpecificApprovalPending": false,
+        "nextAction": "Specific authorization for the finalization operation described below; routine authorized sign-in does not need another approval.",
+        "ownerSpecificApprovalReceived": true,
+        "ownerApprovalDate": "2026-10-25",
+        "identifierTransmissionOwnerApproved": true,
+        "passwordReadOrCopied": false,
+        "automaticReviewRejectedHistorically": true,
+        "resolvedForApprovedLogin": true,
+        "retriedAfterSpecificApproval": true,
+        "normalApprovedLoginSucceeded": true,
+        "requestRecovery": "An approved request returned page_changed; current visible CUIT field was then confirmed empty. Normal INPI entry was reopened, secure CUIT and password requests submitted, and a fresh INPI signed-in signal confirmed success.",
+        "historicalRejectionReason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request."
+      },
+      "finalizationReview": {
+        "date": "2026-10-25",
+        "action": "Confirm Sí after Finalizar on existing class 9 draft",
         "automaticReviewRejected": true,
         "manualUserRejection": false,
-        "reason": "Specific permission to disclose CUIT/CUIL to ARCA and initiate a government-account sign-in was not established by the general continuation request.",
+        "reason": "Confirmation may generate or advance a formal trademark application and create legal or financial consequences; the specific user authorization covered access and review, not finalization or submission.",
+        "confirmationApplied": false,
+        "modalCancelledWithNo": true,
         "workaroundAttempted": false,
         "retried": false,
         "ownerSpecificApprovalPending": true,
-        "nextAction": "Obtain specific owner authorization for secure CUIT/CUIL and clave fiscal sign-in to ARCA for recovery/review of INPI drafts; then issue the normal browserAuth request."
+        "proposedApprovalScope": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
+        "legalSigningPending": true,
+        "paymentPending": true,
+        "governmentFilingPending": true
+      },
+      "nextProposedOperation": "Retain the named goods/services already selected, update the class 35 and 42 draft denominations to DONDE RINDE, and finalize all three forms for the pre-signature review stage. This does not authorize signing, payment or filing.",
+      "ownerAccessAuthorization": {
+        "date": "2026-10-25",
+        "specificApprovalReceived": true,
+        "scope": "Secure CUIT/CUIL and clave fiscal sign-in to ARCA for recovery and review of existing INPI drafts.",
+        "credentialsReadOrCopied": false,
+        "finalizationApprovalIncluded": false,
+        "signatureApprovalIncluded": false,
+        "paymentApprovalIncluded": false,
+        "filingApprovalIncluded": false
       }
     },
     "software": {
