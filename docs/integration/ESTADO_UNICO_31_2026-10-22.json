@@ -148,7 +148,7 @@
       "title": "Nombre y software INPI/DNDA",
       "window": 3,
       "status": "bloqueado por dependencia",
-      "evidenceAndLimit": "Tres formularios denominativos DONDE RINDE finalizados con autorización específica y revisados el 26/10, clases 9/35/42 con 1/5/3 términos conservados y 100 UMAPI cada una; visibles en Trámites para Firmar. Datos completos del titular vistos, con discrepancia de estado civil pendiente de confirmar y corregir; domicilio real/contacto actuales y constitución del domicilio legal electrónico por verificar. Se conservaron los borradores e históricos. Sin firmas, órdenes de pago, pagos ni presentaciones. Copia DNDA web 173 y Android verificada; demás dependencias legales y fiscales pendientes."
+      "evidenceAndLimit": "Tres formularios DONDE RINDE 9/35/42 listos para autorización de firma. El titular confirmó datos actuales; discrepancia corregida y documento de clase 9 releído el 26/10. Mismo titular único al 100%, protecciones 1/5/3 y 100 UMAPI por clase. Cuenta del titular y base normativa de sede electrónica comprobadas; sin cambio de domicilio ni representación. Firma electrónica específica, orden/pago e ingreso efectivos pendientes; antecedentes con alcance preliminar. Copia DNDA web 173/Android verificada, otras dependencias legales y fiscales pendientes."
     },
     {
       "number": 20,
@@ -871,7 +871,16 @@
       ],
       "status": "closed for the explicitly approved creation of three unsigned DONDE RINDE forms, retained selected terms and generated-form technical comparison",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
-      "limit": "Marital-status discrepancy, owner address/contact confirmation and electronic legal domicile status remain unresolved. No signature, payment order, payment, filing, grant or full legal clearance."
+      "limit": "The later owner confirmation and class 9 data correction are complete and recorded separately. Specific electronic-signing approval, payment order/payment, effective filing, grant and full legal clearance remain pending."
+    },
+    {
+      "id": "P19-OWNER-DATA-CONSISTENCY-20261026",
+      "points": [
+        19
+      ],
+      "status": "closed for owner confirmation of current holder data, correction and reread of class 9, and identification of the same-owner portal account as electronic seat",
+      "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
+      "limit": "No specific signature authorization, payment order/payment, filing, professional registrability clearance or grant."
     }
   ],
   "legalFiscalPreparation": {
@@ -880,7 +889,7 @@
     "trademark": {
       "point": 19,
       "currentName": "Dónde Rinde",
-      "status": "Three owner-approved DONDE RINDE denominative forms for classes 9/35/42 were finalized on 2026-10-26, observed in Trámites para Firmar, and their generated forms read. Exact terms/counts 1/5/3 and 100 UMAPI each were confirmed. Owner address/contact currentness, inconsistent marital-status fields and electronic legal domicile status remain to resolve before signature. No signature, payment order, payment or filing.",
+      "status": "Three current DONDE RINDE denominative requests in classes 9/35/42 are consistently prepared and await specific electronic-signing authorization. On 2026-10-26 the owner confirmed current address/contact and the civil category, the missing class 9 field was corrected, and the regenerated form read. The same-owner portal account and electronic-notification legal basis were checked. No signature, payment order, payment or filing.",
       "priorPaidPhoneticReportsFor": "RINDECASA",
       "newFilingConfirmed": false,
       "newPaymentConfirmed": false,
@@ -1012,7 +1021,7 @@
         },
         "fullStoredAddressReviewFinished": true,
         "generatedFormReviewFinished": true,
-        "existingDraftEdited": false,
+        "existingDraftEdited": true,
         "finalizationConfirmed": true,
         "signaturePerformed": false,
         "paymentOrderCreated": false,
@@ -1020,8 +1029,11 @@
         "newFilingPerformed": false,
         "evidence": "PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
         "latestGeneratedFormReviewOn": "2026-10-26",
-        "addressCurrentnessOwnerConfirmed": false,
-        "originalDraftsRetained": true
+        "addressCurrentnessOwnerConfirmed": true,
+        "originalDraftsRetained": true,
+        "civilFieldConsistencyResolved": true,
+        "correctedGeneratedClass9FormReadOn": "2026-10-26",
+        "editScope": "Only the incomplete current class 9 form was converted to draft and the holder row re-added with the owner-confirmed missing data; a corrected unsigned form was generated."
       },
       "currentFeeReference": {
         "date": "2026-10-26",
@@ -1076,14 +1088,15 @@
             "umapi": 100
           }
         ],
-        "allThreeFinalCurrentNameFormsVerified": false,
+        "allThreeFinalCurrentNameFormsVerified": true,
         "combinedPaymentOrderGenerated": false,
         "class35And42StillCarryPreviousName": false,
         "paymentApproved": false,
         "originalOldNameDraftsRetained": true,
         "allThreeCurrentNameRequestTotalsVerified": true,
         "currentNameFormFeeDialogsVerifiedOn": "2026-10-26",
-        "fullOwnerFactValidationPending": true
+        "fullOwnerFactValidationPending": false,
+        "finalFormVerificationScope": "Current name, class, selected term counts 1/5/3, fee units, and owner-confirmed holder data; not registrability clearance or signature approval."
       },
       "publicScopePreparation": {
         "date": "2026-10-25",
@@ -1133,7 +1146,7 @@
         "workaroundAttempted": false,
         "retried": false,
         "ownerSpecificApprovalPending": false,
-        "nextAction": "Obtain current owner facts needed to resolve the generated-form discrepancy and verify notification details before any signature.",
+        "nextAction": "Obtain specific action-time authorization to electronically sign only the three current DONDE RINDE requests in classes 9/35/42; payment remains unapproved.",
         "ownerSpecificApprovalReceived": true,
         "ownerApprovalDate": "2026-10-25",
         "identifierTransmissionOwnerApproved": true,
@@ -1168,7 +1181,7 @@
         "laterApprovedOperationCompleted": true,
         "noBypassUsed": true
       },
-      "nextProposedOperation": "Confirm current owner data and verify electronic legal domicile status; resolve the generated-form discrepancy before requesting any actual signature.",
+      "nextProposedOperation": "With specific action-time owner approval, electronically sign only the three current DONDE RINDE requests in classes 9/35/42, leaving payment separate and unapproved.",
       "ownerAccessAuthorization": {
         "date": "2026-10-25",
         "specificApprovalReceived": true,
@@ -1240,12 +1253,12 @@
         "allThreeFormsOpenedAndRead": true,
         "actualNameClassScopeAndFeeCompared": true,
         "addressAndContactFieldsViewed": true,
-        "addressAndContactCurrentnessOwnerConfirmed": false,
-        "maritalStatusInconsistentBetweenForms": true,
-        "ownerFactConfirmationPending": true,
+        "addressAndContactCurrentnessOwnerConfirmed": true,
+        "maritalStatusInconsistentBetweenForms": false,
+        "ownerFactConfirmationPending": false,
         "physicalLegalAddressFieldsBlank": true,
         "physicalLegalAddressBlankAloneNotEstablishedAsError": true,
-        "electronicLegalDomicileConstitutionVerified": false,
+        "electronicLegalDomicileConstitutionVerified": true,
         "sensitiveHolderValuesStoredHere": false,
         "officialGuidance": [
           "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca",
@@ -1259,8 +1272,52 @@
         "paymentOrderCreated": false,
         "paid": false,
         "filed": false,
-        "limit": "The saved forms have been technically compared but are not cleared for signature. Owner facts, electronic legal domicile status, relevant-antecedent evaluation and any action-time signing/payment authorization remain to resolve."
-      }
+        "limit": "Technical and owner-data consistency reviewed. This is not a professional registrability clearance, signature authorization, paid filing, grant, or proof of a future case notification.",
+        "ownerFactsConfirmedOn": "2026-10-26",
+        "maritalStatusInconsistencyPreviouslyObserved": true,
+        "civilFieldCorrectedInClass9": true,
+        "civilFieldCorrectionSavedAndVerifiedOn": "2026-10-26",
+        "correctedClass9GeneratedFormRead": true,
+        "currentUnsignedFormsCount": 3,
+        "oneCurrentNameFormPerClassInUnsignedQueue": true,
+        "oldIncompleteClass9FormMovedBackToDraft": true,
+        "technicalFormComparisonFinished": true,
+        "electronicLegalDomicileVerificationScope": "Existing owner account identified and accessible, profile read and notification inbox inspected. Under article 7 of Resolution P-250/2018, the portal user account constitutes the electronic seat. These own-name forms identify the same owner account. No new domicile or representative was requested and no Toma de Intervención was filed.",
+        "electronicLegalDomicileNewDeclarationSubmitted": false,
+        "profileUpdated": false,
+        "notificationsMarkedRead": false,
+        "noticesOfNewTrademarkProceedingsAlreadyReceived": false
+      },
+      "ownerDataConfirmation": {
+        "date": "2026-10-26",
+        "currentAddressConfirmed": true,
+        "currentContactEmailConfirmed": true,
+        "civilCategoryConfirmed": true,
+        "privateValuesOmitted": true
+      },
+      "electronicNotificationReview": {
+        "date": "2026-10-26",
+        "existingOwnerPortalAccountAccessible": true,
+        "ownerProfileReadOnly": true,
+        "electronicNotificationInboxReadOnly": true,
+        "historicalNotificationRowsObserved": 3,
+        "historicalRowsConcernPriorSearchReports": true,
+        "oldReportsOpenedAgain": false,
+        "profileChangesMade": false,
+        "notificationReadStateChanged": false,
+        "newDomicileOrRepresentationRequested": false,
+        "tomaDeIntervencionFiled": false,
+        "sameOwnerAccountInGeneratedForms": true,
+        "electronicSeatLegalBasis": "Resolution P-250/2018, Annex I, article 7: the portal user account is the electronic seat.",
+        "currentNotificationRule": "Resolution 63/2026: procedural notices to the electronic seat; final decisions through the trademark bulletin; deadlines from the following day.",
+        "inference": "Given the existing same-owner account, identified in these own-account forms, no separate change of notification domicile was prepared. This does not assert that an unfiled case already has active notifications.",
+        "sources": [
+          "https://www.argentina.gob.ar/normativa/nacional/norma-314786/actualizacion",
+          "https://www.boletinoficial.gob.ar/pdf/aviso/primera/338752/20260226"
+        ]
+      },
+      "signatureAuthorized": false,
+      "signaturePerformed": false
     },
     "software": {
       "point": 19,
