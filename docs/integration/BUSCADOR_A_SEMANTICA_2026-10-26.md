@@ -28,7 +28,7 @@ TypeScript, compilación final y suite completa: 362 aprobadas, cero fallos, cer
 
 El barrido alfabético se amplía para accionar los eventos reales de Marca y Tamaño para cada grupo de consulta, marca y presentación; consulta la ruta real con esos filtros y comprueba que todos los códigos locales sigan apareciendo. Compartir una consulta idéntica entre varios códigos no los une ni permite elegir una variedad automáticamente. Los campos deben conservar los valores informados y la selección exacta debe seguir vacía hasta elegirla explícitamente.
 
-El resultado final de este barrido y su muestra posterior a publicar se incorporan al detalle por código y al estado canónico. Son comprobaciones locales del manejador y los campos reales, no 792 recorridos visuales, cuentas Google ni pruebas físicas Samsung.
+El resultado final encontró los 792 códigos tras 55 consultas iniciales, dos consultas específicas y 131 páginas. Las 369 combinaciones de marca y presentación recorrieron otras 369 páginas y conservaron los 792 códigos, sin incidencias. Las 701 cotizaciones coinciden con sus mínimos admitidos; los 91 códigos restantes conservan su exclusión. El JSON guarda diez códigos locales con revisión confirmada y dos con familia pendiente. Son comprobaciones locales del manejador y los campos reales, no 792 recorridos visuales, cuentas Google ni pruebas físicas Samsung. La muestra posterior a publicar se incorpora al estado canónico.
 
 ## Pendientes conservados
 
