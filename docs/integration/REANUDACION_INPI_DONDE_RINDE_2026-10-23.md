@@ -1,5 +1,13 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 26/10: mensaje de pago informado; comprobante pendiente
+
+El titular compartió una captura de un asistente llamado Mago que dice que la factura de ARCA ya figura paga y que no inició otro pago. La imagen no muestra comprobante de transacción, importe ni número que permita asociarlo a la orden fonética. **No se confirma el pago y no debe repetirse antes de comprobarlo.**
+
+Al refrescar el portal, la sesión autenticada había vencido; no se observó un estado nuevo de pago o ingreso. Las búsquedas específicas de comprobantes en Outlook (referencia y correos INPI) y Gmail (referencia, solicitudes e importe) no encontraron coincidencias. La ausencia de correo no prueba que no se haya pagado.
+
+**Próximo paso:** obtener el detalle o comprobante real del historial de pagos por $27.230,94 y cotejar destinatario, fecha, estado e identificador. Luego comprobar la acreditación en INPI y obtener los informes. La orden QR ya existe; no se genera otra ni se paga nuevamente por este mensaje. El registro de marca continúa con su pago pausado.
+
 ## Actualización del 26/10: búsquedas firmadas y pago QR generado
 
 El titular autorizó específicamente finalizar y firmar los tres pedidos fonéticos de DONDE RINDE y generar su pago por $27.230,94, con la condición de poder abonarlo fácilmente por Mercado Pago/QR. Se verificó en la fuente oficial y en la interfaz la opción QR. No se autorizó ni ejecutó un débito por el asistente.
