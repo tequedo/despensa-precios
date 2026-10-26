@@ -21,7 +21,7 @@
       "existingDraftObservedOn": "2026-10-25",
       "existingDraftSelectedTerms": 1,
       "existingDraftFeeUmapi": 100,
-      "completeFormReviewFinished": false,
+      "completeFormReviewFinished": true,
       "existingDraftDenomination": "DONDE RINDE",
       "existingDraftSelectedTermLabels": [
         "APLICACIONES DE SOFTWARE DESCARGABLES"
@@ -39,7 +39,8 @@
       ],
       "generatedFormSelectedCount": 1,
       "generatedFormFeeUmapi": 100,
-      "ownerFactConfirmationPending": true
+      "ownerFactConfirmationPending": false,
+      "reviewScope": "Technical comparison of the generated form and confirmation of current holder data; no professional clearance or signature."
     },
     {
       "number": 35,
@@ -70,7 +71,7 @@
       ],
       "existingDraftFeeUmapi": 100,
       "visibleSectionsReviewed": true,
-      "completeFormReviewFinished": false,
+      "completeFormReviewFinished": true,
       "fullStoredAddressAndGeneratedFormReviewPending": false,
       "existingTermsRetainedInProposedNextOperation": true,
       "currentNameUnsignedFormCreatedOn": "2026-10-26",
@@ -85,7 +86,8 @@
       ],
       "generatedFormSelectedCount": 5,
       "generatedFormFeeUmapi": 100,
-      "ownerFactConfirmationPending": true
+      "ownerFactConfirmationPending": false,
+      "reviewScope": "Technical comparison of the generated form and confirmation of current holder data; no professional clearance or signature."
     },
     {
       "number": 42,
@@ -109,7 +111,7 @@
       ],
       "existingDraftFeeUmapi": 100,
       "visibleSectionsReviewed": true,
-      "completeFormReviewFinished": false,
+      "completeFormReviewFinished": true,
       "fullStoredAddressAndGeneratedFormReviewPending": false,
       "existingTermsRetainedInProposedNextOperation": true,
       "currentNameUnsignedFormCreatedOn": "2026-10-26",
@@ -122,7 +124,8 @@
       ],
       "generatedFormSelectedCount": 3,
       "generatedFormFeeUmapi": 100,
-      "ownerFactConfirmationPending": true
+      "ownerFactConfirmationPending": false,
+      "reviewScope": "Technical comparison of the generated form and confirmation of current holder data; no professional clearance or signature."
     }
   ],
   "classificationBasis": "Nice Classification, 13th edition, 2026 version; actual INPI selectable terms and final scope still require authenticated review.",
@@ -200,7 +203,7 @@
     "workaroundAttempted": false,
     "retried": false,
     "ownerSpecificApprovalPending": false,
-    "nextAction": "Obtain current owner facts needed to resolve the generated-form discrepancy and verify notification details before any signature.",
+    "nextAction": "Obtain specific action-time authorization to electronically sign only the three current DONDE RINDE requests in classes 9/35/42; payment remains unapproved.",
     "ownerSpecificApprovalReceived": true,
     "ownerApprovalDate": "2026-10-25",
     "identifierTransmissionOwnerApproved": true,
@@ -221,10 +224,9 @@
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Confirm current real address/contact details and marital status with the owner; resolve the inconsistent marital-status field before signature",
-    "Verify constitution/status of electronic legal domicile required for INPI notifications",
-    "Final evaluation of relevant antecedents and service overlap",
-    "Specific action-time authorization for any actual signature, payment order/payment and filing; none is included in the approved finalization"
+    "Specific action-time owner approval of electronic signing of the three current-name requests",
+    "Owner review/approval of the actual payment order and payment, and verification of resulting filing status",
+    "Relevant-antecedent/service-overlap evaluation remains preliminary rather than professional clearance"
   ],
   "sources": [
     "https://www.argentina.gob.ar/inpi/marcas/clasificacion-de-marcas",
@@ -392,12 +394,12 @@
     "allThreeFormsOpenedAndRead": true,
     "actualNameClassScopeAndFeeCompared": true,
     "addressAndContactFieldsViewed": true,
-    "addressAndContactCurrentnessOwnerConfirmed": false,
-    "maritalStatusInconsistentBetweenForms": true,
-    "ownerFactConfirmationPending": true,
+    "addressAndContactCurrentnessOwnerConfirmed": true,
+    "maritalStatusInconsistentBetweenForms": false,
+    "ownerFactConfirmationPending": false,
     "physicalLegalAddressFieldsBlank": true,
     "physicalLegalAddressBlankAloneNotEstablishedAsError": true,
-    "electronicLegalDomicileConstitutionVerified": false,
+    "electronicLegalDomicileConstitutionVerified": true,
     "sensitiveHolderValuesStoredHere": false,
     "officialGuidance": [
       "https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca",
@@ -411,12 +413,54 @@
     "paymentOrderCreated": false,
     "paid": false,
     "filed": false,
-    "limit": "The saved forms have been technically compared but are not cleared for signature. Owner facts, electronic legal domicile status, relevant-antecedent evaluation and any action-time signing/payment authorization remain to resolve."
+    "limit": "Technical and owner-data consistency reviewed. This is not a professional registrability clearance, signature authorization, paid filing, grant, or proof of a future case notification.",
+    "ownerFactsConfirmedOn": "2026-10-26",
+    "maritalStatusInconsistencyPreviouslyObserved": true,
+    "civilFieldCorrectedInClass9": true,
+    "civilFieldCorrectionSavedAndVerifiedOn": "2026-10-26",
+    "correctedClass9GeneratedFormRead": true,
+    "currentUnsignedFormsCount": 3,
+    "oneCurrentNameFormPerClassInUnsignedQueue": true,
+    "oldIncompleteClass9FormMovedBackToDraft": true,
+    "technicalFormComparisonFinished": true,
+    "electronicLegalDomicileVerificationScope": "Existing owner account identified and accessible, profile read and notification inbox inspected. Under article 7 of Resolution P-250/2018, the portal user account constitutes the electronic seat. These own-name forms identify the same owner account. No new domicile or representative was requested and no Toma de Intervención was filed.",
+    "electronicLegalDomicileNewDeclarationSubmitted": false,
+    "profileUpdated": false,
+    "notificationsMarkedRead": false,
+    "noticesOfNewTrademarkProceedingsAlreadyReceived": false
   },
   "finalizedCurrentNameForms": true,
   "generatedCurrentNameUnsignedForms": 3,
   "workingFormsDenominationUpdatedForClasses": [
     35,
     42
-  ]
+  ],
+  "electronicNotificationReview": {
+    "date": "2026-10-26",
+    "existingOwnerPortalAccountAccessible": true,
+    "ownerProfileReadOnly": true,
+    "electronicNotificationInboxReadOnly": true,
+    "historicalNotificationRowsObserved": 3,
+    "historicalRowsConcernPriorSearchReports": true,
+    "oldReportsOpenedAgain": false,
+    "profileChangesMade": false,
+    "notificationReadStateChanged": false,
+    "newDomicileOrRepresentationRequested": false,
+    "tomaDeIntervencionFiled": false,
+    "sameOwnerAccountInGeneratedForms": true,
+    "electronicSeatLegalBasis": "Resolution P-250/2018, Annex I, article 7: the portal user account is the electronic seat.",
+    "currentNotificationRule": "Resolution 63/2026: procedural notices to the electronic seat; final decisions through the trademark bulletin; deadlines from the following day.",
+    "inference": "Given the existing same-owner account, identified in these own-account forms, no separate change of notification domicile was prepared. This does not assert that an unfiled case already has active notifications.",
+    "sources": [
+      "https://www.argentina.gob.ar/normativa/nacional/norma-314786/actualizacion",
+      "https://www.boletinoficial.gob.ar/pdf/aviso/primera/338752/20260226"
+    ]
+  },
+  "ownerDataConfirmation": {
+    "date": "2026-10-26",
+    "currentAddressConfirmed": true,
+    "currentContactEmailConfirmed": true,
+    "civilCategoryConfirmed": true,
+    "privateValuesOmitted": true
+  }
 }
