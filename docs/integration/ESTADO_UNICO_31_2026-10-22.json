@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 179,
-  "webBaseCommit": "8f404477ecbffe88d3b424f25f9401aad11e8b1b",
+  "publishedWebVersion": 180,
+  "webBaseCommit": "2e96eafbbb85174b2d55980dfd20c7ee6479dbda",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -36,7 +36,7 @@
       "title": "Identidad y calidad de productos",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la validación de otros productos. El titular confirmó la comparación Natura en Samsung con captura posterior."
+      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la validación de otros productos. El titular confirmó la comparación Natura en Samsung con captura posterior. Web 180 corrige otro caso informado por el titular: el alta de Arroz Gallo 500 g descartaba las opciones exactas que devolvía la API. Ahora ofrece un selector de variedad, consulta automáticamente el código elegido y guarda su identidad sin reiniciar la cantidad. Muestra real de 288 observaciones conservada; protección de identidades y precios de origen sin cambios. 335 pruebas aprobadas; revisión física posterior pendiente."
     },
     {
       "number": 4,
@@ -71,7 +71,7 @@
       "title": "Verificación completa en producción",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: web 179 incorpora cuatro regresiones sobre el Worker construido para cuenta, lista, compra parcial, reintento, aislamiento y borrado/recreación; suite completa de 330 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Se usan SQLite descartable y sesiones de la app firmadas localmente, sin OAuth real, datos ni escrituras de producción. El ingreso Google web observado anteriormente se conserva como evidencia separada. Recorrido alojado completo y Android físico siguen pendientes."
+      "evidenceAndLimit": "26/10: web 179 incorpora cuatro regresiones sobre el Worker construido para cuenta, lista, compra parcial, reintento, aislamiento y borrado/recreación; suite completa de 330 aprobadas, sin fallos ni omitidas, tipos y compilación aprobados. Se usan SQLite descartable y sesiones de la app firmadas localmente, sin OAuth real, datos ni escrituras de producción. El ingreso Google web observado anteriormente se conserva como evidencia separada. Recorrido alojado completo y Android físico siguen pendientes. La revisión de web 180 suma cinco regresiones de alta/variedad: 335 pruebas completas aprobadas, 0 fallos y 0 omitidas; tipos y compilación aprobados. No añade una comprobación alojada o física completa."
     },
     {
       "number": 9,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia. Se actualiza la guía física vigente: conserva esos hitos confirmados y corrige instrucciones anteriores de reconocimiento pago y bloqueos C1/C2. No se ejecutó el recorrido físico restante."
+      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación, arranque y comparación Natura girasol 1,5 L en Samsung. La captura posterior muestra comercios, importes y fecha. Web 178 compacta las cuatro secciones y sus formularios conservando el contenido y la estética; revisión visual posterior pendiente. Falta completar el recorrido funcional y el segundo dispositivo. El APK instalado no cambia. Se actualiza la guía física vigente: conserva esos hitos confirmados y corrige instrucciones anteriores de reconocimiento pago y bloqueos C1/C2. No se ejecutó el recorrido físico restante. Las capturas posteriores muestran el formulario y el alta de 3 paquetes Arroz Gallo 500 g, stock 0 y precio pendiente por variedad sin resolver. Aún no acreditan pasar sólo 1 a En casa, dejar 2 pendientes y conservar los gastos."
     },
     {
       "number": 11,
@@ -113,7 +113,7 @@
       "title": "Listas y existencias",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público. 26/10: recorrido integrado del Worker construido confirma lista guardada/compartida, unidades y kg parciales, importes sólo explícitos, recuperación y reintento idempotente con reversión íntegra de un lote fallido; datos locales ficticios."
+      "evidenceAndLimit": "C1/C2 corregidos: saldo de compras parciales, comprobantes transaccionales individuales y por lote, recuperación tras recarga y control del perfil mostrado. Rutas y Worker compilado probados con SQLite descartable. Falta recorrido físico en Samsung y segundo teléfono; el frente completo no se declara cerrado. El 25/10/2026 se repitió en web con la cuenta dedicada el caso de 3 solicitadas, 1 pasada a En casa y 2 pendientes; se recuperó el saldo al volver a ingresar y Gastos permaneció en $0. Una segunda confirmación web de 1 unidad con gasto ficticio de $1 y comercio PRUEBA — sin compra real dejó 2 en casa, 1 pendiente y 1 compra registrada por $1; no hubo pago real ni cambio del catálogo público. 26/10: recorrido integrado del Worker construido confirma lista guardada/compartida, unidades y kg parciales, importes sólo explícitos, recuperación y reintento idempotente con reversión íntegra de un lote fallido; datos locales ficticios. El titular documentó en Samsung el alta de 3 paquetes y stock 0. La recepción parcial física sigue pendiente; web 180 además verifica por eventos que elegir la variedad no reinicia esas 3 unidades."
     },
     {
       "number": 15,
@@ -155,7 +155,7 @@
       "title": "Operación y soporte",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3."
+      "evidenceAndLimit": "Reconocimiento pago desactivado por decisión del titular. Cuotas, timeout, cancelación y archivos probados con proveedor simulado. Resumen diario sin nombres y conteos conservados. Web 172 bloquea compilación si divergen inventarios, avisos o marca. C3 (restauración/revocaciones) y validación operativa siguen pendientes. 26/10: cuatro recorridos integrados del artefacto construido se suman al control recurrente; suite actual de 330 aprobadas. No valida entrega real de correo, operación del alojamiento ni recuperación C3. Web 180: suite completa de 335 aprobadas después de corregir el selector de variedades del alta; guía y estados mantienen sus límites físicos y operativos."
     },
     {
       "number": 21,
@@ -347,7 +347,16 @@
     "integratedAccountJourneyRealGoogleLogin": false,
     "integratedAccountJourneyProductionWrites": 0,
     "integratedAccountJourneyExternalFetchAttempts": 0,
-    "currentPhysicalGuideUpdated": true
+    "currentPhysicalGuideUpdated": true,
+    "addProductVariantFocusedTests": 7,
+    "addProductVariantReleaseTests": 335,
+    "addProductVariantFailed": 0,
+    "addProductVariantSkipped": 0,
+    "addProductVariantTypesPassed": true,
+    "addProductVariantBuildPassed": true,
+    "samsungShoppingListThreeUnitsAdded": true,
+    "samsungPartialCheckoutVerified": false,
+    "addProductVariantPostFixPhoneVerified": false
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -961,6 +970,17 @@
       "status": "closed for current guide preparation and historical-guide deprecation; physical execution remains pending",
       "evidence": "docs/qa/PRUEBA_FISICA_ACTUAL.md",
       "limit": "Owner-confirmed install/startup and Natura comparison are retained. No new physical checks, visual confirmation or second-device test were performed."
+    },
+    {
+      "id": "P3-ADD-PRODUCT-VARIANTS-20261026",
+      "points": [
+        3,
+        10,
+        14
+      ],
+      "status": "closed for published exact-variety selection in product entry, retained quantity/identity and local regression validation",
+      "evidence": "docs/integration/ALTA_PRODUCTO_VARIANTES_2026-10-26.md",
+      "limit": "Real source sample and controlled component/Worker tests only; no post-fix phone/visual confirmation, physical partial-checkout completion or full-front closure."
     }
   ],
   "legalFiscalPreparation": {
@@ -2076,5 +2096,48 @@
     "externalHttpAttempts": 0,
     "emailsSent": 0,
     "wholeFrontsNewlyClosed": 0
-  }
+  },
+  "addProductVariantReview": {
+    "asOf": "2026-10-26",
+    "publishedWebVersion": 180,
+    "sourceCommit": "2e96eafbbb85174b2d55980dfd20c7ee6479dbda",
+    "evidence": "docs/integration/ALTA_PRODUCTO_VARIANTES_2026-10-26.md",
+    "reportedProduct": {
+      "name": "Arroz",
+      "brand": "Gallo",
+      "presentation": "500 g"
+    },
+    "rootCause": "AddProduct consumed review.message but discarded review.choices already returned by the API",
+    "exactChoiceSelector": "compact native select",
+    "quantityPreservedOnExactSelection": true,
+    "exactIdentitySaved": true,
+    "identityGuardRelaxed": false,
+    "sourcePricesChanged": false,
+    "sourceDataRepository": "tequedo/despensa-precios",
+    "sourceDataCommit": "4f4340ea0129361943c103c32585e348f738fc3c",
+    "fixtureObservations": 288,
+    "fixtureShards": 14,
+    "selectedBranchesInWorkerTest": 12,
+    "focusedTests": 7,
+    "newRegressionTests": 5,
+    "fullTestsPassed": 335,
+    "failed": 0,
+    "skipped": 0,
+    "typesPassed": true,
+    "buildPassed": true,
+    "postFixPhoneValidation": false,
+    "browserVisualVerified": false,
+    "productionDataWrites": 0,
+    "wholeFrontsNewlyClosed": 0
+  },
+  "pendingVisualAdjustments": [
+    {
+      "id": "P10-ADD-PRODUCT-COMPACT-AFTER-TEST",
+      "requestedOn": "2026-10-26",
+      "target": "Cuadro Qué producto querés agregar",
+      "request": "Reducir un poco más el espacio interno conservando información, estética y comodidad",
+      "ownerRequestedTiming": "Después de terminar la prueba física en curso",
+      "status": "pending; intentionally deferred by owner"
+    }
+  ]
 }
