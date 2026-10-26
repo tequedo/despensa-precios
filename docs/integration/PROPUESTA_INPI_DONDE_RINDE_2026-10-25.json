@@ -224,7 +224,7 @@
   "paymentMade": false,
   "filingPerformed": false,
   "remainingBeforeFiling": [
-    "Pay only the existing ARS27230.94 current-name phonetic QR order through Mercado Pago; automated slip retrieval is blocked by browser URL policy, so the owner must open Volante on their own device.",
+    "Verify the actual transaction receipt/history for ARS27230.94 before any repeat payment. A screenshot of an AI assistant saying already paid does not identify or confirm this order; INPI live verification is currently blocked by session expiry.",
     "Verify payment and obtain/read the reports for classes 9/35/42, then evaluate relevant similar marks before resuming the paused ARS123777 trademark-registration payment.",
     "Current name/logo protection scope and remaining legal fronts retain their documented limits.",
     "No trademark filing or grant is confirmed."
@@ -603,7 +603,7 @@
       "emailVisuallyVerifiedInAllThreeForms": true,
       "deniedOperationRetried": false
     },
-    "next": "Owner opens the existing generated payment in INPI > Mis Trámites > Trámites en Proceso de ingreso > Volante on their own device, verifies ARS27230.94 and pays with Mercado Pago QR. Verify payment afterward, then obtain and assess all three phonetic reports before resuming trademark-registration payment.",
+    "next": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof.",
     "sources": [
       "https://portaltramites.inpi.gob.ar/Instructivos/Como%20realizar%20el%20pago%20de%20tu%20tramite.pdf",
       "https://serviciosweb.afip.gob.ar/genericos/guiasPasoPaso/VerGuia.aspx?id=478"
@@ -658,7 +658,19 @@
     "sensitiveIdentifiersAndPrivatePaymentUrlPublished": false,
     "expiryReference": "The INPI payment-process page states expiry within the first business day after generation. The actual slip could not be opened in this browser; no exact hour is asserted.",
     "officialQrPaymentOrderConfirmed": true,
-    "actualVepNumberObserved": false
+    "actualVepNumberObserved": false,
+    "paymentVerification": {
+      "date": "2026-10-26",
+      "evidence": "User screenshot of an AI assistant named Mago saying the ARCA bill already appears paid and no new payment was initiated.",
+      "actualTransactionReceiptVisible": false,
+      "matchingAmountVisible": false,
+      "matchingReferenceVisible": false,
+      "paymentConfirmed": false,
+      "inpiLiveVerification": "Authenticated session expired on refresh; no current paid/entered status was observed.",
+      "matchingEmailReceiptsFound": 0,
+      "emailChecks": "Read-only Outlook exact payment-reference and INPI searches, plus Gmail exact payment-reference/request/amount searches from 2026-10-26; no matching receipts.",
+      "next": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof."
+    }
   },
-  "nextProposedOperation": "Owner opens the existing generated payment in INPI > Mis Trámites > Trámites en Proceso de ingreso > Volante on their own device, verifies ARS27230.94 and pays with Mercado Pago QR. Verify payment afterward, then obtain and assess all three phonetic reports before resuming trademark-registration payment."
+  "nextProposedOperation": "Verify actual transaction history/receipt for ARS27230.94 and match it to this order before any repeat payment. Do not treat the assistant reply as transaction proof."
 }
