@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 175,
-  "webBaseCommit": "36c1f029638b83e13ec9d09f9008de81443cc70c",
+  "publishedWebVersion": 177,
+  "webBaseCommit": "046943eaabafc4a83dbfeb1bfad24e464c750e57",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -36,7 +36,7 @@
       "title": "Identidad y calidad de productos",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "26/10: 22.026 observaciones de 14 archivos de San Juan revisadas con blobs cotejados. Se corrigen ambigüedad de variedades en consulta/canasta, consulta directa de presentación contradictoria, packs con GRS/×, envases doypack y marca numérica. La auditoría de 12 sucursales conserva 8.844 identificadores cotizables sin discrepancias catálogo/cotización; 60 combinaciones generales exigen seleccionar SKU. Suite 320, tipos y build aprobados. Persisten 7.424 observaciones con presentación no resoluble o contradictoria y confirmaciones del origen."
+      "evidenceAndLimit": "26/10: web 177 corrige la inclusión de Natura mezcla girasol/oliva al elegir girasol. La búsqueda real pasa del bloqueo a 12 cotizaciones del mismo código, fechadas el 25/10. Las ambigüedades conservan el bloqueo y ahora ofrecen productos concretos seleccionables. 326 pruebas, tipos y compilación aprobados. La auditoría base de web 175 conservó 8.844 identificadores cotizables; persisten presentaciones de origen por confirmar y la repetición física de esta corrección."
     },
     {
       "number": 4,
@@ -85,7 +85,7 @@
       "title": "Samsung y otro teléfono",
       "window": 2,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "APK Dónde Rinde Prueba Nueva 0.1.2, paquete independiente preview012, entregado. CI39828245411 comprueba arranque y coexistencia con preview. Instalación en el Samsung y recorrido del segundo teléfono sin confirmar."
+      "evidenceAndLimit": "26/10: el titular confirma descarga, instalación y arranque de Dónde Rinde Prueba Nueva 0.1.2 en Samsung. Las capturas muestran una falla al comparar Natura girasol 1,5 L; reproducida y corregida en web 177. Falta repetir la comparación en el teléfono y completar el recorrido funcional y el segundo dispositivo. No se reconstruye el APK."
     },
     {
       "number": 11,
@@ -330,7 +330,13 @@
     "productIdentityFailed": 0,
     "productIdentitySkipped": 0,
     "productIdentityTypesPassed": true,
-    "productIdentityBuildPassed": true
+    "productIdentityBuildPassed": true,
+    "samsungOwnerReportedInstallAndLaunch": true,
+    "samsungComparisonAfterFixVerified": false,
+    "comparisonSelectionReleaseTests": 326,
+    "comparisonSelectionFocusedTests": 44,
+    "comparisonSelectionTypesPassed": true,
+    "comparisonSelectionBuildPassed": true
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -1940,5 +1946,39 @@
     "productionApplicationHydrated": true,
     "productionPricesTabRendered": true,
     "visualWarningFormFlowVerified": false
+  },
+  "comparisonSelectionReview": {
+    "date": "2026-10-26",
+    "points": [
+      3,
+      10
+    ],
+    "evidence": "docs/integration/COMPARADOR_NATURA_2026-10-26.md",
+    "webVersion": 177,
+    "sourceCommit": "046943eaabafc4a83dbfeb1bfad24e464c750e57",
+    "deploymentId": "appgdep_6adf93a96f9881919731d797747908e1",
+    "publication": "succeeded",
+    "sourceDataCommit": "2cf3f169b6697a69aff18df9597ac9e93e6632f5",
+    "defaultStores": 12,
+    "beforeQuoteCount": 0,
+    "afterQuoteCount": 12,
+    "sunflowerBarcode": "7790272001029",
+    "excludedBlendBarcode": "7790272000053",
+    "sourcePriceDate": "2026-10-25",
+    "fixtureRecords": 104,
+    "focusedTests": 44,
+    "releaseTests": 326,
+    "failedTests": 0,
+    "skippedTests": 0,
+    "typesPassed": true,
+    "buildPassed": true,
+    "renderedChoicesTested": true,
+    "productionBrowserFlowVerified": false,
+    "samsungInstallAndLaunch": "owner_reported",
+    "samsungComparisonBeforeFix": "failed_owner_screenshots",
+    "samsungComparisonAfterFix": "pending_owner_retest",
+    "secondPhoneVerified": false,
+    "androidRebuilt": false,
+    "pointFullyClosed": false
   }
 }
