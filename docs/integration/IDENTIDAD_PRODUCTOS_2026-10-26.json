@@ -1,0 +1,898 @@
+{
+  "date": "2026-10-26",
+  "point": 3,
+  "status": "verified code changes; source inconsistencies remain",
+  "manifest": {
+    "sourceRepository": "tequedo/despensa-precios",
+    "sourceCommit": "2cf3f169b6697a69aff18df9597ac9e93e6632f5",
+    "directory": "data/national/AR-J",
+    "generatedAt": "2026-10-25T23:26:35.887Z",
+    "stores": 14,
+    "observations": 22026,
+    "unresolvedPresentationRows": 7424,
+    "files": [
+      {
+        "file": "ce866075abcd5344488734f6.json",
+        "storeId": "11|2|1081",
+        "sha256": "91cd7b16ced296b79970bd5d700c897a7bedb2ba5d379d84229e6ec349602328",
+        "gitBlobSha": "b9a4534d15b116428300d68ad0f6a358a48f88a0"
+      },
+      {
+        "file": "c918d5feaa1364fa2b3a375e.json",
+        "storeId": "11|5|1006",
+        "sha256": "6616beb50eaa7555d681cc6d78c19b97836ed6eb48eba89d50a22c4ccb80c579",
+        "gitBlobSha": "98f47377ea9d682963aaf0c2eebc966069e11ed5"
+      },
+      {
+        "file": "0c0f4eef1332a7b578ea54b7.json",
+        "storeId": "2|1|381",
+        "sha256": "7d076d84179519ed2fd2cf4aa2b206a05bda3b0de86d3b958fac83ee103de773",
+        "gitBlobSha": "c11cca2b337513f0829dd8db5adf248225a3935e"
+      },
+      {
+        "file": "aa91902521996395a9fd1156.json",
+        "storeId": "10|1|123",
+        "sha256": "ca5a26100c56a253618112bb990d1d5ae81f9362e0349dcbfec54d06346c60df",
+        "gitBlobSha": "45182d79ef8a3aa96390757b08822818ea75783e"
+      },
+      {
+        "file": "b67840fe7c03cd7bc3bbdd1a.json",
+        "storeId": "11|2|1092",
+        "sha256": "b61964ab25645857186f181031bf8c18c924882c4775113435fad7354803607b",
+        "gitBlobSha": "49fb0a1ae012fbbd21522851dfd7d82bd91e644e"
+      },
+      {
+        "file": "6f8e76166e9d3c4dcf1d1620.json",
+        "storeId": "9|1|410",
+        "sha256": "bf931bc8ade84619e4f4b752aef984922e3ff333a9e13cc1be17922f996ee681",
+        "gitBlobSha": "e41db3aa93c6bb0d4fff225651fcedab5bc2e404"
+      },
+      {
+        "file": "fa0fe5167b188f4697f73c22.json",
+        "storeId": "9|1|815",
+        "sha256": "5733674c416093c1be4f53246b504065b36c9629dda663be3cb5da204384a20e",
+        "gitBlobSha": "a37a970b026a3fdfa28ce41734ee0852d9dd19de"
+      },
+      {
+        "file": "4d5744d46309bd88866a7763.json",
+        "storeId": "9|1|408",
+        "sha256": "27b38ac8b131f8517d3a2ff2905ececfb0a8cb87ba71eec8b3e96fb8db79a45e",
+        "gitBlobSha": "bebac9cd312e777aef510af1210b25d21fedc7f9"
+      },
+      {
+        "file": "87fee0cd4cb0a2a1541af498.json",
+        "storeId": "9|1|544",
+        "sha256": "0503c1e97d5ccb85cf6f2bf14baf54207fbd36b192cf3414e5ef6f2b3d620164",
+        "gitBlobSha": "51452e045d8e07d8fc53d97335fa7317159b3790"
+      },
+      {
+        "file": "bdb58534867cf467bb28508e.json",
+        "storeId": "9|1|194",
+        "sha256": "159103d894783c49aa6ecedc38e37f15ca935074a4cb03130c45aa9a4f26d1fa",
+        "gitBlobSha": "ede36dc3192abb39861ec0c5850ee5dcab93d142"
+      },
+      {
+        "file": "dedee1b17a54b506bad2741b.json",
+        "storeId": "9|1|417",
+        "sha256": "821691910a45ad18f60dfc9cdf34d5c835eb7bec6c4da6b4a4008508daaf5743",
+        "gitBlobSha": "c8f21c6f51420ac44bb1a6473a0130254f78e58f"
+      },
+      {
+        "file": "61aef60951a944e81ccec2bb.json",
+        "storeId": "9|1|413",
+        "sha256": "73b8ae096a9eee9d55b64336c68528f27e108f9d7438fb69b84062253203f1e8",
+        "gitBlobSha": "be7530220e624c3afc9e7c737eb3b3403c5af3cc"
+      },
+      {
+        "file": "64647f8bd8859bcc94df437b.json",
+        "storeId": "9|1|415",
+        "sha256": "c6477e72ec0041d48f3880948a1d941f393cc29c0aeb9904269376f300e3e9e6",
+        "gitBlobSha": "f1a8c52cdf760babc4fffdf6c027ac84bb2391a8"
+      },
+      {
+        "file": "e6246bcca1b1b1e3ccd2aa29.json",
+        "storeId": "9|1|193",
+        "sha256": "69bc3e9e0b5f03bdb818bd4f6383dfaae4113aeb7bd383efa0f8c3858ab40599",
+        "gitBlobSha": "7af948ed80e4b67ddb7805accc382a754c600e83"
+      }
+    ],
+    "gitBlobsMatched": true
+  },
+  "audit": {
+    "checkedAt": "2026-10-26T13:50:09.317Z",
+    "coverage": {
+      "sourceStatus": "delayed",
+      "lastPriceDate": "2026-10-25",
+      "warning": "Los últimos precios informados son del 25/10/2026. Revisá la fecha de cada precio antes de comprar.",
+      "province": "San Juan",
+      "locality": "San Juan",
+      "stores": 12,
+      "requestedStores": 12,
+      "failedStores": 0,
+      "availableStores": 14,
+      "limited": true,
+      "radiusKm": 50,
+      "generatedAt": "2026-10-25T23:26:35.887Z",
+      "sourceDate": "2026-10-25",
+      "pricesUnderReview": 0
+    },
+    "rawRecords": 19028,
+    "uniqueProducts": 10175,
+    "exactPriced": 8844,
+    "exactUnpriced": 1331,
+    "offeredProducts": 8844,
+    "catalogFailures": [],
+    "genericSelections": 352,
+    "genericPriced": 52,
+    "genericAmbiguous": 60,
+    "inconsistentPresentationRecords": 6444,
+    "before": {
+      "exactPriced": 8844,
+      "exactUnpriced": 1331,
+      "offeredProducts": 8844,
+      "genericSelections": 352,
+      "genericPriced": 110
+    },
+    "quoteSelectionChanges": [
+      {
+        "id": "sepa:9:1:7790072001014",
+        "name": "Sal celusal fina PAQ-500-gr.",
+        "brand": "CELUSAL",
+        "presentation": "500.00 gr.",
+        "before": 1490,
+        "after": 1350,
+        "beforeStores": 8,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:9:1:7791004000822",
+        "name": "Sal CELUSAL Gruesa PAQ-500-gr.",
+        "brand": "CELUSAL",
+        "presentation": "500.00 gr.",
+        "before": 1490,
+        "after": 1390,
+        "beforeStores": 8,
+        "afterStores": 10
+      },
+      {
+        "id": "sepa:9:1:7791476005912",
+        "name": "crocante de arroz inflado EGRAN PAQ-60-gr.",
+        "brand": "EGRAN",
+        "presentation": "60.00 gr.",
+        "before": 1400,
+        "after": 1369,
+        "beforeStores": 7,
+        "afterStores": 11
+      },
+      {
+        "id": "sepa:9:1:7792280005686",
+        "name": "Yerba CACHAMATE cPalo Amarilla FCA 500g PAQ-500-gr.",
+        "brand": "CACHAMATE",
+        "presentation": "500.00 gr.",
+        "before": 2390,
+        "after": 2290,
+        "beforeStores": 8,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:10:1:7792900990965",
+        "name": "SAL FINA LIGHT DOS ANCLAS PAQUETE X 500 GRS",
+        "brand": "DOS ANCLAS",
+        "presentation": "1 UNI",
+        "before": 5029,
+        "after": 4200,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:10:1:7794000005198",
+        "name": "KETCHUP FANACOA DOY PACK X 250 GRS",
+        "brand": "FANACOA",
+        "presentation": "1 UNI",
+        "before": 1565,
+        "after": 990,
+        "beforeStores": 1,
+        "afterStores": 2
+      },
+      {
+        "id": "sepa:10:1:8076802085981",
+        "name": "FIDEOS FUSILLI CAJA BARILLA CAJA X 500 GRS",
+        "brand": "BARILLA",
+        "presentation": "1 UNI",
+        "before": 9129,
+        "after": 7750,
+        "beforeStores": 1,
+        "afterStores": 2
+      },
+      {
+        "id": "sepa:10:1:7790072001014",
+        "name": "SAL FINA CELUSAL PAQUETE X 500 GRS",
+        "brand": "CELUSAL",
+        "presentation": "1 UNI",
+        "before": 1390,
+        "after": 1350,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:10:1:7792900623078",
+        "name": "SAL ENTREFINA DOS ANCLAS PAQUETE X 500 GRS",
+        "brand": "DOS ANCLAS",
+        "presentation": "1 UNI",
+        "before": 1489,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:10:1:7792900613079",
+        "name": "SAL GRUESA DOS ANCLAS PAQUETE X 500 GRS",
+        "brand": "DOS ANCLAS",
+        "presentation": "1 UNI",
+        "before": 1489,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:10:1:8076800195057",
+        "name": "FIDEOS SPAGHETTI BARILLA CAJA X 500 GRS",
+        "brand": "BARILLA",
+        "presentation": "1 UNI",
+        "before": 9129,
+        "after": 7750,
+        "beforeStores": 1,
+        "afterStores": 2
+      },
+      {
+        "id": "sepa:2:1:7791004000822",
+        "name": "SAL GRUESA PAQUETE, CELUSAL, 500 gr",
+        "brand": "CELUSAL",
+        "presentation": "500 gr",
+        "before": 1600,
+        "after": 1390,
+        "beforeStores": 1,
+        "afterStores": 10
+      },
+      {
+        "id": "sepa:2:1:7791476005912",
+        "name": "BARRA CROCANTE DE ARROZ, EGRAN, 60 gr",
+        "brand": "EGRAN",
+        "presentation": "60 gr",
+        "before": 1850,
+        "after": 1369,
+        "beforeStores": 1,
+        "afterStores": 11
+      },
+      {
+        "id": "sepa:2:1:7792280005686",
+        "name": "YERBA MATE COMP. AMARILLA, CACHAMATE, 500 gr",
+        "brand": "CACHAMATE",
+        "presentation": "500 gr",
+        "before": 2600,
+        "after": 2290,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:2:1:7793360103018",
+        "name": "KETCHUP DOY PACK, LA CAMPAGNOLA, 250 gr",
+        "brand": "LA CAMPAGNOLA",
+        "presentation": "250 gr",
+        "before": 1700,
+        "after": 1650,
+        "beforeStores": 1,
+        "afterStores": 9
+      },
+      {
+        "id": "sepa:2:1:7793360103025",
+        "name": "KETCHUP PICANTE DOY PACK, LA CAMPAGNOLA, 250 gr",
+        "brand": "LA CAMPAGNOLA",
+        "presentation": "250 gr",
+        "before": 1700,
+        "after": 1690,
+        "beforeStores": 1,
+        "afterStores": 10
+      },
+      {
+        "id": "sepa:2:1:7798082743726",
+        "name": "TOSTADITAS DE ARROZ, TIA MARUCA, 120 gr",
+        "brand": "TIA MARUCA",
+        "presentation": "120 gr",
+        "before": 1650,
+        "after": 1599,
+        "beforeStores": 1,
+        "afterStores": 2
+      },
+      {
+        "id": "sepa:11:2:7790072001014",
+        "name": "CELUSAL SAL FINA PAQUETE 500G",
+        "brand": "CELUSAL",
+        "presentation": "0.5 KG",
+        "before": 1799,
+        "after": 1350,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:11:2:7790150150276",
+        "name": "LA VIRGINIA CAFE INSTANTANEO TOSTADO 150G",
+        "brand": "LA VIRGINIA",
+        "presentation": "0.15 KG",
+        "before": 11979,
+        "after": 11899,
+        "beforeStores": 1,
+        "afterStores": 3
+      },
+      {
+        "id": "sepa:11:2:7792280005686",
+        "name": "CACHAMATE YERBA MATE HIERBAS DIGESTIVAS AMARILLA 500G",
+        "brand": "CACHAMATE",
+        "presentation": "0.5 KG",
+        "before": 2689,
+        "after": 2290,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:11:2:7792900613079",
+        "name": "DOS ANCL SAL GR 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 1489,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:11:2:7792900623078",
+        "name": "DOSA SAL PARRIL 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 1489,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:11:2:7792900990965",
+        "name": "DOSAN SAL LIGH 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 5029,
+        "after": 4200,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:11:5:7790072001014",
+        "name": "CELUSAL SAL FINA PAQUETE 500G",
+        "brand": "CELUSAL",
+        "presentation": "0.5 KG",
+        "before": 1849,
+        "after": 1350,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:11:5:7790150150276",
+        "name": "LA VIRGINIA CAFE INSTANTANEO TOSTADO 150G",
+        "brand": "LA VIRGINIA",
+        "presentation": "0.15 KG",
+        "before": 12259,
+        "after": 11899,
+        "beforeStores": 1,
+        "afterStores": 3
+      },
+      {
+        "id": "sepa:11:5:7791476005912",
+        "name": "BARRAS ARROZ EGRAN",
+        "brand": "EGRAN",
+        "presentation": "0.06 KG",
+        "before": 1419,
+        "after": 1369,
+        "beforeStores": 1,
+        "afterStores": 11
+      },
+      {
+        "id": "sepa:11:5:7792280005686",
+        "name": "CACHAMATE YERBA MATE HIERBAS DIGESTIVAS AMARILLA 500G",
+        "brand": "CACHAMATE",
+        "presentation": "0.5 KG",
+        "before": 2769,
+        "after": 2290,
+        "beforeStores": 1,
+        "afterStores": 12
+      },
+      {
+        "id": "sepa:11:5:7792900613079",
+        "name": "DOS ANCL SAL GR 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 1539,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:11:5:7792900623078",
+        "name": "DOSA SAL PARRIL 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 1539,
+        "after": 1250,
+        "beforeStores": 1,
+        "afterStores": 4
+      },
+      {
+        "id": "sepa:11:5:7792900990965",
+        "name": "DOSAN SAL LIGH 500G",
+        "brand": "DOS ANCLAS",
+        "presentation": "500 G",
+        "before": 5179,
+        "after": 4200,
+        "beforeStores": 1,
+        "afterStores": 4
+      }
+    ],
+    "ambiguousSelections": [
+      {
+        "name": "Aceite de girasol",
+        "brand": "Natura",
+        "presentation": "900 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Natura",
+        "presentation": "1,5 L",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Cocinero",
+        "presentation": "900 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Cocinero",
+        "presentation": "1,5 L",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Cañuelas",
+        "presentation": "900 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Pureza",
+        "presentation": "900 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de girasol",
+        "brand": "Legítimo",
+        "presentation": "900 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de oliva",
+        "brand": "Oliovita",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de oliva",
+        "brand": "Cocinero",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de oliva",
+        "brand": "Lira",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Aceite de oliva",
+        "brand": "Nucete",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Azúcar",
+        "brand": "Ledesma",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Sal",
+        "brand": "Celusal",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Sal",
+        "brand": "Celusal",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Sal",
+        "brand": "Dos Anclas",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Sal",
+        "brand": "Dos Anclas",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Sal",
+        "brand": "Colosal",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Leche",
+        "brand": "La Serenísima",
+        "presentation": "1 L",
+        "variant": "Entera",
+        "packaging": "Sachet"
+      },
+      {
+        "name": "Leche",
+        "brand": "La Serenísima",
+        "presentation": "1 L",
+        "variant": "Descremada",
+        "packaging": "Botella"
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Playadito",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Playadito",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Amanda",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Amanda",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Taragüi",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Taragüi",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Rosamonte",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Rosamonte",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Yerba mate",
+        "brand": "Mañanita",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Gallo",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Gallo",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Molinos Ala",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Molinos Ala",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Lucchetti",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Lucchetti",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Dos Hermanos",
+        "presentation": "500 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Arroz",
+        "brand": "Dos Hermanos",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Galletitas",
+        "brand": "Chocolinas",
+        "presentation": "250 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Galletitas",
+        "brand": "Oreo",
+        "presentation": "118 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Harina de trigo",
+        "brand": "Pureza",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Harina de trigo",
+        "brand": "Cañuelas",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Harina de trigo",
+        "brand": "Favorita",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Detergente",
+        "brand": "Magistral",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Detergente",
+        "brand": "Magistral",
+        "presentation": "750 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Detergente",
+        "brand": "Cif",
+        "presentation": "500 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Detergente",
+        "brand": "Cif",
+        "presentation": "750 ml",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Gaseosa cola",
+        "brand": "Coca-Cola",
+        "presentation": "2,25 L",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Gaseosa cola",
+        "brand": "Pepsi",
+        "presentation": "1,5 L",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Café instantáneo",
+        "brand": "Nescafé",
+        "presentation": "100 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Café instantáneo",
+        "brand": "La Virginia",
+        "presentation": "100 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Café instantáneo",
+        "brand": "La Virginia",
+        "presentation": "170 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Café instantáneo",
+        "brand": "Dolca",
+        "presentation": "100 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Café instantáneo",
+        "brand": "Dolca",
+        "presentation": "170 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "La Serenísima",
+        "presentation": "400 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "La Serenísima",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "Ilolay",
+        "presentation": "400 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "Ilolay",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "Milkaut",
+        "presentation": "400 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "Milkaut",
+        "presentation": "1 kg",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "brand": "San Ignacio",
+        "presentation": "400 g",
+        "variant": "",
+        "packaging": ""
+      },
+      {
+        "name": "Mermelada",
+        "brand": "Arcor",
+        "presentation": "390 g",
+        "variant": "",
+        "packaging": ""
+      }
+    ]
+  },
+  "tests": {
+    "focused": 55,
+    "release": 320,
+    "failed": 0,
+    "skipped": 0,
+    "typesPassed": true,
+    "buildPassed": true
+  },
+  "fixture": {
+    "file": "tests/fixtures/product-identity-san-juan-2026-10-26.json",
+    "records": 103,
+    "rawFieldsPreserved": true
+  },
+  "browserPreview": {
+    "verified": false,
+    "error": "Failed dynamic import of virtual:vinext-app-browser-entry",
+    "retryPerformed": true,
+    "previewStopped": true
+  },
+  "publication": {
+    "status": "succeeded",
+    "webVersion": 175,
+    "sourceCommit": "36c1f029638b83e13ec9d09f9008de81443cc70c",
+    "deploymentId": "appgdep_6adf5c2489f88191b19f0d9b62f17f8f",
+    "url": "https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site"
+  },
+  "pointFullyClosed": false,
+  "productionReadOnlyChecks": {
+    "date": "2026-10-26",
+    "apiAmbiguousColaVerified": true,
+    "apiContradictorySugarExcluded": true,
+    "sugarRowsExcluded": 8,
+    "sourcePriceDate": "2026-10-25",
+    "applicationHydrated": true,
+    "pricesTabRendered": true,
+    "visualWarningFormFlowVerified": false
+  }
+}

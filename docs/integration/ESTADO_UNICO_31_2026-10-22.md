@@ -1,12 +1,12 @@
 # Estado único de Dónde Rinde
 
-Actualizado el 26/10/2026. Web publicada: **174**, fuente `3a1145063adc792e43e58f4fbb16bbee67d71069`. Se conservan los 31 frentes originales y el agregado **32: difusión y promoción**. El JSON homónimo conserva la evidencia e historia detallada; una subtarea comprobada no cierra automáticamente el frente completo.
+Actualizado el 26/10/2026. Web **175** publicada, fuente `36c1f029638b83e13ec9d09f9008de81443cc70c`. Correcciones del frente 3: compilación, tipos, 320 pruebas y auditoría de datos aprobados. API pública, carga de la app y sección Precios verificadas en producción. Se conservan los 31 frentes originales y el agregado **32: difusión y promoción**.
 
 | N.º | Frente | Estado | Evidencia y pendiente |
 | --- | --- | --- | --- |
 | 1 | Acceso estable a SEPA | bloqueado por dependencia | Acceso y descarga directa pendientes de respuesta de SEPA por instrucción del titular. PR20 prepara la prueba real como ejecución manual explícita; no hay habilitación oficial ni IP autorizada acreditadas. Procedencia vigente: réplica. |
 | 2 | Actualización diaria comprobada | implementado pendiente de validar | Auditoría de continuidad y lectura real de 12 cotizaciones recibidas. Éxito con réplica no acredita siete fechas oficiales consecutivas ni precios recién fechados. |
-| 3 | Identidad y calidad de productos | implementado pendiente de validar | Entrega auditó 22.045 observaciones y 7.381 filas sin presentación resoluble. Controles incorporados; rectificación y contrato de identidad/presentación pendientes. |
+| 3 | Identidad y calidad de productos | implementado pendiente de validar | 26/10: 22.026 observaciones de 14 archivos de San Juan revisadas con blobs cotejados. Se corrigen ambigüedad de variedades en consulta/canasta, consulta directa de presentación contradictoria, packs con GRS/×, envases doypack y marca numérica. La auditoría de 12 sucursales conserva 8.844 identificadores cotizables sin discrepancias catálogo/cotización; 60 combinaciones generales exigen seleccionar SKU. Suite 320, tipos y build aprobados. Persisten 7.424 observaciones con presentación no resoluble o contradictoria y confirmaciones del origen. |
 | 4 | Cobertura geográfica real | implementado pendiente de validar | Entrega documenta 2.546 sucursales, 53 apartadas por inconsistencia geográfica y exclusión de canal Web. Falta corroboración física de tiendas y coordenadas. |
 | 5 | Adaptadores de promociones | implementado pendiente de validar | Extracción y revalidación reforzadas: mínimo, tope, provincia, canal y fecha deben probarse. Faltan legales completos y contenido dinámico de varias fuentes. |
 | 6 | Promociones por producto aplicables | bloqueado por dependencia | No se fabrica un EAN desde una clave interna. Extensión de identidad/presentación y caso oficial positivo por producto/sucursal pendientes. |
@@ -35,14 +35,18 @@ Actualizado el 26/10/2026. Web publicada: **174**, fuente `3a1145063adc792e43e58
 | 29 | Más cadenas, bancos y comercios | ampliación posterior | Fuentes mayoristas y bancarias adicionales propuestas con enlaces y límites. Sin nuevos contactos enviados ni cobertura completa declarada. |
 | 30 | Mayoristas y catálogo local | ampliación posterior | Calculadoras/adaptadores no constituyen un catálogo mayorista real. Faltan cotizaciones por tienda, presentación, bulto, impuestos y vigencia. |
 | 31 | Historial y alertas ampliados | ampliación posterior | Auditoría por commit/hashes e historial recibidos. Ampliación comparable requiere contrato de conservación; campanita interna no es push. |
-| 32 | Difusión y promoción de Dónde Rinde | primer video vertical de 30 segundos producido y verificado; campaña posterior a publicación | Evidencia: DIFUSION_LANZAMIENTO_2026-10-22.md. Sin publicación de la campaña ni gasto autorizado. |
+| 32 | Difusión y promoción de Dónde Rinde | primer video vertical de 30 segundos producido y verificado; campaña posterior a publicación | Evidencia: DIFUSION_LANZAMIENTO_2026-10-22.md. Sin publicación de campaña ni gasto autorizado. |
 
-## Actualización de restauración
+## Calidad de productos
 
-[Prueba local y condiciones de cierre](RESTAURACION_Y_REVOCACIONES_2026-10-26.md). C3 permanece abierto: se requiere un registro de revocaciones independiente, cierre verificable de accesos y procedimiento de recuperación admitido por el alojamiento. Suite completa: 312 aprobadas, 0 fallos y 0 omitidas; tipos y compilación aprobados. No se restauró ni borró información real para esta revisión.
+[Correcciones, datos revisados y límites](IDENTIDAD_PRODUCTOS_2026-10-26.md). Los casos reales de variedades, presentaciones contradictorias, multipacks, doypack y marca numérica están cubiertos. La auditoría de 12 sucursales conserva 8.844 identificadores cotizables sin discrepancias; 60 combinaciones generales requieren seleccionar el producto exacto. El frente 3 mantiene pendiente la resolución de datos de origen.
+
+## Restauración
+
+[Prueba local y condiciones de cierre](RESTAURACION_Y_REVOCACIONES_2026-10-26.md). C3 permanece abierto: se requiere un registro independiente de revocaciones, cierre verificable de accesos y procedimiento de recuperación admitido por el alojamiento.
 
 ## Marca y copia DNDA
 
-Las búsquedas fonéticas de clases 9/35/42 ya están abonadas y acreditadas. Se esperan los informes; no corresponde repetir ese pago. Los nuevos borradores denominativos DÓNDE RINDE se guardaron y reabrieron con titularidad del 100% y 1/2/2 términos. Estos borradores nuevos no se finalizaron ni firmaron y el registro marcario no se pagó ni presentó en esta operación.
+Las búsquedas fonéticas de clases 9/35/42 están abonadas y acreditadas. Se esperan los informes; no repetir ese pago. Los nuevos borradores DÓNDE RINDE se guardaron y reabrieron con titularidad del 100% y 1/2/2 términos. Estos borradores nuevos no se finalizaron ni firmaron y el registro marcario no se pagó ni presentó en esta operación.
 
-La copia técnica DNDA del 25/10 conserva el código de web 173. La publicación 174 cambia la fuente: actualizar ese material antes de una presentación que pretenda cubrir la versión actual. Se mantiene íntegro el corte histórico; no se ejecutó una presentación ni un pago DNDA.
+La copia técnica DNDA del 25/10 conserva web 173. El código ya cambió en web 174: actualizar el material antes de una presentación que pretenda cubrir la versión vigente. El corte histórico sigue disponible.

@@ -3,8 +3,8 @@
   "asOf": "2026-10-26",
   "timezone": "America/Argentina/Buenos_Aires",
   "projectId": "appgprj_6a9c53ae66f4819182c306fba4c263ca",
-  "publishedWebVersion": 174,
-  "webBaseCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
+  "publishedWebVersion": 175,
+  "webBaseCommit": "36c1f029638b83e13ec9d09f9008de81443cc70c",
   "androidPr": 19,
   "androidSourceCommit": "300d0c87dadff02826bd0d0feca3d6964b444dbb",
   "windowsReceived": {
@@ -36,7 +36,7 @@
       "title": "Identidad y calidad de productos",
       "window": 1,
       "status": "implementado pendiente de validar",
-      "evidenceAndLimit": "Entrega auditó 22.045 observaciones y 7.381 filas sin presentación resoluble. Controles incorporados; rectificación y contrato de identidad/presentación pendientes."
+      "evidenceAndLimit": "26/10: 22.026 observaciones de 14 archivos de San Juan revisadas con blobs cotejados. Se corrigen ambigüedad de variedades en consulta/canasta, consulta directa de presentación contradictoria, packs con GRS/×, envases doypack y marca numérica. La auditoría de 12 sucursales conserva 8.844 identificadores cotizables sin discrepancias catálogo/cotización; 60 combinaciones generales exigen seleccionar SKU. Suite 320, tipos y build aprobados. Persisten 7.424 observaciones con presentación no resoluble o contradictoria y confirmaciones del origen."
     },
     {
       "number": 4,
@@ -323,7 +323,14 @@
     "erasureRestoreTypesPassed": true,
     "erasureRestoreBuildPassed": true,
     "hostedD1RestoreVerified": false,
-    "independentAuthoritativeRevocationsVerified": false
+    "independentAuthoritativeRevocationsVerified": false,
+    "productIdentityReleaseTests": 320,
+    "productIdentityFocusedTests": 55,
+    "productIdentityNewTests": 8,
+    "productIdentityFailed": 0,
+    "productIdentitySkipped": 0,
+    "productIdentityTypesPassed": true,
+    "productIdentityBuildPassed": true
   },
   "androidFinalReview": {
     "run": 39828245411,
@@ -900,6 +907,15 @@
       "status": "closed for explicitly authorized electronic signatures of the three current DONDE RINDE requests and confirmation in the signed queue",
       "evidence": "docs/integration/PROPUESTA_INPI_DONDE_RINDE_2026-10-25.json",
       "limit": "Owner paused payment for current-name phonetic/legal review. No VEP, QR, payment, effective filing, grant, or complete legal protection."
+    },
+    {
+      "id": "P3-IDENTIDAD-Y-PACKS-20261026",
+      "points": [
+        3
+      ],
+      "status": "verified for reproduced query/basket/pack defects and retained real-data audit",
+      "evidence": "docs/integration/IDENTIDAD_PRODUCTOS_2026-10-26.md",
+      "limit": "Source inconsistencies and full front remain open; production APIs, application hydration and Prices tab verified. Local preview hydration failed; visual warning-form flow not verified."
     }
   ],
   "legalFiscalPreparation": {
@@ -1609,7 +1625,7 @@
     },
     "software": {
       "point": 19,
-      "status": "Verified technical copy for web 173 retained; web 174 adds restoration/revocation primitives. Refresh the copy for a filing covering the current code. Human contributions/title, first-publication details, tax basis and accepted deposit format still require review.",
+      "status": "Verified technical copy for web 173 retained; current web 175 contains subsequent restoration and product-identity corrections. Refresh the source copy before filing the current version; remaining ownership/publication/deposit details still require review.",
       "newFilingConfirmed": false,
       "currentDescriptionUpdatedInPacket": true,
       "ownershipWorksheet": "FICHA_TITULARIDAD_SOFTWARE_2026-10-23.md",
@@ -1642,12 +1658,15 @@
         "allAndroidGitBlobsVerified": true,
         "androidComponentReusedByteForByte": true,
         "copiedWebVersion": 173,
-        "currentPublishedWebVersion": 174,
+        "currentPublishedWebVersion": 175,
         "matchesCurrentPublishedWeb": false,
         "newWebFilesNotInCopy": [
+          "docs/integration/IDENTIDAD_PRODUCTOS_2026-10-26.json",
+          "docs/integration/IDENTIDAD_PRODUCTOS_2026-10-26.md",
+          "docs/integration/RESTAURACION_Y_REVOCACIONES_2026-10-26.md",
           "lib/erasure-restoration.mjs",
           "tests/erasure-restoration.test.mjs",
-          "docs/integration/RESTAURACION_Y_REVOCACIONES_2026-10-26.md"
+          "tests/fixtures/product-identity-san-juan-2026-10-26.json"
         ],
         "verification": "Every path, size, SHA-256 and file mode checked in the reopened components; 490 prior web files unchanged and one public Asset Links file added.",
         "libraryIdentityPreserved": true,
@@ -1655,13 +1674,22 @@
         "depositFiled": false,
         "authorshipCertified": false,
         "changedWebFilesSinceCopy": [
-          "lib/account-erasure.mjs",
-          "tests/privacy-database.mjs",
+          "app/api/prices/basket/route.ts",
+          "app/api/prices/route.ts",
+          "app/page.tsx",
           "docs/integration/ESTADO_UNICO_31_2026-10-22.json",
-          "docs/integration/ESTADO_UNICO_31_2026-10-22.md"
+          "docs/integration/ESTADO_UNICO_31_2026-10-22.md",
+          "lib/account-erasure.mjs",
+          "lib/price-safety.mjs",
+          "lib/product-identity.mjs",
+          "lib/product-search.mjs",
+          "scripts/audit-price-catalog.mjs",
+          "tests/price-routes.test.mjs",
+          "tests/price-safety.test.mjs",
+          "tests/privacy-database.mjs"
         ],
-        "newPublishedWebCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
-        "scope": "Verified historical technical copy for web 173; source changed in web 174 on 2026-10-26. New current source copy needed before any filing purporting to cover web 174."
+        "newPublishedWebCommit": "36c1f029638b83e13ec9d09f9008de81443cc70c",
+        "scope": "Verified historical technical copy for web 173; source changed in web 174 and web 175. Refresh before a filing purporting to cover the current code."
       },
       "publishedFees": {
         "procedureArs": "3800.00",
@@ -1884,5 +1912,33 @@
     "sourceCommit": "3a1145063adc792e43e58f4fbb16bbee67d71069",
     "deploymentId": "appgdep_6adf50ab8c488191924c26349c6973ae",
     "url": "https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site"
+  },
+  "productIdentityReview": {
+    "date": "2026-10-26",
+    "point": 3,
+    "evidence": "docs/integration/IDENTIDAD_PRODUCTOS_2026-10-26.json",
+    "sourceDataCommit": "2cf3f169b6697a69aff18df9597ac9e93e6632f5",
+    "sourceIndexGeneratedAt": "2026-10-25T23:26:35.887Z",
+    "provinceStoreFiles": 14,
+    "provinceObservations": 22026,
+    "unresolvedProvincePresentationRows": 7424,
+    "defaultStoresAudited": 12,
+    "defaultObservations": 19028,
+    "quotedLocalIds": 8844,
+    "catalogQuoteDiscrepancies": 0,
+    "ambiguousGeneralSelections": 60,
+    "fixtureRecords": 103,
+    "releaseTests": 320,
+    "focusedTests": 55,
+    "publication": "succeeded",
+    "pointFullyClosed": false,
+    "browserPreviewVerified": false,
+    "webVersion": 175,
+    "sourceCommit": "36c1f029638b83e13ec9d09f9008de81443cc70c",
+    "deploymentId": "appgdep_6adf5c2489f88191b19f0d9b62f17f8f",
+    "productionApiVerified": true,
+    "productionApplicationHydrated": true,
+    "productionPricesTabRendered": true,
+    "visualWarningFormFlowVerified": false
   }
 }
