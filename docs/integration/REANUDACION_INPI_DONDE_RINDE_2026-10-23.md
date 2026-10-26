@@ -1,5 +1,30 @@
 # Dónde Rinde - reanudación del registro, 23/10/2026
 
+## Actualización del 26/10: tres formularios DONDE RINDE finalizados y revisados
+
+El titular autorizó específicamente actualizar a DONDE RINDE las clases 35 y 42, conservar los términos seleccionados y finalizar las tres clases para revisión previa a firma. La autorización excluye firma, pago y presentación. La sesión había vencido; se completó nuevamente el ingreso normal por ARCA mediante los formularios seguros, sin leer ni copiar claves.
+
+El portal confirmó el guardado de los tres formularios y luego los mostró en **Trámites para Firmar**, todos con DONDE RINDE, modalidad denominativa:
+
+| Clase | Términos conservados | UMAPI |
+| --- | ---: | ---: |
+| 9 | 1 | 100 |
+| 35 | 5 | 100 |
+| 42 | 3 | 100 |
+
+La unidad visible siguió en $412,59. Base calculada: $41.259 por clase y $123.777 por las tres. No hay orden conjunta de pago. El portal conservó los borradores de origen y los formularios históricos RINDECASA; no se borraron ni firmaron.
+
+Se abrieron y leyeron los tres formularios generados. Nombre, clase, términos específicos, tipo de marca, único titular al 100%, ausencia de representación/prioridades/adjuntos y aranceles se compararon con lo revisado. Se pudieron ver los datos completos de domicilio y contacto; **sus valores privados no se guardan en el repositorio**.
+
+**Pendiente concreto:** el campo de estado civil no coincide entre la clase 9 y las otras dos. Antes de firmar deben confirmarse con el titular su estado civil actual, domicilio real y contacto. Los campos de domicilio legal físico están vacíos, pero eso por sí solo no se considera un error: el instructivo exige constituir domicilio en Argentina para residentes en el exterior. La guía vigente exige domicilio legal electrónico; su constitución efectiva en esta cuenta no quedó verificada.
+
+La revisión automática previa de Finalizar queda como antecedente histórico resuelto por esta autorización específica; no se eludió. No se firmó, generó orden de pago, pagó ni presentó ninguna solicitud. La marca no está registrada por haber completado esta etapa.
+
+Fuentes oficiales comprobadas:
+- https://www.argentina.gob.ar/inpi/marcas/registrar-una-marca
+- https://www.argentina.gob.ar/noticias/el-inpi-agiliza-el-registro-de-marcas-con-notificaciones-electronicas-obligatorias
+- https://portaltramites.inpi.gob.ar/Instructivos/marcas/Marcas_Nuevas.pdf
+
 ## Último estado del 25/10: ingreso completado y tres borradores revisados
 
 El titular dio autorización específica para el ingreso seguro a ARCA con CUIT/CUIL y clave fiscal destinado a recuperar y revisar INPI. El ingreso normal quedó confirmado en el dominio oficial de INPI. No se leyó ni copió la contraseña. La negativa automática anterior sobre el acceso quedó resuelta para este ingreso aprobado; no se requiere pedir de nuevo esa misma autorización rutinaria.
