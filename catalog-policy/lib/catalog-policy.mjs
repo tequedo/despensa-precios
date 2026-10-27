@@ -9,6 +9,7 @@ import {priceReview} from './price-review.mjs';
 
 export const catalogPolicyVersion=manifest.version;
 const knownCodes=new Map(reviews.products.map(entry=>[barcodeIdentity(entry.barcode).gtin,entry]));
+const knownScopedIds=new Set((reviews.scopedProducts??[]).flatMap(entry=>entry.sourceIds));
 const descriptor=value=>/\b(snacks?|papas fritas|nachos|botanas?|takis|lays|lay s)\b/.test(normalize(value));
 
 // Keep the configured basket, and also admit recognized families and snack
@@ -18,7 +19,7 @@ export function includeCatalogProduct(product,legacyMatch=false){
 }
 
 export function classifyCatalogRecord(record){
- const p=record.product,known=p.barcodeStatus==='valid_format_and_checksum'&&knownCodes.has(barcodeIdentity(p.barcode).gtin);
+ const p=record.product,known=knownScopedIds.has(p.ean)||(p.barcodeStatus==='valid_format_and_checksum'&&knownCodes.has(barcodeIdentity(p.barcode).gtin));
  const meaning=reviewedCatalogEntry(p),changed=known&&!meaning;
  const review=priceReview(record),pack=packageEvidence(p);
  const reviewCode=changed?'semantic_fingerprint_changed':review?.id??(!pack?'package_conflict':null);

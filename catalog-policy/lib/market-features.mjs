@@ -19,21 +19,24 @@ export function marketCategory(product) {
     const text=normalize(`${product.name??''} ${product.brand??''}`),main=productSearchFamily(product),use=oilUse(text);
     if(use)return use==='personal'?'Higiene':use==='household'?'Limpieza':'Otros';
     if(/\bagua\b/.test(text)&&nonDrinkingWater(text))return /\b(micelar|oxigenada|colonia|desmaquillante|limpiadora|facial|corporal)\b/.test(text)?'Higiene':/\b(lavandina|hipoclorito|desinfectante)\b|\bpara plancha\b/.test(text)?'Limpieza':'Otros';
-    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor'].includes(main)||/\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';
-    if(main==='coloracion')return 'Higiene';
+    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor','dispensador','dosificador'].includes(main)||/\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';
+    if(['coloracion','shampoo','desodorante','leche limpiadora'].includes(main))return 'Higiene';
+    if(main==='difusor')return 'Limpieza';
     if(main==='licor')return 'Bebidas';
     if(['cuadril','colita de cuadril','cuadrada','carre','bondiola'].includes(main))return 'Carnes';
     if(main==='crema'&&/\bcrema (?:de |d )?leche\b/.test(text))return 'Lácteos';
     if(main==='crema'&&/\b(?:p|para|de) cafe\b/.test(text))return 'Almacén';
     if(main==='jabon'&&/\bjabon (?:blanco|pan|para la ropa)\b/.test(text))return 'Limpieza';
+    if(main==='jabon'&&/\b(intimo|manos|piel|antibacterial|exfoliant(?:e)?|humectacion)\b/.test(text))return 'Higiene';
+    if(main==='tomate'&&/\b(triturado|cubeteado|conserva)\b/.test(text))return 'Almacén';
     if(main==='bebida')return /\bbebida (?:lact|leche)/.test(text)?'Lácteos':'Bebidas';
-    if(['alfajor','galletita','chocolate','bombon','dulce de leche','bano repostero','barra','bizcocho','budin','bocadito','baguette','magdalena','cafe','cacao','choclo','torta','caramelo','cereal','snack','cracker','croqueta','caballa','chorito','vinagre','mayonesa','atun','anchoa','condimento','pizza','pure','tostada'].includes(main))return 'Almacén';
+    if(['alfajor','galletita','chocolate','bombon','dulce de leche','dulce','bano repostero','barra','bizcocho','budin','bocadito','baguette','magdalena','cafe','cacao','choclo','torta','caramelo','cereal','snack','cracker','croqueta','caballa','chorito','vinagre','mayonesa','atun','anchoa','condimento','pizza','pure','tostada'].includes(main))return 'Almacén';
     return categories.find(([,pattern])=>pattern.test(text))?.[0]??'Otros';
 }
 export function comparableUnit(price, product) {
     // A vessel's capacity or an appliance's specification is not bought food
     // volume. Source sizes may still support discovery, never a price per litre.
-    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor'].includes(productSearchFamily(product)))return null;
+    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor','dispensador','dosificador'].includes(productSearchFamily(product))||(productSearchFamily(product)==='difusor'&&/\baparato\b/.test(normalize(product.name))))return null;
     const amount = Number(price), evidence = packageEvidence(product);
     if (!(amount > 0) || !Number.isFinite(amount) || !evidence)
         return null;

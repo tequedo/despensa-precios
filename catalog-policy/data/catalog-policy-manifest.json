@@ -1,15 +1,15 @@
 {
-  "version": "2026-10-27.abc.1",
+  "version": "2026-10-27.abcd.1",
   "files": {
-    "lib/price-safety.mjs": "d5570ed802111802902598b737a4e87a04ffe586bc71d10dd56d9e6a19012557",
+    "lib/price-safety.mjs": "9764e6bc8df781ac2f4a3214280fc091ea78b355cfc4069e7b59a21a68712bff",
     "lib/product-identity.mjs": "5ec2dc1e80620592ef7f0304940ee2d39971cae40d53a7e6f1590b25b0f9688d",
-    "lib/catalog-semantics.mjs": "9fbd53bbe618c40407ae6b5874a96613e0714619fc839f6766de51394197bde1",
-    "lib/product-search.mjs": "64cf2df3edbd2b020a8a9a1a7347a7da04b16042f373736c4fb3831e51110d82",
-    "lib/market-features.mjs": "855d86874fe886a3c4a4124478afba86698c9c3702fe93b76d7b7ec5af5ae644",
+    "lib/catalog-semantics.mjs": "f98ae29b7b1e8cb76ae2aa89c2aeb3055e9d03b536e246050bc8875c064b9cf3",
+    "lib/product-search.mjs": "8eacc9a811f2a1bdcd3ad02fc0488aff62a594f0327c7507e249c132a3c9a32c",
+    "lib/market-features.mjs": "3e5cad7f689e45f15cba3612f2d613554bec43989073f7ee0895af35deafdeeb",
     "lib/price-review.mjs": "2fcdc82b713acdfb34a4ac3b5d71925df2859296562b65bcf075271ce92a7953",
-    "lib/catalog-policy.mjs": "d9c7cdfe050ac172afbdeb6b09e40da7cf966b304a745b0b604a7db967db06e9",
+    "lib/catalog-policy.mjs": "d7b9772981d42f4d10f2f043838713b6f1d7b603dde9a85e3a861ac5c33dde61",
     "lib/product-fields.mjs": "fe15dadac07c153e7094cf515c4dbc11ee93926da4866bf8fe39d5c189cdf15f",
-    "data/catalog-search-reviews.json": "80501f13ef004c9de5a972d3d23c40f360833e2662b5bd06a345e666cff52bc7",
-    "data/catalog-policy-regressions.json": "621160ca0d9ec9c170df4ceed59e49814501cb53207fe0e28a565503bc26ed9e"
+    "data/catalog-search-reviews.json": "3201e8e8cbbabd66a7fe57f639a3183b40cf971f5a936aaac07a9a1574f48cef",
+    "data/catalog-policy-regressions.json": "f50e617faeaa6aa6b1b65ed1692896d2c9db9072a4d8aea029ad34172070a24d"
   }
 }

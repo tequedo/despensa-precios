@@ -1,6 +1,6 @@
 # Política permanente del catálogo
 
-Versión actual: `2026-10-27.abc.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
+Versión actual: `2026-10-27.abcd.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
 
 Cada descarga vuelve a clasificar familias, aplicar alias acreditados por código y huella exacta, revisar envases y apartar importes inseguros. Los datos de origen permanecen intactos. La tupla nacional conserva las posiciones anteriores y agrega metadata opcional en la posición 11. La metadata sólo permite rechazar registros; no autoriza precios que fallen los controles de identidad o presentación de la app.
 
@@ -12,6 +12,10 @@ Cada descarga vuelve a clasificar familias, aplicar alias acreditados por códig
 
 Actualizar ambos repositorios, aumentar la versión, recalcular `data/catalog-policy-manifest.json`, conservar los casos anteriores y agregar una regresión por cada nuevo error. Ejecutar `node catalog-policy/scripts/verify-catalog-policy.mjs` y `node --test tests/catalog-import-policy.test.mjs tests/national-export.test.mjs tests/san-juan-snapshot.test.mjs`. El flujo diario ejecuta además `npm run check`; el CI del paquete corre antes de integrar sus cambios.
 
-Los 107 casos de `data/catalog-policy-regressions.json` provienen de nombres reales de la copia fijada de San Juan. Los datos sintéticos usados en la prueba de dos importaciones no son precios reales. La evidencia de una provincia no acredita todo el país y una revisión funcional completa puede conservar excepciones de origen pendientes.
+Los 151 casos de `data/catalog-policy-regressions.json` provienen de nombres reales de la copia fijada de San Juan. Los datos sintéticos usados en la prueba de dos importaciones no son precios reales. La evidencia de una provincia no acredita todo el país y una revisión funcional completa puede conservar excepciones de origen pendientes.
 
 La revisión de C conserva 64 regresiones nuevas con nombres reales, tipos principales y categorías. Las capacidades de vajilla no generan precios por litro. Las tres abreviaturas sin evidencia primaria mantienen familia pendiente. El arroz declarado en litros y un jabón con variedad contradictoria quedan apartados por huella exacta; no se corrigen sus campos de origen.
+
+La D agrega 44 regresiones reales: dulce de leche abreviado, cosméticos, desodorante, difusores, discos y palitos de arroz, dispensadores y libros. Una clasificación por ID local exige el ID, código restringido, estado, nombre, marca y presentación literales de origen. No convierte ese código en GTIN ni habilita coincidencias entre comercios. Si cambia la huella, la siguiente descarga aparta el precio. Los nombres de marca distintos de un EAN revisado se acreditan por parejas exactas de nombre y marca.
+
+Los dispensadores con conteo explícito de origen (incluido `1 cu`) se comparan como recipientes. Su única medida en ml describe capacidad y no detergente incluido; múltiples contenidos o cantidades contradictorias continúan apartados. La exportación conserva el precio, identificador y presentación originales.

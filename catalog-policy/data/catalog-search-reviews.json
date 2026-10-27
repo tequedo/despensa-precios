@@ -658,6 +658,517 @@
       "blockedFamilies": [
         "sal"
       ]
+    },
+    {
+      "barcode": "7790742625304",
+      "status": "confirmed",
+      "names": [
+        "LA SERENISIMA DULCE DE LECHE CLASICO 400G",
+        "DULCE DE LECHE CLASICO, LA SERENISIMA, 400 gr",
+        "DULCE DE LECHE CLASICO LA SERENISIMA X 400 GRS",
+        "D.Leche La Serenisima Clasico 400g POT-400-gr."
+      ],
+      "brands": [
+        "LA SERENISIMA"
+      ],
+      "rawPrefixes": [
+        "LA SERENISIMA DULCE DE LECHE CLASICO 400G",
+        "DULCE DE LECHE CLASICO, LA SERENISIMA, 400 gr",
+        "DULCE DE LECHE CLASICO LA SERENISIMA X 400 GRS",
+        "D.Leche La Serenisima Clasico 400g POT-400-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "LA SERENISIMA DULCE DE LECHE CLASICO 400G",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE CLASICO, LA SERENISIMA, 400 gr",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE CLASICO LA SERENISIMA X 400 GRS",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "D.Leche La Serenisima Clasico 400g POT-400-gr.",
+          "brand": "LA SERENISIMA"
+        }
+      ],
+      "family": "dulce de leche",
+      "category": "Almacén",
+      "aliases": [
+        "Dulce de leche La Serenisima"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7790742625403",
+      "status": "confirmed",
+      "names": [
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 1000 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 1KG",
+        "D.Leche La Serenisima Colonial 1KG POT-1000-gr."
+      ],
+      "brands": [
+        "LA SERENISIMA"
+      ],
+      "rawPrefixes": [
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 1000 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 1KG",
+        "D.Leche La Serenisima Colonial 1KG POT-1000-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "DULCE DE LECHE COLONIAL, LA SERENISIMA, 1000 gr",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 1KG",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "D.Leche La Serenisima Colonial 1KG POT-1000-gr.",
+          "brand": "LA SERENISIMA"
+        }
+      ],
+      "family": "dulce de leche",
+      "category": "Almacén",
+      "aliases": [
+        "Dulce de leche La Serenisima"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7790742625106",
+      "status": "confirmed",
+      "names": [
+        "LA SERENISIMA DULCE DE LECHE COLONIAL 250G",
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 250 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 250 G",
+        "D.Leche La Serenisima Colonial 250g POT-250-gr."
+      ],
+      "brands": [
+        "LA SERENISIMA"
+      ],
+      "rawPrefixes": [
+        "LA SERENISIMA DULCE DE LECHE COLONIAL 250G",
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 250 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 250 G",
+        "D.Leche La Serenisima Colonial 250g POT-250-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "LA SERENISIMA DULCE DE LECHE COLONIAL 250G",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE COLONIAL, LA SERENISIMA, 250 gr",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE COLONIAL LA SERENISIMA POTE X 250 G",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "D.Leche La Serenisima Colonial 250g POT-250-gr.",
+          "brand": "LA SERENISIMA"
+        }
+      ],
+      "family": "dulce de leche",
+      "category": "Almacén",
+      "aliases": [
+        "Dulce de leche La Serenisima"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7790742625205",
+      "status": "confirmed",
+      "names": [
+        "LA SERENISIMA DULCE DE LECHE COLONIAL 400G",
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 400 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA X 400 GRS",
+        "D.Leche La Serenisima Colonial 400g POT-400-gr."
+      ],
+      "brands": [
+        "LA SERENISIMA"
+      ],
+      "rawPrefixes": [
+        "LA SERENISIMA DULCE DE LECHE COLONIAL 400G",
+        "DULCE DE LECHE COLONIAL, LA SERENISIMA, 400 gr",
+        "DULCE DE LECHE COLONIAL LA SERENISIMA X 400 GRS",
+        "D.Leche La Serenisima Colonial 400g POT-400-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "LA SERENISIMA DULCE DE LECHE COLONIAL 400G",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE COLONIAL, LA SERENISIMA, 400 gr",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "DULCE DE LECHE COLONIAL LA SERENISIMA X 400 GRS",
+          "brand": "LA SERENISIMA"
+        },
+        {
+          "name": "D.Leche La Serenisima Colonial 400g POT-400-gr.",
+          "brand": "LA SERENISIMA"
+        }
+      ],
+      "family": "dulce de leche",
+      "category": "Almacén",
+      "aliases": [
+        "Dulce de leche La Serenisima"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7790503460205",
+      "status": "confirmed",
+      "names": [
+        "D H ARROZ S SAL 140G",
+        "TOSTADA DE ARROZ SIN SAL DOS HERMANOS X 140 GRS"
+      ],
+      "brands": [
+        "DOS HERMANOS"
+      ],
+      "rawPrefixes": [
+        "D H ARROZ S SAL 140G",
+        "TOSTADA DE ARROZ SIN SAL DOS HERMANOS X 140 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "D H ARROZ S SAL 140G",
+          "brand": "DOS HERMANOS"
+        },
+        {
+          "name": "TOSTADA DE ARROZ SIN SAL DOS HERMANOS X 140 GRS",
+          "brand": "DOS HERMANOS"
+        }
+      ],
+      "family": "tostada",
+      "category": "Almacén",
+      "aliases": [
+        "Tostadas de arroz sin sal Dos Hermanos"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7798033900284",
+      "status": "confirmed",
+      "names": [
+        "DON ARRO S SAL 45G",
+        "SNACK MINI ARROZ S SAL DON PANCHO X 45 GRS"
+      ],
+      "brands": [
+        "DON PANCHO"
+      ],
+      "rawPrefixes": [
+        "DON ARRO S SAL 45G",
+        "SNACK MINI ARROZ S SAL DON PANCHO X 45 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "DON ARRO S SAL 45G",
+          "brand": "DON PANCHO"
+        },
+        {
+          "name": "SNACK MINI ARROZ S SAL DON PANCHO X 45 GRS",
+          "brand": "DON PANCHO"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Snack mini de arroz sin sal Don Pancho"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7798033900154",
+      "status": "confirmed",
+      "names": [
+        "DON MARI S SAL 220G",
+        "GALLETITAS MARINERAS S/SAL, DON PANCHO, 220 gr"
+      ],
+      "brands": [
+        "DON PANCHO"
+      ],
+      "rawPrefixes": [
+        "DON MARI S SAL 220G",
+        "GALLETITAS MARINERAS S/SAL, DON PANCHO, 220 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "DON MARI S SAL 220G",
+          "brand": "DON PANCHO"
+        },
+        {
+          "name": "GALLETITAS MARINERAS S/SAL, DON PANCHO, 220 gr",
+          "brand": "DON PANCHO"
+        }
+      ],
+      "family": "galletita",
+      "category": "Almacén",
+      "aliases": [
+        "Galletitas marineras sin sal Don Pancho"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7792360096818",
+      "status": "confirmed",
+      "names": [
+        "DONUT LECHE BR 78GR",
+        "GALLETITAS VAINILLA BAÑADAS C/CHOCO, DONUTS, 78 gr",
+        "DONUTS LECHE BR BONAFIDE 24 X 78 GRS"
+      ],
+      "brands": [
+        "DONUT",
+        "DONUTS"
+      ],
+      "rawPrefixes": [
+        "DONUT LECHE BR 78GR",
+        "GALLETITAS VAINILLA BAÑADAS C/CHOCO, DONUTS, 78 gr",
+        "DONUTS LECHE BR BONAFIDE 24 X 78 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "DONUT LECHE BR 78GR",
+          "brand": "DONUT"
+        },
+        {
+          "name": "GALLETITAS VAINILLA BAÑADAS C/CHOCO, DONUTS, 78 gr",
+          "brand": "DONUTS"
+        },
+        {
+          "name": "DONUTS LECHE BR BONAFIDE 24 X 78 GRS",
+          "brand": "DONUTS"
+        }
+      ],
+      "family": "galletita",
+      "category": "Almacén",
+      "aliases": [
+        "Galletitas bañadas Donuts leche"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7792360098188",
+      "status": "confirmed",
+      "names": [
+        "DONUTS LECHE"
+      ],
+      "brands": [
+        "DONUT"
+      ],
+      "rawPrefixes": [
+        "DONUTS LECHE"
+      ],
+      "fingerprints": [
+        {
+          "name": "DONUTS LECHE",
+          "brand": "DONUT"
+        }
+      ],
+      "family": "galletita",
+      "category": "Almacén",
+      "aliases": [
+        "Galletitas Bonafide Donuts leche"
+      ],
+      "evidence": {
+        "url": "https://www.supertop.com.ar/galletita-bonafide-donuts-leche-x-52gr-7792360098188/p",
+        "kind": "Retailer product listing: exact source EAN and cookie type; no external price copied."
+      }
+    },
+    {
+      "barcode": "7791293046129",
+      "status": "confirmed",
+      "names": [
+        "DOVE JABON LIQUIDO A",
+        "JABON LIQ. MANOS ANTIB. DISP, DOVE, 250 cm3"
+      ],
+      "brands": [
+        "DOVE"
+      ],
+      "rawPrefixes": [
+        "DOVE JABON LIQUIDO A",
+        "JABON LIQ. MANOS ANTIB. DISP, DOVE, 250 cm3"
+      ],
+      "fingerprints": [
+        {
+          "name": "DOVE JABON LIQUIDO A",
+          "brand": "DOVE"
+        },
+        {
+          "name": "JABON LIQ. MANOS ANTIB. DISP, DOVE, 250 cm3",
+          "brand": "DOVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [
+        "Jabón líquido para manos Dove"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "7793742005039",
+      "status": "confirmed",
+      "names": [
+        "DERMAGLOS FACIAL LECHE LIMPIEZA 200 ML",
+        "LECHE LIMPIEZA FACIAL ACTIVA, DERMAGLOS, 200 cm3"
+      ],
+      "brands": [
+        "DERMAGLOS"
+      ],
+      "rawPrefixes": [
+        "DERMAGLOS FACIAL LECHE LIMPIEZA 200 ML",
+        "LECHE LIMPIEZA FACIAL ACTIVA, DERMAGLOS, 200 cm3"
+      ],
+      "fingerprints": [
+        {
+          "name": "DERMAGLOS FACIAL LECHE LIMPIEZA 200 ML",
+          "brand": "DERMAGLOS"
+        },
+        {
+          "name": "LECHE LIMPIEZA FACIAL ACTIVA, DERMAGLOS, 200 cm3",
+          "brand": "DERMAGLOS"
+        }
+      ],
+      "family": "leche limpiadora",
+      "category": "Higiene",
+      "aliases": [
+        "Leche limpiadora facial Dermaglos"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same valid EAN and full type name in another retailer; source fields and price identity unchanged."
+      }
+    },
+    {
+      "barcode": "9786313071234",
+      "status": "confirmed",
+      "names": [
+        "DINOSAURIOS SON TE"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "DINOSAURIOS SON TE"
+      ],
+      "fingerprints": [
+        {
+          "name": "DINOSAURIOS SON TE",
+          "brand": "SIN MARCA"
+        }
+      ],
+      "family": "libro",
+      "category": "Otros",
+      "aliases": [
+        "Libro Dinosaurios del mundo con sonidos y texturas"
+      ],
+      "evidence": {
+        "url": "https://cuspide.com/producto/mi-primer-libro-con-sonidos-y-texturas-dinosaurios-del-mundo/",
+        "kind": "Retailer book catalog: exact ISBN and full title; TE is part of an abbreviated title, not drinking tea."
+      }
+    },
+    {
+      "barcode": "7798457860041",
+      "status": "pending_source_confirmation",
+      "names": [
+        "DE MAIZ  DU SAL 50G"
+      ],
+      "brands": [
+        "MAIZ"
+      ],
+      "rawPrefixes": [
+        "DE MAIZ  DU SAL 50G"
+      ],
+      "fingerprints": [
+        {
+          "name": "DE MAIZ  DU SAL 50G",
+          "brand": "MAIZ"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Source abbreviation has no verified full type in pinned peers or primary search results. No expanded type or alias inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    }
+  ],
+  "scopedProducts": [
+    {
+      "status": "confirmed",
+      "scope": "retailer_local_id",
+      "sourceIds": [
+        "sepa:11:2:0000078948310",
+        "sepa:11:5:0000078948310"
+      ],
+      "sourceBarcodes": [
+        "0000078948310"
+      ],
+      "barcodeStatuses": [
+        "restricted"
+      ],
+      "presentations": [
+        "0.05 L"
+      ],
+      "names": [
+        "DOVE DURAZNO Y LECHE"
+      ],
+      "brands": [
+        "DOVE"
+      ],
+      "rawPrefixes": [
+        "DOVE DURAZNO Y LECHE"
+      ],
+      "family": "desodorante",
+      "category": "Higiene",
+      "aliases": [
+        "Desodorante antitranspirante Dove Durazno y Leche"
+      ],
+      "evidence": {
+        "url": "https://www.centraloeste.com.ar/78948310-dove-deo-rollon-x50ml-go-fresh-granada.html",
+        "kind": "Pharmacy catalog: matching retailer SKU 78948310, full deodorant title, brand and 50 ml. Applies only to the literal source IDs, original restricted barcode/status, name, brand and presentation. No global GTIN or price identity is asserted."
+      }
     }
   ]
 }

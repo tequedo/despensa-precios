@@ -1537,5 +1537,664 @@
     "forbidden": "leche",
     "required": "licor",
     "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790503460205",
+      "name": "D H ARROZ S SAL 140G",
+      "brand": "DOS HERMANOS",
+      "presentation": "0.14 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790503460205",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503460205"
+    },
+    "forbidden": "arroz",
+    "required": "tostadas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790742625304",
+      "name": "D.Leche La Serenisima Clasico 400g POT-400-gr.",
+      "brand": "LA SERENISIMA",
+      "presentation": ".40 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790742625304",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790742625304"
+    },
+    "forbidden": "leche",
+    "required": "dulce de leche",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790742625403",
+      "name": "D.Leche La Serenisima Colonial 1KG POT-1000-gr.",
+      "brand": "LA SERENISIMA",
+      "presentation": "1.00 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790742625403",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790742625403"
+    },
+    "forbidden": "leche",
+    "required": "dulce de leche",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790742625106",
+      "name": "D.Leche La Serenisima Colonial 250g POT-250-gr.",
+      "brand": "LA SERENISIMA",
+      "presentation": ".25 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790742625106",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790742625106"
+    },
+    "forbidden": "leche",
+    "required": "dulce de leche",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790742625205",
+      "name": "D.Leche La Serenisima Colonial 400g POT-400-gr.",
+      "brand": "LA SERENISIMA",
+      "presentation": ".40 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790742625205",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790742625205"
+    },
+    "forbidden": "leche",
+    "required": "dulce de leche",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798457860041",
+      "name": "DE MAIZ  DU SAL 50G",
+      "brand": "MAIZ",
+      "presentation": "0.05 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798457860041",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798457860041"
+    },
+    "forbidden": "sal",
+    "required": "DE MAIZ  DU SAL 50G",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7793742005039",
+      "name": "DERMAGLOS FACIAL LECHE LIMPIEZA 200 ML",
+      "brand": "DERMAGLOS",
+      "presentation": "0.2 L",
+      "referenceUnit": "EA",
+      "barcode": "7793742005039",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793742005039"
+    },
+    "forbidden": "leche",
+    "required": "leche limpiadora",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798092840507",
+      "name": "DERMOVAGISIL JABON INTIMO BLOCK 355ML",
+      "brand": "DERMO VAGISIL",
+      "presentation": "0.355 L",
+      "referenceUnit": "EA",
+      "barcode": "7798092840507",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798092840507"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798092840538",
+      "name": "DERMOVAGISIL JABON INTIMO DURAZNO 355ML",
+      "brand": "DERMO VAGISIL",
+      "presentation": "0.355 L",
+      "referenceUnit": "EA",
+      "barcode": "7798092840538",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798092840538"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798092840521",
+      "name": "DERMOVAGISIL JABON INTIMO JAZMIN 355 ML",
+      "brand": "DERMO VAGISIL",
+      "presentation": "0.355 L",
+      "referenceUnit": "EA",
+      "barcode": "7798092840521",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798092840521"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798092840514",
+      "name": "DERMOVAGISIL JABON INTIMO PH 355ML",
+      "brand": "DERMO VAGISIL",
+      "presentation": "0.355 L",
+      "referenceUnit": "EA",
+      "barcode": "7798092840514",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798092840514"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790520999498",
+      "name": "DIFUSOR ACEITE VAINILLA APARATO GLADE X 21 CC",
+      "brand": "GLADE",
+      "presentation": "1 UNI",
+      "referenceUnit": "CM3",
+      "barcode": "7790520999498",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790520999498"
+    },
+    "forbidden": "aceite",
+    "required": "difusor",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798178170993",
+      "name": "DIFUSOR AROMATICO CJ URBAN FRESH TE VERDE Y PEPIN",
+      "brand": "URBAN FRESH",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7798178170993",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798178170993"
+    },
+    "forbidden": "te",
+    "required": "difusor",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:9786313071234",
+      "name": "DINOSAURIOS SON TE",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "9786313071234",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "09786313071234"
+    },
+    "forbidden": "te",
+    "required": "libro",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7797330100649",
+      "name": "DISCO DE ARROZ C/SAL S/TACC, GRANDIET, 100 gr",
+      "brand": "GRANDIET",
+      "presentation": "100 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7797330100649",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07797330100649"
+    },
+    "forbidden": "arroz",
+    "required": "discos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7797330100649",
+      "name": "Discos de arroz grandiet con sal PAQ-100-gr.",
+      "brand": "GRANDIET",
+      "presentation": ".10 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7797330100649",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07797330100649"
+    },
+    "forbidden": "sal",
+    "required": "discos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790503000302",
+      "name": "DISCOS DE ARROZ SABOR ASADO, DOS HERMANOS, 80 gr",
+      "brand": "DOS HERMANOS",
+      "presentation": "80 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790503000302",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503000302"
+    },
+    "forbidden": "asado",
+    "required": "discos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7899620664227",
+      "name": "DISPENSADOR DETERGENTE 500ML BEIGE, OU, 1 cu",
+      "brand": "OU",
+      "presentation": "1 cu",
+      "referenceUnit": "cu",
+      "barcode": "7899620664227",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07899620664227"
+    },
+    "forbidden": "detergente",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7908466048457",
+      "name": "DISPENSADOR DETERGENTE 500ML BLANCO, OU, 1 cu",
+      "brand": "OU",
+      "presentation": "1 cu",
+      "referenceUnit": "cu",
+      "barcode": "7908466048457",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07908466048457"
+    },
+    "forbidden": "detergente",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7908466048464",
+      "name": "DISPENSADOR DETERGENTE 500ML GRIS, OU, 1 cu",
+      "brand": "OU",
+      "presentation": "1 cu",
+      "referenceUnit": "cu",
+      "barcode": "7908466048464",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07908466048464"
+    },
+    "forbidden": "detergente",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:0040007150803",
+      "name": "DISPENSER DE JABON",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "0040007150803",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "00040007150803"
+    },
+    "forbidden": "jabon",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798176470262",
+      "name": "DISPENSER DE JABON BLANCO Y NEGRO 500 ML",
+      "brand": "S/D",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7798176470262",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798176470262"
+    },
+    "forbidden": "jabon",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7791194104294",
+      "name": "DISPENSER JABON CUADRADO, BUPLY, 1 cu",
+      "brand": "BUPLY",
+      "presentation": "1 cu",
+      "referenceUnit": "cu",
+      "barcode": "7791194104294",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791194104294"
+    },
+    "forbidden": "jabon",
+    "required": "dispensador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798033900284",
+      "name": "DON ARRO S SAL 45G",
+      "brand": "DON PANCHO",
+      "presentation": "0.045 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798033900284",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798033900284"
+    },
+    "forbidden": "sal",
+    "required": "snack",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798033900154",
+      "name": "DON MARI S SAL 220G",
+      "brand": "DON PANCHO",
+      "presentation": "0.22 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798033900154",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798033900154"
+    },
+    "forbidden": "sal",
+    "required": "galletita",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7792360096818",
+      "name": "DONUT LECHE BR 78GR",
+      "brand": "DONUT",
+      "presentation": "0.078 KG",
+      "referenceUnit": "EA",
+      "barcode": "7792360096818",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792360096818"
+    },
+    "forbidden": "leche",
+    "required": "galletitas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7792360098188",
+      "name": "DONUTS LECHE",
+      "brand": "DONUT",
+      "presentation": "0.052 KG",
+      "referenceUnit": "EA",
+      "barcode": "7792360098188",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792360098188"
+    },
+    "forbidden": "leche",
+    "required": "galletitas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7792360096818",
+      "name": "DONUTS LECHE BR BONAFIDE 24 X 78 GRS",
+      "brand": "DONUTS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRS",
+      "barcode": "7792360096818",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792360096818"
+    },
+    "forbidden": "leche",
+    "required": "galletitas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790503000302",
+      "name": "DOS HERMANOS DISCOS ARROZ ASADO 80GR",
+      "brand": "DOS HERMANOS",
+      "presentation": "0.08 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790503000302",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503000302"
+    },
+    "forbidden": "asado",
+    "required": "discos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790503000289",
+      "name": "DOS HERMANOS DISCOS DE ARROZ SABOR JAMON 80G",
+      "brand": "DOS HERMANOS",
+      "presentation": "0.08 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790503000289",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503000289"
+    },
+    "forbidden": "arroz",
+    "required": "discos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790503000272",
+      "name": "DOS HERMANOS PALITOS DE ARROZ SABOR QUESO 80GR",
+      "brand": "DOS HERMANOS",
+      "presentation": "0.08 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790503000272",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503000272"
+    },
+    "forbidden": "queso",
+    "required": "palitos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790503000333",
+      "name": "DOS HERMANOS TOSTADAS DE ARROZ SALADAS 120G",
+      "brand": "DOS HERMANOS",
+      "presentation": "0.12 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790503000333",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790503000333"
+    },
+    "forbidden": "arroz",
+    "required": "tostada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791194102269",
+      "name": "DOSIFICADOR DE JABON CUADRADO BIO BEIGE",
+      "brand": "GENERICO",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7791194102269",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791194102269"
+    },
+    "forbidden": "jabon",
+    "required": "dosificador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791194102252",
+      "name": "DOSIFICADOR DE JABON CUADRADO BIO NEGRO",
+      "brand": "GENERICO",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7791194102252",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791194102252"
+    },
+    "forbidden": "jabon",
+    "required": "dosificador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791194104294",
+      "name": "DOSIFICADOR JABON CARREFOUR CUADRADO BIO SURTIDO",
+      "brand": "CARREFOUR",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7791194104294",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791194104294"
+    },
+    "forbidden": "jabon",
+    "required": "dosificador",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891150035881",
+      "name": "DOVE BABY JABON LIQ HUMECTACION SENSIBLE REFILL 180ML",
+      "brand": "DOVE",
+      "presentation": "0.18 L",
+      "referenceUnit": "EA",
+      "barcode": "7891150035881",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891150035881"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:0000078948310",
+      "name": "DOVE DURAZNO Y LECHE",
+      "brand": "DOVE",
+      "presentation": "0.05 L",
+      "referenceUnit": "EA",
+      "barcode": "0000078948310",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "leche",
+    "required": "desodorante",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891150075382",
+      "name": "DOVE JABON ANTIBACTERIAL CUIDA PROTEGE 90GR",
+      "brand": "DOVE",
+      "presentation": "0.09 KG",
+      "referenceUnit": "EA",
+      "barcode": "7891150075382",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891150075382"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891150095700",
+      "name": "DOVE JABON EN BARRA PIEL SENSIBLE 3X90GR",
+      "brand": "DOVE",
+      "presentation": "0.27 KG",
+      "referenceUnit": "EA",
+      "barcode": "7891150095700",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891150095700"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7898422746827",
+      "name": "DOVE JABON EXFOLIANT",
+      "brand": "DOVE",
+      "presentation": "0.09 KG",
+      "referenceUnit": "EA",
+      "barcode": "7898422746827",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07898422746827"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7791293046129",
+      "name": "DOVE JABON LIQUIDO A",
+      "brand": "DOVE",
+      "presentation": "0.25 L",
+      "referenceUnit": "EA",
+      "barcode": "7791293046129",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791293046129"
+    },
+    "forbidden": "leche",
+    "required": "jabon",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7791293050324",
+      "name": "DOVE SHAMPOO HIDRATACION 400ML",
+      "brand": "DOVE",
+      "presentation": "0.4 L",
+      "referenceUnit": "EA",
+      "barcode": "7791293050324",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791293050324"
+    },
+    "forbidden": "leche",
+    "required": "shampoo",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7793482000332",
+      "name": "DULCE LIGHT FRAMBUESA S AZUCAR MASSEUBE X260 GRS",
+      "brand": "MASSEUBE",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7793482000332",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793482000332"
+    },
+    "forbidden": "azucar",
+    "required": "dulce",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7793046015024",
+      "name": "DULCOR TOMATE TRITURADO EN BOTELLA 960ML",
+      "brand": "DULCOR",
+      "presentation": "0.96 L",
+      "referenceUnit": "EA",
+      "barcode": "7793046015024",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793046015024"
+    },
+    "forbidden": "vino",
+    "required": "tomate",
+    "category": "Almacén"
   }
 ]
