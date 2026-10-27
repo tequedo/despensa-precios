@@ -1,0 +1,20 @@
+name: Validar política permanente del catálogo
+on:
+  pull_request:
+    paths: ["catalog-policy/**", "national-export.mjs", "san-juan-snapshot.mjs", "update-san-juan.mjs", "tests/catalog-import-policy.test.mjs", ".github/workflows/test-catalog-policy.yml"]
+  push:
+    branches: [main]
+    paths: ["catalog-policy/**", "national-export.mjs", "san-juan-snapshot.mjs", "update-san-juan.mjs", "tests/catalog-import-policy.test.mjs", ".github/workflows/test-catalog-policy.yml"]
+permissions:
+  contents: read
+jobs:
+  policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node catalog-policy/scripts/verify-catalog-policy.mjs
+      - run: node --check update-san-juan.mjs
+      - run: node --test tests/catalog-import-policy.test.mjs tests/national-export.test.mjs tests/san-juan-snapshot.test.mjs

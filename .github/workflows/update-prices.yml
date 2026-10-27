@@ -31,6 +31,8 @@ on:
       - "scripts/push-generated-data.sh"
       - "scripts/push-update-diagnostics.sh"
       - "national-export.mjs"
+      - "catalog-policy/**"
+      - "tests/catalog-import-policy.test.mjs"
       - "price-safety.mjs"
       - "promotion-evidence.mjs"
       - "notify-failed.mjs"
@@ -124,7 +126,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: calidad-sepa-${{ github.run_id }}
-          path: data/sepa-import-quality.json
+          path: |
+            data/sepa-import-quality.json
+            data/national/catalog-policy-report.json
           if-no-files-found: ignore
           retention-days: 90
 

@@ -1,5 +1,7 @@
 import { readFile, writeFile, rename, rm } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
+import './catalog-policy/scripts/verify-catalog-policy.mjs';
+import {catalogPolicyReport} from './catalog-policy/lib/catalog-policy.mjs';
 
 export async function writeSanJuanSnapshot(path, records, expectedRecords) {
   const unique = new Map();
@@ -12,6 +14,7 @@ export async function writeSanJuanSnapshot(path, records, expectedRecords) {
   }
   if (expectedRecords !== undefined && unique.size !== expectedRecords) throw new Error('El archivo de San Juan no coincide con las referencias del catálogo nacional');
   const rows = [...unique.values()], body = rows.map(row=>JSON.stringify(row)).join('\n') + (rows.length?'\n':'');
+  const catalogPolicy=catalogPolicyReport(rows);
   const hash = value => createHash('sha256').update(value).digest('hex');
   const temporary = path + '.pending-' + randomUUID();
   try {
@@ -19,5 +22,5 @@ export async function writeSanJuanSnapshot(path, records, expectedRecords) {
     if (hash(await readFile(temporary)) !== hash(body)) throw new Error('La escritura de San Juan no conservó el contenido completo');
     await rename(temporary,path);
   } finally { await rm(temporary,{force:true}); }
-  return { rows, sha256:hash(body) };
+  return { rows, sha256:hash(body),catalogPolicy };
 }

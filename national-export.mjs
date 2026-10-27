@@ -3,6 +3,8 @@ import { createHash, randomUUID } from 'node:crypto';
 import { join } from 'node:path';
 import { PROVINCES, provinceFor, isoDate } from './price-safety.mjs';
 import { branchChannel } from './sepa-catalog-controls.mjs';
+import './catalog-policy/scripts/verify-catalog-policy.mjs';
+import {classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
 
 // Files are bounded by branch, not by province. No nationwide blob is sent to a phone.
 export async function nationalExporter(root, temporary) {
@@ -29,6 +31,8 @@ export async function nationalExporter(root, temporary) {
       // Stable product IDs and existing reader positions remain unchanged.
       if(p.barcodeStatus) tuple[9] = {barcode:p.barcode??null,barcodeStatus:p.barcodeStatus};
       if(v.referencePrice) tuple[10] = {referencePrice:v.referencePrice};
+      // Optional metadata preserves every existing source tuple position.
+      tuple[11]={catalogPolicy:classifyCatalogRecord(record)};
       const lines=buffers.get(id)??[];lines.push(JSON.stringify(tuple));buffers.set(id,lines);
       if(++buffered>=2000)await flush();
     },
@@ -39,6 +43,7 @@ export async function nationalExporter(root, temporary) {
       let backedUp=false;
       try {
       const byProvince=new Map(PROVINCES.map(p=>[p.code,[]]));
+      const policyReports=new Map(PROVINCES.map(p=>[p.code,{records:0,quoteEligible:0,quarantined:0,needsMeaningReview:0,byReason:{},exceptions:[]} ]));
       for(const [id,store] of stores){
         const rows=(await readFile(join(temporary,id+'.ndjson'),'utf8')).trim().split('\n').map(JSON.parse);
         const latest=new Map();for(const row of rows){
@@ -47,11 +52,18 @@ export async function nationalExporter(root, temporary) {
           if(!old||row[6]>old[6])latest.set(row[0],row);
         }
         const prices=[...latest.values()];
+        const report=policyReports.get(store.provinceCode);
+        for(const row of prices){
+          const policy=row[11]?.catalogPolicy;
+          if(policy?.version!==catalogPolicyVersion||typeof policy.quoteEligible!=='boolean')throw new Error('Un registro llegó sin la política de catálogo vigente');
+          report.records++;if(policy.quoteEligible)report.quoteEligible++;else{report.quarantined++;report.byReason[policy.reviewCode]=(report.byReason[policy.reviewCode]??0)+1;report.exceptions.push({storeId:store.externalId,id:row[0],sourceDate:row[6],reason:policy.reviewCode});}
+          if(policy.needsMeaningReview)report.needsMeaningReview++;
+        }
         const {source,...branch}=store;
         const sourceDate=isoDate(source.priceDate??source.modified);if(!sourceDate)throw new Error('Fecha del archivo SEPA inválida');
         if(prices.some(row=>row[6]!==sourceDate))throw new Error('La fecha del precio no coincide con la de su archivo');
         const file=id+'.json',folder=join(staging,store.provinceCode);await mkdir(folder,{recursive:true});
-        const payload=JSON.stringify({version:1,generatedAt,sourceDate,source,store:branch,prices});
+        const payload=JSON.stringify({version:1,generatedAt,sourceDate,source,catalogPolicyVersion,store:branch,prices});
         if(Buffer.byteLength(payload)>2_000_000)throw new Error('La sucursal supera el límite de consulta: '+store.externalId);
         await writeFile(join(folder,file),payload+'\n');
         byProvince.get(store.provinceCode).push({...branch,file,records:prices.length,sourceDate});
@@ -65,6 +77,7 @@ export async function nationalExporter(root, temporary) {
         await writeFile(join(staging,p.code,'index.json'),JSON.stringify({version:1,generatedAt,province:p,stores:branches})+'\n');
       }
       await writeFile(join(staging,'coverage.json'),JSON.stringify({version:1,generatedAt,scope:'Argentina',provinces:coverage})+'\n');
+      await writeFile(join(staging,'catalog-policy-report.json'),JSON.stringify({version:catalogPolicyVersion,generatedAt,sourceFieldsPreserved:true,provinces:Object.fromEntries(policyReports)},null,2)+'\n');
       try { await rename(root,backup);backedUp=true; } catch(error) { if(error.code!=='ENOENT')throw error; }
       try { await rename(staging,root); } catch(error) { if(backedUp){await rename(backup,root);backedUp=false;}throw error; }
       if(backedUp){await rm(backup,{recursive:true,force:true});backedUp=false;}
