@@ -78,7 +78,9 @@ export function packageEvidence(product) {
   // Multiple size mentions can describe a bundle, even when each amount is
   // identical ("1 L + 1 L"). They cannot establish one package automatically.
   if (declared.length > 1 || described.length > 1) return null;
-  const unitCount = presentation.match(/^\s*(\d+(?:\.\d+)?)\s*(?:unidad(?:es)?|uni|un|uds?|u|ea)\.?\s*$/)?.[1];
+  const dispenser = /^(?:dispensador|dispenser|dosificador)\b/.test(normalize(product.name));
+  const unitCount = presentation.match(/^\s*(\d+(?:\.\d+)?)\s*(?:unidad(?:es)?|uni|un|uds?|u|ea)\.?\s*$/)?.[1]
+    ?? (dispenser?presentation.match(/^\s*(\d+(?:\.\d+)?)\s*cu\.?\s*$/)?.[1]:undefined);
   const counts = [];
   for (const text of [presentation, countName]) {
     for (const match of text.matchAll(packCounts)) {
@@ -88,6 +90,10 @@ export function packageEvidence(product) {
   if (unitCount && Number(unitCount) !== 1) counts.push(Number(unitCount));
   if (counts.some(count => !Number.isInteger(count) || count < 1 || count !== counts[0])) return null;
   const pack = counts[0] ?? 1;
+  // A counted dispenser is bought as a container. Its sole stated volume is
+  // capacity, not included soap/detergent. Preserve the explicit source count;
+  // multiple capacities and contradictory declared contents still fail above.
+  if(dispenser&&unitCount&&!declared.length&&described.length===1&&described[0].dimension==='volume')return {label:normalize(presentation),pack};
   // A generic "1 UNI" may describe one explicitly named bottle. An actual
   // mass/volume declaration (e.g. 1 gr versus 1000 gr in the name) is never
   // silently replaced by the description. Preserve the retailer's raw fields.

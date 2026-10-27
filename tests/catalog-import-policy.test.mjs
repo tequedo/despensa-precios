@@ -61,3 +61,17 @@ test('dos descargas conservan el alcance del código restringido y apartan una h
   assert.equal(JSON.stringify(input),before);
  }
 });
+
+test('un dispensador contado conserva su precio por recipiente y no litros de detergente después de exportar',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'catalog-container-import-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
+ const source=cases.find(c=>c.product.name==='DISPENSADOR DETERGENTE 500ML BLANCO, OU, 1 cu').product;
+ const input={...record(),product:source},before=JSON.stringify(input),exporter=await nationalExporter(path.join(root,'national'),path.join(root,'tmp'));
+ await exporter.add(input);await exporter.finish();
+ const folder=path.join(root,'national/AR-J'),ix=JSON.parse(await fs.readFile(path.join(folder,'index.json'),'utf8'));
+ const shard=JSON.parse(await fs.readFile(path.join(folder,ix.stores[0].file),'utf8')),row=shard.prices[0];
+ assert.equal(row[0],source.ean);assert.equal(row[3],'1 cu');assert.equal(row[5],1000);
+ assert.equal(row[11].catalogPolicy.quoteEligible,true);assert.equal(row[11].catalogPolicy.family,'dispensador');assert.equal(row[11].catalogPolicy.category,'Otros');
+ assert.equal(matchesCatalogQuery(productFromTuple(row),'detergente'),false);assert.equal(matchesCatalogQuery(productFromTuple(row),'dispensador 500 ml'),true);
+ assert.equal(JSON.stringify(input),before);
+});
