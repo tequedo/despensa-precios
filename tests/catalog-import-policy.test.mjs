@@ -11,9 +11,9 @@ import {marketCategory} from '../catalog-policy/lib/market-features.mjs';
 
 const record=(presentation='70 g',province='San Juan')=>({source:{priceDate:'2026-10-25',modified:'2026-10-25T18:00:00Z'},product:{ean:'test-only:chips',name:'PAPAS FRITAS 70 G',brand:'LAYS',presentation,referenceUnit:'g',barcodeStatus:'internal'},store:{externalId:'fixture-'+province,type:'Supermercado',channel:'sucursal',province,locality:'Fixture',chain:'Fixture'},price:{listPrice:1000,validDate:'2026-10-25',channel:'sucursal'}});
 
-test('las regresiones de nombres reales de A y B siguen aplicándose en cada importación',async()=>{
+test('las regresiones de nombres reales de A, B y C siguen aplicándose en cada importación',async()=>{
  const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
- assert.equal(cases.length,43);
+ assert.equal(cases.length,107);
  for(const {product,forbidden,required,category} of cases){assert.equal(includeCatalogProduct(product,false),true,product.name);assert.equal(matchesCatalogQuery(product,forbidden),false,product.name);assert.equal(matchesCatalogQuery(product,required),true,product.name);if(category)assert.equal(marketCategory(product),category,product.name);}
 });
 

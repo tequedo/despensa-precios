@@ -14,7 +14,7 @@ const descriptor=value=>/\b(snacks?|papas fritas|nachos|botanas?|takis|lays|lay 
 // Keep the configured basket, and also admit recognized families and snack
 // brands. A product must not depend on an incidental flavour such as ketchup.
 export function includeCatalogProduct(product,legacyMatch=false){
- return Boolean(legacyMatch||productSearchFamily(product)||descriptor(`${product.name} ${product.brand??''}`));
+ return Boolean(legacyMatch||reviewedCatalogEntry(product)||productSearchFamily(product)||descriptor(`${product.name} ${product.brand??''}`));
 }
 
 export function classifyCatalogRecord(record){

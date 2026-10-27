@@ -1,5 +1,6 @@
 import { provinceFor,normalize,packageEvidence } from './price-safety.mjs';
 import { barcodeIdentity, createProductIdMatcher } from './product-identity.mjs';
+import {reviewedCatalogEntry} from './catalog-semantics.mjs';
 
 const median = values => { const s = [...values].sort((a,b)=>a-b), middle = Math.floor(s.length / 2); return s.length % 2 ? s[middle] : (s[middle-1]+s[middle])/2; };
 const retailer = record => /^sepa:([^:]+):/.exec(record.product.ean)?.[1] ?? record.store.chain;
@@ -25,6 +26,8 @@ function peerReview(record, peers, matchesId) {
 // This is an unresolved observation, not a replacement price or a finding that
 // the official SEPA archive is incorrect. A newer file date alone cannot clear it.
 export function priceReview(record) {
+  const sourceReview=reviewedCatalogEntry(record.product)?.quoteReview;
+  if(sourceReview?.presentations?.some(value=>normalize(value)===normalize(record.product.presentation)))return {id:sourceReview.code,status:'pending_source_confirmation',reason:sourceReview.reason};
   if(record.product?.catalogReview?.status==='pending_source_confirmation')return {id:record.product.catalogReview.code,status:'pending_source_confirmation',reason:'El control de importación apartó este registro por datos de producto o presentación pendientes de confirmar.'};
   if (provinceFor(record.store?.province)?.code === 'AR-J'
     && /^sepa:11:(2|5):7790742357502$/.test(record.product?.ean ?? '')
