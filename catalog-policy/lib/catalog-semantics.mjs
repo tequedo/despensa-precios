@@ -3,16 +3,24 @@ import {normalize} from './price-safety.mjs';
 import {barcodeIdentity} from './product-identity.mjs';
 
 const entries=new Map(reviews.products.map(entry=>[barcodeIdentity(entry.barcode).gtin,entry]));
+const scopedEntries=new Map((reviews.scopedProducts??[]).flatMap(entry=>entry.sourceIds.map(id=>[id,entry])));
+const sameFingerprint=(entry,product)=>entry.fingerprints
+ ?entry.fingerprints.some(value=>normalize(value.name)===normalize(product.name)&&normalize(value.brand)===normalize(product.brand))
+ :entry.names.some(name=>normalize(name)===normalize(product.name))&&entry.brands.some(brand=>normalize(brand)===normalize(product.brand));
 export const nonDrinkingWater = text => /\b(micelar|oxigenada|colonia|destilada|desmaquillante|limpiadora|facial|corporal|lavandina|hipoclorito|desinfectante)\b|\bpara (?:plancha|bateria|radiador)\b/.test(normalize(text));
 
 // A reviewed alias is not a source edit or a new identity match. Require the
 // verified barcode and the exact observed name/brand fingerprint together.
 export function reviewedCatalogEntry(product){
+ const scoped=scopedEntries.get(product.ean);
+ // A local classification never promotes a restricted retailer code to GTIN.
+ // Require its literal source ID, barcode/status and complete source fingerprint.
+ if(scoped&&scoped.sourceBarcodes.includes(product.barcode)&&scoped.barcodeStatuses.includes(product.barcodeStatus)
+   &&scoped.presentations.some(value=>normalize(value)===normalize(product.presentation))&&sameFingerprint(scoped,product))return scoped;
  if(product.barcodeStatus!=='valid_format_and_checksum')return null;
  const raw=String(product.barcode??'').trim(),key=raw.padStart(14,'0'),entry=entries.get(key);
  if(!entry||barcodeIdentity(raw).gtin!==key)return null;
- if(!entry||!entry.names.some(name=>normalize(name)===normalize(product.name))
-   ||!entry.brands.some(brand=>normalize(brand)===normalize(product.brand)))return null;
+ if(!sameFingerprint(entry,product))return null;
  return entry;
 }
 

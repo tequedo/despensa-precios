@@ -8,12 +8,13 @@ import {writeSanJuanSnapshot} from '../san-juan-snapshot.mjs';
 import {includeCatalogProduct,catalogPolicyVersion} from '../catalog-policy/lib/catalog-policy.mjs';
 import {matchesCatalogQuery} from '../catalog-policy/lib/product-search.mjs';
 import {marketCategory} from '../catalog-policy/lib/market-features.mjs';
+import {productFromTuple,createProductIdMatcher} from '../catalog-policy/lib/product-identity.mjs';
 
 const record=(presentation='70 g',province='San Juan')=>({source:{priceDate:'2026-10-25',modified:'2026-10-25T18:00:00Z'},product:{ean:'test-only:chips',name:'PAPAS FRITAS 70 G',brand:'LAYS',presentation,referenceUnit:'g',barcodeStatus:'internal'},store:{externalId:'fixture-'+province,type:'Supermercado',channel:'sucursal',province,locality:'Fixture',chain:'Fixture'},price:{listPrice:1000,validDate:'2026-10-25',channel:'sucursal'}});
 
-test('las regresiones de nombres reales de A, B y C siguen aplicándose en cada importación',async()=>{
+test('las regresiones de nombres reales de A, B, C y D siguen aplicándose en cada importación',async()=>{
  const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
- assert.equal(cases.length,107);
+ assert.equal(cases.length,151);
  for(const {product,forbidden,required,category} of cases){assert.equal(includeCatalogProduct(product,false),true,product.name);assert.equal(matchesCatalogQuery(product,forbidden),false,product.name);assert.equal(matchesCatalogQuery(product,required),true,product.name);if(category)assert.equal(marketCategory(product),category,product.name);}
 });
 
@@ -41,4 +42,22 @@ test('la misma política se ejecuta para otras provincias y para la salida de Sa
  assert.equal(result.catalogPolicy.counts.quoteEligible,1);assert.deepEqual(JSON.parse((await fs.readFile(out,'utf8')).trim()),input);
  assert.equal(includeCatalogProduct({name:'TAKIS FUEGO 90G',brand:'TAKIS'},false),true);
  assert.equal(includeCatalogProduct({name:'LAYS ORIGINALES 250G',brand:'LAYS'},false),true);
+});
+
+
+test('dos descargas conservan el alcance del código restringido y apartan una huella local modificada',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'catalog-scoped-import-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
+ const source=cases.find(c=>c.product.name==='DOVE DURAZNO Y LECHE').product;
+ for(const [index,name] of [source.name,'LECHE NUEVA 50ML'].entries()){
+  const input={...record(),product:{...source,name}},before=JSON.stringify(input);
+  const exporter=await nationalExporter(path.join(root,'national'),path.join(root,'tmp-'+index));await exporter.add(input);await exporter.finish();
+  const folder=path.join(root,'national/AR-J'),ix=JSON.parse(await fs.readFile(path.join(folder,'index.json'),'utf8'));
+  const shard=JSON.parse(await fs.readFile(path.join(folder,ix.stores[0].file),'utf8')),row=shard.prices[0],p=productFromTuple(row);
+  assert.equal(row[11].catalogPolicy.quoteEligible,index===0);assert.equal(p.barcodeStatus,'restricted');assert.equal(matchesCatalogQuery(p,'leche'),false);
+  assert.equal(createProductIdMatcher([{product:p}])(source.barcode,p),false);
+  if(index===0){assert.equal(matchesCatalogQuery(p,'desodorante'),true);assert.equal(row[11].catalogPolicy.category,'Higiene');}
+  else assert.equal(row[11].catalogPolicy.reviewCode,'semantic_fingerprint_changed');
+  assert.equal(JSON.stringify(input),before);
+ }
 });
