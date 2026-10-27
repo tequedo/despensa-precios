@@ -1,5 +1,6 @@
 import { normalize, packageEvidence, roundMoney } from './price-safety.mjs';
 import {reviewedCatalogEntry,oilUse,nonDrinkingWater} from './catalog-semantics.mjs';
+import {productSearchFamily} from './product-search.mjs';
 // Navigation labels are app classifications, never proof that two products match.
 /** @type {Array<[string, RegExp]>} */
 const categories = [
@@ -12,9 +13,27 @@ const categories = [
     ['Almacén', /\b(aceite|arroz|fideo|fideos|harina|azucar|sal|yerba|te|cafe|alfajor|alfajores|galletita|galletitas|chocolate|mayonesa|dulce|mermelada|salsa|pan|atun|lenteja|poroto|garbanzo|papas fritas|lays|lay s|takis)\b/],
 ];
 export const MARKET_CATEGORIES = categories.map(([label]) => label).concat('Otros');
-export function marketCategory(product) { if(product.catalogReview?.code==='semantic_fingerprint_changed')return 'Otros';const reviewed=reviewedCatalogEntry(product);if(reviewed)return reviewed.category;const text = normalize(`${product.name ?? ''} ${product.brand ?? ''}`),use=oilUse(text);if(use)return use==='personal'?'Higiene':use==='household'?'Limpieza':'Otros';if(/\bagua\b/.test(text)&&nonDrinkingWater(text))return /\b(micelar|oxigenada|colonia|desmaquillante|limpiadora|facial|corporal)\b/.test(text)?'Higiene':/\b(lavandina|hipoclorito|desinfectante)\b|\bpara plancha\b/.test(text)?'Limpieza':'Otros';if(/\b(mamadera|batidor)\b|\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';if(/^bebida\b/.test(text))return /^bebida (?:lact|leche)/.test(text)?'Lácteos':'Bebidas';if(/^bondiola\b/.test(text))return 'Carnes';if (/^(alfajor|galletita|chocolate|dulce de leche|bano(?: de)? reposter(?:o|ia)|barras?|barritas?|bizcoch\w*|budin|bocad|baguette|bimbo madalenas|bon o bon)\b/.test(text))
-    return 'Almacén'; return categories.find(([, pattern]) => pattern.test(text))?.[0] ?? 'Otros'; }
+export function marketCategory(product) {
+    if(product.catalogReview?.code==='semantic_fingerprint_changed')return 'Otros';
+    const reviewed=reviewedCatalogEntry(product);if(reviewed)return reviewed.category;
+    const text=normalize(`${product.name??''} ${product.brand??''}`),main=productSearchFamily(product),use=oilUse(text);
+    if(use)return use==='personal'?'Higiene':use==='household'?'Limpieza':'Otros';
+    if(/\bagua\b/.test(text)&&nonDrinkingWater(text))return /\b(micelar|oxigenada|colonia|desmaquillante|limpiadora|facial|corporal)\b/.test(text)?'Higiene':/\b(lavandina|hipoclorito|desinfectante)\b|\bpara plancha\b/.test(text)?'Limpieza':'Otros';
+    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor'].includes(main)||/\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';
+    if(main==='coloracion')return 'Higiene';
+    if(main==='licor')return 'Bebidas';
+    if(['cuadril','colita de cuadril','cuadrada','carre','bondiola'].includes(main))return 'Carnes';
+    if(main==='crema'&&/\bcrema (?:de |d )?leche\b/.test(text))return 'Lácteos';
+    if(main==='crema'&&/\b(?:p|para|de) cafe\b/.test(text))return 'Almacén';
+    if(main==='jabon'&&/\bjabon (?:blanco|pan|para la ropa)\b/.test(text))return 'Limpieza';
+    if(main==='bebida')return /\bbebida (?:lact|leche)/.test(text)?'Lácteos':'Bebidas';
+    if(['alfajor','galletita','chocolate','bombon','dulce de leche','bano repostero','barra','bizcocho','budin','bocadito','baguette','magdalena','cafe','cacao','choclo','torta','caramelo','cereal','snack','cracker','croqueta','caballa','chorito','vinagre','mayonesa','atun','anchoa','condimento','pizza','pure','tostada'].includes(main))return 'Almacén';
+    return categories.find(([,pattern])=>pattern.test(text))?.[0]??'Otros';
+}
 export function comparableUnit(price, product) {
+    // A vessel's capacity or an appliance's specification is not bought food
+    // volume. Source sizes may still support discovery, never a price per litre.
+    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor'].includes(productSearchFamily(product)))return null;
     const amount = Number(price), evidence = packageEvidence(product);
     if (!(amount > 0) || !Number.isFinite(amount) || !evidence)
         return null;

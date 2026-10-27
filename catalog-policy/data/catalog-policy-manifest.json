@@ -1,15 +1,15 @@
 {
-  "version": "2026-10-26.ab-snacks.1",
+  "version": "2026-10-27.abc.1",
   "files": {
     "lib/price-safety.mjs": "d5570ed802111802902598b737a4e87a04ffe586bc71d10dd56d9e6a19012557",
     "lib/product-identity.mjs": "5ec2dc1e80620592ef7f0304940ee2d39971cae40d53a7e6f1590b25b0f9688d",
     "lib/catalog-semantics.mjs": "9fbd53bbe618c40407ae6b5874a96613e0714619fc839f6766de51394197bde1",
-    "lib/product-search.mjs": "9b8c69f9599eabc3d503f90794aa8485e02e78640adcaefaef417587ffadb3b4",
-    "lib/market-features.mjs": "028941846f2abe91e0894c25bf718f6de4ff309c9e7604fb52f13c20b02f3a29",
-    "lib/price-review.mjs": "ebbec209898f6371e36faa52522aeb753056a99bad0008dac8c492f63719a204",
-    "lib/catalog-policy.mjs": "5f04c9eb194b262e6686cbc5ffb88d58df5be5e3c292a8b1233612c161dfac62",
+    "lib/product-search.mjs": "64cf2df3edbd2b020a8a9a1a7347a7da04b16042f373736c4fb3831e51110d82",
+    "lib/market-features.mjs": "855d86874fe886a3c4a4124478afba86698c9c3702fe93b76d7b7ec5af5ae644",
+    "lib/price-review.mjs": "2fcdc82b713acdfb34a4ac3b5d71925df2859296562b65bcf075271ce92a7953",
+    "lib/catalog-policy.mjs": "d9c7cdfe050ac172afbdeb6b09e40da7cf966b304a745b0b604a7db967db06e9",
     "lib/product-fields.mjs": "fe15dadac07c153e7094cf515c4dbc11ee93926da4866bf8fe39d5c189cdf15f",
-    "data/catalog-search-reviews.json": "92d9842f1ef4c89fb283b159dd8ba335541e80a51c35e3fa2bd221d503eda9e6",
-    "data/catalog-policy-regressions.json": "cca894cea386c5531f318e58cb424549bd94e9f8275da7592c4cb4f126d39b50"
+    "data/catalog-search-reviews.json": "80501f13ef004c9de5a972d3d23c40f360833e2662b5bd06a345e666cff52bc7",
+    "data/catalog-policy-regressions.json": "621160ca0d9ec9c170df4ceed59e49814501cb53207fe0e28a565503bc26ed9e"
   }
 }

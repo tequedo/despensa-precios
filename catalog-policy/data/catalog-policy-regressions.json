@@ -580,5 +580,962 @@
     "forbidden": "azucar",
     "required": "budines",
     "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:8445290559975",
+      "name": "CACAO EN POLVO MENOS AZUCAR NESQUIK X 300 GRS",
+      "brand": "NESQUIK",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "8445290559975",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "08445290559975"
+    },
+    "forbidden": "azucar",
+    "required": "cacao",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7622202288227",
+      "name": "CARAMELOS CHERRY S/AZUCAR, HALLS FREE, 26 gr",
+      "brand": "HALLS FREE",
+      "presentation": "26 gr",
+      "referenceUnit": "gr",
+      "barcode": "7622202288227",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07622202288227"
+    },
+    "forbidden": "azucar",
+    "required": "caramelos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790580152093",
+      "name": "CARAMELOS LECHE, BUTTER TOFFEES, 80 gr",
+      "brand": "BUTTER TOFFEES",
+      "presentation": "80 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790580152093",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790580152093"
+    },
+    "forbidden": "leche",
+    "required": "caramelos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7622202288258",
+      "name": "CARAMELOS MENTA S/AZUCAR, HALLS FREE, 26 gr",
+      "brand": "HALLS FREE",
+      "presentation": "26 gr",
+      "referenceUnit": "gr",
+      "barcode": "7622202288258",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07622202288258"
+    },
+    "forbidden": "azucar",
+    "required": "caramelos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7891000434239",
+      "name": "CAPSULAS CAFE CON LECHE DOLCE GUSTO X 10 UNI",
+      "brand": "DOLCE GUSTO",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7891000434239",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891000434239"
+    },
+    "forbidden": "leche",
+    "required": "cafe",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7792281006293",
+      "name": "CAROL PINZA DE FIDEOS ACERO",
+      "brand": "CAROL",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7792281006293",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792281006293"
+    },
+    "forbidden": "fideos",
+    "required": "pinza",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790139102074",
+      "name": "CASALTA V ARROZ 1L",
+      "brand": "CASALTA",
+      "presentation": "1 L",
+      "referenceUnit": "EA",
+      "barcode": "7790139102074",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790139102074"
+    },
+    "forbidden": "arroz",
+    "required": "vinagre",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7797046004699",
+      "name": "CAFE BAR FRANC600CC",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7797046004699",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07797046004699"
+    },
+    "forbidden": "cafe",
+    "required": "cafetera",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:9789506447526",
+      "name": "CAFE LUNA LLENA",
+      "brand": "PRH",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "9789506447526",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "09789506447526"
+    },
+    "forbidden": "cafe",
+    "required": "libro",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:9786313074211",
+      "name": "CATS DULCE CAFE VALI",
+      "brand": "GUADAL",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "9786313074211",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "09786313074211"
+    },
+    "forbidden": "cafe",
+    "required": "libro",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:9789506448141",
+      "name": "CUANDO CAFE EST LIST",
+      "brand": "PRH",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "9789506448141",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "09789506448141"
+    },
+    "forbidden": "cafe",
+    "required": "libro",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790894901936",
+      "name": "CELU G77 256GB CAFE",
+      "brand": "MOTOROLA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7790894901936",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790894901936"
+    },
+    "forbidden": "cafe",
+    "required": "celular",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798052363169",
+      "name": "CEREAL ARROZ",
+      "brand": "SIN MARCA",
+      "presentation": "0.08 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798052363169",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798052363169"
+    },
+    "forbidden": "arroz",
+    "required": "cereal",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:8445290615831",
+      "name": "Cereal NESTUM Arroz x225g PAQ-220-gr.",
+      "brand": "NESTUM",
+      "presentation": ".22 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "8445290615831",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "08445290615831"
+    },
+    "forbidden": "arroz",
+    "required": "cereal",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7891000288801",
+      "name": "CEREAL SIN AZUCAR NESFIT CAJA X 220 GRS",
+      "brand": "NESFIT",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7891000288801",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891000288801"
+    },
+    "forbidden": "azucar",
+    "required": "cereal",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7622201753061",
+      "name": "CEREALITAS ARROZ RS X 160 GRS",
+      "brand": "CEREALITAS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7622201753061",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07622201753061"
+    },
+    "forbidden": "arroz",
+    "required": "galletita",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120002348",
+      "name": "CHECK CABALLA ACEITE",
+      "brand": "CHECK",
+      "presentation": "0.38 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120002348",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120002348"
+    },
+    "forbidden": "aceite",
+    "required": "caballa",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120004502",
+      "name": "CHECK CHO LECHE 30G",
+      "brand": "CHECK",
+      "presentation": "0.03 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120004502",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120004502"
+    },
+    "forbidden": "leche",
+    "required": "chocolate",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120004496",
+      "name": "CHECK CHO LECHE 80G",
+      "brand": "CHECK",
+      "presentation": "0.08 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120004496",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120004496"
+    },
+    "forbidden": "leche",
+    "required": "CHECK CHO LECHE 80G",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798270243861",
+      "name": "CHECK GALLETITAS DE AGUA PENTAPACK 505G",
+      "brand": "CHECK",
+      "presentation": "0.505 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798270243861",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798270243861"
+    },
+    "forbidden": "agua",
+    "required": "galletita",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798153714600",
+      "name": "CHECK JABON PAN 2UN",
+      "brand": "CHECK",
+      "presentation": "0.4 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798153714600",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798153714600"
+    },
+    "forbidden": "pan",
+    "required": "jabon",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120008012",
+      "name": "CHECK LOMITOS DE ATUN EN ACEITE Y AGUA 170G",
+      "brand": "CHECK",
+      "presentation": "0.17 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120008012",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120008012"
+    },
+    "forbidden": "agua",
+    "required": "atun",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120002522",
+      "name": "CHECK MADALENA CON DULCE DE LECHE 200G",
+      "brand": "CHECK",
+      "presentation": "0.2 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120002522",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120002522"
+    },
+    "forbidden": "leche",
+    "required": "magdalena",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120004830",
+      "name": "CHECK PIZZA A LA PIEDRA MOZZARELLA TOMATE 470G",
+      "brand": "CHECK",
+      "presentation": "0.47 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120004830",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120004830"
+    },
+    "forbidden": "tomate",
+    "required": "pizza",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798270241492",
+      "name": "CHECK PURE DE TOMATE 520G",
+      "brand": "CHECK",
+      "presentation": "0.52 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798270241492",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798270241492"
+    },
+    "forbidden": "tomate",
+    "required": "pure",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120003321",
+      "name": "CHECK TORTA ARROZ",
+      "brand": "CHECK",
+      "presentation": "0.06 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120003321",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120003321"
+    },
+    "forbidden": "arroz",
+    "required": "CHECK TORTA ARROZ",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120005783",
+      "name": "CHECK TOS S SAL 200G",
+      "brand": "CHECK",
+      "presentation": "0.2 KG",
+      "referenceUnit": "EA",
+      "barcode": "7799120005783",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120005783"
+    },
+    "forbidden": "sal",
+    "required": "CHECK TOS S SAL 200G",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120003918",
+      "name": "CHECK VIN VINO 500ML",
+      "brand": "CHECK",
+      "presentation": "0.5 L",
+      "referenceUnit": "EA",
+      "barcode": "7799120003918",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120003918"
+    },
+    "forbidden": "vino",
+    "required": "vinagre",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7799120003925",
+      "name": "CHECK VINAG VINO 1LT",
+      "brand": "CHECK",
+      "presentation": "1 L",
+      "referenceUnit": "EA",
+      "barcode": "7799120003925",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799120003925"
+    },
+    "forbidden": "vino",
+    "required": "vinagre",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798153719339",
+      "name": "CHEK MARI S SAL 220G",
+      "brand": "CHECK",
+      "presentation": "0.22 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798153719339",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798153719339"
+    },
+    "forbidden": "sal",
+    "required": "CHEK MARI S SAL 220G",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790070106131",
+      "name": "CHIPS DE ARROZ PIZZA GALLO SNACKS X 60 GRS",
+      "brand": "GALLO SNACKS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7790070106131",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790070106131"
+    },
+    "forbidden": "arroz",
+    "required": "chips",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790070105912",
+      "name": "CHIPS DE ARROZ QUESO GALLO SNACKS X 60 GRS",
+      "brand": "GALLO SNACKS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7790070105912",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790070105912"
+    },
+    "forbidden": "queso",
+    "required": "chips",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798171730392",
+      "name": "CHIPS DE PAPAS SAL MARINA RUSTICA X 80 GRS",
+      "brand": "RUSTICA",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7798171730392",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798171730392"
+    },
+    "forbidden": "sal",
+    "required": "chips",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790070417213",
+      "name": "Chips GALLO SNACKS Arroz Queso x100g PAQ-50-gr.",
+      "brand": "GALLO",
+      "presentation": "50.00 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790070417213",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790070417213"
+    },
+    "forbidden": "queso",
+    "required": "chips",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790580103484",
+      "name": "CHOC.COFLER LECHE 55g PAQ-55-gr.",
+      "brand": "COFLER",
+      "presentation": "55.00 gr.",
+      "referenceUnit": "KG.",
+      "barcode": "7790580103484",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790580103484"
+    },
+    "forbidden": "leche",
+    "required": "chocolate",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791720036358",
+      "name": "CHOCLO EN GRANOS S SAL CLASSIC LATA X 280 GR",
+      "brand": "CARREFOUR CLASSIC",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7791720036358",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791720036358"
+    },
+    "forbidden": "sal",
+    "required": "choclo",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7799044054768",
+      "name": "CHORITOS EN ACEITE Y AGUA, LA ANONIMA, 190 gr",
+      "brand": "LA ANONIMA",
+      "presentation": "190 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7799044054768",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07799044054768"
+    },
+    "forbidden": "aceite",
+    "required": "choritos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798005438364",
+      "name": "CHEF FILTRO DE CAFE 10CM",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7798005438364",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798005438364"
+    },
+    "forbidden": "cafe",
+    "required": "filtro",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7791130001694",
+      "name": "COBRA BRILLO CAFE",
+      "brand": "COBRA",
+      "presentation": "0.06 L",
+      "referenceUnit": "EA",
+      "barcode": "7791130001694",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791130001694"
+    },
+    "forbidden": "cafe",
+    "required": "calzado",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7506475119573",
+      "name": "COFFEE MATE COMPLEMENTO DE CAFE ORIGINAL 170G",
+      "brand": "NESCAFE",
+      "presentation": "0.17 KG",
+      "referenceUnit": "EA",
+      "barcode": "7506475119573",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07506475119573"
+    },
+    "forbidden": "cafe",
+    "required": "complemento",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790580033408",
+      "name": "COFLER TABLETA DE CHOCOLATE AIREDO LECHE 55G",
+      "brand": "COFLER",
+      "presentation": "0.055 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790580033408",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790580033408"
+    },
+    "forbidden": "leche",
+    "required": "chocolate",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7793008018605",
+      "name": "COLORACION CAST. CAFE U.B.EXT T3, ISSUE, 1 cu",
+      "brand": "ISSUE",
+      "presentation": "1 cu",
+      "referenceUnit": "cu",
+      "barcode": "7793008018605",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793008018605"
+    },
+    "forbidden": "cafe",
+    "required": "coloracion",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7501059240605",
+      "name": "COMPLEMENTO DE CAFE LITE COFFEE MATE X 170 GRS",
+      "brand": "COFFEE MATE",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7501059240605",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07501059240605"
+    },
+    "forbidden": "cafe",
+    "required": "complemento",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:0077802574916",
+      "name": "CONTORNO DULCE LECHE",
+      "brand": "WET N WILD",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "0077802574916",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "00077802574916"
+    },
+    "forbidden": "leche",
+    "required": "maquillaje",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7891155042600",
+      "name": "COPA CERVEZA DUBLIN 400ML NADIR",
+      "brand": "NADIR",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7891155042600",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891155042600"
+    },
+    "forbidden": "cerveza",
+    "required": "copa",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7702147232087",
+      "name": "COPA GRAN VINO RIOJA CHIANTI 615 CC",
+      "brand": "CRISTAR",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7702147232087",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07702147232087"
+    },
+    "forbidden": "vino",
+    "required": "copa",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:2646550000008",
+      "name": "COPO DE ARROZ INFLADO X 80 GRS.",
+      "brand": "CARREFOUR CRISTAL",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "2646550000008",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "arroz",
+    "required": "copos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798169802858",
+      "name": "COPOS AZUCAR LA 240G",
+      "brand": "LASFOR",
+      "presentation": "0.24 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798169802858",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798169802858"
+    },
+    "forbidden": "azucar",
+    "required": "copos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:2646570000002",
+      "name": "COPOS DE HARINA DE MAIZ AZUCARADOS X 80 GRS.",
+      "brand": "CARREFOUR CRISTAL",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "2646570000002",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "harina",
+    "required": "copos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7896004004969",
+      "name": "COPOS DE MAIZ C/AZUCAR ESTUCHE, ZUCARITAS, 490 gr",
+      "brand": "ZUCARITAS",
+      "presentation": "490 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7896004004969",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07896004004969"
+    },
+    "forbidden": "azucar",
+    "required": "copos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7794529041813",
+      "name": "cracker de arroz TOSTI clasica x110g BOB-114-gr.",
+      "brand": "TOSTI",
+      "presentation": ".11 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7794529041813",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07794529041813"
+    },
+    "forbidden": "arroz",
+    "required": "crackers",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7798181510205",
+      "name": "CRACKERS SIN SAL S/TACC, SMAMS, 150 gr",
+      "brand": "SMAMS",
+      "presentation": "150 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7798181510205",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798181510205"
+    },
+    "forbidden": "sal",
+    "required": "crackers",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790787030125",
+      "name": "CREMA DE LECHE DOBLE POTE, ILOLAY, 350 cm3",
+      "brand": "ILOLAY",
+      "presentation": "350 cm3",
+      "referenceUnit": "lt",
+      "barcode": "7790787030125",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790787030125"
+    },
+    "forbidden": "leche",
+    "required": "crema",
+    "category": "Lácteos"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7501059240605",
+      "name": "CREMA P/CAFE EN POLVO SUAVE, COFFEE MATE, 170 gr",
+      "brand": "COFFEE MATE",
+      "presentation": "170 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7501059240605",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07501059240605"
+    },
+    "forbidden": "cafe",
+    "required": "crema",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790040377707",
+      "name": "CRIOLLITAS GALLETITAS DE AGUA 100G",
+      "brand": "CRIOLLITAS",
+      "presentation": "0.1 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790040377707",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790040377707"
+    },
+    "forbidden": "agua",
+    "required": "galletita",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7791476005912",
+      "name": "crocante de arroz inflado EGRAN PAQ-60-gr.",
+      "brand": "EGRAN",
+      "presentation": "60.00 gr.",
+      "referenceUnit": "KG.",
+      "barcode": "7791476005912",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791476005912"
+    },
+    "forbidden": "arroz",
+    "required": "crocante",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:2094350000009",
+      "name": "CROQUETA DE ARROZ Y ESPINACA",
+      "brand": "NUESTRA COCINA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2094350000009",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "arroz",
+    "required": "croquetas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798334587177",
+      "name": "CROQUETAS DE ARROZ C",
+      "brand": "MOLE",
+      "presentation": "0.2 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798334587177",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798334587177"
+    },
+    "forbidden": "arroz",
+    "required": "croqueta",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7792281000581",
+      "name": "CUCH DE TE X3 AREIA",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7792281000581",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792281000581"
+    },
+    "forbidden": "te",
+    "required": "cuchara",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891112284807",
+      "name": "CUCH FIDEOS ABILITY",
+      "brand": "TRAMONTINA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7891112284807",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891112284807"
+    },
+    "forbidden": "fideos",
+    "required": "cuchara",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891112017252",
+      "name": "CUCHAR TE DYNAMIC X3",
+      "brand": "TRAMONTINA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7891112017252",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891112017252"
+    },
+    "forbidden": "te",
+    "required": "cuchara",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7891112005303",
+      "name": "CUCHARA DE TE X3 POLYWOOD",
+      "brand": "TRAMONTINA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7891112005303",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07891112005303"
+    },
+    "forbidden": "te",
+    "required": "cuchara",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7797196042572",
+      "name": "CUCHARA P FIDEOS MANGO MADERA CARREFOUR HOME",
+      "brand": "CARREFOUR HOME",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7797196042572",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07797196042572"
+    },
+    "forbidden": "fideos",
+    "required": "cuchara",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7792410008006",
+      "name": "CUSENIER LICOR DE DULCE DE LECHE 700ML",
+      "brand": "CUSENIER",
+      "presentation": "0.7 L",
+      "referenceUnit": "EA",
+      "barcode": "7792410008006",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792410008006"
+    },
+    "forbidden": "leche",
+    "required": "licor",
+    "category": "Bebidas"
   }
 ]

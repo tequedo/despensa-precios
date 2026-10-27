@@ -1,17 +1,663 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-26",
+  "reviewedOn": "2026-10-27",
   "scope": "Search classification and aliases only. Never replace source names, brands, packages or prices.",
   "products": [
-    {"barcode":"7790580156114","status":"confirmed","names":["AG RAMA LECHE 40G"],"brands":["CHOCOLATIER"],"rawPrefixes":["AG RAMA"],"family":"chocolate","category":"Almacén","aliases":["Chocolate en rama con leche Aguila Chocolatier"],"evidence":{"url":"https://www.carrefour.com.ar/chocolate-en-rama-con-leche-aguila-chocolatier-40-grs-781366/p","kind":"indexed retailer technical fields: exact EAN and product type; full page body unavailable"}},
-    {"barcode":"7790580156008","status":"confirmed","names":["AG BOMB LECHE 114G"],"brands":["CHOCOLATIER"],"rawPrefixes":["AG BOMB"],"family":"bombon","category":"Almacén","aliases":["Bombones rellenos choco leche Aguila Chocolatier"],"evidence":{"url":"https://www.carrefour.com.ar/bombones-rellenos-choco-leche-aguila-chocolatier-114-grs-781380/p","kind":"indexed retailer technical fields: exact EAN and product type; full page body unavailable"}},
-    {"barcode":"7790580156046","status":"confirmed","names":["AG BOMB LECHE 38G"],"brands":["CHOCOLATIER"],"rawPrefixes":["AG BOMB"],"family":"bombon","category":"Almacén","aliases":["Bombones choco leche Aguila Chocolatier"],"evidence":{"url":"https://www.carrefour.com.ar/bombones-choco-lache-aguila-chocolatier-38-grs-781389/p","kind":"indexed retailer technical fields: exact EAN and product type; full page body unavailable"}},
-    {"barcode":"7790580156152","status":"confirmed","names":["AG AVE CH LECHE 90G"],"brands":["CHOCOLATIER"],"rawPrefixes":["AG AVE"],"family":"avellana","category":"Almacén","aliases":["Avellanas bañadas en chocolate Aguila Chocolatier"],"evidence":{"url":"https://www.carrefour.com.ar/avellanas-banadas-en-chocolate-aguila-chocolatier-90-grs-781397/p","kind":"indexed retailer technical fields: exact EAN and product type; full page body unavailable"}},
-    {"barcode":"9786313071241","status":"confirmed","names":["ANIMALES GRANJ TE"],"brands":["SIN MARCA"],"rawPrefixes":["ANIMALES GRANJ"],"family":"libro","category":"Otros","aliases":["Libro Animales de la granja"],"evidence":{"url":"https://www.interleo.es/libro-animales_de_la_granja-Q120800000","kind":"distributor catalog: matching ISBN/EAN and full title"}},
-    {"barcode":"7790580147822","status":"confirmed","names":["AGUILA FRAMB LECHE"],"brands":["AGUILA"],"rawPrefixes":["AGUILA FRAMB"],"family":"chocolate","category":"Almacén","aliases":["Frambuesas bañadas en chocolate con leche Aguila"],"blockedFamilies":["leche"],"evidence":{"url":"https://www.josimar.com.ar/frambuesas-con-chocolate-aguila-150-gr/p","corroborationUrl":"https://www.delimart.com.ar/frambuesas_banadas_en_chocolate_con_leche_aguila_x_150_grs","kind":"Josimar full product page: matching EAN and title; DeliMart indexed matching SKU and full chocolate-with-milk title. Source name, package and price remain unchanged."}},
-    {"barcode":"7790580119133","status":"confirmed","names":["BOM BONOBON LECHE"],"brands":["BON O BON"],"rawPrefixes":["BOM BONOBON"],"family":"bombon","category":"Almacén","aliases":["Bombones clásicos de chocolate con leche Bon O Bon"],"evidence":{"url":"https://sugart.com.ar/producto-detalle.php?idcarpeta=8&idproducto=117","kind":"Wholesaler product page: matching EAN, title and Bombones category. No package count or external price imported."}},
-    {"barcode":"7790580119157","status":"confirmed","names":["BONOBON LECHE 18X15G","BON-O-BON LECHE CJA-270-gr.","BOMBONES CHOCOLATE C LECHE BON O BON CAJA X270GRS"],"brands":["BON O BON"],"rawPrefixes":["BONOBON","BON-O-BON","BOMBONES CHOCOLATE C LECHE BON O BON"],"family":"bombon","category":"Almacén","aliases":["Bombones clásicos de chocolate con leche Bon O Bon"],"evidence":{"url":"https://www.josimar.com.ar/bombones-clasico-bon-o-bon-270-gr/p","corroborationUrl":"https://www.californiasa.com.ar/producto/bombon-bon-o-bon-leche-cja-270gr/","kind":"Retailer product titles and matching EAN/SKU; classification only. Conflicting source bundle presentations remain excluded."}},
-    {"barcode":"7792430903701","status":"confirmed","names":["BRC CHO LECHE 70G"],"brands":["BARILOCHE"],"rawPrefixes":["BRC CHO"],"family":"chocolate","category":"Almacén","aliases":["Chocolate con leche Bariloche"],"evidence":{"url":"https://www.dulsisa.com/productos/bariloche-chocolate-leche-x70-g/","kind":"Wholesaler product page: matching SKU and full title. Source fields unchanged."}},
-    {"barcode":"7891155047148","status":"confirmed","names":["BRUNELLO C VINO 390"],"brands":["NADIR"],"rawPrefixes":["BRUNELLO"],"family":"copa","category":"Otros","aliases":["Copa de vino Brunello Nadir 390 ml"],"discoveryCapacity":{"amount":390,"dimension":"volume"},"evidence":{"url":"https://espaciomenaje.com/producto/copas/vino/copa-39-cls-vino-blanco-brunello/","kind":"Retailer product page: matching EAN, NADIR brand and wine-glass capacity 39 cl. Vessel capacity is discovery-only, not package contents or a price-per-litre basis."}}
+    {
+      "barcode": "7790580156114",
+      "status": "confirmed",
+      "names": [
+        "AG RAMA LECHE 40G"
+      ],
+      "brands": [
+        "CHOCOLATIER"
+      ],
+      "rawPrefixes": [
+        "AG RAMA"
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate en rama con leche Aguila Chocolatier"
+      ],
+      "evidence": {
+        "url": "https://www.carrefour.com.ar/chocolate-en-rama-con-leche-aguila-chocolatier-40-grs-781366/p",
+        "kind": "indexed retailer technical fields: exact EAN and product type; full page body unavailable"
+      }
+    },
+    {
+      "barcode": "7790580156008",
+      "status": "confirmed",
+      "names": [
+        "AG BOMB LECHE 114G"
+      ],
+      "brands": [
+        "CHOCOLATIER"
+      ],
+      "rawPrefixes": [
+        "AG BOMB"
+      ],
+      "family": "bombon",
+      "category": "Almacén",
+      "aliases": [
+        "Bombones rellenos choco leche Aguila Chocolatier"
+      ],
+      "evidence": {
+        "url": "https://www.carrefour.com.ar/bombones-rellenos-choco-leche-aguila-chocolatier-114-grs-781380/p",
+        "kind": "indexed retailer technical fields: exact EAN and product type; full page body unavailable"
+      }
+    },
+    {
+      "barcode": "7790580156046",
+      "status": "confirmed",
+      "names": [
+        "AG BOMB LECHE 38G"
+      ],
+      "brands": [
+        "CHOCOLATIER"
+      ],
+      "rawPrefixes": [
+        "AG BOMB"
+      ],
+      "family": "bombon",
+      "category": "Almacén",
+      "aliases": [
+        "Bombones choco leche Aguila Chocolatier"
+      ],
+      "evidence": {
+        "url": "https://www.carrefour.com.ar/bombones-choco-lache-aguila-chocolatier-38-grs-781389/p",
+        "kind": "indexed retailer technical fields: exact EAN and product type; full page body unavailable"
+      }
+    },
+    {
+      "barcode": "7790580156152",
+      "status": "confirmed",
+      "names": [
+        "AG AVE CH LECHE 90G"
+      ],
+      "brands": [
+        "CHOCOLATIER"
+      ],
+      "rawPrefixes": [
+        "AG AVE"
+      ],
+      "family": "avellana",
+      "category": "Almacén",
+      "aliases": [
+        "Avellanas bañadas en chocolate Aguila Chocolatier"
+      ],
+      "evidence": {
+        "url": "https://www.carrefour.com.ar/avellanas-banadas-en-chocolate-aguila-chocolatier-90-grs-781397/p",
+        "kind": "indexed retailer technical fields: exact EAN and product type; full page body unavailable"
+      }
+    },
+    {
+      "barcode": "9786313071241",
+      "status": "confirmed",
+      "names": [
+        "ANIMALES GRANJ TE"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "ANIMALES GRANJ"
+      ],
+      "family": "libro",
+      "category": "Otros",
+      "aliases": [
+        "Libro Animales de la granja"
+      ],
+      "evidence": {
+        "url": "https://www.interleo.es/libro-animales_de_la_granja-Q120800000",
+        "kind": "distributor catalog: matching ISBN/EAN and full title"
+      }
+    },
+    {
+      "barcode": "7790580147822",
+      "status": "confirmed",
+      "names": [
+        "AGUILA FRAMB LECHE"
+      ],
+      "brands": [
+        "AGUILA"
+      ],
+      "rawPrefixes": [
+        "AGUILA FRAMB"
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Frambuesas bañadas en chocolate con leche Aguila"
+      ],
+      "blockedFamilies": [
+        "leche"
+      ],
+      "evidence": {
+        "url": "https://www.josimar.com.ar/frambuesas-con-chocolate-aguila-150-gr/p",
+        "corroborationUrl": "https://www.delimart.com.ar/frambuesas_banadas_en_chocolate_con_leche_aguila_x_150_grs",
+        "kind": "Josimar full product page: matching EAN and title; DeliMart indexed matching SKU and full chocolate-with-milk title. Source name, package and price remain unchanged."
+      }
+    },
+    {
+      "barcode": "7790580119133",
+      "status": "confirmed",
+      "names": [
+        "BOM BONOBON LECHE"
+      ],
+      "brands": [
+        "BON O BON"
+      ],
+      "rawPrefixes": [
+        "BOM BONOBON"
+      ],
+      "family": "bombon",
+      "category": "Almacén",
+      "aliases": [
+        "Bombones clásicos de chocolate con leche Bon O Bon"
+      ],
+      "evidence": {
+        "url": "https://sugart.com.ar/producto-detalle.php?idcarpeta=8&idproducto=117",
+        "kind": "Wholesaler product page: matching EAN, title and Bombones category. No package count or external price imported."
+      }
+    },
+    {
+      "barcode": "7790580119157",
+      "status": "confirmed",
+      "names": [
+        "BONOBON LECHE 18X15G",
+        "BON-O-BON LECHE CJA-270-gr.",
+        "BOMBONES CHOCOLATE C LECHE BON O BON CAJA X270GRS"
+      ],
+      "brands": [
+        "BON O BON"
+      ],
+      "rawPrefixes": [
+        "BONOBON",
+        "BON-O-BON",
+        "BOMBONES CHOCOLATE C LECHE BON O BON"
+      ],
+      "family": "bombon",
+      "category": "Almacén",
+      "aliases": [
+        "Bombones clásicos de chocolate con leche Bon O Bon"
+      ],
+      "evidence": {
+        "url": "https://www.josimar.com.ar/bombones-clasico-bon-o-bon-270-gr/p",
+        "corroborationUrl": "https://www.californiasa.com.ar/producto/bombon-bon-o-bon-leche-cja-270gr/",
+        "kind": "Retailer product titles and matching EAN/SKU; classification only. Conflicting source bundle presentations remain excluded."
+      }
+    },
+    {
+      "barcode": "7792430903701",
+      "status": "confirmed",
+      "names": [
+        "BRC CHO LECHE 70G"
+      ],
+      "brands": [
+        "BARILOCHE"
+      ],
+      "rawPrefixes": [
+        "BRC CHO"
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Bariloche"
+      ],
+      "evidence": {
+        "url": "https://www.dulsisa.com/productos/bariloche-chocolate-leche-x70-g/",
+        "kind": "Wholesaler product page: matching SKU and full title. Source fields unchanged."
+      }
+    },
+    {
+      "barcode": "7891155047148",
+      "status": "confirmed",
+      "names": [
+        "BRUNELLO C VINO 390"
+      ],
+      "brands": [
+        "NADIR"
+      ],
+      "rawPrefixes": [
+        "BRUNELLO"
+      ],
+      "family": "copa",
+      "category": "Otros",
+      "aliases": [
+        "Copa de vino Brunello Nadir 390 ml"
+      ],
+      "discoveryCapacity": {
+        "amount": 390,
+        "dimension": "volume"
+      },
+      "evidence": {
+        "url": "https://espaciomenaje.com/producto/copas/vino/copa-39-cls-vino-blanco-brunello/",
+        "kind": "Retailer product page: matching EAN, NADIR brand and wine-glass capacity 39 cl. Vessel capacity is discovery-only, not package contents or a price-per-litre basis."
+      }
+    },
+    {
+      "barcode": "7797046004699",
+      "status": "confirmed",
+      "names": [
+        "CAFE BAR FRANC600CC"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "CAFE BAR FRANC600CC"
+      ],
+      "family": "cafetera",
+      "category": "Otros",
+      "aliases": [
+        "Cafetera prensa francesa Larhaus Barista 600 ml"
+      ],
+      "evidence": {
+        "url": "https://mercator.com.ar/larhaus-barista-cafetera-prensa-francesa-mango-plastico-600-cc.html",
+        "kind": "Importer product catalog: exact EAN and vessel capacity, used for discovery only."
+      },
+      "discoveryCapacity": {
+        "amount": 600,
+        "dimension": "volume"
+      }
+    },
+    {
+      "barcode": "9789506447526",
+      "status": "confirmed",
+      "names": [
+        "CAFE LUNA LLENA"
+      ],
+      "brands": [
+        "PRH"
+      ],
+      "rawPrefixes": [
+        "CAFE LUNA LLENA"
+      ],
+      "family": "libro",
+      "category": "Otros",
+      "aliases": [
+        "Libro El café de la luna llena Mai Mochizuki"
+      ],
+      "evidence": {
+        "url": "https://www.penguinlibros.com/ar/989755-mai-mochizuki",
+        "kind": "Publisher catalog: exact ISBN and title."
+      }
+    },
+    {
+      "barcode": "9789506448141",
+      "status": "confirmed",
+      "names": [
+        "CUANDO CAFE EST LIST"
+      ],
+      "brands": [
+        "PRH"
+      ],
+      "rawPrefixes": [
+        "CUANDO CAFE EST LIST"
+      ],
+      "family": "libro",
+      "category": "Otros",
+      "aliases": [
+        "Libro Cuando el café esté listo Toshikazu Kawaguchi"
+      ],
+      "evidence": {
+        "url": "https://www.penguinlibros.com/ar/63550-toshikazu-kawaguchi",
+        "kind": "Publisher catalog: exact ISBN and title."
+      }
+    },
+    {
+      "barcode": "9786313074211",
+      "status": "confirmed",
+      "names": [
+        "CATS DULCE CAFE VALI"
+      ],
+      "brands": [
+        "GUADAL"
+      ],
+      "rawPrefixes": [
+        "CATS DULCE CAFE VALI"
+      ],
+      "family": "libro",
+      "category": "Otros",
+      "aliases": [
+        "Libro para colorear Cats dulces y café"
+      ],
+      "evidence": {
+        "url": "https://www.larevisteria.com/productos/valijita-cats-cafe/",
+        "kind": "Retailer book listing: exact ISBN, publisher and coloring-book description."
+      }
+    },
+    {
+      "barcode": "7790894901936",
+      "status": "confirmed",
+      "names": [
+        "CELU G77 256GB CAFE"
+      ],
+      "brands": [
+        "MOTOROLA"
+      ],
+      "rawPrefixes": [
+        "CELU G77 256GB CAFE"
+      ],
+      "family": "celular",
+      "category": "Otros",
+      "aliases": [
+        "Celular Motorola G77 256 GB"
+      ],
+      "evidence": {
+        "url": "https://casadelaudio.com/celular-motorolo-g77-6-7-256gb-cafe.html",
+        "kind": "Retailer technical listing: exact EAN and phone type. No color alias: another seller describes the color differently."
+      }
+    },
+    {
+      "barcode": "7790139102074",
+      "status": "confirmed",
+      "names": [
+        "CASALTA V ARROZ 1L"
+      ],
+      "brands": [
+        "CASALTA"
+      ],
+      "rawPrefixes": [
+        "CASALTA V ARROZ 1L"
+      ],
+      "family": "vinagre",
+      "category": "Almacén",
+      "aliases": [
+        "Vinagre de arroz Casalta"
+      ],
+      "evidence": {
+        "url": "https://www.casachinaoficial.com/tienda/almacen/aceites-y-vinagres/vinagre-de-arroz-casalta-x1lt/",
+        "kind": "Retailer listing: exact EAN and product type."
+      }
+    },
+    {
+      "barcode": "7799120004502",
+      "status": "confirmed",
+      "names": [
+        "CHECK CHO LECHE 30G"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHECK CHO LECHE 30G"
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Check 30 g"
+      ],
+      "evidence": {
+        "url": "https://www.masonline.com.ar/chocolate-con-leche-check-30-g-2/p",
+        "kind": "Brand owner retailer: full matching title and barcode image stem 0779912000450. The checksum-valid source EAN supplies the final digit; no price is copied."
+      }
+    },
+    {
+      "barcode": "7799120003918",
+      "status": "confirmed",
+      "names": [
+        "CHECK VIN VINO 500ML"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHECK VIN VINO 500ML"
+      ],
+      "family": "vinagre",
+      "category": "Almacén",
+      "aliases": [
+        "Vinagre de vino Check 500 ml"
+      ],
+      "evidence": {
+        "url": "https://www.masonline.com.ar/vinagre-de-vino-check-500-ml-2/p",
+        "kind": "Brand owner retailer: matching title and barcode image stem 0779912000391. No price is copied."
+      }
+    },
+    {
+      "barcode": "7799120003925",
+      "status": "confirmed",
+      "names": [
+        "CHECK VINAG VINO 1LT"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHECK VINAG VINO 1LT"
+      ],
+      "family": "vinagre",
+      "category": "Almacén",
+      "aliases": [
+        "Vinagre de vino Check 1 L"
+      ],
+      "evidence": {
+        "url": "https://www.masonline.com.ar/vinagre-de-vino-check-1-l-2/p",
+        "kind": "Brand owner retailer: matching brand, type and presentation; abbreviation VINAG is explicit in source."
+      }
+    },
+    {
+      "barcode": "7790580103484",
+      "status": "confirmed",
+      "names": [
+        "CHOC.COFLER LECHE 55g PAQ-55-gr.",
+        "CHOCOLATE CON LECHE",
+        "CHOCOLATE C/LECHE, COFLER, 55 gr",
+        "TABLETA DE CHOCOLATE CON LECHE COFLER X 55 GRS"
+      ],
+      "brands": [
+        "COFLER"
+      ],
+      "rawPrefixes": [
+        "CHOC.COFLER LECHE 55g PAQ-55-gr.",
+        "CHOCOLATE CON LECHE",
+        "CHOCOLATE C/LECHE, COFLER, 55 gr",
+        "TABLETA DE CHOCOLATE CON LECHE COFLER X 55 GRS"
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Cofler 55 g"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: same checksum-valid EAN and brand with full chocolate names in three other retailers. No cross-code merge."
+      }
+    },
+    {
+      "barcode": "7791130001694",
+      "status": "confirmed",
+      "names": [
+        "COBRA BRILLO CAFE"
+      ],
+      "brands": [
+        "COBRA"
+      ],
+      "rawPrefixes": [
+        "COBRA BRILLO CAFE"
+      ],
+      "family": "calzado",
+      "category": "Limpieza",
+      "aliases": [
+        "Autobrillo Cobra para calzado marrón"
+      ],
+      "evidence": {
+        "url": "https://ddisrl.com.ar/product/by/grupo/limpieza/Cobra",
+        "kind": "Wholesaler catalog: exact EAN, autobrillo marron 60 ml. Cafe is a color, not food."
+      }
+    },
+    {
+      "barcode": "0077802574916",
+      "status": "confirmed",
+      "names": [
+        "CONTORNO DULCE LECHE"
+      ],
+      "brands": [
+        "WET N WILD"
+      ],
+      "rawPrefixes": [
+        "CONTORNO DULCE LECHE"
+      ],
+      "family": "maquillaje",
+      "category": "Higiene",
+      "aliases": [
+        "Maquillaje paleta de contorno Wet n Wild Dulce de Leche"
+      ],
+      "evidence": {
+        "url": "https://megamartcenter.com/products/wet-n-wild-megaglo-contour-palette-dulce-de-leche-contouring-powder-face-kit-flawlessly-sculpted-face",
+        "kind": "Retailer technical listing: exact EAN and contour-palette type; Dulce de Leche is the shade."
+      }
+    },
+    {
+      "barcode": "7794218106229",
+      "status": "confirmed",
+      "names": [
+        "CUPIDO JABON TRICOLO"
+      ],
+      "brands": [
+        "CUPIDO"
+      ],
+      "rawPrefixes": [
+        "CUPIDO JABON TRICOLO"
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [
+        "Jabón de tocador Cupido tricolor"
+      ],
+      "evidence": {
+        "url": "https://www.rimoldimayorista.com.ar/pw/catalogo.php?producto_id=28572&sid=31308&tid=5",
+        "kind": "Wholesaler listing: exact EAN and personal-care type. Source presentation is preserved."
+      }
+    },
+    {
+      "barcode": "7794218106373",
+      "status": "confirmed",
+      "names": [
+        "CUPIDO JABON TRICOLO"
+      ],
+      "brands": [
+        "CUPIDO"
+      ],
+      "rawPrefixes": [
+        "CUPIDO JABON TRICOLO"
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [
+        "Jabón de tocador Cupido"
+      ],
+      "evidence": {
+        "url": "https://elemporiomayorista.com.ar/catalogo/perfumeria/jabones-de-tocador",
+        "kind": "Wholesaler lists this exact EAN as cremoso, while source says tricolor. Only the soap type is established; the conflicting variety remains quarantined."
+      },
+      "quoteReview": {
+        "code": "source_variant_conflict",
+        "presentations": [
+          "0.27 KG"
+        ],
+        "reason": "El nombre de origen dice tricolor, pero el catálogo comercial identifica ese código como jabón cremoso. Se aparta el precio hasta confirmar la variedad."
+      }
+    },
+    {
+      "barcode": "7792180139566",
+      "status": "confirmed",
+      "names": [
+        "CAUELAS ARROZ PARBOI"
+      ],
+      "brands": [
+        "CAÑUELAS"
+      ],
+      "rawPrefixes": [
+        "CAUELAS ARROZ PARBOI"
+      ],
+      "family": "arroz",
+      "category": "Almacén",
+      "aliases": [
+        "Arroz Cañuelas"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned source explicitly identifies rice but declares 1 L. No substitute weight is inferred."
+      },
+      "quoteReview": {
+        "code": "source_content_dimension_review",
+        "presentations": [
+          "1 L"
+        ],
+        "reason": "La fuente describe arroz y declara la presentación en litros. No acredita el peso del paquete; se aparta hasta confirmación sin transformarlo en kilogramos."
+      }
+    },
+    {
+      "barcode": "7799120004496",
+      "status": "pending_source_confirmation",
+      "names": [
+        "CHECK CHO LECHE 80G"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHECK CHO LECHE 80G"
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": null,
+        "kind": "Ambiguous source abbreviation. Secondary matches are insufficient to publish an expanded alias. Possible chocolate; exact primary listing not retrieved."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "7799120005783",
+      "status": "pending_source_confirmation",
+      "names": [
+        "CHECK TOS S SAL 200G"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHECK TOS S SAL 200G"
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": null,
+        "kind": "Ambiguous source abbreviation. Secondary matches are insufficient to publish an expanded alias. Possible toast; exact primary listing not retrieved."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7798153719339",
+      "status": "pending_source_confirmation",
+      "names": [
+        "CHEK MARI S SAL 220G"
+      ],
+      "brands": [
+        "CHECK"
+      ],
+      "rawPrefixes": [
+        "CHEK MARI S SAL 220G"
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": null,
+        "kind": "Ambiguous source abbreviation. Secondary matches are insufficient to publish an expanded alias. Possible crackers; exact primary listing not retrieved."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    }
   ]
 }
