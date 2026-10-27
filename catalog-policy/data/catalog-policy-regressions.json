@@ -1,0 +1,584 @@
+[
+  {
+    "product": {
+      "ean": "sepa:2:1:7794000006553",
+      "name": "ADEREZO A BASE DE ACEITE C/AJO DP, HELLMANNS, 250 gr",
+      "brand": "HELLMANNS",
+      "presentation": "250 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7794000006553",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "aceite",
+    "required": "aderezo"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790580131357",
+      "name": "ATUN EN ACEITE, LA CAMPAGNOLA, 170 gr",
+      "brand": "LA CAMPAGNOLA",
+      "presentation": "170 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790580131357",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "aceite",
+    "required": "atun"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791720016374",
+      "name": "ANCHOAS EN ACEITE PROVENZAL CARREFOUR X 90 GRS",
+      "brand": "CARREFOUR",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7791720016374",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "aceite",
+    "required": "anchoas"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7891000423271",
+      "name": "ALIMENTO HUMEDO P/PERRO CARNE&ARROZ, DOG CHOW, 85 gr",
+      "brand": "DOG CHOW",
+      "presentation": "85 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7891000423271",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "alimento"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7797453972260",
+      "name": "ALIMENTO GATOS WHISKAS GATITOS CARNE Y LECHE 1KG",
+      "brand": "WHISKAS",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7797453972260",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "alimento"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2061060000001",
+      "name": "ALBONDIGAS CON ARROZ",
+      "brand": "NUESTRA COCINA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2061060000001",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "arroz",
+    "required": "albondigas"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790503000296",
+      "name": "ARITOS DE ARROZ CREMA Y CEBOLLA DOS HERMANOS X 80G",
+      "brand": "DOS HERMANOS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7790503000296",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "aritos"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7790150470350",
+      "name": "ALICANTE CONDIMENTO PARA ARROZ 25G",
+      "brand": "ALICANTE",
+      "presentation": "0.025 KG",
+      "referenceUnit": "EA",
+      "barcode": "7790150470350",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "condimento"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790580131876",
+      "name": "ALIMENTO A BASE DE AZUCAR Y CACAO, ARCOA, 180 gr",
+      "brand": "ARCOA",
+      "presentation": "180 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790580131876",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "azucar",
+    "required": "alimento"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:3616958742243",
+      "name": "ALGODON DE AZUCAR OOSH",
+      "brand": "GENERICO",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "3616958742243",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "azucar",
+    "required": "algodon"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:0022796910066",
+      "name": "ACONDICIONADOR LECHE DE COCO OGX X 385 CC",
+      "brand": "OGX",
+      "presentation": "1 UNI",
+      "referenceUnit": "CM3",
+      "barcode": "0022796910066",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "acondicionador"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791293048475",
+      "name": "ANTITRANSPIRANTE AERO PEPINO TE VERDE DOVE X150 CC",
+      "brand": "DOVE",
+      "presentation": "1 UNI",
+      "referenceUnit": "CM3",
+      "barcode": "7791293048475",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "te",
+    "required": "antitranspirante"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7799044049023",
+      "name": "AROMATIZADOR TEXTIL TE VERDE, LA ANONIMA, 250 cm3",
+      "brand": "LA ANONIMA",
+      "presentation": "250 cm3",
+      "referenceUnit": "lt",
+      "barcode": "7799044049023",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "te",
+    "required": "aromatizador"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790520029560",
+      "name": "AROMATIZANTE EN ACEITE ED LIM 1 GLADE X 2 UNI",
+      "brand": "GLADE",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7790520029560",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "aceite",
+    "required": "aromatizante"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798192364071",
+      "name": "ATMA ESPUMADOR CALENT DE LECHE 450ML BL",
+      "brand": "ATMA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7798192364071",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "espumador"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:2910129700003",
+      "name": "ARTICULO ENVASE GASEOSA R PET X 2 LT.X 1 UNI",
+      "brand": "S/D",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "2910129700003",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "gaseosa",
+    "required": "envase"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7799111677128",
+      "name": "ABRIDOR DE VINO",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7799111677128",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "vino",
+    "required": "abridor"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798371600068",
+      "name": "ALMADRE THINS SNACK SESAMO Y SAL MARINA 160G",
+      "brand": "AL MADRE",
+      "presentation": "0.16 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798371600068",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "sal",
+    "required": "snack"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791822688295",
+      "name": "VASO RIGOLLEAU CERVEZA MEDIA PINTA 320 ML",
+      "brand": "RIGOLLEAU",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7791822688295",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "cerveza",
+    "required": "vaso"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7891155042600",
+      "name": "COPA CERVEZA DUBLIN 400ML NADIR",
+      "brand": "NADIR",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7891155042600",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "cerveza",
+    "required": "copa"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7648234163486",
+      "name": "BABY BEE MAMADERA ASAS Y BOQUILLA JUGO",
+      "brand": "BABY BEE",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7648234163486",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "jugo",
+    "required": "mamadera",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2828810000007",
+      "name": "BAGUETTE JAMON QUESO LECHUGA Y TOMATE    ",
+      "brand": "NUESTRA COCINA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "2828810000007",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "queso",
+    "required": "baguette",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790580131470",
+      "name": "BAÑO DE REPOSTERIA LECHE, AGUILA, 150 gr",
+      "brand": "AGUILA",
+      "presentation": "150 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790580131470",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "baño de repostería",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791720037775",
+      "name": "BANO REPOSTERIA C LECHE CARREFOUR CLASSIC X150 GRS",
+      "brand": "CARREFOUR CLASSIC",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7791720037775",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "baño repostero",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790070431639",
+      "name": "BARRA ARROZ C CHOCOLATE GALLO SNACKS X 20 GRS",
+      "brand": "GALLO SNACKS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRS",
+      "barcode": "7790070431639",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791720048023",
+      "name": "BARRA ARROZ MANI Y MIEL CARREFOUR CLASSIC X 60 GR",
+      "brand": "CARREFOUR CLASSIC",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7791720048023",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "barrita",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798187761113",
+      "name": "BARRAS PROTEICAS CACAO Y CAFE ZAFRAN X 49 GRS",
+      "brand": "ZAFRAN",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7798187761113",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "cafe",
+    "required": "barras",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798187761182",
+      "name": "BARRAS PROTEICAS CAJU Y SAL MARINA ZAFRAN X 147GRS",
+      "brand": "ZAFRAN",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7798187761182",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "sal",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7798333090142",
+      "name": "Barra de Cereal Muecas  SIN AZÚCAR 45gr CJA-45-gr.",
+      "brand": "MUECAS",
+      "presentation": "45.00 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7798333090142",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "azucar",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:0000077919335",
+      "name": "BARRA DE ARROZ DULCE DE LECHE LULEMUU PAQUETEX12GR",
+      "brand": "LULEMUU",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "0000077919335",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "dulce de leche",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798125221952",
+      "name": "BATIDOR LECHE PILA",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7798125221952",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "batidor",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7791337007918",
+      "name": "BEBIDA DE ALMENDRA SIN AZUCAR, SILK, 1000 cm3",
+      "brand": "SILK",
+      "presentation": "1000 cm3",
+      "referenceUnit": "lt",
+      "barcode": "7791337007918",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "azucar",
+    "required": "bebida",
+    "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:0000090415418",
+      "name": "BEBIDA ENERGIZANTE SIN AZUCAR, RED BULL, 250 cm3",
+      "brand": "RED BULL",
+      "presentation": "250 cm3",
+      "referenceUnit": "lt",
+      "barcode": "0000090415418",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "azucar",
+    "required": "bebida",
+    "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790742872661",
+      "name": "BEBIDA LACT.BASE DE LECHE CAPUCHINO, SENSE, 200 cm3",
+      "brand": "SENSE",
+      "presentation": "200 cm3",
+      "referenceUnit": "lt",
+      "barcode": "7790742872661",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "bebida",
+    "category": "Lácteos"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790742172105",
+      "name": "BEBIDA LECHE LA SERENISIMA UAT PROTEIN CACAO 1LT",
+      "brand": "LA SERENISIMA",
+      "presentation": "1 UNI",
+      "referenceUnit": "CM3",
+      "barcode": "7790742172105",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "bebida leche",
+    "category": "Lácteos"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7790154000829",
+      "name": "BEBIDA ALC A BASE DE VINO TINTO VIN UP X 1 LT",
+      "brand": "VIN UP",
+      "presentation": "1 UNI",
+      "referenceUnit": "CM3",
+      "barcode": "7790154000829",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "vino",
+    "required": "bebida",
+    "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7793890261929",
+      "name": "BIMBO MADALENAS VAINILLA CON DULCE DE LECHE 234G",
+      "brand": "BIMBO",
+      "presentation": "0.234 KG",
+      "referenceUnit": "EA",
+      "barcode": "7793890261929",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "dulce de leche",
+    "required": "magdalenas",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7790070418425",
+      "name": "BIZCOCHOS DE ARROZ DULCE, GALLO SNACKS, 100 gr",
+      "brand": "GALLO SNACKS",
+      "presentation": "100 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7790070418425",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "bizcochos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7790070418449",
+      "name": "Bizcoch Arroz GALLO SNACK Tort Negrx100g PAQ-1000-gr.",
+      "brand": "GALLO",
+      "presentation": "1.00 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7790070418449",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "arroz",
+    "required": "bizcocho",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:0763571659991",
+      "name": "BOCAD.CONG.BANANA BAÑ.CHOCO C/LECHE, LE BANANA, 150 gr",
+      "brand": "LE BANANA",
+      "presentation": "150 gr",
+      "referenceUnit": "kgr",
+      "barcode": "0763571659991",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "leche",
+    "required": "bocaditos",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798143384424",
+      "name": "BOLSA DE VINO 40CM V",
+      "brand": "SIN MARCA",
+      "presentation": "10 EA",
+      "referenceUnit": "EA",
+      "barcode": "7798143384424",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "vino",
+    "required": "bolsa",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798322300139",
+      "name": "BOLSA PARA VINO KRAFT 14X08X40",
+      "brand": "BRANDPACK",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "7798322300139",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "vino",
+    "required": "bolsas",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7798181510649",
+      "name": "BUDIN S AZUCAR MARMOLADO SMAMS X 200 GRS",
+      "brand": "SMAMS",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7798181510649",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "azucar",
+    "required": "budines",
+    "category": "Almacén"
+  }
+]

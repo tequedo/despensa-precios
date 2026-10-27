@@ -14,6 +14,7 @@ import { readSepaPricing } from "./sepa-pricing.mjs";
 import { readSepaRows as rows } from "./sepa-csv.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
 import { branchChannel, productFileEvidence } from "./sepa-catalog-controls.mjs";
+import {includeCatalogProduct,classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -218,7 +219,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const brand = pick(row, ["productos_marca", "producto_marca", "marca"]);
       const normalizedDescription = normalize(description);
       const meatProduct = isMeatProduct(description, brand);
-      if (!keywordPatterns.some(pattern => pattern.test(normalizedDescription)) && !meatProduct) return;
+      if (!includeCatalogProduct({name:description,brand},keywordPatterns.some(pattern => pattern.test(normalizedDescription))||meatProduct)) {counters.filteredByCatalogPolicy=(counters.filteredByCatalogPolicy??0)+1;return;}
       const presentationQuantity = pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]);
       const presentationUnit = pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"]);
       const referenceUnit = pick(row, ["productos_unidad_medida_referencia", "producto_unidad_medida_referencia", "unidad_medida_referencia"]);
@@ -300,6 +301,12 @@ async function processFolder(folder, sourceInfo, counters) {
           observedAt: evidence.updatedAt
         }
       };
+      const catalogPolicy=classifyCatalogRecord(record);
+      counters.catalogPolicy??={version:catalogPolicyVersion,records:0,quoteEligible:0,quarantined:0,needsMeaningReview:0};
+      counters.catalogPolicy.records++;
+      if(catalogPolicy.quoteEligible)counters.catalogPolicy.quoteEligible++;
+      else{counters.catalogPolicy.quarantined++;await quarantine('catalog',catalogPolicy.reviewCode,{product:description,brand,presentation,store:branchKey(branch),ean},counters);}
+      if(catalogPolicy.needsMeaningReview)counters.catalogPolicy.needsMeaningReview++;
       if(exporter)await exporter.add(record);
       counters.accepted++;
       if(record.store.province !== "San Juan")return;
@@ -319,7 +326,7 @@ try {
   const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [], csvRepairs: [] };
   await processFolder(prepared.folder, prepared.source, counters);
   await mkdir(dirname(qualityFile), { recursive: true });
-  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs }, null, 2) + '\n');
+  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs, catalogPolicy: counters.catalogPolicy, filteredByCatalogPolicy: counters.filteredByCatalogPolicy??0 }, null, 2) + '\n');
 
   if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);
@@ -327,7 +334,8 @@ try {
   const snapshot = await writeSanJuanSnapshot(outputFile,sanJuanRecords,coverage?.find(p=>p.code==='AR-J')?.records);
   counters.sanJuanRecords = snapshot.rows.length;
   counters.sanJuanSha256 = snapshot.sha256;
-  for(let start=0;start<snapshot.rows.length;start+=batchSize)counters.ingested += await send(snapshot.rows.slice(start,start+batchSize));
+  const quotableRows=snapshot.rows.filter(record=>classifyCatalogRecord(record).quoteEligible);
+  for(let start=0;start<quotableRows.length;start+=batchSize)counters.ingested += await send(quotableRows.slice(start,start+batchSize));
   const promotionRows = [];
   await rowsFromNdjson(outputFile, record => {
     const chain = normalize(record.store?.chain);
