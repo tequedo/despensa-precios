@@ -13,9 +13,9 @@ import {productFromTuple,createProductIdMatcher} from '../catalog-policy/lib/pro
 
 const record=(presentation='70 g',province='San Juan')=>({source:{priceDate:'2026-10-25',modified:'2026-10-25T18:00:00Z'},product:{ean:'test-only:chips',name:'PAPAS FRITAS 70 G',brand:'LAYS',presentation,referenceUnit:'g',barcodeStatus:'internal'},store:{externalId:'fixture-'+province,type:'Supermercado',channel:'sucursal',province,locality:'Fixture',chain:'Fixture'},price:{listPrice:1000,validDate:'2026-10-25',channel:'sucursal'}});
 
-test('las regresiones de nombres reales de A, B, C, D y E siguen aplicándose en cada importación',async()=>{
+test('las regresiones de todo el abecedario siguen aplicándose en cada importación',async()=>{
  const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
- assert.equal(cases.length,185);
+ assert.equal(cases.length,1016);
  for(const {product,forbidden,required,category} of cases){assert.equal(includeCatalogProduct(product,false),true,product.name);assert.equal(matchesCatalogQuery(product,forbidden),false,product.name);assert.equal(matchesCatalogQuery(product,required),true,product.name);if(category)assert.equal(marketCategory(product),category,product.name);}
 });
 
@@ -103,6 +103,37 @@ test('dos descargas reaplican la letra E conservando aparatos, alias y dimension
     assert.equal(row[11].catalogPolicy.quoteEligible,false);assert.equal(row[11].catalogPolicy.reviewCode,'source_length_dimension_review');
     assert.equal(p.presentation,'320 M2');
    }
+  }
+ }
+});
+
+test('dos descargas conservan ISBN, mamaderas, usos de limpieza y abreviaturas pendientes de todo el abecedario',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'catalog-alphabet-import-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
+ const checks=[
+  ['NO TE OLVIDA','libro','Otros','te','libro'],
+  ['VAITA MAM OPP TE 250ML','mamadera','Otros','te','mamadera'],
+  ['SILISUR SHAMPOO SILICONADO X 350 CC','shampoo vehiculos','Limpieza','shampoo','shampoo vehiculos'],
+  ['TREG ARROZ CHOCO180G',null,'Otros','arroz','TREG ARROZ CHOCO180G'],
+  ['WHISKAS ADULTO LATA ATUN 340GR','alimento','Mascotas','atun','alimento gato'],
+  ['ZORRO SAL REGEN 1KG','sal lavavajillas','Limpieza','sal','sal lavavajillas'],
+  ['VINO TINTO BLEND DE MALBEC, PERRO CALLEJERO, 750 cm3','vino','Bebidas','alimento','vino'],
+ ];
+ const sources=checks.map(([name])=>{const p=cases.find(c=>c.product.name===name)?.product;assert.ok(p,name);return p;});
+ for(let run=0;run<2;run++){
+  const exporter=await nationalExporter(path.join(root,'national'),path.join(root,'tmp-'+run));
+  for(const product of sources){const input={...record(),product},before=JSON.stringify(input);await exporter.add(input);assert.equal(JSON.stringify(input),before);}
+  await exporter.finish();
+  const folder=path.join(root,'national/AR-J'),ix=JSON.parse(await fs.readFile(path.join(folder,'index.json'),'utf8'));
+  const shard=JSON.parse(await fs.readFile(path.join(folder,ix.stores[0].file),'utf8'));assert.equal(shard.catalogPolicyVersion,catalogPolicyVersion);
+  for(let i=0;i<sources.length;i++){
+   const source=sources[i],[name,family,category,forbidden,required]=checks[i],row=shard.prices.find(row=>row[0]===source.ean),p=productFromTuple(row),policy=row[11].catalogPolicy;
+   assert.deepEqual(row.slice(0,7),[source.ean,name,source.brand,source.presentation,source.referenceUnit,1000,'2026-10-25']);
+   assert.equal(policy.family,family,name);assert.equal(policy.category,category,name);
+   assert.equal(matchesCatalogQuery(p,forbidden),false,name);assert.equal(matchesCatalogQuery(p,required),true,name);
+   if(['libro','mamadera'].includes(family)||family===null)assert.equal(comparableUnit(1000,p),null,name);
+   if(name.startsWith('SILISUR'))assert.equal(policy.quoteEligible,false,'Mass vs volume contradiction stays quarantined after export');
+   if(family===null)assert.equal(policy.needsMeaningReview,true);
   }
  }
 });
