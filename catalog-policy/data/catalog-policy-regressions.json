@@ -2196,5 +2196,504 @@
     "forbidden": "vino",
     "required": "tomate",
     "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2010100000006",
+      "name": "EMPAQUETADO NARANJA JUGO",
+      "brand": "SIN MARCA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2010100000006",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "jugo",
+    "required": "naranja",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2030460000003",
+      "name": "ENSALADA LECHUGA Y TOMATE",
+      "brand": "NUESTRA COCINA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2030460000003",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "tomate",
+    "required": "ensalada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2806190000008",
+      "name": "EMPANADA DE ATUN",
+      "brand": "CAÑON",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "2806190000008",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "atun",
+    "required": "empanada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:2837540000003",
+      "name": "EMPANADA DE ATUN",
+      "brand": "CAÑON",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "2837540000003",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "atun",
+    "required": "empanada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7790070764027",
+      "name": "EMILIA COCKTAIL ESPUMANTE ROSE A BASE DE VINO 750ML",
+      "brand": "EMILIA",
+      "presentation": "0.75 L",
+      "referenceUnit": "EA",
+      "barcode": "7790070764027",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790070764027"
+    },
+    "forbidden": "vino",
+    "required": "coctel",
+    "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7791476007251",
+      "name": "EGRAN BARRAS ARROZ M",
+      "brand": "EGRAN",
+      "presentation": "0.24 KG",
+      "referenceUnit": "EA",
+      "barcode": "7791476007251",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791476007251"
+    },
+    "forbidden": "arroz",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7793344000333",
+      "name": "ELEGANTE PAPEL HIGIENICO BLANCO ALOE MAX 80MTS",
+      "brand": "ELEGANTE",
+      "presentation": "320 M2",
+      "referenceUnit": "EA",
+      "barcode": "7793344000333",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793344000333"
+    },
+    "forbidden": "leche",
+    "required": "papel higienico",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7793360129889",
+      "name": "EXTRACTO TOMATE 180G",
+      "brand": "LA CAMPAGNOLA",
+      "presentation": "0.18 KG",
+      "referenceUnit": "EA",
+      "barcode": "7793360129889",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793360129889"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7796285289324",
+      "name": "EVAGINA JABON LIQUIDO 200 ML",
+      "brand": "EVAGINA",
+      "presentation": "0.2 L",
+      "referenceUnit": "EA",
+      "barcode": "7796285289324",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07796285289324"
+    },
+    "forbidden": "jabon ropa",
+    "required": "higiene intima",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7796285289348",
+      "name": "EVAGINA JABON ESPUMA 240ML",
+      "brand": "EVAGINA",
+      "presentation": "0.24 L",
+      "referenceUnit": "EA",
+      "barcode": "7796285289348",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07796285289348"
+    },
+    "forbidden": "jabon ropa",
+    "required": "higiene intima",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798124362229",
+      "name": "ECOVITA JABON LIQUIDO EVOLUTION DP 800ML",
+      "brand": "ECOVITA",
+      "presentation": "0.8 L",
+      "referenceUnit": "EA",
+      "barcode": "7798124362229",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798124362229"
+    },
+    "forbidden": "jabon manos",
+    "required": "jabon ropa",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:2:7798446310083",
+      "name": "ENTRE PASTA PROT SAL",
+      "brand": "ENTRENUTS",
+      "presentation": "0.37 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798446310083",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798446310083"
+    },
+    "forbidden": "sal",
+    "required": "pasta de mani",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:2010100000006",
+      "name": "EMPAQUETADO NARANJA JUGO",
+      "brand": "SIN MARCA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2010100000006",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "jugo",
+    "required": "naranja",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:2030460000003",
+      "name": "ENSALADA LECHUGA Y TOMATE",
+      "brand": "NUESTRA COCINA",
+      "presentation": "1 KG",
+      "referenceUnit": "KG",
+      "barcode": "2030460000003",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "tomate",
+    "required": "ensalada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:2806190000008",
+      "name": "EMPANADA DE ATUN",
+      "brand": "CAÑON",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "2806190000008",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "atun",
+    "required": "empanada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:2837540000003",
+      "name": "EMPANADA DE ATUN",
+      "brand": "CAÑON",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "2837540000003",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "atun",
+    "required": "empanada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7790070764027",
+      "name": "EMILIA COCKTAIL ESPUMANTE ROSE A BASE DE VINO 750ML",
+      "brand": "EMILIA",
+      "presentation": "0.75 L",
+      "referenceUnit": "EA",
+      "barcode": "7790070764027",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07790070764027"
+    },
+    "forbidden": "vino",
+    "required": "coctel",
+    "category": "Bebidas"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7791476007251",
+      "name": "EGRAN BARRAS ARROZ M",
+      "brand": "EGRAN",
+      "presentation": "0.24 KG",
+      "referenceUnit": "EA",
+      "barcode": "7791476007251",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791476007251"
+    },
+    "forbidden": "arroz",
+    "required": "barra",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7793344000333",
+      "name": "ELEGANTE PAPEL HIGIENICO BLANCO ALOE MAX 80MTS",
+      "brand": "ELEGANTE",
+      "presentation": "320 M2",
+      "referenceUnit": "EA",
+      "barcode": "7793344000333",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793344000333"
+    },
+    "forbidden": "leche",
+    "required": "papel higienico",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7793360129889",
+      "name": "EXTRACTO TOMATE 180G",
+      "brand": "LA CAMPAGNOLA",
+      "presentation": "0.18 KG",
+      "referenceUnit": "EA",
+      "barcode": "7793360129889",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793360129889"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7796285289324",
+      "name": "EVAGINA JABON LIQUIDO 200 ML",
+      "brand": "EVAGINA",
+      "presentation": "0.2 L",
+      "referenceUnit": "EA",
+      "barcode": "7796285289324",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07796285289324"
+    },
+    "forbidden": "jabon ropa",
+    "required": "higiene intima",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7796285289348",
+      "name": "EVAGINA JABON ESPUMA 240ML",
+      "brand": "EVAGINA",
+      "presentation": "0.24 L",
+      "referenceUnit": "EA",
+      "barcode": "7796285289348",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07796285289348"
+    },
+    "forbidden": "jabon ropa",
+    "required": "higiene intima",
+    "category": "Higiene"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798124362229",
+      "name": "ECOVITA JABON LIQUIDO EVOLUTION DP 800ML",
+      "brand": "ECOVITA",
+      "presentation": "0.8 L",
+      "referenceUnit": "EA",
+      "barcode": "7798124362229",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798124362229"
+    },
+    "forbidden": "jabon manos",
+    "required": "jabon ropa",
+    "category": "Limpieza"
+  },
+  {
+    "product": {
+      "ean": "sepa:11:5:7798446310083",
+      "name": "ENTRE PASTA PROT SAL",
+      "brand": "ENTRENUTS",
+      "presentation": "0.37 KG",
+      "referenceUnit": "EA",
+      "barcode": "7798446310083",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798446310083"
+    },
+    "forbidden": "sal",
+    "required": "pasta de mani",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7793360129889",
+      "name": "EXTRACTO SIMPLE DE TOMATE, LA CAMPAGNOLA, 180 gr",
+      "brand": "LA CAMPAGNOLA",
+      "presentation": "180 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7793360129889",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793360129889"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:2:1:7798158708956",
+      "name": "ENSALADA DE ATUN MIXTA C/VEGETALE, LA ANONIMA, 150 gr",
+      "brand": "LA ANONIMA",
+      "presentation": "150 gr",
+      "referenceUnit": "kgr",
+      "barcode": "7798158708956",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07798158708956"
+    },
+    "forbidden": "atun",
+    "required": "ensalada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7791720049815",
+      "name": "ENSALADA DE ATUN CARREFOUR CLASSIC X 160 GRS",
+      "brand": "CARREFOUR CLASSIC",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7791720049815",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791720049815"
+    },
+    "forbidden": "atun",
+    "required": "ensalada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:2910038300004",
+      "name": "ESQUELETO CERVEZA HEINEKEN",
+      "brand": "S/D",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "2910038300004",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "cerveza",
+    "required": "esqueleto",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:3616958849904",
+      "name": "EXPRIMIDOR DE JUGO MANDINE MCJ50 24L NEG",
+      "brand": "S/D",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "3616958849904",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "03616958849904"
+    },
+    "forbidden": "jugo",
+    "required": "exprimidor",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:2910139900004",
+      "name": "ESQUELETO GASEOSA X 8 ENVASES",
+      "brand": "S/D",
+      "presentation": "1 UNI",
+      "referenceUnit": "UNI",
+      "barcode": "2910139900004",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "gaseosa",
+    "required": "esqueleto",
+    "category": "Otros"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:0000080042532",
+      "name": "EXTRACTO DOBLE DE TOMATE MUTTI TUBO X 130 GRS",
+      "brand": "MUTTI",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "0000080042532",
+      "barcodeStatus": "restricted"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:10:1:7792180146199",
+      "name": "ENSALADA RUSA CON ATUN LISTA MENU BOX X 230 GRS",
+      "brand": "MENU BOX",
+      "presentation": "1 UNI",
+      "referenceUnit": "GRM",
+      "barcode": "7792180146199",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07792180146199"
+    },
+    "forbidden": "atun",
+    "required": "ensalada",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7793360129889",
+      "name": "Extracto de tomate LA CAMPAGNOLA  X180g FCO-180-gr.",
+      "brand": "LA CAMPAGNOLA",
+      "presentation": ".18 gr.",
+      "referenceUnit": "gr.",
+      "barcode": "7793360129889",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07793360129889"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:9:1:7791050000012",
+      "name": "Extracto de tomate almar doble LAT-150-gr.",
+      "brand": "ALMAR",
+      "presentation": "150.00 gr.",
+      "referenceUnit": "KG.",
+      "barcode": "7791050000012",
+      "barcodeStatus": "valid_format_and_checksum",
+      "gtin": "07791050000012"
+    },
+    "forbidden": "vino",
+    "required": "extracto",
+    "category": "Almacén"
   }
 ]

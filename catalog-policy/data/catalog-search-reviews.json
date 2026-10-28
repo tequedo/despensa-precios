@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedOn": "2026-10-27",
+  "reviewedOn": "2026-10-28",
   "scope": "Search classification and aliases only. Never replace source names, brands, packages or prices.",
   "products": [
     {
@@ -1132,6 +1132,168 @@
       "blockedFamilies": [
         "sal"
       ]
+    },
+    {
+      "barcode": "7798124362229",
+      "status": "confirmed",
+      "names": [
+        "ECOVITA JABON LIQUIDO EVOLUTION DP 800ML",
+        "JABON LIQUIDO BAJA ESPUMA ECOVITA REPUESTO X 800CC"
+      ],
+      "brands": [
+        "ECOVITA"
+      ],
+      "rawPrefixes": [
+        "ECOVITA JABON LIQUIDO EVOLUTION DP 800ML",
+        "JABON LIQUIDO BAJA ESPUMA ECOVITA REPUESTO X 800CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "ECOVITA JABON LIQUIDO EVOLUTION DP 800ML",
+          "brand": "ECOVITA"
+        },
+        {
+          "name": "JABON LIQUIDO BAJA ESPUMA ECOVITA REPUESTO X 800CC",
+          "brand": "ECOVITA"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabón líquido para ropa Ecovita Evolution"
+      ],
+      "evidence": {
+        "url": "https://www.ecovita.com.ar/jabon-liquido",
+        "corroborationUrl": "https://www.ecovita.com.ar/_files/ugd/9384cf_ad416abe37f44b71b506b170ad0be2f0.pdf",
+        "kind": "Manufacturer page explicitly identifies Evolution as laundry soap and 800 ml doy-pack. Indexed manufacturer brochure includes exact EAN 7798124362229; full 31 MB PDF could not be fetched. Alias and classification only, without importing prices or changing source fields."
+      }
+    },
+    {
+      "barcode": "7796285289324",
+      "status": "confirmed",
+      "names": [
+        "EVAGINA JABON LIQUIDO 200 ML"
+      ],
+      "brands": [
+        "EVAGINA"
+      ],
+      "rawPrefixes": [
+        "EVAGINA JABON LIQUIDO 200 ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "EVAGINA JABON LIQUIDO 200 ML",
+          "brand": "EVAGINA"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [
+        "Jabón líquido de higiene íntima Evagina"
+      ],
+      "evidence": {
+        "url": "https://elea.com/productos/evagina-jabon-liquido/",
+        "kind": "Manufacturer full page: matching brand, liquid-soap name and 200 ml presentation. EAN remains the original pinned SEPA identity; the manufacturer page does not establish a new barcode match. Classification and discovery only."
+      }
+    },
+    {
+      "barcode": "7796285289348",
+      "status": "confirmed",
+      "names": [
+        "EVAGINA JABON ESPUMA 240ML"
+      ],
+      "brands": [
+        "EVAGINA"
+      ],
+      "rawPrefixes": [
+        "EVAGINA JABON ESPUMA 240ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "EVAGINA JABON ESPUMA 240ML",
+          "brand": "EVAGINA"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [
+        "Espuma de higiene íntima Evagina"
+      ],
+      "evidence": {
+        "url": "https://elea.com/productos/evagina-espuma-de-higiene-intima/",
+        "corroborationUrl": "https://elea.com/uploads/PROSPECTOS/Prospecto-Evagina-Espuma.pdf",
+        "kind": "Manufacturer identifies the 240 ml intimate cleansing foam. The soap-free formulation is not used to overwrite the source name JABON ESPUMA; jabon remains a discovery family, not a formulation claim. EAN and raw source identity unchanged. No health claims or external prices imported."
+      }
+    },
+    {
+      "barcode": "7798446310083",
+      "status": "confirmed",
+      "names": [
+        "ENTRE PASTA PROT SAL"
+      ],
+      "brands": [
+        "ENTRENUTS"
+      ],
+      "rawPrefixes": [
+        "ENTRE PASTA PROT SAL"
+      ],
+      "fingerprints": [
+        {
+          "name": "ENTRE PASTA PROT SAL",
+          "brand": "ENTRENUTS"
+        }
+      ],
+      "family": "pasta de mani",
+      "category": "Almacén",
+      "aliases": [
+        "Pasta de maní proteica Entrenuts Salted Caramel"
+      ],
+      "evidence": {
+        "url": "https://nutribull.com.ar/producto/crema-de-mani-entrenuts-protein-salted-caramel-370-grs/",
+        "kind": "Retailer full product page explicitly supplies exact SKU 7798446310083, Entrenuts brand, full peanut-paste type, Protein Salted Caramel variety and 370 g title. Classification only; seller stock and prices are not applied to local SEPA availability."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7793344000333",
+      "status": "confirmed",
+      "names": [
+        "ELEGANTE PAPEL HIGIENICO BLANCO ALOE MAX 80MTS",
+        "PAPEL HIGIENICO H SIMP ALOE VERA ELEGANTE 4X80 MTS"
+      ],
+      "brands": [
+        "ELEGANTE"
+      ],
+      "rawPrefixes": [
+        "ELEGANTE PAPEL HIGIENICO BLANCO ALOE MAX 80MTS",
+        "PAPEL HIGIENICO H SIMP ALOE VERA ELEGANTE 4X80 MTS"
+      ],
+      "fingerprints": [
+        {
+          "name": "ELEGANTE PAPEL HIGIENICO BLANCO ALOE MAX 80MTS",
+          "brand": "ELEGANTE"
+        },
+        {
+          "name": "PAPEL HIGIENICO H SIMP ALOE VERA ELEGANTE 4X80 MTS",
+          "brand": "ELEGANTE"
+        }
+      ],
+      "family": "papel higienico",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA source: ELEGANTE says 80MTS but declares 320 M2. A peer explicitly names 4X80 MTS with 1 UNI. The peer does not authorize changing area into length for the inconsistent row; only the original 320 M2 presentation is quarantined."
+      },
+      "quoteReview": {
+        "code": "source_length_dimension_review",
+        "presentations": [
+          "320 M2"
+        ],
+        "reason": "El nombre informa 80 metros y la presentación declara 320 M2. El registro no detalla el conteo de rollos y otra sucursal informa 4x80 metros. No se transforma superficie en longitud ni se corrige la fuente; se aparta este importe hasta confirmar su presentación."
+      }
     }
   ],
   "scopedProducts": [
