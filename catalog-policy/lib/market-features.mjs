@@ -17,27 +17,39 @@ export function marketCategory(product) {
     if(product.catalogReview?.code==='semantic_fingerprint_changed')return 'Otros';
     const reviewed=reviewedCatalogEntry(product);if(reviewed)return reviewed.category;
     const text=normalize(`${product.name??''} ${product.brand??''}`),main=productSearchFamily(product),use=oilUse(text);
+    if(['tetina','copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','partitura','mamadera','batidor','espumador','abridor','dispensador','dosificador','exprimidor','freidora','manualidad','jarra','jarro','juego','hervidor','sacaleche','set','taza','termo','naranja'].includes(main)||/\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';
+    if(main==='alimento'&&/\b(perro|gato|mascota|pedigree|whiskas|dog chow|cat chow)\b/.test(text))return 'Mascotas';
     if(use)return use==='personal'?'Higiene':use==='household'?'Limpieza':'Otros';
     if(/\bagua\b/.test(text)&&nonDrinkingWater(text))return /\b(micelar|oxigenada|colonia|desmaquillante|limpiadora|facial|corporal)\b/.test(text)?'Higiene':/\b(lavandina|hipoclorito|desinfectante)\b|\bpara plancha\b/.test(text)?'Limpieza':'Otros';
-    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor','dispensador','dosificador','exprimidor','naranja'].includes(main)||/\bbolsa (?:de|para) vino\b/.test(text))return 'Otros';
-    if(['coloracion','shampoo','desodorante','leche limpiadora'].includes(main))return 'Higiene';
-    if(main==='difusor')return 'Limpieza';
-    if(['licor','cocktail','espumante'].includes(main))return 'Bebidas';
-    if(['cuadril','colita de cuadril','cuadrada','carre','bondiola'].includes(main))return 'Carnes';
+    if(['maquillaje','coloracion','shampoo','desodorante','leche limpiadora','leche corporal','panal','quitaesmalte','toalla humeda'].includes(main))return 'Higiene';
+    if(main==='limpiador')return /\b(facial|corporal|piel|rostro)\b/.test(text)?'Higiene':'Limpieza';
+    if(['difusor','sal lavavajillas','rollo de cocina','shampoo vehiculos'].includes(main))return 'Limpieza';
+    if(['vino','cerveza','gaseosa','jugo','soda','agua','licor','cocktail','espumante'].includes(main))return 'Bebidas';
+    if(['solomillo','roast beef','paleta','peceto','pechuga','pechito','punta de espalda','osobuco','nalga','carne','pollo','cerdo','pescado','matambre','vacio','lomo','falda','cuadril','colita de cuadril','cuadrada','carre','bondiola'].includes(main))return 'Carnes';
+    if(['merluza','marisco','salmon'].includes(main))return /\b(?:aceite|agua)\b/.test(text)||/\bmix marisco/.test(text)?'Almacén':'Carnes';
+    if(['queso','ricotta'].includes(main))return 'Lácteos';
     if(main==='crema'&&/\bcrema (?:de |d )?leche\b/.test(text))return 'Lácteos';
     if(main==='crema'&&/\b(?:p|para|de) cafe\b/.test(text))return 'Almacén';
-    if(main==='jabon'&&/\bjabon (?:blanco|pan|para la ropa)\b/.test(text))return 'Limpieza';
-    if(main==='jabon'&&/\b(intimo|manos|piel|antibacterial|exfoliant(?:e)?|humectacion)\b/.test(text))return 'Higiene';
-    if(main==='tomate'&&/\b(triturado|cubeteado|conserva|extracto|concentrado)\b/.test(text))return 'Almacén';
-    if(['empanada','ensalada','pasta de mani'].includes(main))return 'Almacén';
+    if(main==='jabon'){
+        if(/\b(ropa|lavarropas|polvo|pvo|en pan|jabon pan|jabon blanco|baja espuma|alta espuma|pan blanco|lavado|matic|quitamancha|diluir|diluible|bicarbonato)\b/.test(text))return 'Limpieza';
+        if(/\b(tocador|toc|facial|corporal|cuerpo|intimo|manos|piel|antibacterial|antibac|skin|skincare3|glicerina|glicer|hidratante|exfoliant(?:e)?|humectacion|humect|baby|bebe)\b/.test(text))return 'Higiene';
+        return 'Otros';
+    }
+    if(main==='tomate'&&/\b(triturado|cubeteado|conserva|extracto|concentrado|pulpa)\b/.test(text))return 'Almacén';
+    if(['empanada','ensalada','pasta de mani','fideo','focaccia','flan','arroz','harina','gomita','granola','grisin','medallon','hummus','ketchup','jardinera','mani','picadillo','lenteja','milanesa','mousse','sardina','oblea','paella','pastilla','pate','pipa','pochoclo','prepizza','pudding','rebozador','rocio vegetal','sopa','semilla','tarta','masa','tutuca'].includes(main))return 'Almacén';
+    if(['postre','helado','flan','mousse'].includes(main)&&/\b(polvo|sobre|sob)\b/.test(text))return 'Almacén';
     if(main==='bebida')return /\bbebida (?:lact|leche)/.test(text)?'Lácteos':'Bebidas';
     if(['alfajor','galletita','chocolate','bombon','dulce de leche','dulce','bano repostero','barra','bizcocho','budin','bocadito','baguette','magdalena','cafe','cacao','choclo','torta','caramelo','cereal','snack','cracker','croqueta','caballa','chorito','vinagre','mayonesa','atun','anchoa','condimento','pizza','pure','tostada'].includes(main))return 'Almacén';
     return categories.find(([,pattern])=>pattern.test(text))?.[0]??'Otros';
 }
 export function comparableUnit(price, product) {
+    // An unresolved source type cannot establish whether a number denotes
+    // bought contents or a container's capacity. Keep its original price only.
+    const review=reviewedCatalogEntry(product);
+    if(review?.status==='pending_source_confirmation'&&!review.family)return null;
     // A vessel's capacity or an appliance's specification is not bought food
     // volume. Source sizes may still support discovery, never a price per litre.
-    if(['copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','mamadera','batidor','espumador','abridor','dispensador','dosificador','exprimidor'].includes(productSearchFamily(product))||(productSearchFamily(product)==='difusor'&&/\baparato\b/.test(normalize(product.name))))return null;
+    if(['tetina','copa','vaso','envase','cuchara','pinza','filtro','cafetera','celular','libro','partitura','mamadera','batidor','espumador','abridor','dispensador','dosificador','exprimidor','freidora','manualidad','jarra','jarro','juego','hervidor','sacaleche','set','taza','termo'].includes(productSearchFamily(product))||(productSearchFamily(product)==='difusor'&&/\baparato\b/.test(normalize(product.name))))return null;
     const amount = Number(price), evidence = packageEvidence(product);
     if (!(amount > 0) || !Number.isFinite(amount) || !evidence)
         return null;

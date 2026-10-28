@@ -1,10 +1,22 @@
 import { normalize, sizes, packageEvidence, sameSize } from './price-safety.mjs';
 import { createProductIdMatcher, barcodeIdentity } from './product-identity.mjs';
-import {reviewedCatalogEntry,oilUse,nonDrinkingWater} from './catalog-semantics.mjs';
+import {reviewedCatalogEntry,oilUse,nonDrinkingWater,publishingFamily} from './catalog-semantics.mjs';
 
 const words={yogurt:'yogur',aceites:'aceite',aceitunas:'aceituna',acondicionadores:'acondicionador',aderezos:'aderezo',aguas:'agua',ajies:'aji',alfajores:'alfajor',alim:'alimento',alimentos:'alimento',anchoas:'anchoa',aritos:'arito',aromatizadores:'aromatizador',aromatizantes:'aromatizante',arroces:'arroz',arvejas:'arveja',asados:'asado',atunes:'atun',azucares:'azucar',bombones:'bombon',chocolates:'chocolate',libros:'libro',avellanas:'avellana',leches:'leche',barras:'barra',barrita:'barra',barritas:'barra',bebidas:'bebida',bizcoch:'bizcocho',bizcochos:'bizcocho',reposteria:'repostero',batidores:'batidor',mamaderas:'mamadera',bolsas:'bolsa',budines:'budin',bocad:'bocadito',bocaditos:'bocadito',madalena:'magdalena',madalenas:'magdalena',magdalenas:'magdalena',bananas:'banana',baguettes:'baguette',bifes:'bife',bondiolas:'bondiola',fideos:'fideo'};
 Object.assign(words,{caramelos:'caramelo',cereales:'cereal',copos:'copo',chips:'chip',crackers:'cracker',cremas:'crema',croquetas:'croqueta',choritos:'chorito',caballas:'caballa',vinagres:'vinagre',licores:'licor',cucharas:'cuchara',pinzas:'pinza',filtros:'filtro',cafeteras:'cafetera',celulares:'celular',tostadas:'tostada',tortas:'torta',choclos:'choclo'});
 Object.assign(words,{detergentes:'detergente',difusores:'difusor',discos:'disco',palitos:'palito',dispensadores:'dispensador',dispenser:'dispensador',dispensers:'dispensador',dosificadores:'dosificador',champu:'shampoo',shampoos:'shampoo',desodorantes:'desodorante'});
+Object.assign(words,{choc:'chocolate',choco:'chocolate',tostadita:'tostada',tostaditas:'tostada',tazas:'taza',termos:'termo',tutucas:'tutuca'});
+Object.assign(words,{tetinas:'tetina'});
+Object.assign(words,{toallas:'toalla',toallitas:'toallita',humedas:'humeda'});
+Object.assign(words,{semillas:'semilla',sopas:'sopa',saborizadores:'saborizador',saborizantes:'saborizante'});
+Object.assign(words,{panales:'panal',pastillas:'pastilla',pochoclos:'pochoclo'});
+Object.assign(words,{obleas:'oblea'});
+Object.assign(words,{sardinas:'sardina'});
+Object.assign(words,{milanesas:'milanesa',mariscos:'marisco',mostachol:'fideo'});
+Object.assign(words,{lentejas:'lenteja',limpiadores:'limpiador',hervidores:'hervidor'});
+Object.assign(words,{jarras:'jarra',jarros:'jarro',juegos:'juego'});
+Object.assign(words,{galleta:'galletita',gomitas:'gomita',grisines:'grisin',medallones:'medallon'});
+Object.assign(words,{fusilli:'fideo'});
 Object.assign(words,{empanadas:'empanada',ensaladas:'ensalada',exprimidores:'exprimidor',esqueletos:'esqueleto',coctel:'cocktail',cocteles:'cocktail',cocktails:'cocktail',espumantes:'espumante'});
 const productWord = word => Object.hasOwn(words,word)?words[word]:word;
 const searchText=value=>normalize(value).replace(/\bbon o bon\b/g,'bonobon').replace(/\blay s\b/g,'lays');
@@ -13,17 +25,19 @@ export const matchesCatalogBrand=(actual,requested)=>searchText(actual)===search
 const tokens = value => searchText(value).split(' ').filter(word => word && !['de','del','la','el','los','las','en'].includes(word)).map(productWord);
 // The first named product defines its family: an ingredient, flavour or a
 // container's intended beverage must not turn it into that other product.
-const families = /\b(pasta de mani|crema de mani|mantequilla de mani|empaquetado naranja|empanada|ensalada|exprimidor|esqueleto|cocktail|espumante|papel higienico|leche(?: de)? limp(?:ieza|iadora)|limpieza facial|dulce de leche|agua(?: de)? lavandina|arroz con leche|arroz inflado|bano(?: de)? repostero|aji no men|papas fritas|colita de cuadril|cuch(?:ar)? (?:de )?te|cuch fideo|lays|takis|cheetos|cerealitas|bonobon|difusor|disco|palito|dispensador|dosificador|shampoo|desodorante|dulce|cacao|choclo|torta|caramelo|cereal|copo|chip|cracker|crocante|croqueta|caballa|chorito|vinagre|licor|crema|complemento|cuchara|pinza|filtro|cafetera|celular|coloracion|maquillaje|calzado|cuadril|cuadrada|carre|pizza|pure|tostada|barra|bebida|bizcocho|budin|bocadito|magdalena|baguette|banana|batidor|mamadera|bolsa|bife|bondiola|alfajor(?:es)?|galletitas?|galletas?|helados?|chocolates?|bombon(?:es)?|libros?|avellanas?|aceitunas?|arvejas?|asados?|aji|aderezos?|atun|anchoas?|alimentos?|albondigas?|aritos?|condimentos?|acondicionador|antitranspirante|aromatiz(?:ante|ador)|algodon|espumador|envases?|vasos?|copas?|abridor|snacks?|leche|yogur(?:t)?|manteca|mayonesa|aceite|agua|azucar|sal|yerba|arroz|fideos?|harina|salsa|mermelada|cafe|te|queso|pan|jabon|detergente|lavandina|cerveza|vino|gaseosa|jugo|tomates?|postres?)\b/g;
-const family = name => [...searchText(name).split(' ').map(productWord).join(' ').matchAll(families)][0]?.[0]?.replace(/^(?:crema|mantequilla) de mani$/, 'pasta de mani').replace(/^empaquetado naranja$/, 'naranja').replace(/^esqueleto$/, 'envase').replace(/^agua(?: de)? lavandina$/, 'lavandina').replace(/^bano de repostero$/, 'bano repostero').replace(/^(papas fritas|lays|takis|cheetos|chip|crocante)$/, 'snack').replace(/^cerealitas$/, 'galletita').replace(/^copo$/, 'cereal').replace(/^cuch(?:ar)? (?:de )?te$|^cuch fideo$/, 'cuchara').replace(/^(disco|palito)$/, 'snack').replace(/^antitranspirante$/, 'desodorante').replace(/^leche(?: de)? limp(?:ieza|iadora)$|^limpieza facial$/, 'leche limpiadora').replace(/^bonobon$/, 'bombon').replace(/^aji no men$/, 'fideo').replace(/^arroz con leche$/, 'postre').replace(/^arroz inflado$/, 'snack').replace(/^yogurt$/, 'yogur').replace(/^alfajores$/, 'alfajor').replace(/^(galletitas|galletas)$/, 'galletita').replace(/^(helados|chocolates|fideos|aderezos|anchoas|alimentos|albondigas|aritos|condimentos|envases|vasos|copas|snacks|tomates|postres)$/, value => value.slice(0,-1));
-export const productSearchFamily=product=>{const review=reviewedCatalogEntry(product);return review?review.family:family(product.name);};
+const families = /\b(tetina|port salut|veggie stick|polvo compacto|tapa pascualina|tarta|taza|termo|tutuca|toalla humeda|toallita humeda|shampoo(?: para)? (?:autos?|automotor|vehiculos)|saca leche|sacaleches?|saborizador|saborizante|sazon|salmon|semilla|solomillo|sopa|set(?:x\d+)?|rollo de cocina|rocio vegetal|roast beef|rebozador|ricotta|quitaesmalte|porta galletitas|punta de espalda|paleta(?= (?:churrasco|bandeja|al vacio|abc))|peceto|pechuga|pechito|panal|paella|pastilla|pate|pipas? peladas|pochoclo|prepizza|pudding|osobuco|naranja(?: de)? jugo|nalga|oblea|sardina|sal(?: para)? lavavajillas|carne|pollo|cerdo|pescado|merluza|matambre|vacio|milanesa|marisco|mousse|leche corporal|limpiador|hervidor|picadillo|lenteja|lomo|mani|jardinera|jarra|jarro|juego|tintura|hummus|ketchup|gomita|granola|grisin|medallon|falda|freidora|flan|focaccia|pasta de mani|crema de mani|mantequilla de mani|empaquetado naranja|empanada|ensalada|exprimidor|esqueleto|cocktail|espumante|papel higienico|leche(?: de)? limp(?:ieza|iadora)|limpieza facial|dulce de leche|agua(?: de)? lavandina|arroz con leche|arroz inflado|bano(?: de)? repostero|aji no men|papas fritas|colita de cuadril|cuch(?:ar)? (?:de )?te|cuch fideo|lays|takis|cheetos|cerealitas|bonobon|difusor|disco|palito|dispensador|dosificador|shampoo|desodorante|dulce|cacao|choclo|torta|caramelo|cereal|copo|chip|cracker|crocante|croqueta|caballa|chorito|vinagre|licor|crema|complemento|cuchara|pinza|filtro|cafetera|celular|coloracion|maquillaje|calzado|cuadril|cuadrada|carre|pizza|pure|tostada|barra|bebida|bizcocho|budin|bocadito|magdalena|baguette|banana|batidor|mamadera|bolsa|bife|bondiola|alfajor(?:es)?|galletitas?|galletas?|helados?|chocolates?|bombon(?:es)?|libros?|avellanas?|aceitunas?|arvejas?|asados?|aji|aderezos?|atun|anchoas?|alimentos?|albondigas?|aritos?|condimentos?|acondicionador|antitranspirante|aromatiz(?:ante|ador)|algodon|espumador|envases?|vasos?|copas?|abridor|snacks?|leche|yogur(?:t)?|manteca|mayonesa|aceite|agua|azucar|sal|yerba|arroz|fideos?|harina|salsa|mermelada|cafe|te|queso|pan|jabon|detergente|lavandina|cerveza|vino|gaseosa|jugo|tomates?|postres?)\b/g;
+const namedFamily = name => [...searchText(name).split(' ').map(productWord).join(' ').matchAll(families)][0]?.[0]?.replace(/^port salut$/, 'queso').replace(/^veggie stick$/, 'snack').replace(/^polvo compacto$/, 'maquillaje').replace(/^tapa pascualina$/, 'masa').replace(/^toallita humeda$/, 'toalla humeda').replace(/^shampoo(?: para)? (?:autos?|automotor|vehiculos)$/, 'shampoo vehiculos').replace(/^saca leche$|^sacaleches?$/, 'sacaleche').replace(/^(?:saborizador|saborizante|sazon)$/, 'condimento').replace(/^setx\d+$/, 'set').replace(/^porta galletitas$/, 'envase').replace(/^pipas? peladas$/, 'pipa').replace(/^naranja(?: de)? jugo$/, 'naranja').replace(/^sal para lavavajillas$/, 'sal lavavajillas').replace(/^tintura$/, 'coloracion').replace(/^(?:crema|mantequilla) de mani$/, 'pasta de mani').replace(/^empaquetado naranja$/, 'naranja').replace(/^esqueleto$/, 'envase').replace(/^agua(?: de)? lavandina$/, 'lavandina').replace(/^bano de repostero$/, 'bano repostero').replace(/^(papas fritas|lays|takis|cheetos|chip|crocante)$/, 'snack').replace(/^cerealitas$/, 'galletita').replace(/^copo$/, 'cereal').replace(/^cuch(?:ar)? (?:de )?te$|^cuch fideo$/, 'cuchara').replace(/^(disco|palito)$/, 'snack').replace(/^antitranspirante$/, 'desodorante').replace(/^leche(?: de)? limp(?:ieza|iadora)$|^limpieza facial$/, 'leche limpiadora').replace(/^bonobon$/, 'bombon').replace(/^aji no men$/, 'fideo').replace(/^arroz con leche$/, 'postre').replace(/^arroz inflado$/, 'snack').replace(/^yogurt$/, 'yogur').replace(/^alfajores$/, 'alfajor').replace(/^(galletitas|galletas)$/, 'galletita').replace(/^(helados|chocolates|fideos|aderezos|anchoas|alimentos|albondigas|aritos|condimentos|envases|vasos|copas|snacks|tomates|postres)$/, value => value.slice(0,-1));
+const family=name=>{const main=namedFamily(name);return main==='sal'&&/\blavavajillas\b/.test(normalize(name))?'sal lavavajillas':main;};
+export const productSearchFamily=product=>{const review=reviewedCatalogEntry(product);if(review)return review.family;const publishing=publishingFamily(product);if(publishing)return publishing;const main=family(product.name);return ['atun','carne','pollo','arroz','sal','pate'].includes(main)&&/\b(gato|perro|mascota)\b/.test(normalize(product.name))?'alimento':main;};
 const vesselDiscoveryCapacity=product=>{
  if(!['dispensador','dosificador','copa','vaso','cafetera'].includes(productSearchFamily(product)))return null;
  const values=sizes(product.name);return values.length===1&&values[0].dimension==='volume'?values[0]:null;
 };
-const catalogWords=(product,review)=>tokens([product.name,product.brand,...(review?.aliases??[]),review?review.family:family(product.name),matchesCatalogBrand(product.brand,'Lays')?'papas fritas':''].filter(Boolean).join(' '));
+const catalogWords=(product,review)=>tokens([product.name,product.brand,...(review?.aliases??[]),review?review.family:productSearchFamily(product),matchesCatalogBrand(product.brand,'Lays')?'papas fritas':''].filter(Boolean).join(' '));
 const familyMatches=(product,query,review)=>{
- const specific=review?.rawPrefixes.some(prefix=>normalize(query).startsWith(normalize(prefix)));
- const expected=specific?review.family:family(query),actual=review?review.family:family(product.name);
+ const specific=review&&(review.rawPrefixes.some(prefix=>normalize(query).startsWith(normalize(prefix)))
+  ||review.aliases.some(alias=>normalize(query)===normalize(alias)));
+ const expected=specific?review.family:family(query),actual=review?review.family:productSearchFamily(product);
  if(product.catalogReview?.code==='semantic_fingerprint_changed'&&expected&&normalize(query)!==normalize(product.name)&&!(tokens(query).length>1&&normalize(product.name).startsWith(normalize(query))))return false;
  if(!specific&&review?.blockedFamilies?.includes(expected))return false;
  return !expected||!actual||expected===actual||(expected==='dulce'&&['dulce de leche','mermelada'].includes(actual))||(expected==='aji'&&actual==='condimento')
@@ -44,7 +58,7 @@ const matchesOilKind = (name, query) => {
   return !expected || !actual || expected === actual;
 };
 const matchesOilUse=(product,query)=>{
- const expected=oilUse(query),actual=oilUse(`${product.name} ${product.brand??''}`);
+ const expected=oilUse(query),actual=reviewedCatalogEntry(product)?.oilUse??oilUse(`${product.name} ${product.brand??''}`);
  return expected?expected===actual:!oilKind(query)||!actual;
 };
 const matchesWaterUse=(name,query)=>!(/\bagua\b/.test(normalize(query))&&/\bagua\b/.test(normalize(name)))||nonDrinkingWater(name)===nonDrinkingWater(query);
@@ -71,6 +85,10 @@ function catalogQuery(value) {
 
 // Autocomplete accepts words still being typed. Quotes retain exact matching.
 export function matchesCatalogQuery(product, query) {
+  // A fully specified source title can join an abbreviation to its size
+  // (CHOCO180G). Measure parsing must not hide that original qualified title.
+  // This only permits discovery; all quote/identity/package checks still apply.
+  if(normalize(product.name)===normalize(query)&&tokens(query).length>1)return true;
   const {text, measures, amount} = catalogQuery(query);
   const review=reviewedCatalogEntry(product),wanted = tokens(text), available = catalogWords(product,review);
   if (!wanted.length || !wanted.every(word => available.some(value => value.startsWith(word)))) return false;

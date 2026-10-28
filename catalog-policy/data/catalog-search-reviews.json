@@ -1294,6 +1294,3741 @@
         ],
         "reason": "El nombre informa 80 metros y la presentación declara 320 M2. El registro no detalla el conteo de rollos y otra sucursal informa 4x80 metros. No se transforma superficie en longitud ni se corrige la fuente; se aparta este importe hasta confirmar su presentación."
       }
+    },
+    {
+      "barcode": "7501015204269",
+      "status": "confirmed",
+      "names": [
+        "FOAMY  CAFE 50GR"
+      ],
+      "brands": [
+        "PELIKAN"
+      ],
+      "rawPrefixes": [
+        "FOAMY  CAFE 50GR"
+      ],
+      "fingerprints": [
+        {
+          "name": "FOAMY  CAFE 50GR",
+          "brand": "PELIKAN"
+        }
+      ],
+      "family": "manualidad",
+      "category": "Otros",
+      "aliases": [
+        "Foamy moldeable Pelikan color café"
+      ],
+      "evidence": {
+        "url": "https://www.pelikan.com/images/assets/catalogs/2023_Catalogo_Pelikan_Argentina-Libro-completo_D_.pdf",
+        "kind": "Indexed manufacturer catalog: exact EAN, color Café and 50 g foamy in Manualidades/Magimasa; coffee is a color, not food."
+      }
+    },
+    {
+      "barcode": "7891000120774",
+      "status": "confirmed",
+      "names": [
+        "FELIX ATUN WET",
+        "ALIMENTO HUMEDO P/ GATO ADULTO ATUN, FELIX, 85 gr"
+      ],
+      "brands": [
+        "FELIX"
+      ],
+      "rawPrefixes": [
+        "FELIX ATUN WET",
+        "ALIMENTO HUMEDO P/ GATO ADULTO ATUN, FELIX, 85 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "FELIX ATUN WET",
+          "brand": "FELIX"
+        },
+        {
+          "name": "ALIMENTO HUMEDO P/ GATO ADULTO ATUN, FELIX, 85 gr",
+          "brand": "FELIX"
+        }
+      ],
+      "family": "alimento",
+      "category": "Mascotas",
+      "aliases": [
+        "Alimento húmedo para gato adulto atún Felix"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Same checksum-valid EAN has the full cat-food description and 85 gr in another source row. The abbreviated 0.85 KG source is not repaired."
+      },
+      "quoteReview": {
+        "code": "source_peer_content_conflict",
+        "presentations": [
+          "0.85 KG"
+        ],
+        "reason": "La descripción completa del mismo EAN informa alimento para gato de 85 g, mientras este registro declara 0,85 kg. Se aparta esta presentación sin convertir ni modificar su peso o precio."
+      }
+    },
+    {
+      "barcode": "7798147780055",
+      "status": "confirmed",
+      "names": [
+        "FRAMBUESAS BAÑADAS CHOCO BCO/LECHE, FRANUI, 150 gr",
+        "Bombón de frambuesa FRANUI LECHE  x 150g POT-150-gr."
+      ],
+      "brands": [
+        "FRANUI"
+      ],
+      "rawPrefixes": [
+        "FRAMBUESAS BAÑADAS CHOCO BCO/LECHE, FRANUI, 150 gr",
+        "Bombón de frambuesa FRANUI LECHE  x 150g POT-150-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "FRAMBUESAS BAÑADAS CHOCO BCO/LECHE, FRANUI, 150 gr",
+          "brand": "FRANUI"
+        },
+        {
+          "name": "Bombón de frambuesa FRANUI LECHE  x 150g POT-150-gr.",
+          "brand": "FRANUI"
+        }
+      ],
+      "family": "bombon",
+      "category": "Almacén",
+      "aliases": [
+        "Bombón de frambuesa Franui con chocolate y leche"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7730114100015",
+      "status": "confirmed",
+      "names": [
+        "fid.largos BLUE PATNA de arroz p/celiac PAQ-500-gr."
+      ],
+      "brands": [
+        "BLUE PATNA"
+      ],
+      "rawPrefixes": [
+        "fid.largos BLUE PATNA de arroz p/celiac PAQ-500-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "fid.largos BLUE PATNA de arroz p/celiac PAQ-500-gr.",
+          "brand": "BLUE PATNA"
+        }
+      ],
+      "family": "fideo",
+      "category": "Almacén",
+      "aliases": [
+        "Fideos de arroz Blue Patna"
+      ],
+      "evidence": {
+        "url": "https://newgarden.com.ar/fideos-de-arroz-spaguetti-blue-patna-x-500-g-sin-tacc.html",
+        "kind": "Indexed retailer product page: same EAN and explicit rice-noodle type. Original .50 gr. source stays excluded; no weight is overwritten."
+      }
+    },
+    {
+      "barcode": "7791337010710",
+      "status": "confirmed",
+      "names": [
+        "FLAN DE DULCE DE LECHE X2 U, DANETTE, 190 gr",
+        "FLAN DULCE DE LECHE DANETTE PACK 2 X 95 GR."
+      ],
+      "brands": [
+        "DANETTE"
+      ],
+      "rawPrefixes": [
+        "FLAN DE DULCE DE LECHE X2 U, DANETTE, 190 gr",
+        "FLAN DULCE DE LECHE DANETTE PACK 2 X 95 GR."
+      ],
+      "fingerprints": [
+        {
+          "name": "FLAN DE DULCE DE LECHE X2 U, DANETTE, 190 gr",
+          "brand": "DANETTE"
+        },
+        {
+          "name": "FLAN DULCE DE LECHE DANETTE PACK 2 X 95 GR.",
+          "brand": "DANETTE"
+        }
+      ],
+      "family": "flan",
+      "category": "Lácteos",
+      "aliases": [
+        "Flan de dulce de leche Danette"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7793126001954",
+      "status": "confirmed",
+      "names": [
+        "GAUCH PAPAS SAL MAR",
+        "PAPAS FRITAS CON SAL MARINA, GAUCHITAS, 80 gr"
+      ],
+      "brands": [
+        "GAUCHITAS"
+      ],
+      "rawPrefixes": [
+        "GAUCH PAPAS SAL MAR",
+        "PAPAS FRITAS CON SAL MARINA, GAUCHITAS, 80 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "GAUCH PAPAS SAL MAR",
+          "brand": "GAUCHITAS"
+        },
+        {
+          "name": "PAPAS FRITAS CON SAL MARINA, GAUCHITAS, 80 gr",
+          "brand": "GAUCHITAS"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Papas fritas Gauchitas con sal marina"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7793126002135",
+      "status": "confirmed",
+      "names": [
+        "GAUCH PAPAS SIN SAL",
+        "PAPAS FRITAS SIN SAL AGREGADA, GAUCHITAS, 80 gr"
+      ],
+      "brands": [
+        "GAUCHITAS"
+      ],
+      "rawPrefixes": [
+        "GAUCH PAPAS SIN SAL",
+        "PAPAS FRITAS SIN SAL AGREGADA, GAUCHITAS, 80 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "GAUCH PAPAS SIN SAL",
+          "brand": "GAUCHITAS"
+        },
+        {
+          "name": "PAPAS FRITAS SIN SAL AGREGADA, GAUCHITAS, 80 gr",
+          "brand": "GAUCHITAS"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Papas fritas Gauchitas sin sal"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790070418401",
+      "status": "confirmed",
+      "names": [
+        "GALLO GALLETAS DE ARROZ CRACKEADAS 100G",
+        "GALLETITAS DE ARROZ CRACKEADAS, GALLO SNACKS, 100 gr",
+        "GALLETAS DE ARROZ CRACKEADAS GALLO X 100 GRS",
+        "Galle Arroz GALLO SNACK Crackeadasx100g PAQ-1000-gr."
+      ],
+      "brands": [
+        "GALLO SNACKS",
+        "GALLO"
+      ],
+      "rawPrefixes": [
+        "GALLO GALLETAS DE ARROZ CRACKEADAS 100G",
+        "GALLETITAS DE ARROZ CRACKEADAS, GALLO SNACKS, 100 gr",
+        "GALLETAS DE ARROZ CRACKEADAS GALLO X 100 GRS",
+        "Galle Arroz GALLO SNACK Crackeadasx100g PAQ-1000-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "GALLO GALLETAS DE ARROZ CRACKEADAS 100G",
+          "brand": "GALLO SNACKS"
+        },
+        {
+          "name": "GALLETITAS DE ARROZ CRACKEADAS, GALLO SNACKS, 100 gr",
+          "brand": "GALLO SNACKS"
+        },
+        {
+          "name": "GALLETAS DE ARROZ CRACKEADAS GALLO X 100 GRS",
+          "brand": "GALLO SNACKS"
+        },
+        {
+          "name": "Galle Arroz GALLO SNACK Crackeadasx100g PAQ-1000-gr.",
+          "brand": "GALLO"
+        }
+      ],
+      "family": "galletita",
+      "category": "Almacén",
+      "aliases": [
+        "Galletitas de arroz Gallo Snacks Crackeadas"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7798082000461",
+      "status": "confirmed",
+      "names": [
+        "gal ARROZEN cuad. con sal PAQ-110-gr."
+      ],
+      "brands": [
+        "ARROZEN"
+      ],
+      "rawPrefixes": [
+        "gal ARROZEN cuad. con sal PAQ-110-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "gal ARROZEN cuad. con sal PAQ-110-gr.",
+          "brand": "ARROZEN"
+        }
+      ],
+      "family": "galletita",
+      "category": "Almacén",
+      "aliases": [
+        "Galletas de arroz Arrozen cuadradas con sal"
+      ],
+      "evidence": {
+        "url": "https://www.distribuidoracabane.com.ar/productos.php?idl=80&idr=319",
+        "kind": "Distributor catalog explicitly pairs exact EAN with rice crackers, square and salted. No external price copied."
+      }
+    },
+    {
+      "barcode": "7790070036001",
+      "status": "confirmed",
+      "names": [
+        "GDS MILA ARROZ 330GR"
+      ],
+      "brands": [
+        "GRANJA DEL SOL"
+      ],
+      "rawPrefixes": [
+        "GDS MILA ARROZ 330GR"
+      ],
+      "fingerprints": [
+        {
+          "name": "GDS MILA ARROZ 330GR",
+          "brand": "GRANJA DEL SOL"
+        }
+      ],
+      "family": "milanesa",
+      "category": "Almacén",
+      "aliases": [
+        "Milanesas de arroz y vegetales Granja del Sol"
+      ],
+      "evidence": {
+        "url": "https://dasadistribuidora.com.ar/wp-content/uploads/2025/08/CATALOGO-MRP-2025-ALIMENTOS-1.pdf",
+        "kind": "Indexed distributor catalog: exact EAN, brand and full rice-and-vegetable milanesa type; source count and price unchanged."
+      }
+    },
+    {
+      "barcode": "0076625211978",
+      "status": "pending_source_confirmation",
+      "names": [
+        "Galle Arroz RISKYDIT Cuadra Semilla 100g PAQ-90-gr."
+      ],
+      "brands": [
+        "RISKI-DIT"
+      ],
+      "rawPrefixes": [
+        "Galle Arroz RISKYDIT Cuadra Semilla 100g PAQ-90-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "Galle Arroz RISKYDIT Cuadra Semilla 100g PAQ-90-gr.",
+          "brand": "RISKI-DIT"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Abbreviated Galle title has no sufficiently verified exact primary match in this review. Do not offer it as dry rice or invent an expanded alias."
+      },
+      "blockedFamilies": [
+        "arroz"
+      ]
+    },
+    {
+      "barcode": "7798131250427",
+      "status": "confirmed",
+      "names": [
+        "HEROE JABON LIQUIDO",
+        "JABON LIQUIDO ROPA, HEROE, 800 cm3"
+      ],
+      "brands": [
+        "HEROE"
+      ],
+      "rawPrefixes": [
+        "HEROE JABON LIQUIDO",
+        "JABON LIQUIDO ROPA, HEROE, 800 cm3"
+      ],
+      "fingerprints": [
+        {
+          "name": "HEROE JABON LIQUIDO",
+          "brand": "HEROE"
+        },
+        {
+          "name": "JABON LIQUIDO ROPA, HEROE, 800 cm3",
+          "brand": "HEROE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabón líquido para ropa Héroe"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7798131250496",
+      "status": "confirmed",
+      "names": [
+        "HEROE JABON LIQUIDO",
+        "jabon liquido para ropa HEROE dp 800 cc DOY-800-ml."
+      ],
+      "brands": [
+        "HEROE"
+      ],
+      "rawPrefixes": [
+        "HEROE JABON LIQUIDO",
+        "jabon liquido para ropa HEROE dp 800 cc DOY-800-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "HEROE JABON LIQUIDO",
+          "brand": "HEROE"
+        },
+        {
+          "name": "jabon liquido para ropa HEROE dp 800 cc DOY-800-ml.",
+          "brand": "HEROE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabón líquido para ropa Héroe"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7791822676292",
+      "status": "pending_source_confirmation",
+      "names": [
+        "JAR CAFE ENC DE 280M"
+      ],
+      "brands": [
+        "RIGOLLEAU"
+      ],
+      "rawPrefixes": [
+        "JAR CAFE ENC DE 280M"
+      ],
+      "fingerprints": [
+        {
+          "name": "JAR CAFE ENC DE 280M",
+          "brand": "RIGOLLEAU"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Source abbreviation JAR with vessel brand is insufficient for a confirmed expanded type. Kept discoverable by original name and excluded from coffee search."
+      },
+      "blockedFamilies": [
+        "cafe"
+      ]
+    },
+    {
+      "barcode": "7790990004135",
+      "status": "confirmed",
+      "names": [
+        "PLUSBELLE JABON PAST",
+        "JABON TOCADOR LAVANDA GLIC, PLUSBELLE, 120 gr",
+        "JABON LAVANDA PLUSBELLE X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "PLUSBELLE JABON PAST",
+        "JABON TOCADOR LAVANDA GLIC, PLUSBELLE, 120 gr",
+        "JABON LAVANDA PLUSBELLE X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "PLUSBELLE JABON PAST",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON TOCADOR LAVANDA GLIC, PLUSBELLE, 120 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON LAVANDA PLUSBELLE X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR LAVANDA GLIC, PLUSBELLE, 120 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796430",
+      "status": "confirmed",
+      "names": [
+        "SKIP JABON LIQ CONC LIMPIEZA ACTIVA CICLOS CORTOS 800ML",
+        "JABON LIQ. ROPA BE CC LIMPIEZA DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP DP X 800 CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "SKIP JABON LIQ CONC LIMPIEZA ACTIVA CICLOS CORTOS 800ML",
+        "JABON LIQ. ROPA BE CC LIMPIEZA DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP DP X 800 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "SKIP JABON LIQ CONC LIMPIEZA ACTIVA CICLOS CORTOS 800ML",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQ. ROPA BE CC LIMPIEZA DP, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP DP X 800 CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC LIMPIEZA DP, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796454",
+      "status": "confirmed",
+      "names": [
+        "SKIP JABON LIQ CONC FRESCURA ACTIVA CICLOS CORTOS 800ML",
+        "JABON LIQ. ROPA BE CC FRESCURA DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO FRES ACTIVA SKIP DP X 800 CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "SKIP JABON LIQ CONC FRESCURA ACTIVA CICLOS CORTOS 800ML",
+        "JABON LIQ. ROPA BE CC FRESCURA DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO FRES ACTIVA SKIP DP X 800 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "SKIP JABON LIQ CONC FRESCURA ACTIVA CICLOS CORTOS 800ML",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQ. ROPA BE CC FRESCURA DP, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO FRES ACTIVA SKIP DP X 800 CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC FRESCURA DP, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7891024034767",
+      "status": "confirmed",
+      "names": [
+        "PALMOLIVE JABON BARRA KARITE 85GR",
+        "JABON TOCADOR HIDRATANTE ALOE/OLIVA, PALMOLIVE, 85 gr",
+        "JABON NATURALS ALOE Y OLIVA PALMOLIVE X 85 GRS",
+        "jabon tocador PALMOLIVE aloe y oliv 85g PAS-85-gr."
+      ],
+      "brands": [
+        "PALMOLIVE"
+      ],
+      "rawPrefixes": [
+        "PALMOLIVE JABON BARRA KARITE 85GR",
+        "JABON TOCADOR HIDRATANTE ALOE/OLIVA, PALMOLIVE, 85 gr",
+        "JABON NATURALS ALOE Y OLIVA PALMOLIVE X 85 GRS",
+        "jabon tocador PALMOLIVE aloe y oliv 85g PAS-85-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "PALMOLIVE JABON BARRA KARITE 85GR",
+          "brand": "PALMOLIVE"
+        },
+        {
+          "name": "JABON TOCADOR HIDRATANTE ALOE/OLIVA, PALMOLIVE, 85 gr",
+          "brand": "PALMOLIVE"
+        },
+        {
+          "name": "JABON NATURALS ALOE Y OLIVA PALMOLIVE X 85 GRS",
+          "brand": "PALMOLIVE"
+        },
+        {
+          "name": "jabon tocador PALMOLIVE aloe y oliv 85g PAS-85-gr.",
+          "brand": "PALMOLIVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR HIDRATANTE ALOE/OLIVA, PALMOLIVE, 85 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990000878",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR FRESCURA VITA GLIC X3, PLUSBELLE, 360 gr",
+        "JABON DE FRESCURA PLUSBELLE 3 X 120 GRS",
+        "jabon tocador PLUSBELLE frescura x3 120g PAQ-360-gr."
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR FRESCURA VITA GLIC X3, PLUSBELLE, 360 gr",
+        "JABON DE FRESCURA PLUSBELLE 3 X 120 GRS",
+        "jabon tocador PLUSBELLE frescura x3 120g PAQ-360-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR FRESCURA VITA GLIC X3, PLUSBELLE, 360 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON DE FRESCURA PLUSBELLE 3 X 120 GRS",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "jabon tocador PLUSBELLE frescura x3 120g PAQ-360-gr.",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR FRESCURA VITA GLIC X3, PLUSBELLE, 360 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990002964",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CLASICO DP, ACE, 800 cm3",
+        "JABON LIQUIDO CLASICO ACE DOYPACK X 800 CC"
+      ],
+      "brands": [
+        "ACE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CLASICO DP, ACE, 800 cm3",
+        "JABON LIQUIDO CLASICO ACE DOYPACK X 800 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CLASICO DP, ACE, 800 cm3",
+          "brand": "ACE"
+        },
+        {
+          "name": "JABON LIQUIDO CLASICO ACE DOYPACK X 800 CC",
+          "brand": "ACE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CLASICO DP, ACE, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990002988",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CLASICO DP, ACE, 3000 cm3",
+        "JABON LIQUIDO CLASICO ACE DOYPACK X 3000 CC"
+      ],
+      "brands": [
+        "ACE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CLASICO DP, ACE, 3000 cm3",
+        "JABON LIQUIDO CLASICO ACE DOYPACK X 3000 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CLASICO DP, ACE, 3000 cm3",
+          "brand": "ACE"
+        },
+        {
+          "name": "JABON LIQUIDO CLASICO ACE DOYPACK X 3000 CC",
+          "brand": "ACE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CLASICO DP, ACE, 3000 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990004074",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR COCO & VAINILLA GLIC, PLUSBELLE, 120 gr",
+        "JABON COCO VAINILLA PLUSBELLE X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR COCO & VAINILLA GLIC, PLUSBELLE, 120 gr",
+        "JABON COCO VAINILLA PLUSBELLE X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR COCO & VAINILLA GLIC, PLUSBELLE, 120 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON COCO VAINILLA PLUSBELLE X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR COCO & VAINILLA GLIC, PLUSBELLE, 120 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990004098",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR FLORES ROSAS C/GLIC, PLUSBELLE, 120 gr",
+        "JABON FLORES ROSAS PLUSBELLE X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR FLORES ROSAS C/GLIC, PLUSBELLE, 120 gr",
+        "JABON FLORES ROSAS PLUSBELLE X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR FLORES ROSAS C/GLIC, PLUSBELLE, 120 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON FLORES ROSAS PLUSBELLE X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR FLORES ROSAS C/GLIC, PLUSBELLE, 120 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990004104",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR FLORES ROSAS GLIC X3, PLUSBELLE, 360 gr",
+        "JABON FLORES ROSAS PLUSBELLE 3 X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR FLORES ROSAS GLIC X3, PLUSBELLE, 360 gr",
+        "JABON FLORES ROSAS PLUSBELLE 3 X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR FLORES ROSAS GLIC X3, PLUSBELLE, 360 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON FLORES ROSAS PLUSBELLE 3 X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR FLORES ROSAS GLIC X3, PLUSBELLE, 360 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990004128",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR JAZMIN GLIC X3, PLUSBELLE, 360 gr",
+        "JABON JAZMIN PLUSBELLE 3 X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR JAZMIN GLIC X3, PLUSBELLE, 360 gr",
+        "JABON JAZMIN PLUSBELLE 3 X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR JAZMIN GLIC X3, PLUSBELLE, 360 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON JAZMIN PLUSBELLE 3 X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR JAZMIN GLIC X3, PLUSBELLE, 360 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7790990004142",
+      "status": "confirmed",
+      "names": [
+        "JABON TOCADOR  LAVANDA GLIC X3, PLUSBELLE, 360 gr",
+        "JABON LAVANDA PLUSBELLE 3 X 120 GRS"
+      ],
+      "brands": [
+        "PLUSBELLE"
+      ],
+      "rawPrefixes": [
+        "JABON TOCADOR  LAVANDA GLIC X3, PLUSBELLE, 360 gr",
+        "JABON LAVANDA PLUSBELLE 3 X 120 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON TOCADOR  LAVANDA GLIC X3, PLUSBELLE, 360 gr",
+          "brand": "PLUSBELLE"
+        },
+        {
+          "name": "JABON LAVANDA PLUSBELLE 3 X 120 GRS",
+          "brand": "PLUSBELLE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON TOCADOR  LAVANDA GLIC X3, PLUSBELLE, 360 gr. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791274196003",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS FLORAL RAIN DP, ALGABO, 300 cm3",
+        "JABON LIQUIDO FLORAL RAIN ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Floral rain repuest DOY-300-ml."
+      ],
+      "brands": [
+        "ALGABO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS FLORAL RAIN DP, ALGABO, 300 cm3",
+        "JABON LIQUIDO FLORAL RAIN ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Floral rain repuest DOY-300-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS FLORAL RAIN DP, ALGABO, 300 cm3",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "JABON LIQUIDO FLORAL RAIN ALGABO DP X 300 CC",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "jabón líquido ALGABO Floral rain repuest DOY-300-ml.",
+          "brand": "ALGABO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS FLORAL RAIN DP, ALGABO, 300 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791274196010",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS CITRUS SPLASH DP, ALGABO, 300 cm3",
+        "JABON LIQUIDO CITRUS SPLASH ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Citrus splash repue DOY-300-ml."
+      ],
+      "brands": [
+        "ALGABO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS CITRUS SPLASH DP, ALGABO, 300 cm3",
+        "JABON LIQUIDO CITRUS SPLASH ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Citrus splash repue DOY-300-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS CITRUS SPLASH DP, ALGABO, 300 cm3",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "JABON LIQUIDO CITRUS SPLASH ALGABO DP X 300 CC",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "jabón líquido ALGABO Citrus splash repue DOY-300-ml.",
+          "brand": "ALGABO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS CITRUS SPLASH DP, ALGABO, 300 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791274196041",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. CUERPO GREEN TEA, ALGABO, 300 cm3",
+        "JABON LIQUIDO GREEN TEA ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Green tea repuesto DOY-300-ml."
+      ],
+      "brands": [
+        "ALGABO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. CUERPO GREEN TEA, ALGABO, 300 cm3",
+        "JABON LIQUIDO GREEN TEA ALGABO DP X 300 CC",
+        "jabón líquido ALGABO Green tea repuesto DOY-300-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. CUERPO GREEN TEA, ALGABO, 300 cm3",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "JABON LIQUIDO GREEN TEA ALGABO DP X 300 CC",
+          "brand": "ALGABO"
+        },
+        {
+          "name": "jabón líquido ALGABO Green tea repuesto DOY-300-ml.",
+          "brand": "ALGABO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. CUERPO GREEN TEA, ALGABO, 300 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796409",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CC LIMPIEZA BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP BOT X 800CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CC LIMPIEZA BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP BOT X 800CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CC LIMPIEZA BOT, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO LIMP ACTIVA SKIP BOT X 800CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC LIMPIEZA BOT, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796416",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CC CUIDADO BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO CUID ACTIVO SKIP BOT X 800CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CC CUIDADO BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO CUID ACTIVO SKIP BOT X 800CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CC CUIDADO BOT, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO CUID ACTIVO SKIP BOT X 800CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC CUIDADO BOT, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796423",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CC FRESCURA BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO FRES ACTIVA SKIP BOT X 800CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CC FRESCURA BOT, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO FRES ACTIVA SKIP BOT X 800CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CC FRESCURA BOT, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO FRES ACTIVA SKIP BOT X 800CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC FRESCURA BOT, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796447",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. ROPA BE CC CUIDADO DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO CUID ACTIVO SKIP DP X 800 CC"
+      ],
+      "brands": [
+        "SKIP",
+        "SKIP CICLO CORTO"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. ROPA BE CC CUIDADO DP, SKIP, 800 cm3",
+        "JABON LIQUIDO C CORTO CUID ACTIVO SKIP DP X 800 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. ROPA BE CC CUIDADO DP, SKIP, 800 cm3",
+          "brand": "SKIP"
+        },
+        {
+          "name": "JABON LIQUIDO C CORTO CUID ACTIVO SKIP DP X 800 CC",
+          "brand": "SKIP CICLO CORTO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. ROPA BE CC CUIDADO DP, SKIP, 800 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791290796843",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ.P/DIL ROSAS BOT, GRANBY, 500 cm3",
+        "JABON LIQ PARA DILUIR GRANBY ROSAS BOT X 500 CC"
+      ],
+      "brands": [
+        "GRANBY"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ.P/DIL ROSAS BOT, GRANBY, 500 cm3",
+        "JABON LIQ PARA DILUIR GRANBY ROSAS BOT X 500 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ.P/DIL ROSAS BOT, GRANBY, 500 cm3",
+          "brand": "GRANBY"
+        },
+        {
+          "name": "JABON LIQ PARA DILUIR GRANBY ROSAS BOT X 500 CC",
+          "brand": "GRANBY"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ PARA DILUIR GRANBY ROSAS BOT X 500 CC. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293048802",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS JAZMIN DP, LUX, 220 cm3",
+        "JABON LIQUIDO JAZMIN LUX REPUESTO X 220 CC",
+        "jabon liq LUX botan jazmin doy x220ml DOY-220-ml."
+      ],
+      "brands": [
+        "LUX"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS JAZMIN DP, LUX, 220 cm3",
+        "JABON LIQUIDO JAZMIN LUX REPUESTO X 220 CC",
+        "jabon liq LUX botan jazmin doy x220ml DOY-220-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS JAZMIN DP, LUX, 220 cm3",
+          "brand": "LUX"
+        },
+        {
+          "name": "JABON LIQUIDO JAZMIN LUX REPUESTO X 220 CC",
+          "brand": "LUX"
+        },
+        {
+          "name": "jabon liq LUX botan jazmin doy x220ml DOY-220-ml.",
+          "brand": "LUX"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS JAZMIN DP, LUX, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293048819",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS BOT. ORQUIDEAS DP, LUX, 220 cm3",
+        "JABON LIQUIDO ORQUIDEA NEGRA LUX REP X220 CC",
+        "jabon liq LUX botan orq negra doy x220ml DOY-220-ml."
+      ],
+      "brands": [
+        "LUX"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS BOT. ORQUIDEAS DP, LUX, 220 cm3",
+        "JABON LIQUIDO ORQUIDEA NEGRA LUX REP X220 CC",
+        "jabon liq LUX botan orq negra doy x220ml DOY-220-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS BOT. ORQUIDEAS DP, LUX, 220 cm3",
+          "brand": "LUX"
+        },
+        {
+          "name": "JABON LIQUIDO ORQUIDEA NEGRA LUX REP X220 CC",
+          "brand": "LUX"
+        },
+        {
+          "name": "jabon liq LUX botan orq negra doy x220ml DOY-220-ml.",
+          "brand": "LUX"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS BOT. ORQUIDEAS DP, LUX, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293048826",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS BOT. ROSAS DP, LUX, 220 cm3",
+        "JABON LIQUIDO ROSAS FRANCESAS REPUESTO X 220 CC"
+      ],
+      "brands": [
+        "LUX"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS BOT. ROSAS DP, LUX, 220 cm3",
+        "JABON LIQUIDO ROSAS FRANCESAS REPUESTO X 220 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS BOT. ROSAS DP, LUX, 220 cm3",
+          "brand": "LUX"
+        },
+        {
+          "name": "JABON LIQUIDO ROSAS FRANCESAS REPUESTO X 220 CC",
+          "brand": "LUX"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS BOT. ROSAS DP, LUX, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293049403",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS COCO&KARITE DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP KARITE VERBENA SUAVE X220CC"
+      ],
+      "brands": [
+        "SUAVE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS COCO&KARITE DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP KARITE VERBENA SUAVE X220CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS COCO&KARITE DP, SUAVE, 220 cm3",
+          "brand": "SUAVE"
+        },
+        {
+          "name": "JABON LIQUIDO REP KARITE VERBENA SUAVE X220CC",
+          "brand": "SUAVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS COCO&KARITE DP, SUAVE, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293049427",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS PEPINO&ALOE DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP PEPINO ALOE SUAVE X 220CC"
+      ],
+      "brands": [
+        "SUAVE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS PEPINO&ALOE DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP PEPINO ALOE SUAVE X 220CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS PEPINO&ALOE DP, SUAVE, 220 cm3",
+          "brand": "SUAVE"
+        },
+        {
+          "name": "JABON LIQUIDO REP PEPINO ALOE SUAVE X 220CC",
+          "brand": "SUAVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS PEPINO&ALOE DP, SUAVE, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293049434",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS FRUTOS&CREMA DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP FRUTOS ROJOS CREMA SUAVE X 220CC"
+      ],
+      "brands": [
+        "SUAVE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS FRUTOS&CREMA DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP FRUTOS ROJOS CREMA SUAVE X 220CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS FRUTOS&CREMA DP, SUAVE, 220 cm3",
+          "brand": "SUAVE"
+        },
+        {
+          "name": "JABON LIQUIDO REP FRUTOS ROJOS CREMA SUAVE X 220CC",
+          "brand": "SUAVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS FRUTOS&CREMA DP, SUAVE, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7791293049441",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. MANOS JAZMIN&ALM DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP JAZMIN ALMENDRAS SUAVE X 220CC"
+      ],
+      "brands": [
+        "SUAVE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. MANOS JAZMIN&ALM DP, SUAVE, 220 cm3",
+        "JABON LIQUIDO REP JAZMIN ALMENDRAS SUAVE X 220CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. MANOS JAZMIN&ALM DP, SUAVE, 220 cm3",
+          "brand": "SUAVE"
+        },
+        {
+          "name": "JABON LIQUIDO REP JAZMIN ALMENDRAS SUAVE X 220CC",
+          "brand": "SUAVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. MANOS JAZMIN&ALM DP, SUAVE, 220 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7798140259442",
+      "status": "confirmed",
+      "names": [
+        "JABON FACIAL LIQUIDO CARBON DETOX, ASEPXIA, 200 cm3",
+        "JABON LIQUIDO CARBON ASEPXIA X 200 CM3"
+      ],
+      "brands": [
+        "ASEPXIA"
+      ],
+      "rawPrefixes": [
+        "JABON FACIAL LIQUIDO CARBON DETOX, ASEPXIA, 200 cm3",
+        "JABON LIQUIDO CARBON ASEPXIA X 200 CM3"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON FACIAL LIQUIDO CARBON DETOX, ASEPXIA, 200 cm3",
+          "brand": "ASEPXIA"
+        },
+        {
+          "name": "JABON LIQUIDO CARBON ASEPXIA X 200 CM3",
+          "brand": "ASEPXIA"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON FACIAL LIQUIDO CARBON DETOX, ASEPXIA, 200 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7891024028995",
+      "status": "confirmed",
+      "names": [
+        "JABON LIQ. CUERPO NUTRIMILK DP, PALMOLIVE, 200 cm3",
+        "JABON LIQUIDO NUTRIMILK PALMOLIVE K X 200 CC"
+      ],
+      "brands": [
+        "PALMOLIVE"
+      ],
+      "rawPrefixes": [
+        "JABON LIQ. CUERPO NUTRIMILK DP, PALMOLIVE, 200 cm3",
+        "JABON LIQUIDO NUTRIMILK PALMOLIVE K X 200 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "JABON LIQ. CUERPO NUTRIMILK DP, PALMOLIVE, 200 cm3",
+          "brand": "PALMOLIVE"
+        },
+        {
+          "name": "JABON LIQUIDO NUTRIMILK PALMOLIVE K X 200 CC",
+          "brand": "PALMOLIVE"
+        }
+      ],
+      "family": "jabon",
+      "category": "Higiene",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact same checksum-valid EAN has explicit use in pinned peer: JABON LIQ. CUERPO NUTRIMILK DP, PALMOLIVE, 200 cm3. Classification only; no brand-wide assumption or price/content edit."
+      }
+    },
+    {
+      "barcode": "7794520868952",
+      "status": "pending_source_confirmation",
+      "names": [
+        "KRACH PAL SAL 70"
+      ],
+      "brands": [
+        "KRACHITOS"
+      ],
+      "rawPrefixes": [
+        "KRACH PAL SAL 70"
+      ],
+      "fingerprints": [
+        {
+          "name": "KRACH PAL SAL 70",
+          "brand": "KRACHITOS"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The abbreviation PAL does not establish an exact expanded product type in pinned peers. No alias guessed; not table salt."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "0763571659991",
+      "status": "confirmed",
+      "names": [
+        "LEBANANA LECHE 150GR  ",
+        "BOCAD.CONG.BANANA BAÑ.CHOCO C/LECHE, LE BANANA, 150 gr"
+      ],
+      "brands": [
+        "LE BANANA"
+      ],
+      "rawPrefixes": [
+        "LEBANANA LECHE 150GR  ",
+        "BOCAD.CONG.BANANA BAÑ.CHOCO C/LECHE, LE BANANA, 150 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "LEBANANA LECHE 150GR  ",
+          "brand": "LE BANANA"
+        },
+        {
+          "name": "BOCAD.CONG.BANANA BAÑ.CHOCO C/LECHE, LE BANANA, 150 gr",
+          "brand": "LE BANANA"
+        }
+      ],
+      "family": "bocadito",
+      "category": "Almacén",
+      "aliases": [
+        "Bocaditos de banana Le Banana bañados en chocolate con leche"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790580144654",
+      "status": "confirmed",
+      "names": [
+        "LC ENS ATUN ROJA"
+      ],
+      "brands": [
+        "LA CAMPAGNOLA"
+      ],
+      "rawPrefixes": [
+        "LC ENS ATUN ROJA"
+      ],
+      "fingerprints": [
+        {
+          "name": "LC ENS ATUN ROJA",
+          "brand": "LA CAMPAGNOLA"
+        }
+      ],
+      "family": "ensalada",
+      "category": "Almacén",
+      "aliases": [
+        "Ensalada de atún La Campagnola roja"
+      ],
+      "evidence": {
+        "url": "https://www.supertop.com.ar/ensalada-atun-la-campagnola-en-aceite-roja-x-285gr-7790580144654/p",
+        "kind": "Retailer catalog explicitly supplies exact EAN, brand and full salad name; prices and stock not imported."
+      }
+    },
+    {
+      "barcode": "7794990000012",
+      "status": "confirmed",
+      "names": [
+        "LP PORT SAL LIGH190G"
+      ],
+      "brands": [
+        "LA PAULINA"
+      ],
+      "rawPrefixes": [
+        "LP PORT SAL LIGH190G"
+      ],
+      "fingerprints": [
+        {
+          "name": "LP PORT SAL LIGH190G",
+          "brand": "LA PAULINA"
+        }
+      ],
+      "family": "queso",
+      "category": "Lácteos",
+      "aliases": [
+        "Queso untable La Paulina Port Salut Light"
+      ],
+      "evidence": {
+        "url": "https://diaonline.supermercadosdia.com.ar/queso-untable-la-paulina-port-salut-light-190-gr-104744/p",
+        "kind": "Retailer exact EAN and full cheese title, 190 g. Source abbreviation expanded for discovery only."
+      }
+    },
+    {
+      "barcode": "7792281712415",
+      "status": "confirmed",
+      "names": [
+        "LATA TE 11X15CM NGO"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "LATA TE 11X15CM NGO"
+      ],
+      "fingerprints": [
+        {
+          "name": "LATA TE 11X15CM NGO",
+          "brand": "SIN MARCA"
+        }
+      ],
+      "family": "envase",
+      "category": "Otros",
+      "aliases": [
+        "Lata para té"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Original counted item explicitly names a tin and physical dimensions 11x15 cm, not tea content. No content or price is inferred."
+      }
+    },
+    {
+      "barcode": "8410740913942",
+      "status": "pending_source_confirmation",
+      "names": [
+        "LC TAB CARA SAL 100G"
+      ],
+      "brands": [
+        "LACASA"
+      ],
+      "rawPrefixes": [
+        "LC TAB CARA SAL 100G"
+      ],
+      "fingerprints": [
+        {
+          "name": "LC TAB CARA SAL 100G",
+          "brand": "LACASA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "TAB CARA SAL abbreviation has no confirmed full type in pinned peers. No expanded food alias or table-salt classification inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "3337875549615",
+      "status": "confirmed",
+      "names": [
+        "LRP LIPIKAR LECHE SIN PERFUME 400 ML"
+      ],
+      "brands": [
+        "LA ROCHE POSAY"
+      ],
+      "rawPrefixes": [
+        "LRP LIPIKAR LECHE SIN PERFUME 400 ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "LRP LIPIKAR LECHE SIN PERFUME 400 ML",
+          "brand": "LA ROCHE POSAY"
+        }
+      ],
+      "family": "leche corporal",
+      "category": "Higiene",
+      "aliases": [
+        "Leche corporal Lipikar La Roche Posay"
+      ],
+      "evidence": {
+        "url": "https://www.laroche-posay.com.ar/lipikar/lipikar-leche-hidratante",
+        "kind": "Manufacturer confirms Lipikar milk as a skin product. Classification only: source barcode and perfume wording are not established or changed by this page; no claims or prices copied."
+      }
+    },
+    {
+      "barcode": "3337875685818",
+      "status": "confirmed",
+      "names": [
+        "LRP LIPIKAR UREA5 LECHE 400 ML"
+      ],
+      "brands": [
+        "LA ROCHE POSAY"
+      ],
+      "rawPrefixes": [
+        "LRP LIPIKAR UREA5 LECHE 400 ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "LRP LIPIKAR UREA5 LECHE 400 ML",
+          "brand": "LA ROCHE POSAY"
+        }
+      ],
+      "family": "leche corporal",
+      "category": "Higiene",
+      "aliases": [
+        "Leche corporal Lipikar Urea La Roche Posay"
+      ],
+      "evidence": {
+        "url": "https://farmaciapacheco.com.ar/p/hidratante-corporal-lipikar-urea-5-de-la-roche-posay/7501bcc7-a06d-4e7f-b6ce-60e32640650f",
+        "kind": "Pharmacy page gives exact EAN and body-moisturizer type; no medical claims, prices or stock imported."
+      }
+    },
+    {
+      "barcode": "7790538010222",
+      "status": "confirmed",
+      "names": [
+        "MACRITAS KETCHUP",
+        "Nachos MACRITAS Ketchup X90g BSA-90-gr."
+      ],
+      "brands": [
+        "MACRITAS"
+      ],
+      "rawPrefixes": [
+        "MACRITAS KETCHUP",
+        "Nachos MACRITAS Ketchup X90g BSA-90-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "MACRITAS KETCHUP",
+          "brand": "MACRITAS"
+        },
+        {
+          "name": "Nachos MACRITAS Ketchup X90g BSA-90-gr.",
+          "brand": "MACRITAS"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Nachos Macritas sabor ketchup"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7622300990114",
+      "status": "confirmed",
+      "names": [
+        "CHOCOLATE CON LECHE, MILKA LEGER, 150 gr",
+        "TABLETA DE CHOCOLATE C LECHE MILKA X 150 GRS",
+        "MILKA LECHE 150G PAQ-150-gr."
+      ],
+      "brands": [
+        "MILKA LEGER",
+        "MILKA"
+      ],
+      "rawPrefixes": [
+        "CHOCOLATE CON LECHE, MILKA LEGER, 150 gr",
+        "TABLETA DE CHOCOLATE C LECHE MILKA X 150 GRS",
+        "MILKA LECHE 150G PAQ-150-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "CHOCOLATE CON LECHE, MILKA LEGER, 150 gr",
+          "brand": "MILKA LEGER"
+        },
+        {
+          "name": "TABLETA DE CHOCOLATE C LECHE MILKA X 150 GRS",
+          "brand": "MILKA"
+        },
+        {
+          "name": "MILKA LECHE 150G PAQ-150-gr.",
+          "brand": "MILKA"
+        }
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Milka"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7622210788207",
+      "status": "confirmed",
+      "names": [
+        "MLK BIS LECHE 105G"
+      ],
+      "brands": [
+        "MILKA"
+      ],
+      "rawPrefixes": [
+        "MLK BIS LECHE 105G"
+      ],
+      "fingerprints": [
+        {
+          "name": "MLK BIS LECHE 105G",
+          "brand": "MILKA"
+        }
+      ],
+      "family": "oblea",
+      "category": "Almacén",
+      "aliases": [
+        "Oblea de chocolate Milka Bis"
+      ],
+      "evidence": {
+        "url": "https://www.mitiendamondelez.com.ar/oblea-chocolate-milka-bis-105-6g-2029511/p",
+        "kind": "Brand owner catalog gives exact EAN and chocolate-wafer type. The manufacturer title says 105.6 g while source says 105 g; classification only, no external size or price copied."
+      }
+    },
+    {
+      "barcode": "7798151819031",
+      "status": "confirmed",
+      "names": [
+        "MARWAL LATA YERBA GRANDE"
+      ],
+      "brands": [
+        "MARWAL"
+      ],
+      "rawPrefixes": [
+        "MARWAL LATA YERBA GRANDE"
+      ],
+      "fingerprints": [
+        {
+          "name": "MARWAL LATA YERBA GRANDE",
+          "brand": "MARWAL"
+        }
+      ],
+      "family": "envase",
+      "category": "Otros",
+      "aliases": [
+        "Lata para yerba Marwal"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Source explicitly describes a counted tin, not a mass of yerba. No contents or dimensions inferred."
+      }
+    },
+    {
+      "barcode": "7795812000258",
+      "status": "confirmed",
+      "names": [
+        "MATE FLUVION AUTOCEB DOBL FILTRO SACA YERBA 500 CC"
+      ],
+      "brands": [
+        "FLUVION"
+      ],
+      "rawPrefixes": [
+        "MATE FLUVION AUTOCEB DOBL FILTRO SACA YERBA 500 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "MATE FLUVION AUTOCEB DOBL FILTRO SACA YERBA 500 CC",
+          "brand": "FLUVION"
+        }
+      ],
+      "family": "envase",
+      "category": "Otros",
+      "aliases": [
+        "Mate autocebante Fluvion"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Source explicitly names a counted mate vessel with filter and capacity; capacity is not purchased yerba volume."
+      }
+    },
+    {
+      "barcode": "7798053650343",
+      "status": "pending_source_confirmation",
+      "names": [
+        "MOLINILLO CARNE S SAL INDO DELI X 35 GRM"
+      ],
+      "brands": [
+        "INDO DELI"
+      ],
+      "rawPrefixes": [
+        "MOLINILLO CARNE S SAL INDO DELI X 35 GRM"
+      ],
+      "fingerprints": [
+        {
+          "name": "MOLINILLO CARNE S SAL INDO DELI X 35 GRM",
+          "brand": "INDO DELI"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The abbreviated or intended-use title has no confirmed full type in pinned peers. Preserve it without inventing an alias or classifying an ingredient as the whole product."
+      },
+      "blockedFamilies": [
+        "carne",
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7791720048320",
+      "status": "pending_source_confirmation",
+      "names": [
+        "MIX FULL ENERGY S SAL CARREFOUR CLASSIC X 40 GRS"
+      ],
+      "brands": [
+        "CARREFOUR CLASSIC"
+      ],
+      "rawPrefixes": [
+        "MIX FULL ENERGY S SAL CARREFOUR CLASSIC X 40 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "MIX FULL ENERGY S SAL CARREFOUR CLASSIC X 40 GRS",
+          "brand": "CARREFOUR CLASSIC"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The abbreviated or intended-use title has no confirmed full type in pinned peers. Preserve it without inventing an alias or classifying an ingredient as the whole product."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7790990004258",
+      "status": "pending_source_confirmation",
+      "names": [
+        "MAGISTRAL SAL REGENE"
+      ],
+      "brands": [
+        "MAGISTRAL"
+      ],
+      "rawPrefixes": [
+        "MAGISTRAL SAL REGENE"
+      ],
+      "fingerprints": [
+        {
+          "name": "MAGISTRAL SAL REGENE",
+          "brand": "MAGISTRAL"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The abbreviated or intended-use title has no confirmed full type in pinned peers. Preserve it without inventing an alias or classifying an ingredient as the whole product."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7798370550289",
+      "status": "confirmed",
+      "names": [
+        "NAT HA ARROZ 450G"
+      ],
+      "brands": [
+        "NATURAL POP"
+      ],
+      "rawPrefixes": [
+        "NAT HA ARROZ 450G"
+      ],
+      "fingerprints": [
+        {
+          "name": "NAT HA ARROZ 450G",
+          "brand": "NATURAL POP"
+        }
+      ],
+      "family": "harina",
+      "category": "Almacén",
+      "aliases": [
+        "Harina de arroz Natural Pop"
+      ],
+      "evidence": {
+        "url": "https://tutiendafit.com.ar/product/natural-pop-harina-de-arroz-x450g/",
+        "corroborationUrl": "https://distribuidoracabane.com.ar/productos.php?idr=319&pag=44&ppp=50",
+        "kind": "Exact EAN and full rice-flour title in retailer and distributor catalogs. The original 0.045 KG versus 450G conflict stays excluded, not repaired."
+      }
+    },
+    {
+      "barcode": "8445290615831",
+      "status": "confirmed",
+      "names": [
+        "NESTUM ARROZ 225GR",
+        "ALIMENTO EN POLVO ARROZ S/AZUCAR, NESTUM, 225 gr",
+        "ALIMENTO ARROZ S AZUCAR NESTUM X 225 GRS",
+        "Cereal NESTUM Arroz x225g PAQ-220-gr."
+      ],
+      "brands": [
+        "NESTUM"
+      ],
+      "rawPrefixes": [
+        "NESTUM ARROZ 225GR",
+        "ALIMENTO EN POLVO ARROZ S/AZUCAR, NESTUM, 225 gr",
+        "ALIMENTO ARROZ S AZUCAR NESTUM X 225 GRS",
+        "Cereal NESTUM Arroz x225g PAQ-220-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "NESTUM ARROZ 225GR",
+          "brand": "NESTUM"
+        },
+        {
+          "name": "ALIMENTO EN POLVO ARROZ S/AZUCAR, NESTUM, 225 gr",
+          "brand": "NESTUM"
+        },
+        {
+          "name": "ALIMENTO ARROZ S AZUCAR NESTUM X 225 GRS",
+          "brand": "NESTUM"
+        },
+        {
+          "name": "Cereal NESTUM Arroz x225g PAQ-220-gr.",
+          "brand": "NESTUM"
+        }
+      ],
+      "family": "cereal",
+      "category": "Almacén",
+      "aliases": [
+        "Cereal en polvo de arroz Nestum",
+        "Alimento en polvo de arroz Nestum"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "8445291565173",
+      "status": "confirmed",
+      "names": [
+        "NESTLE TAB LECHE 45G",
+        "CHOCOLATE CON LECHE, NESTLE, 45 gr"
+      ],
+      "brands": [
+        "NESTLE"
+      ],
+      "rawPrefixes": [
+        "NESTLE TAB LECHE 45G",
+        "CHOCOLATE CON LECHE, NESTLE, 45 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "NESTLE TAB LECHE 45G",
+          "brand": "NESTLE"
+        },
+        {
+          "name": "CHOCOLATE CON LECHE, NESTLE, 45 gr",
+          "brand": "NESTLE"
+        }
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Nestlé"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "8445291565203",
+      "status": "confirmed",
+      "names": [
+        "NESTLE TAB LECHE 22G",
+        "CHOCOLATE CON LECHE, NESTLE, 22 gr",
+        "TABLETA CHOCOLATE CON LECHE NESTLE X 25 GRS"
+      ],
+      "brands": [
+        "NESTLE"
+      ],
+      "rawPrefixes": [
+        "NESTLE TAB LECHE 22G",
+        "CHOCOLATE CON LECHE, NESTLE, 22 gr",
+        "TABLETA CHOCOLATE CON LECHE NESTLE X 25 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "NESTLE TAB LECHE 22G",
+          "brand": "NESTLE"
+        },
+        {
+          "name": "CHOCOLATE CON LECHE, NESTLE, 22 gr",
+          "brand": "NESTLE"
+        },
+        {
+          "name": "TABLETA CHOCOLATE CON LECHE NESTLE X 25 GRS",
+          "brand": "NESTLE"
+        }
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Nestlé"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7792360072447",
+      "status": "confirmed",
+      "names": [
+        "OBLEA BANADA CHOCOLATE C LECHE NUGATON X 27 GR",
+        "NUGATON LECHE x 27g PAQ-27-gr."
+      ],
+      "brands": [
+        "NUGATON"
+      ],
+      "rawPrefixes": [
+        "OBLEA BANADA CHOCOLATE C LECHE NUGATON X 27 GR",
+        "NUGATON LECHE x 27g PAQ-27-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "OBLEA BANADA CHOCOLATE C LECHE NUGATON X 27 GR",
+          "brand": "NUGATON"
+        },
+        {
+          "name": "NUGATON LECHE x 27g PAQ-27-gr.",
+          "brand": "NUGATON"
+        }
+      ],
+      "family": "oblea",
+      "category": "Almacén",
+      "aliases": [
+        "Oblea bañada en chocolate con leche Nugatón"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7792222041055",
+      "status": "pending_source_confirmation",
+      "names": [
+        "NUGATON LECHE x 27g PAQ-27-gr."
+      ],
+      "brands": [
+        "NUGATON"
+      ],
+      "rawPrefixes": [
+        "NUGATON LECHE x 27g PAQ-27-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "NUGATON LECHE x 27g PAQ-27-gr.",
+          "brand": "NUGATON"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Nugaton source abbreviation has no verified full type for this distinct EAN; do not transfer identity or type from another barcode."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "7509552923803",
+      "status": "confirmed",
+      "names": [
+        "NUTRISSE CAFE CLA 41"
+      ],
+      "brands": [
+        "NUTRISSE"
+      ],
+      "rawPrefixes": [
+        "NUTRISSE CAFE CLA 41"
+      ],
+      "fingerprints": [
+        {
+          "name": "NUTRISSE CAFE CLA 41",
+          "brand": "NUTRISSE"
+        }
+      ],
+      "family": "coloracion",
+      "category": "Higiene",
+      "aliases": [
+        "Coloración Nutrisse tono café"
+      ],
+      "evidence": {
+        "url": "https://farmavitus.tiendasancorsalud.com.ar/producto?id=20109&nombre=nutrisse-tintura-clasico-tono-41-cafe-delicia",
+        "kind": "Pharmacy catalog supplies exact EAN and hair-coloring type. Coffee is a color name, not food. No formula, health claims or external prices copied."
+      }
+    },
+    {
+      "barcode": "7798124010212",
+      "status": "confirmed",
+      "names": [
+        "PIATTELLI CS SAL 750",
+        "VINO TINTO CABERNET RESETRVA, PIATELLI, 750 cm3",
+        "Vino PIATELLi Cabernet Sauv SALTA x750cc BOT-750-ml."
+      ],
+      "brands": [
+        "PIATTELLI",
+        "PIATELLI"
+      ],
+      "rawPrefixes": [
+        "PIATTELLI CS SAL 750",
+        "VINO TINTO CABERNET RESETRVA, PIATELLI, 750 cm3",
+        "Vino PIATELLi Cabernet Sauv SALTA x750cc BOT-750-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "PIATTELLI CS SAL 750",
+          "brand": "PIATTELLI"
+        },
+        {
+          "name": "VINO TINTO CABERNET RESETRVA, PIATELLI, 750 cm3",
+          "brand": "PIATELLI"
+        },
+        {
+          "name": "Vino PIATELLi Cabernet Sauv SALTA x750cc BOT-750-ml.",
+          "brand": "PIATELLI"
+        }
+      ],
+      "family": "vino",
+      "category": "Bebidas",
+      "aliases": [
+        "Vino tinto Cabernet Piattelli"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7798124010243",
+      "status": "confirmed",
+      "names": [
+        "PIATTELLI MB SAL 750",
+        "VINO TINTO MALBEC RESERVA, PIATELLI, 750 cm3"
+      ],
+      "brands": [
+        "PIATTELLI",
+        "PIATELLI"
+      ],
+      "rawPrefixes": [
+        "PIATTELLI MB SAL 750",
+        "VINO TINTO MALBEC RESERVA, PIATELLI, 750 cm3"
+      ],
+      "fingerprints": [
+        {
+          "name": "PIATTELLI MB SAL 750",
+          "brand": "PIATTELLI"
+        },
+        {
+          "name": "VINO TINTO MALBEC RESERVA, PIATELLI, 750 cm3",
+          "brand": "PIATELLI"
+        }
+      ],
+      "family": "vino",
+      "category": "Bebidas",
+      "aliases": [
+        "Vino tinto Malbec Piattelli"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7798259439537",
+      "status": "confirmed",
+      "names": [
+        "PF NARANJA SAL 1L",
+        "JUGO NARANJA NATURAL SALUSTIANA PURA FRUTTA X 1 LT",
+        "Jugo Naranja Salustiana PURA FRUTTA 1L BRK-1000-ml."
+      ],
+      "brands": [
+        "PURA FRUTTA",
+        "FRUTAPURA"
+      ],
+      "rawPrefixes": [
+        "PF NARANJA SAL 1L",
+        "JUGO NARANJA NATURAL SALUSTIANA PURA FRUTTA X 1 LT",
+        "Jugo Naranja Salustiana PURA FRUTTA 1L BRK-1000-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "PF NARANJA SAL 1L",
+          "brand": "PURA FRUTTA"
+        },
+        {
+          "name": "JUGO NARANJA NATURAL SALUSTIANA PURA FRUTTA X 1 LT",
+          "brand": "FRUTAPURA"
+        },
+        {
+          "name": "Jugo Naranja Salustiana PURA FRUTTA 1L BRK-1000-ml.",
+          "brand": "PURA FRUTTA"
+        }
+      ],
+      "family": "jugo",
+      "category": "Bebidas",
+      "aliases": [
+        "Jugo de naranja salustiana Pura Frutta"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "3228020355741",
+      "status": "confirmed",
+      "names": [
+        "PRES MANT C SAL 200G"
+      ],
+      "brands": [
+        "PRESIDENT "
+      ],
+      "rawPrefixes": [
+        "PRES MANT C SAL 200G"
+      ],
+      "fingerprints": [
+        {
+          "name": "PRES MANT C SAL 200G",
+          "brand": "PRESIDENT "
+        }
+      ],
+      "family": "manteca",
+      "category": "Lácteos",
+      "aliases": [
+        "Manteca Président con sal"
+      ],
+      "evidence": {
+        "url": "https://www.president.cl/producto/mantequilla-gastronomica-con-sal-pan/",
+        "kind": "Manufacturer or retailer catalog explicitly pairs this exact EAN with butter and brand. No external price, stock, nutritional or lactose claim is imported."
+      }
+    },
+    {
+      "barcode": "3228022910023",
+      "status": "confirmed",
+      "names": [
+        "PRES MANT S SAL 200G"
+      ],
+      "brands": [
+        "PRESIDENT "
+      ],
+      "rawPrefixes": [
+        "PRES MANT S SAL 200G"
+      ],
+      "fingerprints": [
+        {
+          "name": "PRES MANT S SAL 200G",
+          "brand": "PRESIDENT "
+        }
+      ],
+      "family": "manteca",
+      "category": "Lácteos",
+      "aliases": [
+        "Manteca Président sin sal"
+      ],
+      "evidence": {
+        "url": "https://www.super99.com/20066863-president-mantequilla-sin-sal-200-g",
+        "kind": "Manufacturer or retailer catalog explicitly pairs this exact EAN with butter and brand. No external price, stock, nutritional or lactose claim is imported."
+      }
+    },
+    {
+      "barcode": "7891097106040",
+      "status": "confirmed",
+      "names": [
+        "PRES C SAL DESL 200G"
+      ],
+      "brands": [
+        "PRESIDENT "
+      ],
+      "rawPrefixes": [
+        "PRES C SAL DESL 200G"
+      ],
+      "fingerprints": [
+        {
+          "name": "PRES C SAL DESL 200G",
+          "brand": "PRESIDENT "
+        }
+      ],
+      "family": "manteca",
+      "category": "Lácteos",
+      "aliases": [
+        "Manteca Président con sal"
+      ],
+      "evidence": {
+        "url": "https://www.covabra.com.br/manteiga-president-gastronomique-zero-lactose-tablete-c-sal-200g/p",
+        "kind": "Manufacturer or retailer catalog explicitly pairs this exact EAN with butter and brand. No external price, stock, nutritional or lactose claim is imported."
+      }
+    },
+    {
+      "barcode": "7797453974615",
+      "status": "pending_source_confirmation",
+      "names": [
+        "PED SAL 8KG"
+      ],
+      "brands": [
+        "PEDIGREE"
+      ],
+      "rawPrefixes": [
+        "PED SAL 8KG"
+      ],
+      "fingerprints": [
+        {
+          "name": "PED SAL 8KG",
+          "brand": "PEDIGREE"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact source abbreviation remains without a sufficiently verified primary expanded type. Keep raw discovery and exclude the misleading food family; no alias or quantity guessed."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7798205050298",
+      "status": "pending_source_confirmation",
+      "names": [
+        "PIST TOST Y SAL 100G"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "PIST TOST Y SAL 100G"
+      ],
+      "fingerprints": [
+        {
+          "name": "PIST TOST Y SAL 100G",
+          "brand": "SIN MARCA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact source abbreviation remains without a sufficiently verified primary expanded type. Keep raw discovery and exclude the misleading food family; no alias or quantity guessed."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7702484014254",
+      "status": "pending_source_confirmation",
+      "names": [
+        "PLA TE 145CM CARIBE"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "PLA TE 145CM CARIBE"
+      ],
+      "fingerprints": [
+        {
+          "name": "PLA TE 145CM CARIBE",
+          "brand": "SIN MARCA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact source abbreviation remains without a sufficiently verified primary expanded type. Keep raw discovery and exclude the misleading food family; no alias or quantity guessed."
+      },
+      "blockedFamilies": [
+        "te"
+      ]
+    },
+    {
+      "barcode": "7702484127732",
+      "status": "pending_source_confirmation",
+      "names": [
+        "PLA TE 15CM PERLA BL"
+      ],
+      "brands": [
+        "SIN MARCA"
+      ],
+      "rawPrefixes": [
+        "PLA TE 15CM PERLA BL"
+      ],
+      "fingerprints": [
+        {
+          "name": "PLA TE 15CM PERLA BL",
+          "brand": "SIN MARCA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact source abbreviation remains without a sufficiently verified primary expanded type. Keep raw discovery and exclude the misleading food family; no alias or quantity guessed."
+      },
+      "blockedFamilies": [
+        "te"
+      ]
+    },
+    {
+      "barcode": "3617703028179",
+      "status": "pending_source_confirmation",
+      "names": [
+        "PLATSET TE 8 PZS"
+      ],
+      "brands": [
+        "GENERICO"
+      ],
+      "rawPrefixes": [
+        "PLATSET TE 8 PZS"
+      ],
+      "fingerprints": [
+        {
+          "name": "PLATSET TE 8 PZS",
+          "brand": "GENERICO"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Exact source abbreviation remains without a sufficiently verified primary expanded type. Keep raw discovery and exclude the misleading food family; no alias or quantity guessed."
+      },
+      "blockedFamilies": [
+        "te"
+      ]
+    },
+    {
+      "barcode": "7790895064364",
+      "status": "confirmed",
+      "names": [
+        "SPRITE SIN AZUCAR 354CC",
+        "GASEOSA LIMA LIMON S/AZUC. LATA, SPRITE, 354 cm3",
+        "GASEOSA LIMA LIMON S AZUCAR SPRITE LATA X 354 CC",
+        "gaseosa SPRITE Lima Limon Zero 354cc LAT-354-ml."
+      ],
+      "brands": [
+        "SPRITE",
+        "SPRITE ZERO"
+      ],
+      "rawPrefixes": [
+        "SPRITE SIN AZUCAR 354CC",
+        "GASEOSA LIMA LIMON S/AZUC. LATA, SPRITE, 354 cm3",
+        "GASEOSA LIMA LIMON S AZUCAR SPRITE LATA X 354 CC",
+        "gaseosa SPRITE Lima Limon Zero 354cc LAT-354-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "SPRITE SIN AZUCAR 354CC",
+          "brand": "SPRITE"
+        },
+        {
+          "name": "GASEOSA LIMA LIMON S/AZUC. LATA, SPRITE, 354 cm3",
+          "brand": "SPRITE"
+        },
+        {
+          "name": "GASEOSA LIMA LIMON S AZUCAR SPRITE LATA X 354 CC",
+          "brand": "SPRITE ZERO"
+        },
+        {
+          "name": "gaseosa SPRITE Lima Limon Zero 354cc LAT-354-ml.",
+          "brand": "SPRITE"
+        }
+      ],
+      "family": "gaseosa",
+      "category": "Bebidas",
+      "aliases": [
+        "Gaseosa lima limón Sprite sin azúcar"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7796399000563",
+      "status": "confirmed",
+      "names": [
+        "SHAMPOO SILICONADO MANZANA 600C"
+      ],
+      "brands": [
+        "SILISUR"
+      ],
+      "rawPrefixes": [
+        "SHAMPOO SILICONADO MANZANA 600C"
+      ],
+      "fingerprints": [
+        {
+          "name": "SHAMPOO SILICONADO MANZANA 600C",
+          "brand": "SILISUR"
+        }
+      ],
+      "family": "shampoo vehiculos",
+      "category": "Limpieza",
+      "aliases": [
+        "Shampoo para vehículos Silisur"
+      ],
+      "evidence": {
+        "url": "https://www.ciasanmiguel.com.ar/es/shampoo-y-espuma-activa/912-silisur-shampoo-siliconado-600cc.html",
+        "kind": "Retailer exact EAN/SKU and Silisur cleaning product title. Automotive use corroborated by the vehicle-wash product line. No bundle count, external size, price or stock is imported; the source 0.35 KG versus 350 CC remains excluded."
+      }
+    },
+    {
+      "barcode": "7796399000587",
+      "status": "confirmed",
+      "names": [
+        "SHAMPOO ESPUMA ACTIVA HIDROLAVADORA600C"
+      ],
+      "brands": [
+        "SILISUR"
+      ],
+      "rawPrefixes": [
+        "SHAMPOO ESPUMA ACTIVA HIDROLAVADORA600C"
+      ],
+      "fingerprints": [
+        {
+          "name": "SHAMPOO ESPUMA ACTIVA HIDROLAVADORA600C",
+          "brand": "SILISUR"
+        }
+      ],
+      "family": "shampoo vehiculos",
+      "category": "Limpieza",
+      "aliases": [
+        "Shampoo para vehículos Silisur"
+      ],
+      "evidence": {
+        "url": "https://latinafy.com/products/silisur-active-foam-shampoo-for-pressure-washers-600cc-pack-12-units/",
+        "kind": "Retailer exact EAN/SKU and Silisur cleaning product title. Automotive use corroborated by the vehicle-wash product line. No bundle count, external size, price or stock is imported; the source 0.35 KG versus 350 CC remains excluded."
+      }
+    },
+    {
+      "barcode": "7796399001119",
+      "status": "confirmed",
+      "names": [
+        "SILISUR SHAMPOO SILICONADO X 350 CC"
+      ],
+      "brands": [
+        "SILISUR"
+      ],
+      "rawPrefixes": [
+        "SILISUR SHAMPOO SILICONADO X 350 CC"
+      ],
+      "fingerprints": [
+        {
+          "name": "SILISUR SHAMPOO SILICONADO X 350 CC",
+          "brand": "SILISUR"
+        }
+      ],
+      "family": "shampoo vehiculos",
+      "category": "Limpieza",
+      "aliases": [
+        "Shampoo para vehículos Silisur"
+      ],
+      "evidence": {
+        "url": "https://latinafy.com/products/silisur-silicone-car-wash-for-cars-and-motorcycles-350-cc-6-washes/",
+        "kind": "Retailer exact EAN/SKU and Silisur cleaning product title. Automotive use corroborated by the vehicle-wash product line. No bundle count, external size, price or stock is imported; the source 0.35 KG versus 350 CC remains excluded."
+      }
+    },
+    {
+      "barcode": "7790580033507",
+      "status": "confirmed",
+      "names": [
+        "TABLETA COFLER LECHE",
+        "CHOCOLATE C/LECHE Y ALMEND., COFLER, 55 gr"
+      ],
+      "brands": [
+        "COFLER"
+      ],
+      "rawPrefixes": [
+        "TABLETA COFLER LECHE",
+        "CHOCOLATE C/LECHE Y ALMEND., COFLER, 55 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "TABLETA COFLER LECHE",
+          "brand": "COFLER"
+        },
+        {
+          "name": "CHOCOLATE C/LECHE Y ALMEND., COFLER, 55 gr",
+          "brand": "COFLER"
+        }
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Cofler"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790580103446",
+      "status": "confirmed",
+      "names": [
+        "TABDE CHOCO C LECHE",
+        "CHOCOLATE C/LECHE AIREADO, COFLER, 100 gr"
+      ],
+      "brands": [
+        "COFLER"
+      ],
+      "rawPrefixes": [
+        "TABDE CHOCO C LECHE",
+        "CHOCOLATE C/LECHE AIREADO, COFLER, 100 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "TABDE CHOCO C LECHE",
+          "brand": "COFLER"
+        },
+        {
+          "name": "CHOCOLATE C/LECHE AIREADO, COFLER, 100 gr",
+          "brand": "COFLER"
+        }
+      ],
+      "family": "chocolate",
+      "category": "Almacén",
+      "aliases": [
+        "Chocolate con leche Cofler"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7793913000504",
+      "status": "confirmed",
+      "names": [
+        "TREG ARROZ LIGHT180G",
+        "ARROZ CON LECHE LIGHT, TREGAR, 180 gr"
+      ],
+      "brands": [
+        "TREGAR"
+      ],
+      "rawPrefixes": [
+        "TREG ARROZ LIGHT180G",
+        "ARROZ CON LECHE LIGHT, TREGAR, 180 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "TREG ARROZ LIGHT180G",
+          "brand": "TREGAR"
+        },
+        {
+          "name": "ARROZ CON LECHE LIGHT, TREGAR, 180 gr",
+          "brand": "TREGAR"
+        }
+      ],
+      "family": "postre",
+      "category": "Lácteos",
+      "aliases": [
+        "Arroz con leche Tregar light"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790071080218",
+      "status": "confirmed",
+      "names": [
+        "TOSTADAS DE ARROZ, RIERA, 150 gr",
+        "TOSTADA DE ARROZ CLASICAS RIERA X 150 GRS",
+        "Tosta Arroz Clási Lib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "brands": [
+        "RIERA"
+      ],
+      "rawPrefixes": [
+        "TOSTADAS DE ARROZ, RIERA, 150 gr",
+        "TOSTADA DE ARROZ CLASICAS RIERA X 150 GRS",
+        "Tosta Arroz Clási Lib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "TOSTADAS DE ARROZ, RIERA, 150 gr",
+          "brand": "RIERA"
+        },
+        {
+          "name": "TOSTADA DE ARROZ CLASICAS RIERA X 150 GRS",
+          "brand": "RIERA"
+        },
+        {
+          "name": "Tosta Arroz Clási Lib RIERA S/TAC12x150g PCK-150-gr.",
+          "brand": "RIERA"
+        }
+      ],
+      "family": "tostada",
+      "category": "Almacén",
+      "aliases": [
+        "Tostadas de arroz Riera"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790071080416",
+      "status": "confirmed",
+      "names": [
+        "TOSTADA DE ARROZ SIN SAL RIERA X 150 GRS",
+        "Tostad Arroz s/salLib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "brands": [
+        "RIERA"
+      ],
+      "rawPrefixes": [
+        "TOSTADA DE ARROZ SIN SAL RIERA X 150 GRS",
+        "Tostad Arroz s/salLib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "TOSTADA DE ARROZ SIN SAL RIERA X 150 GRS",
+          "brand": "RIERA"
+        },
+        {
+          "name": "Tostad Arroz s/salLib RIERA S/TAC12x150g PCK-150-gr.",
+          "brand": "RIERA"
+        }
+      ],
+      "family": "tostada",
+      "category": "Almacén",
+      "aliases": [
+        "Tostadas de arroz Riera"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7891330019984",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TAB NEUGE LECHE"
+      ],
+      "brands": [
+        "NEUGEBAUER"
+      ],
+      "rawPrefixes": [
+        "TAB NEUGE LECHE"
+      ],
+      "fingerprints": [
+        {
+          "name": "TAB NEUGE LECHE",
+          "brand": "NEUGEBAUER"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "7792360097709",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TABLETA LECHE 90 GR"
+      ],
+      "brands": [
+        "BONAFIDE"
+      ],
+      "rawPrefixes": [
+        "TABLETA LECHE 90 GR"
+      ],
+      "fingerprints": [
+        {
+          "name": "TABLETA LECHE 90 GR",
+          "brand": "BONAFIDE"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "7792360952657",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TABLETAS LECHE 30 G"
+      ],
+      "brands": [
+        "BONAFIDE"
+      ],
+      "rawPrefixes": [
+        "TABLETAS LECHE 30 G"
+      ],
+      "fingerprints": [
+        {
+          "name": "TABLETAS LECHE 30 G",
+          "brand": "BONAFIDE"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "7790580746612",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TABLETA LECHE RELLENO TOFI X 55 GRS"
+      ],
+      "brands": [
+        "TOFI"
+      ],
+      "rawPrefixes": [
+        "TABLETA LECHE RELLENO TOFI X 55 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "TABLETA LECHE RELLENO TOFI X 55 GRS",
+          "brand": "TOFI"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "leche"
+      ]
+    },
+    {
+      "barcode": "8851393004159",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TEMP CREAMY ATUN"
+      ],
+      "brands": [
+        "TEMPTATIONS"
+      ],
+      "rawPrefixes": [
+        "TEMP CREAMY ATUN"
+      ],
+      "fingerprints": [
+        {
+          "name": "TEMP CREAMY ATUN",
+          "brand": "TEMPTATIONS"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "atun"
+      ]
+    },
+    {
+      "barcode": "7798115470858",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TIRA IMP MANI SAL"
+      ],
+      "brands": [
+        "XTERRA"
+      ],
+      "rawPrefixes": [
+        "TIRA IMP MANI SAL"
+      ],
+      "fingerprints": [
+        {
+          "name": "TIRA IMP MANI SAL",
+          "brand": "XTERRA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "mani",
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7798060853041",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TONAD MANT EXTRA SAL"
+      ],
+      "brands": [
+        "TONADITA"
+      ],
+      "rawPrefixes": [
+        "TONAD MANT EXTRA SAL"
+      ],
+      "fingerprints": [
+        {
+          "name": "TONAD MANT EXTRA SAL",
+          "brand": "TONADITA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7794529041615",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TOSTI GRUESA SIN SAL"
+      ],
+      "brands": [
+        "TOSTI"
+      ],
+      "rawPrefixes": [
+        "TOSTI GRUESA SIN SAL"
+      ],
+      "fingerprints": [
+        {
+          "name": "TOSTI GRUESA SIN SAL",
+          "brand": "TOSTI"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7790310987995",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TOSTITOS SAL 100G"
+      ],
+      "brands": [
+        "TOSTITOS"
+      ],
+      "rawPrefixes": [
+        "TOSTITOS SAL 100G"
+      ],
+      "fingerprints": [
+        {
+          "name": "TOSTITOS SAL 100G",
+          "brand": "TOSTITOS"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7790310988008",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TOSTITOS SAL 160G"
+      ],
+      "brands": [
+        "TOSTITOS"
+      ],
+      "rawPrefixes": [
+        "TOSTITOS SAL 160G"
+      ],
+      "fingerprints": [
+        {
+          "name": "TOSTITOS SAL 160G",
+          "brand": "TOSTITOS"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7793913001662",
+      "status": "pending_source_confirmation",
+      "names": [
+        "TREG ARROZ CHOCO180G"
+      ],
+      "brands": [
+        "TREGAR"
+      ],
+      "rawPrefixes": [
+        "TREG ARROZ CHOCO180G"
+      ],
+      "fingerprints": [
+        {
+          "name": "TREG ARROZ CHOCO180G",
+          "brand": "TREGAR"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "arroz",
+        "chocolate"
+      ]
+    },
+    {
+      "barcode": "7790071080317",
+      "status": "pending_source_confirmation",
+      "names": [
+        "Tostad Arroz Dulc Lib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "brands": [
+        "RIERA"
+      ],
+      "rawPrefixes": [
+        "Tostad Arroz Dulc Lib RIERA S/TAC12x150g PCK-150-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "Tostad Arroz Dulc Lib RIERA S/TAC12x150g PCK-150-gr.",
+          "brand": "RIERA"
+        }
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "The original shorthand has no sufficiently verified full type for this exact code in pinned peers. No expanded alias or cross-code type transfer is inferred."
+      },
+      "blockedFamilies": [
+        "arroz",
+        "sal"
+      ]
+    },
+    {
+      "barcode": "7793281493946",
+      "status": "confirmed",
+      "names": [
+        "UG HAMB SIN SAL X2"
+      ],
+      "brands": [
+        "UNION GANADERA"
+      ],
+      "rawPrefixes": [
+        "UG HAMB SIN SAL X2"
+      ],
+      "fingerprints": [
+        {
+          "name": "UG HAMB SIN SAL X2",
+          "brand": "UNION GANADERA"
+        }
+      ],
+      "family": "medallon",
+      "category": "Carnes",
+      "aliases": [
+        "Medallones Unión Ganadera sin sal"
+      ],
+      "evidence": {
+        "url": "https://unionganadera.com.ar/productos/",
+        "kind": "Manufacturer catalog identifies the 2-unit salt-free medallions of 120 g each. Confirms the source brand/type/format, not a new barcode assignment. Original 0.24 KG, count, name and price preserved."
+      }
+    },
+    {
+      "barcode": "7798143640834",
+      "status": "confirmed",
+      "names": [
+        "VAITA MAM OPP TE 250ML"
+      ],
+      "brands": [
+        "VAITA"
+      ],
+      "rawPrefixes": [
+        "VAITA MAM OPP TE 250ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "VAITA MAM OPP TE 250ML",
+          "brand": "VAITA"
+        }
+      ],
+      "family": "mamadera",
+      "category": "Otros",
+      "aliases": [
+        "Mamadera Vaita"
+      ],
+      "evidence": {
+        "url": "https://www.susybaby.com.ar/pedidos/",
+        "kind": "Manufacturer lists these exact EANs as mamaderas. Type alias only; original source names and capacities are not rewritten."
+      }
+    },
+    {
+      "barcode": "7798143641084",
+      "status": "confirmed",
+      "names": [
+        "VAITA MAM TE SA 140ML"
+      ],
+      "brands": [
+        "VAITA"
+      ],
+      "rawPrefixes": [
+        "VAITA MAM TE SA 140ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "VAITA MAM TE SA 140ML",
+          "brand": "VAITA"
+        }
+      ],
+      "family": "mamadera",
+      "category": "Otros",
+      "aliases": [
+        "Mamadera Vaita"
+      ],
+      "evidence": {
+        "url": "https://www.susybaby.com.ar/pedidos/",
+        "kind": "Manufacturer lists these exact EANs as mamaderas. Type alias only; original source names and capacities are not rewritten."
+      }
+    },
+    {
+      "barcode": "7798143641114",
+      "status": "confirmed",
+      "names": [
+        "VAITA MAM TE CA 250ML"
+      ],
+      "brands": [
+        "VAITA"
+      ],
+      "rawPrefixes": [
+        "VAITA MAM TE CA 250ML"
+      ],
+      "fingerprints": [
+        {
+          "name": "VAITA MAM TE CA 250ML",
+          "brand": "VAITA"
+        }
+      ],
+      "family": "mamadera",
+      "category": "Otros",
+      "aliases": [
+        "Mamadera Vaita"
+      ],
+      "evidence": {
+        "url": "https://www.susybaby.com.ar/pedidos/",
+        "kind": "Manufacturer lists these exact EANs as mamaderas. Type alias only; original source names and capacities are not rewritten."
+      }
+    },
+    {
+      "barcode": "7702433290869",
+      "status": "confirmed",
+      "names": [
+        "VOGUE DE ARROZ ALMENDRA PVO MAQ"
+      ],
+      "brands": [
+        "VOGUE"
+      ],
+      "rawPrefixes": [
+        "VOGUE DE ARROZ ALMENDRA PVO MAQ"
+      ],
+      "fingerprints": [
+        {
+          "name": "VOGUE DE ARROZ ALMENDRA PVO MAQ",
+          "brand": "VOGUE"
+        }
+      ],
+      "family": "maquillaje",
+      "category": "Higiene",
+      "aliases": [
+        "Maquillaje Vogue polvo compacto de arroz almendra"
+      ],
+      "evidence": {
+        "url": "https://www.farmaplus.com.ar/vogue-polvo-compacto-de-arroz-piel-grasa-/p",
+        "kind": "Retailer technical listing names makeup and exact barcode7702433290869. Type only; no external size or price imported."
+      }
+    },
+    {
+      "barcode": "7793008018100",
+      "status": "confirmed",
+      "names": [
+        "VN ACEITE SOL FPS10",
+        "ACEITE SOLAR FPS10 SPRAY, VILLENEUVE, 190 cm3"
+      ],
+      "brands": [
+        "VILLENEUVE"
+      ],
+      "rawPrefixes": [
+        "VN ACEITE SOL FPS10",
+        "ACEITE SOLAR FPS10 SPRAY, VILLENEUVE, 190 cm3"
+      ],
+      "fingerprints": [
+        {
+          "name": "VN ACEITE SOL FPS10",
+          "brand": "VILLENEUVE"
+        },
+        {
+          "name": "ACEITE SOLAR FPS10 SPRAY, VILLENEUVE, 190 cm3",
+          "brand": "VILLENEUVE"
+        }
+      ],
+      "family": "aceite",
+      "category": "Higiene",
+      "aliases": [
+        "Aceite solar Villeneuve"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN7793008018100 also has full name ACEITE SOLAR FPS10 SPRAY, VILLENEUVE, 190 cm3. Use classification only; source fields, price identity and packages unchanged."
+      },
+      "oilUse": "personal"
+    },
+    {
+      "barcode": "7790123001383",
+      "status": "confirmed",
+      "names": [
+        "VIGENTE TOMATE TRITU"
+      ],
+      "brands": [
+        "VIGENTE"
+      ],
+      "rawPrefixes": [
+        "VIGENTE TOMATE TRITU"
+      ],
+      "fingerprints": [
+        {
+          "name": "VIGENTE TOMATE TRITU",
+          "brand": "VIGENTE"
+        }
+      ],
+      "family": "tomate",
+      "category": "Almacén",
+      "aliases": [
+        "Tomate triturado Vigente"
+      ],
+      "evidence": {
+        "url": "https://diaonline.supermercadosdia.com.ar/tomate-triturado-vigente-500-gr-287786/p",
+        "kind": "Retailer listing gives exact EAN7790123001383 and tomate triturado. Type only; original size and price untouched."
+      }
+    },
+    {
+      "barcode": "7797453971744",
+      "status": "confirmed",
+      "names": [
+        "WHISKAS ADULTO LATA ATUN 340GR",
+        "POUCH GATO ADULTO PATE LATA ATUN, WHISKAS, 340 gr"
+      ],
+      "brands": [
+        "WHISKAS"
+      ],
+      "rawPrefixes": [
+        "WHISKAS ADULTO LATA ATUN 340GR",
+        "POUCH GATO ADULTO PATE LATA ATUN, WHISKAS, 340 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "WHISKAS ADULTO LATA ATUN 340GR",
+          "brand": "WHISKAS"
+        },
+        {
+          "name": "POUCH GATO ADULTO PATE LATA ATUN, WHISKAS, 340 gr",
+          "brand": "WHISKAS"
+        }
+      ],
+      "family": "alimento",
+      "category": "Mascotas",
+      "aliases": [
+        "Alimento para gato Whiskas"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7797453972253",
+      "status": "confirmed",
+      "names": [
+        "WHISKAS GATITOS CARNE Y LECHE 500GR",
+        "ALIMENTO SECO GATITO CARNE&LECHE, WHISKAS, 500 gr"
+      ],
+      "brands": [
+        "WHISKAS"
+      ],
+      "rawPrefixes": [
+        "WHISKAS GATITOS CARNE Y LECHE 500GR",
+        "ALIMENTO SECO GATITO CARNE&LECHE, WHISKAS, 500 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "WHISKAS GATITOS CARNE Y LECHE 500GR",
+          "brand": "WHISKAS"
+        },
+        {
+          "name": "ALIMENTO SECO GATITO CARNE&LECHE, WHISKAS, 500 gr",
+          "brand": "WHISKAS"
+        }
+      ],
+      "family": "alimento",
+      "category": "Mascotas",
+      "aliases": [
+        "Alimento para gato Whiskas"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7793913013993",
+      "status": "confirmed",
+      "names": [
+        "TREGAR YOGUR BATIDO NATURAL SIN AZUCAR 280G",
+        "YOGUR ENTERO NATURAL SIN AZUCAR, TREGAR, 280 gr",
+        "YOG NAT SIN AZUCAR TREGAR POTE X 280 GRS"
+      ],
+      "brands": [
+        "TREGAR"
+      ],
+      "rawPrefixes": [
+        "TREGAR YOGUR BATIDO NATURAL SIN AZUCAR 280G",
+        "YOGUR ENTERO NATURAL SIN AZUCAR, TREGAR, 280 gr",
+        "YOG NAT SIN AZUCAR TREGAR POTE X 280 GRS"
+      ],
+      "fingerprints": [
+        {
+          "name": "TREGAR YOGUR BATIDO NATURAL SIN AZUCAR 280G",
+          "brand": "TREGAR"
+        },
+        {
+          "name": "YOGUR ENTERO NATURAL SIN AZUCAR, TREGAR, 280 gr",
+          "brand": "TREGAR"
+        },
+        {
+          "name": "YOG NAT SIN AZUCAR TREGAR POTE X 280 GRS",
+          "brand": "TREGAR"
+        }
+      ],
+      "family": "yogur",
+      "category": "Lácteos",
+      "aliases": [
+        "Yogur Tregar natural sin azucar"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7793913013689",
+      "status": "confirmed",
+      "names": [
+        "TREGAR YOGUR NATURAL SIN AZUCAR 140G",
+        "Y.Entero TREGAR Natural sin azucar 140g POT-140-gr."
+      ],
+      "brands": [
+        "TREGAR"
+      ],
+      "rawPrefixes": [
+        "TREGAR YOGUR NATURAL SIN AZUCAR 140G",
+        "Y.Entero TREGAR Natural sin azucar 140g POT-140-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "TREGAR YOGUR NATURAL SIN AZUCAR 140G",
+          "brand": "TREGAR"
+        },
+        {
+          "name": "Y.Entero TREGAR Natural sin azucar 140g POT-140-gr.",
+          "brand": "TREGAR"
+        }
+      ],
+      "family": "yogur",
+      "category": "Lácteos",
+      "aliases": [
+        "Yogur Tregar natural sin azucar"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790990001776",
+      "status": "confirmed",
+      "names": [
+        "ZORRO JABON COMPACTO",
+        "jabon compacto ZORRO clasico 150g 2u PAQ-300-gr."
+      ],
+      "brands": [
+        "ZORRO"
+      ],
+      "rawPrefixes": [
+        "ZORRO JABON COMPACTO",
+        "jabon compacto ZORRO clasico 150g 2u PAQ-300-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "ZORRO JABON COMPACTO",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "jabon compacto ZORRO clasico 150g 2u PAQ-300-gr.",
+          "brand": "ZORRO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabon para ropa Zorro"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790990001790",
+      "status": "confirmed",
+      "names": [
+        "ZORRO JABON COMPACTO",
+        "JABON EN PAN COMPACTO FLORAL, ZORRO, 150 gr"
+      ],
+      "brands": [
+        "ZORRO"
+      ],
+      "rawPrefixes": [
+        "ZORRO JABON COMPACTO",
+        "JABON EN PAN COMPACTO FLORAL, ZORRO, 150 gr"
+      ],
+      "fingerprints": [
+        {
+          "name": "ZORRO JABON COMPACTO",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "JABON EN PAN COMPACTO FLORAL, ZORRO, 150 gr",
+          "brand": "ZORRO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabon para ropa Zorro"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790990001844",
+      "status": "confirmed",
+      "names": [
+        "ZORRO JABON LIQUIDO QUITAMANCHAS 800ML",
+        "JABON LIQ. ROPA BE QUITAM. EVOL. DP, ZORRO, 800 cm3",
+        "jabon liq ZORRO evol quitamanch DP 800ml DOY-800-ml."
+      ],
+      "brands": [
+        "ZORRO"
+      ],
+      "rawPrefixes": [
+        "ZORRO JABON LIQUIDO QUITAMANCHAS 800ML",
+        "JABON LIQ. ROPA BE QUITAM. EVOL. DP, ZORRO, 800 cm3",
+        "jabon liq ZORRO evol quitamanch DP 800ml DOY-800-ml."
+      ],
+      "fingerprints": [
+        {
+          "name": "ZORRO JABON LIQUIDO QUITAMANCHAS 800ML",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "JABON LIQ. ROPA BE QUITAM. EVOL. DP, ZORRO, 800 cm3",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "jabon liq ZORRO evol quitamanch DP 800ml DOY-800-ml.",
+          "brand": "ZORRO"
+        }
+      ],
+      "family": "jabon",
+      "category": "Limpieza",
+      "aliases": [
+        "Jabon para ropa Zorro"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790990002742",
+      "status": "confirmed",
+      "names": [
+        "ZORRO SAL REGEN 1KG",
+        "SAL P/MAQUINA LAVAJILLAS, ZORRO, 1000 gr",
+        "sal para lavavajillas ZORRO 1kg BSA-1000-gr."
+      ],
+      "brands": [
+        "ZORRO"
+      ],
+      "rawPrefixes": [
+        "ZORRO SAL REGEN 1KG",
+        "SAL P/MAQUINA LAVAJILLAS, ZORRO, 1000 gr",
+        "sal para lavavajillas ZORRO 1kg BSA-1000-gr."
+      ],
+      "fingerprints": [
+        {
+          "name": "ZORRO SAL REGEN 1KG",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "SAL P/MAQUINA LAVAJILLAS, ZORRO, 1000 gr",
+          "brand": "ZORRO"
+        },
+        {
+          "name": "sal para lavavajillas ZORRO 1kg BSA-1000-gr.",
+          "brand": "ZORRO"
+        }
+      ],
+      "family": "sal lavavajillas",
+      "category": "Limpieza",
+      "aliases": [
+        "Sal para lavavajillas Zorro"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790310985113",
+      "status": "confirmed",
+      "names": [
+        "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 43G"
+      ],
+      "brands": [
+        "3D"
+      ],
+      "rawPrefixes": [
+        "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 43G"
+      ],
+      "fingerprints": [
+        {
+          "name": "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 43G",
+          "brand": "3D"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Snack 3D tubitos de maiz"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
+    },
+    {
+      "barcode": "7790310985830",
+      "status": "confirmed",
+      "names": [
+        "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 85G"
+      ],
+      "brands": [
+        "3D"
+      ],
+      "rawPrefixes": [
+        "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 85G"
+      ],
+      "fingerprints": [
+        {
+          "name": "3D TUBITOS DE HARINA DE MAIZ SABOR QUESO MEGA QUESO 85G",
+          "brand": "3D"
+        }
+      ],
+      "family": "snack",
+      "category": "Almacén",
+      "aliases": [
+        "Snack 3D tubitos de maiz"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Pinned SEPA copy: exact checksum-valid EAN and observed name/brand fingerprints. Classification only; source fields, price identity and packages unchanged."
+      }
     }
   ],
   "scopedProducts": [
@@ -1330,6 +5065,42 @@
       "evidence": {
         "url": "https://www.centraloeste.com.ar/78948310-dove-deo-rollon-x50ml-go-fresh-granada.html",
         "kind": "Pharmacy catalog: matching retailer SKU 78948310, full deodorant title, brand and 50 ml. Applies only to the literal source IDs, original restricted barcode/status, name, brand and presentation. No global GTIN or price identity is asserted."
+      }
+    },
+    {
+      "status": "pending_source_confirmation",
+      "scope": "retailer_local_id",
+      "sourceIds": [
+        "sepa:11:2:2060880000000",
+        "sepa:11:5:2060880000000"
+      ],
+      "sourceBarcodes": [
+        "2060880000000"
+      ],
+      "barcodeStatuses": [
+        "restricted"
+      ],
+      "presentations": [
+        "1 KG"
+      ],
+      "names": [
+        "SILVIA PORT SAL REDU"
+      ],
+      "brands": [
+        "SILVIA"
+      ],
+      "rawPrefixes": [
+        "SILVIA PORT SAL REDU"
+      ],
+      "family": null,
+      "category": "Otros",
+      "aliases": [],
+      "blockedFamilies": [
+        "sal"
+      ],
+      "evidence": {
+        "url": "https://github.com/tequedo/despensa-precios/tree/0ef2f12e9f80d3d8c0b1694fdbd39e94657c2067/data/national/AR-J",
+        "kind": "Unresolved abbreviation tied only to literal restricted retailer IDs and original fingerprints. No global GTIN or expanded cheese alias inferred."
       }
     }
   ]

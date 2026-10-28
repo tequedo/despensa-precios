@@ -9,6 +9,17 @@ const sameFingerprint=(entry,product)=>entry.fingerprints
  :entry.names.some(name=>normalize(name)===normalize(product.name))&&entry.brands.some(brand=>normalize(brand)===normalize(product.brand));
 export const nonDrinkingWater = text => /\b(micelar|oxigenada|colonia|destilada|desmaquillante|limpiadora|facial|corporal|lavandina|hipoclorito|desinfectante)\b|\bpara (?:plancha|bateria|radiador)\b/.test(normalize(text));
 
+// Reserved publishing prefixes support a coarse navigation type only. They
+// do not verify an assigned edition, expand a title, or change quote identity.
+// International ISBN Agency: 978/979; 979-0 is reserved for ISMN printed music.
+export function publishingFamily(product){
+ if(product.barcodeStatus!=='valid_format_and_checksum')return null;
+ const code=barcodeIdentity(product.barcode).gtin??'';
+ if(/^0978\d{10}$/.test(code)||/^0979[1-9]\d{9}$/.test(code))return 'libro';
+ if(/^09790\d{9}$/.test(code))return 'partitura';
+ return null;
+}
+
 // A reviewed alias is not a source edit or a new identity match. Require the
 // verified barcode and the exact observed name/brand fingerprint together.
 export function reviewedCatalogEntry(product){
