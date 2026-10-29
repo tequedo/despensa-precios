@@ -40,9 +40,13 @@ for(const p of coverage.provinces){
  for(const s of prices.body.data.sucursales){
   assert.equal(s.provincia,p.name);assert.ok(s.distancia!==null&&s.distancia<=50,p.name+': sucursal lejana');assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.channel,'sucursal');
   const sourceBranch=index.stores.find(store=>store.externalId===s.id);assert.ok(sourceBranch,p.name+': sucursal ajena al índice');
-  const sourceRows=(await readBranch(p.code,sourceBranch,index)).prices;
+  const sourceShard=await readBranch(p.code,sourceBranch,index),sourceRows=sourceShard.prices;
   const source=sourceRows.find(row=>String(row[0])===product.id)??sourceRows.find(row=>row[9]?.barcodeStatus==='valid_format_and_checksum'&&barcodeIdentity(row[9].barcode).gtin===barcodeIdentity(product.barcode).gtin);assert.ok(source,p.name+': producto ajeno a la fuente');assert.equal(s.preciosProducto.precioLista,source[5],p.name+': precio distinto al informado');assert.equal(s.validDate,source[6],p.name+': fecha distinta al CSV');assert.equal(sourceBranch.sourceDate,source[6],p.name+': índice con fecha distinta');assert.equal(s.observedAt,s.provenance.fileUpdatedAt,p.name+': fecha visible distinta al archivo');assert.equal(s.provenance.dateBasis,'product_file_footer',p.name+': falta base de la fecha');
-  assert.equal(s.official,false,p.name+': réplica presentada como original');assert.equal(s.provenance.sourceType,'replica');quoteChecks++;if(String(source[0])!==product.id)crossChainIdentityQuotes++;
+  const original=sourceShard.source.kind==='official_dataset'&&sourceShard.source.official===true;
+  assert.equal(s.official,original,p.name+': procedencia oficial distinta a la fuente');
+  assert.equal(s.provenance.sourceType,original?(sourceShard.source.integrityStatus==='official_archive_content_checked'?'official_daily_archive':'official_original'):'replica');
+  assert.equal(s.provenance.resource,sourceShard.source.resource);assert.equal(s.provenance.originalComparison,sourceShard.source.originalComparison);
+  quoteChecks++;if(String(source[0])!==product.id)crossChainIdentityQuotes++;
  }
  checks.push({province:p.name,locality,ean:product.id,barcode:product.barcode,barcodeMatchesSource:true,stores:prices.body.data.sucursales.length,pricesMatchSource:true,datesMatchCsv:true,physicalChannel:true,officialLocality:true,within50Km:true,durationMs:Date.now()-started});console.log(p.name+': búsqueda, sucursal y precio comprobados');
  if(p.code==='AR-J'){
