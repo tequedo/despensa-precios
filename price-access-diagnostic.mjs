@@ -1,4 +1,5 @@
 import { PROVINCES, argentinaDate, freshDate, isoDate } from './price-safety.mjs';
+import { readPriceShard } from './price-shards.mjs';
 
 export const CONTROL_BARCODE = '7790272001029';
 export const SITE_ORIGIN = 'https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site';
@@ -79,7 +80,8 @@ export async function diagnosePriceAccess({ token, readJson, fetchImpl = fetch, 
       availableStores: general.body.coverage?.availableStores ?? null,
       generation: general.body.coverage?.generatedAt ?? null };
     for (const store of index.stores.filter(s => isChango(s.externalId))) {
-      const shard = await readJson(`data/national/AR-J/${store.file}`);
+      const folder='data/national/AR-J/';
+      const shard = await readPriceShard(await readJson(folder+store.file),file=>readJson(folder+file),{storeId:store.externalId,generatedAt:index.generatedAt,sourceDate:store.sourceDate,records:store.records});
       const row = shard.prices.find(row => row[9]?.barcode === CONTROL_BARCODE);
       const filtered = row ? await query({ ean: row[0], storeIds: store.externalId }) : { status: null, body: {} };
       report.changomas.push(classifyChango(store, shard, general, filtered, now));
