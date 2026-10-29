@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-28T22:23:23.617Z",
+  "checkedAt": "2026-10-29T22:10:37.800Z",
   "latestAttempt": {
-    "day": "2026-10-28",
-    "checkedAt": "2026-10-28T22:23:23.617Z",
+    "day": "2026-10-29",
+    "checkedAt": "2026-10-29T22:10:37.800Z",
     "confirmed": false,
-    "sourceDate": "2026-10-28",
-    "sourceType": "replica",
-    "revisionId": "c1e11108-0d88-4de3-9e06-b770afa8e249",
+    "sourceDate": "2026-10-29",
+    "sourceType": "official_original",
+    "revisionId": "55fab27c-7ec3-41ba-972c-aaef95874ad9",
     "appGeneration": "2026-10-25T23:26:35.887Z",
-    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/40774759462",
+    "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/40961526181",
     "jurisdictionsWithCurrentPrices": 0,
-    "physicalStores": 2740,
+    "physicalStores": 0,
     "changomasBranchesConfirmed": 0,
     "independentlyComparedWithOfficial": false
   },
@@ -23,20 +23,6 @@
   "stabilizationComplete": false,
   "officialChannelRestored": false,
   "days": [
-    {
-      "day": "2026-10-15",
-      "checkedAt": "2026-10-16T00:00:44.770Z",
-      "confirmed": false,
-      "sourceDate": "2026-10-15",
-      "sourceType": "replica",
-      "revisionId": "719c024d-ff0f-4efe-8e22-b378d764c1a0",
-      "appGeneration": null,
-      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/38825333806",
-      "jurisdictionsWithCurrentPrices": 0,
-      "physicalStores": 0,
-      "changomasBranchesConfirmed": 0,
-      "independentlyComparedWithOfficial": false
-    },
     {
       "day": "2026-10-16",
       "checkedAt": "2026-10-17T00:03:36.533Z",
@@ -216,6 +202,20 @@
       "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/40774759462",
       "jurisdictionsWithCurrentPrices": 0,
       "physicalStores": 2740,
+      "changomasBranchesConfirmed": 0,
+      "independentlyComparedWithOfficial": false
+    },
+    {
+      "day": "2026-10-29",
+      "checkedAt": "2026-10-29T22:10:37.800Z",
+      "confirmed": false,
+      "sourceDate": "2026-10-29",
+      "sourceType": "official_original",
+      "revisionId": "55fab27c-7ec3-41ba-972c-aaef95874ad9",
+      "appGeneration": "2026-10-25T23:26:35.887Z",
+      "runUrl": "https://github.com/tequedo/despensa-precios/actions/runs/40961526181",
+      "jurisdictionsWithCurrentPrices": 0,
+      "physicalStores": 0,
       "changomasBranchesConfirmed": 0,
       "independentlyComparedWithOfficial": false
     }
