@@ -6,6 +6,47 @@ import {join} from 'node:path';
 import {nationalExporter} from '../national-export.mjs';
 import {PROVINCES} from '../price-safety.mjs';
 import {scopedPromotionEvidence} from '../promotion-evidence.mjs';
+import {readPriceShard} from '../price-shards.mjs';
+
+test('divide una sucursal que supera 2 MB sin perder precios, metadatos, promociones ni cobertura',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'large-branch-'));
+ try{
+  const exporter=await nationalExporter(join(dir,'data'),join(dir,'tmp'));
+  const count=1800,name='Leche entera '+ 'á'.repeat(650);
+  for(let index=0;index<count;index++)await exporter.add({source:{priceDate:'2026-10-29',modified:'2026-10-29T12:00:00Z'},
+   store:{externalId:'12|1|108',province:'Buenos Aires',locality:'Localidad',chain:'Cadena',channel:'sucursal'},
+   product:{ean:'sepa:12:1:'+index,name,brand:'Marca',presentation:'1 L',referenceUnit:'L',barcode:null,barcodeStatus:'not_reported'},
+   price:{listPrice:1500+index,validDate:'2026-10-29',...(index===count-1?{promoPrice:1400,promoConditions:'Oferta',promotions:[{slot:'promo1',promoPrice:1400,promoConditions:'Oferta'}]}:{})}});
+  const coverage=await exporter.finish(),folder=join(dir,'data/AR-B');
+  const ix=JSON.parse(await readFile(join(folder,'index.json'),'utf8'));
+  assert.equal(ix.stores.length,1);assert.equal(ix.stores[0].records,count);
+  const header=JSON.parse(await readFile(join(folder,ix.stores[0].file),'utf8'));
+  assert.equal(header.version,2);assert.ok(header.parts.length>1);assert.equal(header.prices,undefined);
+  const shard=await readPriceShard(header,async file=>{
+   const raw=await readFile(join(folder,file));assert.ok(raw.length<=2_000_000,'Cada archivo conserva el límite de bytes');return JSON.parse(raw);
+  },{storeId:'12|1|108',generatedAt:ix.generatedAt,sourceDate:'2026-10-29',records:count});
+  assert.equal(shard.prices.length,count);assert.equal(new Set(shard.prices.map(row=>row[0])).size,count);
+  for(let index=0;index<count;index++){
+   const row=shard.prices[index];assert.equal(row[0],'sepa:12:1:'+index);assert.equal(row[1],name);assert.equal(row[5],1500+index);
+   assert.equal(row[6],'2026-10-29');assert.equal(row[9].barcodeStatus,'not_reported');assert.equal(row[11].catalogPolicy.version,shard.catalogPolicyVersion);
+  }
+  assert.equal(shard.prices.at(-1)[8].promotions[0].promoPrice,1400);
+  assert.equal(coverage.find(p=>p.code==='AR-B').records,count);
+ }finally{await rm(dir,{recursive:true,force:true});}
+});
+
+test('un producto individual inválidamente grande conserva la publicación anterior completa',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'atomic-large-branch-'));
+ try{
+  const record={source:{priceDate:'2026-10-29'},store:{externalId:'branch',province:'San Juan',locality:'San Juan',chain:'Cadena'},product:{ean:'p1',name:'Leche',presentation:'1 L'},price:{listPrice:1000,validDate:'2026-10-29'}};
+  const root=join(dir,'data'),first=await nationalExporter(root,join(dir,'one'));
+  await first.add(record);await first.finish();const original=await readFile(join(root,'AR-J/index.json'),'utf8');
+  const next=await nationalExporter(root,join(dir,'two'));
+  await next.add({...record,product:{...record.product,name:'Leche '+ 'x'.repeat(2_000_001)}});
+  await assert.rejects(()=>next.finish(),/Un producto supera/);
+  assert.equal(await readFile(join(root,'AR-J/index.json'),'utf8'),original);
+ }finally{await rm(dir,{recursive:true,force:true});}
+});
 test('exporta por sucursal las 24 jurisdicciones sin mezclar precios',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'prices-test-'));
  try{

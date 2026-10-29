@@ -6,6 +6,34 @@ import { branchChannel } from './sepa-catalog-controls.mjs';
 import './catalog-policy/scripts/verify-catalog-policy.mjs';
 import {classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
 
+const MAX_SHARD_BYTES=2_000_000;
+async function writeStorePrices(folder,file,header,prices){
+  const original=JSON.stringify({...header,prices})+'\n';
+  if(Buffer.byteLength(original)<=MAX_SHARD_BYTES){await writeFile(join(folder,file),original);return;}
+  const parts=[];
+  const partHeader={version:1,kind:'price-part',generatedAt:header.generatedAt,sourceDate:header.sourceDate,storeId:header.store.externalId,prices:[]};
+  const baseBytes=Buffer.byteLength(JSON.stringify(partHeader)+'\n');
+  let rows=[],bytes=baseBytes;
+  const flush=async()=>{
+    if(!rows.length)return;
+    const payload=JSON.stringify({...partHeader,prices:rows})+'\n';
+    const name=createHash('sha256').update(payload).digest('hex').slice(0,24)+'.json';
+    if(Buffer.byteLength(payload)>MAX_SHARD_BYTES)throw new Error('Una parte de sucursal supera el límite de consulta');
+    await writeFile(join(folder,name),payload);parts.push({file:name,records:rows.length});
+    rows=[];bytes=baseBytes;
+  };
+  for(const row of prices){
+    const rowBytes=Buffer.byteLength(JSON.stringify(row));
+    if(baseBytes+rowBytes>MAX_SHARD_BYTES)throw new Error('Un producto supera el límite de consulta: '+header.store.externalId+' / '+row[0]);
+    if(bytes+rowBytes+(rows.length?1:0)>MAX_SHARD_BYTES)await flush();
+    bytes+=rowBytes+(rows.length?1:0);rows.push(row);
+  }
+  await flush();
+  const manifest=JSON.stringify({...header,version:2,records:prices.length,parts})+'\n';
+  if(Buffer.byteLength(manifest)>MAX_SHARD_BYTES)throw new Error('El índice de sucursal supera el límite de consulta');
+  await writeFile(join(folder,file),manifest);
+}
+
 // Files are bounded by branch, not by province. No nationwide blob is sent to a phone.
 export async function nationalExporter(root, temporary) {
   const stores=new Map(), buffers=new Map(); let buffered=0;
@@ -63,9 +91,7 @@ export async function nationalExporter(root, temporary) {
         const sourceDate=isoDate(source.priceDate??source.modified);if(!sourceDate)throw new Error('Fecha del archivo SEPA inválida');
         if(prices.some(row=>row[6]!==sourceDate))throw new Error('La fecha del precio no coincide con la de su archivo');
         const file=id+'.json',folder=join(staging,store.provinceCode);await mkdir(folder,{recursive:true});
-        const payload=JSON.stringify({version:1,generatedAt,sourceDate,source,catalogPolicyVersion,store:branch,prices});
-        if(Buffer.byteLength(payload)>2_000_000)throw new Error('La sucursal supera el límite de consulta: '+store.externalId);
-        await writeFile(join(folder,file),payload+'\n');
+        await writeStorePrices(folder,file,{version:1,generatedAt,sourceDate,source,catalogPolicyVersion,store:branch},prices);
         byProvince.get(store.provinceCode).push({...branch,file,records:prices.length,sourceDate});
       }
       const coverage=[];

@@ -45,7 +45,7 @@ test('a complete national diagnosis of stale sources is never reported as restor
   const calls = [];
   const readJson = async path => path.endsWith('/index.json')
     ? { generatedAt: '2026-09-25T13:36:48Z', stores: [{ ...store, sourceDate: '2026-09-22' }] }
-    : shard('2026-09-22');
+    : {...shard('2026-09-22'),version:1,generatedAt:'2026-09-25T13:36:48Z',store};
   const fetchImpl = async (url, init) => {
     calls.push({ url, method: init.method ?? 'GET' });
     assert.equal(init.redirect, 'error');

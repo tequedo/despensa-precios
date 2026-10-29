@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dehezaExpectation, verifyStaleDeheza } from './price-refresh-expectations.mjs';
+import { readPriceShard } from '../price-shards.mjs';
 
 const origin = process.env.SITE_ORIGIN, token = process.env.PRICE_INGEST_TOKEN;
 if (!origin || !token) throw new Error('Falta configuración para verificar la lectura de precios');
@@ -25,7 +26,10 @@ async function province(code) {
   const index = await json(`data/national/${code}/index.json`);
   assert.equal(index.geographyVerified, true);
   const shards = new Map();
-  for (const store of index.stores) shards.set(store.externalId, await json(`data/national/${code}/${store.file}`));
+  for (const store of index.stores) {
+    const folder=`data/national/${code}/`;
+    shards.set(store.externalId,await readPriceShard(await json(folder+store.file),file=>json(folder+file),{storeId:store.externalId,generatedAt:index.generatedAt,sourceDate:store.sourceDate,records:store.records}));
+  }
   return {index, shards};
 }
 function verifyQuotes(body, catalog, label) {
