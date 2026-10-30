@@ -1,10 +1,10 @@
 {
-  "version": "2026-10-30.provincias-indexadas.1",
+  "version": "2026-10-30.indice-region.1",
   "files": {
     "lib/price-safety.mjs": "981937388ea054d50693039766136ce62eab8aecd8f0c8deec054df7cb3158da",
     "lib/product-identity.mjs": "2e7f2bad51eac5192893e427de10b602f13ac8f450b979e86c95edab62d3a86d",
     "lib/catalog-semantics.mjs": "8f183d126e78faf12e548dcdfbfade9eb5c806a19c33de4743791294d68e52d4",
-    "lib/product-search.mjs": "fe0288613da708f197bd81258599cd8cb53ee99c4ab7140aa29aead59e169115",
+    "lib/product-search.mjs": "adfec5da40c3a62501055e37fc3da2495947940742c6d9bbe0e69dd891b5fdb3",
     "lib/market-features.mjs": "a2ff965ce0a65be5f49b8d4e6f5f2574c0e66005d2ac156f4ae36fa73bea82c7",
     "lib/price-review.mjs": "2fcdc82b713acdfb34a4ac3b5d71925df2859296562b65bcf075271ce92a7953",
     "lib/catalog-policy.mjs": "d7b9772981d42f4d10f2f043838713b6f1d7b603dde9a85e3a861ac5c33dde61",
