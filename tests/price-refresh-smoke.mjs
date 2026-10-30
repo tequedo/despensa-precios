@@ -39,7 +39,9 @@ function verifyQuotes(body, catalog, label) {
     assert.ok(shard, label+': sucursal ajena al índice');
     const row = shard.prices.find(row => row[0] === quote.ean);
     assert.ok(row, label+': código ajeno a la sucursal');
-    assert.equal(quote.price, row[5], label+': precio distinto al publicado');
+    assert.equal(quote.listPrice, row[5], label+': precio de lista distinto al publicado');
+    if(!quote.appliedPromotion)assert.equal(quote.price,row[5],label+': precio distinto sin promoción identificada');
+    else assert.ok(Number.isFinite(quote.price)&&quote.price>=0&&quote.price<=quote.listPrice,label+': precio promocional inválido');
     assert.equal(quote.validDate, row[6], label+': fecha distinta al precio');
     assert.equal(quote.validDate, shard.sourceDate);
     assert.equal(quote.observedAt, shard.source.fileUpdatedAt);

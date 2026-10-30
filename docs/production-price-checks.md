@@ -36,3 +36,9 @@ con el commit exacto de los datos. Acredita los índices y 24 catálogos de
 sucursal completos, más una cotización por cada uno; no acredita individualmente
 todas las cotizaciones ni todos los SKU del país. Sus fixtures de transporte
 son sintéticos y se usan sólo para probar fallos y recuentos.
+
+El contraste de fuente usa el precio de lista (`listPrice`). Si hay una
+promoción identificada, el informe conserva por separado ese precio y el
+importe final; los controles específicos de promociones verifican sus reglas.
+Un importe final diferente sin promoción identificada falla. Este control
+no convierte un precio promocional legítimo en una discrepancia del CSV.

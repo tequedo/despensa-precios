@@ -17,7 +17,7 @@ async function fixture(t,{wrongPrice=false,stale=false}={}){
  await writeFile(join(folder,'index.json'),JSON.stringify({version:1,generatedAt,stores:[store]}));
  await writeFile(join(folder,store.file),JSON.stringify({version:2,generatedAt,sourceDate:date,store,source,records:2,parts:names.map(file=>({file,records:1}))}));
  for(const [i,file] of names.entries())await writeFile(join(folder,file),JSON.stringify({version:1,kind:'price-part',storeId:store.externalId,generatedAt,sourceDate:date,prices:[tuple(i===0?111:222)]}));
- const body={coverage:{generatedAt},data:{options:[{storeId:store.externalId,ean:'sepa:12:1:222',price:wrongPrice?1201:1200,validDate:date,observedAt:observed,address:store.address,province:store.province,channel:'sucursal',official:true}]}};
+ const body={coverage:{generatedAt},data:{options:[{storeId:store.externalId,ean:'sepa:12:1:222',listPrice:wrongPrice?1201:1200,price:wrongPrice?1201:1200,validDate:date,observedAt:observed,address:store.address,province:store.province,channel:'sucursal',official:true}]}};
  const preload=join(root,'network.mjs');
  await writeFile(preload,`globalThis.fetch=async input=>{const u=new URL(input);if(${stale}||u.searchParams.get('ean')!=='sepa:12:1:222'||u.searchParams.get('storeIds')!=='12|1|108')throw new Error('Se consultó un control incorrecto o vencido');return Response.json(${JSON.stringify(body)});};`);
  const output=join(root,'report.json'),quality=join(root,'quality.json');await writeFile(quality,JSON.stringify({catalogScope:'all_valid_physical_source_products',filteredByCatalogPolicy:0}));

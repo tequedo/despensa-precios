@@ -75,11 +75,14 @@ try{
    assert.equal(body.coverage?.generatedAt,index.generatedAt,'La app aún no lee esta generación');
    const quote=body.data?.options?.find(q=>q.storeId===store.externalId&&q.ean===row[0]);
    assert.ok(quote,'La app no devolvió el producto de control');
-   assert.equal(quote.price,row[5]);assert.equal(quote.validDate,row[6]);
+   assert.equal(quote.listPrice,row[5],'El precio de lista no coincide con la fuente');
+   if(!quote.appliedPromotion)assert.equal(quote.price,row[5],'Hay un precio distinto sin promoción identificada');
+   else assert.ok(Number.isFinite(quote.price)&&quote.price>=0&&quote.price<=quote.listPrice,'El precio promocional es inválido');
+   assert.equal(quote.validDate,row[6]);
    assert.equal(quote.address,shard.store.address);assert.equal(quote.province,shard.store.province);
    assert.equal(quote.channel,'sucursal');assert.equal(quote.official,shard.source.official);
    assert.equal(quote.observedAt,shard.source.fileUpdatedAt);
-   Object.assign(result,{success:true,allPublishedRecordsReassembled:shard.prices.length,partCount:header.parts?.length??1,controlFromLastPart,priceMatchesSource:true,sourceDate:store.sourceDate,official:quote.official,control:{ean:quote.ean,price:quote.price,address:quote.address}});
+   Object.assign(result,{success:true,allPublishedRecordsReassembled:shard.prices.length,partCount:header.parts?.length??1,controlFromLastPart,listPriceMatchesSource:true,sourceDate:store.sourceDate,official:quote.official,control:{ean:quote.ean,price:quote.price,listPrice:quote.listPrice,promotionApplied:Boolean(quote.appliedPromotion),address:quote.address}});
   }catch(error){result.error=error.message;report.errors.push({province:province.code,storeId:store.externalId,error:error.message});}
   report.branchChecks.push(result);console.log(JSON.stringify(result));
  }
