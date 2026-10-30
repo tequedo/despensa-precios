@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-30T01:25:47.808Z",
+  "kind": "local_synthetic_twelve_store_load_using_real_source_prices",
+  "productionVerification": false,
+  "stores": 12,
+  "sourceRecords": 121872,
+  "retainedRecords": 121872,
+  "quotableRecords": 114432,
+  "underReview": 7440,
+  "maximumConcurrentDownloads": 1,
+  "sampledPeakHeapMiB": 117.1,
+  "elapsedMs": 15554,
+  "nodeHeapLimitMiB": 128,
+  "scope": "Verificación local del lector; no sustituye una comprobación en Workers ni en producción",
+  "syntheticDistinctRetailers": true
+}
