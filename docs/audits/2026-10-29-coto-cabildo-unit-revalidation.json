@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-30T02:58:13.706Z",
+  "scope": "Local COTO Cabildo replay of previous policy; not a production confirmation",
+  "rows": 10156,
+  "previousPolicy": "2026-10-28.abecedario.1",
+  "currentPolicy": "2026-10-29.unidades-sepa.1",
+  "restoredUnitRecords": 396,
+  "byUnit": {
+    "CMQ": 374,
+    "LTR": 22
+  },
+  "keptUnderReview": 224,
+  "retainedOtherReasons": 83,
+  "newlyReviewed": 14
+}

@@ -105,7 +105,7 @@ export function replacementCandidate(original, candidate) {
     const ratio = b.content.amount / a.content.amount;
     if (ratio < .8 || ratio > 1.25 || Math.abs(ratio - 1) < .00001)
         return false;
-    const base = text => normalize(text).replace(/\b\d+(?:\s+\d+)?\s*(kg|gr|g|ml|cc|cm3|l|litro|litros)\b/g, '').replace(/\s+/g, ' ').trim();
+    const base = text => normalize(text).replace(/\b\d+(?:\s+\d+)?\s*(kg|gr|g|ml|cc|cm3|cmq|ltr|l|litro|litros)\b/g, '').replace(/\s+/g, ' ').trim();
     return base(original.name) === base(candidate.name);
 }
 export function replacementQuantity(original, candidate, quantity) {

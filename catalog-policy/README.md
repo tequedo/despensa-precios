@@ -1,10 +1,10 @@
 # Política permanente del catálogo
 
-Versión actual: `2026-10-27.abcd.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
+Versión actual: `2026-10-29.unidades-sepa.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
 
 Cada descarga vuelve a clasificar familias, aplicar alias acreditados por código y huella exacta, revisar envases y apartar importes inseguros. Los datos de origen permanecen intactos. La tupla nacional conserva las posiciones anteriores y agrega metadata opcional en la posición 11. La metadata sólo permite rechazar registros; no autoriza precios que fallen los controles de identidad o presentación de la app.
 
-`update-san-juan.mjs` admite la canasta anterior, familias reconocidas y snacks como Lay’s y Takis. No depende de que el nombre contenga ketchup. La cobertura continúa limitada a lo informado por las sucursales y al criterio explícito de admisión; no es una promesa de disponer de todo SEPA.
+`update-san-juan.mjs` conserva todos los productos físicos válidos de la fuente, incluidas las familias desconocidas. Las clasificaciones y revisiones no recortan la descarga; los precios apartados se conservan y quedan fuera de los cálculos. La cobertura depende de las sucursales, fechas y canales efectivamente informados por la fuente.
 
 `national-export.mjs` verifica que cada fila lleve la versión vigente y produce `data/national/catalog-policy-report.json`. La generación nueva reemplaza a la anterior sólo al completar todos los controles. El importador no envía al backend precios apartados, pero conserva sus registros originales y motivos para auditarlos.
 
@@ -19,3 +19,7 @@ La revisión de C conserva 64 regresiones nuevas con nombres reales, tipos princ
 La D agrega 44 regresiones reales: dulce de leche abreviado, cosméticos, desodorante, difusores, discos y palitos de arroz, dispensadores y libros. Una clasificación por ID local exige el ID, código restringido, estado, nombre, marca y presentación literales de origen. No convierte ese código en GTIN ni habilita coincidencias entre comercios. Si cambia la huella, la siguiente descarga aparta el precio. Los nombres de marca distintos de un EAN revisado se acreditan por parejas exactas de nombre y marca.
 
 Los dispensadores con conteo explícito de origen (incluido `1 cu`) se comparan como recipientes. Su única medida en ml describe capacidad y no detergente incluido; múltiples contenidos o cantidades contradictorias continúan apartados. La exportación conserva el precio, identificador y presentación originales.
+
+La política contiene 1.017 regresiones. La revisión de unidades agrega la botella real de COTO Cabildo del 29/10: `750 cmq` con precio de referencia en `ltr`. UNECE documenta CMQ como cm³ y LTR como litro (https://vocabulary.uncefact.org/VolumeUnitMeasureCode). El reconocimiento de estas unidades no cambia los campos de origen, cantidades, identificadores, precios ni el número de envases.
+
+La aplicación puede revalidar un `package_conflict` de `2026-10-28.abecedario.1` únicamente cuando la presentación declara CMQ/LTR y el control estricto de envases ahora confirma todos los tamaños y cantidades de origen. Las contradicciones reales, revisiones de importes o identidad, versiones desconocidas y exclusiones de la versión vigente conservan su bloqueo. Esto permite leer la generación anterior mientras la descarga siguiente aplica la nueva política.

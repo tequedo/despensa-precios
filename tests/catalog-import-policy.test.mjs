@@ -15,8 +15,25 @@ const record=(presentation='70 g',province='San Juan')=>({source:{priceDate:'202
 
 test('las regresiones de todo el abecedario siguen aplicándose en cada importación',async()=>{
  const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
- assert.equal(cases.length,1016);
+ assert.equal(cases.length,1017);
  for(const {product,forbidden,required,category} of cases){assert.equal(includeCatalogProduct(product,false),true,product.name);assert.equal(matchesCatalogQuery(product,forbidden),false,product.name);assert.equal(matchesCatalogQuery(product,required),true,product.name);if(category)assert.equal(marketCategory(product),category,product.name);}
+});
+
+test('cada importación reconoce CMQ del registro real y conserva las contradicciones y los campos originales',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'catalog-unit-codes-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const cases=JSON.parse(await fs.readFile(new URL('../catalog-policy/data/catalog-policy-regressions.json',import.meta.url),'utf8'));
+ const actual=cases.find(c=>c.product.ean==='sepa:12:1:7791333000449').product;
+ // The second package is an intentional test mutation, not another source quote.
+ for(const [index,presentation] of [actual.presentation,'375 cmq',actual.presentation].entries()){
+  const input={...record(presentation,'Ciudad Autónoma de Buenos Aires'),source:{priceDate:'2026-10-29'},product:{...actual,presentation},price:{listPrice:10145,validDate:'2026-10-29',channel:'sucursal'}};
+  const before=JSON.stringify(input),exporter=await nationalExporter(path.join(root,'national'),path.join(root,'tmp-'+index));
+  await exporter.add(input);await exporter.finish();
+  const folder=path.join(root,'national/AR-C'),ix=JSON.parse(await fs.readFile(path.join(folder,'index.json'),'utf8'));
+  const shard=JSON.parse(await fs.readFile(path.join(folder,ix.stores[0].file),'utf8')),row=shard.prices[0];
+  assert.equal(row[3],presentation);assert.equal(row[4],'ltr');assert.equal(row[5],10145);
+  assert.equal(row[11].catalogPolicy.quoteEligible,index!==1);assert.equal(shard.catalogPolicyVersion,catalogPolicyVersion);
+  assert.equal(JSON.stringify(input),before);
+ }
 });
 
 test('dos importaciones consecutivas recalculan las reglas, conservan la fuente y liberan un dato sólo cuando la nueva fuente es consistente',async t=>{
