@@ -17,9 +17,16 @@ export function barcodeIdentity(value) {
 export function productFromTuple(row) {
   const product = { ean:String(row[0]), name:String(row[1]), brand:String(row[2]), presentation:String(row[3]), referenceUnit:String(row[4]) };
   const policy=row[11]?.catalogPolicy;
+  // Re-evaluate only the documented CMQ/LTR parser defect in this old policy.
+  // Raw contents must now be internally consistent. Other versions/reasons,
+  // including source price and semantic reviews, retain their quarantine.
+  const revalidatedUnit=policy?.version==='2026-10-28.abecedario.1'
+    &&policy.reviewCode==='package_conflict'
+    &&/(?:\d+(?:[.,]\d+)?|[.,]\d+)\s*(?:cmq|ltr)(?![a-z])/i.test(product.presentation)
+    &&Boolean(packageEvidence(product));
   // Import metadata can only quarantine a row. It can never override raw
   // identity/package checks or grant permission to use a rejected price.
-  if(policy?.quoteEligible===false&&typeof policy.reviewCode==='string'&&/^[a-zA-Z0-9_-]{1,64}$/.test(policy.reviewCode))product.catalogReview={code:policy.reviewCode,status:'pending_source_confirmation'};
+  if(policy?.quoteEligible===false&&!revalidatedUnit&&typeof policy.reviewCode==='string'&&/^[a-zA-Z0-9_-]{1,64}$/.test(policy.reviewCode))product.catalogReview={code:policy.reviewCode,status:'pending_source_confirmation'};
   const evidence = row[9];
   if (!evidence || typeof evidence !== 'object' || Array.isArray(evidence)) return product;
   const identity = barcodeIdentity(evidence.barcode);

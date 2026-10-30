@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-30T02:57:08.662Z",
+  "scope": "Reproducción local de COTO Cabildo; no acredita la actualización en producción",
+  "catalogPolicyVersion": "2026-10-29.unidades-sepa.1",
+  "policyCounts": {
+    "quoteEligible": 9918,
+    "underReview": 240
+  },
+  "originalAcquisitionRun": 40967726395,
+  "archiveSha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+  "archiveHashMatchesOfficialEvidence": true,
+  "storeId": "12|1|108",
+  "branch": "CABILDO",
+  "sourceDate": "2026-10-29",
+  "counts": {
+    "sourceRowsForStore": 10158,
+    "legacyCategoryFilterWouldExclude": 3258,
+    "invalidPrice": 0,
+    "meatBasisUnderReview": 1,
+    "meatPriceUnderReview": 2,
+    "underReviewSourceProducts": 2,
+    "staleRow": 0,
+    "invalidIdentity": 0,
+    "acceptedRows": 10158
+  },
+  "uniqueAcceptedProducts": 10158,
+  "recoveredProducts": 10158,
+  "lostAcceptedProducts": 0,
+  "completeSingleFileBytes": 5037903,
+  "partCount": 3,
+  "parts": [
+    {
+      "file": "33a4821ed846a9710c8e5051.json",
+      "bytes": 1999972
+    },
+    {
+      "file": "8f6fb6511cf07a1a0a089643.json",
+      "bytes": 1999929
+    },
+    {
+      "file": "50cd40e3cfd2d113b862731f.json",
+      "bytes": 1037645
+    }
+  ],
+  "allPartsWithinByteLimit": true,
+  "allAcceptedNamesCodesPricesDatesPresentationsPromotionsAndReferencesMatch": true,
+  "missingPartRejected": true,
+  "nationalCoverageRecords": 10158,
+  "productionVerification": false
+}

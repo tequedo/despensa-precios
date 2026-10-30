@@ -70,10 +70,10 @@ export function matchesProductQuery(product, query) {
 }
 
 // Discovery understands content units without changing the stricter quote matcher.
-const measurePattern = /(?:\d+(?:[.,]\d+)?|[.,]\d+)\s*(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|lts?|l|ml|cc|cm3)(?![a-z])/gi;
+const measurePattern = /(?:\d+(?:[.,]\d+)?|[.,]\d+)\s*(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])/gi;
 function catalogQuery(value) {
   const source = String(value ?? '').replace(/\bun litro y medio\b/gi, '1,5 L').replace(/\bun litro\b/gi, '1 L')
-    .replace(/(\d{1,3}(?:\.\d{3})+)\s*(?=mililitros?\b|ml\b|gramos?\b|grs?\b|g\b|cc\b|cm3\b)/gi, value => value.replace(/\./g,''))
+    .replace(/(\d{1,3}(?:\.\d{3})+)\s*(?=mililitros?\b|ml\b|gramos?\b|grs?\b|g\b|cc\b|cm3\b|cmq\b)/gi, value => value.replace(/\./g,''))
     .replace(/\bmililitros?\b/gi,'ml');
   const measures = sizes(source);
   let text = source.replace(measurePattern, ' ');

@@ -15113,5 +15113,26 @@
     "forbidden": "harina",
     "required": "snack",
     "category": "Almacén"
+  },
+  {
+    "product": {
+      "ean": "sepa:12:1:7791333000449",
+      "name": "VINO MALBEC GOYENECHEA 100 AÑOS BOT 750 CC",
+      "brand": "GOYENECHEA  100",
+      "presentation": "750 cmq",
+      "referenceUnit": "ltr",
+      "barcode": "7791333000449",
+      "barcodeStatus": "valid_format_and_checksum"
+    },
+    "forbidden": "aceite",
+    "required": "vino",
+    "category": "Bebidas",
+    "quoteEligible": true,
+    "sourceEvidence": {
+      "sourceDate": "2026-10-29",
+      "storeId": "12|1|108",
+      "archiveSha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+      "unitStandard": "https://vocabulary.uncefact.org/VolumeUnitMeasureCode"
+    }
   }
 ]

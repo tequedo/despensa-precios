@@ -37,15 +37,16 @@ export function distanceKm(aLat,aLon,bLat,bLon) {
 }
 export function sizes(value) {
  const source=String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/,/g,".");
- return [...source.matchAll(/(\d+(?:\.\d+)?|\.\d+)\s*(kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|lts?|l|ml|cc|cm3)(?![a-z])/g)].map(m=>{
- const volume=/^(litro|lt|l$|ml|cc|cm3)/.test(m[2]);
+ // UNECE volume codes used by SEPA: CMQ = cm³ and LTR = litre.
+ return [...source.matchAll(/(\d+(?:\.\d+)?|\.\d+)\s*(kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])/g)].map(m=>{
+ const volume=/^(litro|lt|l$|ml|cc|cm3|cmq)/.test(m[2]);
  const large=/^(k|litro|lt|l$)/.test(m[2]);
  return {amount:Number(m[1])*(large?1000:1),dimension:volume?"volume":"mass"};
  });
 }
 const packageText = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/,/g, '.').replace(/[×✕]/g, 'x').replace(/(\d)\s*-\s*(?=[a-z])/g, '$1 ');
 const sameAmount = (a,b) => a.dimension === b.dimension && Math.abs(a.amount - b.amount) < 0.001;
-const packUnit = '(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|lts?|l|ml|cc|cm3)(?![a-z])';
+const packUnit = '(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])';
 // "Doy pack x 950 GRS" and "caja x 500 g" state mass, not 950/500 units.
 const namedPack = '\\b(?:pack|paquete|caja)\\s*(?:de|x)?\\s*(\\d+(?:\\.\\d+)?)(?![\\d.])\\b(?!\\s*'+packUnit+')';
 const packCounts = new RegExp(namedPack+'|\\b(\\d+)\\s*x\\s*(?:\\d+(?:\\.\\d+)?|\\.\\d+)\\s*'+packUnit+'|(?<![a-z])'+packUnit+'\\.?\\s*x\\s*(\\d+)\\b|\\bx\\s*(\\d+)\\s*(?:unidad(?:es)?|uni|un|uds|u)\\b','g');

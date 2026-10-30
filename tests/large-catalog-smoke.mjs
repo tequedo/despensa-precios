@@ -3,6 +3,8 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import {readPriceShard} from '../price-shards.mjs';
 import {freshDate} from '../price-safety.mjs';
+import {productFromTuple} from '../catalog-policy/lib/product-identity.mjs';
+import {classifyCatalogRecord} from '../catalog-policy/lib/catalog-policy.mjs';
 
 const origin=process.env.SITE_ORIGIN??'https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site';
 const folder=join(process.env.NATIONAL_DATA_DIR??'data/national','AR-C');
@@ -17,7 +19,7 @@ try{
  const header=await json(join(folder,store.file)),partSizes=[];
  const shard=await readPriceShard(header,async file=>{const bytes=await readFile(join(folder,file));assert.ok(bytes.length<=2_000_000,'Una parte excede el límite de bytes');partSizes.push(bytes.length);return JSON.parse(bytes);},{storeId:store.externalId,generatedAt:index.generatedAt,sourceDate:store.sourceDate,records:store.records});
  const tail=header.version===2?(await json(join(folder,header.parts.at(-1).file))).prices:shard.prices;
- const candidates=[...tail].reverse().filter(row=>row[11]?.catalogPolicy?.quoteEligible===true);
+ const candidates=[...tail].reverse().filter(row=>row[11]?.catalogPolicy?.quoteEligible===true&&classifyCatalogRecord({product:productFromTuple(row),store:shard.store,price:{listPrice:row[5],validDate:row[6]}}).quoteEligible);
  const row=candidates.find(row=>row[9]?.barcodeStatus!=='valid_format_and_checksum')??candidates[0];
  assert.ok(row,'La última parte no contiene un registro cotizable de control');
  const url=new URL('/api/public-prices',origin);
