@@ -5,6 +5,7 @@ import { PROVINCES, provinceFor, isoDate } from './price-safety.mjs';
 import { branchChannel } from './sepa-catalog-controls.mjs';
 import './catalog-policy/scripts/verify-catalog-policy.mjs';
 import {classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
+import {mergeTupleIdentity} from './source-identity-duplicates.mjs';
 
 const MAX_SHARD_BYTES=2_000_000;
 async function writeStorePrices(folder,file,header,prices){
@@ -57,7 +58,7 @@ export async function nationalExporter(root, temporary) {
       const offers = v.promotions ?? [];
       if(v.promoPrice || v.promoConditions || offers.length) tuple[8] = {promoPrice:v.promoPrice,promoConditions:v.promoConditions,promoKind:v.promoKind,buyQuantity:v.buyQuantity,payQuantity:v.payQuantity,discountPercent:v.discountPercent,requiredBenefit:v.requiredBenefit,discountCap:v.discountCap,...(offers.length ? {promotions:offers} : {})};
       // Stable product IDs and existing reader positions remain unchanged.
-      if(p.barcodeStatus) tuple[9] = {barcode:p.barcode??null,barcodeStatus:p.barcodeStatus};
+      if(p.barcodeStatus) tuple[9] = {barcode:p.barcode??null,barcodeStatus:p.barcodeStatus,...(p.sourceProductId?{sourceProductId:p.sourceProductId}:{}),...(p.sourceEanIndicator!==undefined?{sourceEanIndicator:p.sourceEanIndicator}:{}),...(p.sourceIdentityVariants?{sourceIdentityVariants:p.sourceIdentityVariants}:{})};
       if(v.referencePrice) tuple[10] = {referencePrice:v.referencePrice};
       // Optional metadata preserves every existing source tuple position.
       tuple[11]={catalogPolicy:classifyCatalogRecord(record)};
@@ -76,7 +77,11 @@ export async function nationalExporter(root, temporary) {
         const rows=(await readFile(join(temporary,id+'.ndjson'),'utf8')).trim().split('\n').map(JSON.parse);
         const latest=new Map();for(const row of rows){
           const old=latest.get(row[0]);
-          if(old&&row[6]===old[6]&&JSON.stringify(row)!==JSON.stringify(old))throw new Error('Precios o identidades contradictorios: '+store.externalId+' / '+row[0]+' / '+row[6]);
+          if(old&&row[6]===old[6]&&JSON.stringify(row)!==JSON.stringify(old)){
+            const reconciled=mergeTupleIdentity(old,row);
+            if(!reconciled)throw new Error('Precios o identidades contradictorios: '+store.externalId+' / '+row[0]+' / '+row[6]);
+            latest.set(row[0],reconciled);continue;
+          }
           if(!old||row[6]>old[6])latest.set(row[0],row);
         }
         const prices=[...latest.values()];

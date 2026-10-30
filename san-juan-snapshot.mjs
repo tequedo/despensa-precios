@@ -2,6 +2,7 @@ import { readFile, writeFile, rename, rm } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import './catalog-policy/scripts/verify-catalog-policy.mjs';
 import {catalogPolicyReport} from './catalog-policy/lib/catalog-policy.mjs';
+import {mergeRecordIdentity} from './source-identity-duplicates.mjs';
 
 export async function writeSanJuanSnapshot(path, records, expectedRecords) {
   const unique = new Map();
@@ -9,7 +10,11 @@ export async function writeSanJuanSnapshot(path, records, expectedRecords) {
     if (record.store.province !== 'San Juan') throw new Error('La salida de San Juan contiene otra provincia');
     const key = [record.store.externalId, record.product.ean, record.price.validDate].join('|');
     const old = unique.get(key);
-    if (old && JSON.stringify([old.product,old.price]) !== JSON.stringify([record.product,record.price])) throw new Error('Precios o identidades contradictorios para la misma sucursal, producto y fecha');
+    if (old && JSON.stringify([old.product,old.price]) !== JSON.stringify([record.product,record.price])) {
+      const reconciled=mergeRecordIdentity(old,record);
+      if(!reconciled)throw new Error('Precios o identidades contradictorios para la misma sucursal, producto y fecha');
+      unique.set(key,reconciled);continue;
+    }
     unique.set(key,record);
   }
   if (expectedRecords !== undefined && unique.size !== expectedRecords) throw new Error('El archivo de San Juan no coincide con las referencias del catálogo nacional');
