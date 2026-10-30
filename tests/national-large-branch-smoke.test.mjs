@@ -8,7 +8,7 @@ import {spawnSync} from 'node:child_process';
 import {PROVINCES,argentinaDate} from '../price-safety.mjs';
 
 // Synthetic transport fixtures exercise all 24 scopes; they are not price evidence.
-async function fixture(t,{corruptPart=false,wrongPrice=false}={}){
+async function fixture(t,{corruptPart=false,wrongPrice=false,promotion=false}={}){
  const root=await mkdtemp(join(tmpdir(),'national-large-check-'));t.after(()=>rm(root,{recursive:true,force:true}));
  const national=join(root,'national');await mkdir(national);
  const generatedAt=new Date().toISOString(),date=argentinaDate(),expected={};
@@ -27,7 +27,7 @@ async function fixture(t,{corruptPart=false,wrongPrice=false}={}){
   await writeFile(join(folder,file),JSON.stringify({version:2,store,source,sourceDate:date,generatedAt,records:2,parts}));
   await writeFile(join(folder,'index.json'),JSON.stringify({version:1,geographyVerified:true,province,generatedAt,stores:[store]}));
   summaries.push({...province,stores:1,records:2,sourceDate:date});
-  expected[province.code]={storeId:store.externalId,ean:province.code+':222',price:wrongPrice?1201:1200,validDate:date,address:store.address,province:store.province,channel:'sucursal',official:true,observedAt:generatedAt};
+  expected[province.code]={storeId:store.externalId,ean:province.code+':222',listPrice:wrongPrice?1201:1200,price:promotion?1100:1200,...(promotion?{appliedPromotion:{id:'test-only-promotion'}}:{}),validDate:date,address:store.address,province:store.province,channel:'sucursal',official:true,observedAt:generatedAt};
  }
  await writeFile(join(national,'coverage.json'),JSON.stringify({version:1,geographyVerified:true,generatedAt,provinces:summaries}));
  const quality=join(root,'quality.json');await writeFile(quality,JSON.stringify({catalogScope:'all_valid_physical_source_products',filteredByCatalogPolicy:0}));
@@ -42,7 +42,7 @@ test('las 24 provincias reconstruyen su sucursal mayor y contrastan una cotizaci
  const {run,report}=await fixture(t);assert.equal(run.status,0,run.stderr+'\n'+run.stdout);
  assert.equal(report.success,true);assert.equal(report.indexChecks.length,24);assert.equal(report.branchChecks.length,24);
  assert.equal(report.stores,24);assert.equal(report.publishedRecords,48);
- assert.ok(report.branchChecks.every(b=>b.success&&b.partCount===2&&b.controlFromLastPart&&b.priceMatchesSource));
+ assert.ok(report.branchChecks.every(b=>b.success&&b.partCount===2&&b.controlFromLastPart&&b.listPriceMatchesSource));
 });
 test('una parte alterada falla por hash aunque mantenga cantidad y generación',async t=>{
  const {run,report}=await fixture(t,{corruptPart:true});assert.equal(run.status,1);assert.equal(report.success,false);
@@ -52,4 +52,8 @@ test('una parte alterada falla por hash aunque mantenga cantidad y generación',
 test('un precio distinto al archivo no permite dar por validada la publicación nacional',async t=>{
  const {run,report}=await fixture(t,{wrongPrice:true});assert.equal(run.status,1);assert.equal(report.success,false);
  assert.equal(report.branchChecks.filter(b=>b.success).length,0);assert.equal(report.errors.length,24);
+});
+test('una promoción identificada conserva el contraste del precio de lista sin confundirlo con el importe final',async t=>{
+ const {run,report}=await fixture(t,{promotion:true});assert.equal(run.status,0,run.stderr+'\n'+run.stdout);
+ assert.equal(report.success,true);assert.ok(report.branchChecks.every(b=>b.control.listPrice===1200&&b.control.price===1100&&b.control.promotionApplied));
 });

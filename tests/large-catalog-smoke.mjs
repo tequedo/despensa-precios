@@ -35,11 +35,14 @@ try{
  assert.equal(body.coverage.generatedAt,index.generatedAt);
  const quote=body.data?.options?.find(q=>q.storeId===store.externalId&&q.ean===row[0]);
  assert.ok(quote,'No se recibió el producto de la última parte');
- assert.equal(quote.price,row[5],'El importe no coincide con la fuente');assert.equal(quote.validDate,row[6],'La fecha no coincide con la fuente');
+ assert.equal(quote.listPrice,row[5],'El importe no coincide con la fuente');
+ if(!quote.appliedPromotion)assert.equal(quote.price,row[5],'Hay un precio distinto sin promoción identificada');
+ else assert.ok(Number.isFinite(quote.price)&&quote.price>=0&&quote.price<=quote.listPrice,'El precio promocional es inválido');
+ assert.equal(quote.validDate,row[6],'La fecha no coincide con la fuente');
  assert.equal(quote.address,shard.store.address);assert.equal(quote.province,shard.store.province);
  assert.equal(quote.channel,'sucursal','La cotización debe pertenecer al canal presencial');
  assert.equal(quote.observedAt,shard.source.fileUpdatedAt);assert.equal(quote.official,shard.source.official);
  let quality;try{quality=await json(process.env.QUALITY_FILE??'data/sepa-import-quality.json');}catch{}
- Object.assign(report,{success:true,productionQuoteConfirmed:true,allPublishedRecordsReassembled:shard.prices.length,partCount:header.parts?.length??1,partSizes,controlFromLastPart:header.version===2,catalogScope:quality?.catalogScope??(quality?.filteredByCatalogPolicy>0?'legacy_filtered':'not_declared'),categoryFilteredRecords:quality?.filteredByCatalogPolicy??null,control:{ean:quote.ean,price:quote.price,validDate:quote.validDate,observedAt:quote.observedAt,address:quote.address,channel:quote.channel,official:quote.official}});
+ Object.assign(report,{success:true,productionQuoteConfirmed:true,allPublishedRecordsReassembled:shard.prices.length,partCount:header.parts?.length??1,partSizes,controlFromLastPart:header.version===2,catalogScope:quality?.catalogScope??(quality?.filteredByCatalogPolicy>0?'legacy_filtered':'not_declared'),categoryFilteredRecords:quality?.filteredByCatalogPolicy??null,control:{ean:quote.ean,price:quote.price,listPrice:quote.listPrice,promotionApplied:Boolean(quote.appliedPromotion),validDate:quote.validDate,observedAt:quote.observedAt,address:quote.address,channel:quote.channel,official:quote.official}});
 }catch(error){report.error=error.message;process.exitCode=1;}
 finally{await writeFile(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));}
