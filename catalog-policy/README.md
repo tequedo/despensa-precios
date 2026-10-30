@@ -1,6 +1,6 @@
 # Política permanente del catálogo
 
-Versión actual: `2026-10-30.indice-region.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
+Versión actual: `2026-10-30.calculos-memo.1`. Los archivos de `lib/` y `data/` son una copia exacta, con hashes, de las reglas publicadas por la aplicación Dónde Rinde. El importador y la app ejecutan el mismo código puro. La compilación de la app y los exportadores verifican el manifiesto; una divergencia detiene la generación.
 
 Cada descarga vuelve a clasificar familias, aplicar alias acreditados por código y huella exacta, revisar envases y apartar importes inseguros. Los datos de origen permanecen intactos. La tupla nacional conserva las posiciones anteriores y agrega metadata opcional en la posición 11. La metadata sólo permite rechazar registros; no autoriza precios que fallen los controles de identidad o presentación de la app.
 
@@ -27,3 +27,5 @@ La aplicación puede revalidar un `package_conflict` de `2026-10-28.abecedario.1
 El índice de provincias conserva los 24 códigos, nombres y alias anteriores. Se prepara una vez para evitar repetir la normalización de todas las provincias por cada producto en las consultas completas. No modifica clasificaciones, precios, controles de identidad ni exclusiones.
 
 Los términos del índice son un conjunto de candidatos: incluyen las mismas palabras, alias revisados y el título original. Cada resultado vuelve a pasar el matcher íntegro; no se cambian las identidades ni las reglas de precio. El índice de zona conserva componentes completos por ID/GTIN, incluyendo registros apartados y pares de otros comercios.
+
+Los cálculos puros de texto, medidas, envases y códigos se reutilizan en memorias acotadas. Sus claves incluyen todos los campos de entrada pertinentes; las respuestas son copias independientes. Una modificación del nombre, marca, tamaño o código obliga a reevaluar. No se memorizan importes, promociones, fechas ni decisiones de identidad entre productos.

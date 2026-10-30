@@ -7,7 +7,13 @@ export const PROVINCES = [
  ["AR-D","74","San Luis"],["AR-Z","78","Santa Cruz"],["AR-S","82","Santa Fe"],
  ["AR-G","86","Santiago del Estero"],["AR-V","94","Tierra del Fuego, Antártida e Islas del Atlántico Sur"],["AR-T","90","Tucumán"]
 ].map(([code,id,name])=>({code,id,name}));
-export const normalize = value => String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const normalizedTexts=new Map(),sizeResults=new Map(),packageResults=new Map();
+const remember=(cache,key,value,limit=10000)=>{if(key.length<=2048){if(cache.size>=limit)cache.delete(cache.keys().next().value);cache.set(key,value);}return value;};
+/** @returns {string} */
+export const normalize = value => {
+ const text=String(value??''),cached=normalizedTexts.get(text);if(cached!==undefined)return cached;
+ return remember(normalizedTexts,text,text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim());
+};
 // Every source row checks its province. Normalize the fixed aliases once,
 // instead of scanning and normalizing all 24 provinces for every product.
 const provinceKeys = new Map();
@@ -44,6 +50,11 @@ export function distanceKm(aLat,aLon,bLat,bLon) {
  return 6371*2*Math.asin(Math.sqrt(Math.min(1,h)));
 }
 export function sizes(value) {
+ const text=String(value??'');let result=sizeResults.get(text);
+ if(result===undefined)result=remember(sizeResults,text,parseSizes(text),4096);
+ return result.map(size=>({...size}));
+}
+function parseSizes(value) {
  const source=String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/,/g,".");
  // UNECE volume codes used by SEPA: CMQ = cm³ and LTR = litre.
  return [...source.matchAll(/(\d+(?:\.\d+)?|\.\d+)\s*(kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])/g)].map(m=>{
@@ -60,6 +71,14 @@ const namedPack = '\\b(?:pack|paquete|caja)\\s*(?:de|x)?\\s*(\\d+(?:\\.\\d+)?)(?
 const packCounts = new RegExp(namedPack+'|\\b(\\d+)\\s*x\\s*(?:\\d+(?:\\.\\d+)?|\\.\\d+)\\s*'+packUnit+'|(?<![a-z])'+packUnit+'\\.?\\s*x\\s*(\\d+)\\b|\\bx\\s*(\\d+)\\s*(?:unidad(?:es)?|uni|un|uds|u)\\b','g');
 
 export function packageEvidence(product) {
+ const key=JSON.stringify([String(product.presentation??''),String(product.name??''),String(product.brand??'')]);
+ let result=packageResults.get(key);
+ if(result===undefined)result=remember(packageResults,key,inspectPackage(product));
+ // Callers retain fresh, independently mutable results. The memoized evidence
+ // never escapes, and a changed source name/brand/size gets a different key.
+ return result?{...result,...(result.content?{content:{...result.content}}:{})}:null;
+}
+function inspectPackage(product) {
   const presentation = packageText(product.presentation), name = packageText(product.name);
   // "1854 X 120 GRS" names the numeric brand 1854, not 1,854 packs.
   // Use the supplied brand field; do not guess a brand from a large number.

@@ -11,3 +11,13 @@ test('un catálogo sin índice no se presenta como una optimización exitosa',as
  const fetcher=async(input,options)=>String(input).includes('/prepare')?Response.json(options?{ready:true,records:10,generation:'test-generation'}:{regions:[]}):Response.json({data:{total:1},coverage:{indexed:false}},{headers:{'Server-Timing':'catalog;dur=15000'}});
  const report=await warmCatalogIndexes({origin:'https://example.invalid',fetcher,readIndex:async()=>({generatedAt:'test-generation'})});assert.equal(report.success,false);assert.equal(report.errors.length,5);
 });
+test('una cabecera rápida no oculta una respuesta completa lenta',async()=>{
+ let now=0;
+ const fetcher=async(input,options)=>{
+  if(String(input).includes('/prepare'))return Response.json(options?{ready:true,records:10,generation:'test-generation'}:{regions:[]});
+  now+=2500;return Response.json({data:{total:1},coverage:{indexed:true}},{headers:{'Server-Timing':'catalog;dur=10'}});
+ };
+ const report=await warmCatalogIndexes({origin:'https://example.invalid',fetcher,clock:()=>now,readIndex:async()=>({generatedAt:'test-generation'})});
+ assert.equal(report.success,false);assert.equal(report.queries.length,0);assert.equal(report.errors.length,5);
+ assert.ok(report.errors.every(error=>/respuesta completa/.test(error.error)));
+});
