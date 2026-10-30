@@ -1,7 +1,7 @@
 {
-  "version": "2026-10-29.unidades-sepa.1",
+  "version": "2026-10-30.provincias-indexadas.1",
   "files": {
-    "lib/price-safety.mjs": "0d8519165c99fd027dda4219b66d2050e49db651c0658d02bc1f4f4162e243e5",
+    "lib/price-safety.mjs": "981937388ea054d50693039766136ce62eab8aecd8f0c8deec054df7cb3158da",
     "lib/product-identity.mjs": "2e7f2bad51eac5192893e427de10b602f13ac8f450b979e86c95edab62d3a86d",
     "lib/catalog-semantics.mjs": "8f183d126e78faf12e548dcdfbfade9eb5c806a19c33de4743791294d68e52d4",
     "lib/product-search.mjs": "fe0288613da708f197bd81258599cd8cb53ee99c4ab7140aa29aead59e169115",
