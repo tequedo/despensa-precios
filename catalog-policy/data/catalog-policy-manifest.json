@@ -1,8 +1,8 @@
 {
-  "version": "2026-10-30.calculos-memo.1",
+  "version": "2026-10-30.calculos-memo.2",
   "files": {
-    "lib/price-safety.mjs": "250d83f3ef9ecccca1ecd8dba6541d249714d971faef88c5dc1a7612e3190a3d",
-    "lib/product-identity.mjs": "d6b07472bff2ab295d4eed997011546a036e14b2244f5654f3f3f6d3883e4e18",
+    "lib/price-safety.mjs": "0417c01eba0cd83a506da465cb73902bd4b4b9d78ff519656e7299041251cc25",
+    "lib/product-identity.mjs": "340d67975bebc7e3ac1128fdac3a20fc8e9c30fc62bceab2b81f1570deb52e21",
     "lib/catalog-semantics.mjs": "8f183d126e78faf12e548dcdfbfade9eb5c806a19c33de4743791294d68e52d4",
     "lib/product-search.mjs": "adfec5da40c3a62501055e37fc3da2495947940742c6d9bbe0e69dd891b5fdb3",
     "lib/market-features.mjs": "a2ff965ce0a65be5f49b8d4e6f5f2574c0e66005d2ac156f4ae36fa73bea82c7",
