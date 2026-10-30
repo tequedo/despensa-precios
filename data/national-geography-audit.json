@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-30T10:58:21.151Z",
+  "checkedAt": "2026-10-30T22:45:23.808Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
   "rejectedCount": 53,
   "rejected": [
@@ -164,6 +164,14 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
+      "externalId": "10|3|270",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.422513,
+      "longitude": -64.496978,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
       "externalId": "10|3|172",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
@@ -172,19 +180,19 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|222",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.423396,
-      "longitude": -64.179534,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
       "externalId": "10|3|163",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
       "latitude": -31.418749,
       "longitude": -64.178711,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|222",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.423396,
+      "longitude": -64.179534,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -217,14 +225,6 @@
       "locality": "Córdoba",
       "latitude": -31.387152,
       "longitude": -64.21515,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "10|3|270",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.422513,
-      "longitude": -64.496978,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
