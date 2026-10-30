@@ -21,6 +21,9 @@ test('el importador real conserva productos fuera de las categorías anteriores 
    '99|1|1|10000|0|ARROZ BLANCO|1|kg|Fixture|1500.00|kg\n'+
    '99|1|1|10001|0|CLAVIJA HEXAGONAL ZVX|1|unidad|ZVX|2500.00|unidad\n'+
    '99|1|1|10002|0|ARTICULO ZVX 2 L|1|kg|ZVX|3500.00|kg\n'+
+   '99|1|1|2800000126438|1|POLLO ENTERO FRESCO UNI|1|uni||1000.00|uni\n'+
+   '99|1|1|2004148700004|1|NALGA CON TAPA NOVILLITO X KG|1|kgm|COTO|559.90|kgm\n'+
+   '99|1|1|10004|0|CLAVIJA HEXAGONAL ECONOMICA|1|unidad|ZVX|50.01|unidad\n'+
    '99|1|1|10003|0|CLAVIJA HEXAGONAL INVALIDA|1|unidad|ZVX|0.00|unidad\n'+footer,
  };
  await writeFile(join(dir,'files.json'),JSON.stringify(files));
@@ -35,14 +38,18 @@ test('el importador real conserva productos fuera de las categorías anteriores 
  const run=spawnSync(process.execPath,['--import',preload,new URL('../update-san-juan.mjs',import.meta.url).pathname],{env:{...process.env,...paths,SEPA_SOURCE:'official',NATIONAL_EXPORT:'1',PROVINCE_CODES:'AR-J',DESPENSA_INGEST_URL:'',PRICE_INGEST_TOKEN:''},encoding:'utf8',timeout:30000});
  assert.equal(run.status,0,run.stderr+'\n'+run.stdout);
  const index=JSON.parse(await readFile(join(dir,'national/AR-J/index.json'),'utf8'));
- assert.equal(index.stores.length,1);assert.equal(index.stores[0].records,3);
+ assert.equal(index.stores.length,1);assert.equal(index.stores[0].records,6);
  const shard=JSON.parse(await readFile(join(dir,'national/AR-J',index.stores[0].file),'utf8'));
  const unknown=shard.prices.find(row=>row[0]==='sepa:99:1:10001');
  assert.equal(unknown[1],'CLAVIJA HEXAGONAL ZVX');assert.equal(unknown[3],'1 unidad');assert.equal(unknown[5],2500);assert.equal(unknown[6],date);
  const pending=shard.prices.find(row=>row[0]==='sepa:99:1:10002');
  assert.equal(pending[3],'1 kg');assert.equal(pending[5],3500);assert.equal(pending[11].catalogPolicy.quoteEligible,false);
+ for(const [id,price,code] of [['2800000126438',1000,'meat_unit_not_exact_1kg'],['2004148700004',559.9,'meat_price_out_of_range']]){
+  const meat=shard.prices.find(row=>row[0]==='sepa:99:1:'+id);assert.ok(meat,id);assert.equal(meat[5],price);assert.equal(meat[11].catalogPolicy.quoteEligible,false);assert.equal(meat[11].catalogPolicy.reviewCode,code);
+ }
+ const cheap=shard.prices.find(row=>row[0]==='sepa:99:1:10004');assert.equal(cheap[5],50.01);assert.equal(cheap[11].catalogPolicy.quoteEligible,false);assert.equal(cheap[11].catalogPolicy.reviewCode,'list_price_out_of_range');
  assert.equal(shard.prices.some(row=>row[0]==='sepa:99:1:10003'),false);
- const snapshot=(await readFile(paths.OUTPUT_FILE,'utf8')).trim().split('\n').map(JSON.parse);assert.equal(snapshot.length,3);
+ const snapshot=(await readFile(paths.OUTPUT_FILE,'utf8')).trim().split('\n').map(JSON.parse);assert.equal(snapshot.length,6);
  assert.equal(snapshot.find(row=>row.product.ean==='sepa:99:1:10001').price.listPrice,2500);
  const quality=JSON.parse(await readFile(paths.QUALITY_FILE,'utf8'));assert.equal(quality.catalogScope,'all_valid_physical_source_products');assert.equal(quality.filteredByCatalogPolicy,0);
  assert.match(await readFile(paths.QUARANTINE_FILE,'utf8'),/list_price_out_of_range/);

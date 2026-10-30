@@ -21,3 +21,19 @@ El lector de la app prepara una sucursal por vez,
 convierte y libera sus listas originales y conserva sólo el vencimiento
 más temprano de las fuentes. Mantiene los productos de todas las sucursales
 seleccionadas y la verificación completa de cada parte.
+
+La revisión posterior de los dos registros de carne apartados encontró
+un pollo entero informado por unidad sin peso comprobado (código
+2800000126438, $1.000) y nalga con tapa a $559,90/kg (2004148700004), fuera
+del rango de plausibilidad configurado. Son importes positivos declarados
+por la fuente. Se conservan sin alterarlos en el catálogo y en el snapshot,
+marcados como pendientes de confirmación y excluidos de los cálculos y de
+la carga de cotizaciones aprobadas. La reproducción completa alcanza así
+las 10.158 filas de la sucursal. El informe inicial de 10.156 queda como
+evidencia del comportamiento previo a esta corrección.
+
+Los importes positivos fuera del rango de plausibilidad general también se
+conservan bajo revisión, sin habilitarlos para cálculos. Los importes nulos,
+no numéricos o que no admiten una representación segura en centavos siguen
+registrándose como rechazos de calidad. No se sustituyen precios sospechosos
+por importes estimados.

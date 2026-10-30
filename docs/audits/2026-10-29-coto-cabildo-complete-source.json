@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-30T01:38:31.194Z",
+  "scope": "Reproducción local de COTO Cabildo; no acredita la actualización en producción",
+  "originalAcquisitionRun": 40967726395,
+  "archiveSha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+  "archiveHashMatchesOfficialEvidence": true,
+  "storeId": "12|1|108",
+  "branch": "CABILDO",
+  "sourceDate": "2026-10-29",
+  "counts": {
+    "sourceRowsForStore": 10158,
+    "legacyCategoryFilterWouldExclude": 3258,
+    "invalidPrice": 0,
+    "meatBasisUnderReview": 1,
+    "meatPriceUnderReview": 2,
+    "underReviewSourceProducts": 2,
+    "staleRow": 0,
+    "invalidIdentity": 0,
+    "acceptedRows": 10158
+  },
+  "uniqueAcceptedProducts": 10158,
+  "recoveredProducts": 10158,
+  "lostAcceptedProducts": 0,
+  "completeSingleFileBytes": 5013156,
+  "partCount": 3,
+  "parts": [
+    {
+      "file": "f02516e5d0c170fdef795b79.json",
+      "bytes": 1999674
+    },
+    {
+      "file": "2334715db3a60ae694bedda2.json",
+      "bytes": 1999577
+    },
+    {
+      "file": "fad96bf7607ac887f5c24cd8.json",
+      "bytes": 1013551
+    }
+  ],
+  "allPartsWithinByteLimit": true,
+  "allAcceptedNamesCodesPricesDatesPresentationsPromotionsAndReferencesMatch": true,
+  "missingPartRejected": true,
+  "nationalCoverageRecords": 10158,
+  "productionVerification": false,
+  "catalogScope": "all_valid_physical_source_products_with_pending_source_records_retained",
+  "kind": "local_round_trip_source_audit",
+  "preservedPendingRecords": [
+    {
+      "sourceProductId": "2800000126438",
+      "name": "POLLO ENTERO FRESCO   UNI   ",
+      "listPrice": 1000,
+      "presentation": "1 uni",
+      "referenceUnit": "uni",
+      "reason": "meat_unit_not_exact_1kg",
+      "quoteEligible": false
+    },
+    {
+      "sourceProductId": "2004148700004",
+      "name": "NALGA CON TAPA NOVILLITO X KG",
+      "listPrice": 559.9,
+      "presentation": "1 kgm",
+      "referenceUnit": "kgm",
+      "reason": "meat_price_out_of_range",
+      "quoteEligible": false
+    }
+  ]
+}
