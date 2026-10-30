@@ -3,6 +3,8 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {normalize,distanceKm} from '../price-safety.mjs';
 import {barcodeIdentity} from '../product-identity.mjs';
 import {readPriceShard} from '../price-shards.mjs';
+import {productFromTuple} from '../catalog-policy/lib/product-identity.mjs';
+import {classifyCatalogRecord} from '../catalog-policy/lib/catalog-policy.mjs';
 async function readBranch(code,store,index){
  const folder='data/national/'+code+'/';
  const json=async file=>JSON.parse(await readFile(folder+file,'utf8'));
@@ -35,7 +37,7 @@ for(const p of coverage.provinces){
  assert.ok(distanceKm(city.lat,city.lon,branch.latitude,branch.longitude)<=50,p.name+': no hay comercios cercanos');
  // The complete catalog also retains reviewed rows. Pick a quote-eligible
  // control so an intentional price exclusion cannot pass for a loading failure.
- const sample=(await readBranch(p.code,branch,index)).prices.find(row=>normalize(row[1]).length>=2&&row[9]?.barcodeStatus==='valid_format_and_checksum'&&row[11]?.catalogPolicy?.quoteEligible===true);assert.ok(sample,p.name+': sin producto cotizable de muestra');
+ const sample=(await readBranch(p.code,branch,index)).prices.find(row=>normalize(row[1]).length>=2&&row[9]?.barcodeStatus==='valid_format_and_checksum'&&row[11]?.catalogPolicy?.quoteEligible===true&&classifyCatalogRecord({product:productFromTuple(row),store:branch,price:{listPrice:row[5],validDate:row[6]}}).quoteEligible);assert.ok(sample,p.name+': sin producto cotizable de muestra');
  const scope=new URLSearchParams({province:p.code,locality,lat:String(city.lat),lon:String(city.lon)});
  const selection=new URLSearchParams({q:sample[1],brand:sample[2]??'',size:sample[3]??''});
  const q=await request('/api/prices?'+scope+'&'+selection);assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.some(item=>item.id===String(sample[0])),p.name+': falta producto que existe en la fuente');
