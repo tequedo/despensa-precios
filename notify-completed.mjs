@@ -1,6 +1,5 @@
-import { createReadStream } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
-import { createInterface } from "node:readline";
+import {countSnapshotRecords} from './snapshot-records.mjs';
 import { requestProcessNotification } from "./notify-process-request.mjs";
 import { priceUpdateDetails } from "./price-update-message.mjs";
 
@@ -10,17 +9,12 @@ const kinds = (process.env.NOTIFICATION_KINDS || "sepa,promotions,benefits").spl
 if (!endpoint || !token || !process.env.NOTIFICATION_RUN_ID) throw new Error("Falta la configuración de avisos");
 if (kinds.some(kind => !["sepa", "promotions", "benefits"].includes(kind))) throw new Error("Categoría de aviso inválida");
 const readJson = async path => JSON.parse(await readFile(path, "utf8"));
-async function countLines(path) {
-  let count = 0;
-  for await (const line of createInterface({ input: createReadStream(path), crlfDelay: Infinity })) if (line.trim()) count++;
-  return count;
-}
 const processes = [], errors = [], counts = {};
 for (const kind of kinds) {
   try {
     let details;
     if (kind === "sepa") {
-      counts.priceCount = await countLines(process.env.OUTPUT_FILE || "data/san-juan.ndjson");
+      counts.priceCount = await countSnapshotRecords(process.env.OUTPUT_FILE || "data/san-juan.ndjson");
       const coverage = await readJson("data/national/coverage.json");
       details = priceUpdateDetails(coverage, await readJson("data/sepa-provenance.json"));
     } else if (kind === "promotions") {
