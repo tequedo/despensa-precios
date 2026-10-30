@@ -220,13 +220,13 @@ async function processFolder(folder, sourceInfo, counters) {
       const presentationUnit = pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"]);
       const referenceUnit = pick(row, ["productos_unidad_medida_referencia", "producto_unidad_medida_referencia", "unidad_medida_referencia"]);
       const presentation = [presentationQuantity, presentationUnit].filter(Boolean).join(" ");
+      let sourceReviewCode;
       if (meatProduct && !hasExactKilogramBasis(presentation, referenceUnit)) {
-        counters.rejected++;
+        sourceReviewCode='meat_unit_not_exact_1kg';
         await quarantine("meat", "meat_unit_not_exact_1kg", { product: description, brand, presentation, referenceUnit, store: branchKey(branch) }, counters);
-        return;
       }
       const listPrice = sepaAmount(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
-      if (!listPrice || listPrice < 100 || listPrice > 10000000) {
+      if (!listPrice || listPrice > Number.MAX_SAFE_INTEGER / 100) {
         counters.rejected++;
         await quarantine("price", "list_price_out_of_range", {
           product: description,
@@ -235,10 +235,13 @@ async function processFolder(folder, sourceInfo, counters) {
         }, counters);
         return;
       }
+      if(listPrice<100||listPrice>10000000){
+        sourceReviewCode??='list_price_out_of_range';
+        await quarantine('price','list_price_out_of_range',{product:description,store:branchKey(branch),value:pick(row,['productos_precio_lista','producto_precio_lista','precio_lista'])},counters);
+      }
       if (meatProduct && !isPlausibleMeatPrice(listPrice)) {
-        counters.rejected++;
+        sourceReviewCode??='meat_price_out_of_range';
         await quarantine("meat", "meat_price_out_of_range", { product: description, brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
-        return;
       }
       const validDate=evidence.date;
       const productUpdatedAt=isoDate(pick(row,["productos_fecha_actualizacion","fecha_actualizacion"]));
@@ -269,6 +272,7 @@ async function processFolder(folder, sourceInfo, counters) {
         source: datedSource,
         product: {
           ...productIdentity,
+          ...(sourceReviewCode?{catalogReview:{code:sourceReviewCode,status:'pending_source_confirmation'}}:{}),
           name: description || ean,
           brand,
           presentation,
