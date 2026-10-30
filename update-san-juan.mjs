@@ -14,7 +14,7 @@ import { readSepaPricing } from "./sepa-pricing.mjs";
 import { readSepaRows as rows } from "./sepa-csv.mjs";
 import { writeSanJuanSnapshot } from "./san-juan-snapshot.mjs";
 import { branchChannel, productFileEvidence } from "./sepa-catalog-controls.mjs";
-import {includeCatalogProduct,classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
+import {classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
 
 const ingestEndpoint = process.env.DESPENSA_INGEST_URL;
 const ingestToken = process.env.PRICE_INGEST_TOKEN;
@@ -65,8 +65,6 @@ const promotionsFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.
 const qualityFile = process.env.QUALITY_FILE ?? "data/sepa-import-quality.json";
 const national = process.env.NATIONAL_EXPORT === "1";
 const provinceCodes = new Set((process.env.PROVINCE_CODES ?? "AR-J").split(",").map(normalize));
-const keywords = JSON.parse(await readFile(new URL("./san-juan-products.json", import.meta.url), "utf8")).map(normalize);
-const keywordPatterns = keywords.map(keyword => new RegExp("(?:^|\\b)" + keyword + "(?:\\b|$)"));
 const meatCatalog = JSON.parse(await readFile(new URL("./data/meat-catalog.json", import.meta.url), "utf8"));
 const isMeatProduct = createMeatMatcher(meatCatalog);
 const workDir = await mkdtemp(join(tmpdir(), "sepa-precios-"));
@@ -217,9 +215,7 @@ async function processFolder(folder, sourceInfo, counters) {
       if (!branch) return;
       const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
       const brand = pick(row, ["productos_marca", "producto_marca", "marca"]);
-      const normalizedDescription = normalize(description);
       const meatProduct = isMeatProduct(description, brand);
-      if (!includeCatalogProduct({name:description,brand},keywordPatterns.some(pattern => pattern.test(normalizedDescription))||meatProduct)) {counters.filteredByCatalogPolicy=(counters.filteredByCatalogPolicy??0)+1;return;}
       const presentationQuantity = pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]);
       const presentationUnit = pick(row, ["productos_unidad_medida_presentacion", "unidad_medida_presentacion"]);
       const referenceUnit = pick(row, ["productos_unidad_medida_referencia", "producto_unidad_medida_referencia", "unidad_medida_referencia"]);
@@ -326,7 +322,7 @@ try {
   const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [], csvRepairs: [] };
   await processFolder(prepared.folder, prepared.source, counters);
   await mkdir(dirname(qualityFile), { recursive: true });
-  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs, catalogPolicy: counters.catalogPolicy, filteredByCatalogPolicy: counters.filteredByCatalogPolicy??0 }, null, 2) + '\n');
+  await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, catalogScope:'all_valid_physical_source_products', excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs, catalogPolicy: counters.catalogPolicy, filteredByCatalogPolicy:0 }, null, 2) + '\n');
 
   if (!counters.accepted) throw new Error("El recurso SEPA no produjo precios válidos para el alcance solicitado");
   if (counters.damagedArchives) throw new Error(`La actualización quedó incompleta: ${counters.damagedArchives} archivo(s) ZIP con contenido no pudieron procesarse`);

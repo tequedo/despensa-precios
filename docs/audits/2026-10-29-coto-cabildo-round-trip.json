@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-30T01:15:17.897Z",
+  "scope": "Reproducción local de COTO Cabildo; no acredita la actualización en producción",
+  "originalAcquisitionRun": 40967726395,
+  "archiveSha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+  "archiveHashMatchesOfficialEvidence": true,
+  "storeId": "12|1|108",
+  "branch": "CABILDO",
+  "sourceDate": "2026-10-29",
+  "counts": {
+    "sourceRowsForStore": 10158,
+    "invalidPrice": 1,
+    "invalidMeatBasis": 1,
+    "staleRow": 0,
+    "invalidIdentity": 0,
+    "acceptedRows": 10156,
+    "legacyCategoryFilterWouldExclude": 3258
+  },
+  "uniqueAcceptedProducts": 10156,
+  "recoveredProducts": 10156,
+  "lostAcceptedProducts": 0,
+  "completeSingleFileBytes": 5012226,
+  "partCount": 3,
+  "parts": [
+    {
+      "file": "e568c6f6f48fc2bb0f8c7533.json",
+      "bytes": 1999690
+    },
+    {
+      "file": "c4ae501a9f8f2ee1cf2dfe05.json",
+      "bytes": 1999598
+    },
+    {
+      "file": "7f7a545df67f2bf89aa54847.json",
+      "bytes": 1012584
+    }
+  ],
+  "allPartsWithinByteLimit": true,
+  "allAcceptedNamesCodesPricesDatesPresentationsPromotionsAndReferencesMatch": true,
+  "missingPartRejected": true,
+  "nationalCoverageRecords": 10156,
+  "productionVerification": false,
+  "catalogScope": "all_valid_physical_source_products",
+  "kind": "local_round_trip_source_audit"
+}
