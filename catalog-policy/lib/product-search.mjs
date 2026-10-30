@@ -83,6 +83,16 @@ function catalogQuery(value) {
   return { text, measures, amount };
 }
 
+// Candidate indexes are a superset only. Every retrieved product still passes
+// matchesCatalogQuery and the original identity/package quotation controls.
+export function catalogIndexWords(product){
+ return [...new Set([...catalogWords(product,reviewedCatalogEntry(product)),...tokens(product.name)])];
+}
+export function catalogIndexHints(query){
+ const ordinary=tokens(catalogQuery(query).text),literal=tokens(query);
+ return [...new Set([ordinary[0],literal.length>1?literal[0]:undefined].filter(Boolean))];
+}
+
 // Autocomplete accepts words still being typed. Quotes retain exact matching.
 export function matchesCatalogQuery(product, query) {
   // A fully specified source title can join an abbreviation to its size
