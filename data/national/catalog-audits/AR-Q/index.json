@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "format": "ndjson",
+  "complete": true,
+  "records": 8757,
+  "bytes": 954631,
+  "context": {
+    "province": "AR-Q",
+    "generatedAt": "2026-10-30T02:24:38.380Z",
+    "catalogPolicyVersion": "2026-10-28.abecedario.1"
+  },
+  "parts": [
+    {
+      "file": "part-000001.ndjson",
+      "records": 8757,
+      "bytes": 954631,
+      "sha256": "887154ad898c80e17642146d0b262ce70634ad8f322bbda84a22c1831ba69685"
+    }
+  ]
+}

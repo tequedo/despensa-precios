@@ -1,356 +1,338 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-25T23:26:37.566Z",
-  "status": "replica_integrity_checked",
-  "sourceType": "replica",
+  "checkedAt": "2026-10-30T02:24:38.381Z",
+  "status": "official_original_integrity_checked",
+  "sourceType": "official_original",
+  "authenticity": "official_https_download",
   "originalComparison": {
     "status": "not_performed",
-    "reason": "No se obtuvo un original por un canal oficial independiente"
+    "reason": "No se solicitó comparar una réplica"
+  },
+  "phase": "complete",
+  "metadata": {
+    "url": "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios",
+    "startedAt": "2026-10-30T02:24:38.381Z",
+    "fetchedAt": "2026-10-30T02:24:39.639Z",
+    "bytes": 11378,
+    "sha256": "e591822cccfc66a84d09005e04329e1057963cff4f72bf5c1eb9abe3f5cf6ee7",
+    "status": 200,
+    "etag": null,
+    "lastModified": null
   },
   "officialResource": {
     "mimetype": "application/zip",
     "cache_url": null,
     "hash": "",
-    "description": "Precios SEPA Minoristas domingo, 2026-10-25",
-    "name": "Domingo",
+    "description": "Precios SEPA Minoristas jueves, 2026-10-29",
+    "name": "Jueves",
     "format": "ZIP",
-    "url": "https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/f8e75128-515a-436e-bf8d-5c63a62f2005/download/sepa_domingo.zip",
+    "url": "https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/d076720f-a7f0-4af8-b1d6-1b99d5a90c14/download/sepa_jueves.zip",
     "datastore_active": false,
     "cache_last_updated": null,
     "package_id": "6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5",
-    "created": "2024-08-25T14:56:28.846924",
+    "created": "2024-08-22T14:25:33.795118",
     "state": "active",
     "mimetype_inner": null,
-    "last_modified": "2026-10-25T16:19:25.849Z",
-    "position": 5,
-    "revision_id": "128ac133-f980-417d-9c61-ba18160d937d",
+    "last_modified": "2026-10-29T16:19:52.178Z",
+    "position": 1,
+    "revision_id": "55fab27c-7ec3-41ba-972c-aaef95874ad9",
     "url_type": "upload",
-    "id": "f8e75128-515a-436e-bf8d-5c63a62f2005",
+    "id": "d076720f-a7f0-4af8-b1d6-1b99d5a90c14",
     "resource_type": "file.upload",
-    "size": 326252705
+    "size": 324924535
   },
-  "replica": {
-    "id": "f8e75128-515a-436e-bf8d-5c63a62f2005-revID-128ac133-f980-417d-9c61-ba18160d937d",
-    "warnings": "",
-    "name": "f8e75128-515a-436e-bf8d-5c63a62f2005-revID-128ac133-f980-417d-9c61-ba18160d937d-sepa_domingo.zip-repackaged.tar.zst",
-    "link": "https://f004.backblazeb2.com/file/precios-justos-datasets/f8e75128-515a-436e-bf8d-5c63a62f2005-revID-128ac133-f980-417d-9c61-ba18160d937d-sepa_domingo.zip-repackaged.tar.zst",
-    "firstSeenAt": "2026-10-25T17:10:00.950Z"
+  "download": {
+    "url": "https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/d076720f-a7f0-4af8-b1d6-1b99d5a90c14/download/sepa_jueves.zip",
+    "startedAt": "2026-10-30T02:24:39.650Z",
+    "fetchedAt": "2026-10-30T02:24:54.279Z",
+    "bytes": 324924535,
+    "sha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+    "status": 200,
+    "etag": "\"1793290792.56-324924535\"",
+    "lastModified": "Thu, 29 Oct 2026 16:19:52 GMT"
   },
-  "metadata": {
-    "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/dataset-info.json",
-    "sha256": "a5aed0f24415e1830550d64a44e6e5148d1e794d26d39fbaabe8d7b806103b34",
-    "fetchedAt": "2026-10-25T23:26:37.705Z",
-    "etag": "W/\"f2a75280ba7f734799d8180e8f0174c7ef24c3dc7bcfa3c5da118dcede34a8fe\""
+  "downloadedAt": "2026-10-30T02:24:54.279Z",
+  "metadataAfter": {
+    "url": "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios",
+    "startedAt": "2026-10-30T02:24:54.280Z",
+    "fetchedAt": "2026-10-30T02:24:54.489Z",
+    "bytes": 11378,
+    "sha256": "e591822cccfc66a84d09005e04329e1057963cff4f72bf5c1eb9abe3f5cf6ee7",
+    "status": 200,
+    "etag": null,
+    "lastModified": null
   },
-  "index": {
-    "url": "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/index.json",
-    "sha256": "d6853e0492a1b482b295c616c48770e4f786445bdb0e5a4c6fe1c99e4c286557",
-    "fetchedAt": "2026-10-25T23:26:37.892Z",
-    "etag": "W/\"8e653fdc5f1bf02734b3fb051537ea3ee4791842c68c6053c632136ff31271ae\""
-  },
-  "downloadedAt": "2026-10-25T23:26:41.126Z",
   "archive": {
-    "bytes": 66278504,
-    "sha256": "a69cb4170123797b960fef109a8858c5e044d19b406c1990298387970d1ab1c6",
-    "format": "tar.zst"
+    "bytes": 324924535,
+    "sha256": "ccfe64fdec524bcb8d220d3f9608a1e699cee5dbdb942660471c673fac034e9f",
+    "format": "zip"
   },
   "payload": {
     "algorithm": "sha256-json-manifest-v1",
-    "sha256": "6bb68bb0805b16e53bc1ebce4d9ee7bc413c9f6d24805153bd4c11bc2907284e",
+    "sha256": "3026cee4df165f88015f08708151394ad7b6f1e4ed79cf853858774f5d91a26e",
     "files": 49,
-    "bytes": 1603162416,
+    "bytes": 1601119621,
     "csvGroups": 16,
     "emptyZipMarkers": [
-      "2026-10-25/sepa_2_comercio-sepa-36_2026-10-25_01-05-08.zip"
+      "2026-10-29/sepa_2_comercio-sepa-36_2026-10-29_01-05-07.zip"
     ]
   },
   "files": [
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-12_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-12_2026-10-29_09-05-11/comercio.csv",
       "bytes": 337,
-      "sha256": "0a75afaa10b31f1facab1ef8200844e3599046818b507e1e7573b92a07453c69"
+      "sha256": "85f3fe68134097c949ae1bd4c7048f8eb781ef1335740b7de05021b7aa39b4f5"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-12_2026-10-25_09-05-10/productos.csv",
-      "bytes": 114401613,
-      "sha256": "61e8f81788953a1ca5029ca40ad10e74410513da2d7a05b33d80c6f459544a2e"
+      "path": "2026-10-29/sepa_1_comercio-sepa-12_2026-10-29_09-05-11/productos.csv",
+      "bytes": 115049932,
+      "sha256": "5158d5314555018542581e7dbf3b29dbf3ebeb68be3135792bb0a375a1500dd5"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-12_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-12_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 23960,
-      "sha256": "c9f854941c2c0ff558bd972d274d3116de94b23102bebd48e9344e060b9592ff"
+      "sha256": "e93778fcad8af76d00ffe0de77cd8e6f3c5763bc2b54b8ce6371cbe2eff45a4a"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-13_2026-10-25_09-05-10/comercio.csv",
-      "bytes": 392,
-      "sha256": "a4d389f645941f947f576e130b8c8b4e0861ed09cb7364a593b6f5bba2556d9a"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-13_2026-10-25_09-05-10/productos.csv",
-      "bytes": 48442041,
-      "sha256": "cba962a492b8c886e0716826d0467222045e8be03fe06ee4ddc3576c6c41e887"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-13_2026-10-25_09-05-10/sucursales.csv",
-      "bytes": 26797,
-      "sha256": "29d9a0a0fb1e4174a3f3f9ed788f337d279235dd53fb332a42227ecfaceaff98"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-15_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-15_2026-10-29_09-05-11/comercio.csv",
       "bytes": 331,
-      "sha256": "d853af25278dfae49617541310e09d3244a98038efa6f650347d24ac078b63e6"
+      "sha256": "fd45656e741ecf2052ab52b8c8d35481c79191f4a1e022a738a130584fd83ff0"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-15_2026-10-25_09-05-10/productos.csv",
-      "bytes": 507403548,
-      "sha256": "9d3128707a4d8779ac05e954586b0978d7014ec8d106e48f5fa9044766d7c047"
+      "path": "2026-10-29/sepa_1_comercio-sepa-15_2026-10-29_09-05-11/productos.csv",
+      "bytes": 517140636,
+      "sha256": "1be546bd6fe3e2770b36b3d28bd7e9a645280901bdb6b35f375a3f82bfdcbdf8"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-15_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-15_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 212086,
-      "sha256": "f1149d475afc50805114522dc2a3d902e824b3ee877ece6c25a9eddd262569fa"
+      "sha256": "b973c23e0391270a5ebfd14d648ef05a93893b5b16d711c53e212abb453ae796"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-21_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-20_2026-10-29_09-05-11/comercio.csv",
+      "bytes": 364,
+      "sha256": "5a7eaf3b78596499b2f89e1244a6f7e45785559ed6a5a81aac323599ba83c9c7"
+    },
+    {
+      "path": "2026-10-29/sepa_1_comercio-sepa-20_2026-10-29_09-05-11/productos.csv",
+      "bytes": 817064,
+      "sha256": "6e272925c4d0457cf2a75fa177a8aaaf5dc167d894a74e60d0f010de4b0f2f21"
+    },
+    {
+      "path": "2026-10-29/sepa_1_comercio-sepa-20_2026-10-29_09-05-11/sucursales.csv",
+      "bytes": 1477,
+      "sha256": "864bd6701b5b652306168fb768429ddeaa853c1e4a037604e4cf60af03472760"
+    },
+    {
+      "path": "2026-10-29/sepa_1_comercio-sepa-21_2026-10-29_09-05-11/comercio.csv",
       "bytes": 321,
-      "sha256": "26fc5f8fb13252e077f6190965a435fe7357be8f61047c1be53e6bd5a895a32f"
+      "sha256": "c8264451d47dc0a5051de13b878a7c386faabb1d417021bb9a6a582899b60b3e"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-21_2026-10-25_09-05-10/productos.csv",
-      "bytes": 4986641,
-      "sha256": "dbd7cfe33105fc7e394906532c8299306a2f0465dca0c718a18f13920d7bfeee"
+      "path": "2026-10-29/sepa_1_comercio-sepa-21_2026-10-29_09-05-11/productos.csv",
+      "bytes": 4775463,
+      "sha256": "8a52ba05bcf8aa0fde4eee61241e9fb7b3e42a55e7725b7027eaf320090c7f29"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-21_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-21_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 5914,
-      "sha256": "592e75d63cd21a45f7fd60f70260c5278c6dbf439787c40f50610239fe0b6e36"
+      "sha256": "c9e1c141d1d46c1e6a978935a7ecf47d5cbd5a0b2f5aaf617e7fd33376ee58f8"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-23_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-23_2026-10-29_09-05-11/comercio.csv",
       "bytes": 336,
-      "sha256": "9bb21eb09c72875e66bc7e7dece724ca4e9772035106a4f823abf77be7d44a16"
+      "sha256": "5a033e7e49af7af7c429d36cc1b39cdb2c6b69bf099f85ae5bbb62cd954530d6"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-23_2026-10-25_09-05-10/productos.csv",
-      "bytes": 590895,
-      "sha256": "89c7dbf7fb634eb2ebd4d8a9beea508dba96ae8757af3a78c12883ea0a1d8c02"
+      "path": "2026-10-29/sepa_1_comercio-sepa-23_2026-10-29_09-05-11/productos.csv",
+      "bytes": 590979,
+      "sha256": "c5fdf83da5ff6167c7fe90b5a2375ac57caa634e3e7dbcf424522a86273196b9"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-23_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-23_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 11700,
-      "sha256": "980aaca7317fff156578ccd521ca36700c03bacfaadc4b8280fb554baec89a62"
+      "sha256": "6ce60144d6b2a6b817316cb57b96938a6ac90884ea7e58f542d36b854a0b8775"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-24_2026-10-25_09-05-10/comercio.csv",
-      "bytes": 411,
-      "sha256": "1859ceb0b506d70f115d795452c74a085392ff40160b64e6e35a5d7a03f595b1"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-24_2026-10-25_09-05-10/productos.csv",
-      "bytes": 38117708,
-      "sha256": "05acb7403fd530e00aea9dd2d0279daf2f004ba7c3c88b39b586bf2fbae66b30"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-24_2026-10-25_09-05-10/sucursales.csv",
-      "bytes": 74172,
-      "sha256": "39a9cd253f0081dd0b3a3cac278bc171599837aa6717bb32e72ce102f35ae4b1"
-    },
-    {
-      "path": "2026-10-25/sepa_1_comercio-sepa-3_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-3_2026-10-29_09-05-11/comercio.csv",
       "bytes": 306,
-      "sha256": "3f8b3c9a777d5d47309d38884bcbe983c92cdcdcdc43cf17ad6dfad3a110d759"
+      "sha256": "068427b49806a49b499155ad6af3c17759f4defe75992cd97262296217fc6fd8"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-3_2026-10-25_09-05-10/productos.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-3_2026-10-29_09-05-11/productos.csv",
       "bytes": 927461,
-      "sha256": "e3e9e4351bf2044487889c51841224023723d0b08621ae528c6aa36a4f3dc4b4"
+      "sha256": "e7e4673c3bd22dc525b69c41d6df67d02cc2132686569bd8aa1d4287d684714a"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-3_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-3_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 9470,
-      "sha256": "a7985163a2f889ee683b75ccb355c90ea5a897d237f37a7286223b403f1eaf72"
+      "sha256": "84e2c3a7f4c2728b5c4c6b760711b467c75770a733416f59fc7d077e68863bba"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-47_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-47_2026-10-29_09-05-11/comercio.csv",
       "bytes": 431,
       "sha256": "3373dfdde2c40be282641d7e2389a46c616400692710036351f37ba9738759b1"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-47_2026-10-25_09-05-10/productos.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-47_2026-10-29_09-05-11/productos.csv",
       "bytes": 2024111,
       "sha256": "3ab5d50edcbc2c70c94cdc7465915aee4b27d26c432df32f4e7ca675564f90f3"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-47_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-47_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 2085,
       "sha256": "1544f15c1fd5e547dfb8808fa2b644e4d717058830f5133edb57cfb7191b9587"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-4_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-4_2026-10-29_09-05-11/comercio.csv",
       "bytes": 298,
-      "sha256": "af4b23934c1da4456673deb4bab5e25e293cda7afcbb0ef092180b1cd07318e5"
+      "sha256": "739e18b5a786a3bad5d997ba2a8470b8ddd5e3af5a58fa3e3906a485591d5b7d"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-4_2026-10-25_09-05-10/productos.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-4_2026-10-29_09-05-11/productos.csv",
       "bytes": 26806,
-      "sha256": "fe9a7c0b5d4823db7fa34f830b965c3b0e269fdfa4636460256b32d04e353efe"
+      "sha256": "a5d3b01694db512153ad55858a82f4cb6f6b60c41b16fcb3bd42b8bf313febef"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-4_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-4_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 754,
-      "sha256": "0fa1f1a79d722ffa4fbbd4a3ac2fe775798be5aca05a3e585a021f99f31f9092"
+      "sha256": "bebaf9fb8f7cc07a88cc22b9b4add1157f220031a585103b818c32dfab3bfebd"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-8_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-8_2026-10-29_09-05-11/comercio.csv",
       "bytes": 304,
-      "sha256": "c1f47622bb3980fb6b57ffd20901fff55d58f8eba996e970213dd9dac01851cb"
+      "sha256": "2f0d86075b7984ca68bdd017f7bde7d5c8ed358270d3164c5d2bdd4877d93f0d"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-8_2026-10-25_09-05-10/productos.csv",
-      "bytes": 4823653,
-      "sha256": "09ac00204cc8137a9d2755362f51d15472cfb148997c4ac5553a3b8a7f18e5b6"
+      "path": "2026-10-29/sepa_1_comercio-sepa-8_2026-10-29_09-05-11/productos.csv",
+      "bytes": 4804970,
+      "sha256": "a63e69eba487b5633dacd43d82393b57e8875f468f434111284b5bfece945f54"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-8_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-8_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 3191,
-      "sha256": "963daf5436ebde61f8d95bc80141911723fd3a077788e8013a3e5ebc5ee63a1f"
+      "sha256": "c3c8bc8ad1403470c95aae0bbfb93fa5be412cf734c9710cf9776490af7ddce7"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-9_2026-10-25_09-05-10/comercio.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-9_2026-10-29_09-05-11/comercio.csv",
       "bytes": 494,
-      "sha256": "63834c6aaf05da0327c1bddd8400fbfce55bc038d169eb70bb5c398daa95c039"
+      "sha256": "23c4cf40c587dd2d0b8991f995f63dc197670d08c1db4d5e543558bcbe760efb"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-9_2026-10-25_09-05-10/productos.csv",
-      "bytes": 147886513,
-      "sha256": "cb19e1026a25e4d2b77e2ca5db72d4dbbe09895b4495b2bfcf39da364ecc15ba"
+      "path": "2026-10-29/sepa_1_comercio-sepa-9_2026-10-29_09-05-11/productos.csv",
+      "bytes": 147232151,
+      "sha256": "1ffaa3e4a408c948694d55806d443b58d8a0ce85413ce0a1959af4782831eb7c"
     },
     {
-      "path": "2026-10-25/sepa_1_comercio-sepa-9_2026-10-25_09-05-10/sucursales.csv",
+      "path": "2026-10-29/sepa_1_comercio-sepa-9_2026-10-29_09-05-11/sucursales.csv",
       "bytes": 55365,
-      "sha256": "bc5820e57750c6587534b010595f09e0da7776e1340e31862596a32c288fe2ed"
+      "sha256": "66a750c1088215fef7e9a3019da7e9c360fc04c396b8d427d3c9946e0f07c233"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-10_2026-10-25_01-05-08/comercio.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-10_2026-10-29_01-05-07/comercio.csv",
       "bytes": 560,
-      "sha256": "0ac03a11e1693b068690623ad5edb95427e321be15dc64ce5f243a1239fdfb53"
+      "sha256": "329d94d7059d4f530c77857d638ea4a931f36c35346e7cd82bad5ca5a9133acb"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-10_2026-10-25_01-05-08/productos.csv",
-      "bytes": 397653950,
-      "sha256": "24dae9e2aa4e74a2fbf03583166f2f5e0e33455e79778651037dedafe33b90d7"
+      "path": "2026-10-29/sepa_2_comercio-sepa-10_2026-10-29_01-05-07/productos.csv",
+      "bytes": 398705426,
+      "sha256": "7bb3d3e62e5f2841b04ba04799930106154558715c0a83ccbe3973edecc4d81d"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-10_2026-10-25_01-05-08/sucursales.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-10_2026-10-29_01-05-07/sucursales.csv",
       "bytes": 155476,
-      "sha256": "0c1dd9fc4d805d4c0ae8fc66a865453c685b312ca2edd6e24471356ceec2128d"
+      "sha256": "85d1986a4dac23a610d7498922d20e622ef64f54fe1b52fd4756c081abcc8a1a"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-11_2026-10-25_01-05-08/comercio.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-11_2026-10-29_01-05-07/comercio.csv",
       "bytes": 685,
-      "sha256": "50a0738053bfe9354a7319f0a2d542e364601f28d115f28b07aeee25320ecdc0"
+      "sha256": "316f916cfe3ede868ad5a1e0f5dfe25b602d7fe0b51c98e2aad6a34288690b50"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-11_2026-10-25_01-05-08/productos.csv",
-      "bytes": 211099304,
-      "sha256": "63f2deb5965b240a636fe8a0e76b876f04d8b28f9985f410a762bd296c852223"
+      "path": "2026-10-29/sepa_2_comercio-sepa-11_2026-10-29_01-05-07/productos.csv",
+      "bytes": 213283115,
+      "sha256": "b849c765ca883f46b37c0c097fbb24c0d8319638cf3d44c1a02180e8980c7f85"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-11_2026-10-25_01-05-08/sucursales.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-11_2026-10-29_01-05-07/sucursales.csv",
       "bytes": 19408,
-      "sha256": "51f1e1ea2d85263135b078bd20a0c00c1f03399aacf0c08bc9d8f0e9d1dc96ef"
+      "sha256": "0208615829da9a01bf76cdef875bd6297ff197cc2da3f08889a036284518b8d6"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-2_2026-10-25_01-05-08/comercio.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-13_2026-10-29_01-05-07/comercio.csv",
+      "bytes": 392,
+      "sha256": "63f2f321e2332381e95daef52b9e69b50232fbf08aa6deb122c3c455326673a4"
+    },
+    {
+      "path": "2026-10-29/sepa_2_comercio-sepa-13_2026-10-29_01-05-07/productos.csv",
+      "bytes": 71663355,
+      "sha256": "08602052acedbceb4b3398397002ab67978636f4fe10f51ea9187f830a4a40c8"
+    },
+    {
+      "path": "2026-10-29/sepa_2_comercio-sepa-13_2026-10-29_01-05-07/sucursales.csv",
+      "bytes": 43490,
+      "sha256": "c80191fac90715885ab90ae22560a49a766f4eb4541794e7d2409411e4ae0388"
+    },
+    {
+      "path": "2026-10-29/sepa_2_comercio-sepa-2_2026-10-29_01-05-07/comercio.csv",
       "bytes": 563,
-      "sha256": "30105862fd49fd6c6b79db1824432eed855bdecf3488e92a95f985b950dd5ba3"
+      "sha256": "a49bdbc5d241bf79427c534e6b2e4aaeaeebd17e6865160ca9023fb90450f793"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-2_2026-10-25_01-05-08/productos.csv",
-      "bytes": 120136200,
-      "sha256": "cbcbb0b292395bf84bed24fb4539b71c322502d5545e2e6c92d6261cfe966db4"
+      "path": "2026-10-29/sepa_2_comercio-sepa-2_2026-10-29_01-05-07/productos.csv",
+      "bytes": 119494285,
+      "sha256": "d830a846c6d6972edd2b6c6a8000900375685b8724884361f313a677f279fc09"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-2_2026-10-25_01-05-08/sucursales.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-2_2026-10-29_01-05-07/sucursales.csv",
       "bytes": 37590,
-      "sha256": "30ef9066355e12f2a67f59bf0c79ae42b925cbbcd7e6384b59c50ba66506705c"
+      "sha256": "a61212be184e1017977e35739d98ac61927ebd8e8f2ee559f2f6c4624a2c0aec"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-36_2026-10-25_01-05-08.zip",
+      "path": "2026-10-29/sepa_2_comercio-sepa-36_2026-10-29_01-05-07.zip",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-5_2026-10-25_01-05-08/comercio.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-5_2026-10-29_01-05-07/comercio.csv",
       "bytes": 343,
-      "sha256": "99378b6802e891a6705ff316f9877b0c69bb4ca2a0a5edf04b7847e26f6f7e69"
+      "sha256": "e5924cfc0a15a1bd955970e85c3180c41ccb6dd8a49e980ec9fbd5bae8afa757"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-5_2026-10-25_01-05-08/productos.csv",
-      "bytes": 2132748,
-      "sha256": "a77734c42f359911a0283fd9656ee7a2d46d0488b16b4fe739107dec6160009f"
+      "path": "2026-10-29/sepa_2_comercio-sepa-5_2026-10-29_01-05-07/productos.csv",
+      "bytes": 2130459,
+      "sha256": "9ecc652c8758c406123590fd9a3b81525c19714a6df285ef0a55e4fc49c45dc4"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-5_2026-10-25_01-05-08/sucursales.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-5_2026-10-29_01-05-07/sucursales.csv",
       "bytes": 1861,
-      "sha256": "264bfd2023e7b1694c0f329ca9fc96e3b6a1f8dac9415562f69187a4c154ab34"
+      "sha256": "49f8df9e7dd71eca4e69be5d0118e1ecf5dc6efcd38f3a4dac9d6d167cb70868"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-6_2026-10-25_01-05-08/comercio.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-6_2026-10-29_01-05-07/comercio.csv",
       "bytes": 440,
-      "sha256": "69482a20adf76758382acfe89d72840901efb3b30ff4ea6c0be32cbf5088d7f9"
+      "sha256": "3c0c08de92b32c54acef0b281287effa6df53ec344cebd18f5d5191ad88d654c"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-6_2026-10-25_01-05-08/productos.csv",
-      "bytes": 1856037,
-      "sha256": "38a6075ca756920db84e0ff9c33ddfb9fa2b9b13df9cc3570196c74f0edfe032"
+      "path": "2026-10-29/sepa_2_comercio-sepa-6_2026-10-29_01-05-07/productos.csv",
+      "bytes": 1856270,
+      "sha256": "466bb34c231645c7c872a630a3f0cbe383235d44ee04ebbde9e19506501f2662"
     },
     {
-      "path": "2026-10-25/sepa_2_comercio-sepa-6_2026-10-25_01-05-08/sucursales.csv",
+      "path": "2026-10-29/sepa_2_comercio-sepa-6_2026-10-29_01-05-07/sucursales.csv",
       "bytes": 6806,
-      "sha256": "94d2a70a5ebddfb196f5f54228d4e97032b12053d86abe99698978ae15451beb"
+      "sha256": "244015450af28bfd7a1af47df79d597b80284c7cbcc3f32e2d1d4d8e0b40f64e"
     }
   ],
-  "embeddedMetadataSha256": "a5aed0f24415e1830550d64a44e6e5148d1e794d26d39fbaabe8d7b806103b34",
-  "authenticity": "not_independently_verified",
   "selection": {
     "mode": "auto",
-    "selected": "replica",
+    "selected": "official",
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-10-25T23:26:35.888Z",
-        "status": "failed",
-        "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
-        "phase": "official_metadata_before",
-        "http": {
-          "status": 403,
-          "host": "datos.produccion.gob.ar",
-          "requestId": "a9cff0c7dc890ae222ae7c115c15c141",
-          "protection": "BunkerWeb",
-          "accessDenied": true
-        }
-      },
-      {
-        "source": "official-daily",
-        "startedAt": "2026-10-25T23:26:37.230Z",
-        "status": "failed",
-        "error": "Descarga SEPA: HTTP 403 (datos.produccion.gob.ar)",
-        "phase": "official_daily_archive",
-        "sourceModified": null,
-        "http": {
-          "status": 403,
-          "host": "datos.produccion.gob.ar",
-          "requestId": "086f6ed4ab4d8cee84d7c7ce780744ca",
-          "protection": "BunkerWeb",
-          "accessDenied": true
-        }
-      },
-      {
-        "source": "replica",
-        "startedAt": "2026-10-25T23:26:37.565Z",
-        "status": "replica_integrity_checked",
-        "sourceModified": "2026-10-25T16:19:25.849Z"
+        "startedAt": "2026-10-30T02:24:38.381Z",
+        "status": "official_original_integrity_checked",
+        "sourceModified": "2026-10-29T16:19:52.178Z"
       }
     ]
   }

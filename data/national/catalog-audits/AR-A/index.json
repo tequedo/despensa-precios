@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "format": "ndjson",
+  "complete": true,
+  "records": 27737,
+  "bytes": 2964408,
+  "context": {
+    "province": "AR-A",
+    "generatedAt": "2026-10-30T02:24:38.380Z",
+    "catalogPolicyVersion": "2026-10-28.abecedario.1"
+  },
+  "parts": [
+    {
+      "file": "part-000001.ndjson",
+      "records": 18723,
+      "bytes": 1999896,
+      "sha256": "5bcda001283744d5e7feec72d07095d0f34d80b41c922b5ba3f7b17be4a5a099"
+    },
+    {
+      "file": "part-000002.ndjson",
+      "records": 9014,
+      "bytes": 964512,
+      "sha256": "3e4ed139aa517c20a40c929aa06a931deb4bcc61eaa4af29cdde2cb4891d0063"
+    }
+  ]
+}
