@@ -7,8 +7,16 @@ export const PROVINCES = [
  ["AR-D","74","San Luis"],["AR-Z","78","Santa Cruz"],["AR-S","82","Santa Fe"],
  ["AR-G","86","Santiago del Estero"],["AR-V","94","Tierra del Fuego, Antártida e Islas del Atlántico Sur"],["AR-T","90","Tucumán"]
 ].map(([code,id,name])=>({code,id,name}));
-const normalizedTexts=new Map(),sizeResults=new Map(),packageResults=new Map();
-const remember=(cache,key,value,limit=10000)=>{if(key.length<=2048){if(cache.size>=limit)cache.delete(cache.keys().next().value);cache.set(key,value);}return value;};
+const normalizedTexts=new Map(),sizeResults=new Map(),packageResults=new Map(),memoOrders=new WeakMap();
+const remember=(cache,key,value,limit=10000)=>{
+ if(key.length<=2048){
+  let order=memoOrders.get(cache);if(!order){order={keys:[],cursor:0};memoOrders.set(cache,order);}
+  if(order.keys.length<limit)order.keys.push(key);
+  else{cache.delete(order.keys[order.cursor]);order.keys[order.cursor]=key;order.cursor=(order.cursor+1)%limit;}
+  cache.set(key,value);
+ }
+ return value;
+};
 /** @returns {string} */
 export const normalize = value => {
  const text=String(value??''),cached=normalizedTexts.get(text);if(cached!==undefined)return cached;
