@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - "tests/site-smoke.mjs"
+      - "tests/warm-catalog-index.mjs"
       - "tests/price-refresh-smoke.mjs"
       - "tests/large-catalog-smoke.mjs"
       - "tests/large-catalog-smoke.test.mjs"
@@ -21,7 +22,7 @@ jobs:
   probar:
     if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled')
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,6 +34,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Preparar catálogos por zona y comprobar búsquedas nuevas
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+        run: node tests/warm-catalog-index.mjs
       - name: Verificar cobertura y datos aislados
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
@@ -60,6 +65,7 @@ jobs:
         with:
           name: comprobacion-app-${{ github.run_id }}
           path: |
+            data/catalog-index-warm-report.json
             data/site-smoke-report.json
             data/price-refresh-smoke-report.json
             data/large-catalog-smoke-report.json
@@ -70,6 +76,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/site-smoke-report.json data/price-refresh-smoke-report.json data/large-catalog-smoke-report.json data/national-large-branch-smoke-report.json
+          git add data/catalog-index-warm-report.json data/site-smoke-report.json data/price-refresh-smoke-report.json data/large-catalog-smoke-report.json data/national-large-branch-smoke-report.json
           git commit -m "Registrar comprobación de app publicada"
           bash scripts/push-generated-data.sh
