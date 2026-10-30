@@ -1,11 +1,17 @@
 name: Comprobar app publicada
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Actualizar precios de Argentina"]
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
       - "tests/site-smoke.mjs"
       - "tests/price-refresh-smoke.mjs"
+      - "tests/large-catalog-smoke.mjs"
+      - "tests/large-catalog-smoke.test.mjs"
       - ".github/workflows/test-site.yml"
 permissions:
   contents: write
@@ -13,7 +19,7 @@ jobs:
   probar:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,10 +42,26 @@ jobs:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
           PRICE_INGEST_TOKEN: ${{ secrets.PRICE_INGEST_TOKEN }}
         run: node tests/price-refresh-smoke.mjs
+      - name: Corroborar un producto de la última parte del catálogo grande
+        if: ${{ !cancelled() }}
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+        run: node tests/large-catalog-smoke.mjs
+      - name: Conservar evidencia incluso cuando una comprobación falle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comprobacion-app-${{ github.run_id }}
+          path: |
+            data/site-smoke-report.json
+            data/price-refresh-smoke-report.json
+            data/large-catalog-smoke-report.json
+          if-no-files-found: warn
+          retention-days: 90
       - name: Guardar comprobación
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/site-smoke-report.json data/price-refresh-smoke-report.json
+          git add data/site-smoke-report.json data/price-refresh-smoke-report.json data/large-catalog-smoke-report.json
           git commit -m "Registrar comprobación de app publicada"
           bash scripts/push-generated-data.sh
