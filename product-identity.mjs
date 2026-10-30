@@ -20,7 +20,7 @@ export function sepaProductIdentity(row) {
   const flag = String(pick(row, ['productos_ean', 'producto_ean'])).trim();
   if (flag !== '0' && flag !== '1') return { accepted: false, reason: 'invalid_ean_indicator' };
   const ean = ['sepa', ...parts].join(':'); // Existing product, stock and price references stay stable.
-  if (flag === '0') return { accepted: true, ean, sourceProductId: parts[2], barcodeStatus: 'internal' };
+  if (flag === '0') return { accepted: true, ean, sourceProductId: parts[2], sourceEanIndicator:flag, barcodeStatus: 'internal' };
   const identity = barcodeIdentity(parts[2]);
-  return { accepted: true, ean, sourceProductId: parts[2], barcodeStatus: identity.status, ...(identity.barcode ? { barcode: identity.barcode } : {}), ...(identity.gtin ? { gtin: identity.gtin } : {}) };
+  return { accepted: true, ean, sourceProductId: parts[2], sourceEanIndicator:flag, barcodeStatus: identity.status, ...(identity.barcode ? { barcode: identity.barcode } : {}), ...(identity.gtin ? { gtin:identity.gtin } : {}) };
 }
