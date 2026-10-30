@@ -3,10 +3,12 @@ import {basename,dirname,join} from 'node:path';
 import {createHash} from 'node:crypto';
 
 export async function readSnapshotRecords(path){
- const bytes=await readFile(path),text=bytes.toString('utf8');
- const first=text.split('\n',1)[0];if(!first.trim())return [];
+ const bytes=await readFile(path),text=bytes.toString('utf8').replace(/^\uFEFF/,'');
+ const lines=text.split(/\r?\n/).filter(line=>line.trim());
+ const first=lines[0];if(!first)return [];
  const header=JSON.parse(first);
- if(header?.kind!=='san-juan-snapshot')return text.split(/\r?\n/).filter(line=>line.trim()).map(JSON.parse);
+ if(header?.kind!=='san-juan-snapshot')return lines.map(JSON.parse);
+ if(lines.length!==1)throw new Error('La cabecera del snapshot contiene registros ajenos');
  const prefix=basename(path)+'.parts/';
  if(header.version!==2||!Number.isSafeInteger(header.records)||header.records<1||!Array.isArray(header.parts)||!header.parts.length||new Set(header.parts.map(p=>p.file)).size!==header.parts.length||header.parts.reduce((n,p)=>n+p.records,0)!==header.records)throw new Error('Índice de snapshot inválido');
  const rows=[],hash=createHash('sha256');

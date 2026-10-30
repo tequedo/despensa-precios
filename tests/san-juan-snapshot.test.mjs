@@ -28,3 +28,12 @@ test('un faltante o precio contradictorio conserva la generación anterior',asyn
   assert.equal(await readFile(path,'utf8'),'anterior\n');
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+test('el formato anterior conserva todos los registros con líneas vacías y una cabecera no admite datos anexados',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'snapshot-legacy-lines-'));
+ try{
+  const path=join(dir,'prices.ndjson');await writeFile(path,'\uFEFF\n'+JSON.stringify(row('a'))+'\n\n'+JSON.stringify(row('b'))+'\n');
+  assert.deepEqual(await readSnapshotRecords(path),[row('a'),row('b')]);
+  await writeFile(path,JSON.stringify({kind:'san-juan-snapshot',version:2,records:1,parts:[]})+'\n{}\n');
+  await assert.rejects(readSnapshotRecords(path),/ajenos/);
+ }finally{await rm(dir,{recursive:true,force:true});}
+});
