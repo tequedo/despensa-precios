@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 14026,
-  "bytes": 1537419,
+  "records": 13585,
+  "bytes": 1489791,
   "context": {
     "province": "AR-E",
-    "generatedAt": "2026-10-30T02:24:38.380Z",
-    "catalogPolicyVersion": "2026-10-28.abecedario.1"
+    "generatedAt": "2026-10-30T03:57:33.645Z",
+    "catalogPolicyVersion": "2026-10-29.unidades-sepa.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 14026,
-      "bytes": 1537419,
-      "sha256": "7ff31f89a5b7aa7db022528d1ad3a1120c23a6dae77c4500bcd8676a881c747b"
+      "records": 13585,
+      "bytes": 1489791,
+      "sha256": "7b01f830d94d15bdf37c05ae9f893b4307838bd3e6e15679cffd3f5eab6c00d7"
     }
   ]
 }
