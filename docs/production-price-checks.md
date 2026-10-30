@@ -22,3 +22,17 @@ si una comprobación falla. Sólo una comprobación completa aprobada registra
 los informes en la rama principal. Los perfiles técnicos del control previo
 siguen separados de las métricas del piloto; el control nuevo consulta la
 API pública sin crear perfiles de uso normal.
+
+El control nacional adicional comprueba los índices de las 24 provincias,
+sus recuentos, fechas, canales, sucursales únicas y generación. Exige que la
+publicación declare el catálogo físico completo y cero descartes por categoría.
+Después reconstruye la sucursal con más registros de cada provincia, valida
+los hashes de sus partes y consulta una cotización con sucursal explícita.
+Los tamaños de archivo se comprueban en bytes UTF-8; una parte alterada o un
+precio diferente al publicado impide dar el control por aprobado.
+
+Este control conserva su informe como `national-large-branch-smoke-report.json`,
+con el commit exacto de los datos. Acredita los índices y 24 catálogos de
+sucursal completos, más una cotización por cada uno; no acredita individualmente
+todas las cotizaciones ni todos los SKU del país. Sus fixtures de transporte
+son sintéticos y se usan sólo para probar fallos y recuentos.
