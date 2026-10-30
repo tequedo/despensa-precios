@@ -1,7 +1,13 @@
 import { normalize, packageEvidence, compatiblePackages } from './price-safety.mjs';
 // A valid checksum is a format check, not proof of assignment or package identity.
 // GS1 restricted-circulation prefixes must never become cross-retailer keys.
+const barcodeResults=new Map();
 export function barcodeIdentity(value) {
+ const text=String(value??'').trim();let result=barcodeResults.get(text);
+ if(result===undefined){result=inspectBarcode(text);if(text.length<=14){if(barcodeResults.size>=8192)barcodeResults.delete(barcodeResults.keys().next().value);barcodeResults.set(text,result);}}
+ return {...result};
+}
+function inspectBarcode(value) {
   const barcode = String(value ?? '').trim();
   if (!/^(?:\d{8}|\d{12}|\d{13}|\d{14})$/.test(barcode) || /^0+$/.test(barcode)) return { status: 'invalid' };
   const body = barcode.slice(0, -1);
