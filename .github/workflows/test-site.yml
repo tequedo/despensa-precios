@@ -12,6 +12,8 @@ on:
       - "tests/price-refresh-smoke.mjs"
       - "tests/large-catalog-smoke.mjs"
       - "tests/large-catalog-smoke.test.mjs"
+      - "tests/national-large-branch-smoke.mjs"
+      - "tests/national-large-branch-smoke.test.mjs"
       - ".github/workflows/test-site.yml"
 permissions:
   contents: write
@@ -19,7 +21,7 @@ jobs:
   probar:
     if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled')
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,6 +49,11 @@ jobs:
         env:
           SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
         run: node tests/large-catalog-smoke.mjs
+      - name: Corroborar los catálogos más grandes de las 24 provincias
+        if: ${{ !cancelled() }}
+        env:
+          SITE_ORIGIN: https://despensa-inteligente.f0d9cc43-9db2-41a1-8976-25cea8b73f32.chatgpt.site
+        run: DATA_COMMIT="$(git rev-parse HEAD)" node tests/national-large-branch-smoke.mjs
       - name: Conservar evidencia incluso cuando una comprobación falle
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,12 +63,13 @@ jobs:
             data/site-smoke-report.json
             data/price-refresh-smoke-report.json
             data/large-catalog-smoke-report.json
+            data/national-large-branch-smoke-report.json
           if-no-files-found: warn
           retention-days: 90
       - name: Guardar comprobación
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/site-smoke-report.json data/price-refresh-smoke-report.json data/large-catalog-smoke-report.json
+          git add data/site-smoke-report.json data/price-refresh-smoke-report.json data/large-catalog-smoke-report.json data/national-large-branch-smoke-report.json
           git commit -m "Registrar comprobación de app publicada"
           bash scripts/push-generated-data.sh
