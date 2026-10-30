@@ -9,6 +9,7 @@ export const PROVINCES = [
 ].map(([code,id,name])=>({code,id,name}));
 const normalizedTexts=new Map(),sizeResults=new Map(),packageResults=new Map();
 const remember=(cache,key,value,limit=10000)=>{if(key.length<=2048){if(cache.size>=limit)cache.delete(cache.keys().next().value);cache.set(key,value);}return value;};
+/** @returns {string} */
 export const normalize = value => {
  const text=String(value??''),cached=normalizedTexts.get(text);if(cached!==undefined)return cached;
  return remember(normalizedTexts,text,text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim());
