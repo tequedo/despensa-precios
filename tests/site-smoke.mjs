@@ -33,9 +33,12 @@ for(const p of coverage.provinces){
  const locality=city.name;
  const branch=[...index.stores].sort((a,b)=>distanceKm(city.lat,city.lon,a.latitude,a.longitude)-distanceKm(city.lat,city.lon,b.latitude,b.longitude)||a.chain.localeCompare(b.chain)||a.externalId.localeCompare(b.externalId))[0];
  assert.ok(distanceKm(city.lat,city.lon,branch.latitude,branch.longitude)<=50,p.name+': no hay comercios cercanos');
- const sample=(await readBranch(p.code,branch,index)).prices.find(row=>normalize(row[1]).length>=2&&row[9]?.barcodeStatus==='valid_format_and_checksum');assert.ok(sample,p.name+': sin producto de muestra');
+ // The complete catalog also retains reviewed rows. Pick a quote-eligible
+ // control so an intentional price exclusion cannot pass for a loading failure.
+ const sample=(await readBranch(p.code,branch,index)).prices.find(row=>normalize(row[1]).length>=2&&row[9]?.barcodeStatus==='valid_format_and_checksum'&&row[11]?.catalogPolicy?.quoteEligible===true);assert.ok(sample,p.name+': sin producto cotizable de muestra');
  const scope=new URLSearchParams({province:p.code,locality,lat:String(city.lat),lon:String(city.lon)});
- const q=await request('/api/prices?'+scope+'&q='+encodeURIComponent(sample[1]));assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.some(item=>item.id===String(sample[0])),p.name+': falta producto que existe en la fuente');
+ const selection=new URLSearchParams({q:sample[1],brand:sample[2]??'',size:sample[3]??''});
+ const q=await request('/api/prices?'+scope+'&'+selection);assert.equal(q.status,200,p.name+': búsqueda');assert.ok(q.body.data.productos.some(item=>item.id===String(sample[0])),p.name+': falta producto que existe en la fuente');
  const product=q.body.data.productos.find(item=>item.id===String(sample[0]));assert.equal(product.barcode,sample[9].barcode,p.name+': código distinto al publicado');assert.equal(product.barcodeStatus,'valid_format_and_checksum');savedReference=product.id;const prices=await request('/api/prices?'+scope+'&ean='+encodeURIComponent(product.id));assert.equal(prices.status,200,p.name+': precio');assert.ok(prices.body.data.sucursales.length,p.name+': sin sucursales');
  for(const s of prices.body.data.sucursales){
   assert.equal(s.provincia,p.name);assert.ok(s.distancia!==null&&s.distancia<=50,p.name+': sucursal lejana');assert.ok(s.preciosProducto.precioLista>0);assert.equal(s.channel,'sucursal');
