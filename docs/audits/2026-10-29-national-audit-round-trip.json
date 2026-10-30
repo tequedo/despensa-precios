@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-10-30T02:25:00.432Z",
+  "inputBytes": 87122145,
+  "records": 502886,
+  "sourceQuarantined": 502886,
+  "parts": 45,
+  "largestPart": 1999994,
+  "loss": 0,
+  "allHashesVerified": true,
+  "orderAndFullFieldsPreserved": true,
+  "provinces": [
+    {
+      "province": "AR-C",
+      "records": 104672,
+      "parts": 6
+    },
+    {
+      "province": "AR-B",
+      "records": 154114,
+      "parts": 9
+    },
+    {
+      "province": "AR-K",
+      "records": 6051,
+      "parts": 1
+    },
+    {
+      "province": "AR-H",
+      "records": 1677,
+      "parts": 1
+    },
+    {
+      "province": "AR-U",
+      "records": 6640,
+      "parts": 1
+    },
+    {
+      "province": "AR-X",
+      "records": 65418,
+      "parts": 4
+    },
+    {
+      "province": "AR-W",
+      "records": 3722,
+      "parts": 1
+    },
+    {
+      "province": "AR-E",
+      "records": 8733,
+      "parts": 1
+    },
+    {
+      "province": "AR-P",
+      "records": 497,
+      "parts": 1
+    },
+    {
+      "province": "AR-Y",
+      "records": 4693,
+      "parts": 1
+    },
+    {
+      "province": "AR-L",
+      "records": 772,
+      "parts": 1
+    },
+    {
+      "province": "AR-F",
+      "records": 3586,
+      "parts": 1
+    },
+    {
+      "province": "AR-M",
+      "records": 58428,
+      "parts": 4
+    },
+    {
+      "province": "AR-N",
+      "records": 341,
+      "parts": 1
+    },
+    {
+      "province": "AR-Q",
+      "records": 5322,
+      "parts": 1
+    },
+    {
+      "province": "AR-R",
+      "records": 6449,
+      "parts": 1
+    },
+    {
+      "province": "AR-A",
+      "records": 19087,
+      "parts": 2
+    },
+    {
+      "province": "AR-J",
+      "records": 12736,
+      "parts": 1
+    },
+    {
+      "province": "AR-D",
+      "records": 5011,
+      "parts": 1
+    },
+    {
+      "province": "AR-Z",
+      "records": 764,
+      "parts": 1
+    },
+    {
+      "province": "AR-S",
+      "records": 9370,
+      "parts": 1
+    },
+    {
+      "province": "AR-G",
+      "records": 4740,
+      "parts": 1
+    },
+    {
+      "province": "AR-V",
+      "records": 355,
+      "parts": 1
+    },
+    {
+      "province": "AR-T",
+      "records": 19708,
+      "parts": 2
+    }
+  ],
+  "scope": "Actual national catalog exclusion audit; verifies preservation of audit entries, not every retail quotation.",
+  "sourceReport": {
+    "runId": 40982877550,
+    "artifactId": 12946944519,
+    "archive": "calidad-sepa-40982877550",
+    "path": "national/catalog-policy-report.json",
+    "generatedAt": "2026-10-30T00:59:31.193Z",
+    "sha256": "3e1960ae49abe18bb477edcd7ebac702b93d57bfbe86c33da0b42794095a59f1"
+  }
+}
