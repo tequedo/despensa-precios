@@ -6,6 +6,7 @@ import { branchChannel } from './sepa-catalog-controls.mjs';
 import './catalog-policy/scripts/verify-catalog-policy.mjs';
 import {classifyCatalogRecord,catalogPolicyVersion} from './catalog-policy/lib/catalog-policy.mjs';
 import {mergeTupleIdentity} from './source-identity-duplicates.mjs';
+import {ndjsonParts} from './ndjson-parts.mjs';
 
 const MAX_SHARD_BYTES=2_000_000;
 async function writeStorePrices(folder,file,header,prices){
@@ -108,7 +109,20 @@ export async function nationalExporter(root, temporary) {
         await writeFile(join(staging,p.code,'index.json'),JSON.stringify({version:1,generatedAt,province:p,stores:branches})+'\n');
       }
       await writeFile(join(staging,'coverage.json'),JSON.stringify({version:1,generatedAt,scope:'Argentina',provinces:coverage})+'\n');
-      await writeFile(join(staging,'catalog-policy-report.json'),JSON.stringify({version:catalogPolicyVersion,generatedAt,sourceFieldsPreserved:true,provinces:Object.fromEntries(policyReports)},null,2)+'\n');
+      const summaries={};
+      for(const [code,report] of policyReports){
+        const {exceptions,...summary}=report;
+        let exceptionParts=[];
+        if(exceptions.length){
+          const relative='catalog-audits/'+code;
+          const writer=await ndjsonParts(join(staging,relative),{context:{province:code,generatedAt,catalogPolicyVersion}});
+          for(const entry of exceptions)await writer.append(entry);
+          const manifest=await writer.close();
+          exceptionParts=manifest.parts.map(part=>({...part,file:relative+'/'+part.file}));
+        }
+        summaries[code]={...summary,exceptionsCount:exceptions.length,exceptionParts,...(exceptions.length<=100?{exceptions}:{exceptionsStoredInParts:true})};
+      }
+      await writeFile(join(staging,'catalog-policy-report.json'),JSON.stringify({schemaVersion:2,version:catalogPolicyVersion,generatedAt,sourceFieldsPreserved:true,exceptionStorage:'bounded_ndjson_parts',provinces:summaries},null,2)+'\n');
       try { await rename(root,backup);backedUp=true; } catch(error) { if(error.code!=='ENOENT')throw error; }
       try { await rename(staging,root); } catch(error) { if(backedUp){await rename(backup,root);backedUp=false;}throw error; }
       if(backedUp){await rm(backup,{recursive:true,force:true});backedUp=false;}

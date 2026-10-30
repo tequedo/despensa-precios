@@ -1,11 +1,10 @@
-import { createReadStream } from "node:fs";
 import { appendFile, mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, relative } from "node:path";
-import { createInterface } from "node:readline";
 import { createMeatMatcher, hasExactKilogramBasis, isPlausibleMeatPrice } from "./meat-matcher.mjs";
 
 import { nationalExporter } from "./national-export.mjs";
+import {ndjsonParts} from './ndjson-parts.mjs';
 import { provinceFor, isoDate, freshDate } from "./price-safety.mjs";
 import { prepareSource } from "./sepa-source.mjs";
 import { sepaProductIdentity } from "./product-identity.mjs";
@@ -61,6 +60,7 @@ async function send(records) {
 
 const outputFile = process.env.OUTPUT_FILE ?? "data/san-juan.ndjson";
 const quarantineFile = process.env.QUARANTINE_FILE ?? "data/san-juan-quarantine.ndjson";
+const quarantineDirectory=process.env.QUARANTINE_PARTS_DIR??join(dirname(quarantineFile),'sepa-quarantine');
 const promotionsFile = process.env.PROMOTIONS_FILE ?? "data/san-juan-promotions.json";
 const qualityFile = process.env.QUALITY_FILE ?? "data/sepa-import-quality.json";
 const national = process.env.NATIONAL_EXPORT === "1";
@@ -70,6 +70,8 @@ const isMeatProduct = createMeatMatcher(meatCatalog);
 const workDir = await mkdtemp(join(tmpdir(), "sepa-precios-"));
 const exporter = national ? await nationalExporter(process.env.NATIONAL_OUTPUT_DIR ?? "data/national",join(workDir,"branches")) : null;
 const sanJuanRecords = [];
+const storeProvinces=new Map();
+let quarantineParts,quarantineComplete=false;
 
 function normalize(value) {
   return String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
@@ -124,13 +126,14 @@ function geographicValidation(row) {
 
 async function quarantine(kind, reason, details, counters) {
   counters.quarantined++;
-  await appendFile(quarantineFile, JSON.stringify({ kind, reason, details, detectedAt: new Date().toISOString() }) + "\n");
+  const entry={kind,reason,details,detectedAt:new Date().toISOString()};
+  await quarantineParts.append(entry);
+  const province=storeProvinces.get(details.store??details.externalId);
+  // Keep the legacy San Juan view, while the complete national audit lives in
+  // bounded parts. Generic file-level evidence is retained in both views.
+  if(!province||province==='AR-J')await appendFile(quarantineFile,JSON.stringify(entry)+'\n');
 }
 
-async function rowsFromNdjson(file, handler) {
-  const input = createInterface({ input: createReadStream(file), crlfDelay: Infinity });
-  for await (const line of input) if (line.trim()) await handler(JSON.parse(line));
-}
 
 function pick(row, names, fallback = "") {
   for (const name of names) if (row[name] !== undefined && row[name] !== "") return row[name];
@@ -173,6 +176,7 @@ async function processFolder(folder, sourceInfo, counters) {
   const branches = new Map();
   for (const file of branchFiles) {
     await rows(file, async row => {
+      storeProvinces.set(branchKey(row),provinceFor(pick(row,['sucursales_provincia','sucursal_provincia','provincia','provincia_id']))?.code);
       const type = pick(row, ["sucursales_tipo", "sucursal_tipo"]);
       const channel = branchChannel(type);
       if (channel !== 'sucursal') {
@@ -186,7 +190,7 @@ async function processFolder(folder, sourceInfo, counters) {
         const key = [pick(row, ["id_comercio"]), pick(row, ["id_bandera"])].join("|");
         row._chain = chains.get(key) ?? "Comercio";
         branches.set(branchKey(row), row);
-      } else if (normalize(pick(row, ["sucursales_provincia", "sucursal_provincia", "provincia", "provincia_id"])).includes("san juan")) {
+      } else {
         await quarantine("store", validation.reason, {
           externalId: branchKey(row),
           locality: pick(row, ["sucursales_localidad", "sucursal_localidad", "localidad"]),
@@ -214,6 +218,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const branch = branches.get(branchKey(row));
       if (!branch) return;
       const description = pick(row, ["productos_descripcion", "producto_descripcion", "descripcion"]);
+      const sourceProductId=pick(row,['id_producto','productos_id']);
       const brand = pick(row, ["productos_marca", "producto_marca", "marca"]);
       const meatProduct = isMeatProduct(description, brand);
       const presentationQuantity = pick(row, ["productos_cantidad_presentacion", "cantidad_presentacion"]);
@@ -223,13 +228,14 @@ async function processFolder(folder, sourceInfo, counters) {
       let sourceReviewCode;
       if (meatProduct && !hasExactKilogramBasis(presentation, referenceUnit)) {
         sourceReviewCode='meat_unit_not_exact_1kg';
-        await quarantine("meat", "meat_unit_not_exact_1kg", { product: description, brand, presentation, referenceUnit, store: branchKey(branch) }, counters);
+        await quarantine("meat", "meat_unit_not_exact_1kg", { product: description, sourceProductId,sourceDate:evidence.date,brand, presentation, referenceUnit, store: branchKey(branch) }, counters);
       }
       const listPrice = sepaAmount(pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"]));
       if (!listPrice || listPrice > Number.MAX_SAFE_INTEGER / 100) {
         counters.rejected++;
         await quarantine("price", "list_price_out_of_range", {
           product: description,
+          sourceProductId,sourceDate:evidence.date,
           store: branchKey(branch),
           value: pick(row, ["productos_precio_lista", "producto_precio_lista", "precio_lista"])
         }, counters);
@@ -237,16 +243,16 @@ async function processFolder(folder, sourceInfo, counters) {
       }
       if(listPrice<100||listPrice>10000000){
         sourceReviewCode??='list_price_out_of_range';
-        await quarantine('price','list_price_out_of_range',{product:description,store:branchKey(branch),value:pick(row,['productos_precio_lista','producto_precio_lista','precio_lista'])},counters);
+        await quarantine('price','list_price_out_of_range',{product:description,sourceProductId,sourceDate:evidence.date,store:branchKey(branch),value:pick(row,['productos_precio_lista','producto_precio_lista','precio_lista'])},counters);
       }
       if (meatProduct && !isPlausibleMeatPrice(listPrice)) {
         sourceReviewCode??='meat_price_out_of_range';
-        await quarantine("meat", "meat_price_out_of_range", { product: description, brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
+        await quarantine("meat", "meat_price_out_of_range", { product: description, sourceProductId,sourceDate:evidence.date,brand, presentation, referenceUnit, listPrice, store: branchKey(branch) }, counters);
       }
       const validDate=evidence.date;
       const productUpdatedAt=isoDate(pick(row,["productos_fecha_actualizacion","fecha_actualizacion"]));
       if(!validDate||!freshDate(validDate)|| (productUpdatedAt && (productUpdatedAt>validDate || !freshDate(productUpdatedAt)))){
-        counters.rejected++;return;
+        counters.rejected++;await quarantine('price_date','product_date_unconfirmed',{sourceProductId,product:description,store:branchKey(branch),validDate,productUpdatedAt},counters);return;
       }
       const pricing = readSepaPricing(row, listPrice, validDate);
       for (const issue of pricing.issues) {
@@ -258,7 +264,7 @@ async function processFolder(folder, sourceInfo, counters) {
       const identity = sepaProductIdentity(row);
       if (!identity.accepted) {
         counters.rejected++;
-        await quarantine("product", identity.reason, { product: description, store: branchKey(branch) }, counters);
+        await quarantine("product", identity.reason, { product: description,sourceProductId,sourceDate:evidence.date, store: branchKey(branch) }, counters);
         return;
       }
       if (identity.barcodeStatus === 'invalid') {
@@ -322,9 +328,12 @@ try {
   await mkdir(dirname(outputFile), { recursive: true });
   await mkdir(dirname(quarantineFile), { recursive: true });
   await writeFile(quarantineFile, "");
+  quarantineParts=await ndjsonParts(quarantineDirectory,{context:{sourceType:prepared.report.sourceType,sourceModified:prepared.source.modified,archiveSha256:prepared.report.archive?.sha256??null}});
 
   const counters = { read: 0, accepted: 0, ingested: 0, rejected: 0, quarantined: 0, promotionsDiscarded: 0, damagedArchives: 0, excludedStores: [], productFiles: [], csvRepairs: [] };
   await processFolder(prepared.folder, prepared.source, counters);
+  quarantineComplete=true;
+  await quarantineParts.close({complete:true});
   await mkdir(dirname(qualityFile), { recursive: true });
   await writeFile(qualityFile, JSON.stringify({ checkedAt: new Date().toISOString(), sourceModified: prepared.source.modified, sourceType: prepared.report.sourceType, catalogScope:'all_valid_physical_source_products', excludedStores: counters.excludedStores, productFiles: counters.productFiles, csvRepairs: counters.csvRepairs, catalogPolicy: counters.catalogPolicy, filteredByCatalogPolicy:0 }, null, 2) + '\n');
 
@@ -337,12 +346,12 @@ try {
   const quotableRows=snapshot.rows.filter(record=>classifyCatalogRecord(record).quoteEligible);
   for(let start=0;start<quotableRows.length;start+=batchSize)counters.ingested += await send(quotableRows.slice(start,start+batchSize));
   const promotionRows = [];
-  await rowsFromNdjson(outputFile, record => {
+  for(const record of snapshot.rows){
     const chain = normalize(record.store?.chain);
     for (const promotion of record.price?.promotions ?? []) {
       promotionRows.push({...record, price:{...record.price, ...promotion}});
     }
-  });
+  }
   const uniquePromotions = new Map();
   for (const record of promotionRows) {
     const key = [record.store.externalId, record.product.ean, record.price.slot, record.price.promoPrice ?? "", normalize(record.price.promoConditions)].join("|");
@@ -378,5 +387,6 @@ try {
     promotionCandidates: promotions.length
   }));
 } finally {
-  await rm(workDir, { recursive: true, force: true });
+  try{if(quarantineParts)await quarantineParts.close({complete:quarantineComplete});}
+  finally{await rm(workDir, { recursive: true, force: true });}
 }

@@ -16,7 +16,7 @@ test('el importador real conserva productos fuera de las categorías anteriores 
  const footer='Ultima actualizacion: '+observed+'\n';
  const files={
   'merchant/comercio.csv':'id_comercio|id_bandera|comercio_razon_social|comercio_bandera_nombre\n99|1|Fixture|Fixture\n'+footer,
-  'merchant/sucursales.csv':'id_comercio|id_bandera|id_sucursal|sucursales_nombre|sucursales_tipo|sucursales_calle|sucursales_numero|sucursales_latitud|sucursales_longitud|sucursales_localidad|sucursales_provincia\n99|1|1|Fixture|Supermercado|Calle|1|-31.534016|-68.524744|San Juan|AR-J\n'+footer,
+  'merchant/sucursales.csv':'id_comercio|id_bandera|id_sucursal|sucursales_nombre|sucursales_tipo|sucursales_calle|sucursales_numero|sucursales_latitud|sucursales_longitud|sucursales_localidad|sucursales_provincia\n99|1|1|Fixture|Supermercado|Calle|1|-31.534016|-68.524744|San Juan|AR-J\n99|1|2|Fixture CABA|Supermercado|Calle|2|-34.54|-58.47|Capital Federal|AR-C\n'+footer,
   'merchant/productos.csv':'id_comercio|id_bandera|id_sucursal|id_producto|productos_ean|productos_descripcion|productos_cantidad_presentacion|productos_unidad_medida_presentacion|productos_marca|productos_precio_lista|productos_unidad_medida_referencia\n'+
    '99|1|1|10000|0|ARROZ BLANCO|1|kg|Fixture|1500.00|kg\n'+
    '99|1|1|10001|0|CLAVIJA HEXAGONAL ZVX|1|unidad|ZVX|2500.00|unidad\n'+
@@ -24,6 +24,7 @@ test('el importador real conserva productos fuera de las categorías anteriores 
    '99|1|1|2800000126438|1|POLLO ENTERO FRESCO UNI|1|uni||1000.00|uni\n'+
    '99|1|1|2004148700004|1|NALGA CON TAPA NOVILLITO X KG|1|kgm|COTO|559.90|kgm\n'+
    '99|1|1|10004|0|CLAVIJA HEXAGONAL ECONOMICA|1|unidad|ZVX|50.01|unidad\n'+
+   '99|1|2|10004|0|CLAVIJA HEXAGONAL ECONOMICA|1|unidad|ZVX|50.01|unidad\n'+
    '99|1|1|10003|0|CLAVIJA HEXAGONAL INVALIDA|1|unidad|ZVX|0.00|unidad\n'+footer,
  };
  await writeFile(join(dir,'files.json'),JSON.stringify(files));
@@ -53,4 +54,9 @@ test('el importador real conserva productos fuera de las categorías anteriores 
  assert.equal(snapshot.find(row=>row.product.ean==='sepa:99:1:10001').price.listPrice,2500);
  const quality=JSON.parse(await readFile(paths.QUALITY_FILE,'utf8'));assert.equal(quality.catalogScope,'all_valid_physical_source_products');assert.equal(quality.filteredByCatalogPolicy,0);
  assert.match(await readFile(paths.QUARANTINE_FILE,'utf8'),/list_price_out_of_range/);
+ const legacy=(await readFile(paths.QUARANTINE_FILE,'utf8')).trim().split('\n').map(JSON.parse);
+ assert.ok(legacy.every(row=>row.details.store!=='99|1|2'),'El archivo local mantiene el alcance San Juan');
+ const auditDir=join(dir,'sepa-quarantine'),manifest=JSON.parse(await readFile(join(auditDir,'index.json'),'utf8'));
+ assert.equal(manifest.complete,true);const audit=[];for(const part of manifest.parts)audit.push(...(await readFile(join(auditDir,part.file),'utf8')).trim().split('\n').map(JSON.parse));
+ assert.equal(audit.length,manifest.records);assert.ok(audit.some(row=>row.details.store==='99|1|2'),'La auditoría nacional conserva también los registros de otra provincia');
 });
