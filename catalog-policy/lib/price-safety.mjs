@@ -8,10 +8,18 @@ export const PROVINCES = [
  ["AR-G","86","Santiago del Estero"],["AR-V","94","Tierra del Fuego, Antártida e Islas del Atlántico Sur"],["AR-T","90","Tucumán"]
 ].map(([code,id,name])=>({code,id,name}));
 export const normalize = value => String(value??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+// Every source row checks its province. Normalize the fixed aliases once,
+// instead of scanning and normalizing all 24 provinces for every product.
+const provinceKeys = new Map();
+for (const province of PROVINCES) {
+ for (const value of [province.code,province.id,province.name,province.code.slice(3)]) {
+  const key=normalize(value);if(!provinceKeys.has(key))provinceKeys.set(key,province);
+ }
+}
+for(const alias of ['caba','capital federal','ciudad de buenos aires'])provinceKeys.set(alias,PROVINCES[0]);
+provinceKeys.set('tierra del fuego',provinceKeys.get('ar v'));
 export function provinceFor(value) {
- const key=normalize(value);
- return PROVINCES.find(p=>[p.code,p.id,p.name,p.code.slice(3)].some(v=>normalize(v)===key))
-  ?? (/^(caba|capital federal|ciudad de buenos aires)$/.test(key)?PROVINCES[0]:key==="tierra del fuego"?PROVINCES.find(p=>p.code==="AR-V"):undefined);
+ return provinceKeys.get(normalize(value));
 }
 export function isoDate(value) {
  const s=String(value??"").slice(0,10);
