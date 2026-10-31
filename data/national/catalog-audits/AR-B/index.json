@@ -2,85 +2,85 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 216599,
-  "bytes": 23415307,
+  "records": 216487,
+  "bytes": 23403414,
   "context": {
     "province": "AR-B",
-    "generatedAt": "2026-10-30T21:43:20.537Z",
+    "generatedAt": "2026-10-31T20:36:49.643Z",
     "catalogPolicyVersion": "2026-10-30.calculos-memo.2"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
       "records": 17577,
-      "bytes": 1999946,
-      "sha256": "4042f5c2f9c153ecbaef3f421b9592f3cb29763c00d58d7d25f014105d6cacf2"
+      "bytes": 1999959,
+      "sha256": "9a27d851f57733333606f9ff38c280b4a73d0e6eccb84a5e9ef7ce156bf3c53c"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 16858,
-      "bytes": 1999930,
-      "sha256": "09cc40760e20e6168d42e315eb9689e717f3723051b27d1ca67683c765586b98"
+      "records": 16859,
+      "bytes": 1999912,
+      "sha256": "88e848a76a99ee59e5c46b6bc53af72c3e2242686126ddaa0f38783c6404daaf"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18743,
-      "bytes": 1999939,
-      "sha256": "62919e97b33603b27946b2d46ce7eefeaa177ccad79bdad325dc6b95dd66e68b"
+      "records": 18957,
+      "bytes": 1999913,
+      "sha256": "4b454177106d2bfcfdcd6e92eb08335977c6fdf2d45bd76877ad4ba8c47464f8"
     },
     {
       "file": "part-000004.ndjson",
-      "records": 18679,
-      "bytes": 1999952,
-      "sha256": "8b625dccda6b838c56dd2a81172b615e95fe9f19ce2ac3c0acddcc2a38499ff4"
+      "records": 18791,
+      "bytes": 1999897,
+      "sha256": "bdc65f9d6f06aee609bf3fda42097f4b13dbdc24c00a9bce9bd669377dce981b"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 18998,
-      "bytes": 1999907,
-      "sha256": "8f3616bd387992373951fe76bc59224787d2499f1445eff42c020e1c07e1679c"
+      "records": 18824,
+      "bytes": 1999972,
+      "sha256": "11b35a28618a13abd370c6e92e3999787b6091082e58e5d60969a5b5d2600432"
     },
     {
       "file": "part-000006.ndjson",
-      "records": 18947,
-      "bytes": 1999960,
-      "sha256": "8336ce926148a5430dc479d89ac6aea74cefb72d1b7b8b40bce16a1270032342"
+      "records": 18949,
+      "bytes": 1999930,
+      "sha256": "e00e98e17a9590673619b68f47fa39c5a877aaec090aa84243b99144bea6e87e"
     },
     {
       "file": "part-000007.ndjson",
-      "records": 18953,
-      "bytes": 1999918,
-      "sha256": "dc314ebcabbaef24ef7b419cbe653accff53dc086f80421edcfabae9b2304500"
+      "records": 18917,
+      "bytes": 1999958,
+      "sha256": "50a5c5cd518922cfd1b2df71bd0b0c745e09911642894cfbaf8a736b95ec1618"
     },
     {
       "file": "part-000008.ndjson",
-      "records": 18883,
+      "records": 18786,
       "bytes": 1999912,
-      "sha256": "1f751bea9048e062286f3017d648d3ead100443fdc04109d32ccdb0c342db578"
+      "sha256": "3aeebb0e35b1d20476c2c231598a8da6ce49a2409437f650a418a20e5c7e27e7"
     },
     {
       "file": "part-000009.ndjson",
-      "records": 18890,
-      "bytes": 1999922,
-      "sha256": "e90f531d31b5989315e7f9e2af0784c15f583a02950b86294b99f264b0247f46"
+      "records": 18877,
+      "bytes": 1999915,
+      "sha256": "ee49567d3ee7394dfc41920f61fefb0c32d5bc50ccb1aa5e5bd3142623d646d7"
     },
     {
       "file": "part-000010.ndjson",
-      "records": 18917,
-      "bytes": 1999934,
-      "sha256": "ce0ac68a53e9049db969642a66edb1b574881a1e7ab836bf2f21f6a4131842d5"
+      "records": 18890,
+      "bytes": 1999949,
+      "sha256": "708e70424b439d1b77bdc979419477178675a5bc97439744951186541e2a0093"
     },
     {
       "file": "part-000011.ndjson",
-      "records": 18313,
-      "bytes": 1999928,
-      "sha256": "f7101ec741951d2415450ad1fca87940fec9470d52693859948e91cf7fbb33b5"
+      "records": 18326,
+      "bytes": 1999976,
+      "sha256": "f60d547cabebcaea8accfbc7c7ebb2d6ca61a029bdce9f299350dc807c387b9c"
     },
     {
       "file": "part-000012.ndjson",
-      "records": 12841,
-      "bytes": 1416059,
-      "sha256": "4fac169a658bef29b694d902c870bb692be26d2f579ee6a5ae009a57b39b4447"
+      "records": 12734,
+      "bytes": 1404121,
+      "sha256": "e3f733746fdb6f8889678cf2f3df90f9ef4e2abce89e58288a745fff8f7f6a79"
     }
   ]
 }

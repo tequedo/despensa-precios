@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 18273,
-  "bytes": 1944237,
+  "records": 18223,
+  "bytes": 1938937,
   "context": {
     "province": "AR-J",
-    "generatedAt": "2026-10-30T21:43:20.537Z",
+    "generatedAt": "2026-10-31T20:36:49.643Z",
     "catalogPolicyVersion": "2026-10-30.calculos-memo.2"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18273,
-      "bytes": 1944237,
-      "sha256": "a4949d14838ce34a0368e1e9b5dba0abfe41390be6ff6b6fbf1ce2c68ed4347e"
+      "records": 18223,
+      "bytes": 1938937,
+      "sha256": "8d8a0ba925e7237905f292872e26b93e735b6667ee8d78f44e66da79ed233fdb"
     }
   ]
 }
