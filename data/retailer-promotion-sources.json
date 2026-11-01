@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-01T21:45:00.864Z",
+  "generatedAt": "2026-11-01T23:12:34.711Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-01T21:44:42.412Z",
+      "checkedAt": "2026-11-01T23:11:43.068Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -18,7 +18,7 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-11-01T21:44:43.140Z",
+      "checkedAt": "2026-11-01T23:11:43.462Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -31,7 +31,7 @@
     {
       "retailer": "La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-11-01T21:44:44.587Z",
+      "checkedAt": "2026-11-01T23:11:44.569Z",
       "reachable": false,
       "sepaPromotions": 1819,
       "corroboratedPromotions": 0,
@@ -41,149 +41,17 @@
     {
       "retailer": "Carrefour",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-11-01T21:44:54.760Z",
-      "reachable": true,
-      "rendered": true,
+      "checkedAt": "2026-11-01T23:12:29.619Z",
+      "reachable": false,
       "sepaPromotions": 565,
       "corroboratedPromotions": 0,
-      "activeWindows": [
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        },
-        {
-          "from": "2026-10-30",
-          "to": "2026-11-02"
-        }
-      ],
-      "mentionsSanJuan": false,
-      "nationwide": true,
-      "status": "reachable_without_complete_scoped_evidence"
+      "status": "unavailable",
+      "error": "La página pública se abrió, pero no devolvió contenido utilizable."
     },
     {
       "retailer": "Jumbo",
       "url": "https://www.jumbo.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-01T21:44:55.992Z",
+      "checkedAt": "2026-11-01T23:12:30.341Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -196,7 +64,7 @@
     {
       "retailer": "Disco",
       "url": "https://www.disco.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-01T21:44:56.919Z",
+      "checkedAt": "2026-11-01T23:12:31.062Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -209,7 +77,7 @@
     {
       "retailer": "DIA",
       "url": "https://diaonline.supermercadosdia.com.ar/",
-      "checkedAt": "2026-11-01T21:44:57.226Z",
+      "checkedAt": "2026-11-01T23:12:31.411Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -222,7 +90,7 @@
     {
       "retailer": "Coto",
       "url": "https://www.coto.com.ar/hoy/",
-      "checkedAt": "2026-11-01T21:44:58.207Z",
+      "checkedAt": "2026-11-01T23:12:32.275Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -235,7 +103,7 @@
     {
       "retailer": "Hiper Libertad",
       "url": "https://www.hiperlibertad.com.ar/oferta",
-      "checkedAt": "2026-11-01T21:44:58.556Z",
+      "checkedAt": "2026-11-01T23:12:32.549Z",
       "reachable": false,
       "sepaPromotions": 0,
       "corroboratedPromotions": 0,
@@ -245,7 +113,7 @@
     {
       "retailer": "Átomo",
       "url": "https://atomoconviene.com/atomo-ecommerce/833-ofertas",
-      "checkedAt": "2026-11-01T21:45:00.863Z",
+      "checkedAt": "2026-11-01T23:12:34.711Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
