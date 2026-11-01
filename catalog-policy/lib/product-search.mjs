@@ -71,6 +71,9 @@ export function matchesProductQuery(product, query) {
 
 // Discovery understands content units without changing the stricter quote matcher.
 const measurePattern = /(?:\d+(?:[.,]\d+)?|[.,]\d+)\s*(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])/gi;
+// Variant/count numbers belong to the source title too. Preserve their full
+// spelling (7.10 is not 7.1); X6 exposes 6, never a substring of 16 or 6.5.
+const literalNumbers = value => (String(value??'').match(/\d+(?:[.,]\d+)?|[.,]\d+/g)??[]).map(value=>value.replace(',','.'));
 // FOCO is also a retailer brand for tents and appliances. Only discovery of
 // a bulb uses this alias; source titles, brands and quotation tokens stay exact.
 const otherLightingObject = /\b(carpa|carpas|anafe|anafes|linterna|linternas|reflector|reflectores|proyector|proyectores|luminaria|luminarias|aplique|apliques|velador|veladores|mesa|escritorio|pie)\b/;
@@ -104,7 +107,8 @@ function catalogQuery(value) {
   text = text.replace(/\bl[aá]mparas\b/gi,'lampara');
   const wanted = Object.freeze(tokens(text));
   const bulbWords = wanted.some(word => 'lampara'.startsWith(word));
-  const interpreted = Object.freeze({text,wanted,bulbWords,measures:Object.freeze(measures.map(size => Object.freeze({...size}))),amount,bulbIntent});
+  const numbers = Object.freeze(trailing ? literalNumbers(source) : []);
+  const interpreted = Object.freeze({text,wanted,bulbWords,measures:Object.freeze(measures.map(size => Object.freeze({...size}))),amount,bulbIntent,numbers});
   if (queryInterpretations.size >= 64) queryInterpretations.delete(queryInterpretations.keys().next().value);
   queryInterpretations.set(queryKey,interpreted);
   return interpreted;
@@ -126,7 +130,7 @@ export function matchesCatalogQuery(product, query) {
   // (CHOCO180G). Measure parsing must not hide that original qualified title.
   // This only permits discovery; all quote/identity/package checks still apply.
   if(normalize(product.name)===normalize(query)&&tokens(query).length>1)return true;
-  const {wanted, measures, amount, bulbIntent, bulbWords} = catalogQuery(query);
+  const {wanted, measures, amount, bulbIntent, bulbWords, numbers} = catalogQuery(query);
   if (bulbIntent && !lightBulb(product)) return false;
   const review=reviewedCatalogEntry(product),available = bulbWords
     ? discoveryWords(product,review,bulbIntent ? true : undefined) : catalogWords(product,review);
@@ -137,6 +141,14 @@ export function matchesCatalogQuery(product, query) {
   // quarantined. This never authorizes its price or a different SKU/size.
   if(normalize(product.name)===normalize(query))return true;
   if (!measures.length && amount === null) return true;
+  // A number without a unit can be a named variant or count, rather than a
+  // guessed mass/volume. All prior word/family guards still apply. Explicit
+  // units continue through the package-content check below, and quote matching
+  // never uses this discovery-only alternative.
+  if (!measures.length && numbers.length) {
+    const sourceNumbers=literalNumbers(product.name);
+    if(numbers.every(value=>sourceNumbers.includes(value)))return true;
+  }
   // A reviewed vessel capacity supports discovery only. It never becomes the
   // package contents used for quote identity or price-per-litre calculations.
   const content = packageEvidence(product)?.content ?? review?.discoveryCapacity ?? vesselDiscoveryCapacity(product);

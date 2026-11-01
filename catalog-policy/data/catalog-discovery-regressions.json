@@ -202,5 +202,41 @@
     "lámparas",
     "focos SICA"
   ],
-  "strictQuoteAlias": false
+  "strictQuoteAlias": false,
+  "numericDiscovery": {
+    "sourceCommit": "99b3d9db9a6d35d9434203e8d44b1d09a84ee331",
+    "sourceGeneration": "2026-11-01T00:23:27.129Z",
+    "products": [
+      {
+        "product": {
+          "ean": "sepa:11:2:7795371459610",
+          "barcode": "7795371459610",
+          "name": "ULTRAFLEX 15 SOBRES",
+          "brand": "ULTRAFLEX",
+          "presentation": "15 EA"
+        },
+        "query": "ultraflex 15"
+      },
+      {
+        "product": {
+          "ean": "sepa:11:2:7509552923896",
+          "barcode": "7509552923896",
+          "name": "NUTRISSE VAINILLA 71",
+          "brand": "NUTRISSE",
+          "presentation": "1 EA"
+        },
+        "query": "nutrisse 71"
+      },
+      {
+        "product": {
+          "ean": "sepa:11:2:7792335000321",
+          "barcode": "7792335000321",
+          "name": "HUEVOS AV BL CRT X6",
+          "brand": "AVICOPER",
+          "presentation": "6 EA"
+        },
+        "query": "huevos 6"
+      }
+    ]
+  }
 }
