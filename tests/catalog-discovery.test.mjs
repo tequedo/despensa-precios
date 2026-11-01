@@ -3,9 +3,25 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {matchesCatalogQuery,matchesProductQuery,catalogIndexWords,catalogIndexHints,matchesCatalogBrand} from '../catalog-policy/lib/product-search.mjs';
 import {createProductIdMatcher} from '../catalog-policy/lib/product-identity.mjs';
+import {productSearchFamily} from '../catalog-policy/lib/product-search.mjs';
+import {marketCategory} from '../catalog-policy/lib/market-features.mjs';
 
 const fixture=JSON.parse(fs.readFileSync(new URL('../catalog-policy/data/catalog-discovery-regressions.json',import.meta.url),'utf8'));
 const {products,bulbBarcodes}=fixture;
+
+test('las dos leches micelares reales son higiene y no aparecen al buscar leche de consumo',()=>{
+ const original=JSON.stringify(fixture.micellarMilk.products);
+ assert.equal(fixture.micellarMilk.products.length,2);
+ for(const product of fixture.micellarMilk.products){
+  assert.equal(productSearchFamily(product),'leche limpiadora');
+  assert.equal(marketCategory(product),'Higiene');
+  assert.equal(matchesCatalogQuery(product,'leche'),false);
+  assert.equal(matchesCatalogQuery(product,'leche limpiadora'),true);
+  assert.equal(matchesCatalogQuery(product,product.name),true);
+  assert.ok(catalogIndexHints('leche limpiadora').some(hint=>catalogIndexWords(product).some(word=>word.startsWith(hint))));
+ }
+ assert.equal(JSON.stringify(fixture.micellarMilk.products),original);
+});
 
 test('foco, focos y lamparitas descubren las diez lámparas reales sin carpas, anafes ni linternas',()=>{
  const original=JSON.stringify(products);

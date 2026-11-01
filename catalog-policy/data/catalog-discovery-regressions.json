@@ -238,5 +238,30 @@
         "query": "huevos 6"
       }
     ]
+  },
+  "micellarMilk": {
+    "sourceFixture": "catalog-san-juan-2026-10-26.json",
+    "products": [
+      {
+        "ean": "sepa:10:1:4005900773845",
+        "name": "LECHE Y TONICO MICELAR 2EN1 NIVEA ROSE CARE X200CC",
+        "brand": "ROSE CARE",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "4005900773845",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "04005900773845"
+      },
+      {
+        "ean": "sepa:9:1:4005900773845",
+        "name": "leche y ton mic ROSE CARE 2en1 200ml BOT-200-ml.",
+        "brand": "NIVEA",
+        "presentation": "200.00 ml.",
+        "referenceUnit": "LT.",
+        "barcode": "4005900773845",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "04005900773845"
+      }
+    ]
   }
 }
