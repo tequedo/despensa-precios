@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {matchesCatalogQuery,matchesProductQuery,catalogIndexWords,catalogIndexHints,matchesCatalogBrand,catalogBrandQueryIntent,relatedCatalogBrand} from '../catalog-policy/lib/product-search.mjs';
+import {matchesCatalogQuery,matchesProductQuery,catalogIndexWords,catalogIndexHints,matchesCatalogBrand,catalogBrandQueryIntent,relatedCatalogBrand,matchesCatalogTitleQuery} from '../catalog-policy/lib/product-search.mjs';
 import {createProductIdMatcher} from '../catalog-policy/lib/product-identity.mjs';
 import {productSearchFamily} from '../catalog-policy/lib/product-search.mjs';
 import {marketCategory} from '../catalog-policy/lib/market-features.mjs';
@@ -27,6 +27,13 @@ test('una marca completa recupera sus productos aunque contenga familias o núme
   assert.ok(catalogIndexHints(product.brand).some(hint=>catalogIndexWords(product).some(word=>word.startsWith(hint))),product.brand);
  }
  assert.equal(JSON.stringify(fixture.brandQueries.products),original);
+});
+
+test('las palabras completas de nombres comerciales conservan sus marcas originales sin aceptar fantasía como Fanta',()=>{
+ const original=JSON.stringify(fixture.qualifiedTitles);
+ for(const {query,product}of fixture.qualifiedTitles){assert.equal(matchesCatalogTitleQuery(product,query),true,product.ean);assert.equal(matchesCatalogQuery(product,query),true,product.ean);}
+ assert.equal(matchesCatalogTitleQuery({name:'AZUCAR FANTASIA NEGRA'},'Fanta'),false);
+ assert.equal(JSON.stringify(fixture.qualifiedTitles),original);
 });
 
 test('las dos leches micelares reales son higiene y no aparecen al buscar leche de consumo',()=>{

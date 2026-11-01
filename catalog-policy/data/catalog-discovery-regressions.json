@@ -1036,5 +1036,59 @@
         "gtin": "07790580146047"
       }
     ]
-  }
+  },
+  "qualifiedTitles": [
+    {
+      "query": "La Planta de Café",
+      "product": {
+        "ean": "sepa:10:1:7790550000164",
+        "name": "CAFE MOLIDO LA PLANTA DEL CAFE CABRALES X 500 GRS",
+        "brand": "CABRALES",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790550000164",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790550000164"
+      }
+    },
+    {
+      "query": "La Planta de Café",
+      "product": {
+        "ean": "sepa:10:1:7790550010255",
+        "name": "CAFE EN SAQUITOS LA PLANTA DE CAFE CAJA X 18 UNI",
+        "brand": "CABRALES",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790550010255",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790550010255"
+      }
+    },
+    {
+      "query": "La Planta de Café",
+      "product": {
+        "ean": "sepa:10:1:7790550000157",
+        "name": "CAFE MOL LA PLANTA DEL CAFE CABRALES X 250GRS",
+        "brand": "CABRALES",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790550000157",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790550000157"
+      }
+    },
+    {
+      "query": "Maní King",
+      "product": {
+        "ean": "sepa:10:1:7798151953377",
+        "name": "MANI TOSTADO S SAL KING X 100 GRS",
+        "brand": "KING",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7798151953377",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07798151953377"
+      }
+    }
+  ]
 }
