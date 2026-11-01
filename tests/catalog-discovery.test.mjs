@@ -33,6 +33,8 @@ test('las palabras completas de nombres comerciales conservan sus marcas origina
  const original=JSON.stringify(fixture.qualifiedTitles);
  for(const {query,product}of fixture.qualifiedTitles){assert.equal(matchesCatalogTitleQuery(product,query),true,product.ean);assert.equal(matchesCatalogQuery(product,query),true,product.ean);}
  assert.equal(matchesCatalogTitleQuery({name:'AZUCAR FANTASIA NEGRA'},'Fanta'),false);
+ assert.equal(matchesCatalogTitleQuery({name:'CERVEZA DENNINGHOFFS BARRIL X 5 LT'},'X 5'),false);
+ assert.equal(matchesCatalogTitleQuery({name:'D H ARROZ S SAL'},'S/D'),false);
  assert.equal(JSON.stringify(fixture.qualifiedTitles),original);
 });
 

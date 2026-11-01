@@ -32,7 +32,8 @@ const tokens = value => searchText(value).split(' ').filter(word => word && !['d
 export const catalogQueryWords=query=>tokens(query);
 export const matchesCatalogTitleQuery=(product,query)=>{
  const wanted=tokens(query),available=tokens(product.name);
- return wanted.length>1&&wanted.every(word=>available.includes(word));
+ // Counts and initials (X 5, S/D) do not establish a named product line.
+ return wanted.filter(word=>/^[a-z]{3,}$/.test(word)).length>=2&&wanted.every(word=>available.includes(word));
 };
 // The first named product defines its family: an ingredient, flavour or a
 // container's intended beverage must not turn it into that other product.
