@@ -1,13 +1,33 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {matchesCatalogQuery,matchesProductQuery,catalogIndexWords,catalogIndexHints,matchesCatalogBrand} from '../catalog-policy/lib/product-search.mjs';
+import {matchesCatalogQuery,matchesProductQuery,catalogIndexWords,catalogIndexHints,matchesCatalogBrand,catalogBrandQueryIntent,relatedCatalogBrand} from '../catalog-policy/lib/product-search.mjs';
 import {createProductIdMatcher} from '../catalog-policy/lib/product-identity.mjs';
 import {productSearchFamily} from '../catalog-policy/lib/product-search.mjs';
 import {marketCategory} from '../catalog-policy/lib/market-features.mjs';
 
 const fixture=JSON.parse(fs.readFileSync(new URL('../catalog-policy/data/catalog-discovery-regressions.json',import.meta.url),'utf8'));
 const {products,bulbBarcodes}=fixture;
+
+test('el vínculo de marca solo ayuda a descubrir: una variante en el título no autoriza otra marca al cotizar',()=>{
+ const zero={name:'GASEOSA ZERO 2L',brand:'FANTA',presentation:'2 L'};
+ assert.equal(matchesCatalogQuery(zero,'Fanta Zero'),true);
+ assert.equal(relatedCatalogBrand('FANTA','FANTA ZERO'),true);
+ assert.equal(relatedCatalogBrand('BODY FANTASIES','FANTA'),false);
+ assert.equal(matchesCatalogBrand('FANTA','FANTA ZERO'),false);
+ assert.equal(catalogBrandQueryIntent('Lays'),true);
+ for(const query of ['leche','aceite','foco'])assert.equal(catalogBrandQueryIntent(query),false,query);
+});
+
+test('una marca completa recupera sus productos aunque contenga familias o números, sin deducir su envase',()=>{
+ const original=JSON.stringify(fixture.brandQueries.products);
+ assert.ok(fixture.brandQueries.products.length>60);
+ for(const product of fixture.brandQueries.products){
+  assert.equal(matchesCatalogQuery(product,product.brand),true,product.brand+': '+product.name);
+  assert.ok(catalogIndexHints(product.brand).some(hint=>catalogIndexWords(product).some(word=>word.startsWith(hint))),product.brand);
+ }
+ assert.equal(JSON.stringify(fixture.brandQueries.products),original);
+});
 
 test('las dos leches micelares reales son higiene y no aparecen al buscar leche de consumo',()=>{
  const original=JSON.stringify(fixture.micellarMilk.products);

@@ -22,12 +22,21 @@ const productWord = word => Object.hasOwn(words,word)?words[word]:word;
 const searchText=value=>normalize(value).replace(/\bbon o bon\b/g,'bonobon').replace(/\blay s\b/g,'lays');
 // Search/filter spelling only; barcode identity and raw brand evidence stay exact.
 export const matchesCatalogBrand=(actual,requested)=>searchText(actual)===searchText(requested);
+// Discovery may retain a parent brand when the variant is written in the
+// source title (FANTA / GASEOSA ZERO). The query matcher still checks that title.
+export const relatedCatalogBrand=(actual,requested)=>{
+ const a=searchText(actual),q=searchText(requested);
+ return Boolean(a&&q&&(a===q||a.startsWith(q+' ')||q.startsWith(a+' ')));
+};
 const tokens = value => searchText(value).split(' ').filter(word => word && !['de','del','la','el','los','las','en'].includes(word)).map(productWord);
 // The first named product defines its family: an ingredient, flavour or a
 // container's intended beverage must not turn it into that other product.
 const families = /\b(tetina|port salut|veggie stick|polvo compacto|tapa pascualina|tarta|taza|termo|tutuca|toalla humeda|toallita humeda|shampoo(?: para)? (?:autos?|automotor|vehiculos)|saca leche|sacaleches?|saborizador|saborizante|sazon|salmon|semilla|solomillo|sopa|set(?:x\d+)?|rollo de cocina|rocio vegetal|roast beef|rebozador|ricotta|quitaesmalte|porta galletitas|punta de espalda|paleta(?= (?:churrasco|bandeja|al vacio|abc))|peceto|pechuga|pechito|panal|paella|pastilla|pate|pipas? peladas|pochoclo|prepizza|pudding|osobuco|naranja(?: de)? jugo|nalga|oblea|sardina|sal(?: para)? lavavajillas|carne|pollo|cerdo|pescado|merluza|matambre|vacio|milanesa|marisco|mousse|leche (?:y )?ton(?:ico)? mic(?:elar)?|leche micelar|leche corporal|limpiador|hervidor|picadillo|lenteja|lomo|mani|jardinera|jarra|jarro|juego|tintura|hummus|ketchup|gomita|granola|grisin|medallon|falda|freidora|flan|focaccia|pasta de mani|crema de mani|mantequilla de mani|empaquetado naranja|empanada|ensalada|exprimidor|esqueleto|cocktail|espumante|papel higienico|leche(?: de)? limp(?:ieza|iadora)|limpieza facial|dulce de leche|agua(?: de)? lavandina|arroz con leche|arroz inflado|bano(?: de)? repostero|aji no men|papas fritas|colita de cuadril|cuch(?:ar)? (?:de )?te|cuch fideo|lays|takis|cheetos|cerealitas|bonobon|difusor|disco|palito|dispensador|dosificador|shampoo|desodorante|dulce|cacao|choclo|torta|caramelo|cereal|copo|chip|cracker|crocante|croqueta|caballa|chorito|vinagre|licor|crema|complemento|cuchara|pinza|filtro|cafetera|celular|coloracion|maquillaje|calzado|cuadril|cuadrada|carre|pizza|pure|tostada|barra|bebida|bizcocho|budin|bocadito|magdalena|baguette|banana|batidor|mamadera|bolsa|bife|bondiola|alfajor(?:es)?|galletitas?|galletas?|helados?|chocolates?|bombon(?:es)?|libros?|avellanas?|aceitunas?|arvejas?|asados?|aji|aderezos?|atun|anchoas?|alimentos?|albondigas?|aritos?|condimentos?|acondicionador|antitranspirante|aromatiz(?:ante|ador)|algodon|espumador|envases?|vasos?|copas?|abridor|snacks?|leche|yogur(?:t)?|manteca|mayonesa|aceite|agua|azucar|sal|yerba|arroz|fideos?|harina|salsa|mermelada|cafe|te|queso|pan|jabon|detergente|lavandina|cerveza|vino|gaseosa|jugo|tomates?|postres?)\b/g;
 const namedFamily = name => [...searchText(name).split(' ').map(productWord).join(' ').matchAll(families)][0]?.[0]?.replace(/^port salut$/, 'queso').replace(/^veggie stick$/, 'snack').replace(/^polvo compacto$/, 'maquillaje').replace(/^tapa pascualina$/, 'masa').replace(/^toallita humeda$/, 'toalla humeda').replace(/^shampoo(?: para)? (?:autos?|automotor|vehiculos)$/, 'shampoo vehiculos').replace(/^saca leche$|^sacaleches?$/, 'sacaleche').replace(/^(?:saborizador|saborizante|sazon)$/, 'condimento').replace(/^setx\d+$/, 'set').replace(/^porta galletitas$/, 'envase').replace(/^pipas? peladas$/, 'pipa').replace(/^naranja(?: de)? jugo$/, 'naranja').replace(/^sal para lavavajillas$/, 'sal lavavajillas').replace(/^tintura$/, 'coloracion').replace(/^(?:crema|mantequilla) de mani$/, 'pasta de mani').replace(/^empaquetado naranja$/, 'naranja').replace(/^esqueleto$/, 'envase').replace(/^agua(?: de)? lavandina$/, 'lavandina').replace(/^bano de repostero$/, 'bano repostero').replace(/^(papas fritas|lays|takis|cheetos|chip|crocante)$/, 'snack').replace(/^cerealitas$/, 'galletita').replace(/^copo$/, 'cereal').replace(/^cuch(?:ar)? (?:de )?te$|^cuch fideo$/, 'cuchara').replace(/^(disco|palito)$/, 'snack').replace(/^antitranspirante$/, 'desodorante').replace(/^leche(?: de)? limp(?:ieza|iadora)$|^limpieza facial$|^leche (?:(?:y )?ton(?:ico)? mic(?:elar)?|micelar)$/, 'leche limpiadora').replace(/^bonobon$/, 'bombon').replace(/^aji no men$/, 'fideo').replace(/^arroz con leche$/, 'postre').replace(/^arroz inflado$/, 'snack').replace(/^yogurt$/, 'yogur').replace(/^alfajores$/, 'alfajor').replace(/^(galletitas|galletas)$/, 'galletita').replace(/^(helados|chocolates|fideos|aderezos|anchoas|alimentos|albondigas|aritos|condimentos|envases|vasos|copas|snacks|tomates|postres)$/, value => value.slice(0,-1));
 const family=name=>{const main=namedFamily(name);return main==='sal'&&/\blavavajillas\b/.test(normalize(name))?'sal lavavajillas':main;};
+// Named brand aliases already used as discovery families remain brand intent;
+// ordinary single-word families such as leche, aceite or foco stay generic.
+export const catalogBrandQueryIntent=query=>!/^(focos?|lamparitas?)$/.test(searchText(query))&&(normalize(query).includes(' ')||!family(query)||/^(lays|takis|cheetos|cerealitas|bonobon)$/.test(searchText(query)));
 export const productSearchFamily=product=>{const review=reviewedCatalogEntry(product);if(review)return review.family;const publishing=publishingFamily(product);if(publishing)return publishing;const main=family(product.name);return ['atun','carne','pollo','arroz','sal','pate'].includes(main)&&/\b(gato|perro|mascota)\b/.test(normalize(product.name))?'alimento':main;};
 const vesselDiscoveryCapacity=product=>{
  if(!['dispensador','dosificador','copa','vaso','cafetera'].includes(productSearchFamily(product)))return null;
@@ -121,17 +130,22 @@ export function catalogIndexWords(product){
 }
 export function catalogIndexHints(query){
  const ordinary=catalogQuery(query).wanted,literal=tokens(query);
- return [...new Set([ordinary[0],literal.length>1?literal[0]:undefined].filter(Boolean))];
+ return [...new Set([ordinary[0],literal.length>1||!ordinary.length?literal[0]:undefined].filter(Boolean))];
 }
 
 // Autocomplete accepts words still being typed. Quotes retain exact matching.
 export function matchesCatalogQuery(product, query) {
+  // A complete observed brand is an explicit discovery request, even when
+  // its words also name a family or end in a number (GALLO SNACKS, LATITUD 33).
+  // Quote matching remains separate and still requires the exact selection.
+  const requestedBrand=searchText(query),actualBrand=searchText(product.brand);
   // A fully specified source title can join an abbreviation to its size
   // (CHOCO180G). Measure parsing must not hide that original qualified title.
   // This only permits discovery; all quote/identity/package checks still apply.
   if(normalize(product.name)===normalize(query)&&tokens(query).length>1)return true;
   const {wanted, measures, amount, bulbIntent, bulbWords, numbers} = catalogQuery(query);
   if (bulbIntent && !lightBulb(product)) return false;
+  if(requestedBrand&&actualBrand&&(actualBrand===requestedBrand||actualBrand.startsWith(requestedBrand+' '))&&catalogBrandQueryIntent(query)&&matchesOilKind(product.name,query)&&matchesOilUse(product,query)&&matchesWaterUse(product.name,query))return true;
   const review=reviewedCatalogEntry(product),available = bulbWords
     ? discoveryWords(product,review,bulbIntent ? true : undefined) : catalogWords(product,review);
   if (!wanted.length || !wanted.every(word => available.some(value => value.startsWith(word)))) return false;

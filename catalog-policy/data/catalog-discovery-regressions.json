@@ -263,5 +263,778 @@
         "gtin": "04005900773845"
       }
     ]
+  },
+  "brandQueries": {
+    "sourceFixture": "catalog-san-juan-2026-10-26.json",
+    "products": [
+      {
+        "ean": "sepa:11:2:0763571659991",
+        "name": "LEBANANA LECHE 150GR  ",
+        "brand": "LE BANANA",
+        "presentation": "0.15 KG",
+        "referenceUnit": "EA",
+        "barcode": "0763571659991",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "00763571659991"
+      },
+      {
+        "ean": "sepa:11:2:7790070418401",
+        "name": "GALLO GALLETAS DE ARROZ CRACKEADAS 100G",
+        "brand": "GALLO SNACKS",
+        "presentation": "0.1 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790070418401",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418401"
+      },
+      {
+        "ean": "sepa:11:2:7790070418463",
+        "name": "GALLO SNACKS BIZCOCHOS DE ARROZ SALADOS 100G",
+        "brand": "GALLO SNACKS",
+        "presentation": "0.1 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790070418463",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418463"
+      },
+      {
+        "ean": "sepa:11:2:7790580119133",
+        "name": "BOM BONOBON LECHE",
+        "brand": "BON O BON",
+        "presentation": "0.45 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790580119133",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119133"
+      },
+      {
+        "ean": "sepa:11:2:7790580119157",
+        "name": "BONOBON LECHE 18X15G",
+        "brand": "BON O BON",
+        "presentation": "0.27 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790580119157",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119157"
+      },
+      {
+        "ean": "sepa:11:2:7790975204062",
+        "name": "LATITUD 33 VINO TINTO MALBEC 750ML",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204062",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204062"
+      },
+      {
+        "ean": "sepa:11:2:7790975204116",
+        "name": "VINO BLANCO SAUVIGNON LATITUD 33 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204116",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204116"
+      },
+      {
+        "ean": "sepa:11:2:7790975204123",
+        "name": "VINO BLANCO CHARDONAY LATITUD 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204123",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204123"
+      },
+      {
+        "ean": "sepa:11:2:7790975204215",
+        "name": "VINO TINTO CABERNET LATITUD 33 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204215",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204215"
+      },
+      {
+        "ean": "sepa:11:5:0763571659991",
+        "name": "LEBANANA LECHE 150GR  ",
+        "brand": "LE BANANA",
+        "presentation": "0.15 KG",
+        "referenceUnit": "EA",
+        "barcode": "0763571659991",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "00763571659991"
+      },
+      {
+        "ean": "sepa:11:5:7790070418401",
+        "name": "GALLO GALLETAS DE ARROZ CRACKEADAS 100G",
+        "brand": "GALLO SNACKS",
+        "presentation": "0.1 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790070418401",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418401"
+      },
+      {
+        "ean": "sepa:11:5:7790070418463",
+        "name": "GALLO SNACKS BIZCOCHOS DE ARROZ SALADOS 100G",
+        "brand": "GALLO SNACKS",
+        "presentation": "0.1 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790070418463",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418463"
+      },
+      {
+        "ean": "sepa:11:5:7790580119133",
+        "name": "BOM BONOBON LECHE",
+        "brand": "BON O BON",
+        "presentation": "0.45 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790580119133",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119133"
+      },
+      {
+        "ean": "sepa:11:5:7790580119157",
+        "name": "BONOBON LECHE 18X15G",
+        "brand": "BON O BON",
+        "presentation": "0.27 KG",
+        "referenceUnit": "EA",
+        "barcode": "7790580119157",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119157"
+      },
+      {
+        "ean": "sepa:11:5:7790975204062",
+        "name": "LATITUD 33 VINO TINTO MALBEC 750ML",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204062",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204062"
+      },
+      {
+        "ean": "sepa:11:5:7790975204116",
+        "name": "VINO BLANCO SAUVIGNON LATITUD 33 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204116",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204116"
+      },
+      {
+        "ean": "sepa:11:5:7790975204123",
+        "name": "VINO BLANCO CHARDONAY LATITUD 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204123",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204123"
+      },
+      {
+        "ean": "sepa:11:5:7790975204215",
+        "name": "VINO TINTO CABERNET LATITUD 33 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "0.75 L",
+        "referenceUnit": "EA",
+        "barcode": "7790975204215",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204215"
+      },
+      {
+        "ean": "sepa:2:1:0000077958921",
+        "name": "BOMBON CHOCOLATE C/LECHE RELLENO, BON O BON, 15 gr",
+        "brand": "BON O BON",
+        "presentation": "15 gr",
+        "referenceUnit": "gr",
+        "barcode": "0000077958921",
+        "barcodeStatus": "restricted"
+      },
+      {
+        "ean": "sepa:2:1:0763571659991",
+        "name": "BOCAD.CONG.BANANA BAÑ.CHOCO C/LECHE, LE BANANA, 150 gr",
+        "brand": "LE BANANA",
+        "presentation": "150 gr",
+        "referenceUnit": "kgr",
+        "barcode": "0763571659991",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "00763571659991"
+      },
+      {
+        "ean": "sepa:2:1:7790040135741",
+        "name": "GALLETITAS DUL.AVENA Y PASAS, CEREAL MIX, 207 gr",
+        "brand": "CEREAL MIX",
+        "presentation": "207 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790040135741",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040135741"
+      },
+      {
+        "ean": "sepa:2:1:7790040135758",
+        "name": "GALLETITAS DULCES CON SEMILLAS Y CH, CEREAL MIX, 207 gr",
+        "brand": "CEREAL MIX",
+        "presentation": "207 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790040135758",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040135758"
+      },
+      {
+        "ean": "sepa:2:1:7790040135765",
+        "name": "GALLETITAS DULC CON FRUTILLA Y C, CEREAL MIX, 207 gr",
+        "brand": "CEREAL MIX",
+        "presentation": "207 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790040135765",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040135765"
+      },
+      {
+        "ean": "sepa:2:1:7790040145023",
+        "name": "GALLETITAS DUL.AVENA Y CHOCO., CEREAL MIX, 207 gr",
+        "brand": "CEREAL MIX",
+        "presentation": "207 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790040145023",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040145023"
+      },
+      {
+        "ean": "sepa:2:1:7790040148840",
+        "name": "ALFAJOR TRIPLE LECHE, BON O BON, 60 gr",
+        "brand": "BON O BON",
+        "presentation": "60 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790040148840",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040148840"
+      },
+      {
+        "ean": "sepa:2:1:7790070411952",
+        "name": "OBLEA DE ARROZ S/LIMON BAÑO CHOC, GALLO SNACKS, 20 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "20 gr",
+        "referenceUnit": "gr",
+        "barcode": "7790070411952",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070411952"
+      },
+      {
+        "ean": "sepa:2:1:7790070417152",
+        "name": "CHIPS DE ARROZ SABOR PIZZA, GALLO SNACKS, 100 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070417152",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417152"
+      },
+      {
+        "ean": "sepa:2:1:7790070417213",
+        "name": "CHIPS DE ARROZ SABOR QUESO, GALLO SNACKS, 100 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070417213",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417213"
+      },
+      {
+        "ean": "sepa:2:1:7790070417572",
+        "name": "OBLEA DE ARROZ S/LIMON X6, GALLO SNACKS, 120 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "120 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070417572",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417572"
+      },
+      {
+        "ean": "sepa:2:1:7790070418401",
+        "name": "GALLETITAS DE ARROZ CRACKEADAS, GALLO SNACKS, 100 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070418401",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418401"
+      },
+      {
+        "ean": "sepa:2:1:7790070418425",
+        "name": "BIZCOCHOS DE ARROZ DULCE, GALLO SNACKS, 100 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070418425",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418425"
+      },
+      {
+        "ean": "sepa:2:1:7790070418449",
+        "name": "BIZCOCHOS DE ARROZ TORTITA NEGRA, GALLO SNACKS, 100 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070418449",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418449"
+      },
+      {
+        "ean": "sepa:2:1:7790070431370",
+        "name": "POCHOCLOS SAL MARINA, GALLO SNACKS, 60 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "60 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790070431370",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070431370"
+      },
+      {
+        "ean": "sepa:2:1:7790070431639",
+        "name": "OBLEA DE ARROZ CHOCO BLACK, GALLO SNACKS, 20 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "20 gr",
+        "referenceUnit": "gr",
+        "barcode": "7790070431639",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070431639"
+      },
+      {
+        "ean": "sepa:2:1:7790070431905",
+        "name": "OBLEA DE ARROZ CON MANI CHOCO BAR, GALLO SNACKS, 20 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "20 gr",
+        "referenceUnit": "gr",
+        "barcode": "7790070431905",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070431905"
+      },
+      {
+        "ean": "sepa:2:1:7790070432223",
+        "name": "OBLEA DE ARROZ YOGUBAR SAB FRUTILLA, GALLO SNACKS, 20 gr",
+        "brand": "GALLO SNACKS",
+        "presentation": "20 gr",
+        "referenceUnit": "gr",
+        "barcode": "7790070432223",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070432223"
+      },
+      {
+        "ean": "sepa:2:1:7790580153656",
+        "name": "BOMBONES RELL.CHOCOLATE C/LECHE DP, BON O BON, 150 gr",
+        "brand": "BON O BON",
+        "presentation": "150 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7790580153656",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580153656"
+      },
+      {
+        "ean": "sepa:2:1:7790975204062",
+        "name": "VINO TINTO MALBEC, LATITUD 33, 750 cm3",
+        "brand": "LATITUD 33",
+        "presentation": "750 cm3",
+        "referenceUnit": "lt",
+        "barcode": "7790975204062",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204062"
+      },
+      {
+        "ean": "sepa:2:1:7790975204123",
+        "name": "VINO BLANCO CHARDONNAY, LATITUD 33, 750 cm3",
+        "brand": "LATITUD 33",
+        "presentation": "750 cm3",
+        "referenceUnit": "lt",
+        "barcode": "7790975204123",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204123"
+      },
+      {
+        "ean": "sepa:2:1:7790975204215",
+        "name": "VINO TINTO CABERNET SAUVIGNON, LATITUD 33, 750 cm3",
+        "brand": "LATITUD 33",
+        "presentation": "750 cm3",
+        "referenceUnit": "lt",
+        "barcode": "7790975204215",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204215"
+      },
+      {
+        "ean": "sepa:2:1:7797942008050",
+        "name": "VINO TINTO MALBEC, 4 DE COPAS, 750 cm3",
+        "brand": "4 DE COPAS",
+        "presentation": "750 cm3",
+        "referenceUnit": "lt",
+        "barcode": "7797942008050",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07797942008050"
+      },
+      {
+        "ean": "sepa:2:1:7797942008067",
+        "name": "VINO TINTO SYRAH, 4 DE COPAS, 750 cm3",
+        "brand": "4 DE COPAS",
+        "presentation": "750 cm3",
+        "referenceUnit": "lt",
+        "barcode": "7797942008067",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07797942008067"
+      },
+      {
+        "ean": "sepa:2:1:7798109282955",
+        "name": "MOLINILLO SAL & AJO GRANULADO, 1854, 100 gr",
+        "brand": "1854",
+        "presentation": "100 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7798109282955",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07798109282955"
+      },
+      {
+        "ean": "sepa:2:1:7798109288940",
+        "name": "MOLINILLO  SAL MARINA, 1854, 120 gr",
+        "brand": "1854",
+        "presentation": "120 gr",
+        "referenceUnit": "kgr",
+        "barcode": "7798109288940",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07798109288940"
+      },
+      {
+        "ean": "sepa:10:1:7790070106131",
+        "name": "CHIPS DE ARROZ PIZZA GALLO SNACKS X 60 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070106131",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070106131"
+      },
+      {
+        "ean": "sepa:10:1:7790070417152",
+        "name": "GALLETITAS DE ARROZ PIZZA GALLO SNACKS X 100 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070417152",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417152"
+      },
+      {
+        "ean": "sepa:10:1:7790580119157",
+        "name": "BOMBONES CHOCOLATE C LECHE BON O BON CAJA X270GRS",
+        "brand": "BON O BON",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790580119157",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119157"
+      },
+      {
+        "ean": "sepa:10:1:7790070418425",
+        "name": "BIZCOCHOS ARROZ DULCE GALLO BOLSA X 100 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070418425",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418425"
+      },
+      {
+        "ean": "sepa:10:1:7790070431370",
+        "name": "POCHOCLOS SAL MARINA GALLO SNACKS X 60 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070431370",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070431370"
+      },
+      {
+        "ean": "sepa:10:1:7790070106117",
+        "name": "BIZCOCHOS ARROZ SALADOS GALLO BOLSA X 60 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070106117",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070106117"
+      },
+      {
+        "ean": "sepa:10:1:7790070418401",
+        "name": "GALLETAS DE ARROZ CRACKEADAS GALLO X 100 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070418401",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418401"
+      },
+      {
+        "ean": "sepa:10:1:7798109288940",
+        "name": "MOLINILLO SAL MARINA 1854 X 120 GRS",
+        "brand": "1854",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7798109288940",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07798109288940"
+      },
+      {
+        "ean": "sepa:10:1:7790070418463",
+        "name": "BIZCOCHOS ARROZ SALADOS GALLO X 100 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070418463",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418463"
+      },
+      {
+        "ean": "sepa:10:1:7790040135758",
+        "name": "GALLETITAS AVENA SEMILLA FRUT CEREAL MIX X 207 GRS",
+        "brand": "CEREAL MIX",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790040135758",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040135758"
+      },
+      {
+        "ean": "sepa:10:1:7790975204062",
+        "name": "VINO TINTO MALBEC LATITUD 33 BOT X 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7790975204062",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204062"
+      },
+      {
+        "ean": "sepa:10:1:7790070431639",
+        "name": "BARRA ARROZ C CHOCOLATE GALLO SNACKS X 20 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRS",
+        "barcode": "7790070431639",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070431639"
+      },
+      {
+        "ean": "sepa:10:1:7790070417213",
+        "name": "GALLETITAS DE ARROZ QUESO GALLO SNACKS X 100 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070417213",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417213"
+      },
+      {
+        "ean": "sepa:10:1:7790975204123",
+        "name": "VINO BLANCO CHARDONNAY LATITUD 33 BOT X 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7790975204123",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204123"
+      },
+      {
+        "ean": "sepa:10:1:7790070106124",
+        "name": "BIZCOCHOS ARROZ DULCE GALLO BOLSA X 60 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070106124",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070106124"
+      },
+      {
+        "ean": "sepa:10:1:7790070105912",
+        "name": "CHIPS DE ARROZ QUESO GALLO SNACKS X 60 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070105912",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070105912"
+      },
+      {
+        "ean": "sepa:10:1:7790070417572",
+        "name": "OBLEA DE ARROZ C CHOCOLATE GALLO 6 X 20 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070417572",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070417572"
+      },
+      {
+        "ean": "sepa:10:1:7790040613706",
+        "name": "ALFAJOR LECHE BON O BON X 40 GRS",
+        "brand": "BON O BON",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790040613706",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040613706"
+      },
+      {
+        "ean": "sepa:10:1:7792798015474",
+        "name": "CERVEZA PURE GOLD STELLA ARTOIS LATA X 473 CC",
+        "brand": "STELLA PURE GOLD",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7792798015474",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07792798015474"
+      },
+      {
+        "ean": "sepa:10:1:7790070418432",
+        "name": "BIZCOCHOS ARROZ DULCE TORTITA NEGRA GALLO X 50 GRS",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRS",
+        "barcode": "7790070418432",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418432"
+      },
+      {
+        "ean": "sepa:10:1:7790070418449",
+        "name": "BIZCOCHOS ARROZ DULCE TORTITA NEGRA GALLO X 100 GR",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070418449",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070418449"
+      },
+      {
+        "ean": "sepa:10:1:7790975204130",
+        "name": "VINO ROSADO MALBEC ROSE LATITUD 33 X 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7790975204130",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204130"
+      },
+      {
+        "ean": "sepa:10:1:7790580117979",
+        "name": "CHOCOLATE CON LECHE RELLENO BON O BON X 48 GRS",
+        "brand": "BON O BON",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790580117979",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580117979"
+      },
+      {
+        "ean": "sepa:10:1:7790070411952",
+        "name": "OBLEA DE ARROZ GALLO X 20 GRS.",
+        "brand": "GALLO SNACKS",
+        "presentation": "1 UNI",
+        "referenceUnit": "GRM",
+        "barcode": "7790070411952",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790070411952"
+      },
+      {
+        "ean": "sepa:10:1:7790975204215",
+        "name": "VINO TINTO CAB SAUV LATITUD 33 BOT X 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7790975204215",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204215"
+      },
+      {
+        "ean": "sepa:10:1:7790975204116",
+        "name": "VINO BLANCO SAUVIGNON BLANC LATITUD 33 X 750 CC",
+        "brand": "LATITUD 33",
+        "presentation": "1 UNI",
+        "referenceUnit": "CM3",
+        "barcode": "7790975204116",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975204116"
+      },
+      {
+        "ean": "sepa:9:1:0000077958921",
+        "name": "BON-O-BON leche PAQ-15-gr.",
+        "brand": "BON O BON",
+        "presentation": "15.00 gr.",
+        "referenceUnit": "gr.",
+        "barcode": "0000077958921",
+        "barcodeStatus": "restricted"
+      },
+      {
+        "ean": "sepa:9:1:7790040613904",
+        "name": "Alfajor BONO BON negro c/ d leche maní PAQ-240-gr.",
+        "brand": "BON O BON",
+        "presentation": "240.00 gr.",
+        "referenceUnit": "KG.",
+        "barcode": "7790040613904",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790040613904"
+      },
+      {
+        "ean": "sepa:9:1:7790580119157",
+        "name": "BON-O-BON LECHE CJA-270-gr.",
+        "brand": "BON O BON",
+        "presentation": "270.00 gr.",
+        "referenceUnit": "KG.",
+        "barcode": "7790580119157",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580119157"
+      },
+      {
+        "ean": "sepa:9:1:7790580605100",
+        "name": "Alfajor BONO BON negro c/ d leche maní PAQ-240-gr.",
+        "brand": "BON O BON",
+        "presentation": "240.00 gr.",
+        "referenceUnit": "KG.",
+        "barcode": "7790580605100",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580605100"
+      },
+      {
+        "ean": "sepa:9:1:7790580109646",
+        "name": "OBLEA BOB LECHE XL BAR-45-gr.",
+        "brand": "BON O BON",
+        "presentation": "45.00 gr.",
+        "referenceUnit": "gr.",
+        "barcode": "7790580109646",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580109646"
+      },
+      {
+        "ean": "sepa:9:1:7790975200392",
+        "name": "vino LATITUD Malbec Rose 750cc BOT-750-ml.",
+        "brand": "LATITUD 33",
+        "presentation": "750.00 ml.",
+        "referenceUnit": "LT.",
+        "barcode": "7790975200392",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790975200392"
+      },
+      {
+        "ean": "sepa:9:1:7790580146047",
+        "name": "Chocolate con leche  BON O BON 160G CJA-160-gr.",
+        "brand": "BON O BON",
+        "presentation": ".16 gr.",
+        "referenceUnit": "gr.",
+        "barcode": "7790580146047",
+        "barcodeStatus": "valid_format_and_checksum",
+        "gtin": "07790580146047"
+      }
+    ]
   }
 }
