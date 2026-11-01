@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 8148,
-  "bytes": 888907,
+  "records": 8131,
+  "bytes": 887049,
   "context": {
     "province": "AR-Q",
-    "generatedAt": "2026-11-01T11:47:17.344Z",
-    "catalogPolicyVersion": "2026-11-01.buscador-numeros.2"
+    "generatedAt": "2026-11-01T20:41:41.080Z",
+    "catalogPolicyVersion": "2026-11-01.buscador-micelar.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 8148,
-      "bytes": 888907,
-      "sha256": "69de396143252238a1810685931c1215455ab140bd3752a7348096a28f52e394"
+      "records": 8131,
+      "bytes": 887049,
+      "sha256": "5cc0ddfa9c25f0c1f96b41ba4b4709751e40a3598ce99c7055b094bfdbffcf3e"
     }
   ]
 }

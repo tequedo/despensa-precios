@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 11132,
-  "bytes": 1200153,
+  "records": 11725,
+  "bytes": 1264259,
   "context": {
     "province": "AR-U",
-    "generatedAt": "2026-11-01T11:47:17.344Z",
-    "catalogPolicyVersion": "2026-11-01.buscador-numeros.2"
+    "generatedAt": "2026-11-01T20:41:41.080Z",
+    "catalogPolicyVersion": "2026-11-01.buscador-micelar.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 11132,
-      "bytes": 1200153,
-      "sha256": "cf97b460495034cab38efb93ea939da316d8ba10f417b6e6f9ec1f01643ed718"
+      "records": 11725,
+      "bytes": 1264259,
+      "sha256": "84325ff4456e3a447a0f246043fc32e76cb4086cfac0d2ea8ff2a60e77d1e233"
     }
   ]
 }
