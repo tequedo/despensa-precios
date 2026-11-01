@@ -71,7 +71,25 @@ export function matchesProductQuery(product, query) {
 
 // Discovery understands content units without changing the stricter quote matcher.
 const measurePattern = /(?:\d+(?:[.,]\d+)?|[.,]\d+)\s*(?:kilogramos?|kgm|kgr|kilos?|kg|gramos?|grm|grs?|g|litros?|ltr|lts?|l|ml|cc|cm3|cmq)(?![a-z])/gi;
+// FOCO is also a retailer brand for tents and appliances. Only discovery of
+// a bulb uses this alias; source titles, brands and quotation tokens stay exact.
+const otherLightingObject = /\b(carpa|carpas|anafe|anafes|linterna|linternas|reflector|reflectores|proyector|proyectores|luminaria|luminarias|aplique|apliques|velador|veladores|mesa|escritorio|pie)\b/;
+const lightBulb = product => {
+  const name = searchText(product.name);
+  if (otherLightingObject.test(name)) return false;
+  return /\b(lamparas?|lamparitas?)\b/.test(name)
+    || (/\bfocos?\b/.test(name) && /\b(led|halogena|halogeno|incandescente|e27|e14|gu10|g9)\b/.test(name));
+};
+const discoveryWords = (product,review,bulb = lightBulb(product)) => {
+  const available = catalogWords(product,review);
+  return bulb ? [...available,'lampara'] : available;
+};
+// This bounded memo holds immutable query interpretation only, never catalog
+// rows, prices, result sets or user state. Its raw string key preserves input.
+const queryInterpretations = new Map();
 function catalogQuery(value) {
+  const queryKey = String(value ?? '');
+  if (queryInterpretations.has(queryKey)) return queryInterpretations.get(queryKey);
   const source = String(value ?? '').replace(/\bun litro y medio\b/gi, '1,5 L').replace(/\bun litro\b/gi, '1 L')
     .replace(/(\d{1,3}(?:\.\d{3})+)\s*(?=mililitros?\b|ml\b|gramos?\b|grs?\b|g\b|cc\b|cm3\b|cmq\b)/gi, value => value.replace(/\./g,''))
     .replace(/\bmililitros?\b/gi,'ml');
@@ -80,16 +98,25 @@ function catalogQuery(value) {
   const trailing = measures.length ? null : text.match(/\s(\d+(?:[.,]\d+)?)\s*$/);
   const amount = trailing ? Number(trailing[1].replace(',', '.')) : null;
   if (trailing) text = text.slice(0, trailing.index);
-  return { text, measures, amount };
+  const normal = searchText(text);
+  const bulbIntent = /\b(focos?|lamparitas?)\b/.test(normal) && !otherLightingObject.test(normal);
+  if (bulbIntent) text = normal.replace(/\b(focos?|lamparitas?)\b/g,'lampara');
+  text = text.replace(/\bl[aá]mparas\b/gi,'lampara');
+  const wanted = Object.freeze(tokens(text));
+  const bulbWords = wanted.some(word => 'lampara'.startsWith(word));
+  const interpreted = Object.freeze({text,wanted,bulbWords,measures:Object.freeze(measures.map(size => Object.freeze({...size}))),amount,bulbIntent});
+  if (queryInterpretations.size >= 64) queryInterpretations.delete(queryInterpretations.keys().next().value);
+  queryInterpretations.set(queryKey,interpreted);
+  return interpreted;
 }
 
 // Candidate indexes are a superset only. Every retrieved product still passes
 // matchesCatalogQuery and the original identity/package quotation controls.
 export function catalogIndexWords(product){
- return [...new Set([...catalogWords(product,reviewedCatalogEntry(product)),...tokens(product.name)])];
+ return [...new Set([...discoveryWords(product,reviewedCatalogEntry(product)),...tokens(product.name)])];
 }
 export function catalogIndexHints(query){
- const ordinary=tokens(catalogQuery(query).text),literal=tokens(query);
+ const ordinary=catalogQuery(query).wanted,literal=tokens(query);
  return [...new Set([ordinary[0],literal.length>1?literal[0]:undefined].filter(Boolean))];
 }
 
@@ -99,8 +126,10 @@ export function matchesCatalogQuery(product, query) {
   // (CHOCO180G). Measure parsing must not hide that original qualified title.
   // This only permits discovery; all quote/identity/package checks still apply.
   if(normalize(product.name)===normalize(query)&&tokens(query).length>1)return true;
-  const {text, measures, amount} = catalogQuery(query);
-  const review=reviewedCatalogEntry(product),wanted = tokens(text), available = catalogWords(product,review);
+  const {wanted, measures, amount, bulbIntent, bulbWords} = catalogQuery(query);
+  if (bulbIntent && !lightBulb(product)) return false;
+  const review=reviewedCatalogEntry(product),available = bulbWords
+    ? discoveryWords(product,review,bulbIntent ? true : undefined) : catalogWords(product,review);
   if (!wanted.length || !wanted.every(word => available.some(value => value.startsWith(word)))) return false;
   if (!familyMatches(product,query,review)) return false;
   if (!matchesOilKind(product.name, query)||!matchesOilUse(product,query)||!matchesWaterUse(product.name,query)) return false;

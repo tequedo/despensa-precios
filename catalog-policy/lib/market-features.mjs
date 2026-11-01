@@ -122,6 +122,6 @@ export function replenishment(items, purchases, days = 14) {
         const rate = span >= 7 ? history.slice(0, -1).reduce((sum, p) => sum + p.quantity, 0) / span : null;
         const projected = rate ? rate * days : Math.max(1, item.minimumStock);
         const needed = Math.max(0, projected - item.stock);
-        return { ...item, rate, observations: history.length, days, quantity: item.unit === 'kg' ? Math.ceil(needed * 4) / 4 : Math.ceil(needed), basis: rate ? 'Ritmo de compras registrado; revisá el consumo real' : 'Stock mínimo; aún faltan compras para estimar' };
+        return { ...item, rate, observations: history.length, days, quantity: item.unit === 'kg' ? Math.ceil((needed - 1e-9) * 100) / 100 : Math.ceil(needed), basis: rate ? 'Ritmo de compras registrado; revisá el consumo real' : 'Stock mínimo; aún faltan compras para estimar' };
     }).filter(item => item.quantity > 0);
 }

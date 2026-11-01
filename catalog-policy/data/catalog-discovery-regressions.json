@@ -1,0 +1,206 @@
+{
+  "provenance": {
+    "collectorCommit": "99b3d9db9a6d35d9434203e8d44b1d09a84ee331",
+    "sourceDate": "2026-10-31",
+    "scope": "Original product fields common to three San Juan ChangoMás stores; search regression only, no new price or coverage claim"
+  },
+  "products": [
+    {
+      "ean": "sepa:11:2:7791073000983",
+      "name": "LINTERNA FOCO FLOT4D",
+      "brand": "SIN MARCA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073000983",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073000983",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791073881834",
+      "name": "FOCO ANAFE ELECTRICO",
+      "brand": "FOCO",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073881834",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073881834",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791073884620",
+      "name": "CARPA FOCO DOMO 2 PE",
+      "brand": "FOCO",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073884620",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073884620",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791073884637",
+      "name": "CARPA FOCO DOMO 2 PE",
+      "brand": "FOCO",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073884637",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073884637",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791073884651",
+      "name": "CARPA FOCO 4 PERSONA",
+      "brand": "FOCO",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073884651",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073884651",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791073884668",
+      "name": "CARPA FOCO 4 PERSONA",
+      "brand": "FOCO",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791073884668",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791073884668",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772044905",
+      "name": "LAMPARA 6W LED GU10 HP BLANCO CALIDO",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772044905",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772044905",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772044912",
+      "name": "LAMPARA 6W LED GU10 HP LUZ DIA",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772044912",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772044912",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047562",
+      "name": "LAMPARA CLASICA LED 5W E27 BLANCO CAL",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047562",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047562",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047579",
+      "name": "LAMPARA CLASICA LED 5W E27 LUZ DIA",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047579",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047579",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047586",
+      "name": "LAMPARA CLASICA LED 7W E27 BLANCO CAL",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047586",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047586",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047593",
+      "name": "LAMPARA CLASICA LED 7W E27 LUZ DIA",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047593",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047593",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047609",
+      "name": "LAMPARA CLASICA LED 9W E27 BLANCO CAL",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047609",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047609",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047616",
+      "name": "LAMPARA CLASICA LED 9W E27 LUZ DIA",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047616",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047616",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047821",
+      "name": "LAMPARA GOTA 4W B C",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047821",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047821",
+      "sourceEanIndicator": "1"
+    },
+    {
+      "ean": "sepa:11:2:7791772047838",
+      "name": "LAMPARA GOTA 4W L D",
+      "brand": "SICA",
+      "presentation": "1 EA",
+      "referenceUnit": "EA",
+      "barcode": "7791772047838",
+      "barcodeStatus": "valid_format_and_checksum",
+      "sourceProductId": "7791772047838",
+      "sourceEanIndicator": "1"
+    }
+  ],
+  "bulbBarcodes": [
+    "7791772044905",
+    "7791772044912",
+    "7791772047562",
+    "7791772047579",
+    "7791772047586",
+    "7791772047593",
+    "7791772047609",
+    "7791772047616",
+    "7791772047821",
+    "7791772047838"
+  ],
+  "bulbQueries": [
+    "foco",
+    "focos",
+    "lamparita",
+    "lamparitas",
+    "lámparas",
+    "focos SICA"
+  ],
+  "strictQuoteAlias": false
+}
