@@ -1,58 +1,72 @@
 {
-  "generatedAt": "2026-10-31T21:43:33.670Z",
+  "generatedAt": "2026-11-01T01:16:36.399Z",
   "scope": "Argentina; alcance sujeto a cada promoción",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
     {
-      "id": "mercado-pago-carrefour-b5821964-430c-44e9-90d2-17fee264f019",
+      "id": "mercado-pago-changomas-2026-11-01",
       "provider": "Mercado Pago",
-      "chain": "Carrefour",
-      "kind": "reimbursement",
-      "title": "15% con Mercado Pago los lunes",
+      "chain": "ChangoMás",
+      "kind": "discount",
+      "title": "15% con Mercado Pago los martes",
       "discountPercent": 15,
       "daysOfWeek": [
-        1
+        2
       ],
       "dayLabels": [
-        "lunes"
+        "martes"
       ],
-      "validFrom": "2026-10-01",
-      "validTo": "2026-10-31",
+      "validFrom": "2026-11-01",
+      "validTo": "2026-11-30",
       "minimumPurchase": null,
-      "capAmount": 15000,
-      "capPeriod": "month",
-      "capOwner": "person",
-      "capRule": "Tope $15.000; período mensual; por persona",
-      "paymentRequirement": "Tarjeta de crédito de Mercado Pago, física o mediante QR",
+      "capAmount": null,
+      "capRule": "Sin tope",
+      "paymentRequirement": "Pago con QR desde la app de Mercado Pago",
       "channels": [
-        "Sucursales físicas"
+        "Sucursales",
+        "Más Online con pago online"
       ],
-      "geographicScope": "Sucursales físicas de Hipermercados Carrefour, Market, Express y Maxi del país",
+      "geographicScope": "Todas las sucursales de HiperChangoMás, ChangoMás y MasGo",
       "exclusions": [
         "Carnicería",
+        "Granja",
+        "Elaborados",
+        "Embutidos",
+        "Quesos",
+        "Frutas y verduras",
         "Huevos",
+        "Aceites comestibles",
+        "Harinas",
+        "Leches fluidas",
+        "Azúcares",
+        "Bebidas blancas",
+        "Vinos",
+        "Fernet",
+        "Cervezas y marcas detalladas en los legales",
+        "Gaseosas y marcas detalladas en los legales",
         "Electrodomésticos y electrónicos",
-        "Bazar",
-        "Ferretería",
-        "Automotor",
-        "Juguetería y librería",
-        "Cocina",
-        "Jardinería",
-        "Textil",
-        "Ofertón por bulto",
-        "Pack familiar",
-        "Precio Súper Bajo"
+        "Rodados",
+        "Informática",
+        "Celulares",
+        "Climatización",
+        "Línea blanca",
+        "Medicamentos de farmacia",
+        "Servicios de Autocenter",
+        "Baterías",
+        "Neumáticos"
       ],
       "exclusionsVerified": true,
-      "accumulable": true,
-      "sourceUrl": "https://www.carrefour.com.ar/descuentos-bancarios",
-      "checkedAt": "2026-10-31T21:43:33.670Z",
-      "termsHash": "68be94e522abb4b4f2a01540cabc8f24ce5d610c530d342fabfc45544b1adc66",
+      "accumulable": false,
+      "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
+      "checkedAt": "2026-11-01T01:16:36.399Z",
+      "termsHash": "99ebc916a795469d940f090182ac41f048d4e976ad601ad3ae67be1ec67621e2",
       "status": "verified",
       "calculationEligible": false,
-      "calculationBlockedReason": "Tiene exclusiones por categoría; falta validar cada producto de la canasta.",
+      "calculationBlockedReason": "Tiene exclusiones por categoría y marca; todavía no se puede validar cada renglón de la canasta de forma exacta.",
       "reasons": [],
-      "sourceRecordId": "b5821964-430c-44e9-90d2-17fee264f019"
+      "sourceRecordId": "f5296ce0-dffe-11ef-b37f-87fa2b74005f",
+      "sourceActiveFrom": "2026-10-01T00:00:00+00:00",
+      "sourceActiveTo": "2026-12-01T00:00:00+00:00"
     }
   ]
 }
