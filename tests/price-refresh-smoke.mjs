@@ -2,25 +2,16 @@ import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dehezaExpectation, verifyStaleDeheza } from './price-refresh-expectations.mjs';
 import { readPriceShard } from '../price-shards.mjs';
+import { createCurrentPriceQuery } from './current-price-query.mjs';
 
 const origin = process.env.SITE_ORIGIN, token = process.env.PRICE_INGEST_TOKEN;
 if (!origin || !token) throw new Error('Falta configuración para verificar la lectura de precios');
 const report = {checkedAt:new Date().toISOString(), success:false, checks:[]};
 const json = async path => JSON.parse(await readFile(path, 'utf8'));
 let cookie;
-async function query(scope, parameters, expectedGeneration) {
-  const search = new URLSearchParams({...scope, best:'producto', ...parameters});
-  for (let attempt = 0; attempt < 13; attempt++) {
-    const response = await fetch(origin+'/api/prices?'+search, {headers:{origin,cookie,authorization:`Bearer ${token}`}, redirect:'error', signal:AbortSignal.timeout(45000)});
-    const body = await response.json();
-    if (response.status === 200 && body.coverage?.generatedAt === expectedGeneration) return body;
-    if ((response.status !== 503 && response.status !== 200) || attempt === 12) {
-      throw new Error(`La app no leyó la generación publicada: HTTP ${response.status}, esperada ${expectedGeneration}, recibida ${body.coverage?.generatedAt ?? 'ninguna'}`);
-    }
-    // Allow the public source CDN and the app's 60-second cache to converge.
-    await new Promise(resolve => setTimeout(resolve, 15000));
-  }
-}
+const policy=await json('catalog-policy/data/catalog-policy-manifest.json');
+const query=createCurrentPriceQuery({origin,policyVersion:policy.version,
+  headers:()=>({origin,cookie,authorization:`Bearer ${token}`})});
 
 async function province(code) {
   const index = await json(`data/national/${code}/index.json`);
@@ -99,7 +90,7 @@ try {
   if (expected.status === 'quote_required') verifyQuotes(chocolate, caba, 'Fecha interna de Deheza');
   else report.checks.push(verifyStaleDeheza(chocolate, expected));
   report.success = true;
-} catch (error) { report.error = error.message; throw error; }
+} catch (error) { report.error = error.message; report.failure={kind:error.kind??'verification',status:error.status??null}; throw error; }
 finally {
   await writeFile('data/price-refresh-smoke-report.json', JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report));
