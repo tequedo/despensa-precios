@@ -80,7 +80,7 @@ jobs:
       - name: Descargar el repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Sincronizar con la rama principal
         run: |
