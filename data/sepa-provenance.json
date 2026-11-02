@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-01T22:05:50.004Z",
+  "checkedAt": "2026-11-01T23:31:35.653Z",
   "status": "official_original_integrity_checked",
   "sourceType": "official_original",
   "authenticity": "official_https_download",
@@ -11,8 +11,8 @@
   "phase": "complete",
   "metadata": {
     "url": "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios",
-    "startedAt": "2026-11-01T22:05:50.004Z",
-    "fetchedAt": "2026-11-01T22:05:50.986Z",
+    "startedAt": "2026-11-01T23:31:35.653Z",
+    "fetchedAt": "2026-11-01T23:31:36.776Z",
     "bytes": 11378,
     "sha256": "2f5832df9d9b14b979cd6291d8e7472c6eed230726c6297aa80d1563e0ca6d5f",
     "status": 200,
@@ -43,19 +43,19 @@
   },
   "download": {
     "url": "https://datos.produccion.gob.ar/dataset/6f47ec76-d1ce-4e34-a7e1-621fe9b1d0b5/resource/f8e75128-515a-436e-bf8d-5c63a62f2005/download/sepa_domingo.zip",
-    "startedAt": "2026-11-01T22:05:50.994Z",
-    "fetchedAt": "2026-11-01T22:06:07.053Z",
+    "startedAt": "2026-11-01T23:31:36.782Z",
+    "fetchedAt": "2026-11-01T23:31:53.068Z",
     "bytes": 323611021,
     "sha256": "c18f328afa90d54e31375878e1529485fb3ca5519208e57a51445fabb49bd7bc",
     "status": 200,
     "etag": "\"1793549977.7-323611021\"",
     "lastModified": "Sun, 01 Nov 2026 16:19:37 GMT"
   },
-  "downloadedAt": "2026-11-01T22:06:07.053Z",
+  "downloadedAt": "2026-11-01T23:31:53.068Z",
   "metadataAfter": {
     "url": "https://datos.produccion.gob.ar/api/3/action/package_show?id=sepa-precios",
-    "startedAt": "2026-11-01T22:06:07.054Z",
-    "fetchedAt": "2026-11-01T22:06:07.346Z",
+    "startedAt": "2026-11-01T23:31:53.069Z",
+    "fetchedAt": "2026-11-01T23:31:53.312Z",
     "bytes": 11378,
     "sha256": "2f5832df9d9b14b979cd6291d8e7472c6eed230726c6297aa80d1563e0ca6d5f",
     "status": 200,
@@ -330,7 +330,7 @@
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-11-01T22:05:50.004Z",
+        "startedAt": "2026-11-01T23:31:35.652Z",
         "status": "official_original_integrity_checked",
         "sourceModified": "2026-11-01T16:19:36.931Z"
       }
