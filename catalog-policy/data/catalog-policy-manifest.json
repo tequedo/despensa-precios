@@ -1,16 +1,16 @@
 {
-  "version": "2026-11-01.buscador-marcas.3",
+  "version": "2026-11-02.marcas-abreviadas.1",
   "files": {
     "lib/price-safety.mjs": "0417c01eba0cd83a506da465cb73902bd4b4b9d78ff519656e7299041251cc25",
     "lib/product-identity.mjs": "340d67975bebc7e3ac1128fdac3a20fc8e9c30fc62bceab2b81f1570deb52e21",
     "lib/catalog-semantics.mjs": "8f183d126e78faf12e548dcdfbfade9eb5c806a19c33de4743791294d68e52d4",
-    "lib/product-search.mjs": "2d0db211fe25d377257a650de023125f84f1e3180321ca44c7c94ea0632e7751",
+    "lib/product-search.mjs": "fc0a9e22a26defa37eb2927c894482a6005e3e6f71d68316a54a0b6f98d53f17",
     "lib/market-features.mjs": "248ee2cef33f2e563498a647e239204ad5886a4b445393adef37d8b0812dd509",
     "lib/price-review.mjs": "2fcdc82b713acdfb34a4ac3b5d71925df2859296562b65bcf075271ce92a7953",
     "lib/catalog-policy.mjs": "d7b9772981d42f4d10f2f043838713b6f1d7b603dde9a85e3a861ac5c33dde61",
     "lib/product-fields.mjs": "fe15dadac07c153e7094cf515c4dbc11ee93926da4866bf8fe39d5c189cdf15f",
     "data/catalog-search-reviews.json": "98e48df1fd0c61b09fc12285ce34363a36fec92974878668378e02642031f398",
     "data/catalog-policy-regressions.json": "543b7bc762798cbb33b5536b6c5edd095752d0b4ef492c3f0ea19d1fec1c7783",
-    "data/catalog-discovery-regressions.json": "9b6f979957cb4daf5650db9fa41caf0e5477712ded7d1b2129de269f8af4ade6"
+    "data/catalog-discovery-regressions.json": "450c0b96126a2d9570e9f545d8f41bdec419c6cfdebd05c1dc20aefaaf3a7e01"
   }
 }

@@ -96,3 +96,9 @@ test('no confunde un velador con su bombilla y mantiene consultas independientes
  assert.equal(matchesCatalogQuery(bulb,'focos'),true);
  assert.equal(matchesCatalogQuery(bulb,'lampara 1 EA'),false,'Un número de unidades no se infiere de otra medida');
 });
+
+test('las variantes de marcas cortas recuperan los35SKU comprobados sin admitir cantidades como nombres comerciales',()=>{
+ assert.equal(new Set(fixture.shortBrandTitles.map(row=>row.product.ean)).size,35);
+ for(const {query,product} of fixture.shortBrandTitles){assert.equal(matchesCatalogTitleQuery(product,query),true,query+': '+product.ean);assert.equal(matchesCatalogQuery(product,query),true,query);}
+ for(const query of ['X 5','S/D','1 KG','PACK X 5','5 UNIDADES','3 LT'])assert.equal(matchesCatalogTitleQuery({name:'CERVEZA X 5 PACK 1 KG S D 5 UNIDADES 3 LT'},query),false,query);
+});

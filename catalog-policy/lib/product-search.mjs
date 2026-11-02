@@ -30,10 +30,11 @@ export const relatedCatalogBrand=(actual,requested)=>{
 };
 const tokens = value => searchText(value).split(' ').filter(word => word && !['de','del','la','el','los','las','en'].includes(word)).map(productWord);
 export const catalogQueryWords=query=>tokens(query);
+const titleQuantityWords=new Set(['kg','g','gr','grs','grm','ml','cc','cm','cm3','cmq','l','lt','lts','ltr','litro','litros','un','uni','unidad','unidades','pack','packs','x']);
 export const matchesCatalogTitleQuery=(product,query)=>{
  const wanted=tokens(query),available=tokens(product.name);
- // Counts and initials (X 5, S/D) do not establish a named product line.
- return wanted.filter(word=>/^[a-z]{3,}$/.test(word)).length>=2&&wanted.every(word=>available.includes(word));
+ // A short brand word (ST, UP, DV) is meaningful; quantities alone are not.
+ return wanted.length>1&&wanted.some(word=>/^[a-z]{2,}$/.test(word)&&!titleQuantityWords.has(word))&&wanted.every(word=>available.includes(word));
 };
 // The first named product defines its family: an ingredient, flavour or a
 // container's intended beverage must not turn it into that other product.

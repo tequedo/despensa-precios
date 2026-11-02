@@ -1090,5 +1090,385 @@
         "gtin": "07798151953377"
       }
     }
+  ],
+  "shortBrandTitles": [
+    {
+      "query": "5 HISPANOS",
+      "product": {
+        "ean": "sepa:2:1:7794520023214",
+        "name": "CAFE TOSTADO NATURAL EN GRANOS, LOS 5 HISPANOS, 1000 gr",
+        "brand": "LOS 5 HISPANOS",
+        "presentation": "1000 gr"
+      }
+    },
+    {
+      "query": "7 UP",
+      "product": {
+        "ean": "sepa:10:1:7791813080282",
+        "name": "GASEOSA LIMA LIMON SIN AZUCAR 7 UP PET X 2 LT",
+        "brand": "7UP LIGHT",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "7 UP",
+      "product": {
+        "ean": "sepa:10:1:7791813434368",
+        "name": "GASEOSA LIMA LIMON S AZUCAR 7 UP N PET X 500 CC",
+        "brand": "7UP LIGHT",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "BC LA CAMPAGNOLA",
+      "product": {
+        "ean": "sepa:2:1:7790580135430",
+        "name": "MAYONESA BC DOY PACK, LA CAMPAGNOLA, 1000 gr",
+        "brand": "LA CAMPAGNOLA",
+        "presentation": "1000 gr"
+      }
+    },
+    {
+      "query": "BC LA CAMPAGNOLA",
+      "product": {
+        "ean": "sepa:2:1:7790580135454",
+        "name": "MAYONESA BC DOY PACK, LA CAMPAGNOLA, 500 gr",
+        "brand": "LA CAMPAGNOLA",
+        "presentation": "500 gr"
+      }
+    },
+    {
+      "query": "BC LA CAMPAGNOLA",
+      "product": {
+        "ean": "sepa:2:1:7790580135461",
+        "name": "MAYONESA BC DOY PACK, LA CAMPAGNOLA, 250 gr",
+        "brand": "LA CAMPAGNOLA",
+        "presentation": "250 gr"
+      }
+    },
+    {
+      "query": "D FIESTA",
+      "product": {
+        "ean": "sepa:10:1:7791620187631",
+        "name": "KETCHUP D FIESTA X 220 GRS",
+        "brand": "FESTA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "D FIESTA",
+      "product": {
+        "ean": "sepa:10:1:7791620187730",
+        "name": "MAYONESA D FIESTA X 500 CC",
+        "brand": "FESTA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "D V CATENA",
+      "product": {
+        "ean": "sepa:9:1:7794450090492",
+        "name": "vino D.V. CATENA Cabernet - Malbec 750cc BOT-750-ml.",
+        "brand": "DV CATENA",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "D'FIESTA",
+      "product": {
+        "ean": "sepa:10:1:7791620187631",
+        "name": "KETCHUP D FIESTA X 220 GRS",
+        "brand": "FESTA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "D'FIESTA",
+      "product": {
+        "ean": "sepa:10:1:7791620187730",
+        "name": "MAYONESA D FIESTA X 500 CC",
+        "brand": "FESTA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "D.V.CATENA",
+      "product": {
+        "ean": "sepa:9:1:7794450090492",
+        "name": "vino D.V. CATENA Cabernet - Malbec 750cc BOT-750-ml.",
+        "brand": "DV CATENA",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "DR. CORMILLOT",
+      "product": {
+        "ean": "sepa:10:1:7790710334634",
+        "name": "YERBA MATE SILUETA DR. CORMILLOT CBSE X 500 GRS",
+        "brand": "CBSE",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "DR. CORMILLOT",
+      "product": {
+        "ean": "sepa:10:1:7790710334665",
+        "name": "YERBA MATE ENDULIFE DR. CORMILLOT CBSE X 500 GRS",
+        "brand": "CBSE",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "DV CATENA",
+      "product": {
+        "ean": "sepa:10:1:7794450090553",
+        "name": "VINO BLANCO CHARDONNAY CHARD DV CATENA BOT X750 CC",
+        "brand": "D V CATENA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "DV CATENA",
+      "product": {
+        "ean": "sepa:10:1:7794450001696",
+        "name": "VINO TINTO PINOT NOIR DV CATENA BOT X 750 CC",
+        "brand": "D V CATENA",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "HELLMANN'S",
+      "product": {
+        "ean": "sepa:11:2:7794000006164",
+        "name": "HELLMANN'S KETCHUP 500G",
+        "brand": "HELLMANNS",
+        "presentation": "0.5 KG"
+      }
+    },
+    {
+      "query": "HELLMANN'S",
+      "product": {
+        "ean": "sepa:11:5:7794000006164",
+        "name": "HELLMANN'S KETCHUP 500G",
+        "brand": "HELLMANNS",
+        "presentation": "0.5 KG"
+      }
+    },
+    {
+      "query": "LOS 5 HISPANOS",
+      "product": {
+        "ean": "sepa:2:1:7794520869676",
+        "name": "CAFE MOLIDO TOSTADO INTENSO, 5 HISPANOS, 500 gr",
+        "brand": "5 HISPANOS",
+        "presentation": "500 gr"
+      }
+    },
+    {
+      "query": "Q ZUCCARDI",
+      "product": {
+        "ean": "sepa:2:1:7791728001075",
+        "name": "VINO TINTO MALBEC, ZUCCARDI Q, 750 cm3",
+        "brand": "ZUCCARDI Q",
+        "presentation": "750 cm3"
+      }
+    },
+    {
+      "query": "Q ZUCCARDI",
+      "product": {
+        "ean": "sepa:9:1:7791728000962",
+        "name": "vino ZUCCARDI Q Tempranillo x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "Q ZUCCARDI",
+      "product": {
+        "ean": "sepa:9:1:7791728001075",
+        "name": "vino ZUCCARDI Q malbec x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "Q ZUCCARDI",
+      "product": {
+        "ean": "sepa:9:1:7791728001082",
+        "name": "vino ZUCCARDI Q cabernet sauvignon 750 BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "Q ZUCCARDI",
+      "product": {
+        "ean": "sepa:9:1:7791728001532",
+        "name": "vino ZUCCARDI Q chardonnay x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218000176",
+        "name": "JABON TOCADOR BRIZA PRIMAVERAL ST TROPEZ X 3 UNI",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106915",
+        "name": "JABON TOCADOR GLICERINA NEUTRO ST TROPEZ 1X90GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106908",
+        "name": "JABON TOCADOR GLIC FRUTOS ROJOS ST TROPEZ 1X90GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106632",
+        "name": "JABON TOCADOR GLICERINA NEUTRO ST TROPEZ 3X90GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106519",
+        "name": "JABON TOCADOR GLICERINA FRUTAL ST TROPEZ 3 X125GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106564",
+        "name": "JABON TOCADOR HIDRATACION INT ST TROPEZ 3 X 125GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218000046",
+        "name": "JABON TOCADOR FRESCURA MARINA ST TROPEZ X 3 UNI",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218106540",
+        "name": "JABON TOCADOR CREMOSO ARMONIA ST TROPEZ 3 X 125GRS",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218000152",
+        "name": "JABON TOCADOR BRILLO Y LUZ ST TROPEZ X 3 UNI",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218000190",
+        "name": "JABON TOCADOR FLORES ST TROPEZ X 3 UNI",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218107011",
+        "name": "JABON DE TOCADOR HIDRAT INTENSA ST TROPEZ X 120GRM",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ST TROPEZ",
+      "product": {
+        "ean": "sepa:10:1:7794218107004",
+        "name": "JABON DE TOCADOR ARM P VOS ST TROPEZ X 120 GRM",
+        "brand": "SAINT TROPEZ",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:10:1:7791728001082",
+        "name": "VINO TINTO CABERNET Q. ZUCCARDI X 750 CC",
+        "brand": "Q ZUCCARDI",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:10:1:7791728001075",
+        "name": "VINO TINTO MALBEC Q. ZUCCARDI X 750 CC",
+        "brand": "Q ZUCCARDI",
+        "presentation": "1 UNI"
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:9:1:7791728000962",
+        "name": "vino ZUCCARDI Q Tempranillo x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:9:1:7791728001075",
+        "name": "vino ZUCCARDI Q malbec x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:9:1:7791728001082",
+        "name": "vino ZUCCARDI Q cabernet sauvignon 750 BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    },
+    {
+      "query": "ZUCCARDI Q",
+      "product": {
+        "ean": "sepa:9:1:7791728001532",
+        "name": "vino ZUCCARDI Q chardonnay x 750 cc BOT-750-ml.",
+        "brand": "FAMILIA ZUCCARDI",
+        "presentation": "750.00 ml."
+      }
+    }
   ]
 }
