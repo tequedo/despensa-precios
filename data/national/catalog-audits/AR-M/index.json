@@ -2,43 +2,43 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 83833,
-  "bytes": 8916686,
+  "records": 82054,
+  "bytes": 8725286,
   "context": {
     "province": "AR-M",
-    "generatedAt": "2026-11-02T04:46:26.321Z",
-    "catalogPolicyVersion": "2026-11-01.buscador-marcas.3"
+    "generatedAt": "2026-11-02T22:17:14.146Z",
+    "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18816,
-      "bytes": 1999973,
-      "sha256": "bcbd019f2a1016474844bf3ffa0a8d355c8479d45765aec29459c5b89fb26610"
+      "records": 18840,
+      "bytes": 1999955,
+      "sha256": "a1da30d800ad98e6a9002b009b5de033ec0bedc0acbaf79a5f4b0296dee1f3e2"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 18829,
-      "bytes": 2000000,
-      "sha256": "1b7de132b47ddbd79f4e3c414caafecad21e9f3e7f0f32a2a1fee5e7aeec92a8"
+      "records": 18800,
+      "bytes": 1999932,
+      "sha256": "020ed7b89a8faa242bc31f7513dd92d31c4c8d980020706eee91b96e1f5e8242"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18826,
-      "bytes": 1999949,
-      "sha256": "7ef61b12868a4624016d2625981c35eb1302ae8c901f54d3917908c01fab4a56"
+      "records": 18855,
+      "bytes": 1999962,
+      "sha256": "0c85eeb4b3f5e7a041feca642fbca8c944e8de60d96f390da1244acf5a3ec19c"
     },
     {
       "file": "part-000004.ndjson",
-      "records": 18855,
-      "bytes": 1999974,
-      "sha256": "e9b1ece0d3e04694ae0006f2ed6e7641710a301cbc30d6b0ec644acd86f3b1dd"
+      "records": 18854,
+      "bytes": 1999940,
+      "sha256": "9116bb217d936b4b8085481240a178c76c9af0cb7f6d69300071a79f34961f3e"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 8507,
-      "bytes": 916790,
-      "sha256": "21bee332cd9bc2397edd998c83086ae56d4b345cfaf0b198f8077f3e10e00b9b"
+      "records": 6705,
+      "bytes": 725497,
+      "sha256": "c0aa77ade971dfc436290781935c2bf097c9479e6ffdc86fd739b7a96b6cd171"
     }
   ]
 }

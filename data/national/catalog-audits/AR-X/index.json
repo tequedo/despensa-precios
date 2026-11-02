@@ -2,61 +2,43 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 135481,
-  "bytes": 14451356,
+  "records": 93889,
+  "bytes": 9969329,
   "context": {
     "province": "AR-X",
-    "generatedAt": "2026-11-02T04:46:26.321Z",
-    "catalogPolicyVersion": "2026-11-01.buscador-marcas.3"
+    "generatedAt": "2026-11-02T22:17:14.146Z",
+    "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18589,
-      "bytes": 1999979,
-      "sha256": "d8e7f719de4126a394741bbc5809b7dd634651d91713247115b459d45e367891"
+      "records": 18871,
+      "bytes": 1999896,
+      "sha256": "9eb0a64f2580b014ae82046b85ccb66a202a801551778b258b05e550ad61c98b"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 18510,
-      "bytes": 1999920,
-      "sha256": "c3af4a4e9e538e5fe999207cf92db20d0f92572de8d62b8cf8a7d89c515b031e"
+      "records": 18878,
+      "bytes": 1999993,
+      "sha256": "3216fd385b744bca6d1223fe937eb9e8108d768990da697f6054304e6701abff"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18817,
-      "bytes": 1999904,
-      "sha256": "31c05c117323382515a42333c34eec911799ed81b16ad60815f268877b152dd5"
+      "records": 18858,
+      "bytes": 1999982,
+      "sha256": "625f7619ac7a3b11910c3370c7f0a14ee7f7aa2e47d276e237b7d80247e020a9"
     },
     {
       "file": "part-000004.ndjson",
-      "records": 18883,
-      "bytes": 1999935,
-      "sha256": "c1270f3fcfb24d7dc05d18ca1d986b782be26dd1d3bc474f0d2350b7f259a6f3"
+      "records": 18906,
+      "bytes": 1999951,
+      "sha256": "426fa8163afb696ba6af8af4a7a86618db55dfd70d88dab29f5b1b7b144cde1d"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 18880,
-      "bytes": 1999952,
-      "sha256": "5a03a972eee4196a745bda65129c1b575236612382ef1ad415a48f9671f6815e"
-    },
-    {
-      "file": "part-000006.ndjson",
-      "records": 18872,
-      "bytes": 1999911,
-      "sha256": "102346b3298d61184a802f173354f69d9f87b6241de39756106a8d8046587cf9"
-    },
-    {
-      "file": "part-000007.ndjson",
-      "records": 18830,
-      "bytes": 1999914,
-      "sha256": "25aba482b4a94e5cf65e10a205ada241796ddb2509039bda1a8ad5bf4608b479"
-    },
-    {
-      "file": "part-000008.ndjson",
-      "records": 4100,
-      "bytes": 451841,
-      "sha256": "d588297fbf5a6869ed4387f9bb0a1346d3ced1f36c5bed4f3a5816afa5af87e7"
+      "records": 18376,
+      "bytes": 1969507,
+      "sha256": "080c409d81729a5e2b367cfa99190b40dcf224ed3b5e4ee8eb244183f75890ce"
     }
   ]
 }

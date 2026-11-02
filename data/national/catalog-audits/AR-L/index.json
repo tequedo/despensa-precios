@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 5107,
-  "bytes": 555395,
+  "records": 2051,
+  "bytes": 226900,
   "context": {
     "province": "AR-L",
-    "generatedAt": "2026-11-02T04:46:26.321Z",
-    "catalogPolicyVersion": "2026-11-01.buscador-marcas.3"
+    "generatedAt": "2026-11-02T22:17:14.146Z",
+    "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 5107,
-      "bytes": 555395,
-      "sha256": "62a7ae3fc9393ce664b70880abb55b13cee02535573dd71e226cdb3dd69f4285"
+      "records": 2051,
+      "bytes": 226900,
+      "sha256": "7c966e129bc6ec0a6fc8facae206fcf13c80a97a728a195c9775ba7318782ab4"
     }
   ]
 }
