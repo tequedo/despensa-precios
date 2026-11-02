@@ -17,8 +17,8 @@ export async function prepareUsedRegions({origin,loadIndex,fetcher=fetch,clock=D
  const read=async(path,init={},budget=30000)=>{
   const before=clock();
   const response=await fetcher(new URL(path,site),{...init,redirect:'error',signal:AbortSignal.timeout(Math.max(1,Math.min(budget,remaining())))});
-  const body=await response.json();
   if(![200,202,409].includes(response.status))throw Object.assign(new Error('HTTP '+response.status),{status:response.status});
+  const body=await response.json();
   return {status:response.status,body,durationMs:clock()-before};
  };
  try{
@@ -75,3 +75,4 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
  console.log(JSON.stringify(report));
  if(!report.success)process.exitCode=1;
 }
+

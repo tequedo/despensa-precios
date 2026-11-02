@@ -76,3 +76,41 @@ test('expired source branches are never announced as prepared',async()=>{
  const r=await prepareUsedRegions(h.options);
  assert.equal(r.regions[0].status,'stale_source');assert.equal(r.success,false);assert.equal(h.calls.length,1);
 });
+
+function responseHarness(makeResponse,{twoRegions=false}={}){
+ const second={province:'AR-J',storeIds:['11|2|1082']};
+ const regions=twoRegions?[region,second]:[region],h=harness(regions),posts=[];
+ h.options.loadIndex=async()=>({...index,stores:[...index.stores,{externalId:second.storeIds[0],sourceDate:'2026-11-01'}]});
+ h.options.fetcher=async(url,init)=>{
+  if(!init.method)return Response.json({regions});
+  posts.push(JSON.parse(init.body));
+  return makeResponse();
+ };
+ return {...h,posts};
+}
+for(const [status,deferred]of [[429,'deferred_rate_limit'],[401,'deferred_access'],[403,'deferred_access']]){
+ test(`HTTP ${status} with an HTML body stops the remaining regions`,async()=>{
+  const h=responseHarness(()=>new Response('<html>Gateway error</html>',{status,headers:{'content-type':'text/html'}}),{twoRegions:true});
+  const r=await prepareUsedRegions(h.options);
+  assert.equal(r.success,false);assert.equal(h.posts.length,1);
+  assert.equal(r.regions[0].httpStatus,status);assert.equal(r.regions[0].error,'HTTP '+status);
+  assert.equal(r.regions[1].status,deferred);
+ });
+}
+test('an HTML 503 retains its HTTP code and does not suppress independent regions',async()=>{
+ const h=responseHarness(()=>new Response('<html>Unavailable</html>',{status:503,headers:{'content-type':'text/html'}}),{twoRegions:true});
+ const r=await prepareUsedRegions(h.options);
+ assert.equal(r.success,false);assert.equal(h.posts.length,2);
+ assert.ok(r.regions.every(row=>row.status==='failed'&&row.httpStatus===503&&row.error==='HTTP 503'));
+});
+for(const name of ['AbortError','TimeoutError']){
+ test(`${name} while reading an HTTP 200 body preserves the original failure`,async()=>{
+  const error=new DOMException(name==='TimeoutError'?'Body read timed out':'Body read aborted',name);
+  const h=responseHarness(()=>new Response(new ReadableStream({start(controller){controller.error(error);}}),{status:200}));
+  const r=await prepareUsedRegions(h.options);
+  assert.equal(r.success,false);assert.equal(r.regions[0].status,'failed');
+  assert.equal(r.regions[0].httpStatus,undefined);
+  assert.equal(r.regions[0].error,name==='TimeoutError'?'Tiempo de espera agotado':'Body read aborted');
+ });
+}
+
