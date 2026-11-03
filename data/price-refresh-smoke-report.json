@@ -1,28 +1,28 @@
 {
-  "checkedAt": "2026-11-02T23:34:03.535Z",
-  "success": true,
+  "checkedAt": "2026-11-03T00:58:39.980Z",
+  "success": false,
   "checks": [
     {
       "label": "EAN Natura 1.5 L",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 11,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
     {
       "label": "ChangoMás · Rawson San Juan",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
     {
       "label": "ChangoMás · San Juan",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
     {
       "label": "ChangoMás · San Juan Norte",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
@@ -33,21 +33,20 @@
     },
     {
       "label": "Código interno de La Anónima",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     },
     {
       "label": "CABA: lectura de precios vigentes",
-      "generation": "2026-11-02T22:17:14.146Z",
-      "quotes": 1,
-      "pricesDatesCodesAndPhysicalBranchesMatch": true
-    },
-    {
-      "label": "Fecha interna de Deheza",
-      "generation": "2026-11-02T22:17:14.146Z",
+      "generation": "2026-11-02T23:45:38.410Z",
       "quotes": 1,
       "pricesDatesCodesAndPhysicalBranchesMatch": true
     }
-  ]
+  ],
+  "error": "Preparación del catálogo: HTTP 500.",
+  "failure": {
+    "kind": "server",
+    "status": 500
+  }
 }
