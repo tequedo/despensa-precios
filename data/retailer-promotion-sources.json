@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-06T19:39:23.708Z",
+  "generatedAt": "2026-11-06T23:02:28.674Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-06T19:38:30.667Z",
+      "checkedAt": "2026-11-06T23:01:36.843Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -18,7 +18,7 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-11-06T19:38:32.532Z",
+      "checkedAt": "2026-11-06T23:01:38.208Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -31,9 +31,9 @@
     {
       "retailer": "La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-11-06T19:38:33.857Z",
+      "checkedAt": "2026-11-06T23:01:39.152Z",
       "reachable": false,
-      "sepaPromotions": 2176,
+      "sepaPromotions": 0,
       "corroboratedPromotions": 0,
       "status": "unavailable",
       "error": "La página pública se abrió, pero no devolvió contenido utilizable."
@@ -41,9 +41,9 @@
     {
       "retailer": "Carrefour",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-11-06T19:39:18.913Z",
+      "checkedAt": "2026-11-06T23:02:24.195Z",
       "reachable": false,
-      "sepaPromotions": 612,
+      "sepaPromotions": 536,
       "corroboratedPromotions": 0,
       "status": "unavailable",
       "error": "La página pública se abrió, pero no devolvió contenido utilizable."
@@ -51,7 +51,7 @@
     {
       "retailer": "Jumbo",
       "url": "https://www.jumbo.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-06T19:39:19.629Z",
+      "checkedAt": "2026-11-06T23:02:24.707Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -64,7 +64,7 @@
     {
       "retailer": "Disco",
       "url": "https://www.disco.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-06T19:39:20.349Z",
+      "checkedAt": "2026-11-06T23:02:25.242Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -77,7 +77,7 @@
     {
       "retailer": "DIA",
       "url": "https://diaonline.supermercadosdia.com.ar/",
-      "checkedAt": "2026-11-06T19:39:20.740Z",
+      "checkedAt": "2026-11-06T23:02:25.454Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -90,7 +90,7 @@
     {
       "retailer": "Coto",
       "url": "https://www.coto.com.ar/hoy/",
-      "checkedAt": "2026-11-06T19:39:21.583Z",
+      "checkedAt": "2026-11-06T23:02:26.215Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -103,7 +103,7 @@
     {
       "retailer": "Hiper Libertad",
       "url": "https://www.hiperlibertad.com.ar/oferta",
-      "checkedAt": "2026-11-06T19:39:21.846Z",
+      "checkedAt": "2026-11-06T23:02:26.391Z",
       "reachable": false,
       "sepaPromotions": 0,
       "corroboratedPromotions": 0,
@@ -113,7 +113,7 @@
     {
       "retailer": "Átomo",
       "url": "https://atomoconviene.com/atomo-ecommerce/833-ofertas",
-      "checkedAt": "2026-11-06T19:39:23.707Z",
+      "checkedAt": "2026-11-06T23:02:28.674Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
