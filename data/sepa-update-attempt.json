@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-05T00:01:43.986Z",
+  "checkedAt": "2026-11-06T00:03:58.307Z",
   "outcome": "success",
   "status": "official_original_integrity_checked",
   "sourceType": "official_original",
-  "sourceModified": "2026-11-04T16:19:50.656Z",
+  "sourceModified": "2026-11-05T16:19:41.131Z",
   "priceDate": null,
   "dateBasis": null,
   "selection": {
@@ -12,9 +12,9 @@
     "attempts": [
       {
         "source": "official",
-        "startedAt": "2026-11-04T22:45:22.910Z",
+        "startedAt": "2026-11-05T22:46:27.121Z",
         "status": "official_original_integrity_checked",
-        "sourceModified": "2026-11-04T16:19:50.656Z"
+        "sourceModified": "2026-11-05T16:19:41.131Z"
       }
     ]
   },
