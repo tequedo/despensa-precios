@@ -1,45 +1,45 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-08T01:50:14.937Z",
-  "completed": true,
+  "checkedAt": "2026-11-08T21:35:24.731Z",
+  "completed": false,
   "freshTestProfile": true,
-  "priceRefreshRestored": true,
+  "priceRefreshRestored": false,
   "provinces": [
     {
       "code": "AR-C",
       "name": "Ciudad Autónoma de Buenos Aires",
-      "catalogueStores": 1115,
-      "catalogueLocalityLabels": 37,
+      "catalogueStores": 722,
+      "catalogueLocalityLabels": 47,
       "catalogueSourceDates": [
-        "2026-11-06",
-        "2026-11-07"
+        "2026-11-07",
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 1115,
+      "catalogueWithinAgeLimit": 722,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 1115,
       "appCoveredLocalities": 49,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-B",
       "name": "Buenos Aires",
-      "catalogueStores": 934,
-      "catalogueLocalityLabels": 260,
+      "catalogueStores": 477,
+      "catalogueLocalityLabels": 248,
       "catalogueSourceDates": [
-        "2026-11-06",
-        "2026-11-07"
+        "2026-11-07",
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 934,
+      "catalogueWithinAgeLimit": 477,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 934,
       "appCoveredLocalities": 861,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-K",
@@ -47,16 +47,16 @@
       "catalogueStores": 8,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 8,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 8,
       "appCoveredLocalities": 64,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-H",
@@ -64,86 +64,85 @@
       "catalogueStores": 13,
       "catalogueLocalityLabels": 3,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 13,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 13,
       "appCoveredLocalities": 28,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-U",
       "name": "Chubut",
-      "catalogueStores": 45,
+      "catalogueStores": 46,
       "catalogueLocalityLabels": 14,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 45,
+      "catalogueWithinAgeLimit": 46,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 45,
       "appCoveredLocalities": 51,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-X",
       "name": "Córdoba",
-      "catalogueStores": 174,
+      "catalogueStores": 170,
       "catalogueLocalityLabels": 39,
       "catalogueSourceDates": [
-        "2026-11-06",
-        "2026-11-07"
+        "2026-11-07",
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 174,
+      "catalogueWithinAgeLimit": 170,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 174,
       "appCoveredLocalities": 347,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-W",
       "name": "Corrientes",
-      "catalogueStores": 24,
+      "catalogueStores": 9,
       "catalogueLocalityLabels": 6,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 24,
+      "catalogueWithinAgeLimit": 9,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 24,
       "appCoveredLocalities": 51,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-E",
       "name": "Entre Ríos",
-      "catalogueStores": 93,
-      "catalogueLocalityLabels": 13,
+      "catalogueStores": 24,
+      "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-11-06",
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 93,
+      "catalogueWithinAgeLimit": 24,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 93,
       "appCoveredLocalities": 176,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-P",
@@ -151,16 +150,16 @@
       "catalogueStores": 6,
       "catalogueLocalityLabels": 3,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 6,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 6,
       "appCoveredLocalities": 12,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Y",
@@ -168,33 +167,33 @@
       "catalogueStores": 29,
       "catalogueLocalityLabels": 8,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 29,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 29,
       "appCoveredLocalities": 77,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-L",
       "name": "La Pampa",
-      "catalogueStores": 25,
-      "catalogueLocalityLabels": 9,
+      "catalogueStores": 18,
+      "catalogueLocalityLabels": 6,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 25,
+      "catalogueWithinAgeLimit": 18,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 25,
       "appCoveredLocalities": 49,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-F",
@@ -202,16 +201,16 @@
       "catalogueStores": 6,
       "catalogueLocalityLabels": 2,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 6,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 6,
       "appCoveredLocalities": 2,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-M",
@@ -219,16 +218,16 @@
       "catalogueStores": 71,
       "catalogueLocalityLabels": 24,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 71,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 71,
       "appCoveredLocalities": 195,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-N",
@@ -236,16 +235,16 @@
       "catalogueStores": 17,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 17,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 17,
       "appCoveredLocalities": 88,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Q",
@@ -253,50 +252,50 @@
       "catalogueStores": 60,
       "catalogueLocalityLabels": 20,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 60,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 60,
       "appCoveredLocalities": 44,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-R",
       "name": "Río Negro",
-      "catalogueStores": 66,
-      "catalogueLocalityLabels": 26,
+      "catalogueStores": 64,
+      "catalogueLocalityLabels": 25,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 66,
+      "catalogueWithinAgeLimit": 64,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 66,
       "appCoveredLocalities": 106,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-A",
       "name": "Salta",
-      "catalogueStores": 52,
-      "catalogueLocalityLabels": 9,
+      "catalogueStores": 31,
+      "catalogueLocalityLabels": 12,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 52,
+      "catalogueWithinAgeLimit": 31,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 52,
       "appCoveredLocalities": 67,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-J",
@@ -304,16 +303,16 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 14,
       "appCoveredLocalities": 59,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-D",
@@ -321,16 +320,16 @@
       "catalogueStores": 15,
       "catalogueLocalityLabels": 5,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 15,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 15,
       "appCoveredLocalities": 33,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-Z",
@@ -338,50 +337,50 @@
       "catalogueStores": 30,
       "catalogueLocalityLabels": 15,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 30,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 30,
       "appCoveredLocalities": 19,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-S",
       "name": "Santa Fe",
-      "catalogueStores": 50,
-      "catalogueLocalityLabels": 19,
+      "catalogueStores": 40,
+      "catalogueLocalityLabels": 20,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 50,
+      "catalogueWithinAgeLimit": 40,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 50,
       "appCoveredLocalities": 276,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-G",
       "name": "Santiago del Estero",
-      "catalogueStores": 11,
-      "catalogueLocalityLabels": 5,
+      "catalogueStores": 10,
+      "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
-      "catalogueWithinAgeLimit": 11,
+      "catalogueWithinAgeLimit": 10,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 11,
       "appCoveredLocalities": 45,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-V",
@@ -389,16 +388,16 @@
       "catalogueStores": 14,
       "catalogueLocalityLabels": 4,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 14,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 14,
       "appCoveredLocalities": 3,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     },
     {
       "code": "AR-T",
@@ -406,16 +405,16 @@
       "catalogueStores": 26,
       "catalogueLocalityLabels": 9,
       "catalogueSourceDates": [
-        "2026-11-07"
+        "2026-11-08"
       ],
       "catalogueWithinAgeLimit": 26,
       "httpStatus": 200,
-      "appSourceStatus": "current",
+      "appSourceStatus": "delayed",
       "appLastPriceDate": "2026-11-07",
       "appStores": 26,
       "appCoveredLocalities": 101,
       "appGeneration": "2026-11-08T00:51:14.017Z",
-      "matchesCatalogueGeneration": true
+      "matchesCatalogueGeneration": false
     }
   ],
   "changomas": [
@@ -423,52 +422,52 @@
       "storeId": "11|2|1081",
       "branch": "Rawson San Juan",
       "locality": "BARRIO RAWSON",
-      "sourceDate": "2026-11-07",
-      "sourceRows": 26763,
+      "sourceDate": "2026-11-08",
+      "sourceRows": 27001,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 200,
       "filteredHttpStatus": 200,
       "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
-      "currentDayQuoteConfirmed": true
+      "exactSourceMatches": 0,
+      "reason": "quote_differs_from_source",
+      "currentDayQuoteConfirmed": false
     },
     {
       "storeId": "11|5|1006",
       "branch": "San Juan",
       "locality": "BARRIO RIVADAVIA",
-      "sourceDate": "2026-11-07",
-      "sourceRows": 26803,
+      "sourceDate": "2026-11-08",
+      "sourceRows": 27042,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 200,
       "filteredHttpStatus": 200,
       "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
-      "currentDayQuoteConfirmed": true
+      "exactSourceMatches": 0,
+      "reason": "quote_differs_from_source",
+      "currentDayQuoteConfirmed": false
     },
     {
       "storeId": "11|2|1092",
       "branch": "San Juan Norte",
       "locality": "SAN JUAN",
-      "sourceDate": "2026-11-07",
-      "sourceRows": 26787,
+      "sourceDate": "2026-11-08",
+      "sourceRows": 27026,
       "controlPresent": true,
       "sourceWithinAgeLimit": true,
       "unfilteredHttpStatus": 200,
       "filteredHttpStatus": 200,
       "filteredQuotes": 1,
-      "exactSourceMatches": 1,
-      "reason": "visible",
-      "currentDayQuoteConfirmed": true
+      "exactSourceMatches": 0,
+      "reason": "quote_differs_from_source",
+      "currentDayQuoteConfirmed": false
     }
   ],
   "unfiltered": {
     "httpStatus": 200,
     "quotes": 12,
-    "sourceStatus": "current",
+    "sourceStatus": "delayed",
     "lastPriceDate": "2026-11-07",
     "availableStores": 14,
     "generation": "2026-11-07T21:02:07.772Z"
