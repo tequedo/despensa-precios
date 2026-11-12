@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-12T00:04:31.340Z",
+  "checkedAt": "2026-11-12T23:20:23.779Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
-  "rejectedCount": 47,
+  "rejectedCount": 52,
   "rejected": [
     {
       "externalId": "10|4|504",
@@ -20,6 +20,14 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
+      "externalId": "24|2|33",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Capital Federal",
+      "latitude": -34.556553,
+      "longitude": -58.413303,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
       "externalId": "15|1|776",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "CAPITAL FEDERAL",
@@ -33,6 +41,22 @@
       "locality": "Chivilcoy",
       "latitude": -34.919834,
       "longitude": -59.98827,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6219",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Ciudad Autonoma de Buenos Aires (901)",
+      "latitude": -34.6459,
+      "longitude": -58.5309,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6276",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Ciudad Autonoma de Buenos Aires (901)",
+      "latitude": -34.6448,
+      "longitude": -58.532,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -268,6 +292,14 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
+      "externalId": "23|1|6296",
+      "declaredProvince": "Buenos Aires",
+      "locality": "Berazategui",
+      "latitude": -34.5811,
+      "longitude": -58.4288,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
       "externalId": "15|1|5418",
       "declaredProvince": "Buenos Aires",
       "locality": "BUENOS AIRES",
@@ -377,6 +409,14 @@
       "locality": "Pinamar",
       "latitude": -37.109037,
       "longitude": -56.893103,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "23|1|6294",
+      "declaredProvince": "Santa Fe",
+      "locality": "ARROYO SECO",
+      "latitude": -33.0802,
+      "longitude": -60.3419,
       "reason": "coordinates_do_not_confirm_declared_province"
     }
   ]
