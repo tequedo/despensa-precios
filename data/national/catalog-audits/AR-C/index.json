@@ -2,115 +2,109 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 296414,
-  "bytes": 32035644,
+  "records": 295669,
+  "bytes": 31955471,
   "context": {
     "province": "AR-C",
-    "generatedAt": "2026-11-13T22:45:49.531Z",
+    "generatedAt": "2026-11-14T21:39:09.198Z",
     "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18263,
-      "bytes": 1999899,
-      "sha256": "4cfc0e08e1158697d2b92b7a7555c70d74abffeb1170561e5e2ecfed1a15ff8f"
+      "records": 18267,
+      "bytes": 1999896,
+      "sha256": "5340f72b16c7355de0e8ad953a09fbc0218c544da0761132c6bf0ee9e4e5c207"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 18686,
-      "bytes": 1999924,
-      "sha256": "7ac1c1bb5bac75c7f808714ba4d8e88312dc439c4d1983177c7004fb2c8cf6b1"
+      "records": 18683,
+      "bytes": 1999926,
+      "sha256": "0ff732f8d9adce9b3811938df1b037d621b9646d37914e4d41c790b59b2e2dc4"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18679,
-      "bytes": 1999973,
-      "sha256": "a2c063dcc73858da3c2a4cfc57bdf2ef9a9bb391fc15412257d4d7e06b414852"
+      "records": 18678,
+      "bytes": 1999914,
+      "sha256": "0a1d2f238c2325933d50df5ea77cbd0d8fdf3d2b36930cbde986045dd862dc49"
     },
     {
       "file": "part-000004.ndjson",
-      "records": 18678,
-      "bytes": 1999902,
-      "sha256": "88b368e0a36d0013fc5efe916b8d0a897d49a8b08f33544846f2060d5cfd0806"
+      "records": 18679,
+      "bytes": 1999985,
+      "sha256": "4c5fbdbffe8e955700d87e9a8839c37ae4cfdc7c4ca24199d9934216cfe0d9a4"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 18531,
-      "bytes": 1999907,
-      "sha256": "a0cd01fded2cb1a6a8d2d6b882e900058fa2e83eacb84dcdcabead9f88d4a725"
+      "records": 18524,
+      "bytes": 1999912,
+      "sha256": "be6e07565bc3d291192ae7e5a1cf6df2dd012055a7ab690b9f12244c7f5cdbb0"
     },
     {
       "file": "part-000006.ndjson",
       "records": 18506,
-      "bytes": 1999944,
-      "sha256": "c9a8b749bbeecb22b2e242a7b82d21b7312b827497225b9361df546ef6588d21"
+      "bytes": 1999920,
+      "sha256": "1d2540acc0912e3f61fdd4259c3b24179927e933c20a163695ef95975d3aa4e3"
     },
     {
       "file": "part-000007.ndjson",
-      "records": 18506,
-      "bytes": 1999980,
-      "sha256": "fe0ea0afecca2a3201da08428b1f54d2f8a67a373ce4b26a2a246f34dfc3e882"
+      "records": 18505,
+      "bytes": 1999896,
+      "sha256": "48308faefbdce3dc3237c0a83a67bb2796e0238762f74c1ed709d74cf1a48018"
     },
     {
       "file": "part-000008.ndjson",
       "records": 18506,
-      "bytes": 1999968,
-      "sha256": "0c36547cce7bfeed393ce32860b75d391495c4a5f491d3fa4314926b57a4dc4d"
+      "bytes": 1999932,
+      "sha256": "5b56146d5920aecee2ee667873e1accdf5d4b80098ad099e1984e942eb7e8576"
     },
     {
       "file": "part-000009.ndjson",
-      "records": 18507,
-      "bytes": 1999992,
-      "sha256": "22ed78d6e445de95de36755685116c3e439f467d7b4d14eb9e8eda1f1e4ba01b"
+      "records": 18506,
+      "bytes": 1999920,
+      "sha256": "cbea03f228f4b65315168fa42008a4494b59ad6d2ac84c18e02a845b1bcc080c"
     },
     {
       "file": "part-000010.ndjson",
-      "records": 17626,
-      "bytes": 1999894,
-      "sha256": "6c1af1188736186699ba6d5222593370d44b7cd6dbb4f4a76588ccca38c6aa4f"
+      "records": 17550,
+      "bytes": 1999999,
+      "sha256": "6695a3b3fc3b023a8aa531abeed0f262e0ad05676024a1f1b74fee3c9b08c4ac"
     },
     {
       "file": "part-000011.ndjson",
-      "records": 17080,
-      "bytes": 1999900,
-      "sha256": "dbc375257b66aceb2b977ed3d41de086c20616a7d7b67f7691464227a53097b3"
+      "records": 17166,
+      "bytes": 1999919,
+      "sha256": "a632baf120593c2ab6fa873ee95210ec7a412fbb66ea5f7660edc000579cae47"
     },
     {
       "file": "part-000012.ndjson",
-      "records": 18797,
-      "bytes": 1999983,
-      "sha256": "8bc3eef6940b8eaa2d0471056a3ba84b518b77e0c87cc23172cda7189e3e56dc"
+      "records": 18945,
+      "bytes": 1999986,
+      "sha256": "ee6558d4f9e80d25af1312a39194fae9b59d5a7307e80c9738a2ee0e20913622"
     },
     {
       "file": "part-000013.ndjson",
-      "records": 18883,
-      "bytes": 1999988,
-      "sha256": "c277216fa609c052cb886601db31731f319ef7cf270068933c39677923805c93"
+      "records": 18951,
+      "bytes": 1999959,
+      "sha256": "316beff24a4b2ddb2ec00533d4e945c9af385052dc111c8a3b8fdeb2099e572d"
     },
     {
       "file": "part-000014.ndjson",
-      "records": 18968,
-      "bytes": 1999991,
-      "sha256": "b92f96ef36617e67e750ffe959313ae212226b7f8196d4241a1b33b4003e4317"
+      "records": 18755,
+      "bytes": 1999896,
+      "sha256": "86ce39a6459432cffd3d5cde9ee76856925ae1b197d59a63647651b6cf0a4958"
     },
     {
       "file": "part-000015.ndjson",
-      "records": 18869,
-      "bytes": 1999968,
-      "sha256": "4635ad39db314eeffbc20891c4eda016833f69f5f982013acec27ecc9f1d5f47"
+      "records": 18855,
+      "bytes": 1999958,
+      "sha256": "b439404f252bfdf4c734d361ea59aff4f2829d202c58eead61cd44e3d40e1e4f"
     },
     {
       "file": "part-000016.ndjson",
-      "records": 18985,
-      "bytes": 1999955,
-      "sha256": "444553bce45b5b5a8cfa0d63652a92b3d71a0147cb7e89fa32444b29c26df156"
-    },
-    {
-      "file": "part-000017.ndjson",
-      "records": 344,
-      "bytes": 36476,
-      "sha256": "f1f98ce476552bd940cd4f2cd23b2355c526d5398c7b472267da398d6d6a4b72"
+      "records": 18593,
+      "bytes": 1956453,
+      "sha256": "34ae9922342079b7847a8999df1727b8b730eed020d859aef86f418b9914388d"
     }
   ]
 }
