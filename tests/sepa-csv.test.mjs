@@ -46,3 +46,12 @@ test('ambiguous or excessive records fail instead of shifting columns or joining
   await assert.rejects(read('id|name\n1|texto demasiado largo\n', {maxRecordChars:15}), /size or line limit/);
   await assert.rejects(read('id|id\n1|2\n'), /duplicate column/);
 });
+
+test('isolates wrong-width product rows without joining them or altering valid neighbours', async () => {
+  const errors = [];
+  const rows = await read('id|brand|price\n1|A|40\n2|damaged\n|tail\n3|B|50\n', {
+    onInvalidWidth: error => errors.push(error)
+  });
+  assert.deepEqual(rows, [{id:'1',brand:'A',price:'40'}, {id:'3',brand:'B',price:'50'}]);
+  assert.deepEqual(errors.map(({startLine, expected, received}) => [startLine, expected, received]), [[3,3,2],[4,3,2]]);
+});

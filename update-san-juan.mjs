@@ -207,13 +207,15 @@ async function processFolder(folder, sourceInfo, counters) {
   for (const file of productFiles) {
     const evidence = await productFileEvidence(file, sourceInfo.modified);
     const productFile = relative(folder, file).replaceAll('\\', '/');
-    counters.productFiles.push({ file: productFile, ...evidence });
+    const fileQuality = { file: productFile, ...evidence, malformedRows: 0, parsedRows: 0 };
+    counters.productFiles.push(fileQuality);
     if (!evidence.accepted) {
       await quarantine("file_date", evidence.reason, { file: productFile, ...evidence }, counters);
       continue;
     }
     const datedSource = { ...sourceInfo, productFile, fileUpdatedAt: evidence.updatedAt, priceDate: evidence.date, dateBasis: evidence.dateBasis };
     await rows(file, async row => {
+      fileQuality.parsedRows++;
       counters.read++;
       const branch = branches.get(branchKey(row));
       if (!branch) return;
@@ -317,7 +319,16 @@ async function processFolder(folder, sourceInfo, counters) {
       counters.accepted++;
       if(record.store.province !== "San Juan")return;
       sanJuanRecords.push(record);
+    }, {
+      onInvalidWidth: async details => {
+        fileQuality.malformedRows++;
+        counters.rejected++;
+        await quarantine('product_row', 'invalid_column_count', {file: productFile, ...details}, counters);
+      }
     });
+    if (fileQuality.malformedRows && fileQuality.malformedRows > fileQuality.parsedRows / 100) {
+      throw new Error(`Excessive malformed SEPA product rows in ${productFile}: ${fileQuality.malformedRows} rejected, ${fileQuality.parsedRows} parsed`);
+    }
   }
 }
 

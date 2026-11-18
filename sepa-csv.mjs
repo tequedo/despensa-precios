@@ -30,7 +30,7 @@ function parseRecord(record) {
 // followed by delimiter-led continuations, and require the exact header width.
 // Never apply this exception to commerce or product files, or guess missing data.
 export async function readSepaRows(file, handler, {
-  allowBranchContinuations = false, onRepair = () => {},
+  onInvalidWidth, allowBranchContinuations = false, onRepair = () => {},
   maxRecordChars = 1024 * 1024, maxRecordLines = 64
 } = {}) {
   const stream = createReadStream(file);
@@ -63,6 +63,10 @@ export async function readSepaRows(file, handler, {
         const branchIds = headers.slice(0, 3).join('|') === 'id_comercio|id_bandera|id_sucursal'
           && values.length >= 3 && values.slice(0, 3).every(value => /^\d+$/.test(value));
         if (allowBranchContinuations && branchIds && values.length < headers.length) { pending = 'branch'; continue; }
+        if (onInvalidWidth && !allowBranchContinuations) {
+          await onInvalidWidth({startLine, endLine: lineNumber, expected: headers.length, received: values.length});
+          continue;
+        }
         throw fail(`expected ${headers.length} columns, received ${values.length}`);
       }
       if (repaired) await onRepair({ reason: 'unquoted_branch_continuation', startLine, endLine: lineNumber, externalId: values.slice(0, 3).join('|') });
