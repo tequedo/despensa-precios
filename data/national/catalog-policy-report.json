@@ -1,242 +1,182 @@
 {
   "schemaVersion": 2,
   "version": "2026-11-02.marcas-abreviadas.1",
-  "generatedAt": "2026-11-14T21:39:09.198Z",
+  "generatedAt": "2026-11-18T21:22:58.976Z",
   "sourceFieldsPreserved": true,
   "exceptionStorage": "bounded_ndjson_parts",
   "provinces": {
     "AR-C": {
-      "records": 4229660,
-      "quoteEligible": 3933991,
-      "quarantined": 295669,
-      "needsMeaningReview": 1719093,
+      "records": 4014111,
+      "quoteEligible": 3877280,
+      "quarantined": 136831,
+      "needsMeaningReview": 1567360,
       "byReason": {
-        "package_conflict": 266274,
-        "semantic_fingerprint_changed": 22593,
-        "meat_price_out_of_range": 63,
-        "meat_unit_not_exact_1kg": 2636,
-        "list_price_out_of_range": 4095,
+        "semantic_fingerprint_changed": 21607,
+        "package_conflict": 108463,
+        "list_price_out_of_range": 4097,
+        "meat_price_out_of_range": 70,
+        "meat_unit_not_exact_1kg": 2586,
         "source_content_dimension_review": 2,
         "source_length_dimension_review": 2,
         "source_variant_conflict": 2,
         "source_peer_content_conflict": 2
       },
-      "exceptionsCount": 295669,
+      "exceptionsCount": 136831,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-C/part-000001.ndjson",
-          "records": 18267,
-          "bytes": 1999896,
-          "sha256": "5340f72b16c7355de0e8ad953a09fbc0218c544da0761132c6bf0ee9e4e5c207"
+          "records": 17615,
+          "bytes": 1999985,
+          "sha256": "50b6b226399f868adbecf288bb33dc482bc1e5fdc924edb56b5ca3ae16178210"
         },
         {
           "file": "catalog-audits/AR-C/part-000002.ndjson",
-          "records": 18683,
-          "bytes": 1999926,
-          "sha256": "0ff732f8d9adce9b3811938df1b037d621b9646d37914e4d41c790b59b2e2dc4"
+          "records": 17049,
+          "bytes": 1999992,
+          "sha256": "bbed0badb618e056b2ed886556b20a85bfa367fe8b2c6d0c21e87a513aa46e77"
         },
         {
           "file": "catalog-audits/AR-C/part-000003.ndjson",
-          "records": 18678,
-          "bytes": 1999914,
-          "sha256": "0a1d2f238c2325933d50df5ea77cbd0d8fdf3d2b36930cbde986045dd862dc49"
+          "records": 18884,
+          "bytes": 2000000,
+          "sha256": "bfa01d4271e64e8d20313146c1d347ce5a610087891b863861ce23b78b8faf06"
         },
         {
           "file": "catalog-audits/AR-C/part-000004.ndjson",
-          "records": 18679,
-          "bytes": 1999985,
-          "sha256": "4c5fbdbffe8e955700d87e9a8839c37ae4cfdc7c4ca24199d9934216cfe0d9a4"
+          "records": 18776,
+          "bytes": 1999999,
+          "sha256": "13059cd3030691f2c5ca44813bdf186769a16fda7a1c2ec4bf6b6d487a5ce730"
         },
         {
           "file": "catalog-audits/AR-C/part-000005.ndjson",
-          "records": 18524,
-          "bytes": 1999912,
-          "sha256": "be6e07565bc3d291192ae7e5a1cf6df2dd012055a7ab690b9f12244c7f5cdbb0"
+          "records": 18814,
+          "bytes": 1999967,
+          "sha256": "678a94c8725a98b2a7caa44ce795994c43584032dccf2924fa9c4bd3178c8b11"
         },
         {
           "file": "catalog-audits/AR-C/part-000006.ndjson",
-          "records": 18506,
-          "bytes": 1999920,
-          "sha256": "1d2540acc0912e3f61fdd4259c3b24179927e933c20a163695ef95975d3aa4e3"
+          "records": 19019,
+          "bytes": 1999896,
+          "sha256": "e80dbbc27c072f9907fc7cbdfa6060abdad10816d4135b9458d4138d73a134ea"
         },
         {
           "file": "catalog-audits/AR-C/part-000007.ndjson",
-          "records": 18505,
-          "bytes": 1999896,
-          "sha256": "48308faefbdce3dc3237c0a83a67bb2796e0238762f74c1ed709d74cf1a48018"
+          "records": 19005,
+          "bytes": 1999910,
+          "sha256": "846361dda8941ca9cc1369ec89c27142f45c00405204e0d71317e8a3015a2232"
         },
         {
           "file": "catalog-audits/AR-C/part-000008.ndjson",
-          "records": 18506,
-          "bytes": 1999932,
-          "sha256": "5b56146d5920aecee2ee667873e1accdf5d4b80098ad099e1984e942eb7e8576"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000009.ndjson",
-          "records": 18506,
-          "bytes": 1999920,
-          "sha256": "cbea03f228f4b65315168fa42008a4494b59ad6d2ac84c18e02a845b1bcc080c"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000010.ndjson",
-          "records": 17550,
-          "bytes": 1999999,
-          "sha256": "6695a3b3fc3b023a8aa531abeed0f262e0ad05676024a1f1b74fee3c9b08c4ac"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000011.ndjson",
-          "records": 17166,
-          "bytes": 1999919,
-          "sha256": "a632baf120593c2ab6fa873ee95210ec7a412fbb66ea5f7660edc000579cae47"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000012.ndjson",
-          "records": 18945,
-          "bytes": 1999986,
-          "sha256": "ee6558d4f9e80d25af1312a39194fae9b59d5a7307e80c9738a2ee0e20913622"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000013.ndjson",
-          "records": 18951,
-          "bytes": 1999959,
-          "sha256": "316beff24a4b2ddb2ec00533d4e945c9af385052dc111c8a3b8fdeb2099e572d"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000014.ndjson",
-          "records": 18755,
-          "bytes": 1999896,
-          "sha256": "86ce39a6459432cffd3d5cde9ee76856925ae1b197d59a63647651b6cf0a4958"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000015.ndjson",
-          "records": 18855,
-          "bytes": 1999958,
-          "sha256": "b439404f252bfdf4c734d361ea59aff4f2829d202c58eead61cd44e3d40e1e4f"
-        },
-        {
-          "file": "catalog-audits/AR-C/part-000016.ndjson",
-          "records": 18593,
-          "bytes": 1956453,
-          "sha256": "34ae9922342079b7847a8999df1727b8b730eed020d859aef86f418b9914388d"
+          "records": 7669,
+          "bytes": 859823,
+          "sha256": "21a638ceeed31f20510bdc65288c24d4c2b0bfcb69579acb1127a7358f1e909b"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-B": {
-      "records": 5316561,
-      "quoteEligible": 5067030,
-      "quarantined": 249531,
-      "needsMeaningReview": 2646010,
+      "records": 5275366,
+      "quoteEligible": 5058272,
+      "quarantined": 217094,
+      "needsMeaningReview": 2617534,
       "byReason": {
-        "package_conflict": 215076,
-        "semantic_fingerprint_changed": 25284,
-        "meat_price_out_of_range": 182,
-        "meat_unit_not_exact_1kg": 3524,
-        "list_price_out_of_range": 5318,
+        "package_conflict": 182716,
+        "semantic_fingerprint_changed": 25230,
+        "meat_price_out_of_range": 202,
+        "meat_unit_not_exact_1kg": 3497,
+        "list_price_out_of_range": 5302,
         "source_content_dimension_review": 32,
         "source_length_dimension_review": 32,
         "source_variant_conflict": 32,
         "source_peer_content_conflict": 32,
         "retail_water_capacity_review": 19
       },
-      "exceptionsCount": 249531,
+      "exceptionsCount": 217094,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-B/part-000001.ndjson",
-          "records": 17831,
-          "bytes": 1999908,
-          "sha256": "40bbba093cbda65df1d689b2c4351c88af4e1da71741a8f15baabf2beba8f8ba"
+          "records": 17560,
+          "bytes": 1999958,
+          "sha256": "8e920aae899b57c618e9c1582c4ca6b37dcfa3cf162ed196ee5fcf1dfb814f19"
         },
         {
           "file": "catalog-audits/AR-B/part-000002.ndjson",
-          "records": 18514,
-          "bytes": 1999932,
-          "sha256": "1c8034dae478dc31986e2795fd9ca8c2c38e5bbd56ac894f921c1a6e825980bc"
+          "records": 16870,
+          "bytes": 1999927,
+          "sha256": "05c5d5cdfc9f747d360ede7c1b1b2e62fae7b418ba725ceb7271d419b2a474a1"
         },
         {
           "file": "catalog-audits/AR-B/part-000003.ndjson",
-          "records": 18188,
-          "bytes": 1999896,
-          "sha256": "270d18ad9ae5d1b5f586898ca16a93c2ea20fc28552babf2adbaf8cbcaada4f9"
+          "records": 18808,
+          "bytes": 1999932,
+          "sha256": "e267cf25da543aa9e07ac014b7eab7f4ca9004898f5227be5040d9a6a3c2ba0a"
         },
         {
           "file": "catalog-audits/AR-B/part-000004.ndjson",
-          "records": 17861,
-          "bytes": 1999912,
-          "sha256": "bfa789bc5409be5ff661866e8758cead9f11c8d4215572d2e59def7fcd7f6891"
+          "records": 18859,
+          "bytes": 1999937,
+          "sha256": "224b67a2cd8cb30ddf223861e660a9ce3fea5c0efe0272f55ef91343b017851b"
         },
         {
           "file": "catalog-audits/AR-B/part-000005.ndjson",
-          "records": 16868,
-          "bytes": 1999977,
-          "sha256": "1d4d9e39dba185bf526d25919ba3763550b0b1c89a04b38ad3430a754612fc87"
+          "records": 18915,
+          "bytes": 1999994,
+          "sha256": "9a3a08541edbaaac3d3574b6105db0b5ba2758b0e79f4d064a2f8ed3b131f549"
         },
         {
           "file": "catalog-audits/AR-B/part-000006.ndjson",
-          "records": 18795,
-          "bytes": 1999952,
-          "sha256": "b8931a4959b476cb7b1ae4f157f8653ae3a004878a498e871d552974e01834f7"
+          "records": 18789,
+          "bytes": 1999986,
+          "sha256": "cfb5477d1e786df9a5104181661fcaad828f55f94a234b0204eb91cfc5f88804"
         },
         {
           "file": "catalog-audits/AR-B/part-000007.ndjson",
-          "records": 18839,
-          "bytes": 1999949,
-          "sha256": "9b9897efdcce7b141327d7286760efd7c36d7b908ee3ac0bd74c6bead64165e5"
+          "records": 18830,
+          "bytes": 1999921,
+          "sha256": "d379a8ea32ff768817a7f9eb97e330413a465a4c6e0c60c16903c0e0adeaa837"
         },
         {
           "file": "catalog-audits/AR-B/part-000008.ndjson",
-          "records": 18899,
-          "bytes": 1999968,
-          "sha256": "7fbd17092e3980450e14edae200ae6f7503f2c94a9047342a734ad3eaffe0c79"
+          "records": 18892,
+          "bytes": 1999904,
+          "sha256": "cfb101fa5772bd2f80c874bf459170f3d736e3e49c97cf5adfc79413f9810ced"
         },
         {
           "file": "catalog-audits/AR-B/part-000009.ndjson",
-          "records": 18835,
-          "bytes": 1999953,
-          "sha256": "4731581c10ead798fe7a91846d8ef546770f3f6bee4ddbdf570e5239c41395cb"
+          "records": 18875,
+          "bytes": 1999923,
+          "sha256": "6eab2eca40e7c6de95145a11b26bba1bf23e402893ace196cb29148ac91c8f6c"
         },
         {
           "file": "catalog-audits/AR-B/part-000010.ndjson",
-          "records": 18815,
-          "bytes": 1999963,
-          "sha256": "2a7167907df562a2a05ecae738da8c666786de7743e047f34b0da6cd6bca8a2d"
+          "records": 18914,
+          "bytes": 1999937,
+          "sha256": "78494f8bbc2e9e36c86ddcc13782f093ef324a18b24a7a576559fb1573474cbb"
         },
         {
           "file": "catalog-audits/AR-B/part-000011.ndjson",
-          "records": 18963,
-          "bytes": 1999896,
-          "sha256": "d450bb2a82db632625bb05c8d75d397529a3dfad14a797d06db936653eb684f5"
+          "records": 18372,
+          "bytes": 1999974,
+          "sha256": "f41e82942f0ad431eb1c92d25f0bb78d22053405cc098f86872a5580e7bc58b3"
         },
         {
           "file": "catalog-audits/AR-B/part-000012.ndjson",
-          "records": 18900,
-          "bytes": 1999905,
-          "sha256": "0bcf05594f021e6d292d4c1b0f10b3075a04d4392de559e13adc12cf74abf9ee"
-        },
-        {
-          "file": "catalog-audits/AR-B/part-000013.ndjson",
-          "records": 18896,
-          "bytes": 1999939,
-          "sha256": "c09a39597a909e007e25c32ea589308af5ca030cfcb88ec48a2cc1d5389c462d"
-        },
-        {
-          "file": "catalog-audits/AR-B/part-000014.ndjson",
-          "records": 9327,
-          "bytes": 983183,
-          "sha256": "7e1a5915e81ef2a635c124c0e2e3998485ce94224c960cb64e5967ecdff1b3f9"
+          "records": 13410,
+          "bytes": 1478980,
+          "sha256": "8a9eced992ec40353cf545f0e0d1d4e7806df22f1fbdd0d9d5b9729d64c2a1ab"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-K": {
-      "records": 74031,
-      "quoteEligible": 65216,
-      "quarantined": 8815,
-      "needsMeaningReview": 37695,
+      "records": 74236,
+      "quoteEligible": 65503,
+      "quarantined": 8733,
+      "needsMeaningReview": 38012,
       "byReason": {
-        "semantic_fingerprint_changed": 115,
-        "meat_unit_not_exact_1kg": 52,
-        "package_conflict": 8593,
+        "package_conflict": 8521,
+        "semantic_fingerprint_changed": 112,
+        "meat_unit_not_exact_1kg": 45,
         "list_price_out_of_range": 46,
         "meat_price_out_of_range": 5,
         "source_content_dimension_review": 1,
@@ -244,27 +184,27 @@
         "source_variant_conflict": 1,
         "source_peer_content_conflict": 1
       },
-      "exceptionsCount": 8815,
+      "exceptionsCount": 8733,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-K/part-000001.ndjson",
-          "records": 8815,
-          "bytes": 938160,
-          "sha256": "bb3c78b8ffbc0c42cda390e2c7ffad6fdc7594533b8fe31518aab17919f38234"
+          "records": 8733,
+          "bytes": 929365,
+          "sha256": "fca9753dba2f3a4fce45409bb83d8463af1368b6ac4e1fda3a8d28d152c4e33f"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-H": {
-      "records": 71639,
-      "quoteEligible": 61588,
-      "quarantined": 10051,
-      "needsMeaningReview": 41921,
+      "records": 61589,
+      "quoteEligible": 58867,
+      "quarantined": 2722,
+      "needsMeaningReview": 34792,
       "byReason": {
-        "package_conflict": 9823,
-        "semantic_fingerprint_changed": 123,
-        "list_price_out_of_range": 51,
-        "meat_unit_not_exact_1kg": 44,
+        "package_conflict": 2534,
+        "semantic_fingerprint_changed": 77,
+        "meat_unit_not_exact_1kg": 52,
+        "list_price_out_of_range": 49,
         "meat_price_out_of_range": 5,
         "source_content_dimension_review": 1,
         "source_length_dimension_review": 1,
@@ -272,26 +212,26 @@
         "source_peer_content_conflict": 1,
         "retail_water_capacity_review": 1
       },
-      "exceptionsCount": 10051,
+      "exceptionsCount": 2722,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-H/part-000001.ndjson",
-          "records": 10051,
-          "bytes": 1083757,
-          "sha256": "9c623836d9f05d2ecfb41ad6fa04f76b1af73f5b0bc48e66f881310b34c1177f"
+          "records": 2722,
+          "bytes": 291731,
+          "sha256": "ddd0de5421ea0db168aaf854c802efd348f78fdf842ec7e5a48b06afd11662fc"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-U": {
-      "records": 359111,
-      "quoteEligible": 347354,
-      "quarantined": 11757,
-      "needsMeaningReview": 175338,
+      "records": 358451,
+      "quoteEligible": 347332,
+      "quarantined": 11119,
+      "needsMeaningReview": 174963,
       "byReason": {
-        "semantic_fingerprint_changed": 661,
-        "package_conflict": 10773,
-        "meat_unit_not_exact_1kg": 103,
+        "semantic_fingerprint_changed": 659,
+        "package_conflict": 10135,
+        "meat_unit_not_exact_1kg": 105,
         "list_price_out_of_range": 175,
         "meat_price_out_of_range": 8,
         "source_content_dimension_review": 4,
@@ -300,27 +240,27 @@
         "source_peer_content_conflict": 4,
         "retail_water_capacity_review": 21
       },
-      "exceptionsCount": 11757,
+      "exceptionsCount": 11119,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-U/part-000001.ndjson",
-          "records": 11757,
-          "bytes": 1267233,
-          "sha256": "a42123b9ab7eda8a02332368a83e1175a8f7f27ea490b674d9bdc70bd6618d45"
+          "records": 11119,
+          "bytes": 1198328,
+          "sha256": "a84e5b986a96ad53e3c321dee81d92abc13703c1cae6bf2169430e2a80827a4c"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-X": {
-      "records": 760925,
-      "quoteEligible": 626710,
-      "quarantined": 134215,
-      "needsMeaningReview": 376707,
+      "records": 706660,
+      "quoteEligible": 612331,
+      "quarantined": 94329,
+      "needsMeaningReview": 337161,
       "byReason": {
-        "semantic_fingerprint_changed": 1345,
-        "package_conflict": 132013,
-        "list_price_out_of_range": 369,
-        "meat_unit_not_exact_1kg": 418,
+        "semantic_fingerprint_changed": 1201,
+        "package_conflict": 92280,
+        "list_price_out_of_range": 362,
+        "meat_unit_not_exact_1kg": 416,
         "meat_price_out_of_range": 34,
         "source_content_dimension_review": 7,
         "source_length_dimension_review": 7,
@@ -328,122 +268,110 @@
         "source_peer_content_conflict": 7,
         "retail_water_capacity_review": 8
       },
-      "exceptionsCount": 134215,
+      "exceptionsCount": 94329,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-X/part-000001.ndjson",
-          "records": 18599,
-          "bytes": 1999968,
-          "sha256": "ba0bf4cd88188330c258ec00ef046c028a7211101d6a1b3be167b99d1bf8fb80"
+          "records": 18863,
+          "bytes": 1999987,
+          "sha256": "82d30e13bcaf762753543b3a2ce63c839fc93dc745e2260089783ece6555951f"
         },
         {
           "file": "catalog-audits/AR-X/part-000002.ndjson",
-          "records": 18511,
-          "bytes": 1999944,
-          "sha256": "9e713617eff91331df79e8b85942513f5c8fb28a170570b921bcf535e078e496"
+          "records": 18914,
+          "bytes": 1999948,
+          "sha256": "52d3b97c26aec14c7360fe44f3ea7d966a0b5b3db18df1c1ab86e9c496f3d7ad"
         },
         {
           "file": "catalog-audits/AR-X/part-000003.ndjson",
-          "records": 18637,
-          "bytes": 1999980,
-          "sha256": "d0a4ce6f3106de1f0d17a27b50cd0dca72ea931adf660fef95247870f2f9f90c"
+          "records": 18874,
+          "bytes": 1999935,
+          "sha256": "d30e37050c4e89d1911d000edb4425f45021b07c29cb6e7621469805e51870d0"
         },
         {
           "file": "catalog-audits/AR-X/part-000004.ndjson",
-          "records": 18877,
-          "bytes": 1999975,
-          "sha256": "69c472bf626b28e457020e4ab480da28ea2b79a3daff59eb234c9653f42367ab"
+          "records": 18854,
+          "bytes": 1999982,
+          "sha256": "df061cf2bc93c00e2c4cf1b5b24d0a476e820a7ff6f85cdbcbf32377be45de2d"
         },
         {
           "file": "catalog-audits/AR-X/part-000005.ndjson",
-          "records": 18877,
-          "bytes": 1999905,
-          "sha256": "36602f896180c31d59e0ab6400177c3d364e65e1338f4383d6bcb8ef6df42fb7"
+          "records": 18671,
+          "bytes": 1999986,
+          "sha256": "730a1465d01a6bf4ac0a1cd729210345c775d2537fb9cb0bbdeb6180a2c9fad6"
         },
         {
           "file": "catalog-audits/AR-X/part-000006.ndjson",
-          "records": 18890,
-          "bytes": 1999904,
-          "sha256": "1cbaee3bd518a5bb5ad89281a44267e1efc9b2812cfb1f3c6b15a64215e1ce3d"
-        },
-        {
-          "file": "catalog-audits/AR-X/part-000007.ndjson",
-          "records": 18854,
-          "bytes": 1999946,
-          "sha256": "5de712c5d15d37af203fb790c6b26f8e9987ef005afbc9c7141c0d1472ed2e85"
-        },
-        {
-          "file": "catalog-audits/AR-X/part-000008.ndjson",
-          "records": 2970,
-          "bytes": 315012,
-          "sha256": "dcbfb331be2aa5a100a1619d934babbd9b9d6b1d46b7fffc3279a47e92f0b0a8"
+          "records": 153,
+          "bytes": 16350,
+          "sha256": "3fad6cf1b29f8717795c900f39e1245be43d31d2a988e1f59a695f41b1d4a7b9"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-W": {
-      "records": 196630,
-      "quoteEligible": 190195,
-      "quarantined": 6435,
-      "needsMeaningReview": 115795,
+      "records": 197186,
+      "quoteEligible": 190743,
+      "quarantined": 6443,
+      "needsMeaningReview": 116327,
       "byReason": {
-        "semantic_fingerprint_changed": 672,
-        "package_conflict": 5392,
-        "meat_unit_not_exact_1kg": 79,
+        "package_conflict": 5384,
         "list_price_out_of_range": 265,
+        "semantic_fingerprint_changed": 681,
+        "meat_unit_not_exact_1kg": 86,
         "meat_price_out_of_range": 15,
         "source_content_dimension_review": 3,
         "source_length_dimension_review": 3,
         "source_variant_conflict": 3,
         "source_peer_content_conflict": 3
       },
-      "exceptionsCount": 6435,
+      "exceptionsCount": 6443,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-W/part-000001.ndjson",
-          "records": 6435,
-          "bytes": 698794,
-          "sha256": "3c1369129864be5b6c9a7bc441515e264f3b7d36af7795518f0970145eb3b4b1"
+          "records": 6443,
+          "bytes": 699836,
+          "sha256": "5e0cdfbe343dade5069d1cb2b6a866e57012e32ce01f5b3270675c7b951ac395"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-E": {
-      "records": 491614,
-      "quoteEligible": 474565,
-      "quarantined": 17049,
-      "needsMeaningReview": 237893,
+      "records": 486860,
+      "quoteEligible": 473157,
+      "quarantined": 13703,
+      "needsMeaningReview": 235126,
       "byReason": {
-        "package_conflict": 13345,
-        "semantic_fingerprint_changed": 2670,
+        "package_conflict": 9997,
+        "semantic_fingerprint_changed": 2693,
         "meat_price_out_of_range": 11,
-        "meat_unit_not_exact_1kg": 296,
+        "meat_unit_not_exact_1kg": 275,
         "list_price_out_of_range": 719,
         "source_content_dimension_review": 2,
         "source_length_dimension_review": 2,
         "source_variant_conflict": 2,
         "source_peer_content_conflict": 2
       },
-      "exceptionsCount": 17049,
+      "exceptionsCount": 13703,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-E/part-000001.ndjson",
-          "records": 17049,
-          "bytes": 1864505,
-          "sha256": "1df60be8ec09b17e76b8f220c5ab173bf85f7d6adf76fcfe9fcd7dac9cb93cd2"
+          "records": 13703,
+          "bytes": 1504210,
+          "sha256": "732852f8da2384f4bba03334bf211ab1caaea58c00be99773d42dd63f85722c9"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-P": {
-      "records": 106663,
-      "quoteEligible": 104353,
-      "quarantined": 2310,
-      "needsMeaningReview": 75089,
+      "records": 105985,
+      "quoteEligible": 104582,
+      "quarantined": 1403,
+      "needsMeaningReview": 74779,
       "byReason": {
-        "package_conflict": 2006,
-        "semantic_fingerprint_changed": 100,
-        "meat_unit_not_exact_1kg": 59,
+        "package_conflict": 1111,
+        "semantic_fingerprint_changed": 94,
+        "meat_unit_not_exact_1kg": 53,
         "list_price_out_of_range": 118,
         "meat_price_out_of_range": 15,
         "source_content_dimension_review": 3,
@@ -451,25 +379,25 @@
         "source_variant_conflict": 3,
         "source_peer_content_conflict": 3
       },
-      "exceptionsCount": 2310,
+      "exceptionsCount": 1403,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-P/part-000001.ndjson",
-          "records": 2310,
-          "bytes": 253355,
-          "sha256": "da29efa5de0d73433839f944b977ef3bc0754aadaae6fcbbbdad0edccae06fed"
+          "records": 1403,
+          "bytes": 155292,
+          "sha256": "56df89962bab738a14d67077d81c4fb1dca138d92e0c4983b9ae897d1c5d235a"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-Y": {
-      "records": 88139,
-      "quoteEligible": 76718,
-      "quarantined": 11421,
-      "needsMeaningReview": 58129,
+      "records": 82351,
+      "quoteEligible": 75460,
+      "quarantined": 6891,
+      "needsMeaningReview": 54046,
       "byReason": {
-        "package_conflict": 11228,
-        "semantic_fingerprint_changed": 96,
+        "package_conflict": 6719,
+        "semantic_fingerprint_changed": 75,
         "meat_price_out_of_range": 3,
         "list_price_out_of_range": 78,
         "meat_unit_not_exact_1kg": 8,
@@ -478,54 +406,54 @@
         "source_variant_conflict": 2,
         "source_peer_content_conflict": 2
       },
-      "exceptionsCount": 11421,
+      "exceptionsCount": 6891,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-Y/part-000001.ndjson",
-          "records": 11421,
-          "bytes": 1223774,
-          "sha256": "31e5b209ed136181abdfa99a080a510d57610217d7373bd837075a94401cac2a"
+          "records": 6891,
+          "bytes": 734478,
+          "sha256": "16ce82528b47f5089c4afb7506bb44280940eb2872a0d58b530dba3003acafcc"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-L": {
-      "records": 175485,
-      "quoteEligible": 170054,
-      "quarantined": 5431,
-      "needsMeaningReview": 101303,
+      "records": 171667,
+      "quoteEligible": 169635,
+      "quarantined": 2032,
+      "needsMeaningReview": 98603,
       "byReason": {
-        "semantic_fingerprint_changed": 319,
-        "package_conflict": 4903,
-        "list_price_out_of_range": 128,
-        "meat_unit_not_exact_1kg": 47,
+        "semantic_fingerprint_changed": 304,
+        "package_conflict": 1527,
+        "meat_unit_not_exact_1kg": 41,
         "meat_price_out_of_range": 14,
+        "list_price_out_of_range": 127,
         "source_content_dimension_review": 3,
         "source_length_dimension_review": 3,
         "source_variant_conflict": 3,
         "source_peer_content_conflict": 3,
-        "retail_water_capacity_review": 8
+        "retail_water_capacity_review": 7
       },
-      "exceptionsCount": 5431,
+      "exceptionsCount": 2032,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-L/part-000001.ndjson",
-          "records": 5431,
-          "bytes": 592149,
-          "sha256": "b762ed4d9893c31d5d0a98d178363a2e24bb940565218e497146aac724df6d37"
+          "records": 2032,
+          "bytes": 224817,
+          "sha256": "1cb89134ba49c82755ea696e9d98240d30f001bea9334fd919ba023cfabc0894"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-F": {
-      "records": 48731,
-      "quoteEligible": 41768,
-      "quarantined": 6963,
-      "needsMeaningReview": 29541,
+      "records": 46551,
+      "quoteEligible": 41263,
+      "quarantined": 5288,
+      "needsMeaningReview": 28074,
       "byReason": {
-        "package_conflict": 6822,
-        "semantic_fingerprint_changed": 71,
-        "meat_unit_not_exact_1kg": 22,
+        "package_conflict": 5161,
+        "semantic_fingerprint_changed": 59,
+        "meat_unit_not_exact_1kg": 20,
         "meat_price_out_of_range": 5,
         "list_price_out_of_range": 39,
         "source_content_dimension_review": 1,
@@ -533,105 +461,105 @@
         "source_variant_conflict": 1,
         "source_peer_content_conflict": 1
       },
-      "exceptionsCount": 6963,
+      "exceptionsCount": 5288,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-F/part-000001.ndjson",
-          "records": 6963,
-          "bytes": 744139,
-          "sha256": "b0150f3f70077fb08f5d826c2b997460bd2e772d4feed8e9ed9a4a13918bb9c0"
+          "records": 5288,
+          "bytes": 563085,
+          "sha256": "6522f77f381e592f528a4f021c726d9e3338b40f58e2132b4a99b29479daf2e2"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-M": {
-      "records": 451601,
-      "quoteEligible": 367508,
-      "quarantined": 84093,
-      "needsMeaningReview": 217855,
+      "records": 450041,
+      "quoteEligible": 367586,
+      "quarantined": 82455,
+      "needsMeaningReview": 217378,
       "byReason": {
-        "semantic_fingerprint_changed": 803,
-        "package_conflict": 82738,
-        "list_price_out_of_range": 241,
+        "package_conflict": 81097,
+        "semantic_fingerprint_changed": 807,
         "meat_price_out_of_range": 25,
-        "meat_unit_not_exact_1kg": 266,
+        "meat_unit_not_exact_1kg": 270,
+        "list_price_out_of_range": 236,
         "source_content_dimension_review": 5,
         "source_length_dimension_review": 5,
         "source_variant_conflict": 5,
         "source_peer_content_conflict": 5
       },
-      "exceptionsCount": 84093,
+      "exceptionsCount": 82455,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-M/part-000001.ndjson",
-          "records": 18681,
-          "bytes": 1999981,
-          "sha256": "9170d1d14da9800a3980af1911327fc1f9dde9853d51bf0b843df8a87eea7490"
+          "records": 18841,
+          "bytes": 1999976,
+          "sha256": "b8312dcb53fdbe43cf63d770befab2ff53a6cab5e743a912fc2def29c72af32f"
         },
         {
           "file": "catalog-audits/AR-M/part-000002.ndjson",
-          "records": 18810,
-          "bytes": 1999905,
-          "sha256": "a3fe202779be31a5a9dcb95e3624454be56cbc3996b70231f857947bb162c1db"
+          "records": 18800,
+          "bytes": 1999914,
+          "sha256": "3a09e7175448f403f000d7367e1ad567ad0ce042f599f10896913cd3e882e842"
         },
         {
           "file": "catalog-audits/AR-M/part-000003.ndjson",
-          "records": 18845,
-          "bytes": 1999889,
-          "sha256": "2ee82bb6d5a309d257d9ec569d2006c811acca3c6ae805cce58df4d7d189be4b"
+          "records": 18855,
+          "bytes": 1999974,
+          "sha256": "b1817c3fa17ea808beb1dbd2d1eae8b03bccbfec0abfbe74245f56221c04cb5e"
         },
         {
           "file": "catalog-audits/AR-M/part-000004.ndjson",
           "records": 18855,
-          "bytes": 1999938,
-          "sha256": "c2f7818c37c145045acdab4608b20ad092ead59b135f6a27afb00813efac5090"
+          "bytes": 1999902,
+          "sha256": "c6a425bcf0bcf8b040c0d96d576bbea95bc4caab1bab88e8e2e8cf252a5ec8cd"
         },
         {
           "file": "catalog-audits/AR-M/part-000005.ndjson",
-          "records": 8902,
-          "bytes": 944212,
-          "sha256": "9d20f316d1e96d1844febe93837c3ec38da13678a5c6aabd92a582c5d3ccd5f0"
+          "records": 7104,
+          "bytes": 767912,
+          "sha256": "1690ea3c221ccbaf1cde20a0e5fa91c6e11574391d6d4dd7d8dc18067f5e1855"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-N": {
-      "records": 89967,
-      "quoteEligible": 80632,
-      "quarantined": 9335,
-      "needsMeaningReview": 58901,
+      "records": 81391,
+      "quoteEligible": 78557,
+      "quarantined": 2834,
+      "needsMeaningReview": 52773,
       "byReason": {
-        "package_conflict": 7299,
-        "semantic_fingerprint_changed": 89,
-        "list_price_out_of_range": 1921,
+        "package_conflict": 830,
         "meat_price_out_of_range": 10,
+        "list_price_out_of_range": 1920,
         "meat_unit_not_exact_1kg": 8,
+        "semantic_fingerprint_changed": 58,
         "source_content_dimension_review": 2,
         "source_length_dimension_review": 2,
         "source_variant_conflict": 2,
         "source_peer_content_conflict": 2
       },
-      "exceptionsCount": 9335,
+      "exceptionsCount": 2834,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-N/part-000001.ndjson",
-          "records": 9335,
-          "bytes": 1016070,
-          "sha256": "591356106281fd65d1020485392a1f4721d5517cbcd401be6aca89e9bfbaf1b6"
+          "records": 2834,
+          "bytes": 313577,
+          "sha256": "2236d18088f1bb1fb9af0198da2dd6f52dc05066dc9c292e050693ef5c140b9d"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-Q": {
-      "records": 377711,
-      "quoteEligible": 370515,
-      "quarantined": 7196,
-      "needsMeaningReview": 180304,
+      "records": 382318,
+      "quoteEligible": 375030,
+      "quarantined": 7288,
+      "needsMeaningReview": 183694,
       "byReason": {
-        "semantic_fingerprint_changed": 1270,
-        "package_conflict": 5744,
-        "meat_unit_not_exact_1kg": 53,
-        "list_price_out_of_range": 89,
+        "package_conflict": 5788,
+        "semantic_fingerprint_changed": 1316,
+        "meat_unit_not_exact_1kg": 56,
+        "list_price_out_of_range": 88,
         "meat_price_out_of_range": 5,
         "source_content_dimension_review": 2,
         "source_length_dimension_review": 2,
@@ -639,27 +567,27 @@
         "source_peer_content_conflict": 2,
         "retail_water_capacity_review": 27
       },
-      "exceptionsCount": 7196,
+      "exceptionsCount": 7288,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-Q/part-000001.ndjson",
-          "records": 7196,
-          "bytes": 787892,
-          "sha256": "34a1f0d61dd03619b17025d302f73c904c0cafab723de02ff8c098e43d48c4a2"
+          "records": 7288,
+          "bytes": 798256,
+          "sha256": "88519eaa600634daa33af107acc138db5d02b1f3306c183f827ca61a79c693ed"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-R": {
-      "records": 427582,
-      "quoteEligible": 415956,
-      "quarantined": 11626,
-      "needsMeaningReview": 215347,
+      "records": 436218,
+      "quoteEligible": 425128,
+      "quarantined": 11090,
+      "needsMeaningReview": 221765,
       "byReason": {
-        "semantic_fingerprint_changed": 1188,
-        "package_conflict": 10162,
+        "semantic_fingerprint_changed": 1262,
+        "package_conflict": 9553,
         "list_price_out_of_range": 164,
-        "meat_unit_not_exact_1kg": 60,
+        "meat_unit_not_exact_1kg": 59,
         "meat_price_out_of_range": 8,
         "source_content_dimension_review": 4,
         "source_length_dimension_review": 4,
@@ -667,60 +595,61 @@
         "source_peer_content_conflict": 4,
         "retail_water_capacity_review": 28
       },
-      "exceptionsCount": 11626,
+      "exceptionsCount": 11090,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-R/part-000001.ndjson",
-          "records": 11626,
-          "bytes": 1257125,
-          "sha256": "6641c8898cd31a1e37517397cc3c3c94a3d9a3e38cb2087765aa455f7842a2a5"
+          "records": 11090,
+          "bytes": 1199751,
+          "sha256": "0b3b3fceed65c65ad047e1563807f3a5f10bc8a6782ebdf3ac182d1f829bb692"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-A": {
-      "records": 325758,
-      "quoteEligible": 294088,
-      "quarantined": 31670,
-      "needsMeaningReview": 177071,
+      "records": 321573,
+      "quoteEligible": 293535,
+      "quarantined": 28038,
+      "needsMeaningReview": 174278,
       "byReason": {
-        "package_conflict": 29940,
-        "semantic_fingerprint_changed": 1197,
-        "meat_unit_not_exact_1kg": 130,
+        "package_conflict": 26326,
         "list_price_out_of_range": 379,
+        "semantic_fingerprint_changed": 1174,
+        "meat_unit_not_exact_1kg": 134,
         "meat_price_out_of_range": 8,
         "source_content_dimension_review": 4,
         "source_length_dimension_review": 4,
         "source_variant_conflict": 4,
-        "source_peer_content_conflict": 4
+        "source_peer_content_conflict": 4,
+        "retail_water_capacity_review": 1
       },
-      "exceptionsCount": 31670,
+      "exceptionsCount": 28038,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-A/part-000001.ndjson",
-          "records": 18544,
-          "bytes": 1999977,
-          "sha256": "872df92dc48bc60cb9525b9d11b7bca33b4ea8391912d07ff1fd93963c3498b3"
+          "records": 18717,
+          "bytes": 1999922,
+          "sha256": "f4ba66e09eb963ebaeb95288f2dfb8dc38865c8a3a3730fa9d416a7134d15974"
         },
         {
           "file": "catalog-audits/AR-A/part-000002.ndjson",
-          "records": 13126,
-          "bytes": 1390164,
-          "sha256": "ef1f3335c8e994aa2acf885c59cdaefc225d71b702ac58953d2d6b91532b228e"
+          "records": 9321,
+          "bytes": 997298,
+          "sha256": "8b316beb23b2204740df713833fe1de44f178a9410f0a643335dfd78aa3e13e2"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-J": {
-      "records": 136579,
-      "quoteEligible": 118289,
-      "quarantined": 18290,
-      "needsMeaningReview": 83379,
+      "records": 137326,
+      "quoteEligible": 119082,
+      "quarantined": 18244,
+      "needsMeaningReview": 84010,
       "byReason": {
-        "semantic_fingerprint_changed": 173,
-        "package_conflict": 17939,
-        "meat_unit_not_exact_1kg": 24,
         "list_price_out_of_range": 126,
+        "package_conflict": 17891,
+        "semantic_fingerprint_changed": 171,
+        "meat_unit_not_exact_1kg": 28,
         "meat_price_out_of_range": 15,
         "source_content_dimension_review": 3,
         "source_length_dimension_review": 3,
@@ -728,25 +657,25 @@
         "source_peer_content_conflict": 3,
         "retail_water_capacity_review": 1
       },
-      "exceptionsCount": 18290,
+      "exceptionsCount": 18244,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-J/part-000001.ndjson",
-          "records": 18290,
-          "bytes": 1946069,
-          "sha256": "8256752903516965a72720dc09a161855738073c1f0c405a34e0fcc7a17cde6a"
+          "records": 18244,
+          "bytes": 1941203,
+          "sha256": "ebfd4168bc563c655ff0e0bee73bb9aaf2b8d62fc12dffa391ccda418fa4f8a1"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-D": {
-      "records": 103780,
-      "quoteEligible": 89169,
-      "quarantined": 14611,
-      "needsMeaningReview": 65589,
+      "records": 94405,
+      "quoteEligible": 86893,
+      "quarantined": 7512,
+      "needsMeaningReview": 58888,
       "byReason": {
-        "package_conflict": 14292,
-        "semantic_fingerprint_changed": 159,
+        "package_conflict": 7235,
+        "semantic_fingerprint_changed": 117,
         "meat_unit_not_exact_1kg": 58,
         "list_price_out_of_range": 84,
         "meat_price_out_of_range": 10,
@@ -755,76 +684,76 @@
         "source_variant_conflict": 2,
         "source_peer_content_conflict": 2
       },
-      "exceptionsCount": 14611,
+      "exceptionsCount": 7512,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-D/part-000001.ndjson",
-          "records": 14611,
-          "bytes": 1567164,
-          "sha256": "e2ca99dfc1bc23414b78532a8bc20af98324b13f785ab89a2073935230313a52"
+          "records": 7512,
+          "bytes": 801679,
+          "sha256": "649bc864ae1b42339c1266ea902c7957773b2371d481f2ec947880d898d32111"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-Z": {
-      "records": 188150,
-      "quoteEligible": 186338,
-      "quarantined": 1812,
-      "needsMeaningReview": 56384,
+      "records": 188323,
+      "quoteEligible": 186488,
+      "quarantined": 1835,
+      "needsMeaningReview": 56758,
       "byReason": {
-        "meat_unit_not_exact_1kg": 41,
-        "semantic_fingerprint_changed": 242,
-        "package_conflict": 1501,
+        "meat_unit_not_exact_1kg": 50,
+        "semantic_fingerprint_changed": 256,
+        "package_conflict": 1499,
         "list_price_out_of_range": 4,
-        "retail_water_capacity_review": 24
+        "retail_water_capacity_review": 26
       },
-      "exceptionsCount": 1812,
+      "exceptionsCount": 1835,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-Z/part-000001.ndjson",
-          "records": 1812,
-          "bytes": 195728,
-          "sha256": "e4ab364902b6738ca4304d81cb0ee1beb8a43b03d5aeccf80eb663d9db68eb04"
+          "records": 1835,
+          "bytes": 198431,
+          "sha256": "12d8ba516b5557a7b46bae42cc4e74994dbcbe4e623c6b5740d756d2b7fa3492"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-S": {
-      "records": 317860,
-      "quoteEligible": 304221,
-      "quarantined": 13639,
-      "needsMeaningReview": 134164,
+      "records": 313971,
+      "quoteEligible": 303119,
+      "quarantined": 10852,
+      "needsMeaningReview": 131454,
       "byReason": {
-        "package_conflict": 12128,
-        "semantic_fingerprint_changed": 1142,
-        "list_price_out_of_range": 145,
+        "package_conflict": 9331,
+        "semantic_fingerprint_changed": 1138,
+        "list_price_out_of_range": 148,
         "meat_price_out_of_range": 11,
-        "meat_unit_not_exact_1kg": 203,
+        "meat_unit_not_exact_1kg": 214,
         "source_content_dimension_review": 1,
         "source_length_dimension_review": 1,
         "source_variant_conflict": 1,
         "source_peer_content_conflict": 1,
         "retail_water_capacity_review": 6
       },
-      "exceptionsCount": 13639,
+      "exceptionsCount": 10852,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-S/part-000001.ndjson",
-          "records": 13639,
-          "bytes": 1476639,
-          "sha256": "adf153bb6d64c9812bb896e6ba73b8761c4004f46d2e1687270aef7d1cf9449f"
+          "records": 10852,
+          "bytes": 1175561,
+          "sha256": "ba2d991210f199ded4ac2da0187cc9108721594506ddedf554e2e212e8a1bd06"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-G": {
-      "records": 80387,
-      "quoteEligible": 69666,
-      "quarantined": 10721,
-      "needsMeaningReview": 54077,
+      "records": 75841,
+      "quoteEligible": 68607,
+      "quarantined": 7234,
+      "needsMeaningReview": 50516,
       "byReason": {
-        "package_conflict": 10539,
-        "semantic_fingerprint_changed": 83,
+        "package_conflict": 7055,
+        "semantic_fingerprint_changed": 80,
         "meat_price_out_of_range": 4,
         "list_price_out_of_range": 78,
         "meat_unit_not_exact_1kg": 8,
@@ -834,50 +763,50 @@
         "source_peer_content_conflict": 2,
         "retail_water_capacity_review": 1
       },
-      "exceptionsCount": 10721,
+      "exceptionsCount": 7234,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-G/part-000001.ndjson",
-          "records": 10721,
-          "bytes": 1145245,
-          "sha256": "d2a9aa19f7d5cf8c662abf16c92c9d416a48d90ba661f7217601e36db8ada561"
+          "records": 7234,
+          "bytes": 768542,
+          "sha256": "e05e1200ce7c01c8dabeef72767fbf1f503abe29fdade2aabc51a290f5a84574"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-V": {
-      "records": 95842,
-      "quoteEligible": 95042,
-      "quarantined": 800,
-      "needsMeaningReview": 30344,
+      "records": 95276,
+      "quoteEligible": 94494,
+      "quarantined": 782,
+      "needsMeaningReview": 30214,
       "byReason": {
-        "semantic_fingerprint_changed": 133,
-        "meat_unit_not_exact_1kg": 45,
-        "package_conflict": 603,
+        "semantic_fingerprint_changed": 124,
+        "meat_unit_not_exact_1kg": 33,
+        "package_conflict": 606,
         "list_price_out_of_range": 8,
         "retail_water_capacity_review": 11
       },
-      "exceptionsCount": 800,
+      "exceptionsCount": 782,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-V/part-000001.ndjson",
-          "records": 800,
-          "bytes": 87275,
-          "sha256": "ccda5a50975162aedacc97be2b0e58ecaad310b2d3951b4cc79752c35db11192"
+          "records": 782,
+          "bytes": 85145,
+          "sha256": "b7c1ea8e1fcc0e1f5b30d2f5e7b8f9646dc7a8dd2718845fa75f7e47339635f9"
         }
       ],
       "exceptionsStoredInParts": true
     },
     "AR-T": {
-      "records": 248195,
-      "quoteEligible": 219510,
-      "quarantined": 28685,
-      "needsMeaningReview": 146802,
+      "records": 249321,
+      "quoteEligible": 220506,
+      "quarantined": 28815,
+      "needsMeaningReview": 147975,
       "byReason": {
-        "package_conflict": 28018,
-        "meat_unit_not_exact_1kg": 102,
-        "semantic_fingerprint_changed": 328,
-        "list_price_out_of_range": 205,
+        "package_conflict": 28168,
+        "semantic_fingerprint_changed": 322,
+        "list_price_out_of_range": 204,
+        "meat_unit_not_exact_1kg": 89,
         "meat_price_out_of_range": 10,
         "source_content_dimension_review": 5,
         "source_length_dimension_review": 5,
@@ -885,19 +814,19 @@
         "source_peer_content_conflict": 5,
         "retail_water_capacity_review": 2
       },
-      "exceptionsCount": 28685,
+      "exceptionsCount": 28815,
       "exceptionParts": [
         {
           "file": "catalog-audits/AR-T/part-000001.ndjson",
-          "records": 18797,
-          "bytes": 1999923,
-          "sha256": "009f018a75ccc283f149a1d786bbb5630ac40ecfe49cd320e0d80b2707300d45"
+          "records": 18898,
+          "bytes": 1999930,
+          "sha256": "f1119df570b5fbc760098b7e727016cee4ce0b1d1d13b0679a594a5b91c7a3f9"
         },
         {
           "file": "catalog-audits/AR-T/part-000002.ndjson",
-          "records": 9888,
-          "bytes": 1047257,
-          "sha256": "93b1547d641d01ce10745c9ef191461650e9193a18301a56f5c868d0569e5a8e"
+          "records": 9917,
+          "bytes": 1060766,
+          "sha256": "8a53c27a14427203c12d1c66a694e41c56e8cd07a8799093d7bfb54bb26caaa7"
         }
       ],
       "exceptionsStoredInParts": true
