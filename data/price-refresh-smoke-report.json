@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-18T22:03:15.166Z",
+  "checkedAt": "2026-11-19T00:03:20.594Z",
   "success": false,
   "checks": [],
-  "error": "Preparación del catálogo: HTTP 500.",
+  "error": "Preparación del catálogo: no se completó la solicitud.",
   "failure": {
-    "kind": "server",
-    "status": 500
+    "kind": "timeout",
+    "status": null
   }
 }
