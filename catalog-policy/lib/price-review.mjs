@@ -3,23 +3,31 @@ import { barcodeIdentity, createProductIdMatcher } from './product-identity.mjs'
 import {reviewedCatalogEntry} from './catalog-semantics.mjs';
 
 const median = values => { const s = [...values].sort((a,b)=>a-b), middle = Math.floor(s.length / 2); return s.length % 2 ? s[middle] : (s[middle-1]+s[middle])/2; };
-const retailer = record => /^sepa:([^:]+):/.exec(record.product.ean)?.[1] ?? record.store.chain;
+const retailer = record => {
+  const id = String(record.product.ean);
+  const separator = id.startsWith('sepa:') ? id.indexOf(':', 5) : -1;
+  return separator > 5 ? id.slice(5, separator) : record.store.chain;
+};
 
-function peerReview(record, peers, matchesId) {
+function peerReference(record, company, peers, matchesId) {
   const groups = new Map();
   for (const other of peers) {
-    const company = retailer(other);
-    if (!company || company === retailer(record) || other.price.validDate !== record.price.validDate || !matchesId(record.product.ean, other.product)) continue;
-    if (!groups.has(company)) groups.set(company, []);
-    groups.get(company).push(other.price.listPrice);
+    if (other.price.validDate !== record.price.validDate) continue;
+    const otherCompany = retailer(other);
+    if (!otherCompany || otherCompany === company || !matchesId(record.product.ean, other.product)) continue;
+    if (!groups.has(otherCompany)) groups.set(otherCompany, []);
+    groups.get(otherCompany).push(other.price.listPrice);
   }
   // Independent retailers count once each; a chain with many branches cannot
   // dominate. Compare list prices, not conditional promotions or other SKUs.
   const prices = [...groups.values()].map(median);
   if (prices.length < 2 || Math.max(...prices) > Math.min(...prices) * 2) return null;
-  const reference = median(prices);
-  if (record.price.listPrice >= reference * .35) return null;
-  return { id: 'cross_retailer_low_price', status: 'pending_source_confirmation', reason: 'Se apartó un importe muy inferior al del mismo producto en otros comercios. Está pendiente de confirmación.', peerRetailers: prices.length, referenceMedian: reference };
+  return { count: prices.length, median: median(prices) };
+}
+
+function reviewAgainstPeers(record, reference) {
+  if (!reference || record.price.listPrice >= reference.median * .35) return null;
+  return { id: 'cross_retailer_low_price', status: 'pending_source_confirmation', reason: 'Se apartó un importe muy inferior al del mismo producto en otros comercios. Está pendiente de confirmación.', peerRetailers: reference.count, referenceMedian: reference.median };
 }
 
 // INC-059: reported by the user and reproduced in the 2026-09-13 replica.
@@ -38,26 +46,55 @@ export function priceReview(record) {
       reportedAt: '2026-09-15',
     };
   }
-  const content=packageEvidence(record.product)?.content;
-  if(/\bagua\b/.test(normalize(record.product?.name))&&content?.dimension==='volume'&&content.amount>100000){
-    return {id:'retail_water_capacity_review',status:'pending_source_confirmation',reason:'La capacidad informada del agua supera los 100 litros por envase minorista. Se apartó el precio hasta confirmar la presentación con la fuente.'};
+  if(/\bagua\b/.test(normalize(record.product?.name))){
+    const content=packageEvidence(record.product)?.content;
+    if(content?.dimension==='volume'&&content.amount>100000){
+      return {id:'retail_water_capacity_review',status:'pending_source_confirmation',reason:'La capacidad informada del agua supera los 100 litros por envase minorista. Se apartó el precio hasta confirmar la presentación con la fuente.'};
+    }
   }
   return null;
 }
 
 export function separateReviewedPrices(input) {
   const records = [], reviewedRecords = [];
-  const groups = new Map(), matchesId = createProductIdMatcher(input);
+  const groups = new Map(), reviews = new WeakMap(), matchesId = createProductIdMatcher(input);
   for (const record of input) {
-    const key = record.product.barcodeStatus === 'valid_format_and_checksum' ? barcodeIdentity(record.product.barcode).gtin : undefined;
-    if (!key) continue;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(record);
+    const review = priceReview(record);
+    if (review) reviews.set(record, review);
+    const trusted = record.product.barcodeStatus === 'valid_format_and_checksum';
+    if (!trusted && review) continue;
+    const gtin = barcodeIdentity(record.product.barcode).gtin;
+    if (!gtin) continue;
+    let group = groups.get(gtin);
+    if (!group) groups.set(gtin, group = { peers: [], targets: [] });
+    // Even rows with a source review are peers in the legacy policy.
+    if (trusted) group.peers.push(record);
+    if (!review) group.targets.push(record);
+  }
+  for (const {peers,targets} of groups.values()) {
+    if (peers.length < 2) continue;
+    // Memo identity is exact and only lives while processing one GTIN.
+    // The input order need not match the group order across branches.
+    const byEan = new Map();
+    for (const record of targets) {
+      if (peers.length < 3 && record.product.barcodeStatus === 'valid_format_and_checksum') continue;
+      const company = retailer(record), {ean} = record.product, date = record.price.validDate;
+      let byDate = byEan.get(ean);
+      if (!byDate) byEan.set(ean, byDate = new Map());
+      let byCompany = byDate.get(date);
+      if (!byCompany) byDate.set(date, byCompany = new Map());
+      let reference = byCompany.get(company);
+      if (reference === undefined) {
+        reference = peerReference(record, company, peers, matchesId);
+        byCompany.set(company, reference);
+      }
+      const review = reviewAgainstPeers(record, reference);
+      if (review) reviews.set(record, review);
+    }
   }
   for (const record of input) {
-    const peers = groups.get(barcodeIdentity(record.product.barcode).gtin) ?? [];
-    const review = priceReview(record) || peerReview(record, peers, matchesId);
-    if (review) reviewedRecords.push({ record, review });
+    const review = reviews.get(record);
+    if (review) reviewedRecords.push({record, review});
     else records.push(record);
   }
   return { records, reviewedRecords };
