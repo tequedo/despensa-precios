@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T20:59:35.217Z",
+  "generatedAt": "2026-11-20T00:16:09.183Z",
   "scope": "Argentina; alcance sujeto a cada promoción",
   "rule": "Solo beneficios vigentes con porcentaje, días, vigencia, medio de pago, tope, alcance y exclusiones verificadas",
   "benefits": [
@@ -58,7 +58,7 @@
       "exclusionsVerified": true,
       "accumulable": false,
       "sourceUrl": "https://www.masonline.com.ar/promociones-bancarias",
-      "checkedAt": "2026-11-19T20:59:35.217Z",
+      "checkedAt": "2026-11-20T00:16:09.183Z",
       "termsHash": "99ebc916a795469d940f090182ac41f048d4e976ad601ad3ae67be1ec67621e2",
       "status": "verified",
       "calculationEligible": false,

@@ -2,43 +2,43 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 82455,
-  "bytes": 8767678,
+  "records": 84165,
+  "bytes": 8951679,
   "context": {
     "province": "AR-M",
-    "generatedAt": "2026-11-18T23:28:38.126Z",
+    "generatedAt": "2026-11-19T23:44:41.644Z",
     "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18841,
-      "bytes": 1999976,
-      "sha256": "b8312dcb53fdbe43cf63d770befab2ff53a6cab5e743a912fc2def29c72af32f"
+      "records": 18816,
+      "bytes": 1999987,
+      "sha256": "92f36b72ed5145cdf45e5c70c669f3ed65ce2dd1930d6cdba5398e7d966ab90e"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 18800,
-      "bytes": 1999914,
-      "sha256": "3a09e7175448f403f000d7367e1ad567ad0ce042f599f10896913cd3e882e842"
+      "records": 18801,
+      "bytes": 1999953,
+      "sha256": "4467b7348135ce60bd356a6c40d1c117d5de53280d205eb3277696d6cf5e7204"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18855,
-      "bytes": 1999974,
-      "sha256": "b1817c3fa17ea808beb1dbd2d1eae8b03bccbfec0abfbe74245f56221c04cb5e"
+      "records": 18854,
+      "bytes": 1999909,
+      "sha256": "8bce174bc0609c4807f95dc892ea17d8811f1a03c7acdc08f9e227e0bc4f6560"
     },
     {
       "file": "part-000004.ndjson",
       "records": 18855,
       "bytes": 1999902,
-      "sha256": "c6a425bcf0bcf8b040c0d96d576bbea95bc4caab1bab88e8e2e8cf252a5ec8cd"
+      "sha256": "2b8d20a9091159b77606fc8437f56800b9d34e235f5cadd72ab32d873a737562"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 7104,
-      "bytes": 767912,
-      "sha256": "1690ea3c221ccbaf1cde20a0e5fa91c6e11574391d6d4dd7d8dc18067f5e1855"
+      "records": 8839,
+      "bytes": 951928,
+      "sha256": "b2fd29f27a50b1776b0b1b3bb40d0e3acd9f96bdc7a5c56ffac0da04bb9c2d13"
     }
   ]
 }
