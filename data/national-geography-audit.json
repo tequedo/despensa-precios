@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-20T23:31:51.937Z",
+  "checkedAt": "2026-11-21T22:44:04.841Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
   "rejectedCount": 53,
   "rejected": [
@@ -57,6 +57,14 @@
       "locality": "Claypole",
       "latitude": -34.822169,
       "longitude": -58.366915,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|860",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -30.982034,
+      "longitude": -64.491897,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -121,14 +129,6 @@
       "locality": "Córdoba",
       "latitude": -31.386371,
       "longitude": -64.227571,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "10|3|860",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -30.982034,
-      "longitude": -64.491897,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
