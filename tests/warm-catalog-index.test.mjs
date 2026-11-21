@@ -21,3 +21,28 @@ test('una cabecera rápida no oculta una respuesta completa lenta',async()=>{
  assert.equal(report.success,false);assert.equal(report.queries.length,0);assert.equal(report.errors.length,5);
  assert.ok(report.errors.every(error=>/respuesta completa/.test(error.error)));
 });
+
+for(const coverage of [
+ {generatedAt:'2026-11-18T21:22:58.000Z'},
+ {},
+ {generatedAt:'2026-11-18T23:28:38.126Z',updating:true},
+ {generatedAt:'2026-11-18T23:28:38.126Z',preparingIndex:true},
+])test('rechaza búsqueda rápida indexada sin generación vigente confirmada '+JSON.stringify(coverage),async()=>{
+ const generation='2026-11-18T23:28:38.126Z';let reads=0;
+ const fetcher=async(input,options)=>String(input).includes('/prepare')
+  ?Response.json(options?{ready:true,records:10,generation}:{regions:[]})
+  :Response.json({data:{total:1},coverage:{indexed:true,...coverage}},{headers:{'Server-Timing':'catalog;dur=10'}});
+ const report=await warmCatalogIndexes({origin:'https://example.invalid',fetcher,readIndex:async()=>{reads++;return {generatedAt:generation};}});
+ assert.equal(report.success,false);assert.equal(report.queries.length,0);assert.equal(reads,1);
+ assert.equal(report.errors.length,5);
+ assert.ok(report.errors.every(error=>error.expectedGeneration===generation&&/generación exacta/.test(error.error)));
+ assert.equal(report.errors[0].generation,coverage.generatedAt??null);
+});
+test('congela la fuente entre preparación y búsqueda aunque otra carga llegue el mismo día',async()=>{
+ const generation='2026-11-18T23:28:38.126Z';let reads=0;
+ const fetcher=async(input,options)=>String(input).includes('/prepare')
+  ?Response.json(options?{ready:true,records:10,generation}:{regions:[]})
+  :Response.json({data:{total:1},coverage:{indexed:true,generatedAt:generation}},{headers:{'Server-Timing':'catalog;dur=10'}});
+ const report=await warmCatalogIndexes({origin:'https://example.invalid',fetcher,readIndex:async()=>({generatedAt:++reads===1?generation:'2026-11-18T23:59:00.000Z'})});
+ assert.equal(report.success,true);assert.equal(reads,1);assert.equal(report.queries.length,5);
+});

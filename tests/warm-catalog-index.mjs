@@ -8,11 +8,15 @@ export async function warmCatalogIndexes({origin,fetcher=fetch,readIndex=async p
  let registry=[];try{const response=await fetcher(url+'/api/public-prices/prepare',{signal:AbortSignal.timeout(20000)});if(response.ok)registry=(await response.json()).regions??[];}catch{}
  // The public Georef locality point used by the app's San Juan picker.
  const pilot={province:'AR-J',locality:'San Juan',lat:-31.534016,lon:-68.524744,radiusKm:50};
+ // Freeze each provincial source once: preparation and every search must use
+ // the same generation, including when two imports occur on the same day.
+ const indexes=new Map();
+ const frozenIndex=province=>{if(!indexes.has(province))indexes.set(province,Promise.resolve().then(()=>readIndex(province)));return indexes.get(province);};
  const targets=[pilot,...registry],seen=new Set();
  for(const scope of targets){
   const id=JSON.stringify([scope.province,[...(scope.storeIds??[])].sort()]);if(seen.has(id))continue;seen.add(id);
   try{
-   const expected=await readIndex(scope.province);let prepared;
+   const expected=await frozenIndex(scope.province);let prepared;
    for(let attempt=0;attempt<25;attempt++){
     const response=await fetcher(url+'/api/public-prices/prepare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...scope,expectedGeneration:expected.generatedAt}),signal:AbortSignal.timeout(90000)});
     const result=await response.json().catch(()=>({error:'Respuesta del servidor no disponible'}));
@@ -25,17 +29,21 @@ export async function warmCatalogIndexes({origin,fetcher=fetch,readIndex=async p
   }catch(error){report.errors.push({province:scope.province,error:error.message});}
  }
  for(const query of ['Coca cola','arroz','aceite','leche','sal']){
+  let evidence={};
   try{
+   const expected=await frozenIndex(pilot.province);
    const params=new URLSearchParams({...pilot,q:query,priced:'1',guided:'1'}),start=clock();
    const response=await fetcher(url+'/api/public-prices?'+params,{signal:AbortSignal.timeout(30000)}),body=await response.json();
+   evidence={http:response.status,generation:body.coverage?.generatedAt??null,expectedGeneration:expected.generatedAt};
    if(!response.ok||!body.data?.total)throw new Error(body.error??'La consulta no devolvió productos');
    if(!body.coverage?.indexed)throw new Error('La consulta nueva no usó el índice preparado');
    const serverMs=Number(/catalog;dur=([0-9.]+)/.exec(response.headers.get('server-timing')??'')?.[1]);
    if(!Number.isFinite(serverMs)||serverMs>2000)throw new Error('La búsqueda nueva superó 2 segundos en el servidor');
    const elapsedMs=clock()-start;
    if(elapsedMs>2000)throw new Error('La respuesta completa de una búsqueda nueva superó 2 segundos');
+   if(body.coverage?.generatedAt!==expected.generatedAt||body.coverage?.updating===true||body.coverage?.preparingIndex===true)throw new Error('La búsqueda no confirmó la generación exacta preparada');
    report.queries.push({query,http:response.status,elapsedMs,serverTiming:response.headers.get('server-timing'),cache:response.headers.get('x-catalog-cache'),indexed:Boolean(body.coverage?.indexed),products:body.data.total,generation:body.coverage?.generatedAt});
-  }catch(error){report.errors.push({query,error:error.message});}
+  }catch(error){report.errors.push({query,...evidence,error:error.message});}
  }
  report.success=report.errors.length===0;return report;
 }
