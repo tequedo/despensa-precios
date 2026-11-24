@@ -2,49 +2,49 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 95287,
-  "bytes": 10117621,
+  "records": 94764,
+  "bytes": 10062295,
   "context": {
     "province": "AR-X",
-    "generatedAt": "2026-11-22T22:39:39.522Z",
+    "generatedAt": "2026-11-24T03:25:39.892Z",
     "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
       "records": 18862,
-      "bytes": 1999895,
-      "sha256": "ba9a6af59c577d8eb144d06fbdbc51bb2fa692dff8424698ce307a786ca87f69"
+      "bytes": 1999915,
+      "sha256": "b38d3b2f0a3027db5e8802d2ef50240b8a140b654419f5d4a13cfe3ead84772b"
     },
     {
       "file": "part-000002.ndjson",
-      "records": 18879,
-      "bytes": 1999976,
-      "sha256": "196452c41a91c70076865a7235db05d0780709aa9fdc672e19fe400fc205d7d8"
+      "records": 18895,
+      "bytes": 1999926,
+      "sha256": "c8f2419a8f16f004438943994e2515aab119684387992e950f8457105f9aa995"
     },
     {
       "file": "part-000003.ndjson",
-      "records": 18909,
-      "bytes": 1999976,
-      "sha256": "e83a594cc1f215ac270cdaa6b80dbcde8cd4ac594f90feb11a37ee1e55a18be1"
+      "records": 18894,
+      "bytes": 1999975,
+      "sha256": "ac5845c70640677eace9918ec26abca5b548c7f469777aa46f4bd3fc64268b9e"
     },
     {
       "file": "part-000004.ndjson",
-      "records": 18856,
-      "bytes": 1999968,
-      "sha256": "348a4e16c9dc1ff4409b18956a5afce3e4416847b1828ff1ecedbe265ac67e55"
+      "records": 18854,
+      "bytes": 1999948,
+      "sha256": "ebb65320eb6dd22924b43586bbe84716deb5d4c198d7e78c4c658009af906f6f"
     },
     {
       "file": "part-000005.ndjson",
-      "records": 18690,
-      "bytes": 1999963,
-      "sha256": "aa91b155bf4502a1baf1b461311d87c1c2a553bd1e05b918bc056b7366d82c6d"
+      "records": 18675,
+      "bytes": 1999895,
+      "sha256": "d0484c619d6ae002a112c5343c3d1ede9819ee8a2a63d286398d9208adceaca5"
     },
     {
       "file": "part-000006.ndjson",
-      "records": 1091,
-      "bytes": 117843,
-      "sha256": "4e48d5f448ff486ad213cdfceaad97fce14596fef99f7fb3a224131edf6bc3cc"
+      "records": 584,
+      "bytes": 62636,
+      "sha256": "ff27807e4a77ef020d9a4108ddd1002ed44a4a695539ae97b8f00cafe6f3409e"
     }
   ]
 }
