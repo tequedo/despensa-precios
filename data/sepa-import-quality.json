@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-25T02:06:43.764Z",
-  "sourceModified": "2026-11-24T16:19:22.690Z",
+  "checkedAt": "2026-11-26T01:29:03.720Z",
+  "sourceModified": "2026-11-25T16:19:44.641Z",
   "sourceType": "replica",
   "catalogScope": "all_valid_physical_source_products",
   "excludedStores": [
@@ -19,77 +19,87 @@
   ],
   "productFiles": [
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-12_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T01:11:06-03:00",
-      "updatedAt": "2026-11-24T04:11:06.000Z",
+      "file": "2026-11-25/sepa_1_comercio-sepa-12_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T01:11:02-03:00",
+      "updatedAt": "2026-11-25T04:11:02.000Z",
+      "date": "2026-11-25",
+      "dateBasis": "product_file_footer",
+      "accepted": true,
+      "malformedRows": 0,
+      "parsedRows": 1054292
+    },
+    {
+      "file": "2026-11-25/sepa_1_comercio-sepa-13_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T04:00:08-03:00",
+      "updatedAt": "2026-11-25T07:00:08.000Z",
+      "date": "2026-11-25",
+      "dateBasis": "product_file_footer",
+      "accepted": true,
+      "malformedRows": 0,
+      "parsedRows": 708195
+    },
+    {
+      "file": "2026-11-25/sepa_1_comercio-sepa-15_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T03:30:36-03:00",
+      "updatedAt": "2026-11-25T06:30:36.000Z",
+      "date": "2026-11-25",
+      "dateBasis": "product_file_footer",
+      "accepted": true,
+      "malformedRows": 0,
+      "parsedRows": 4331317
+    },
+    {
+      "file": "2026-11-25/sepa_1_comercio-sepa-20_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-24T18:37:14-03:00",
+      "updatedAt": "2026-11-24T21:37:14.000Z",
       "date": "2026-11-24",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 1048894
+      "parsedRows": 7480
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-13_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T04:00:07-03:00",
-      "updatedAt": "2026-11-24T07:00:07.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_1_comercio-sepa-21_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T02:02:04-03:00",
+      "updatedAt": "2026-11-25T05:02:04.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 706767
+      "parsedRows": 41541
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-15_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T03:30:34-03:00",
-      "updatedAt": "2026-11-24T06:30:34.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_1_comercio-sepa-23_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T04:00:00-0300",
+      "updatedAt": "2026-11-25T07:00:00.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 3958726
+      "parsedRows": 6433
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-21_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T02:01:56-03:00",
-      "updatedAt": "2026-11-24T05:01:56.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_1_comercio-sepa-24_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T02:09:54-03:00",
+      "updatedAt": "2026-11-25T05:09:54.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 42007
+      "parsedRows": 371668
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-23_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T04:00:00-0300",
-      "updatedAt": "2026-11-24T07:00:00.000Z",
+      "file": "2026-11-25/sepa_1_comercio-sepa-3_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-24T16:00:01-03:00",
+      "updatedAt": "2026-11-24T19:00:01.000Z",
       "date": "2026-11-24",
-      "dateBasis": "product_file_footer",
-      "accepted": true,
-      "malformedRows": 0,
-      "parsedRows": 6421
-    },
-    {
-      "file": "2026-11-24/sepa_1_comercio-sepa-24_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T02:08:54-03:00",
-      "updatedAt": "2026-11-24T05:08:54.000Z",
-      "date": "2026-11-24",
-      "dateBasis": "product_file_footer",
-      "accepted": true,
-      "malformedRows": 0,
-      "parsedRows": 377951
-    },
-    {
-      "file": "2026-11-24/sepa_1_comercio-sepa-3_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-23T16:00:01-03:00",
-      "updatedAt": "2026-11-23T19:00:01.000Z",
-      "date": "2026-11-23",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
       "parsedRows": 8915
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-47_2026-11-24_09-05-10/productos.csv",
+      "file": "2026-11-25/sepa_1_comercio-sepa-47_2026-11-25_09-05-10/productos.csv",
       "raw": "2025-06-11T21:00:01-03:00",
       "updatedAt": "2025-06-12T00:00:01.000Z",
       "date": "2025-06-11",
@@ -100,257 +110,257 @@
       "parsedRows": 0
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-4_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-23T16:00:01-03:00",
-      "updatedAt": "2026-11-23T19:00:01.000Z",
-      "date": "2026-11-23",
+      "file": "2026-11-25/sepa_1_comercio-sepa-4_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-24T16:00:01-03:00",
+      "updatedAt": "2026-11-24T19:00:01.000Z",
+      "date": "2026-11-24",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
       "parsedRows": 255
     },
     {
-      "file": "2026-11-24/sepa_1_comercio-sepa-8_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-23T16:30:37-03:00",
-      "updatedAt": "2026-11-23T19:30:37.000Z",
-      "date": "2026-11-23",
-      "dateBasis": "product_file_footer",
-      "accepted": true,
-      "malformedRows": 0,
-      "parsedRows": 42063
-    },
-    {
-      "file": "2026-11-24/sepa_1_comercio-sepa-9_2026-11-24_09-05-10/productos.csv",
-      "raw": "2026-11-24T05:02:37-03:00",
-      "updatedAt": "2026-11-24T08:02:37.000Z",
+      "file": "2026-11-25/sepa_1_comercio-sepa-8_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-24T16:30:38-03:00",
+      "updatedAt": "2026-11-24T19:30:38.000Z",
       "date": "2026-11-24",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 1263724
+      "parsedRows": 42072
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-10_2026-11-24_01-05-08/productos.csv",
-      "raw": "2026-11-24T09:09:14-03:00",
-      "updatedAt": "2026-11-24T12:09:14.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_1_comercio-sepa-9_2026-11-25_09-05-10/productos.csv",
+      "raw": "2026-11-25T05:06:08-03:00",
+      "updatedAt": "2026-11-25T08:06:08.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 3471681
+      "parsedRows": 1262215
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-11_2026-11-24_01-05-08/productos.csv",
-      "raw": "2026-11-24T05:20:23-03:00",
-      "updatedAt": "2026-11-24T08:20:23.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_2_comercio-sepa-10_2026-11-25_01-05-07/productos.csv",
+      "raw": "2026-11-25T09:06:08-03:00",
+      "updatedAt": "2026-11-25T12:06:08.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 2614056
+      "parsedRows": 3482340
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-2_2026-11-24_01-05-08/productos.csv",
-      "raw": "2026-11-24T04:00:49-03:00",
-      "updatedAt": "2026-11-24T07:00:49.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_2_comercio-sepa-11_2026-11-25_01-05-07/productos.csv",
+      "raw": "2026-11-25T05:20:23-03:00",
+      "updatedAt": "2026-11-25T08:20:23.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 1018258
+      "parsedRows": 2611978
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-5_2026-11-24_01-05-08/productos.csv",
-      "raw": "2026-11-24T09:00:02-03:00",
-      "updatedAt": "2026-11-24T12:00:02.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_2_comercio-sepa-2_2026-11-25_01-05-07/productos.csv",
+      "raw": "2026-11-25T04:00:53-03:00",
+      "updatedAt": "2026-11-25T07:00:53.000Z",
+      "date": "2026-11-25",
+      "dateBasis": "product_file_footer",
+      "accepted": true,
+      "malformedRows": 0,
+      "parsedRows": 1018722
+    },
+    {
+      "file": "2026-11-25/sepa_2_comercio-sepa-5_2026-11-25_01-05-07/productos.csv",
+      "raw": "2026-11-25T09:00:02-03:00",
+      "updatedAt": "2026-11-25T12:00:02.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
       "parsedRows": 18788
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/productos.csv",
-      "raw": "2026-11-24T09:30:00-03:00",
-      "updatedAt": "2026-11-24T12:30:00.000Z",
-      "date": "2026-11-24",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/productos.csv",
+      "raw": "2026-11-25T09:30:00-03:00",
+      "updatedAt": "2026-11-25T12:30:00.000Z",
+      "date": "2026-11-25",
       "dateBasis": "product_file_footer",
       "accepted": true,
       "malformedRows": 0,
-      "parsedRows": 18642
+      "parsedRows": 18356
     }
   ],
   "csvRepairs": [
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 2,
       "endLine": 4,
       "externalId": "6|1|1"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 5,
       "endLine": 7,
       "externalId": "6|1|2"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 8,
       "endLine": 10,
       "externalId": "6|1|3"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 11,
       "endLine": 19,
       "externalId": "6|1|4"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 20,
       "endLine": 22,
       "externalId": "6|1|5"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 23,
       "endLine": 31,
       "externalId": "6|1|6"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 32,
       "endLine": 34,
       "externalId": "6|1|7"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 35,
       "endLine": 43,
       "externalId": "6|1|8"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 44,
       "endLine": 46,
       "externalId": "6|1|9"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 47,
       "endLine": 55,
       "externalId": "6|1|10"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 56,
       "endLine": 58,
       "externalId": "6|1|11"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 59,
       "endLine": 67,
       "externalId": "6|1|12"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 68,
       "endLine": 70,
       "externalId": "6|1|14"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 71,
       "endLine": 73,
       "externalId": "6|1|16"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 75,
       "endLine": 77,
       "externalId": "6|1|18"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 78,
       "endLine": 80,
       "externalId": "6|1|19"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 81,
       "endLine": 83,
       "externalId": "6|1|20"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 84,
       "endLine": 86,
       "externalId": "6|1|22"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 87,
       "endLine": 95,
       "externalId": "6|1|23"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 96,
       "endLine": 98,
       "externalId": "6|1|24"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 99,
       "endLine": 101,
       "externalId": "6|1|25"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 102,
       "endLine": 104,
       "externalId": "6|1|26"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 105,
       "endLine": 107,
       "externalId": "6|2|1"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 108,
       "endLine": 110,
       "externalId": "6|2|2"
     },
     {
-      "file": "2026-11-24/sepa_2_comercio-sepa-6_2026-11-24_01-05-08/sucursales.csv",
+      "file": "2026-11-25/sepa_2_comercio-sepa-6_2026-11-25_01-05-07/sucursales.csv",
       "reason": "unquoted_branch_continuation",
       "startLine": 111,
       "endLine": 113,
@@ -359,10 +369,10 @@
   ],
   "catalogPolicy": {
     "version": "2026-11-02.marcas-abreviadas.1",
-    "records": 14440221,
-    "quoteEligible": 13454036,
-    "quarantined": 986185,
-    "needsMeaningReview": 6911685
+    "records": 14825509,
+    "quoteEligible": 13839688,
+    "quarantined": 985821,
+    "needsMeaningReview": 7085553
   },
   "filteredByCatalogPolicy": 0
 }

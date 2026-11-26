@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-25T22:05:50.147Z",
+  "generatedAt": "2026-11-26T01:32:06.989Z",
   "scope": "San Juan",
   "sources": [
     {
       "retailer": "Vea",
       "url": "https://www.vea.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-25T22:04:55.045Z",
+      "checkedAt": "2026-11-26T01:31:55.571Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -18,7 +18,7 @@
     {
       "retailer": "ChangoMás",
       "url": "https://www.masonline.com.ar/3195?map=productClusterIds",
-      "checkedAt": "2026-11-25T22:04:57.237Z",
+      "checkedAt": "2026-11-26T01:31:57.583Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -31,9 +31,9 @@
     {
       "retailer": "La Anónima",
       "url": "https://www.laanonima.com.ar/empresa/catalogos",
-      "checkedAt": "2026-11-25T22:05:00.236Z",
+      "checkedAt": "2026-11-26T01:31:58.642Z",
       "reachable": false,
-      "sepaPromotions": 1821,
+      "sepaPromotions": 2031,
       "corroboratedPromotions": 0,
       "status": "unavailable",
       "error": "La página pública se abrió, pero no devolvió contenido utilizable."
@@ -41,17 +41,181 @@
     {
       "retailer": "Carrefour",
       "url": "https://www.carrefour.com.ar/promociones",
-      "checkedAt": "2026-11-25T22:05:45.262Z",
-      "reachable": false,
-      "sepaPromotions": 523,
+      "checkedAt": "2026-11-26T01:32:03.040Z",
+      "reachable": true,
+      "rendered": true,
+      "sepaPromotions": 565,
       "corroboratedPromotions": 0,
-      "status": "unavailable",
-      "error": "La página pública se abrió, pero no devolvió contenido utilizable."
+      "activeWindows": [
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        },
+        {
+          "from": "2026-11-25",
+          "to": "2026-12-01"
+        }
+      ],
+      "mentionsSanJuan": false,
+      "nationwide": true,
+      "status": "reachable_without_complete_scoped_evidence"
     },
     {
       "retailer": "Jumbo",
       "url": "https://www.jumbo.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-25T22:05:45.968Z",
+      "checkedAt": "2026-11-26T01:32:03.559Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -64,7 +228,7 @@
     {
       "retailer": "Disco",
       "url": "https://www.disco.com.ar/ofertas-y-catalogo",
-      "checkedAt": "2026-11-25T22:05:46.840Z",
+      "checkedAt": "2026-11-26T01:32:04.043Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -77,7 +241,7 @@
     {
       "retailer": "DIA",
       "url": "https://diaonline.supermercadosdia.com.ar/",
-      "checkedAt": "2026-11-25T22:05:46.959Z",
+      "checkedAt": "2026-11-26T01:32:04.454Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -90,7 +254,7 @@
     {
       "retailer": "Coto",
       "url": "https://www.coto.com.ar/hoy/",
-      "checkedAt": "2026-11-25T22:05:47.823Z",
+      "checkedAt": "2026-11-26T01:32:05.268Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
@@ -103,17 +267,17 @@
     {
       "retailer": "Hiper Libertad",
       "url": "https://www.hiperlibertad.com.ar/oferta",
-      "checkedAt": "2026-11-25T22:05:48.184Z",
+      "checkedAt": "2026-11-26T01:32:05.433Z",
       "reachable": false,
       "sepaPromotions": 0,
       "corroboratedPromotions": 0,
       "status": "unavailable",
-      "error": "fetch failed"
+      "error": "HTTP 403"
     },
     {
       "retailer": "Átomo",
       "url": "https://atomoconviene.com/atomo-ecommerce/833-ofertas",
-      "checkedAt": "2026-11-25T22:05:50.147Z",
+      "checkedAt": "2026-11-26T01:32:06.988Z",
       "reachable": true,
       "rendered": false,
       "sepaPromotions": 0,
