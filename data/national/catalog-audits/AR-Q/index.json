@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 7240,
-  "bytes": 792876,
+  "records": 3795,
+  "bytes": 424398,
   "context": {
     "province": "AR-Q",
-    "generatedAt": "2026-11-27T01:06:33.258Z",
+    "generatedAt": "2026-11-28T00:38:47.623Z",
     "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 7240,
-      "bytes": 792876,
-      "sha256": "1145f53889dacaaf8fcfcd393a2e7c7a5b73d0bae02399aeddd2d174b973923b"
+      "records": 3795,
+      "bytes": 424398,
+      "sha256": "4540b922935c73dc44d6aa4034b4f04da371d180a9abf0e166615a415ae1fb46"
     }
   ]
 }

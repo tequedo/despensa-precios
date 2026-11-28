@@ -2,43 +2,19 @@
   "schemaVersion": 1,
   "format": "ndjson",
   "complete": true,
-  "records": 83814,
-  "bytes": 8914585,
+  "records": 3052,
+  "bytes": 339582,
   "context": {
     "province": "AR-M",
-    "generatedAt": "2026-11-27T01:06:33.258Z",
+    "generatedAt": "2026-11-28T00:38:47.623Z",
     "catalogPolicyVersion": "2026-11-02.marcas-abreviadas.1"
   },
   "parts": [
     {
       "file": "part-000001.ndjson",
-      "records": 18816,
-      "bytes": 1999945,
-      "sha256": "c530a2a110206ab1e721b89e8f329d0437bdb8534a3ceaa3e52bca2b354bc459"
-    },
-    {
-      "file": "part-000002.ndjson",
-      "records": 18800,
-      "bytes": 1999966,
-      "sha256": "0236170f374f3c7e8387aeec3e9e11c69371cc0ce341a51060b7d3e754e1dbdc"
-    },
-    {
-      "file": "part-000003.ndjson",
-      "records": 18855,
-      "bytes": 1999962,
-      "sha256": "2caa833a85ad80bc37b138d7b3602c5eb7905b167ce672eb35258859fedaa3de"
-    },
-    {
-      "file": "part-000004.ndjson",
-      "records": 18854,
-      "bytes": 1999916,
-      "sha256": "cf7a260639b7642faa215672159b590dc928ee9842c45827c98349f9d52df19c"
-    },
-    {
-      "file": "part-000005.ndjson",
-      "records": 8489,
-      "bytes": 914796,
-      "sha256": "1aec533906ca9395f7c43d53800a07e721aa652acc578a6bcd0a4299a88a13a6"
+      "records": 3052,
+      "bytes": 339582,
+      "sha256": "c172a01e441a358fe41bb0f9559d557ed28f5742a4cc01d7667e4dc2de9bdf96"
     }
   ]
 }

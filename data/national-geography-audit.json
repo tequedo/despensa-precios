@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-27T01:45:43.142Z",
+  "checkedAt": "2026-11-28T00:54:47.213Z",
   "source": "https://apis.datos.gob.ar/georef/api/provincias.geojson",
-  "rejectedCount": 54,
+  "rejectedCount": 51,
   "rejected": [
     {
       "externalId": "10|4|504",
@@ -17,14 +17,6 @@
       "locality": "Cañuelas",
       "latitude": -35.03737,
       "longitude": -58.75824,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "24|2|33",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Capital Federal",
-      "latitude": -34.556553,
-      "longitude": -58.413303,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -132,14 +124,6 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|281",
-      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
-      "locality": "Córdoba",
-      "latitude": -31.386371,
-      "longitude": -64.227571,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
       "externalId": "10|3|861",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
@@ -156,11 +140,11 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|270",
+      "externalId": "10|3|281",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
-      "latitude": -31.422513,
-      "longitude": -64.496978,
+      "latitude": -31.386371,
+      "longitude": -64.227571,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -172,11 +156,11 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "10|3|222",
+      "externalId": "10|3|270",
       "declaredProvince": "Ciudad Autónoma de Buenos Aires",
       "locality": "Córdoba",
-      "latitude": -31.423396,
-      "longitude": -64.179534,
+      "latitude": -31.422513,
+      "longitude": -64.496978,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -185,6 +169,14 @@
       "locality": "Córdoba",
       "latitude": -32.890284,
       "longitude": -68.837131,
+      "reason": "coordinates_do_not_confirm_declared_province"
+    },
+    {
+      "externalId": "10|3|222",
+      "declaredProvince": "Ciudad Autónoma de Buenos Aires",
+      "locality": "Córdoba",
+      "latitude": -31.423396,
+      "longitude": -64.179534,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
@@ -372,14 +364,6 @@
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
-      "externalId": "9|1|52",
-      "declaredProvince": "Buenos Aires",
-      "locality": "SAN CLEMENTE DEL TUYU",
-      "latitude": -36.3588,
-      "longitude": -56.7186,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
       "externalId": "13|1|150",
       "declaredProvince": "Buenos Aires",
       "locality": "San Telmo",
@@ -393,14 +377,6 @@
       "locality": "Vicente López",
       "latitude": -34.532302,
       "longitude": -58.468176,
-      "reason": "coordinates_do_not_confirm_declared_province"
-    },
-    {
-      "externalId": "9|3|5277",
-      "declaredProvince": "Chubut",
-      "locality": "COMODORO RIVADAVIA",
-      "latitude": -45.8733,
-      "longitude": -67.4935,
       "reason": "coordinates_do_not_confirm_declared_province"
     },
     {
